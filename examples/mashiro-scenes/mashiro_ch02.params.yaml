@@ -1,0 +1,49 @@
+name: mashiro_ch02
+metadata:
+  asset_type: voice
+  character: 真白
+  age: adolescent
+  gender: female
+  emotion: fear
+  intensity: 0.25
+  delivery: hesitant
+  intonation: neutral
+  subtext: 得体の知れないものへの警戒。本当にそこにいるのか、確かめられない。
+  dialogue: 誰、あなた
+  provider: tsukasa
+  sample_rate: 24000
+  created_at: '2026-08-29T12:29:16.126680+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: 真白
+    reference_audio: mashiro
+    voice:
+      age: adolescent
+      gender: female
+      pitch: medium_high
+      texture: soft
+      breathiness: slight
+      resonance: intimate
+  performance_spec:
+    emotion:
+      primary: fear
+      intensity: 0.25
+    loudness:
+      effort: relaxed
+    prosody:
+      pace: slow
+      pitch: natural
+      intonation: neutral
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: 得体の知れないものへの警戒。本当にそこにいるのか、確かめられない。
+    delivery: hesitant
+  dialogue: 誰、あなた
+  seed: 42
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 0.9
+  sha1: 47eccaac5196

@@ -100,7 +100,7 @@ def synthesize_reference(key: str, voice: dict, line: str | None = None, seed: i
 
     if not voice:
         raise ValueError("声の属性（voice）が空です")
-    profile = {"voice": dict(voice)}
+    profile = {"character": key, "voice": dict(voice)}
     line = line or "こんにちは。今日は、穏やかな一日ですね。"
     intent = GenerationIntent(
         asset_type="voice",

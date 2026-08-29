@@ -1,0 +1,49 @@
+name: mashiro_itterasshai
+metadata:
+  asset_type: voice
+  character: 真白
+  age: adolescent
+  gender: female
+  emotion: sadness
+  intensity: 0.0
+  delivery: restrained
+  intonation: neutral
+  subtext: 名指ししない別れ。二度と会えないと知りながら、泣く代わりに穏やかに送り出す。
+  dialogue: うん、行ってらっしゃい。
+  provider: tsukasa
+  sample_rate: 24000
+  created_at: '2026-08-29T12:19:45.227517+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: 真白
+    reference_audio: mashiro
+    voice:
+      age: adolescent
+      gender: female
+      pitch: medium_high
+      texture: soft
+      breathiness: slight
+      resonance: intimate
+  performance_spec:
+    emotion:
+      primary: sadness
+      intensity: 0.0
+    loudness:
+      effort: relaxed
+    prosody:
+      pace: slow
+      pitch: natural
+      intonation: neutral
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: 名指ししない別れ。二度と会えないと知りながら、泣く代わりに穏やかに送り出す。
+    delivery: restrained
+  dialogue: うん、行ってらっしゃい。
+  seed: 132070274
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 0.9
+  sha1: 088d58c2dd94

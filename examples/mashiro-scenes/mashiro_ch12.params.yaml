@@ -1,0 +1,49 @@
+name: mashiro_ch12
+metadata:
+  asset_type: voice
+  character: 真白
+  age: adolescent
+  gender: female
+  emotion: sadness
+  intensity: 0.25
+  delivery: gentle
+  intonation: neutral
+  subtext: 二度と会えないと知りながら、それでも明日を約束する。
+  dialogue: うん。また、明日
+  provider: tsukasa
+  sample_rate: 24000
+  created_at: '2026-08-29T12:30:12.437395+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: 真白
+    reference_audio: mashiro
+    voice:
+      age: adolescent
+      gender: female
+      pitch: medium_high
+      texture: soft
+      breathiness: slight
+      resonance: intimate
+  performance_spec:
+    emotion:
+      primary: sadness
+      intensity: 0.25
+    loudness:
+      effort: relaxed
+    prosody:
+      pace: slow
+      pitch: natural
+      intonation: neutral
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: 二度と会えないと知りながら、それでも明日を約束する。
+    delivery: gentle
+  dialogue: うん。また、明日
+  seed: 46
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 0.9
+  sha1: 549337bd4890

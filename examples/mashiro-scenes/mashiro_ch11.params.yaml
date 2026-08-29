@@ -1,31 +1,31 @@
-name: mashiro_night
+name: mashiro_ch11
 metadata:
   asset_type: voice
   character: 真白
-  age: young_adult
+  age: adolescent
   gender: female
   emotion: anxiety
   intensity: 0.5
   delivery: hesitant
   intonation: neutral
-  subtext: 返事が怖いが、繋がりを求めてしまう。
-  dialogue: ……まだ、起きてる？
+  subtext: ずっと言えなかったこと。知らずに、あなたの時間を預かっていた。
+  dialogue: 私、あなたに、時間を預けてました
   provider: tsukasa
   sample_rate: 24000
-  created_at: '2026-08-29T09:59:15.100050+00:00'
+  created_at: '2026-08-29T12:30:00.584328+00:00'
 parameters:
   version: 2
   provider: tsukasa
   voice_profile:
     character: 真白
-    reference_audio: female_young_p308
+    reference_audio: mashiro
     voice:
-      age: young_adult
+      age: adolescent
       gender: female
       pitch: medium_high
       texture: soft
       breathiness: slight
-      resonance: head
+      resonance: intimate
   performance_spec:
     emotion:
       primary: anxiety
@@ -34,16 +34,16 @@ parameters:
       effort: relaxed
     prosody:
       pace: slow
-      pitch: slightly_low
+      pitch: natural
       intonation: neutral
       pauses: []
       emphasis: []
       breath: []
-    subtext: 返事が怖いが、繋がりを求めてしまう。
+    subtext: ずっと言えなかったこと。知らずに、あなたの時間を預かっていた。
     delivery: hesitant
-  dialogue: ……まだ、起きてる？
-  seed: 462990461
+  dialogue: 私、あなたに、時間を預けてました
+  seed: 45
   alpha: 0.35
   beta: 0.7
   rate_of_speech: 0.9
-  sha1: 80be639de71f
+  sha1: 8d4d65f89ddd

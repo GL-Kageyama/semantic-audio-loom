@@ -111,7 +111,9 @@
     "age": "seventies",
     "gender": "M",
     "duration_sec": 7.83,
-    "source_files": ["Common Voice validated (locale=fr) — mascir_elderly_voice subset, first male row group"],
+    "source_files": [
+      "Common Voice validated (locale=fr) — mascir_elderly_voice subset, first male row group"
+    ],
     "source": "Common Voice (via aviroes/mascir_elderly_voice)",
     "license": "CC0 (Common Voice) — 話者は匿名化済み (client_id)"
   },
@@ -119,8 +121,20 @@
     "age": "sixties",
     "gender": "F",
     "duration_sec": 8.94,
-    "source_files": ["Common Voice validated (locale=fr) — mascir_elderly_voice subset, first female row group"],
+    "source_files": [
+      "Common Voice validated (locale=fr) — mascir_elderly_voice subset, first female row group"
+    ],
     "source": "Common Voice (via aviroes/mascir_elderly_voice)",
     "license": "CC0 (Common Voice) — 話者は匿名化済み (client_id)"
+  },
+  "mashiro": {
+    "age": "adolescent",
+    "gender": "F",
+    "duration_sec": 4.85,
+    "source": "local generation (Tsukasa_Speech 経路B / Semantic Audio Loom synthesize)",
+    "license": "generated — no upstream license",
+    "source_files": [
+      "synthesized from profile: {'age': 'adolescent', 'gender': 'female', 'pitch': 'medium_high', 'texture': 'soft', 'breathiness': 'slight', 'resonance': 'intimate'}"
+    ]
   }
 }
