@@ -22,6 +22,7 @@ README / SKILL には**現在の情報だけ**を書く。現在の機能・CLI�
 - **資材の分離**：再利用するもの（参照音声＝声の実体・キャラ＝誰の声か・演技＝どう演じるか）と、使い捨てるもの（生成音声 = `projects/*/assets/`）を混ぜない。
 - **seed 決定論**：同じ seed で byte-identical 再生成（regenerate が保存済み Spec を再利用し、LLM を再呼び出ししない）。
 - **Asset Type は 5 種（voice / bgm / ambience / sfx / foley）を正典とし、声に閉じない**。実装は Phase 1 の `voice` のみ。残り 4 種（BGM・環境音・効果音・フォーリー）は将来スコープ（Phase 2/3）。正典の実体は `types.ASSET_TYPES` と `schemas/asset_type.schema.json`、詳細は `docs/asset-types.md`。
+- **i18n baseline（2層）**：新規の CLI 文言・LLM プロンプト・YAML テンプレートは直書きせず、`locales/{lang}.json`（CLI/UI）と `prompts/{lang}.json`（LLM）の2層で解決する。対象 en/ja/zh、既定 ja（`--lang` > `SAL_LANG` > ja、未対応は警告して ja）。固定列挙値（emotion/pitch 等の enum）は全言語で英語のまま、自由テキスト（situation/subtext/キャラ表示名）は `--lang` の言語で出力、台詞（`--line`）は Tsukasa が日本語 TTS のため常に日本語。docs ミラーは作らない（README/docs は日本語のまま）。
 
 ## テスト
 

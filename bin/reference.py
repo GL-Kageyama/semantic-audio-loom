@@ -25,7 +25,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from semantic_audio_loom import config
+from semantic_audio_loom import config, i18n
 from semantic_audio_loom.skills.character_voice import character_path, load_voice_profile
 from semantic_audio_loom.skills.reference import duration_sec, load_manifest, register, synthesize_reference
 
@@ -33,7 +33,7 @@ from semantic_audio_loom.skills.reference import duration_sec, load_manifest, re
 def cmd_list(args) -> None:
     m = load_manifest()
     if not m:
-        print("（参照音声なし）")
+        print(args.t("reference", "empty", "（参照音声なし）"))
         return
     for k in sorted(m):
         e = m[k]
@@ -61,12 +61,12 @@ def cmd_synthesize(args) -> None:
     if args.texture:
         voice["texture"] = args.texture
     if not voice:
-        print("--character（キャラ）か --gender/--age などで声の属性を指定してください。", file=sys.stderr)
+        print(args.t("reference", "err_need_voice", "--character（キャラ）か --gender/--age などで声の属性を指定してください。"), file=sys.stderr)
         sys.exit(2)
 
-    print(f"生成中（経路B・参照なし）… key={args.key} voice={voice}")
+    print(args.t("reference", "synthesizing", "生成中（経路B・参照なし）… key={key} voice={voice}", key=args.key, voice=voice))
     dst = synthesize_reference(args.key, voice, line=args.line, seed=args.seed, provider=args.provider)
-    print("登録しました:", dst)
+    print(args.t("reference", "registered", "登録しました: {dst}", dst=dst))
 
 
 def cmd_add(args) -> None:
@@ -81,41 +81,44 @@ def cmd_add(args) -> None:
     if args.source_url:
         entry["source_url"] = args.source_url
     dst = register(args.key, args.wav, entry)
-    print("登録しました:", dst)
-    print("※ 配布する場合は license の帰属表示（例: VCTK は CC BY 4.0）が必須です。")
+    print(args.t("reference", "registered", "登録しました: {dst}", dst=dst))
+    print(args.t("reference", "license_note", "※ 配布する場合は license の帰属表示（例: VCTK は CC BY 4.0）が必須です。"))
 
 
 def main() -> None:
-    p = argparse.ArgumentParser(description="参照音声ライブラリを一覧・拡充する。")
+    lang, loc, t = i18n.translator()
+    p = argparse.ArgumentParser(description=t("reference", "description", "参照音声ライブラリを一覧・拡充する。"))
+    i18n.add_lang_argument(p)
     sub = p.add_subparsers(dest="cmd", required=True)
 
-    p_list = sub.add_parser("list", help="登録済み参照音声を一覧")
+    p_list = sub.add_parser("list", help=t("reference", "help_list", "登録済み参照音声を一覧"))
     p_list.set_defaults(func=cmd_list)
 
-    p_syn = sub.add_parser("synthesize", help="ローカル生成（経路B）で参照音声を作る")
+    p_syn = sub.add_parser("synthesize", help=t("reference", "help_synthesize", "ローカル生成（経路B）で参照音声を作る"))
     p_syn.add_argument("key")
-    p_syn.add_argument("--character", default=None, help="キャラ名（voice.yaml から声の属性を入力）")
-    p_syn.add_argument("--character-file", default=None, help=".voice.yaml のパス（名前でなく直接指定）")
+    p_syn.add_argument("--character", default=None, help=t("reference", "help_syn_character", "キャラ名（voice.yaml から声の属性を入力）"))
+    p_syn.add_argument("--character-file", default=None, help=t("reference", "help_syn_character_file", ".voice.yaml のパス（名前でなく直接指定）"))
     p_syn.add_argument("--gender", default=None, help="female / male")
     p_syn.add_argument("--age", default=None, help="child / adolescent / young_adult / adult / middle_aged / elderly")
     p_syn.add_argument("--pitch", default=None)
     p_syn.add_argument("--texture", default=None)
-    p_syn.add_argument("--line", default=None, help="参照用の台詞（既定は挨拶文）")
+    p_syn.add_argument("--line", default=None, help=t("reference", "help_syn_line", "参照用の台詞（既定は挨拶文）"))
     p_syn.add_argument("--seed", type=int, default=None)
     p_syn.add_argument("--provider", default=None)
     p_syn.set_defaults(func=cmd_synthesize)
 
-    p_add = sub.add_parser("add", help="著作権フリー音源の .wav を登録")
-    p_add.add_argument("wav", help="登録する .wav（24kHz mono 推奨）")
+    p_add = sub.add_parser("add", help=t("reference", "help_add", "著作権フリー音源の .wav を登録"))
+    p_add.add_argument("wav", help=t("reference", "help_add_wav", "登録する .wav（24kHz mono 推奨）"))
     p_add.add_argument("key")
     p_add.add_argument("--gender", default=None, help="F / M")
-    p_add.add_argument("--age", default=None, help="例: 18 / 40s / seventies")
-    p_add.add_argument("--license", default=None, help="例: CC BY 4.0 / CC0")
-    p_add.add_argument("--source", default=None, help="例: CSTR VCTK Corpus 0.92")
-    p_add.add_argument("--source-url", default=None, help="取得元 URL（任意）")
+    p_add.add_argument("--age", default=None, help=t("reference", "help_add_age", "例: 18 / 40s / seventies"))
+    p_add.add_argument("--license", default=None, help=t("reference", "help_add_license", "例: CC BY 4.0 / CC0"))
+    p_add.add_argument("--source", default=None, help=t("reference", "help_add_source", "例: CSTR VCTK Corpus 0.92"))
+    p_add.add_argument("--source-url", default=None, help=t("reference", "help_add_source_url", "取得元 URL（任意）"))
     p_add.set_defaults(func=cmd_add)
 
     args = p.parse_args()
+    args.lang, args.loc, args.t = lang, loc, t
     args.func(args)
 
 

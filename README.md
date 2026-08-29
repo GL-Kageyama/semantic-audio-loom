@@ -49,6 +49,22 @@ bin/generate.py --character mashiro --performance anxious-night-call \
 セットアップの詳細（Tsukasa・LLM の設定）は [docs/setup.md](docs/setup.md)、
 全コマンドは [docs/usage.md](docs/usage.md)。
 
+## 多言語対応（i18n）
+
+CLI 文言と LLM プロンプトは **en / ja / zh** の 2 層（`locales/` ＋ `prompts/`）で現地化する。
+既定は **ja**。`--lang {en,ja,zh}` フラグか環境変数 `SAL_LANG` で切り替え（`--lang` が優先）。
+
+```bash
+bin/character.py --lang en list     # 英語の CLI 文言
+SAL_LANG=zh bin/distill.py --dry-run …   # 中国語のプロンプト
+```
+
+- 固定列挙値（emotion / pitch / age などの enum）は全言語で英語のまま。
+- 自由テキスト（situation / subtext / キャラ表示名）は `--lang` の言語で出力。
+- 台詞（`--line`）は **常に日本語**（Tsukasa が日本語 TTS のため。領域事実）。
+
+README・docs は日本語のまま（翻訳ミラーは用意しない）。
+
 ## 7 段フロー
 
 ```

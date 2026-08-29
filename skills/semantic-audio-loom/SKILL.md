@@ -42,6 +42,10 @@ bin/generate.py --character mashiro --performance anxious-night-call \
 - 生成実行には Tsukasa_Speech（~5GB）と `SAL_TSUKASA_DIR` の指定が必要。詳細は `docs/setup.md`。
 - 参照音声の欠落は generate.py が既定で検知し、拡充コマンドを案内する。
 
+## 言語（Language Mode）
+
+実行言語は `--lang {en,ja,zh}`（`$ARGUMENTS.lang`）> 環境変数 `SAL_LANG` > 既定 ja。ユーザーの依頼言語に合わせ `--lang` を渡す。ただし台詞＝生成音声は Tsukasa が日本語 TTS のため常に日本語。README/docs は日本語のまま。
+
 ## 深掘り
 
 - `docs/asset-types.md` — 正典 5 種とロードマップ（Phase 1〜5）

@@ -13,9 +13,10 @@ from semantic_audio_loom.types import AudioAsset, GenerationIntent, GenerationRe
 
 
 class AudioAssetEngine:
-    def __init__(self, provider_name: str | None = None, resolve_mode: str = "llm"):
+    def __init__(self, provider_name: str | None = None, resolve_mode: str = "llm", lang: str | None = None):
         self.provider_name = provider_name
         self.resolve_mode = resolve_mode
+        self.lang = lang
 
     def generate(
         self,
@@ -30,7 +31,7 @@ class AudioAssetEngine:
         validate.validate_intent(intent)
 
         # 3 Resolve（Direction → Performance Spec）
-        spec = resolve.resolve(intent, mode=self.resolve_mode)
+        spec = resolve.resolve(intent, mode=self.resolve_mode, lang=self.lang)
         validate.validate_spec(spec)
 
         request = GenerationRequest(

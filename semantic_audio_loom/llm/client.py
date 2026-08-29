@@ -22,7 +22,15 @@ import urllib.error
 import urllib.request
 from dataclasses import dataclass
 
+from semantic_audio_loom import i18n
+
 DEFAULT_MODEL = "claude-sonnet-4-5"
+
+
+def _msg(name: str, default: str, **fmt) -> str:
+    """ユーザー可視エラーを現地化する（言語は SAL_LANG 環境変数→既定 ja。--lang は
+    この低層モジュールには届かないため、エラー文言は env/既定で決まる）。"""
+    return i18n._t(i18n.load_locale(), "llm", name, default, **fmt)
 
 
 @dataclass
@@ -41,7 +49,7 @@ class ClaudeClient:
     def __init__(self, config: ClientConfig | None = None):
         self.config = config or _from_env()
         if not self.config.api_key and not self.config.auth_token:
-            raise ValueError("Claude の認証情報がありません（ANTHROPIC_API_KEY か ANTHROPIC_AUTH_TOKEN）")
+            raise ValueError(_msg("auth_required", "Claude の認証情報がありません（ANTHROPIC_API_KEY か ANTHROPIC_AUTH_TOKEN）"))
         base = (self.config.base_url or "https://api.anthropic.com").rstrip("/")
         self._endpoint = base + "/v1/messages"
         self._headers = {"content-type": "application/json", "anthropic-version": "2023-06-01"}
@@ -69,14 +77,14 @@ class ClaudeClient:
                 text = self._post(body)
                 if text:
                     return text
-                last_err = RuntimeError("空の応答")
+                last_err = RuntimeError(_msg("empty_response", "空の応答"))
                 if attempt < self.config.max_retries - 1:
                     time.sleep(2**attempt)
             except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as e:
                 last_err = e
                 if attempt < self.config.max_retries - 1:
                     time.sleep(2**attempt)
-        raise RuntimeError(f"Claude API 呼び出しに失敗: {last_err}") from last_err
+        raise RuntimeError(_msg("api_failed", "Claude API 呼び出しに失敗: {err}", err=last_err)) from last_err
 
     def complete_json(self, system: str, user: str) -> dict:
         """JSON 応答を要求して dict に解釈する（```json フェンスを剥がす）。"""

@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "language": "en",
+    "language_native": "English",
+    "canonical": false
+  },
+  "generate": {
+    "description": "Generate a voice asset.",
+    "help_character": "Character name (characters/<name>.voice.yaml)",
+    "help_character_file": "Path to .voice.yaml (specify directly instead of by name)",
+    "help_line": "Line (Japanese; Tsukasa is a Japanese TTS)",
+    "help_performance": "Performance name (performances/<name>.direction.yaml)",
+    "help_situation": "Situation (input for subtext inference)",
+    "help_state_file": "Character-state YAML (character_state)",
+    "help_subtext": "Subtext of the line (human override, optional)",
+    "help_project": "Output directory projects/<project>/assets/",
+    "help_scene": "Output subfolder (scene name)",
+    "help_name": "Output filename (prefix for .wav/.params.yaml)",
+    "err_exclusive": "--character and --character-file are mutually exclusive",
+    "err_need_character": "Either --character (name) or --character-file (path) is required",
+    "warn_ref_missing": "⚠️  Reference audio not found: {ref}",
+    "warn_ref_extend_synth": "   Add: bin/reference.py synthesize <key> --character {who}",
+    "warn_ref_extend_add": "   or bin/reference.py add <wav> <key> (register a royalty-free source)"
+  },
+  "character": {
+    "description": "Define, validate, and list character voices.",
+    "help_init": "Create a template in characters/",
+    "help_validate": "Validate against the schema",
+    "help_list": "List registered characters",
+    "already_exists": "Already exists: {path} (not overwriting)",
+    "created": "Created: {path}",
+    "hint_validate": "After editing, validate with `bin/character.py validate {name}`.",
+    "empty": "(no characters)",
+    "template": "# {name} — character voice (character asset).\n# Conforms to voice_profile.schema.json. reference_audio is a speaker key from the\n# reference-voice library or an actual file path (path A: fixes timbre from this audio).\ncharacter: {name}\n# reference_audio: female_young_p308   # example; pick a speaker key from the reference library\nvoice:\n  age: young_adult      # child / adolescent / young_adult / adult / middle_aged / elderly\n  gender: female        # female / male (used for prompt subject and reference-file-name detection)\n  pitch: medium_high    # very_low / low / medium_low / medium / medium_high / high / very_high\n  texture: soft         # soft / warm / clear / bright / dark / husky / breathy / neutral\n  breathiness: slight   # none / slight / moderate / heavy\n  resonance: head       # intimate / chest / head / nasal / bright / neutral\n"
+  },
+  "performance": {
+    "description": "Define, validate, and list performance directions.",
+    "help_init": "Create a template in performances/",
+    "help_validate": "Validate against the schema",
+    "help_list": "List registered performances",
+    "already_exists": "Already exists: {path} (not overwriting)",
+    "created": "Created: {path}",
+    "hint_validate": "After editing, validate with `bin/performance.py validate {name}`.",
+    "empty": "(no performances)",
+    "template": "# {name} — performance direction (performance asset).\n# Conforms to performance_asset.schema.json. Only emotion is required; the rest are optional.\n# situation/subtext feed Resolve (the LLM's subtext inference).\nemotion: neutral       # anxiety / sadness / anger / fear / joy / confidence / loneliness / excitement / calm / guilt / neutral\n# intensity: moderate  # none / subtle / moderate / strong / overwhelming\n# volume: normal       # whisper / quiet / normal / loud / shout\n# speed: natural       # very_slow / slow / natural / fast / very_fast\n# pitch: natural       # very_low / low / slightly_low / natural / slightly_high / high\n# breathiness: none    # none / slight / moderate / heavy\n# delivery: controlled # restrained / subtle / suppressed / controlled / flat / gentle / intimate / aggressive / cheerful / cold / desperate / hesitant\n# pause_before: 0.0    # seconds (pause before the line)\n# situation: A late-night call. Anxious whether the other person is awake, but seeking connection.\n# subtext: Afraid of the reply, but drawn toward connection.\n"
+  },
+  "reference": {
+    "description": "List and expand the reference-voice library.",
+    "help_list": "List registered reference audio",
+    "help_synthesize": "Create reference audio via local synthesis (path B)",
+    "help_add": "Register a royalty-free .wav source",
+    "help_syn_character": "Character name (input voice attributes from voice.yaml)",
+    "help_syn_character_file": "Path to .voice.yaml (directly, not by name)",
+    "help_syn_line": "Line for the reference (default is a greeting)",
+    "help_add_wav": ".wav to register (24kHz mono recommended)",
+    "help_add_age": "e.g. 18 / 40s / seventies",
+    "help_add_license": "e.g. CC BY 4.0 / CC0",
+    "help_add_source": "e.g. CSTR VCTK Corpus 0.92",
+    "help_add_source_url": "Source URL (optional)",
+    "empty": "(no reference audio)",
+    "err_need_voice": "Specify voice attributes via --character or --gender/--age etc.",
+    "synthesizing": "Synthesizing (path B, no reference)… key={key} voice={voice}",
+    "registered": "Registered: {dst}",
+    "license_note": "Note: when distributing, license attribution (e.g. VCTK is CC BY 4.0) is required."
+  },
+  "distill": {
+    "description": "Distill audio assets (characters/performances) from bulk input.",
+    "help_batch": "One story text → multiple main characters × multiple key scenes",
+    "help_character": "One input → one character",
+    "help_performance": "One input → one performance",
+    "help_input": "Input text (when --file is not given)",
+    "help_file": "Input file (text)",
+    "help_synthesize": "Also synthesize and register each character's source voice (path B)",
+    "help_overwrite": "Overwrite existing assets of the same name",
+    "help_dry_run": "Only print YAML without writing",
+    "help_name_char": "Character name (slug)",
+    "help_name_perf": "Performance name (slug)",
+    "err_need_input": "Either text (positional) or --file is required.",
+    "char_header": "# Character: {name} ({character})",
+    "perf_header": "# Performance: {name}",
+    "synthesizing_voice": "Synthesizing source voice… {name}",
+    "wrote": "Wrote: {path}",
+    "skipped": "Skipped: {e}",
+    "result_summary": "Distilled: {n_chars} character(s) / {n_perfs} performance(s)",
+    "exists": "{path} already exists (use --overwrite to replace)"
+  },
+  "resolve": {
+    "fallback": "[resolve] LLM failed, falling back to Rule: {exc}"
+  },
+  "llm": {
+    "auth_required": "Missing Claude credentials (ANTHROPIC_API_KEY or ANTHROPIC_AUTH_TOKEN)",
+    "empty_response": "empty response",
+    "api_failed": "Claude API call failed: {err}"
+  }
+}

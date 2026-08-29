@@ -67,3 +67,11 @@
 
 - 音を声に閉じないよう、構想 §4 の 5 Asset Type（voice / bgm / ambience / sfx / foley）を正典として明文化。`types.ASSET_TYPES`（定数）＋ `schemas/asset_type.schema.json`（enum）＋ `validate_intent` の enum 外拒否で、将来スコープを閉じない。
 - 実装済みは Phase 1 の `voice` のみ。ambience/sfx（Phase 2）・bgm（Phase 3）は将来スコープで、生成モデル・Resolve 経路・Sound Bible は未実装。詳細は docs/asset-types.md。
+
+## 2026-08-29 — 多言語化（i18n / en・ja・zh）
+
+- CLI 文言と LLM プロンプトを 2 層（`locales/{lang}.json` ＋ `prompts/{lang}.json`）で現地化。対象 en/ja/zh、既定 ja。言語解決は `--lang` > `SAL_LANG` > ja（未対応言語は警告して ja へ）。新規文言は `semantic_audio_loom/i18n.py` の `_t()`（引数名 `name`・`default` は日本語の安全弁）で解決。
+- 固定列挙値（enum）は英語のまま、自由テキスト（situation/subtext/キャラ表示名）は `--lang` の言語で出力（プロンプト末尾に出力言語ディレクティブ）。台詞（`--line`）は Tsukasa が日本語 TTS のため常に日本語（領域事実＝i18n 対象外）。
+- エンジン結線：resolve / distill / llm.client / engine に `lang` を追加。波括弧衝突回避のため、JSON スキーマ例を含む system プロンプトは `.format()` せず、`.format()` するのは `resolve.user` と `distill.retry` のみ。
+- **経緯**：当初は並列リポジトリ（wisdom/elevate）と同じ「フル3層（locales+prompts+docs ミラー・既定 en）」を検討したが、(1) Tsukasa が日本語 TTS のため音声出力は日本語のまま＝非日本語話者が主対象になる可能性が低く docs 翻訳の実利が薄い、(2) 既定 en だと日本語 README と CLI 出力が非整合——の2点から「プロンプト＋CLI のみ・既定 ja・README/docs は日本語のまま」に絞った。docs ミラーツリーは作らない。
+- tests/test_i18n.py 追加（言語解決の優先順位・3言語キー整合・en/zh プロンプトに日本語かな漏れなし・モック LLM で3言語完走・CLI `--lang` スモーク）。テスト 24 件。

@@ -15,12 +15,14 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import yaml
 
+from semantic_audio_loom import i18n
 from semantic_audio_loom.engine import AudioAssetEngine
 from semantic_audio_loom.types import GenerationRequest
 
 
 def main() -> None:
     p = argparse.ArgumentParser(description="Regenerate from params.yaml.")
+    i18n.add_lang_argument(p)
     p.add_argument("params", help="path to .params.yaml")
     p.add_argument("--out-dir", default="output_regen")
     p.add_argument("--name", default=None)

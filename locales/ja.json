@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "language": "ja",
+    "language_native": "日本語",
+    "canonical": true
+  },
+  "generate": {
+    "description": "音声アセットを生成する。",
+    "help_character": "キャラ名（characters/<name>.voice.yaml）",
+    "help_character_file": ".voice.yaml のパス（名前でなく直接指定）",
+    "help_line": "台詞（Tsukasa は日本語 TTS のため日本語）",
+    "help_performance": "演技名（performances/<name>.direction.yaml）",
+    "help_situation": "状況（subtext 推論の入力）",
+    "help_state_file": "キャラクター状態の YAML（character_state）",
+    "help_subtext": "台詞の裏の意味（人間上書き・任意）",
+    "help_project": "生成資材の保存先 projects/<project>/assets/",
+    "help_scene": "生成資材の保存先サブフォルダ（シーン名）",
+    "help_name": "出力ファイル名（.wav/.params.yaml の接頭辞）",
+    "err_exclusive": "--character と --character-file は排他です",
+    "err_need_character": "--character（キャラ名）か --character-file（パス）のどちらかが必要です",
+    "warn_ref_missing": "⚠️  参照音声が見つかりません: {ref}",
+    "warn_ref_extend_synth": "   拡充: bin/reference.py synthesize <key> --character {who}",
+    "warn_ref_extend_add": "   または bin/reference.py add <wav> <key>（著作権フリー音源を登録）"
+  },
+  "character": {
+    "description": "キャラクターの声を定義・検証・一覧する。",
+    "help_init": "テンプレートを characters/ に作成",
+    "help_validate": "スキーマ検証",
+    "help_list": "登録済みキャラ一覧",
+    "already_exists": "既に存在します: {path}（上書きしません）",
+    "created": "作成しました: {path}",
+    "hint_validate": "内容を編集したら `bin/character.py validate {name}` で検証してください。",
+    "empty": "（キャラなし）",
+    "template": "# {name} — キャラクターの声（キャラ資材）。\n# voice_profile.schema.json 準拠。reference_audio は参照音声ライブラリの話者キー\n# か実ファイルパス（経路A: timbre をこの音声から固定する）。\ncharacter: {name}\n# reference_audio: female_young_p308   # 例。話者キーは参照音声ライブラリから選ぶ\nvoice:\n  age: young_adult      # child / adolescent / young_adult / adult / middle_aged / elderly\n  gender: female        # female / male（プロンプト主語と参照ファイル名判定に使う）\n  pitch: medium_high    # very_low / low / medium_low / medium / medium_high / high / very_high\n  texture: soft         # soft / warm / clear / bright / dark / husky / breathy / neutral\n  breathiness: slight   # none / slight / moderate / heavy\n  resonance: head       # intimate / chest / head / nasal / bright / neutral\n"
+  },
+  "performance": {
+    "description": "演技の振り付けを定義・検証・一覧する。",
+    "help_init": "テンプレートを performances/ に作成",
+    "help_validate": "スキーマ検証",
+    "help_list": "登録済み演技一覧",
+    "already_exists": "既に存在します: {path}（上書きしません）",
+    "created": "作成しました: {path}",
+    "hint_validate": "内容を編集したら `bin/performance.py validate {name}` で検証してください。",
+    "empty": "（演技なし）",
+    "template": "# {name} — 演技の振り付け（演技資材）。\n# performance_asset.schema.json 準拠。emotion のみ必須。残りは省略可。\n# situation/subtext は Resolve（LLM の subtext 推論）の入力になる。\nemotion: neutral       # anxiety / sadness / anger / fear / joy / confidence / loneliness / excitement / calm / guilt / neutral\n# intensity: moderate  # none / subtle / moderate / strong / overwhelming\n# volume: normal       # whisper / quiet / normal / loud / shout\n# speed: natural       # very_slow / slow / natural / fast / very_fast\n# pitch: natural       # very_low / low / slightly_low / natural / slightly_high / high\n# breathiness: none    # none / slight / moderate / heavy\n# delivery: controlled # restrained / subtle / suppressed / controlled / flat / gentle / intimate / aggressive / cheerful / cold / desperate / hesitant\n# pause_before: 0.0    # 秒（台詞前の間）\n# situation: 深夜の電話。相手が起きているか不安で、でも繋がりを求めている。\n# subtext: 返事が怖いが、繋がりを求めてしまう。\n"
+  },
+  "reference": {
+    "description": "参照音声ライブラリを一覧・拡充する。",
+    "help_list": "登録済み参照音声を一覧",
+    "help_synthesize": "ローカル生成（経路B）で参照音声を作る",
+    "help_add": "著作権フリー音源の .wav を登録",
+    "help_syn_character": "キャラ名（voice.yaml から声の属性を入力）",
+    "help_syn_character_file": ".voice.yaml のパス（名前でなく直接指定）",
+    "help_syn_line": "参照用の台詞（既定は挨拶文）",
+    "help_add_wav": "登録する .wav（24kHz mono 推奨）",
+    "help_add_age": "例: 18 / 40s / seventies",
+    "help_add_license": "例: CC BY 4.0 / CC0",
+    "help_add_source": "例: CSTR VCTK Corpus 0.92",
+    "help_add_source_url": "取得元 URL（任意）",
+    "empty": "（参照音声なし）",
+    "err_need_voice": "--character（キャラ）か --gender/--age などで声の属性を指定してください。",
+    "synthesizing": "生成中（経路B・参照なし）… key={key} voice={voice}",
+    "registered": "登録しました: {dst}",
+    "license_note": "※ 配布する場合は license の帰属表示（例: VCTK は CC BY 4.0）が必須です。"
+  },
+  "distill": {
+    "description": "大量のインプットから音声資材（キャラ・演技）を蒸留する。",
+    "help_batch": "物語テキスト1つ → 主要キャラ複数 × 代表シーン複数",
+    "help_character": "1入力 → キャラ1体",
+    "help_performance": "1入力 → 演技1つ",
+    "help_input": "入力テキスト（--file がない場合）",
+    "help_file": "入力ファイル（テキスト）",
+    "help_synthesize": "キャラの元音声も経路Bで生成・登録",
+    "help_overwrite": "既存の同名資材を上書き",
+    "help_dry_run": "書き出さず YAML を表示のみ",
+    "help_name_char": "キャラ名（スラッグ）",
+    "help_name_perf": "演技名（スラッグ）",
+    "err_need_input": "テキスト（位置引数）か --file のどちらかが必要です。",
+    "char_header": "# キャラ: {name} ({character})",
+    "perf_header": "# 演技: {name}",
+    "synthesizing_voice": "元音声を生成中… {name}",
+    "wrote": "書きました: {path}",
+    "skipped": "スキップ: {e}",
+    "result_summary": "蒸留結果: キャラ {n_chars} 人 / 演技 {n_perfs} つ",
+    "exists": "{path} は既にあります（--overwrite で上書き）"
+  },
+  "resolve": {
+    "fallback": "[resolve] LLM に失敗したため Rule へフォールバック: {exc}"
+  },
+  "llm": {
+    "auth_required": "Claude の認証情報がありません（ANTHROPIC_API_KEY か ANTHROPIC_AUTH_TOKEN）",
+    "empty_response": "空の応答",
+    "api_failed": "Claude API 呼び出しに失敗: {err}"
+  }
+}

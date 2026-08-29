@@ -24,6 +24,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import yaml
 
+from semantic_audio_loom import i18n
 from semantic_audio_loom.engine import AudioAssetEngine
 from semantic_audio_loom.skills.character_voice import (
     build_intent,
@@ -37,11 +38,13 @@ _PERF_KEYS = ("volume", "speed", "pitch", "breathiness", "delivery")
 
 
 def main() -> None:
-    p = argparse.ArgumentParser(description="Generate a voice asset.")
-    p.add_argument("--character", default=None, help="キャラ名（characters/<name>.voice.yaml）")
-    p.add_argument("--character-file", default=None, help=".voice.yaml のパス（名前でなく直接指定）")
-    p.add_argument("--line", required=True, help="台詞（日本語）")
-    p.add_argument("--performance", default=None, help="演技名（performances/<name>.direction.yaml）")
+    lang, loc, t = i18n.translator()
+    p = argparse.ArgumentParser(description=t("generate", "description", "音声アセットを生成する。"))
+    i18n.add_lang_argument(p)
+    p.add_argument("--character", default=None, help=t("generate", "help_character", "キャラ名（characters/<name>.voice.yaml）"))
+    p.add_argument("--character-file", default=None, help=t("generate", "help_character_file", ".voice.yaml のパス（名前でなく直接指定）"))
+    p.add_argument("--line", required=True, help=t("generate", "help_line", "台詞（Tsukasa は日本語 TTS のため日本語）"))
+    p.add_argument("--performance", default=None, help=t("generate", "help_performance", "演技名（performances/<name>.direction.yaml）"))
     p.add_argument("--emotion", default=None)
     p.add_argument("--intensity", default=None)
     p.add_argument("--volume")
@@ -49,21 +52,21 @@ def main() -> None:
     p.add_argument("--pitch")
     p.add_argument("--breathiness")
     p.add_argument("--delivery")
-    p.add_argument("--situation", default=None, help="状況（subtext 推論の入力）")
-    p.add_argument("--state-file", default=None, help="キャラクター状態の YAML（character_state）")
-    p.add_argument("--subtext", default=None, help="台詞の裏の意味（人間上書き・任意）")
+    p.add_argument("--situation", default=None, help=t("generate", "help_situation", "状況（subtext 推論の入力）"))
+    p.add_argument("--state-file", default=None, help=t("generate", "help_state_file", "キャラクター状態の YAML（character_state）"))
+    p.add_argument("--subtext", default=None, help=t("generate", "help_subtext", "台詞の裏の意味（人間上書き・任意）"))
     p.add_argument("--resolve", choices=("llm", "rule"), default="llm")
-    p.add_argument("--project", default="demo", help="生成資材の保存先 projects/<project>/assets/")
-    p.add_argument("--scene", default="default", help="生成資材の保存先サブフォルダ（シーン名）")
+    p.add_argument("--project", default="demo", help=t("generate", "help_project", "生成資材の保存先 projects/<project>/assets/"))
+    p.add_argument("--scene", default="default", help=t("generate", "help_scene", "生成資材の保存先サブフォルダ（シーン名）"))
     p.add_argument("--seed", type=int, default=None)
-    p.add_argument("--name", default=None, help="出力ファイル名（.wav/.params.yaml の接頭辞）")
+    p.add_argument("--name", default=None, help=t("generate", "help_name", "出力ファイル名（.wav/.params.yaml の接頭辞）"))
     p.add_argument("--provider", default=None)
     args = p.parse_args()
 
     if args.character and args.character_file:
-        p.error("--character と --character-file は排他です")
+        p.error(t("generate", "err_exclusive", "--character と --character-file は排他です"))
     if not args.character and not args.character_file:
-        p.error("--character（キャラ名）か --character-file（パス）のどちらかが必要です")
+        p.error(t("generate", "err_need_character", "--character（キャラ名）か --character-file（パス）のどちらかが必要です"))
 
     if args.character_file:
         vp = load_voice_profile(args.character_file)
@@ -95,9 +98,9 @@ def main() -> None:
     ref = vp.get("reference_audio") or (vp.get("voice") or {}).get("reference_audio")
     if ref and resolve_reference(ref) is None:
         who = args.character or args.character_file or "<name>"
-        print(f"⚠️  参照音声が見つかりません: {ref}", file=sys.stderr)
-        print(f"   拡充: bin/reference.py synthesize <key> --character {who}", file=sys.stderr)
-        print("   または bin/reference.py add <wav> <key>（著作権フリー音源を登録）", file=sys.stderr)
+        print(t("generate", "warn_ref_missing", "⚠️  参照音声が見つかりません: {ref}", ref=ref), file=sys.stderr)
+        print(t("generate", "warn_ref_extend_synth", "   拡充: bin/reference.py synthesize <key> --character {who}", who=who), file=sys.stderr)
+        print(t("generate", "warn_ref_extend_add", "   または bin/reference.py add <wav> <key>（著作権フリー音源を登録）"), file=sys.stderr)
 
     intent = build_intent(
         vp, args.line, emotion, intensity, performance,
@@ -105,7 +108,7 @@ def main() -> None:
     )
 
     out_dir = os.path.join("projects", args.project, "assets", args.scene)
-    engine = AudioAssetEngine(provider_name=args.provider, resolve_mode=args.resolve)
+    engine = AudioAssetEngine(provider_name=args.provider, resolve_mode=args.resolve, lang=lang)
     asset = engine.generate(intent, out_dir=out_dir, name=args.name)
 
     print("wav:", asset.path)
