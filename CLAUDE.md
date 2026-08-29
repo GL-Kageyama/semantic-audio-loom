@@ -8,8 +8,8 @@ README / SKILL には**現在の情報だけ**を書く。現在の機能・CLI�
 
 **置き場所**：
 - `README.md` … 現在の機能・資材モデル・CLI・構成（概要のみ。深掘りは docs/ へのリンク）
-- `docs/` … README の深掘り（`resolve.md` = Resolve/subtext・`loudness.md` = 声量三層分業・`reference-voices.md` = 参照音声と拡充）
-- `HISTORY.md` … 開発履歴（M0〜M3・資材分離・参照音声拡充・実測値）
+- `docs/` … README の深掘り（`resolve.md` = Resolve/subtext・`asset-types.md` = 正典5種とロードマップ・`distill.md` = 蒸留・`loudness.md` = 声量三層分業・`reference-voices.md` = 参照音声と拡充・`setup.md` = セットアップ・`usage.md` = 全CLI）
+- `HISTORY.md` … 開発履歴（M0〜M4・実測値）
 - `skills/semantic-audio-loom/SKILL.md` … facade スキル（現在の使い方のみ）
 - `.claude/skills/` … ルート `skills/` への symlink（プロジェクト内検出用。インストール不要）
 - `.claude-plugin/` … プラグイン配布定義。`install.sh` が従来の symlink 方式（global/local）
@@ -21,6 +21,7 @@ README / SKILL には**現在の情報だけ**を書く。現在の機能・CLI�
 - **声量は三層分業**：Direction `volume` → Interpretation `loudness.effort` → Mixing ピーク正規化。ゲインを上げても「張り」は増えない。
 - **資材の分離**：再利用するもの（参照音声＝声の実体・キャラ＝誰の声か・演技＝どう演じるか）と、使い捨てるもの（生成音声 = `projects/*/assets/`）を混ぜない。
 - **seed 決定論**：同じ seed で byte-identical 再生成（regenerate が保存済み Spec を再利用し、LLM を再呼び出ししない）。
+- **Asset Type は 5 種（voice / bgm / ambience / sfx / foley）を正典とし、声に閉じない**。実装は Phase 1 の `voice` のみ。残り 4 種（BGM・環境音・効果音・フォーリー）は将来スコープ（Phase 2/3）。正典の実体は `types.ASSET_TYPES` と `schemas/asset_type.schema.json`、詳細は `docs/asset-types.md`。
 
 ## テスト
 

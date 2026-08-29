@@ -17,7 +17,7 @@ from __future__ import annotations
 import json
 import os
 
-from semantic_audio_loom.types import GenerationIntent
+from semantic_audio_loom.types import ASSET_TYPES, GenerationIntent
 
 _SCHEMA_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "schemas")
 
@@ -48,6 +48,10 @@ def validate_voice_profile(profile: dict) -> None:
 def validate_intent(intent: GenerationIntent) -> None:
     import jsonschema
 
+    if intent.asset_type not in ASSET_TYPES:
+        raise ValueError(
+            f"unknown asset_type: {intent.asset_type!r} (expected one of {ASSET_TYPES})"
+        )
     validate_voice_profile(intent.voice_profile)
     jsonschema.validate(_merged_direction(intent), _load("performance_direction.schema.json"))
 

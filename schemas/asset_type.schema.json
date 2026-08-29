@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Asset Type",
+  "description": "構想 §4 の正典 5 Asset Type。実装は voice のみ。残りは将来スコープ（docs/asset-types.md）。",
+  "type": "string",
+  "enum": ["voice", "bgm", "ambience", "sfx", "foley"]
+}

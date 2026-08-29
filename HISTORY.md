@@ -61,4 +61,9 @@
 - 二モード：`batch`（物語1つ → キャラ複数 × 演技複数）と `character`/`performance`（1入力 → 1資材）。`--synthesize` で元音声（経路B）も生成・登録、`--dry-run` で YAML 確認。
 - ③翻訳の出力は schema の enum 制約（`pitch: very_low〜very_high` 等）。enum 外・必須欠落は手で直さず再生成（`_distill` が最大 3 回再試行）。
 - `synthesize` の実体を `skills/reference.py` の `synthesize_reference` / `duration_sec` へ抽出し、`bin/reference.py` と `bin/distill.py` で共用。
-- tests/ 新設（`test_distill.py`・モック LLM・11 件）+ conftest.py + requirements.txt に pytest 追加。
+- tests/ 新設（`test_distill.py`・モック LLM・10 件）+ conftest.py + requirements.txt に pytest 追加。
+
+## 2026-08-29 — Asset Type 正典化（構想 §4 の 5 種）
+
+- 音を声に閉じないよう、構想 §4 の 5 Asset Type（voice / bgm / ambience / sfx / foley）を正典として明文化。`types.ASSET_TYPES`（定数）＋ `schemas/asset_type.schema.json`（enum）＋ `validate_intent` の enum 外拒否で、将来スコープを閉じない。
+- 実装済みは Phase 1 の `voice` のみ。ambience/sfx（Phase 2）・bgm（Phase 3）は将来スコープで、生成モデル・Resolve 経路・Sound Bible は未実装。詳細は docs/asset-types.md。

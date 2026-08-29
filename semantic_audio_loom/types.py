@@ -8,10 +8,14 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
+# 構想 §4 の正典 5 Asset Type（docs/asset-types.md 参照）。
+# 実装は Phase 1 の "voice" のみ。残り 4 種は将来スコープ（Phase 2: ambience/sfx、Phase 3: bgm）。
+ASSET_TYPES = ("voice", "bgm", "ambience", "sfx", "foley")
+
 
 @dataclass
 class GenerationIntent:
-    """Skill が組み立てる。asset_type で分岐する（M1 は voice のみ）。"""
+    """Skill が組み立てる。asset_type は ASSET_TYPES の正典値（実装は voice のみ）。"""
 
     asset_type: str = "voice"
     voice_profile: dict = field(default_factory=dict)
