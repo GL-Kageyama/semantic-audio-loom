@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "required": [
+    "character",
+    "voice"
+  ],
+  "properties": {
+    "character": {
+      "type": "string"
+    },
+    "voice": {
+      "type": "object",
+      "required": [
+        "age",
+        "pitch",
+        "texture",
+        "breathiness"
+      ],
+      "properties": {
+        "age": {
+          "enum": [
+            "child",
+            "adolescent",
+            "young_adult",
+            "adult",
+            "middle_aged",
+            "elderly"
+          ]
+        },
+        "pitch": {
+          "enum": [
+            "very_low",
+            "low",
+            "medium_low",
+            "medium",
+            "medium_high",
+            "high",
+            "very_high"
+          ]
+        },
+        "texture": {
+          "enum": [
+            "soft",
+            "warm",
+            "clear",
+            "bright",
+            "dark",
+            "husky",
+            "breathy",
+            "neutral"
+          ]
+        },
+        "breathiness": {
+          "enum": [
+            "none",
+            "slight",
+            "moderate",
+            "heavy"
+          ]
+        },
+        "resonance": {
+          "enum": [
+            "intimate",
+            "chest",
+            "head",
+            "nasal",
+            "bright",
+            "neutral"
+          ]
+        }
+      }
+    }
+  }
+}

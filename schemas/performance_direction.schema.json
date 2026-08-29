@@ -1,0 +1,88 @@
+{
+  "type": "object",
+  "required": [
+    "emotion"
+  ],
+  "properties": {
+    "emotion": {
+      "enum": [
+        "anxiety",
+        "sadness",
+        "anger",
+        "fear",
+        "joy",
+        "confidence",
+        "loneliness",
+        "excitement",
+        "calm",
+        "guilt",
+        "neutral"
+      ]
+    },
+    "intensity": {
+      "enum": [
+        "none",
+        "subtle",
+        "moderate",
+        "strong",
+        "overwhelming"
+      ]
+    },
+    "volume": {
+      "enum": [
+        "whisper",
+        "quiet",
+        "normal",
+        "loud",
+        "shout"
+      ]
+    },
+    "speed": {
+      "enum": [
+        "very_slow",
+        "slow",
+        "natural",
+        "fast",
+        "very_fast"
+      ]
+    },
+    "pitch": {
+      "enum": [
+        "very_low",
+        "low",
+        "slightly_low",
+        "natural",
+        "slightly_high",
+        "high"
+      ]
+    },
+    "breathiness": {
+      "enum": [
+        "none",
+        "slight",
+        "moderate",
+        "heavy"
+      ]
+    },
+    "pause_before": {
+      "type": "number",
+      "minimum": 0.0
+    },
+    "delivery": {
+      "enum": [
+        "restrained",
+        "subtle",
+        "suppressed",
+        "controlled",
+        "flat",
+        "gentle",
+        "intimate",
+        "aggressive",
+        "cheerful",
+        "cold",
+        "desperate",
+        "hesitant"
+      ]
+    }
+  }
+}

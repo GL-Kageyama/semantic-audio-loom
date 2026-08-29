@@ -1,3 +1,7 @@
+# Generated voice assets (声の生成の産物・再生成可。キャラ資材は characters/ で管理)
+/output*/
+/projects/*/assets/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

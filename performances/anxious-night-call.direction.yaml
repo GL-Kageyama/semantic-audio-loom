@@ -1,0 +1,11 @@
+# anxious-night-call — 深夜の電話で「返事が怖い」演技（演技資材）。
+# performance_asset.schema.json 準拠。emotion のみ必須。
+emotion: anxiety
+intensity: moderate
+volume: quiet
+speed: slow
+pitch: slightly_low
+breathiness: slight
+delivery: hesitant
+situation: 深夜の電話。相手が起きているか不安で、でも繋がりを求めている。
+subtext: 返事が怖いが、繋がりを求めてしまう。

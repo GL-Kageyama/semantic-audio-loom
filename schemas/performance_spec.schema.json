@@ -1,0 +1,164 @@
+{
+  "type": "object",
+  "required": [
+    "emotion"
+  ],
+  "properties": {
+    "emotion": {
+      "type": "object",
+      "required": [
+        "primary",
+        "intensity"
+      ],
+      "properties": {
+        "primary": {
+          "enum": [
+            "anxiety",
+            "sadness",
+            "anger",
+            "fear",
+            "joy",
+            "confidence",
+            "loneliness",
+            "excitement",
+            "calm",
+            "guilt",
+            "neutral"
+          ]
+        },
+        "intensity": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      }
+    },
+    "prosody": {
+      "type": "object",
+      "properties": {
+        "pace": {
+          "enum": [
+            "very_slow",
+            "slow",
+            "natural",
+            "fast",
+            "very_fast"
+          ]
+        },
+        "pitch": {
+          "enum": [
+            "very_low",
+            "low",
+            "slightly_low",
+            "natural",
+            "slightly_high",
+            "high"
+          ]
+        },
+        "intonation": {
+          "enum": [
+            "rising",
+            "falling",
+            "flat",
+            "wavering",
+            "neutral"
+          ]
+        },
+        "pauses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "after",
+              "duration"
+            ],
+            "properties": {
+              "after": {
+                "type": "string"
+              },
+              "duration": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "emphasis": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "word",
+              "strength"
+            ],
+            "properties": {
+              "word": {
+                "type": "string"
+              },
+              "strength": {
+                "enum": [
+                  "weak",
+                  "medium",
+                  "strong"
+                ]
+              }
+            }
+          }
+        },
+        "breath": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "at",
+              "type"
+            ],
+            "properties": {
+              "at": {
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "slight",
+                  "moderate",
+                  "heavy"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "delivery": {
+      "enum": [
+        "restrained",
+        "subtle",
+        "suppressed",
+        "controlled",
+        "flat",
+        "gentle",
+        "intimate",
+        "aggressive",
+        "cheerful",
+        "cold",
+        "desperate",
+        "hesitant"
+      ]
+    },
+    "subtext": {
+      "type": "string"
+    },
+    "loudness": {
+      "type": "object",
+      "properties": {
+        "effort": {
+          "enum": [
+            "relaxed",
+            "normal",
+            "projected",
+            "strained"
+          ]
+        }
+      }
+    }
+  }
+}

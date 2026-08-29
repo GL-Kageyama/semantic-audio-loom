@@ -1,0 +1,12 @@
+# コア（キャラ/演技/参照音声の管理、スキーマ検証、Resolve）。Tsukasa 生成なしでも動く。
+numpy>=1.24
+PyYAML>=6.0
+jsonschema>=4.18
+
+# 生成実行時（Tsukasa_Speech 経路の音声合成）。
+# torch は Tsukasa チェックアウト側の要件に合わせる（CPU なら torch 2.x で可）。
+torch>=2.0
+cutlet>=0.3.0        # 日本語 phonemize（Tsukasa の Utils/phonemize が使用）
+librosa>=0.10        # 検証（f0 実測）用。生成本体には不要
+soundfile>=0.12      # 参照音声の読み込み（オプション。無くても wave にフォールバック）
+scipy>=1.10          # librosa の依存

@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "mental": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0.0,
+        "maximum": 1.0
+      }
+    },
+    "physical": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0.0,
+        "maximum": 1.0
+      }
+    },
+    "social": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+# 真白（ましろ）— デモ用キャラクター。
+# voice_profile.schema.json 準拠。reference_audio は参照音声ライブラリの話者キー
+# （経路A: timbre をこの音声から、prosody を Direction から合成）。
+character: 真白
+reference_audio: female_young_p308
+voice:
+  age: young_adult
+  gender: female
+  pitch: medium_high
+  texture: soft
+  breathiness: slight
+  resonance: head

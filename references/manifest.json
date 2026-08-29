@@ -1,0 +1,126 @@
+{
+  "female_young_p308": {
+    "speaker_id": "p308",
+    "age": 18,
+    "gender": "F",
+    "duration_sec": 8.81,
+    "source_files": [
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p308/p308_012_mic1.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p308/p308_012_mic2.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p308/p308_013_mic1.flac"
+    ],
+    "source": "CSTR VCTK Corpus 0.92 (via sanchit-gandhi/vctk)",
+    "license": "CC BY 4.0 — Christophe Veaux, Junichi Yamagishi, Kirsten MacDonald (2017)"
+  },
+  "female_adult_p225": {
+    "speaker_id": "p225",
+    "age": 23,
+    "gender": "F",
+    "duration_sec": 7.15,
+    "source_files": [
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p225/p225_001_mic1.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p225/p225_001_mic2.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p225/p225_002_mic1.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p225/p225_002_mic2.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p225/p225_003_mic1.flac"
+    ],
+    "source": "CSTR VCTK Corpus 0.92 (via sanchit-gandhi/vctk)",
+    "license": "CC BY 4.0 — Christophe Veaux, Junichi Yamagishi, Kirsten MacDonald (2017)"
+  },
+  "female_mature_p294": {
+    "speaker_id": "p294",
+    "age": 33,
+    "gender": "F",
+    "duration_sec": 8.02,
+    "source_files": [
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p294/p294_030_mic1.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p294/p294_030_mic2.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p294/p294_031_mic1.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p294/p294_031_mic2.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p294/p294_032_mic1.flac"
+    ],
+    "source": "CSTR VCTK Corpus 0.92 (via sanchit-gandhi/vctk)",
+    "license": "CC BY 4.0 — Christophe Veaux, Junichi Yamagishi, Kirsten MacDonald (2017)"
+  },
+  "female_adult_p280": {
+    "speaker_id": "p280",
+    "age": 25,
+    "gender": "F",
+    "duration_sec": 8.15,
+    "source_files": [
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p280/p280_003_mic1.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p280/p280_004_mic1.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p280/p280_005_mic1.flac"
+    ],
+    "source": "CSTR VCTK Corpus 0.92 (via sanchit-gandhi/vctk)",
+    "license": "CC BY 4.0 — Christophe Veaux, Junichi Yamagishi, Kirsten MacDonald (2017)"
+  },
+  "male_young_p334": {
+    "speaker_id": "p334",
+    "age": 18,
+    "gender": "M",
+    "duration_sec": 8.4,
+    "source_files": [
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p334/p334_023_mic2.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p334/p334_024_mic1.flac"
+    ],
+    "source": "CSTR VCTK Corpus 0.92 (via sanchit-gandhi/vctk)",
+    "license": "CC BY 4.0 — Christophe Veaux, Junichi Yamagishi, Kirsten MacDonald (2017)"
+  },
+  "male_adult_p256": {
+    "speaker_id": "p256",
+    "age": 24,
+    "gender": "M",
+    "duration_sec": 8.06,
+    "source_files": [
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p256/p256_014_mic2.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p256/p256_015_mic1.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p256/p256_015_mic2.flac"
+    ],
+    "source": "CSTR VCTK Corpus 0.92 (via sanchit-gandhi/vctk)",
+    "license": "CC BY 4.0 — Christophe Veaux, Junichi Yamagishi, Kirsten MacDonald (2017)"
+  },
+  "male_mature_p227": {
+    "speaker_id": "p227",
+    "age": 38,
+    "gender": "M",
+    "duration_sec": 8.51,
+    "source_files": [
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p227/p227_015_mic1.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p227/p227_015_mic2.flac"
+    ],
+    "source": "CSTR VCTK Corpus 0.92 (via sanchit-gandhi/vctk)",
+    "license": "CC BY 4.0 — Christophe Veaux, Junichi Yamagishi, Kirsten MacDonald (2017)"
+  },
+  "male_adult_p347": {
+    "speaker_id": "p347",
+    "age": 26,
+    "gender": "M",
+    "duration_sec": 7.57,
+    "source_files": [
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p347/p347_035_mic2.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p347/p347_036_mic1.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p347/p347_036_mic2.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p347/p347_037_mic1.flac",
+      "/fsx/sanchit/cache/downloads/extracted/5ede37a337761550330f5c6664bcfb2ec24842a6853ee308b69ce708e8126a90/wav48_silence_trimmed/p347/p347_037_mic2.flac"
+    ],
+    "source": "CSTR VCTK Corpus 0.92 (via sanchit-gandhi/vctk)",
+    "license": "CC BY 4.0 — Christophe Veaux, Junichi Yamagishi, Kirsten MacDonald (2017)"
+  },
+  "elderly_male": {
+    "age": "seventies",
+    "gender": "M",
+    "duration_sec": 7.83,
+    "source_files": ["Common Voice validated (locale=fr) — mascir_elderly_voice subset, first male row group"],
+    "source": "Common Voice (via aviroes/mascir_elderly_voice)",
+    "license": "CC0 (Common Voice) — 話者は匿名化済み (client_id)"
+  },
+  "elderly_female": {
+    "age": "sixties",
+    "gender": "F",
+    "duration_sec": 8.94,
+    "source_files": ["Common Voice validated (locale=fr) — mascir_elderly_voice subset, first female row group"],
+    "source": "Common Voice (via aviroes/mascir_elderly_voice)",
+    "license": "CC0 (Common Voice) — 話者は匿名化済み (client_id)"
+  }
+}
