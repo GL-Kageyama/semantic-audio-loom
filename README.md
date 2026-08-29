@@ -35,10 +35,7 @@ Context + Intent + State + Emotion + Performance Direction → 意味的音声�
 
 ## 状態
 
-- **M0 完了** — 技術検証（Tsukasa_Speech 確定、2 経路スタイル合成、alpha/beta ノブ、seed 決定論）。
-- **M1 完了** — ウォーキングスケルトン。7 段フローの Resolve 以外を全通し、seed 固定で再生成（byte-identical）。
-- **M2 完了** — Resolve（価値の核心）。Direction ＋ State ＋ Scene ＋ Dialogue → LLM → Performance Spec。subtext を具体的な抑揚指示（語尾 intonation）へ変換。
-- **M3 完了** — 一貫性検証。参照音声（経路A）で声を固定し、同一キャラの声が複数シーンで保たれることを確認。
+M0（Provider 確定）〜 M4（蒸留）まで完了。詳細な履歴・実測値は [HISTORY.md](HISTORY.md)。
 
 ## 構成
 
@@ -49,20 +46,32 @@ performances/                   # 演技資材（再利用・永続）
   anxious-night-call.direction.yaml
 references/                     # 参照音声ライブラリ（声の実体・10 名 + manifest.json + seeds.json）
 projects/<project>/assets/      # 生成資材（使い捨て・再生成可）
-semantic_audio_loom/
+examples/                       # コミット済みサンプル（生成例・再現手順付き）
+  mashiro-night/
+skills/                         # facade スキル
+  semantic-audio-loom/SKILL.md
+.claude/skills/                 # skills/ への symlink（プロジェクト内検出用）
+.claude-plugin/                 # プラグイン配布定義（plugin.json / marketplace.json）
+docs/                           # 深掘り（resolve / loudness / reference-voices / distill）
+semantic_audio_loom/            # パッケージ
   config.py        Tsukasa/参照音声ライブラリ/キャラ/演技ライブラリのパス（環境変数で上書き可）
   types.py         GenerationIntent / GenerationRequest / Audio / AudioAsset
   providers/       Seam の下側。base(契約) + tsukasa(実体)
-  engine/          validate / route / resolve / normalize / metadata / store / engine
-  llm/             Resolve 用の最小 Claude API クライアント（Anthropic 互換 HTTP）
-  skills/          character_voice（キャラ名解決）/ performance（演技名解決）/ reference（参照音声の拡充と解決）
+  engine/          validate / route / resolve / distill / normalize / metadata / store / engine
+  llm/             Resolve・蒸留用の最小 Claude API クライアント（Anthropic 互換 HTTP）
+  skills/          character_voice / performance / reference（資材解決の糊）
 bin/
   reference.py     参照音声の拡充（list / synthesize / add）
   character.py     キャラ作り（init / validate / list）
   performance.py   演技の振り付け（init / validate / list）
+  distill.py       蒸留（大量インプット → キャラ + 演技。batch / character / performance）
   generate.py      声の生成（キャラ + 演技 + 台詞 → wav + params）
   regenerate.py    params.yaml → 保存済み Spec・seed で再生成（再現性確認）
 schemas/           5 スキーマ（voice_profile / performance_direction / performance_spec / performance_asset / character_state）
+CLAUDE.md          プロジェクト指示
+HISTORY.md         開発履歴
+install.sh         スキル配布（symlink）
+requirements.txt   Python 依存
 ```
 
 ## 7 段フロー（声の生成）
@@ -71,11 +80,8 @@ schemas/           5 スキーマ（voice_profile / performance_direction / perf
 Validate → Route → Resolve → Generate → Normalize → Tag → Store
 ```
 
-- **Resolve**（M2 の核心）：Direction（監督）と State / Scene / Dialogue を LLM が解釈し、
-  Performance Spec（俳優）へ解決する。subtext は抽象文のままでは音に乗らないため、
-  必ず具体的な抑揚指示（語尾 `prosody.intonation` など）へ変換する。
-- **Provider**（Tsukasa）：Spec のうち反映できる controls（emotion / delivery / 声量 / 速度 / 語尾）を
-  KotoDama 散文へ変換して合成する。emphasis / breath / pauses の構造化制御は共通欠落。
+核心は **Resolve**（Direction を Performance Spec へ解決する段）。subtext を具体的な抑揚へ
+変換する仕組みの詳細は [docs/resolve.md](docs/resolve.md)。
 
 ## セットアップ（クローンから動くまで）
 
@@ -133,29 +139,27 @@ bin/generate.py --character mashiro --performance anxious-night-call \
 再生成（保存済み Spec を再利用・LLM は呼ばない）:
 
 ```bash
-bin/regenerate.py projects/demo/assets/morning/mashiro_morning.params.yaml \
-    --out-dir output_regen
+bin/regenerate.py examples/mashiro-night/mashiro_night.params.yaml \
+    --out-dir /tmp/regen
 ```
+
+## 蒸留（大量インプット → 資材）
+
+手で埋める `init` の代わりに、物語・脚本・人物描写からキャラと演技を自動生成する：
+
+```bash
+bin/distill.py batch story.txt                    # 一括蒸留：物語 → 主要キャラ複数 × 代表シーン複数
+bin/distill.py character "金髪で低い声の青年" --name rei      # 単発：キャラ1体
+bin/distill.py performance "深夜、返事が怖い電話" --name anxious-call  # 単発：演技1つ
+```
+
+`--synthesize` でキャラの元音声（経路B）も生成・登録、`--dry-run` で書き出さず YAML を確認。
+蒸留の設計（理解→選択→翻訳・schema 制約）は [docs/distill.md](docs/distill.md)。
 
 ## 声量（loudness）の三層分業
 
-「声を大きくしたい」を単一のボリュームで済ませない：
-
-| レイヤ | フィールド | 何を表すか |
-| --- | --- | --- |
-| Direction（意図） | `performance.volume` | 演出上の「ささやく／叫ぶ」 |
-| Interpretation（実現） | `loudness.effort` | 声帯の張り・努力（張り） |
-| Mixing（量） | ピーク正規化 | 再生音量の統一（張りには非関与） |
-
-Direction の `volume` は Resolve が `loudness.effort`（relaxed / normal / projected / strained）へ解決し、
-Mixing は `normalize.py` のピーク正規化のみ。**ゲインを上げても「張り」は増えない**
-（M0 実測：angry rms 0.086 vs sad 0.055 は音量でなく演技）。
+「声を大きくしたい」を単一のボリュームで済ませず、Direction（意図）→ Interpretation（張り）→ Mixing（量）の三層で分離する。詳細は [docs/loudness.md](docs/loudness.md)。
 
 ## 弱い声への方針
 
-特定の声（例：男性老人）が弱い場合、**使用者が声を拡充して参照に指定する**のが既定。
-開発者が全声を揃えない。足りない声は `bin/reference.py` で `references/` に追加し、
-`.voice.yaml` の `reference_audio` で話者キーかパスを指定する。
-
-- `bin/reference.py synthesize <key> --character <name>` … ローカル生成（経路B・参照不要）
-- `bin/reference.py add <wav> <key> --license … --source …` … 著作権フリー音源の登録
+特定の声が弱い場合、**使用者が声を拡充して参照に指定する**のが既定（開発者が全声を揃えない）。足りない声は `bin/reference.py` で `references/` に追加し、`.voice.yaml` の `reference_audio` で指定する。詳細は [docs/reference-voices.md](docs/reference-voices.md)。

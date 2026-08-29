@@ -1,0 +1,49 @@
+name: mashiro_scene_night
+metadata:
+  asset_type: voice
+  character: 真白
+  age: young_adult
+  gender: female
+  emotion: anxiety
+  intensity: 0.5
+  delivery: restrained
+  intonation: neutral
+  subtext: ''
+  dialogue: ……まだ、起きてる？
+  provider: tsukasa
+  sample_rate: 24000
+  created_at: '2026-08-29T09:17:52.647481+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: 真白
+    reference_audio: female_young_p308
+    voice:
+      age: young_adult
+      gender: female
+      pitch: medium_high
+      texture: soft
+      breathiness: slight
+      resonance: head
+  performance_spec:
+    emotion:
+      primary: anxiety
+      intensity: 0.5
+    loudness:
+      effort: relaxed
+    prosody:
+      pace: slow
+      pitch: natural
+      intonation: neutral
+      pauses: []
+      emphasis: []
+      breath: []
+    delivery: restrained
+    subtext: ''
+  dialogue: ……まだ、起きてる？
+  seed: 471317249
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 0.9
+  sha1: 80be639de71f

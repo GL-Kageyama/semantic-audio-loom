@@ -1,0 +1,43 @@
+{
+  "name": "semantic-audio-loom",
+  "owner": {
+    "name": "GL-Kageyama"
+  },
+  "metadata": {
+    "description": "Semantic Audio Loom — 台詞の裏の意味（subtext）まで反映した音声を生成するエンジン。Direction/Interpretation 分離と、参照音声・キャラ・演技の再利用資材が核。"
+  },
+  "plugins": [
+    {
+      "name": "semantic-audio-loom",
+      "source": "./",
+      "description": "Semantic Audio Loom — Context + Intent + State + Emotion + Performance Direction から、subtext（台詞の裏の意味）まで反映した音声を生成する。Direction（監督＝意図）と Interpretation（俳優＝実現）を Performance Spec で分離し、参照音声（声の実体）・キャラ（誰の声か）・演技（どう演じるか）を名前で再利用する。Tsukasa_Speech で合成（~5GB は外部・SAL_TSUKASA_DIR で指定）。",
+      "version": "0.1.0",
+      "author": {
+        "name": "GL-Kageyama"
+      },
+      "license": "MIT",
+      "languages": [
+        "ja"
+      ],
+      "keywords": [
+        "claude-code",
+        "ai",
+        "voice",
+        "audio",
+        "tts",
+        "subtext",
+        "performance",
+        "skill"
+      ],
+      "category": "workflow",
+      "tags": [
+        "voice",
+        "audio",
+        "tts",
+        "subtext",
+        "performance"
+      ],
+      "strict": false
+    }
+  ]
+}

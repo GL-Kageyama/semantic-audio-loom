@@ -1,0 +1,37 @@
+name: mashiro_morning
+metadata:
+  asset_type: voice
+  character: 真白
+  age: young_adult
+  gender: female
+  emotion: joy
+  intensity: moderate
+  delivery: null
+  dialogue: おはよう。今日はいい天気だね。
+  provider: tsukasa
+  sample_rate: 24000
+  created_at: '2026-08-29T09:04:41.271533+00:00'
+parameters:
+  version: 1
+  provider: tsukasa
+  voice_profile:
+    character: 真白
+    reference_audio: female_young_p308
+    voice:
+      age: young_adult
+      gender: female
+      pitch: medium_high
+      texture: soft
+      breathiness: slight
+      resonance: head
+  emotion:
+    primary: joy
+    intensity: moderate
+  performance:
+    speed: natural
+  dialogue: おはよう。今日はいい天気だね。
+  seed: 42
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.0
+  sha1: cf68e9ae414b

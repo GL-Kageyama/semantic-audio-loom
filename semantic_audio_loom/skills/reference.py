@@ -70,3 +70,59 @@ def register(key: str, wav_path: str, entry: dict) -> str:
     m[key] = entry
     save_manifest(m)
     return dst
+
+
+def duration_sec(path: str):
+    """.wav の長さ（秒）を返す。読めなければ None。"""
+    try:
+        import soundfile as sf
+        return round(float(sf.info(path).duration), 2)
+    except Exception:
+        try:
+            import wave
+            with wave.open(path, "rb") as w:
+                return round(w.getnframes() / w.getframerate(), 2)
+        except Exception:
+            return None
+
+
+def synthesize_reference(key: str, voice: dict, line: str | None = None, seed: int | None = None, provider: str | None = None) -> str:
+    """キャラの声質（voice dict）から、経路B（参照不要）で参照音声を生成・登録する。
+
+    voice は voice_profile の voice 部分（age/gender/pitch/texture/breathiness/resonance）。
+    bin/reference.py（Step 0）と bin/distill.py（蒸留の --synthesize）が共用する。
+    経路B は女性バイアスが強い（男性の深い声・老人は弱い）。
+
+    戻り値は登録された .wav のパス。
+    """
+    from semantic_audio_loom.engine import AudioAssetEngine
+    from semantic_audio_loom.types import GenerationIntent
+
+    if not voice:
+        raise ValueError("声の属性（voice）が空です")
+    profile = {"voice": dict(voice)}
+    line = line or "こんにちは。今日は、穏やかな一日ですね。"
+    intent = GenerationIntent(
+        asset_type="voice",
+        voice_profile=profile,
+        emotion={"primary": "neutral", "intensity": "none"},
+        performance={"delivery": "controlled", "speed": "natural"},
+        dialogue=line,
+        seed=seed,
+    )
+
+    engine = AudioAssetEngine(provider_name=provider, resolve_mode="rule")
+    import tempfile
+    with tempfile.TemporaryDirectory() as tmp:
+        asset = engine.generate(intent, out_dir=tmp, name=key)
+        gender_code = {"female": "F", "male": "M"}.get(voice.get("gender"), "?")
+        entry = {
+            "age": voice.get("age", "adult"),
+            "gender": gender_code,
+            "duration_sec": duration_sec(asset.path),
+            "source": "local generation (Tsukasa_Speech 経路B / Semantic Audio Loom synthesize)",
+            "license": "generated — no upstream license",
+            "source_files": [f"synthesized from profile: {voice}"],
+        }
+        dst = register(key, asset.path, entry)
+    return dst

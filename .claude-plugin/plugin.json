@@ -1,0 +1,27 @@
+{
+  "name": "semantic-audio-loom",
+  "version": "0.1.0",
+  "description": "Semantic Audio Loom — Context + Intent + State + Emotion + Performance Direction から、台詞の裏の意味（subtext）まで反映した音声を生成するエンジン。Direction（監督）と Interpretation（俳優）を分離し、参照音声（声の実体）・キャラ（誰の声か）・演技（どう演じるか）の 3 資材を名前で再利用して、台詞ごとに演技付きの声を生成する。",
+  "author": {
+    "name": "GL-Kageyama"
+  },
+  "license": "MIT",
+  "languages": [
+    "ja"
+  ],
+  "keywords": [
+    "claude-code",
+    "ai",
+    "voice",
+    "audio",
+    "tts",
+    "subtext",
+    "performance",
+    "skill",
+    "semantic-audio"
+  ],
+  "mcpServers": {},
+  "skills": [
+    "./skills/"
+  ]
+}

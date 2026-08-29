@@ -27,20 +27,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from semantic_audio_loom import config
 from semantic_audio_loom.skills.character_voice import character_path, load_voice_profile
-from semantic_audio_loom.skills.reference import load_manifest, register
-
-
-def _duration_sec(path: str):
-    try:
-        import soundfile as sf
-        return round(float(sf.info(path).duration), 2)
-    except Exception:
-        try:
-            import wave
-            with wave.open(path, "rb") as w:
-                return round(w.getnframes() / w.getframerate(), 2)
-        except Exception:
-            return None
+from semantic_audio_loom.skills.reference import duration_sec, load_manifest, register, synthesize_reference
 
 
 def cmd_list(args) -> None:
@@ -57,9 +44,6 @@ def cmd_list(args) -> None:
 
 
 def cmd_synthesize(args) -> None:
-    from semantic_audio_loom.engine import AudioAssetEngine
-    from semantic_audio_loom.types import GenerationIntent
-
     # キャラ資材（voice.yaml）から声の属性を入力（物語上のキャラに合わせる）。
     vp = {}
     if args.character_file:
@@ -80,33 +64,8 @@ def cmd_synthesize(args) -> None:
         print("--character（キャラ）か --gender/--age などで声の属性を指定してください。", file=sys.stderr)
         sys.exit(2)
 
-    # 経路B（参照不要）で生成するため reference_audio は持たせない。
-    profile = {"voice": voice}
-    line = args.line or "こんにちは。今日は、穏やかな一日ですね。"
-    intent = GenerationIntent(
-        asset_type="voice",
-        voice_profile=profile,
-        emotion={"primary": "neutral", "intensity": "none"},
-        performance={"delivery": "controlled", "speed": "natural"},
-        dialogue=line,
-        seed=args.seed,
-    )
-
     print(f"生成中（経路B・参照なし）… key={args.key} voice={voice}")
-    engine = AudioAssetEngine(provider_name=args.provider, resolve_mode="rule")
-    import tempfile
-    with tempfile.TemporaryDirectory() as tmp:
-        asset = engine.generate(intent, out_dir=tmp, name=args.key)
-        gender_code = {"female": "F", "male": "M"}.get(voice.get("gender"), "?")
-        entry = {
-            "age": voice.get("age", "adult"),
-            "gender": gender_code,
-            "duration_sec": _duration_sec(asset.path),
-            "source": "local generation (Tsukasa_Speech 経路B / Semantic Audio Loom synthesize)",
-            "license": "generated — no upstream license",
-            "source_files": [f"synthesized from profile: {voice}"],
-        }
-        dst = register(args.key, asset.path, entry)
+    dst = synthesize_reference(args.key, voice, line=args.line, seed=args.seed, provider=args.provider)
     print("登録しました:", dst)
 
 
@@ -114,7 +73,7 @@ def cmd_add(args) -> None:
     entry = {
         "age": args.age or "unknown",
         "gender": args.gender or "?",
-        "duration_sec": _duration_sec(args.wav),
+        "duration_sec": duration_sec(args.wav),
         "source": args.source or "user-supplied",
         "license": args.license or "unspecified — 再配布前に確認必須",
         "source_files": [args.wav],

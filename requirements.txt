@@ -10,3 +10,6 @@ cutlet>=0.3.0        # 日本語 phonemize（Tsukasa の Utils/phonemize が使�
 librosa>=0.10        # 検証（f0 実測）用。生成本体には不要
 soundfile>=0.12      # 参照音声の読み込み（オプション。無くても wave にフォールバック）
 scipy>=1.10          # librosa の依存
+
+# テスト（tests/ の pytest）。生成・実行には不要。
+pytest>=7.0
