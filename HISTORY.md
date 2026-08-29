@@ -75,3 +75,16 @@
 - エンジン結線：resolve / distill / llm.client / engine に `lang` を追加。波括弧衝突回避のため、JSON スキーマ例を含む system プロンプトは `.format()` せず、`.format()` するのは `resolve.user` と `distill.retry` のみ。
 - **経緯**：当初は並列リポジトリ（wisdom/elevate）と同じ「フル3層（locales+prompts+docs ミラー・既定 en）」を検討したが、(1) Tsukasa が日本語 TTS のため音声出力は日本語のまま＝非日本語話者が主対象になる可能性が低く docs 翻訳の実利が薄い、(2) 既定 en だと日本語 README と CLI 出力が非整合——の2点から「プロンプト＋CLI のみ・既定 ja・README/docs は日本語のまま」に絞った。docs ミラーツリーは作らない。
 - tests/test_i18n.py 追加（言語解決の優先順位・3言語キー整合・en/zh プロンプトに日本語かな漏れなし・モック LLM で3言語完走・CLI `--lang` スモーク）。テスト 24 件。
+
+## 2026-08-30 — 語尾の「ぶった斬れ」対策（末尾フェード）
+
+- 実測：Tsukasa の拡散出力は release を持たない音素（「る」「た」などの短母音・促音系）だと
+  最終フレームを有声のまま終端させる（末尾 RMS 0.16〜0.27・decay 0ms）。長母音
+  （「う」「い」）は自然減衰（decay 500〜620ms）。要の一打は文末＝切断位置に置かれるため、
+  重要な語ほど「余韻がぶった斬れる」。
+- B（余韻の回復）は不発：`rate_of_speech` を 1.0→0.75 に下げても decay は 0ms のまま。
+  `intonation=falling`（"trailing off" 追加）も sadness 感情句に既に含まれており変化なし。
+- 方針 A（末尾フェード）で確定：`normalize` に半ハン余弦フェード（`TAIL_FADE_MS=30ms`）を
+  追加。クリック除去に留め、余韻そのものは復元しない（モデルが release を出さないため）。
+  自然減衰した波形（末尾無音）には実質 no-op。
+- tests/test_normalize.py 追加（3件）。
