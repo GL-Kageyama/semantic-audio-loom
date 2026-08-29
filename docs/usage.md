@@ -54,6 +54,23 @@ bin/generate.py --character mashiro --performance anxious-night-call \
   などで話者が本人でない場合に有効。例: 真白（`name_reading: ましろ`）→「真白は」が「ましろは」
   と発音される。手書き `《》` と自動ふりがなは共存でき、両方とも読みへ反映される。
 
+## シーン合成（bin/scene.py）
+
+複数人物の台詞を「間（無音）」で連結し、1 つの WAV にする。`scene.yaml` がキュー
+（キャラ＋台詞＋Direction＋`pause_before`）を宣言し、各キューを voice 生成で作ってから連結する。
+
+```bash
+# 生成（scene.yaml → scene.wav + scene.params.yaml）
+bin/scene.py --scene-file examples/gozen-niji-ch01/scene.yaml --project gozen-niji
+
+# 再生成（保存済み Spec を再利用・LLM なし＝seed決定論）
+bin/scene.py --params examples/gozen-niji-ch01/gozen-niji-ch01.params.yaml --out-dir /tmp/regen
+```
+
+- `--scene-file`（render）と `--params`（regen）は排他。片方必須。
+- 間（余白）＝無音。`default_pause`（秒）が各キューの既定、`pause_before`（秒）で個別上書き。
+- 環境音・BGM・ducking・パンは将来スコープ。詳細は [scene.md](scene.md)。
+
 ## 再生成（bin/regenerate.py）
 
 保存済み Spec を再利用・LLM は呼ばない（再現性）。

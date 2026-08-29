@@ -27,8 +27,12 @@ asset_type を拒否する。
 | 1 — Character Voice | voice / WAV / Metadata | 実装済み |
 | 2 — Ambience / SFX | ambience・sfx Skill → Local Audio Models | 将来 |
 | 3 — BGM | bgm Skill → Local / Cloud Music Model | 将来 |
-| 4 — Audio Mixing | 音量・タイミング・フェード・パン・ducking・マスター | 将来 |
+| 4 — Audio Mixing | 音量・タイミング・フェード・パン・ducking・マスター | 一部実装済み（voice 合成のみ） |
 | 5 — Video Integration | 映像と音響を Scene Definition から分岐 | 将来 |
+
+Phase 4 のうち **voice 合成（Scene / Timeline）** は実装済み：複数 voice キューを無音
+（間）で連結して 1 WAV にする（`bin/scene.py`・[scene.md](scene.md)）。ducking・パン・
+クロスフェード・LUFS マスター正規化、および ambience/bgm の重ね合わせは将来スコープ。
 
 ## なぜ正典化するか
 

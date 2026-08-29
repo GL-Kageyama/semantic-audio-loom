@@ -17,7 +17,7 @@ from __future__ import annotations
 import json
 import os
 
-from semantic_audio_loom.types import ASSET_TYPES, GenerationIntent
+from semantic_audio_loom.types import ASSET_TYPES, GenerationIntent, Scene
 
 _SCHEMA_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "schemas")
 
@@ -71,3 +71,30 @@ def validate_performance_asset(direction: dict) -> None:
     import jsonschema
 
     jsonschema.validate(direction, _load("performance_asset.schema.json"))
+
+
+def _scene_to_dict(scene: Scene) -> dict:
+    """Scene（dataclass）を scene.schema.json の形（flat Direction）へ変換する。"""
+    cues = []
+    for c in scene.cues:
+        cue = {
+            "character": c.character,
+            "line": c.line,
+            "emotion": c.emotion,
+            "intensity": c.intensity,
+            "situation": c.situation,
+            "subtext": c.subtext,
+            "pause_before": c.pause_before,
+            "seed": c.seed,
+            "name": c.name,
+        }
+        cue.update(c.performance)  # volume/speed/pitch/breathiness/delivery
+        cues.append({k: v for k, v in cue.items() if v is not None})
+    return {"name": scene.name, "default_pause": scene.default_pause, "cues": cues}
+
+
+def validate_scene(scene: Scene) -> None:
+    """scene（複数 voice キューの合成）を scene.schema.json で検証。"""
+    import jsonschema
+
+    jsonschema.validate(_scene_to_dict(scene), _load("scene.schema.json"))

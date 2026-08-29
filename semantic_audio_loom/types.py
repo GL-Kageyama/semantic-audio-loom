@@ -61,3 +61,36 @@ class AudioAsset:
     metadata: dict
     parameters: dict
     path: Optional[str] = None
+
+
+@dataclass
+class SceneCue:
+    """Scene（タイムライン）内の 1 つの発話。
+
+    character は名前で参照し（characters/<name>.voice.yaml）、voice の 7 段フロー
+    そのもので生成する。pause_before は「このキューの前に入れる無音（秒）」＝間
+    （余白）。間はタイムライン（mixer）の関心事なので voice の build_intent には渡さない。
+    """
+
+    character: str
+    line: str
+    emotion: str = "neutral"
+    intensity: str = "none"
+    performance: dict = field(default_factory=dict)  # volume/speed/pitch/breathiness/delivery
+    situation: str = ""
+    subtext: str = ""
+    pause_before: Optional[float] = None  # 秒。None なら Scene.default_pause を継承
+    seed: Optional[int] = None
+    name: str = ""
+
+
+@dataclass
+class Scene:
+    """複数キューを無音（間）で連結する場面（タイムライン）。
+
+    voice を組み合わせる「合成」であり、5 Asset Type の正典には加えない。
+    """
+
+    name: str = ""
+    default_pause: float = 0.0  # 各キューの既定の間（秒）
+    cues: list[SceneCue] = field(default_factory=list)

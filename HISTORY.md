@@ -116,3 +116,22 @@
   語りサンプル（opening / refrain / ending）を再生成し、`reading` に「ましろ」が入ることを
   params.yaml で確認。
 - 新設: `text.py` に `annotate_reading`、`tests/test_text.py`（+3件）、`tests/test_character_voice.py`（3件）。
+
+## 2026-08-30 — Scene / Timeline（複数人物 × 間の合成）
+
+- 動機：`bin/generate.py` が「1 キャラ × 1 台詞 → 1 WAV」に閉じ、真白・ニジ・語りを
+  「一つの場面（余白含む）として 1 WAV に複数人物を登場させる」ことができなかった。
+  外部 DAW 合成だと間のタイミングが DAW プロジェクトに閉じ、seed決定論（再生）が壊れる。
+- 設計：scene は voice の 7 段フローの外側に置く合成レイヤ。`scene.yaml`（宣言的な源）が
+  キュー（キャラ＋台詞＋Direction＋pause_before）を宣言し、各キューを既存 voice 生成で
+  作って無音（間）で連結する。scene は 5 Asset Type の正典に加えない（voice の合成）。
+- 「間（余白）」＝無音（秒）。`pause_before`（個別）と `default_pause`（既定）。既存
+  `performance_direction.schema.json` に予約済みだった `pause_before` の語彙を採用。
+- 再現性：render が seed を採番して `scene.params.yaml` の `parameters.cues` に各キュー
+  の resolved Spec（voice_profile / performance_spec / dialogue / reading / seed）＋
+  pause_before を記録。`bin/scene.py --params` が `generate_request`（LLM なし）で
+  byte-identical に再生成。
+- 環境音・BGM・ducking・パン・クロスフェード・LUFS マスターは将来スコープ（Phase 4 の残り）。
+- 新設: `engine/mix.py`（silence/mix_cues）、`scene.py`（load_scene/cue_from_params）、
+  `schemas/scene.schema.json`、`bin/scene.py`、`tests/test_mix.py`（6件）、`tests/test_scene.py`（7件）。
+  `types.py` に SceneCue/Scene、`engine/validate.py` に validate_scene、locales ×3 に scene。

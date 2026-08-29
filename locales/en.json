@@ -87,6 +87,15 @@
   "resolve": {
     "fallback": "[resolve] LLM failed, falling back to Rule: {exc}"
   },
+  "scene": {
+    "description": "Synthesize multiple characters' lines into one WAV (scene).",
+    "help_scene_file": "Path to scene.yaml (character + line + direction + pauses)",
+    "help_params": "Path to a saved scene.params.yaml (regenerate, no LLM)",
+    "help_project": "Output directory projects/<project>/assets/<scene>/",
+    "help_name": "Output name (prefix for .wav/.params.yaml)",
+    "help_out_dir": "Output directory for --params regeneration",
+    "err_need_source": "Either --scene-file or --params is required"
+  },
   "llm": {
     "auth_required": "Missing Claude credentials (ANTHROPIC_API_KEY or ANTHROPIC_AUTH_TOKEN)",
     "empty_response": "empty response",

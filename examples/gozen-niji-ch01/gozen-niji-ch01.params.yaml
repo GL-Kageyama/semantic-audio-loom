@@ -1,0 +1,153 @@
+name: gozen-niji-ch01
+metadata:
+  kind: scene
+  name: gozen-niji-ch01
+  cue_count: 3
+  sample_rate: 24000
+  duration_sec: 18.819
+  created_at: '2026-08-29T18:16:58.979487+00:00'
+parameters:
+  version: 1
+  sample_rate: 24000
+  default_pause: 0.6
+  cues:
+  - version: 2
+    provider: tsukasa
+    voice_profile:
+      character: 語り
+      reference_audio: gozen-niji-katari
+      voice:
+        age: adult
+        gender: female
+        pitch: medium
+        texture: neutral
+        breathiness: slight
+        resonance: chest
+    performance_spec:
+      emotion:
+        primary: calm
+        intensity: 0.35
+      loudness:
+        effort: relaxed
+      prosody:
+        pace: natural
+        pitch: natural
+        intonation: flat
+        pauses:
+        - after: 夜の十一時。
+          duration: 0.5
+        - after: 布団の中で、
+          duration: 0.3
+        - after: スマホをいじっていた。
+          duration: 0.5
+        - after: 画面の光が、
+          duration: 0.3
+        - after: 部屋の暗い天井に、
+          duration: 0.4
+        emphasis:
+        - word: 夜の十一時
+          strength: medium
+        - word: 薄い青
+          strength: weak
+        breath:
+        - at: 夜の十一時。
+          type: slight
+        - at: 塗ってた。
+          type: slight
+      delivery: controlled
+      subtext: 深夜の静けさ。真白の日常を、説明せず観察だけして示す。
+    dialogue: 夜の十一時。真白は、布団の中で、スマホをいじっていた。画面の光が、部屋の暗い天井に、ぼんやりと、薄い青を塗ってた。
+    reading: 夜の十一時。ましろは、布団の中で、スマホをいじっていた。画面の光が、部屋の暗い天井に、ぼんやりと、薄い青を塗ってた。
+    seed: 1115407469
+    alpha: 0.35
+    beta: 0.7
+    rate_of_speech: 1.0
+    sha1: 0cba74930121
+    pause_before: 0.6
+    name: cue_00
+    character: gozen-niji-katari
+  - version: 2
+    provider: tsukasa
+    voice_profile:
+      character: 真白
+      name_reading: ましろ
+      reference_audio: mashiro
+      voice:
+        age: adolescent
+        gender: female
+        pitch: medium_high
+        texture: soft
+        breathiness: slight
+        resonance: intimate
+    performance_spec:
+      emotion:
+        primary: anxiety
+        intensity: 0.3
+      loudness:
+        effort: relaxed
+      prosody:
+        pace: slow
+        pitch: natural
+        intonation: wavering
+        pauses:
+        - after: まだ
+          duration: 0.3
+        emphasis:
+        - word: まだ
+          strength: medium
+        breath:
+        - at: まだ
+          type: slight
+      delivery: hesitant
+      subtext: 返事が怖い。でも、繋がりを求めてしまう。
+    dialogue: ……まだ、起きてる？
+    reading: ''
+    seed: 2033485961
+    alpha: 0.35
+    beta: 0.7
+    rate_of_speech: 0.9
+    sha1: 80be639de71f
+    pause_before: 0.8
+    name: cue_01
+    character: mashiro
+  - version: 2
+    provider: tsukasa
+    voice_profile:
+      character: ニジ
+      reference_audio: niji
+      voice:
+        age: adolescent
+        gender: female
+        pitch: high
+        texture: clear
+        breathiness: moderate
+        resonance: head
+    performance_spec:
+      emotion:
+        primary: calm
+        intensity: 0.2
+      loudness:
+        effort: relaxed
+      prosody:
+        pace: natural
+        pitch: natural
+        intonation: falling
+        pauses:
+        - after: 起きてるよ
+          duration: 0.3
+        emphasis:
+        - word: ずっと
+          strength: medium
+        breath: []
+      delivery: gentle
+      subtext: 待っていた。責めず、ただ応える。
+    dialogue: 起きてるよ。ずっと、待ってた。
+    reading: ''
+    seed: 427002564
+    alpha: 0.35
+    beta: 0.7
+    rate_of_speech: 1.0
+    sha1: 3cf956860ba6
+    pause_before: 0.6
+    name: cue_02
+    character: niji

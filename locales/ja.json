@@ -87,6 +87,15 @@
   "resolve": {
     "fallback": "[resolve] LLM に失敗したため Rule へフォールバック: {exc}"
   },
+  "scene": {
+    "description": "複数人物の台詞を 1 つの WAV に合成する（シーン）。",
+    "help_scene_file": "scene.yaml のパス（キャラ＋台詞＋Direction＋間）",
+    "help_params": "保存済み scene.params.yaml のパス（再生成・LLM なし）",
+    "help_project": "保存先 projects/<project>/assets/<scene>/",
+    "help_name": "出力名（.wav/.params.yaml の接頭辞）",
+    "help_out_dir": "--params 再生成時の保存先ディレクトリ",
+    "err_need_source": "--scene-file か --params のどちらか一方が必要です"
+  },
   "llm": {
     "auth_required": "Claude の認証情報がありません（ANTHROPIC_API_KEY か ANTHROPIC_AUTH_TOKEN）",
     "empty_response": "空の応答",

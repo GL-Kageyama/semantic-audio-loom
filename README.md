@@ -19,6 +19,7 @@ Context + Intent + State + Emotion + Performance Direction → 意味的音響�
 | キャラ（誰の声か） | `bin/character.py` | `characters/<name>.voice.yaml` |
 | 演技の振り付け（どう演じるか） | `bin/performance.py` | `performances/<name>.direction.yaml` |
 | 生成音声（産物） | `bin/generate.py` | `projects/<project>/assets/<scene>/` |
+| 場面（複数人物を間で合成） | `bin/scene.py` | `scene.yaml` → `projects/<project>/assets/<scene>/` |
 
 キャラと演技は独立に再利用でき、名前で組み合わせられる。生成音声はキャラ/演技資材と
 混ぜず、プロジェクトごとに分離する。
@@ -91,6 +92,7 @@ skills/       .claude-plugin/              # facade スキル / プラグイン�
 | [docs/asset-types.md](docs/asset-types.md) | 正典 5 種とロードマップ（Phase 1〜5） |
 | [docs/distill.md](docs/distill.md) | 蒸留（大量インプット → キャラ/演技） |
 | [docs/loudness.md](docs/loudness.md) | 声量の三層分業 |
+| [docs/scene.md](docs/scene.md) | シーン合成（複数人物×間） |
 | [docs/reference-voices.md](docs/reference-voices.md) | 参照音声と拡充・弱い声への方針 |
 | [docs/setup.md](docs/setup.md) | セットアップ（Tsukasa・LLM・環境変数） |
 | [docs/usage.md](docs/usage.md) | 全 CLI の使い方 |

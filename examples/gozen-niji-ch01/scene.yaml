@@ -1,0 +1,30 @@
+# gozen-niji-ch01 — 真白・ニジ・語りの 3 声を 1 つの場面に合成する例。
+# scene.schema.json 準拠。character は characters/<name>.voice.yaml のファイル名。
+name: gozen-niji-ch01
+default_pause: 0.6            # 各キューの既定の間（秒）
+cues:
+  - character: gozen-niji-katari   # 語り（三人称・真白の肩越し）
+    line: 夜の十一時。真白は、布団の中で、スマホをいじっていた。画面の光が、部屋の暗い天井に、ぼんやりと、薄い青を塗ってた。
+    emotion: calm
+    intensity: subtle
+    volume: quiet
+    speed: natural
+    delivery: controlled
+    subtext: 深夜の静けさ。真白の日常を、説明せず観察だけして示す。
+  - character: mashiro             # 真白（独白）
+    line: ……まだ、起きてる？
+    emotion: anxiety
+    intensity: subtle
+    volume: whisper
+    speed: slow
+    delivery: hesitant
+    subtext: 返事が怖い。でも、繋がりを求めてしまう。
+    pause_before: 0.8              # 語りとの間を長めに
+  - character: niji                # ニジ（台詞）
+    line: 起きてるよ。ずっと、待ってた。
+    emotion: calm
+    intensity: subtle
+    volume: quiet
+    speed: natural
+    delivery: gentle
+    subtext: 待っていた。責めず、ただ応える。

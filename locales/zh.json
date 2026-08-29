@@ -87,6 +87,15 @@
   "resolve": {
     "fallback": "[resolve] LLM 失败，回退到 Rule：{exc}"
   },
+  "scene": {
+    "description": "将多位角色的台词合成为一个 WAV（场景）。",
+    "help_scene_file": "scene.yaml 的路径（角色＋台词＋Direction＋停顿）",
+    "help_params": "已保存 scene.params.yaml 的路径（再生成・无需 LLM）",
+    "help_project": "保存位置 projects/<project>/assets/<scene>/",
+    "help_name": "输出名（.wav/.params.yaml 的前缀）",
+    "help_out_dir": "--params 再生成时的保存目录",
+    "err_need_source": "需要 --scene-file 或 --params 之一"
+  },
   "llm": {
     "auth_required": "缺少 Claude 凭据（ANTHROPIC_API_KEY 或 ANTHROPIC_AUTH_TOKEN）",
     "empty_response": "空响应",

@@ -1,0 +1,127 @@
+{
+  "type": "object",
+  "required": [
+    "cues"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "default_pause": {
+      "type": "number",
+      "minimum": 0.0
+    },
+    "cues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "character",
+          "line"
+        ],
+        "properties": {
+          "character": {
+            "type": "string",
+            "minLength": 1
+          },
+          "line": {
+            "type": "string",
+            "minLength": 1
+          },
+          "emotion": {
+            "enum": [
+              "anxiety",
+              "sadness",
+              "anger",
+              "fear",
+              "joy",
+              "confidence",
+              "loneliness",
+              "excitement",
+              "calm",
+              "guilt",
+              "neutral"
+            ]
+          },
+          "intensity": {
+            "enum": [
+              "none",
+              "subtle",
+              "moderate",
+              "strong",
+              "overwhelming"
+            ]
+          },
+          "volume": {
+            "enum": [
+              "whisper",
+              "quiet",
+              "normal",
+              "loud",
+              "shout"
+            ]
+          },
+          "speed": {
+            "enum": [
+              "very_slow",
+              "slow",
+              "natural",
+              "fast",
+              "very_fast"
+            ]
+          },
+          "pitch": {
+            "enum": [
+              "very_low",
+              "low",
+              "slightly_low",
+              "natural",
+              "slightly_high",
+              "high"
+            ]
+          },
+          "breathiness": {
+            "enum": [
+              "none",
+              "slight",
+              "moderate",
+              "heavy"
+            ]
+          },
+          "delivery": {
+            "enum": [
+              "restrained",
+              "subtle",
+              "suppressed",
+              "controlled",
+              "flat",
+              "gentle",
+              "intimate",
+              "aggressive",
+              "cheerful",
+              "cold",
+              "desperate",
+              "hesitant"
+            ]
+          },
+          "situation": {
+            "type": "string"
+          },
+          "subtext": {
+            "type": "string"
+          },
+          "pause_before": {
+            "type": "number",
+            "minimum": 0.0
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
