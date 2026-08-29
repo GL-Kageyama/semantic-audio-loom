@@ -11,6 +11,7 @@ from __future__ import annotations
 import os
 
 from semantic_audio_loom import config
+from semantic_audio_loom.text import annotate_reading, parse_ruby
 from semantic_audio_loom.types import GenerationIntent
 
 
@@ -44,6 +45,26 @@ def list_characters() -> list[str]:
     return names
 
 
+def name_reading_registry() -> dict[str, str]:
+    """キャラ表示名 → 読み の一覧（`name_reading` を持つキャラのみ）。
+
+    台詞中のキャラ名（固有名詞）に自動でルビを振るために使う。phonemize が
+    固有名詞を誤読する（例: 「真白」→「まっしろ」）ため、`characters/` の
+    `name_reading` から読みを引き当てる。
+    """
+    registry: dict[str, str] = {}
+    for name in list_characters():
+        try:
+            vp = load_voice_profile(character_path(name))
+        except (OSError, FileNotFoundError):
+            continue
+        display = vp.get("character")
+        reading = vp.get("name_reading")
+        if display and reading:
+            registry[display] = reading
+    return registry
+
+
 def build_intent(
     voice_profile: dict,
     dialogue: str,
@@ -55,6 +76,18 @@ def build_intent(
     subtext: str = "",
     seed: int | None = None,
 ) -> GenerationIntent:
+    # キャラ名（固有名詞）の読みを、voice.yaml の name_reading から自動でルビ化する。
+    # 現在のキャラ（--character-file 等で characters/ 外の可能性）も加味する。
+    registry = name_reading_registry()
+    display = voice_profile.get("character")
+    name_reading = voice_profile.get("name_reading")
+    if display and name_reading:
+        registry[display] = name_reading
+    for word, reading in registry.items():
+        dialogue = annotate_reading(dialogue, word, reading)
+
+    # 台詞にふりがな《》があれば、表示用台詞（dialogue）と読み（reading）に分離する。
+    clean, reading = parse_ruby(dialogue)
     return GenerationIntent(
         asset_type="voice",
         voice_profile=voice_profile,
@@ -63,6 +96,7 @@ def build_intent(
         emotion={"primary": emotion, "intensity": intensity},
         performance=performance or {},
         subtext=subtext,
-        dialogue=dialogue,
+        dialogue=clean,
+        reading=reading,
         seed=seed,
     )

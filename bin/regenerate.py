@@ -38,6 +38,7 @@ def main() -> None:
         voice_profile=params["voice_profile"],
         performance_spec=params["performance_spec"],
         dialogue=params["dialogue"],
+        reading=params.get("reading", ""),
         seed=params["seed"],
         quality="high",
         provider_hint=params.get("provider"),

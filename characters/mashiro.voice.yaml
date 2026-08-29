@@ -5,6 +5,7 @@
 # 声質は design.md の「声は小さい（2-1）」「内省的・控えめ（2-2）」
 # 「本心を言うとき語尾が短くなる（2-13）」から。
 character: 真白
+name_reading: ましろ   # キャラ名の読み。phonemize が「真白」を「まっしろ」と誤読するため（台詞中の名前に自動でルビを振る）
 reference_audio: mashiro   # 経路Bで生成した真白専用の元音声（references/mashiro.wav）
 voice:
   age: adolescent     # 高校二年生（child / adolescent / young_adult / adult / middle_aged / elderly）

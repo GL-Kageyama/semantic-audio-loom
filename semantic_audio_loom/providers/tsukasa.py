@@ -214,7 +214,9 @@ class TsukasaProvider:
         seed = request.seed
         ros = _SPEED_TO_ROS.get(prosody.get("pace"), 1.0)
 
-        line = _phonemize(dialogue)
+        # 読み（ふりがな《》を置換した本文）があればそれを phonemize する。
+        # 無ければ台詞（dialogue）をそのまま phonemize（従来どおり）。
+        line = _phonemize(request.reading or dialogue)
 
         subject = _subject(request.voice_profile)
         perf_prompt = _spec_prompt(subject, spec)

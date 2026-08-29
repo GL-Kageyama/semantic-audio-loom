@@ -1,0 +1,50 @@
+name: katari_ch01_refrain
+metadata:
+  asset_type: voice
+  character: 語り
+  age: adult
+  gender: female
+  emotion: calm
+  intensity: 0.25
+  delivery: restrained
+  intonation: neutral
+  subtext: 関係を壊さないために返さない。自分に言い聞かせる言葉。
+  dialogue: 既読を付けて、画面を閉じる。それが、一番、関係を壊さない。真白は、そう、自分に言い聞かせていた。
+  provider: tsukasa
+  sample_rate: 24000
+  created_at: '2026-08-29T17:39:04.903393+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: 語り
+    reference_audio: gozen-niji-katari
+    voice:
+      age: adult
+      gender: female
+      pitch: medium
+      texture: neutral
+      breathiness: slight
+      resonance: chest
+  performance_spec:
+    emotion:
+      primary: calm
+      intensity: 0.25
+    loudness:
+      effort: relaxed
+    prosody:
+      pace: slow
+      pitch: natural
+      intonation: neutral
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: 関係を壊さないために返さない。自分に言い聞かせる言葉。
+    delivery: restrained
+  dialogue: 既読を付けて、画面を閉じる。それが、一番、関係を壊さない。真白は、そう、自分に言い聞かせていた。
+  reading: きどくを付けて、画面を閉じる。それが、一番、関係を壊さない。ましろは、そう、自分に言い聞かせていた。
+  seed: 202
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 0.9
+  sha1: 8f1a1cea38a5

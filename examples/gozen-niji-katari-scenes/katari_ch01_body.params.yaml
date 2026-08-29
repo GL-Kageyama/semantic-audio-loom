@@ -1,0 +1,49 @@
+name: katari_ch01_body
+metadata:
+  asset_type: voice
+  character: 語り
+  age: adult
+  gender: female
+  emotion: calm
+  intensity: 0.25
+  delivery: restrained
+  intonation: neutral
+  subtext: 無意識に撫で続ける指。行動だけが内面を語る。
+  dialogue: 親指の先だけが、熱を持ってた。今夜、何度、同じ指が、同じ場所を、撫でたか、分からなかった。
+  provider: tsukasa
+  sample_rate: 24000
+  created_at: '2026-08-29T17:14:37.137973+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: 語り
+    reference_audio: gozen-niji-katari
+    voice:
+      age: adult
+      gender: female
+      pitch: medium
+      texture: neutral
+      breathiness: slight
+      resonance: chest
+  performance_spec:
+    emotion:
+      primary: calm
+      intensity: 0.25
+    loudness:
+      effort: relaxed
+    prosody:
+      pace: slow
+      pitch: natural
+      intonation: neutral
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: 無意識に撫で続ける指。行動だけが内面を語る。
+    delivery: restrained
+  dialogue: 親指の先だけが、熱を持ってた。今夜、何度、同じ指が、同じ場所を、撫でたか、分からなかった。
+  seed: 201
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 0.9
+  sha1: f254ad6d98a9

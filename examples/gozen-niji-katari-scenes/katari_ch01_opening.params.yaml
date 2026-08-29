@@ -1,0 +1,50 @@
+name: katari_ch01_opening
+metadata:
+  asset_type: voice
+  character: 語り
+  age: adult
+  gender: female
+  emotion: calm
+  intensity: 0.25
+  delivery: controlled
+  intonation: neutral
+  subtext: 深夜の静けさ。真白の日常を、説明せず観察だけして示す。
+  dialogue: 夜の十一時。真白は、布団の中で、スマホをいじっていた。画面の光が、部屋の暗い天井に、ぼんやりと、薄い青を塗ってた。
+  provider: tsukasa
+  sample_rate: 24000
+  created_at: '2026-08-29T17:38:52.742376+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: 語り
+    reference_audio: gozen-niji-katari
+    voice:
+      age: adult
+      gender: female
+      pitch: medium
+      texture: neutral
+      breathiness: slight
+      resonance: chest
+  performance_spec:
+    emotion:
+      primary: calm
+      intensity: 0.25
+    loudness:
+      effort: relaxed
+    prosody:
+      pace: natural
+      pitch: natural
+      intonation: neutral
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: 深夜の静けさ。真白の日常を、説明せず観察だけして示す。
+    delivery: controlled
+  dialogue: 夜の十一時。真白は、布団の中で、スマホをいじっていた。画面の光が、部屋の暗い天井に、ぼんやりと、薄い青を塗ってた。
+  reading: 夜の十一時。ましろは、布団の中で、スマホをいじっていた。画面の光が、部屋の暗い天井に、ぼんやりと、薄い青を塗ってた。
+  seed: 200
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.0
+  sha1: 0cba74930121

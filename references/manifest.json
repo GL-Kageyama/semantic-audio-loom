@@ -146,5 +146,15 @@
     "source_files": [
       "synthesized from profile: {'age': 'adolescent', 'gender': 'female', 'pitch': 'high', 'texture': 'clear', 'breathiness': 'moderate', 'resonance': 'head'}"
     ]
+  },
+  "gozen-niji-katari": {
+    "age": "adult",
+    "gender": "F",
+    "duration_sec": 4.97,
+    "source": "local generation (Tsukasa_Speech 経路B / Semantic Audio Loom synthesize)",
+    "license": "generated — no upstream license",
+    "source_files": [
+      "synthesized from profile: {'age': 'adult', 'gender': 'female', 'pitch': 'medium', 'texture': 'neutral', 'breathiness': 'slight', 'resonance': 'chest'}"
+    ]
   }
 }

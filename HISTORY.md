@@ -88,3 +88,31 @@
   追加。クリック除去に留め、余韻そのものは復元しない（モデルが release を出さないため）。
   自然減衰した波形（末尾無音）には実質 no-op。
 - tests/test_normalize.py 追加（3件）。
+
+## 2026-08-30 — 読み（ふりがな）の指定（漢字の誤読対策）
+
+- 実測：Tsukasa の phonemize（cutlet / UniDic）が「既読」を `kijomi`（きよみ）と誤読する。
+  `phonemize('既読') => kijomi`、かな読み `phonemize('きどく') => kidokɯ` は正しい。
+  つまり、かなを渡せば正しく発音される（漢字→かな変換だけが誤読の原因）。
+- 対処：`--line` 内に `漢字《かな》` のふりがなを指定できるようにした。`parse_ruby`
+  （`semantic_audio_loom/text.py`）が台詞を（表示用台詞, 読み）に分解し、プロバイダは
+  `reading` があればそれを phonemize、無ければ台詞をそのまま phonemize（従来どおり）。
+  保存される台詞（dialogue）は `《》` を外した綺麗な文。`reading` は params.yaml に保存し
+  regenerate が再現する。
+- 入力 UI はふりがな《》記法のみ（`--reading` フラグは追加しない、ユーザー確認済み）。
+  未アノテーションの漢字は従来どおり cutlet が読む。
+- 新設: `semantic_audio_loom/text.py`（parse_ruby）、`tests/test_text.py`（4件）。
+
+## 2026-08-30 — キャラ名の自動ふりがな（name_reading）
+
+- 実測：語りサンプルで「真白」が `maʔɕiɽo`（まっしろ＝普通名詞「真っ白」）と誤読された。
+  固有名詞の誤読は手書き《》で都度直すには漏れやすく、特にナレーション（話者＝語り）では
+  本人でないキャラ名が台詞に頻出する。
+- 対処：`characters/*.voice.yaml` に `name_reading`（キャラ表示名の読み）を追加。`build_intent`
+  が全キャラの `name_reading` をレジストリ化し、台詞中のキャラ名へ `annotate_reading`
+  （`text.py`、既アノテーションをスキップして `漢字《かな》` を挿入）で自動ルビを振る。
+  手書き《》と自動ふりがなは共存し、両方とも `reading` へ反映される。
+- `mashiro.voice.yaml` に `name_reading: ましろ` を追加（真白→まっしろ誤読への対処）。
+  語りサンプル（opening / refrain / ending）を再生成し、`reading` に「ましろ」が入ることを
+  params.yaml で確認。
+- 新設: `text.py` に `annotate_reading`、`tests/test_text.py`（+3件）、`tests/test_character_voice.py`（3件）。

@@ -42,6 +42,17 @@ bin/generate.py --character mashiro --performance anxious-night-call \
 - `--situation` と `--state-file`（character_state の YAML）が subtext 推論の入力。
   `--subtext` で人間が裏の意味を直接指定もできる。
 - 台詞は日本語（Tsukasa は `phonemize` で読みへ変換）。`--seed` で再現可能。
+- 漢字の読みが誤読される語（例: `既読`→`きよみ`）は、`--line` 内でふりがなを指定できる。
+  `漢字《かな》` の記法で、`《》` は読みにだけ使われ、保存される台詞からは外れる。
+
+  ```bash
+  --line "既読《きどく》を付けて、画面を閉じる。"   # 「きどく」と発音
+  ```
+
+- キャラ名（固有名詞）は `characters/*.voice.yaml` の `name_reading` に読みを書いておくと、
+  台詞中のその名前へ自動でふりがなが振られる（`《》` を手で書かなくてよい）。語り（ナレーション）
+  などで話者が本人でない場合に有効。例: 真白（`name_reading: ましろ`）→「真白は」が「ましろは」
+  と発音される。手書き `《》` と自動ふりがなは共存でき、両方とも読みへ反映される。
 
 ## 再生成（bin/regenerate.py）
 

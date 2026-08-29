@@ -47,6 +47,7 @@ def params(request: GenerationRequest, provider) -> dict:
         "voice_profile": request.voice_profile,
         "performance_spec": spec,
         "dialogue": request.dialogue,
+        "reading": request.reading,
         "seed": request.seed,
         "alpha": config.ALPHA,
         "beta": config.BETA,

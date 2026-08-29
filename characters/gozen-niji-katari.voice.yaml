@@ -1,0 +1,18 @@
+# 語り — 『午前二時に、あなたは誰の時間を生きていますか』（gozen-niji）専用の三人称ナレーション。
+# （soul-voice-teller/examples/gozen-niji）物語の登場人物ではなく、地の文を担う声。
+# voice_profile.schema.json 準拠。reference_audio は参照音声ライブラリの話者キー
+# （経路A: timbre をこの音声から、prosody を Direction から合成）。
+# 声質は design.md「語り」の「真白の肩越しの三人称・説明しない・名指ししない・総括しない」
+# 「persona の声＝ソリッド・無駄をそぎ落とす・リズミカル・行間に意味」
+# 「地の文（語り）は真白の逡巡を帯びる」から。真白（adolescent/soft/intimate）より
+# 成熟し、ニジ（high/clear/head）より地に足が付いた、胸に響くナレーション。
+# キーはこの作品専用だと分かるよう gozen-niji を冠する（「語り」は他作品でも使う汎用語のため）。
+character: 語り
+reference_audio: gozen-niji-katari   # 経路Bで生成した語り専用の元音声（references/gozen-niji-katari.wav）
+voice:
+  age: adult          # 真白の肩越しの成熟した三人称（child / adolescent / young_adult / adult / middle_aged / elderly）
+  gender: female      # 真白に密着した三人称（female / male）
+  pitch: medium       # 落ち着いた中域。真白（medium_high）・ニジ（high）より低い（very_low / low / medium_low / medium / medium_high / high / very_high）
+  texture: neutral    # 無駄をそぎ落とす・説明しない・総括しない（soft / warm / clear / bright / dark / husky / breathy / neutral）
+  breathiness: slight # 行間に意味を持たせる、ごく軽い空気（none / slight / moderate / heavy）
+  resonance: chest    # ソリッドに胸へ響く語り手の落ち着き（intimate / chest / head / nasal / bright / neutral）

@@ -1,0 +1,50 @@
+name: katari_ch12_ending
+metadata:
+  asset_type: voice
+  character: 語り
+  age: adult
+  gender: female
+  emotion: calm
+  intensity: 0.25
+  delivery: gentle
+  intonation: neutral
+  subtext: 名指ししない決着。スマホを閉じ、外へ踏み出す。解放は行為で示す。
+  dialogue: 真白は、スマホを閉じた。朝の光が、窓から差してた。真白は、立ち上がって、カーテンを開けた。外は、晴れてた。
+  provider: tsukasa
+  sample_rate: 24000
+  created_at: '2026-08-29T17:39:17.037262+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: 語り
+    reference_audio: gozen-niji-katari
+    voice:
+      age: adult
+      gender: female
+      pitch: medium
+      texture: neutral
+      breathiness: slight
+      resonance: chest
+  performance_spec:
+    emotion:
+      primary: calm
+      intensity: 0.25
+    loudness:
+      effort: relaxed
+    prosody:
+      pace: natural
+      pitch: natural
+      intonation: neutral
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: 名指ししない決着。スマホを閉じ、外へ踏み出す。解放は行為で示す。
+    delivery: gentle
+  dialogue: 真白は、スマホを閉じた。朝の光が、窓から差してた。真白は、立ち上がって、カーテンを開けた。外は、晴れてた。
+  reading: ましろは、スマホを閉じた。朝の光が、窓から差してた。ましろは、立ち上がって、カーテンを開けた。外は、晴れてた。
+  seed: 204
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.0
+  sha1: e663555ad73e

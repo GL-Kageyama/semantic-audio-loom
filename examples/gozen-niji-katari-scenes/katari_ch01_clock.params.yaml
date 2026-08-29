@@ -1,0 +1,49 @@
+name: katari_ch01_clock
+metadata:
+  asset_type: voice
+  character: 語り
+  age: adult
+  gender: female
+  emotion: neutral
+  intensity: 0.25
+  delivery: controlled
+  intonation: neutral
+  subtext: 眠れない夜の、時間の刻み。
+  dialogue: 眠ろうとして、目を閉じる。でも、目が覚める。夜中に、一度。時計を見る。午前2時。
+  provider: tsukasa
+  sample_rate: 24000
+  created_at: '2026-08-29T17:15:01.787583+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: 語り
+    reference_audio: gozen-niji-katari
+    voice:
+      age: adult
+      gender: female
+      pitch: medium
+      texture: neutral
+      breathiness: slight
+      resonance: chest
+  performance_spec:
+    emotion:
+      primary: neutral
+      intensity: 0.25
+    loudness:
+      effort: relaxed
+    prosody:
+      pace: natural
+      pitch: natural
+      intonation: neutral
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: 眠れない夜の、時間の刻み。
+    delivery: controlled
+  dialogue: 眠ろうとして、目を閉じる。でも、目が覚める。夜中に、一度。時計を見る。午前2時。
+  seed: 203
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.0
+  sha1: e81e2ea31bb5

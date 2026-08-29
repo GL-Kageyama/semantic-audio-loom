@@ -8,6 +8,9 @@
     "character": {
       "type": "string"
     },
+    "name_reading": {
+      "type": "string"
+    },
     "voice": {
       "type": "object",
       "required": [

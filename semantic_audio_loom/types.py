@@ -26,6 +26,7 @@ class GenerationIntent:
     performance: dict = field(default_factory=dict)    # Direction: volume/speed/pitch/breathiness/delivery
     subtext: str = ""                                  # 台詞の裏の意味（人間上書き・任意）
     dialogue: str = ""
+    reading: str = ""                                  # 読み（ふりがな《》を置換した本文。無ければ空）
     seed: Optional[int] = None
     quality: str = "high"
 
@@ -40,6 +41,7 @@ class GenerationRequest:
     dialogue: str
     seed: int
     quality: str
+    reading: str = ""
     provider_hint: Optional[str] = None
 
 

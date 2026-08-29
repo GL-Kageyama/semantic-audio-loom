@@ -39,6 +39,7 @@ class AudioAssetEngine:
             voice_profile=intent.voice_profile,
             performance_spec=spec,
             dialogue=intent.dialogue,
+            reading=intent.reading,
             seed=seed,
             quality=intent.quality,
             provider_hint=self.provider_name,
