@@ -19,6 +19,7 @@ import sys
 import numpy as np
 
 from semantic_audio_loom import config
+from semantic_audio_loom.text import normalize_ellipsis
 from semantic_audio_loom.types import Audio, GenerationRequest
 
 _T = None
@@ -216,7 +217,9 @@ class TsukasaProvider:
 
         # 読み（ふりがな《》を置換した本文）があればそれを phonemize する。
         # 無ければ台詞（dialogue）をそのまま phonemize（従来どおり）。
-        line = _phonemize(request.reading or dialogue)
+        # 省略記号「…」は構造化ポーズ非対応の Tsukasa で「へぇ」様の有声に化けるため、
+        # phonemize 前に除去・正規化する（台詞自体は変えない）。
+        line = _phonemize(normalize_ellipsis(request.reading or dialogue))
 
         subject = _subject(request.voice_profile)
         perf_prompt = _spec_prompt(subject, spec)

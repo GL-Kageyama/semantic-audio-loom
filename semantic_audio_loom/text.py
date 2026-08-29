@@ -9,6 +9,9 @@ Tsukasa の phonemize（cutlet / UniDic）が一部の漢字を誤読する（�
 - `reading`  … ルビをかなへ置換した本文（phonemize の入力。ルビが無ければ空文字）
 に分解する。未アノテーションの漢字は従来どおり cutlet が読む（`reading` はかなと
 漢字が混在したまま phonemize に渡る）。
+
+`normalize_ellipsis` は省略記号「…」を phonemize 前に正規化する（Tsukasa が
+「…」をドット列として読み、「へぇ」様の有声に化ける問題への対処）。
 """
 from __future__ import annotations
 
@@ -42,3 +45,23 @@ def parse_ruby(text: str) -> tuple[str, str]:
     dialogue = _RUBY.sub(r"\1", text)  # 《...》を除去 → 綺麗な台詞
     reading = _RUBY.sub(r"\2", text)   # 漢字《かな》→ かな（本文）
     return dialogue, reading
+
+
+# 省略記号（…）の集合。Tsukasa の phonemize（cutlet）が「…」を「...」のドット列に
+# 変え、モデルが有声の「へぇ」様の音に化ける（実測）。phonemize 前に正規化する。
+_ELLIPSIS = r"[…‥⋯︙]"  # … ‥ ⋯ ︙（縦リーダー）
+
+
+def normalize_ellipsis(text: str) -> str:
+    """省略記号「…」を phonemize 前に正規化する。
+
+    省略記号は「間（無音）」の指示だが、Tsukasa は構造化ポーズ非対応で、残すと
+    「へぇ」様の有声に化ける。そこで
+    - 文頭・文末の「…」は**除去**（間は scene の `pause_before` や emotion/delivery が担う）
+    - 文中の「…」は**「、」に置換**（ポーズ境界として phonemize される）
+    する。台詞（dialogue）自体は変えず、phonemize の入力だけに適用する。
+    """
+    text = re.sub(r"^" + _ELLIPSIS + r"+", "", text)
+    text = re.sub(_ELLIPSIS + r"+$", "", text)
+    text = re.sub(_ELLIPSIS + r"+", "、", text)
+    return text

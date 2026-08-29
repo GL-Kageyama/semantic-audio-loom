@@ -5,7 +5,7 @@ Tsukasa の phonemize（cutlet）が「既読」→ kijomi と誤読する問題
 """
 from __future__ import annotations
 
-from semantic_audio_loom.text import annotate_reading, parse_ruby
+from semantic_audio_loom.text import annotate_reading, normalize_ellipsis, parse_ruby
 
 
 def test_single_ruby_splits_dialogue_and_reading():
@@ -48,3 +48,23 @@ def test_annotate_reading_skips_already_annotated():
 
 def test_annotate_reading_noop_when_word_absent():
     assert annotate_reading("こんにちは。", "真白", "ましろ") == "こんにちは。"
+
+
+def test_normalize_ellipsis_strips_leading():
+    assert normalize_ellipsis("……まだ、起きてる？") == "まだ、起きてる？"
+
+
+def test_normalize_ellipsis_strips_trailing():
+    assert normalize_ellipsis("それは……") == "それは"
+
+
+def test_normalize_ellipsis_replaces_midline_with_comma():
+    assert normalize_ellipsis("あ…えっと") == "あ、えっと"
+
+
+def test_normalize_ellipsis_noop_without_ellipsis():
+    assert normalize_ellipsis("おはよう。") == "おはよう。"
+
+
+def test_normalize_ellipsis_empty():
+    assert normalize_ellipsis("……") == ""

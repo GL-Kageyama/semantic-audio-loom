@@ -135,3 +135,15 @@
 - 新設: `engine/mix.py`（silence/mix_cues）、`scene.py`（load_scene/cue_from_params）、
   `schemas/scene.schema.json`、`bin/scene.py`、`tests/test_mix.py`（6件）、`tests/test_scene.py`（7件）。
   `types.py` に SceneCue/Scene、`engine/validate.py` に validate_scene、locales ×3 に scene。
+
+## 2026-08-30 — 省略記号「…」が「へぇ」に化ける問題の対処
+
+- 実測：scene 例の真白の台詞「……まだ、起きてる？」が「へぇ…まだ、起きてる？」と聞こえる。
+  原因は Tsukasa の phonemize（cutlet）が「…」をドット列に変え（`……まだ` → `...... mada`）、
+  モデルがそのドット列を有声（「へぇ」様）に読み上げること。構造化ポーズ（間）は非対応。
+- 対処：`text.py` に `normalize_ellipsis` を追加し、phonemize の**入力だけ**を正規化する。
+  文頭・文末の「…」は除去（間は scene の `pause_before` や emotion/delivery が担う）、
+  文中の「…」は「、」に置換（ポーズ境界）。台詞（dialogue）自体は変えない＝表示・
+  params.yaml は従来どおりで、seed決定論（再生成）も保たれる。
+- 適用先は `providers/tsukasa.py` の `generate`（`request.reading or dialogue` を
+  正規化してから phonemize）。`tests/test_text.py` に +5 件。
