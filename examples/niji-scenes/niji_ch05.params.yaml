@@ -1,0 +1,49 @@
+name: niji_ch05
+metadata:
+  asset_type: voice
+  character: ニジ
+  age: adolescent
+  gender: female
+  emotion: calm
+  intensity: 0.25
+  delivery: gentle
+  intonation: neutral
+  subtext: 真白自身に、言葉を届けさせようとする静かな背押し。
+  dialogue: 次は、おまえが届けなよ
+  provider: tsukasa
+  sample_rate: 24000
+  created_at: '2026-08-29T16:50:09.034276+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: ニジ
+    reference_audio: niji
+    voice:
+      age: adolescent
+      gender: female
+      pitch: high
+      texture: clear
+      breathiness: moderate
+      resonance: head
+  performance_spec:
+    emotion:
+      primary: calm
+      intensity: 0.25
+    loudness:
+      effort: relaxed
+    prosody:
+      pace: natural
+      pitch: natural
+      intonation: neutral
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: 真白自身に、言葉を届けさせようとする静かな背押し。
+    delivery: gentle
+  dialogue: 次は、おまえが届けなよ
+  seed: 102
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 1.0
+  sha1: 90191732a64b

@@ -1,0 +1,16 @@
+# ニジ（にじ）— 『午前二時に、あなたは誰の時間を生きていますか』
+# （soul-voice-teller/examples/gozen-niji）の「午前二時の幽霊」。真白が画面越しの
+# 虹色の残像に名付けた存在で、正体は「真白が誰かに預けた時間＝他者の感情の結晶」。
+# voice_profile.schema.json 準拠。reference_audio は参照音声ライブラリの話者キー
+# （経路A: timbre をこの音声から、prosody を Direction から合成）。
+# 声質は design.md の「真白と同じ顔、でも少し幼い（2-1）」「正直すぎる・無邪気（2-2）」
+# 「句点で切るリズム・空気を含ませる・真白より一拍ゆっくり（2-13 / ニジの台詞）」から。
+character: ニジ
+reference_audio: niji   # 経路Bで生成したニジ専用の元音声（references/niji.wav）
+voice:
+  age: adolescent     # 真白と同年代、でも「一歩、手前」に少し幼い（child / adolescent / young_adult / adult / middle_aged / elderly）
+  gender: female      # female / male（プロンプト主語と参照ファイル名判定に使う）
+  pitch: high         # 真白（medium_high）より少し幼く高い（very_low / low / medium_low / medium / medium_high / high / very_high）
+  texture: clear      # 正直・澄んだ・虹色の残像の透明感（soft / warm / clear / bright / dark / husky / breathy / neutral）
+  breathiness: moderate # 空気を含ませる（none / slight / moderate / heavy）。真白（slight）より空気
+  resonance: head     # 画面越し・影のない幽霊的な軽さ（intimate / chest / head / nasal / bright / neutral）

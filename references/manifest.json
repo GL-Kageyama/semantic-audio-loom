@@ -136,5 +136,15 @@
     "source_files": [
       "synthesized from profile: {'age': 'adolescent', 'gender': 'female', 'pitch': 'medium_high', 'texture': 'soft', 'breathiness': 'slight', 'resonance': 'intimate'}"
     ]
+  },
+  "niji": {
+    "age": "adolescent",
+    "gender": "F",
+    "duration_sec": 5.15,
+    "source": "local generation (Tsukasa_Speech 経路B / Semantic Audio Loom synthesize)",
+    "license": "generated — no upstream license",
+    "source_files": [
+      "synthesized from profile: {'age': 'adolescent', 'gender': 'female', 'pitch': 'high', 'texture': 'clear', 'breathiness': 'moderate', 'resonance': 'head'}"
+    ]
   }
 }

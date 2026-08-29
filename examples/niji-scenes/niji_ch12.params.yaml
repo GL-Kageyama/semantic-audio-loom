@@ -1,0 +1,49 @@
+name: niji_ch12
+metadata:
+  asset_type: voice
+  character: ニジ
+  age: adolescent
+  gender: female
+  emotion: sadness
+  intensity: 0.25
+  delivery: gentle
+  intonation: neutral
+  subtext: 返してくれたことへの感謝と、穏やかな別れ。
+  dialogue: 返してくれて、ありがとう
+  provider: tsukasa
+  sample_rate: 24000
+  created_at: '2026-08-29T16:50:31.789011+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: ニジ
+    reference_audio: niji
+    voice:
+      age: adolescent
+      gender: female
+      pitch: high
+      texture: clear
+      breathiness: moderate
+      resonance: head
+  performance_spec:
+    emotion:
+      primary: sadness
+      intensity: 0.25
+    loudness:
+      effort: relaxed
+    prosody:
+      pace: slow
+      pitch: natural
+      intonation: neutral
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: 返してくれたことへの感謝と、穏やかな別れ。
+    delivery: gentle
+  dialogue: 返してくれて、ありがとう
+  seed: 104
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 0.9
+  sha1: 14113484ad76

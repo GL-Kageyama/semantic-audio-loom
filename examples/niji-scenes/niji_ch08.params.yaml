@@ -1,0 +1,49 @@
+name: niji_ch08
+metadata:
+  asset_type: voice
+  character: ニジ
+  age: adolescent
+  gender: female
+  emotion: sadness
+  intensity: 0.25
+  delivery: gentle
+  intonation: neutral
+  subtext: 初めて自分を主語にした言葉。帰れる、と知っている寂しさ。
+  dialogue: 返してくれたら、わたしは、帰れる
+  provider: tsukasa
+  sample_rate: 24000
+  created_at: '2026-08-29T16:50:20.452019+00:00'
+parameters:
+  version: 2
+  provider: tsukasa
+  voice_profile:
+    character: ニジ
+    reference_audio: niji
+    voice:
+      age: adolescent
+      gender: female
+      pitch: high
+      texture: clear
+      breathiness: moderate
+      resonance: head
+  performance_spec:
+    emotion:
+      primary: sadness
+      intensity: 0.25
+    loudness:
+      effort: relaxed
+    prosody:
+      pace: slow
+      pitch: natural
+      intonation: neutral
+      pauses: []
+      emphasis: []
+      breath: []
+    subtext: 初めて自分を主語にした言葉。帰れる、と知っている寂しさ。
+    delivery: gentle
+  dialogue: 返してくれたら、わたしは、帰れる
+  seed: 103
+  alpha: 0.35
+  beta: 0.7
+  rate_of_speech: 0.9
+  sha1: e5ed399ec871
