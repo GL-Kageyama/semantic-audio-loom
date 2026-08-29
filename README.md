@@ -1,5 +1,9 @@
 # Semantic Audio Loom
 
+<p align="center">
+  <img src="assets/repo-hero.png" width="100%" alt="semantic-audio-loom">
+</p>
+
 Context + Intent + State + Emotion + Performance Direction → 意味的音響アセット。
 
 音を単なるファイルではなく、意味・文脈・感情を持った生成・再利用可能な音響アセットとして
