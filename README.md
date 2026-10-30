@@ -7,11 +7,13 @@
 Context + Intent + State + Emotion + Performance Direction → 意味的音響アセット。
 
 音を単なるファイルではなく、意味・文脈・感情を持った生成・再利用可能な音響アセットとして
-扱うエンジン。正典は 5 種（voice / bgm / ambience / sfx / foley）、実装は Phase 1 の voice。
+扱うエンジン。正典は 5 種（voice / bgm / ambience / sfx / foley）で、すべて生成経路が動く。
 
-声の設計の分かれ目は **Direction（監督＝意図）と Interpretation（俳優＝実現）の分離** と、
-その境界に置くモデル非依存の **Performance Spec**。台詞の「裏の意味（subtext）」まで
-反映するのが、テキスト読み上げとの決定的な差。
+設計の分かれ目は **Direction（監督＝意図）と Interpretation（俳優＝実現）の分離** と、
+その境界に置くモデル非依存の **Spec**（voice = Performance Spec / bgm = Music Spec /
+ambience・sfx・foley = Sound Spec）。声では台詞の「裏の意味（subtext）」まで反映するのが、
+テキスト読み上げとの決定的な差。音の 3 種では抽象語を「何が・どこで・どの材質で鳴るか」へ
+具体化するのが、プロンプト直書きとの差。
 
 ## 資材の分離（再利用の設計）
 
@@ -23,19 +25,24 @@ Context + Intent + State + Emotion + Performance Direction → 意味的音響�
 | キャラ（誰の声か） | `bin/character.py` | `characters/<name>.voice.yaml` |
 | 演技の振り付け（どう演じるか） | `bin/performance.py` | `performances/<name>.direction.yaml` |
 | 生成音声（産物） | `bin/generate.py` | `projects/<project>/assets/<scene>/` |
+| 音の生成（bgm/ambience/sfx/foley） | `bin/asset.py` | `projects/<project>/assets/<scene>/` |
+| 音響ライブラリ（再利用する音） | `bin/library.py` | `library/<type>/<name>.asset.yaml` |
+| 作品の音響スタイル | `bin/sound-bible.py` | `projects/<project>/sound-bible.yaml` |
 | 場面（複数人物を間で合成） | `bin/scene.py` | `scene.yaml` → `projects/<project>/assets/<scene>/` |
 
 キャラと演技は独立に再利用でき、名前で組み合わせられる。生成音声はキャラ/演技資材と
-混ぜず、プロジェクトごとに分離する。
+混ぜず、プロジェクトごとに分離する。何度も使う音はライブラリへ移す。
 
 ## 状態
 
-M0（Provider 確定）〜 M4（蒸留）まで完了。履歴・実測値は [HISTORY.md](HISTORY.md)。
+M0（Provider 確定）〜 M4（蒸留）、M5（音の生成＋ライブラリ）まで完了。履歴・実測値は
+[HISTORY.md](HISTORY.md)。
 
-## Asset Type（スコープ）
+## Asset Type
 
-音を声に閉じない。正典 5 種（**voice / bgm / ambience / sfx / foley**）のうち、実装は
-Phase 1 の `voice` のみ。残り 4 種は将来スコープ。[docs/asset-types.md](docs/asset-types.md)。
+正典 5 種（**voice / bgm / ambience / sfx / foley**）。すべて生成経路が動く。
+詳細とロードマップは [docs/asset-types.md](docs/asset-types.md)、音の作り方は
+[docs/asset-generation.md](docs/asset-generation.md)。
 
 ## クイックスタート
 
@@ -49,9 +56,13 @@ bin/performance.py list                  # 登録済み演技
 bin/generate.py --character mashiro --performance anxious-night-call \
     --project demo --scene night \
     --line "……まだ、起きてる？" --name mashiro_night
+
+bin/asset.py --type bgm --project demo --name lonely-room \
+    --sound role=underscore --sound mood=lonely --duration 20   # 音の生成
+bin/library.py list                                              # 再利用ライブラリ
 ```
 
-セットアップの詳細（Tsukasa・LLM の設定）は [docs/setup.md](docs/setup.md)、
+セットアップの詳細（Tsukasa・音生成モデル・LLM の設定）は [docs/setup.md](docs/setup.md)、
 全コマンドは [docs/usage.md](docs/usage.md)。
 
 ## 多言語対応（i18n）
@@ -76,12 +87,15 @@ README・docs は日本語のまま（翻訳ミラーは用意しない）。
 Validate → Route → Resolve → Generate → Normalize → Tag → Store
 ```
 
-核心は **Resolve**（Direction → Performance Spec。voice のみ）。詳細は [docs/resolve.md](docs/resolve.md)。
+核心は **Resolve**（Direction → Spec）。asset_type ごとに Spec が変わるが、7 段の骨格は
+共通。声の Resolve は [docs/resolve.md](docs/resolve.md)、音の Resolve は
+[docs/asset-generation.md](docs/asset-generation.md)。
 
 ## 構成
 
 ```
 characters/  performances/  references/   # 再利用資材（キャラ・演技・参照音声）
+library/                                   # 再利用する音響資材（生成物ではない）
 projects/    examples/                     # 生成産物・サンプル
 semantic_audio_loom/                      # パッケージ（config/types/providers/engine/llm/skills）
 bin/          schemas/     docs/           # CLI / JSON Schema / 深掘り
@@ -94,6 +108,9 @@ skills/       .claude-plugin/              # facade スキル / プラグイン�
 | --- | --- |
 | [docs/resolve.md](docs/resolve.md) | Resolve・subtext（価値の核心） |
 | [docs/asset-types.md](docs/asset-types.md) | 正典 5 種とロードマップ（Phase 1〜5） |
+| [docs/asset-generation.md](docs/asset-generation.md) | 音の生成（bgm/ambience/sfx/foley・Provider） |
+| [docs/library.md](docs/library.md) | 再利用ライブラリ（意味タグ・出典・検索） |
+| [docs/sound-bible.md](docs/sound-bible.md) | Sound Bible（作品の音響スタイル） |
 | [docs/distill.md](docs/distill.md) | 蒸留（大量インプット → キャラ/演技） |
 | [docs/loudness.md](docs/loudness.md) | 声量の三層分業 |
 | [docs/scene.md](docs/scene.md) | シーン合成（複数人物×間） |

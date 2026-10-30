@@ -94,7 +94,7 @@ def _render(args, lang: str) -> None:
         "default_pause": scene.default_pause,
         "cues": cue_params_list,
     }
-    out_dir = os.path.join("projects", args.project, "assets", base)
+    out_dir = os.path.join(config.project_dir(args.project), "assets", base)
     path = _save_scene(audio, base, parameters, out_dir)
 
     print("wav:", path)

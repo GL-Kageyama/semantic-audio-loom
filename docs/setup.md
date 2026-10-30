@@ -24,6 +24,20 @@ export SAL_TSUKASA_DIR=/path/to/tsukasa
 
 生成しなければ不要。キャラ/演技/参照音声の管理や蒸留は Tsukasa なしで動く。
 
+## 2b. 音生成モデル（bgm / ambience / sfx / foley）
+
+ローカル優先。モデルは初回 generate で Hugging Face から取得し、プロセス内に保持する。
+
+```bash
+pip install 'transformers>=4.40'     # musicgen（bgm・最大30秒・CC-BY-NC 4.0）
+pip install 'diffusers>=0.31'        # stable_audio（ambience/sfx/foley・最大約47秒）
+huggingface-cli login                # stable-audio-open-1.0 は gated（要同意＋ログイン）
+```
+
+- モデルは `SAL_MUSICGEN_MODEL` / `SAL_STABLE_AUDIO_MODEL` で差し替えられる。
+- 依存を入れる前に配線を確かめたいときは `--provider stub`（決定的な合成・本物の音ではない）。
+- `--provider` を明示すれば、その Provider が対応しない型は Route で即座に失敗する。
+
 ## 3. Resolve の LLM（--resolve llm 時・既定）
 
 ```bash
@@ -46,4 +60,9 @@ export ANTHROPIC_BASE_URL=...        # ゲートウェイ。モデルは SAL_RES
 | `SAL_REFERENCE_LIB` | 参照音声ライブラリ（既定は repo 直下 `references/`） |
 | `SAL_CHARACTERS_DIR` | キャラ資材（既定は repo 直下 `characters/`） |
 | `SAL_PERFORMANCES_DIR` | 演技資材（既定は repo 直下 `performances/`） |
+| `SAL_LIBRARY_DIR` | 音響ライブラリ（既定は repo 直下 `library/`） |
+| `SAL_PROJECTS_DIR` | 生成物の置き場（既定は repo 直下 `projects/`） |
+| `SAL_MUSICGEN_MODEL` | bgm のモデル（既定 facebook/musicgen-small） |
+| `SAL_STABLE_AUDIO_MODEL` | 音のモデル（既定 stabilityai/stable-audio-open-1.0） |
+| `SAL_DEVICE` | 生成モデルのデバイス（既定 cpu） |
 | `SAL_RESOLVE_MODEL` | Resolve のモデル（既定 claude-sonnet-4-5） |

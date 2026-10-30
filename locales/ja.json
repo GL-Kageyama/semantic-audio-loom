@@ -100,5 +100,43 @@
     "auth_required": "Claude の認証情報がありません（ANTHROPIC_API_KEY か ANTHROPIC_AUTH_TOKEN）",
     "empty_response": "空の応答",
     "api_failed": "Claude API 呼び出しに失敗: {err}"
+  },
+  "asset": {
+    "description": "BGM・環境音・効果音・フォーリーを生成する。",
+    "help_project": "保存先 projects/<project>/assets/",
+    "help_scene": "保存先サブフォルダ",
+    "help_sound": "Sound Direction（複数可。カンマ区切りは配列）",
+    "help_sound_file": "Sound Direction の YAML/JSON",
+    "help_prompt": "モデル向けプロンプト（英語）を直接指定",
+    "help_situation": "状況（Resolve の入力）",
+    "help_subtext": "意図の裏（任意）",
+    "help_bible": "Sound Bible のパス（既定は projects/<project>/sound-bible.yaml）",
+    "help_save_library": "library/<type>/<NAME> に取り込む",
+    "help_tags": "ライブラリのタグ（カンマ区切り）",
+    "help_license": "ライセンス表記",
+    "help_attribution": "帰属表示"
+  },
+  "library": {
+    "description": "再利用ライブラリを操作する。",
+    "help_list": "一覧",
+    "help_search": "意味タグ・プロンプトで検索",
+    "help_show": "1 件を YAML で表示",
+    "help_add": "WAV を取り込む",
+    "help_validate": "全件を検証",
+    "empty": "ライブラリは空です: {path}",
+    "no_hits": "該当する資材がありません。",
+    "not_found": "資材が見つかりません: {name}",
+    "valid": "ライブラリは健全です。",
+    "valid_empty": "検証する資材がありません（0 件）: {path}"
+  },
+  "sound_bible": {
+    "description": "Sound Bible を操作する。",
+    "help_init": "テンプレートを書く",
+    "help_show": "表示",
+    "help_validate": "検証",
+    "exists": "既にあります（--force で上書き）: {path}",
+    "not_found": "見つかりません: {path}",
+    "valid": "Sound Bible は健全です。",
+    "valid_empty": "Sound Bible は空です（全節が未設定）: {path}"
   }
 }

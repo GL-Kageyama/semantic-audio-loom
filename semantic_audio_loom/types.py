@@ -9,45 +9,71 @@ from dataclasses import dataclass, field
 from typing import Any, Optional
 
 # 構想 §4 の正典 5 Asset Type（docs/asset-types.md 参照）。
-# 実装は Phase 1 の "voice" のみ。残り 4 種は将来スコープ（Phase 2: ambience/sfx、Phase 3: bgm）。
+# voice は Performance Spec、bgm は Music Spec、ambience/sfx/foley は Sound Spec を持つ。
 ASSET_TYPES = ("voice", "bgm", "ambience", "sfx", "foley")
+SOUND_TYPES = ("bgm", "ambience", "sfx", "foley")
 
 
 @dataclass
 class GenerationIntent:
-    """Skill が組み立てる。asset_type は ASSET_TYPES の正典値（実装は voice のみ）。"""
+    """Skill が組み立てる。asset_type は ASSET_TYPES の正典値。
+
+    voice は voice_profile / emotion / performance / dialogue を使う。
+    bgm・ambience・sfx・foley は sound dict に意味フィールドを入れる（type 別）。
+    共通の scene / situation / seed は全 type が使う。
+    """
 
     asset_type: str = "voice"
+
+    # voice（Performance Direction）
     voice_profile: dict = field(default_factory=dict)
-    scene: dict = field(default_factory=dict)
-    situation: str = ""
     character_state: dict = field(default_factory=dict)
     emotion: dict = field(default_factory=dict)        # {primary, intensity}（Direction）
-    performance: dict = field(default_factory=dict)    # Direction: volume/speed/pitch/breathiness/delivery
+    performance: dict = field(default_factory=dict)    # volume/speed/pitch/breathiness/delivery
     subtext: str = ""                                  # 台詞の裏の意味（人間上書き・任意）
     dialogue: str = ""
     reading: str = ""                                  # 読み（ふりがな《》を置換した本文。無ければ空）
+
+    # bgm / ambience / sfx / foley（Sound Direction）
+    # 例: {"role": "underscore", "mood": ["lonely"], "duration": 30, "prompt": "..."}
+    sound: dict = field(default_factory=dict)
+
+    # 共通
+    scene: dict = field(default_factory=dict)
+    situation: str = ""
     seed: Optional[int] = None
     quality: str = "high"
 
 
 @dataclass
 class GenerationRequest:
-    """Resolve 済み（performance_spec を内包）。モデル非依存。"""
+    """Resolve 済み。モデル非依存（Seam の上側）。
+
+    `spec` は type 別の解決済み Spec（voice=Performance Spec / bgm=Music Spec /
+    ambience・sfx・foley=Sound Spec）。`spec["prompt"]` が Provider へ渡す
+    モデル向けの実現指示になる（voice は Spec 自体を Provider が散文へ変換する）。
+    """
 
     asset_type: str
-    voice_profile: dict
-    performance_spec: dict
-    dialogue: str
+    spec: dict
     seed: int
-    quality: str
+    quality: str = "high"
+    voice_profile: dict = field(default_factory=dict)
+    dialogue: str = ""
     reading: str = ""
+    duration: Optional[float] = None
     provider_hint: Optional[str] = None
+
+    @property
+    def performance_spec(self) -> dict:
+        """後方互換（voice の Spec は performance_spec とも呼ぶ）。"""
+        return self.spec
 
 
 @dataclass
 class Audio:
-    """生の音声。wav は float32 の mono 波形（-1.0〜1.0）。"""
+    """生の音声。wav は float32（-1.0〜1.0）。mono は 1 次元 `(n,)`、
+    多チャンネルは `(n, channels)`（voice は mono 固定、音の 4 種は生成のチャンネル数）。"""
 
     wav: Any
     sample_rate: int = 24000

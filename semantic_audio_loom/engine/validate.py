@@ -2,12 +2,14 @@
 
 Resolve の前後で 2 つの検証を担う：
 
-- `validate_intent(intent)` … 人間が書く層を検証。
+- `validate_intent(intent)` … 人間が書く層を検証。asset_type で分岐する。
     voice_profile → voice_profile.schema.json
     統合 Direction（emotion + volume/speed/pitch/breathiness/delivery）→
     performance_direction.schema.json
-- `validate_spec(spec)` … Resolve の結果（AI が書く層）を検証。
-    performance_spec.schema.json
+    bgm/ambience/sfx/foley の sound dict → 対応する Spec スキーマの「形」だけ
+    （必須は Resolve が埋めるので課さない）
+- `validate_spec(spec, asset_type)` … Resolve の結果（AI が書く層）を検証。
+    voice=performance_spec / bgm=music_spec / ambience・sfx・foley=sound_spec
 
 Direction の intensity は「none/subtle/moderate/strong/overwhelming」（抽象レイヤ）。
 Spec の intensity は実数 0.0〜1.0（Resolve が解決）。
@@ -20,6 +22,15 @@ import os
 from semantic_audio_loom.types import ASSET_TYPES, GenerationIntent, Scene
 
 _SCHEMA_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "schemas")
+
+# asset_type → Resolve 済み Spec のスキーマ。
+SPEC_SCHEMAS = {
+    "voice": "performance_spec.schema.json",
+    "bgm": "music_spec.schema.json",
+    "ambience": "sound_spec.schema.json",
+    "sfx": "sound_spec.schema.json",
+    "foley": "sound_spec.schema.json",
+}
 
 
 def _load(name: str) -> dict:
@@ -45,6 +56,22 @@ def validate_voice_profile(profile: dict) -> None:
     jsonschema.validate(profile, _load("voice_profile.schema.json"))
 
 
+def _validate_sound_direction(intent: GenerationIntent) -> None:
+    """sound dict の「形」を検証する（必須・kind 依存の条件は外す）。
+
+    意味フィールドの不足は Resolve が situation から埋めるので、ここでは
+    未知の enum 値・型の誤りだけを早く捕まえる。
+    """
+    import jsonschema
+
+    sound = dict(intent.sound or {})
+    if intent.asset_type != "bgm":
+        sound.setdefault("kind", intent.asset_type)
+    schema = _load(SPEC_SCHEMAS[intent.asset_type])
+    relaxed = {k: v for k, v in schema.items() if k not in ("required", "allOf")}
+    jsonschema.validate(sound, relaxed)
+
+
 def validate_intent(intent: GenerationIntent) -> None:
     import jsonschema
 
@@ -52,14 +79,19 @@ def validate_intent(intent: GenerationIntent) -> None:
         raise ValueError(
             f"unknown asset_type: {intent.asset_type!r} (expected one of {ASSET_TYPES})"
         )
-    validate_voice_profile(intent.voice_profile)
-    jsonschema.validate(_merged_direction(intent), _load("performance_direction.schema.json"))
+    if intent.asset_type == "voice":
+        validate_voice_profile(intent.voice_profile)
+        jsonschema.validate(_merged_direction(intent), _load("performance_direction.schema.json"))
+    else:
+        _validate_sound_direction(intent)
 
 
-def validate_spec(spec: dict) -> None:
+def validate_spec(spec: dict, asset_type: str = "voice") -> None:
     import jsonschema
 
-    jsonschema.validate(spec, _load("performance_spec.schema.json"))
+    if asset_type not in SPEC_SCHEMAS:
+        raise ValueError(f"unknown asset_type: {asset_type!r} (expected one of {ASSET_TYPES})")
+    jsonschema.validate(spec, _load(SPEC_SCHEMAS[asset_type]))
 
 
 def validate_performance_asset(direction: dict) -> None:
@@ -71,6 +103,20 @@ def validate_performance_asset(direction: dict) -> None:
     import jsonschema
 
     jsonschema.validate(direction, _load("performance_asset.schema.json"))
+
+
+def validate_sound_bible(bible: dict) -> None:
+    """作品の音響スタイル（sound-bible.yaml）を検証。"""
+    import jsonschema
+
+    jsonschema.validate(bible, _load("sound_bible.schema.json"))
+
+
+def validate_library_asset(asset: dict) -> None:
+    """ライブラリ資産のメタデータ（library/<type>/<name>.asset.yaml）を検証。"""
+    import jsonschema
+
+    jsonschema.validate(asset, _load("library_asset.schema.json"))
 
 
 def _scene_to_dict(scene: Scene) -> dict:

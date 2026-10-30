@@ -13,3 +13,8 @@ scipy>=1.10          # librosa の依存
 
 # テスト（tests/ の pytest）。生成・実行には不要。
 pytest>=7.0
+
+# 音生成（bgm / ambience / sfx / foley）。重いのでコアとは分けて入れる。
+#   pip install 'transformers>=4.40'   # musicgen（bgm）
+#   pip install 'diffusers>=0.31'      # stable_audio（ambience/sfx/foley。モデルは gated）
+# どちらも無くても、管理・検証・Resolve と `--provider stub` の配線確認は動く。

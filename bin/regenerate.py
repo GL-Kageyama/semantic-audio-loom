@@ -33,14 +33,18 @@ def main() -> None:
     params = doc["parameters"]
     name = args.name or doc.get("name") or "asset"
 
+    asset_type = params.get("asset_type", "voice")
+    # voice params は performance_spec、非 voice は spec に Spec を持つ。
+    spec = params.get("spec") or params["performance_spec"]
     request = GenerationRequest(
-        asset_type="voice",
-        voice_profile=params["voice_profile"],
-        performance_spec=params["performance_spec"],
-        dialogue=params["dialogue"],
+        asset_type=asset_type,
+        voice_profile=params.get("voice_profile", {}),
+        spec=spec,
+        dialogue=params.get("dialogue", ""),
         reading=params.get("reading", ""),
         seed=params["seed"],
         quality="high",
+        duration=params.get("duration"),
         provider_hint=params.get("provider"),
     )
     engine = AudioAssetEngine(provider_name=params.get("provider"))

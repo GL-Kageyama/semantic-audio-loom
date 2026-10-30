@@ -100,5 +100,43 @@
     "auth_required": "Missing Claude credentials (ANTHROPIC_API_KEY or ANTHROPIC_AUTH_TOKEN)",
     "empty_response": "empty response",
     "api_failed": "Claude API call failed: {err}"
+  },
+  "asset": {
+    "description": "Generate BGM, ambience, sound effects, and foley.",
+    "help_project": "Destination: projects/<project>/assets/",
+    "help_scene": "Destination subfolder",
+    "help_sound": "Sound Direction (repeatable; commas become a list)",
+    "help_sound_file": "Sound Direction as YAML/JSON",
+    "help_prompt": "Model prompt (English) given directly",
+    "help_situation": "Situation (input to Resolve)",
+    "help_subtext": "Meaning behind the intent (optional)",
+    "help_bible": "Path to the Sound Bible (default: projects/<project>/sound-bible.yaml)",
+    "help_save_library": "Copy into library/<type>/<NAME>",
+    "help_tags": "Library tags (comma-separated)",
+    "help_license": "License note",
+    "help_attribution": "Attribution"
+  },
+  "library": {
+    "description": "Work with the reusable asset library.",
+    "help_list": "List assets",
+    "help_search": "Search semantic fields and prompts",
+    "help_show": "Show one asset as YAML",
+    "help_add": "Import a WAV",
+    "help_validate": "Validate every asset",
+    "empty": "The library is empty: {path}",
+    "no_hits": "No matching assets.",
+    "not_found": "Asset not found: {name}",
+    "valid": "The library is healthy.",
+    "valid_empty": "Nothing to validate (0 assets): {path}"
+  },
+  "sound_bible": {
+    "description": "Work with a project's Sound Bible.",
+    "help_init": "Write a template",
+    "help_show": "Show",
+    "help_validate": "Validate",
+    "exists": "Already exists (use --force to overwrite): {path}",
+    "not_found": "Not found: {path}",
+    "valid": "The Sound Bible is healthy.",
+    "valid_empty": "The Sound Bible is empty (no section is set): {path}"
   }
 }

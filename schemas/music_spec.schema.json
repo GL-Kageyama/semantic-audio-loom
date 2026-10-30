@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Music Spec",
+  "description": "bgm の Resolve 済み Spec（モデル非依存の Seam）。プロンプトは Provider へ渡す英語の実現指示。",
+  "type": "object",
+  "required": ["prompt"],
+  "properties": {
+    "role": {
+      "enum": ["theme", "underscore", "jingle", "loop", "stinger"]
+    },
+    "genre": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "mood": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "style": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "tempo": {
+      "type": "object",
+      "properties": {
+        "bpm": {"type": "number", "minimum": 20, "maximum": 300},
+        "feel": {
+          "enum": ["very_slow", "slow", "moderate", "upbeat", "fast"]
+        }
+      }
+    },
+    "key": {
+      "type": "object",
+      "properties": {
+        "tonic": {"type": "string"},
+        "mode": {
+          "enum": ["major", "minor", "modal", "atonal"]
+        }
+      }
+    },
+    "meter": {"type": "string"},
+    "instrumentation": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "arrangement": {
+      "type": "object",
+      "properties": {
+        "density": {"enum": ["sparse", "medium", "dense"]},
+        "dynamics": {"enum": ["flat", "gentle", "wide"]},
+        "arc": {"type": "string"}
+      }
+    },
+    "texture": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "energy": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "duration": {"type": "number", "exclusiveMinimum": 0.0},
+    "loop": {
+      "type": "object",
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "bars": {"type": "integer", "minimum": 1},
+        "crossfade": {"type": "number", "minimum": 0.0}
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "negative": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "prompt": {"type": "string", "minLength": 1},
+    "negative_prompt": {"type": "string"},
+    "subtext": {"type": "string"}
+  }
+}

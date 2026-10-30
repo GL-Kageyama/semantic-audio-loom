@@ -34,8 +34,37 @@ PERFORMANCES_DIR = os.environ.get(
     os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "performances"),
 )
 
-# Sampling rate Tsukasa outputs (and the loom normalizes to).
+# Reusable asset library (library/<type>/<name>.asset.yaml + .wav)。参照音声・
+# キャラ・演技と同じ「再利用する資材」の側。生成物そのもの（projects/*/assets/）とは分ける。
+LIBRARY_DIR = os.environ.get(
+    "SAL_LIBRARY_DIR",
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "library"),
+)
+
+# 生成物の置き場（projects/<project>/assets/...）。
+PROJECTS_DIR = os.environ.get(
+    "SAL_PROJECTS_DIR",
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "projects"),
+)
+
+
+def project_dir(project: str) -> str:
+    """project 名 → プロジェクトのディレクトリ（assets/ と sound-bible.yaml の親）。"""
+    return os.path.join(PROJECTS_DIR, project)
+
+# Sampling rate Tsukasa outputs (and the loom normalizes voice to).
 SAMPLE_RATE = 24000
+
+# 保存形式（asset_type 別）＝ (sample_rate, channels)。channels が None なら
+# Provider の出力チャンネル数を保つ（音楽・環境音のステレオを潰さない）。
+# 声だけは Time-domain の既存契約（24kHz mono）を変えない。
+OUTPUT_FORMATS = {
+    "voice": (SAMPLE_RATE, 1),
+    "bgm": (44100, None),
+    "ambience": (44100, None),
+    "sfx": (44100, None),
+    "foley": (44100, None),
+}
 
 # Generation knobs (M0 実測で確定). alpha=低ほど参照 timbre 保持、beta=低ほど
 # プロンプト由来の口調（演技）成分が増える。beta は「ピッチ演技のノブ」。

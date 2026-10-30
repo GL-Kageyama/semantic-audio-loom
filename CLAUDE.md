@@ -8,7 +8,7 @@ README / SKILL には**現在の情報だけ**を書く。現在の機能・CLI�
 
 **置き場所**：
 - `README.md` … 現在の機能・資材モデル・CLI・構成（概要のみ。深掘りは docs/ へのリンク）
-- `docs/` … README の深掘り（`resolve.md` = Resolve/subtext・`asset-types.md` = 正典5種とロードマップ・`distill.md` = 蒸留・`loudness.md` = 声量三層分業・`reference-voices.md` = 参照音声と拡充・`setup.md` = セットアップ・`usage.md` = 全CLI）
+- `docs/` … README の深掘り（`resolve.md` = Resolve/subtext・`asset-types.md` = 正典5種とロードマップ・`asset-generation.md` = 音の生成・`library.md` = 再利用ライブラリ・`sound-bible.md` = 作品の音響スタイル・`distill.md` = 蒸留・`loudness.md` = 声量三層分業・`reference-voices.md` = 参照音声と拡充・`setup.md` = セットアップ・`usage.md` = 全CLI）
 - `HISTORY.md` … 開発履歴（M0〜M4・実測値）
 - `skills/semantic-audio-loom/SKILL.md` … facade スキル（現在の使い方のみ）
 - `.claude/skills/` … ルート `skills/` への symlink（プロジェクト内検出用。インストール不要）
@@ -16,17 +16,20 @@ README / SKILL には**現在の情報だけ**を書く。現在の機能・CLI�
 
 ## 固定方針（変更しない）
 
-- **Direction（監督＝意図）と Interpretation（俳優＝実現）の分離**。境界はモデル非依存の **Performance Spec**。`subtext`（台詞の裏の意味）が差別化点。
+- **Direction（監督＝意図）と Interpretation（俳優＝実現）の分離**。境界はモデル非依存の **Spec**（voice=Performance / bgm=Music / ambience・sfx・foley=Sound）。`subtext`（台詞の裏の意味）と、音では抽象語→具体的な音の記述が差別化点。
 - **subtext は抽象文のままでは音に乗らない**。Resolve が必ず具体的な抑揚指示（語尾 `prosody.intonation` など）へ変換してから Provider に渡す。
 - **声量は三層分業**：Direction `volume` → Interpretation `loudness.effort` → Mixing ピーク正規化。ゲインを上げても「張り」は増えない。
 - **資材の分離**：再利用するもの（参照音声＝声の実体・キャラ＝誰の声か・演技＝どう演じるか）と、使い捨てるもの（生成音声 = `projects/*/assets/`）を混ぜない。
 - **seed 決定論**：同じ seed で byte-identical 再生成（regenerate が保存済み Spec を再利用し、LLM を再呼び出ししない）。
-- **Asset Type は 5 種（voice / bgm / ambience / sfx / foley）を正典とし、声に閉じない**。実装は Phase 1 の `voice` のみ。残り 4 種（BGM・環境音・効果音・フォーリー）は将来スコープ（Phase 2/3）。正典の実体は `types.ASSET_TYPES` と `schemas/asset_type.schema.json`、詳細は `docs/asset-types.md`。
+- **Asset Type は 5 種（voice / bgm / ambience / sfx / foley）を正典とし、声に閉じない**。5 種すべてに生成経路がある（voice=tsukasa / bgm=musicgen / ambience・sfx・foley=stable_audio / テスト用 stub）。7 段フローは共通で、Validate・Resolve・Metadata・Normalize・Route が asset_type で分岐する。正典の実体は `types.ASSET_TYPES` と `schemas/`、詳細は `docs/asset-types.md`。
+- **モデル向けプロンプトは英語**。`Music Spec` / `Sound Spec` の `prompt` は生成モデル（MusicGen / Stable Audio）が読むので、Resolve は `--lang` に関わらず英語で書く。`subtext` などの自由テキストだけ `--lang` に従う。
 - **i18n baseline（2層）**：新規の CLI 文言・LLM プロンプト・YAML テンプレートは直書きせず、`locales/{lang}.json`（CLI/UI）と `prompts/{lang}.json`（LLM）の2層で解決する。対象 en/ja/zh、既定 ja（`--lang` > `SAL_LANG` > ja、未対応は警告して ja）。固定列挙値（emotion/pitch 等の enum）は全言語で英語のまま、自由テキスト（situation/subtext/キャラ表示名）は `--lang` の言語で出力、台詞（`--line`）は Tsukasa が日本語 TTS のため常に日本語。docs ミラーは作らない（README/docs は日本語のまま）。
 
 ## テスト
 
-`pytest tests/`（tests/ は未整備。整備次第ここに記載）。
+`pytest tests/`。重いモデルは使わず、非 voice は `--provider stub` で 7 段フロー全体を通す
+（`tests/test_sound_assets.py`）。テスト用の venv は `/Users/user/sonic-loom-spike/venv_tsukasa`
+（torch・numpy・jsonschema・pytest が入る。素の python3 では jsonschema が無いことがある）。
 
 ## 壊してはいけないもの
 

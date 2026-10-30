@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Sound Bible",
+  "description": "作品全体の音響スタイル。各 Asset の未指定フィールドの既定値と、生成プロンプトの接尾辞を供給する。",
+  "type": "object",
+  "required": ["project"],
+  "properties": {
+    "project": {"type": "string", "minLength": 1},
+    "notes": {"type": "string"},
+    "sample_rate": {"type": "integer", "minimum": 8000},
+    "loudness": {
+      "type": "object",
+      "properties": {
+        "target_lufs": {"type": "number"},
+        "true_peak_db": {"type": "number"}
+      }
+    },
+    "music": {
+      "type": "object",
+      "properties": {
+        "style": {"type": "array", "items": {"type": "string"}},
+        "instrumentation": {"type": "array", "items": {"type": "string"}},
+        "tempo_range": {
+          "type": "array",
+          "items": {"type": "number"},
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "negative": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "ambience": {
+      "type": "object",
+      "properties": {
+        "style": {"type": "array", "items": {"type": "string"}},
+        "palette": {"type": "array", "items": {"type": "string"}},
+        "negative": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "sfx": {
+      "type": "object",
+      "properties": {
+        "style": {"type": "array", "items": {"type": "string"}},
+        "palette": {"type": "array", "items": {"type": "string"}},
+        "negative": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "foley": {
+      "type": "object",
+      "properties": {
+        "style": {"type": "array", "items": {"type": "string"}},
+        "palette": {"type": "array", "items": {"type": "string"}},
+        "negative": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "dialogue": {
+      "type": "object",
+      "properties": {
+        "style": {"type": "array", "items": {"type": "string"}},
+        "negative": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

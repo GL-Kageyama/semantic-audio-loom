@@ -54,6 +54,50 @@ bin/generate.py --character mashiro --performance anxious-night-call \
   などで話者が本人でない場合に有効。例: 真白（`name_reading: ましろ`）→「真白は」が「ましろは」
   と発音される。手書き `《》` と自動ふりがなは共存でき、両方とも読みへ反映される。
 
+## 音の生成（bin/asset.py）
+
+bgm / ambience / sfx / foley を声と同じ 7 段フローで作る。
+
+```bash
+bin/asset.py --type bgm --project demo --name lonely-room \
+    --sound role=underscore --sound mood=lonely --sound instrumentation=solo_piano \
+    --duration 20                                  # 既定 Resolve=llm
+
+bin/asset.py --type sfx --project demo --name door-close \
+    --sound event="heavy wooden door closing" --duration 3 \
+    --resolve rule --provider stub                  # 依存なしで配線を確認
+
+bin/asset.py --type ambience --sound-file rain.yaml --duration 30 \
+    --save-library steady-rain --tags rain,night    # ライブラリへも取り込む
+```
+
+- Direction は `--sound key=value`（複数可）。カンマ区切りは配列、`{...}` は JSON。
+- `--duration` / `--prompt` / `--situation` / `--subtext` / `--seed` / `--provider`。
+- `--bible` を省略すると `projects/<project>/sound-bible.yaml` を自動で読む（`--no-bible` で無効）。
+- プロンプトは英語（モデル向け）。詳細は [asset-generation.md](asset-generation.md)。
+
+## ライブラリ（bin/library.py）
+
+```bash
+bin/library.py list [--type sfx]
+bin/library.py search "rain night" [--type ambience]
+bin/library.py show door-close
+bin/library.py add my_rain.wav --type ambience --name steady-rain --tags rain
+bin/library.py validate
+```
+
+詳細は [library.md](library.md)。
+
+## Sound Bible（bin/sound-bible.py）
+
+```bash
+bin/sound-bible.py init demo       # projects/demo/sound-bible.yaml
+bin/sound-bible.py show demo
+bin/sound-bible.py validate demo
+```
+
+詳細は [sound-bible.md](sound-bible.md)。
+
 ## シーン合成（bin/scene.py）
 
 複数人物の台詞を「間（無音）」で連結し、1 つの WAV にする。`scene.yaml` がキュー

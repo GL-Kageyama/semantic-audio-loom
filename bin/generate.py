@@ -24,7 +24,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import yaml
 
-from semantic_audio_loom import i18n
+from semantic_audio_loom import config, i18n
 from semantic_audio_loom.engine import AudioAssetEngine
 from semantic_audio_loom.skills.character_voice import (
     build_intent,
@@ -107,7 +107,7 @@ def main() -> None:
         situation=situation, state=state, subtext=subtext, seed=args.seed,
     )
 
-    out_dir = os.path.join("projects", args.project, "assets", args.scene)
+    out_dir = os.path.join(config.project_dir(args.project), "assets", args.scene)
     engine = AudioAssetEngine(provider_name=args.provider, resolve_mode=args.resolve, lang=lang)
     asset = engine.generate(intent, out_dir=out_dir, name=args.name)
 

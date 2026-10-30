@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Library Asset",
+  "description": "再利用ライブラリ（library/<type>/<name>.asset.yaml）のメタデータ。意味タグ・出典・ライセンス・ループ点を保持する。",
+  "type": "object",
+  "required": ["name", "asset_type", "files"],
+  "properties": {
+    "name": {"type": "string", "minLength": 1},
+    "asset_type": {
+      "enum": ["voice", "bgm", "ambience", "sfx", "foley"]
+    },
+    "spec": {"type": "object"},
+    "semantic": {
+      "type": "object",
+      "description": "検索に使う意味フィールド（mood / environment / event / tempo_bpm など）。自由なキー。"
+    },
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "loop": {
+      "type": "object",
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "start": {"type": "number", "minimum": 0.0},
+        "end": {"type": "number", "minimum": 0.0},
+        "crossfade": {"type": "number", "minimum": 0.0}
+      }
+    },
+    "license": {"type": "string"},
+    "attribution": {"type": "string"},
+    "source": {
+      "type": "object",
+      "properties": {
+        "provider": {"type": "string"},
+        "model": {"type": "string"},
+        "seed": {"type": "integer"},
+        "prompt": {"type": "string"},
+        "url": {"type": "string"}
+      }
+    },
+    "files": {
+      "type": "object",
+      "required": ["wav"],
+      "properties": {
+        "wav": {"type": "string"}
+      }
+    },
+    "duration": {"type": "number", "minimum": 0.0},
+    "sample_rate": {"type": "integer"},
+    "channels": {"type": "integer"},
+    "created_at": {"type": "string"}
+  }
+}

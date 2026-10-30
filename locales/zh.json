@@ -100,5 +100,43 @@
     "auth_required": "缺少 Claude 凭据（ANTHROPIC_API_KEY 或 ANTHROPIC_AUTH_TOKEN）",
     "empty_response": "空响应",
     "api_failed": "Claude API 调用失败：{err}"
+  },
+  "asset": {
+    "description": "生成 BGM、环境音、音效和拟音。",
+    "help_project": "保存位置 projects/<project>/assets/",
+    "help_scene": "保存子文件夹",
+    "help_sound": "Sound Direction（可重复；逗号分隔为数组）",
+    "help_sound_file": "Sound Direction 的 YAML/JSON",
+    "help_prompt": "直接指定模型提示词（英语）",
+    "help_situation": "情境（Resolve 的输入）",
+    "help_subtext": "意图的潜台词（可选）",
+    "help_bible": "Sound Bible 的路径（默认 projects/<project>/sound-bible.yaml）",
+    "help_save_library": "导入到 library/<type>/<NAME>",
+    "help_tags": "库标签（逗号分隔）",
+    "help_license": "许可证说明",
+    "help_attribution": "署名"
+  },
+  "library": {
+    "description": "操作可复用资材库。",
+    "help_list": "列表",
+    "help_search": "按语义字段和提示词搜索",
+    "help_show": "以 YAML 显示一条",
+    "help_add": "导入 WAV",
+    "help_validate": "验证全部",
+    "empty": "资材库为空：{path}",
+    "no_hits": "没有匹配的资材。",
+    "not_found": "未找到资材：{name}",
+    "valid": "资材库正常。",
+    "valid_empty": "没有可校验的资材（0 件）：{path}"
+  },
+  "sound_bible": {
+    "description": "操作 Sound Bible。",
+    "help_init": "写入模板",
+    "help_show": "显示",
+    "help_validate": "验证",
+    "exists": "已存在（用 --force 覆盖）：{path}",
+    "not_found": "未找到：{path}",
+    "valid": "Sound Bible 正常。",
+    "valid_empty": "Sound Bible 为空（各节均未设置）：{path}"
   }
 }

@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Sound Spec",
+  "description": "ambience / sfx / foley の Resolve 済み Spec（モデル非依存の Seam）。kind で意味フィールドが変わる。",
+  "type": "object",
+  "required": ["kind", "prompt"],
+  "properties": {
+    "kind": {
+      "enum": ["ambience", "sfx", "foley"]
+    },
+    "prompt": {"type": "string", "minLength": 1},
+    "negative_prompt": {"type": "string"},
+    "mood": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "style": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "intensity": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "duration": {"type": "number", "exclusiveMinimum": 0.0},
+    "loop": {
+      "type": "object",
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "crossfade": {"type": "number", "minimum": 0.0}
+      }
+    },
+    "environment": {"type": "string"},
+    "location": {"type": "string"},
+    "time": {"type": "string"},
+    "weather": {"type": "string"},
+    "space": {
+      "enum": ["indoor", "outdoor", "abstract"]
+    },
+    "distance": {
+      "enum": ["near", "mid", "far"]
+    },
+    "density": {
+      "enum": ["sparse", "medium", "dense"]
+    },
+    "movement": {
+      "enum": ["static", "subtle", "active"]
+    },
+    "event": {"type": "string"},
+    "object": {"type": "string"},
+    "material": {"type": "string"},
+    "action": {"type": "string"},
+    "perspective": {"type": "string"},
+    "surface": {"type": "string"},
+    "contact": {"type": "string"},
+    "layers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {"type": "string"},
+          "description": {"type": "string"},
+          "level_db": {"type": "number"}
+        }
+      }
+    },
+    "subtext": {"type": "string"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"kind": {"const": "ambience"}}},
+      "then": {"required": ["environment"]}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "sfx"}}},
+      "then": {
+        "anyOf": [{"required": ["event"]}, {"required": ["object"]}]
+      }
+    },
+    {
+      "if": {"properties": {"kind": {"const": "foley"}}},
+      "then": {"required": ["action"]}
+    }
+  ]
+}

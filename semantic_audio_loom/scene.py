@@ -53,7 +53,7 @@ def cue_from_params(cue: dict) -> GenerationRequest:
     return GenerationRequest(
         asset_type="voice",
         voice_profile=cue["voice_profile"],
-        performance_spec=cue["performance_spec"],
+        spec=cue["performance_spec"],
         dialogue=cue["dialogue"],
         reading=cue.get("reading", ""),
         seed=cue["seed"],

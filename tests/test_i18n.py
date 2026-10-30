@@ -93,6 +93,8 @@ def test_prompt_keys_consistent():
         pr = i18n.load_prompts(lang)
         assert set(pr) == set(ja)
         assert set(pr["resolve"]) == set(ja["resolve"])
+        assert set(pr["resolve_music"]) == set(ja["resolve_music"])
+        assert set(pr["resolve_sound"]) == set(ja["resolve_sound"])
         assert set(pr["distill"]) == set(ja["distill"])
         assert set(pr["distill"]["errors"]) == set(ja["distill"]["errors"])
 
@@ -155,6 +157,43 @@ def test_resolve_prompt_localized_by_lang(monkeypatch):
     assert "Line:" in captured["user"]
     assert "Situation:" in captured["user"]
     assert "……まだ、起きてる？" in captured["user"]
+    assert not _has_japanese_kana(captured["system"])
+
+
+def test_music_resolve_prompt_localized_by_lang(monkeypatch):
+    captured = {}
+
+    def fake(self, system, user):
+        captured["system"] = system
+        captured["user"] = user
+        return {"prompt": "felt piano, slow, lonely", "mood": ["lonely"]}
+
+    monkeypatch.setattr(ClaudeClient, "complete_json", fake)
+
+    intent = GenerationIntent(asset_type="bgm", situation="深夜の部屋",
+                              sound={"role": "underscore", "mood": ["lonely"]})
+    spec = resolve_mod.resolve_music_llm(intent, lang="en")
+    assert spec["prompt"] == "felt piano, slow, lonely"
+    assert "Music Spec" in captured["system"]
+    assert not _has_japanese_kana(captured["system"])
+    assert "深夜の部屋" in captured["user"]  # 自由テキストは入力のまま渡す
+
+
+def test_sound_resolve_prompt_localized_by_lang(monkeypatch):
+    captured = {}
+
+    def fake(self, system, user):
+        captured["system"] = system
+        captured["user"] = user
+        return {"prompt": "rain on a tin roof"}
+
+    monkeypatch.setattr(ClaudeClient, "complete_json", fake)
+
+    intent = GenerationIntent(asset_type="ambience", situation="雨の屋根",
+                              sound={"environment": "rain"})
+    spec = resolve_mod.resolve_sound_llm(intent, lang="zh")
+    assert spec["kind"] == "ambience"  # LLM の言い値でなく asset_type が正
+    assert "Sound Spec" in captured["system"]
     assert not _has_japanese_kana(captured["system"])
 
 

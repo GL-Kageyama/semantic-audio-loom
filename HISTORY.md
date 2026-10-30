@@ -2,6 +2,58 @@
 
 日付入りの変更経緯・過去の設計との比較・実測値はここに記録する。現在の情報は README / docs / SKILL を見る。
 
+## 2026-10-31 — M5 音の生成＋ライブラリ（5 種すべて）
+
+### スコープ
+
+- 正典 5 種のうち voice しか動いていなかった状態から、bgm / ambience / sfx / foley を
+  同じ 7 段フローに乗せた。資材の範囲は 5 種すべて、生成はローカル優先（クラウドは任意）、
+  最初の縦の一本は「生成＋ライブラリ」（ユーザー選択）。
+- Scene（複数 voice の連結）は正典 5 種に数えないまま。Timeline / Mixer（重ね合わせ・
+  ducking・LUFS）は M6、脚本→音の設計図は M7。
+
+### 設計
+
+- Seam（モデル非依存の境界）を type 別の Spec に一般化：voice=Performance Spec、
+  bgm=Music Spec、ambience・sfx・foley=Sound Spec。`GenerationRequest` は
+  `performance_spec` をやめて `spec` ＋ `asset_type` を持つ（`performance_spec` は
+  後方互換の property として残す）。
+- `GenerationIntent.sound`（dict）を追加。voice の Direction フィールドはそのまま。
+- Resolve は type で分岐。Rule は構造フィールドを Spec へ移し、英語プロンプトを組み立てる。
+  LLM は 3 つのプロンプト（resolve / resolve_music / resolve_sound）を使い分ける。
+- Route は asset_type ごとの既定 Provider を持ち、`capabilities()["asset_types"]` で
+  非対応を即座に落とす（生成してから気づかない）。
+- 保存形式は type 別（`config.OUTPUT_FORMATS`）。voice は従来どおり 24kHz mono、
+  音の 4 種は 44.1kHz・チャンネルは生成のまま。Normalize にリサンプルとチャンネル変換を
+  足し、ループ資材には末尾フェードを掛けない。
+- 新規スキーマ：`music_spec` / `sound_spec` / `sound_bible` / `library_asset`。
+- 新規 Provider：`musicgen`（transformers・musicgen-small・32kHz mono・30 秒）、
+  `stable_audio`（diffusers・stable-audio-open-1.0・44.1kHz stereo・約 47 秒・gated）、
+  `stub`（依存なし・決定的）。
+- 新規 CLI：`bin/asset.py`（音の生成）、`bin/library.py`（一覧・検索・追加・検証）、
+  `bin/sound-bible.py`（init/show/validate）。
+- ライブラリは `library/<type>/<name>.asset.yaml` ＋ `.wav`。検索は埋め込みでなく
+  意味フィールド・タグ・プロンプトの部分一致を数える決定的な方式。
+- `projects/` の解決を `config.project_dir()` に一本化（`SAL_PROJECTS_DIR` で差し替え可）。
+
+### 検証
+
+- `pytest tests/` … 85 passed（既存 55 ＋ 新規 30）。重いモデルは使わず stub で全 type の
+  7 段フロー・保存形式（チャンネル／サンプルレート）・ライブラリの追加と検索・Sound Bible の
+  継承規則・Route の非対応拒否を通した。i18n は `resolve_music` / `resolve_sound` の
+  プロンプトが `--lang` で切り替わること（かな漏れ無し）をモック LLM で確認した。
+- CLI 実測（stub）：`sound-bible init → asset(bgm/ambience) → library list/search/validate
+  → regenerate` が通り、regenerate は同じ seed で走った。
+- **musicgen は本物の重みで通した**（`facebook/musicgen-small`・CPU・M2 Pro）。3 秒と 5 秒の
+  BGM を生成 → リサンプル（32kHz → 44.1kHz）→ 保存まで通り、wav は peak 0.95・RMS 0.176
+  （−15 dBFS）・無音率 0.08%・末尾フェードあり。所要は 5 秒の BGM で約 37 秒（重み取得済み）。
+  初回は重み 2.2GB の取得を含めて約 2 分。
+- **stable_audio は未実測**。モデルが gated で、この環境には diffusers も HF のトークンも
+  無い。ライセンス同意と `huggingface-cli login` のあとで `--provider stable_audio` を
+  通すのが次の実測。ambience / sfx / foley の保存形式は stub でのみ確認している。
+- 空の検査を「健全」と言わないよう直した：ライブラリ 0 件の `library.py validate` と、
+  全節が空の Sound Bible の `validate` は、OK でなく「空」と報せる。
+
 ## 2026-08-29 — 実装一式（M0〜M3・資材分離・参照音声拡充）
 
 ### M0 — Provider スパイク（Tsukasa_Speech 確定）
