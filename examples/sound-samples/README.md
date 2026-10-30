@@ -153,10 +153,10 @@ bin/regenerate.py examples/sound-samples/sfx-door-close.params.yaml --out-dir /t
 # → /tmp/out/sfx-door-close.wav が元の wav と byte-identical
 ```
 
-stub 3 本・musicgen 2 本・stable_audio 1 本（`sfx-switch-click`・50 ステップ）は、
-この再生成で sha1 が一致することを確かめた。stable_audio は同じ seed でもサンプリング
-回数が変われば別の音になるので、回数は `provider_settings.steps` に書いてあり、
-`regenerate.py` が読み戻す。musicgen は `tokens`（尺の丸め）と `guidance_scale` を残す。
+**11 本すべて**（stub 3・musicgen 2・stable_audio 6）、この再生成で sha1 が一致した。
+stable_audio は同じ seed でもサンプリング回数が変われば別の音になるので、回数は
+`provider_settings.steps` に書いてあり、`regenerate.py` が読み戻す。musicgen は
+`tokens`（尺の丸め）と `guidance_scale` を残す。
 
 ## ライセンス
 
