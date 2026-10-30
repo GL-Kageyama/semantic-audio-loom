@@ -98,6 +98,16 @@ bin/sound-bible.py validate demo
 
 詳細は [sound-bible.md](sound-bible.md)。
 
+## 生成物を測る（bin/probe.py）
+
+聴く代わりに、形式・レベル・帯域・無音率・先頭の段差を数で出す。良し悪しは判定せず、
+機械的に明らかな欠陥（無音・クリップ・2kHz 以上の完全な欠落・先頭の段差）だけを注意する。
+
+```bash
+bin/probe.py projects/demo/assets/sound/bgm.wav
+bin/probe.py examples/sound-samples/*.wav --json
+```
+
 ## シーン合成（bin/scene.py）
 
 複数人物の台詞を「間（無音）」で連結し、1 つの WAV にする。`scene.yaml` がキュー

@@ -53,14 +53,6 @@ SOUND_FIELDS = (
     "perspective", "surface", "contact", "layers", "subtext",
 )
 
-_ROLE_TEXT = {
-    "theme": "main theme",
-    "underscore": "understated background score",
-    "jingle": "short jingle",
-    "loop": "seamless loop",
-    "stinger": "short dramatic stinger",
-}
-
 _KIND_TEXT = {
     "ambience": "continuous ambience",
     "sfx": "single sound effect",
@@ -117,9 +109,7 @@ def resolve_music_rule(intent: GenerationIntent) -> dict:
     spec = {k: sound[k] for k in MUSIC_FIELDS if k in sound}
     prompt = sound.get("prompt")
     if not prompt:
-        prompt = _music_prompt(spec)
-        if intent.situation:
-            prompt = f"{prompt}. Scene: {intent.situation}"
+        prompt = _append_scene(_music_prompt(spec), intent.situation)
     spec["prompt"] = prompt
     negative = sound.get("negative") or []
     if negative:
@@ -160,9 +150,7 @@ def resolve_sound_rule(intent: GenerationIntent) -> dict:
 
     prompt = sound.get("prompt")
     if not prompt:
-        prompt = _sound_prompt(spec, kind)
-        if intent.situation:
-            prompt = f"{prompt}. Scene: {intent.situation}"
+        prompt = _append_scene(_sound_prompt(spec, kind), intent.situation)
     spec["prompt"] = prompt
     negative = sound.get("negative") or []
     if negative:
@@ -188,7 +176,7 @@ def resolve_sound_llm(intent: GenerationIntent, lang: str | None = None) -> dict
 def resolve(intent: GenerationIntent, mode: str = "llm", lang: str | None = None) -> dict:
     asset_type = intent.asset_type
     if mode == "rule":
-        return _rule(intent, asset_type)
+        return _rule(intent, asset_type, lang)
     try:
         if asset_type == "voice":
             return resolve_llm(intent, lang=lang)
@@ -206,15 +194,32 @@ def resolve(intent: GenerationIntent, mode: str = "llm", lang: str | None = None
             ),
             file=sys.stderr,
         )
-        return _rule(intent, asset_type)
+        return _rule(intent, asset_type, lang)
 
 
-def _rule(intent: GenerationIntent, asset_type: str) -> dict:
+def _rule(intent: GenerationIntent, asset_type: str, lang: str | None = None) -> dict:
     if asset_type == "voice":
         return resolve_rule(intent)
     if asset_type == "bgm":
-        return resolve_music_rule(intent)
-    return resolve_sound_rule(intent)
+        spec = resolve_music_rule(intent)
+    else:
+        spec = resolve_sound_rule(intent)
+    # 生成モデルは英語で学習した T5 を使う。ルール解決は翻訳しないので、
+    # 非英語がプロンプトに残っていたら黙って渡さず報せる。
+    prompt = spec.get("prompt") or ""
+    if prompt and not _is_english(prompt):
+        print(
+            i18n._t(
+                i18n.load_locale(lang),
+                "resolve",
+                "non_english_prompt",
+                "モデル向けプロンプトに非英語が含まれる（生成モデルは英語のみ）。"
+                "--resolve llm なら英語化される: {prompt}",
+                prompt=prompt,
+            ),
+            file=sys.stderr,
+        )
+    return spec
 
 
 # ---------------------------------------------------------------- prompt builders
@@ -226,45 +231,104 @@ def _strip_none(spec: dict) -> dict:
     return {k: v for k, v in spec.items() if v is not None}
 
 
+def _is_english(text: str) -> bool:
+    """生成モデル（MusicGen の T5・Stable Audio の T5）が読める文字だけか。
+
+    どちらも英語で学習した T5 を使うので、日本語をそのまま渡すと無意味なトークン列に
+    なる。ルール解決は翻訳しないため、渡してよいかをここで判定する。
+    """
+    return all(ord(c) < 128 for c in text)
+
+
+def _append_scene(prompt: str, situation: str) -> str:
+    """プロンプトに状況を足す。英語のときだけ足す（日本語は subtext 側に残す）。"""
+    if not situation or not _is_english(situation):
+        return prompt
+    return f"{prompt.rstrip('. ')}. Scene: {situation.strip().rstrip('. ')}."
+
+
 def _music_prompt(spec: dict) -> str:
-    """Music Spec の構造フィールドからモデル向けプロンプトを組み立てる。"""
-    parts = []
-    mood = spec.get("mood") or []
+    """Music Spec から、モデル向けの「どんな音が鳴るか」を書いた一文を作る。
+
+    MusicGen は音の説明文で学習している。属性の羅列（`60 BPM, understated
+    background score, instrumental, no vocals`）は音の説明ではないので、
+    条件づけが薄れ、低域に寄ったぼやけた音になりやすい。芯は楽器を主語にした
+    名詞句（`A soft understated felt piano piece`）で、そこへ様子と速さを短く足す。
+    測定は docs/asset-generation.md、数は HISTORY.md。
+    """
+    mood = [str(x) for x in (spec.get("mood") or [])]
+    instrumentation = [str(x) for x in (spec.get("instrumentation") or [])]
+    texture = [str(x) for x in (spec.get("texture") or [])]
+    arrangement = spec.get("arrangement") or {}
+
+    # 主語：修飾語 → 楽器 → "piece"。楽器が無ければ様式、それも無ければ曲。
+    qualifiers = list(texture)
+    role_adjective = _ROLE_ADJECTIVE.get(spec.get("role"))
+    if role_adjective and role_adjective not in qualifiers:
+        qualifiers.append(role_adjective)
+    density = arrangement.get("density")
+    if density == "sparse" and "sparse" not in qualifiers:
+        qualifiers.append("sparse")
+    subject_noun = " and ".join(instrumentation) if instrumentation else None
+    if not subject_noun:
+        style = [str(x) for x in (spec.get("style") or spec.get("genre") or [])]
+        subject_noun = " ".join(style) if style else None
+
+    if subject_noun:
+        words = [*qualifiers[:3], subject_noun]
+        article = "An" if words[0][:1].lower() in "aeiou" else "A"
+        phrase = " ".join([article, *words]) + " piece"
+    else:
+        phrase = "A piece of music"
+    parts = [phrase]
+
     if mood:
-        parts.append(", ".join(str(x) for x in mood))
-    style = spec.get("style") or spec.get("genre") or []
-    if style:
-        parts.append(", ".join(str(x) for x in style))
-    instrumentation = spec.get("instrumentation") or []
-    if instrumentation:
-        parts.append("featuring " + ", ".join(str(x) for x in instrumentation))
-    tempo = spec.get("tempo") or {}
-    if tempo.get("bpm"):
-        parts.append(f"{float(tempo['bpm']):.0f} BPM")
-    elif tempo.get("feel"):
-        parts.append(str(tempo["feel"]).replace("_", " ") + " tempo")
+        parts.append(" and ".join(mood))
+    tempo = _tempo_text(spec.get("tempo") or {})
+    if tempo:
+        parts.append(tempo)
     key = spec.get("key") or {}
     key_text = " ".join(str(x) for x in (key.get("tonic"), key.get("mode")) if x)
     if key_text:
-        parts.append(key_text)
+        parts.append(f"in {key_text}")
     meter = spec.get("meter")
     if meter:
-        parts.append(f"in {meter}")
-    arrangement = spec.get("arrangement") or {}
-    if arrangement.get("density"):
-        parts.append(f"{arrangement['density']} arrangement")
-    if arrangement.get("arc"):
-        parts.append(str(arrangement["arc"]))
-    texture = spec.get("texture") or []
-    if texture:
-        parts.append(", ".join(str(x) for x in texture))
-    parts.append(_ROLE_TEXT.get(spec.get("role"), "instrumental music"))
-    parts.append("instrumental, no vocals")
+        parts.append(f"{meter} time")
+
     prompt = ", ".join(p for p in parts if p)
     duration = spec.get("duration")
     if duration:
         prompt = f"{prompt}. About {_seconds_text(duration)}."
     return prompt
+
+
+# role は鳴り方を修飾する語として主語に混ぜる（"understated felt piano piece"）。
+# 名詞のまま並べる（"understated background score"）と音の説明でなくなる。
+_ROLE_ADJECTIVE = {
+    "theme": "melodic",
+    "underscore": "understated",
+    "jingle": "short",
+    "loop": "seamless",
+    "stinger": "dramatic",
+}
+
+
+def _tempo_text(tempo: dict) -> str:
+    """速さは数値でなく形容で書く（"at 60 BPM" は音の説明でない）。"""
+    feel = tempo.get("feel")
+    if feel:
+        return str(feel).replace("_", " ")
+    bpm = tempo.get("bpm")
+    if not bpm:
+        return ""
+    bpm = float(bpm)
+    if bpm < 70:
+        return "slow"
+    if bpm < 100:
+        return "moderate tempo"
+    if bpm < 140:
+        return "upbeat"
+    return "fast"
 
 
 def _seconds_text(value) -> str:

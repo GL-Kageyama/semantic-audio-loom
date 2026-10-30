@@ -84,8 +84,12 @@
     "result_summary": "蒸留結果: キャラ {n_chars} 人 / 演技 {n_perfs} つ",
     "exists": "{path} は既にあります（--overwrite で上書き）"
   },
+  "route": {
+    "duration_capped": "[route] 依頼した尺 {requested} 秒は {provider} の上限 {max} 秒を超えている。{max} 秒で生成する。"
+  },
   "resolve": {
-    "fallback": "[resolve] LLM に失敗したため Rule へフォールバック: {exc}"
+    "fallback": "[resolve] LLM に失敗したため Rule へフォールバック: {exc}",
+    "non_english_prompt": "[resolve] モデル向けプロンプトに非英語が含まれる（生成モデルは英語のみ）。--resolve llm なら英語化される: {prompt}"
   },
   "scene": {
     "description": "複数人物の台詞を 1 つの WAV に合成する（シーン）。",
@@ -115,6 +119,21 @@
     "help_tags": "ライブラリのタグ（カンマ区切り）",
     "help_license": "ライセンス表記",
     "help_attribution": "帰属表示"
+  },
+  "probe": {
+    "description": "生成した音を測る（耳の代わりの診断器）。",
+    "help_json": "JSON で出す",
+    "fmt": "形式 {khz} kHz / {ch} ch / {bits} bit / {dur} 秒",
+    "level": "レベル ピーク {peak} / RMS {rms} dBFS / クレスト {crest} dB / DC {dc}",
+    "silence": "無音率 {pct}% / クリップ {clip}",
+    "bands": "帯域 低 {low} dB / 中 {mid} dB / 高 {high} dB",
+    "centroid": "重心 {hz} Hz / 平坦度 {flat}",
+    "ok": "機械的な欠陥は見つからない",
+    "flag_silent": "注意 ほぼ無音（RMS {rms_db} dBFS）",
+    "flag_clipped": "注意 クリップ {count} サンプル",
+    "flag_bass_heavy": "注意 低域に寄っている（低が中より {diff_db} dB 大きい）",
+    "flag_no_highs": "注意 2kHz 以上がほぼ無い（{level_db} dB）",
+    "flag_head_step": "注意 先頭が 0 から始まっていない（{value}）"
   },
   "library": {
     "description": "再利用ライブラリを操作する。",

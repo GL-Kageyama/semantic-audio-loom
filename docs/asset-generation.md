@@ -59,6 +59,33 @@ bin/asset.py --type foley --project demo --name cloth-rustle \
 
 プロンプトはモデル向けなので**常に英語**。`subtext` などの自由テキストだけ `--lang` に従う。
 
+`--resolve rule` は翻訳しないので、英語にできるのは構造フィールド（`mood` `instrumentation`
+など、もともと英語の語）と、英語で書かれた `situation` だけ。日本語の `situation` は
+プロンプトへ足さず `subtext` に残す。Direction に日本語を直接書いた場合は、非英語が
+プロンプトに残る旨を警告する（`--resolve llm` なら英語化される）。
+
+### プロンプトは音の説明である（bgm）
+
+生成モデルは「どんな音が鳴るか」を書いた文に条件づけられる。`60 BPM` や
+`understated background score`、`instrumental, no vocals` のような属性の羅列は音の
+説明ではないので、条件づけが薄れやすい（同じ seed・同じモデルで、羅列と説明文の
+スペクトルを比べた測定は [HISTORY.md](../HISTORY.md) の M5 にある）。Rule 解決は
+属性を音の側の語へ翻訳して、楽器を主語にした一文にする：
+
+| Spec | プロンプトでの扱い |
+| --- | --- |
+| `instrumentation` | 主語の名詞（`felt piano` → `A felt piano piece`） |
+| `role` | 修飾語（underscore → `understated`、theme → `melodic`） |
+| `texture` / `arrangement.density: sparse` | 修飾語（`soft`、`sparse`） |
+| `mood` | 接続した様子（`lonely and still`） |
+| `tempo` | 形容（`slow` / `moderate` / `upbeat` / `fast`）。BPM の数値は書かない |
+| `key` / `meter` | `in C minor, 3/4 time` |
+
+`no vocals` のような否定は書かない。生成モデルは否定を演算しないので、`vocals` を
+名指しするだけになる。楽器が無ければ `style` / `genre` を主語にし、それも無ければ
+`A piece of music` になる。`loop` など音の説明でないフィールドは Spec に残るが、
+プロンプトには入らない。
+
 ## Provider（ローカル優先）
 
 | Provider | 対象 | モデル | 長さ | ライセンス |
@@ -71,6 +98,8 @@ bin/asset.py --type foley --project demo --name cloth-rustle \
 - `stub` は配線・保存形式・ライブラリの確認用。本物の音は出ない。
 - `--provider` で明示できる。Provider の `capabilities()["asset_types"]` に無い型を
   頼むと Route が即座に失敗する（生成してから気づかない）。
+- 依頼の尺が Provider の `max_seconds` を超えるときは、切ったことを stderr に出す
+  （黙って短い資材を返さない）。切るのは Provider で、判定は Route が持つ。
 - 環境変数：`SAL_MUSICGEN_MODEL`・`SAL_STABLE_AUDIO_MODEL`・`SAL_DEVICE`。
 
 依存は `pip install 'transformers>=4.40'`（musicgen）/ `pip install 'diffusers>=0.31'`
@@ -87,4 +116,6 @@ bin/asset.py --type foley --project demo --name cloth-rustle \
 
 Normalize はリサンプル・ピーク正規化（天井 0.95）・末尾フェードを行う。
 `loop.enabled` の bgm / ambience には末尾フェードを掛けない（継ぎ目に無音ができるため）。
+生成モデルは曲の途中から鳴り始めることがあるので、先頭が 0 でない波形には 2ms のランプを
+掛けてプツッを消す（立ち上がりは鈍らせない。声とループ資材には掛けない）。
 ラウドネス（LUFS）基準の正規化はミキサー（M6）の仕事で、まだ入っていない。

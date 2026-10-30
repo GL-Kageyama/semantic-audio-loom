@@ -8,6 +8,7 @@ seed 未指定ならここで採番し、params に記録する（regenerate で
 from __future__ import annotations
 
 import random
+import sys
 
 from semantic_audio_loom import config
 from semantic_audio_loom.engine import metadata, normalize, resolve, route, store, validate
@@ -66,6 +67,9 @@ class AudioAssetEngine:
     def _run(self, request: GenerationRequest, out_dir, name) -> AudioAsset:
         # 2 Route / 4 Generate / 5 Normalize
         provider = route.route(request.asset_type, request.provider_hint)
+        warning = route.duration_warning(provider, request.duration, self.lang)
+        if warning:
+            print(warning, file=sys.stderr)
         audio = provider.generate(request)
         audio = self._normalize(request, audio)
 
@@ -81,14 +85,21 @@ class AudioAssetEngine:
     def _normalize(self, request: GenerationRequest, audio: Audio) -> Audio:
         sample_rate, channels = config.OUTPUT_FORMATS[request.asset_type]
         loop = bool((request.spec.get("loop") or {}).get("enabled"))
+        head_fade: float | None = normalize.FADE_IN_MS
         if request.asset_type == "voice":
             fade: float | None = normalize.TAIL_FADE_MS
+            head_fade = None  # 声は Tsukasa の出力をそのまま保つ（既存の音を変えない）
         elif request.asset_type in _LOOPABLE and loop:
             fade = None
+            head_fade = None  # 継ぎ目に無音ができないよう、ループ資材は両端を触らない
         else:
             fade = normalize.SFX_TAIL_FADE_MS
         return normalize.normalize(
-            audio, sample_rate=sample_rate, channels=channels, tail_fade_ms=fade
+            audio,
+            sample_rate=sample_rate,
+            channels=channels,
+            tail_fade_ms=fade,
+            head_fade_ms=head_fade,
         )
 
 

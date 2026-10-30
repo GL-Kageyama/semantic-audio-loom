@@ -84,8 +84,12 @@
     "result_summary": "蒸馏结果：角色 {n_chars} 位 / 演技 {n_perfs} 个",
     "exists": "{path} 已存在（用 --overwrite 覆盖）"
   },
+  "route": {
+    "duration_capped": "[route] 请求的时长 {requested} 秒超过 {provider} 的上限 {max} 秒，将生成 {max} 秒。"
+  },
   "resolve": {
-    "fallback": "[resolve] LLM 失败，回退到 Rule：{exc}"
+    "fallback": "[resolve] LLM 失败，回退到 Rule：{exc}",
+    "non_english_prompt": "[resolve] 模型提示词含非英文（生成模型仅支持英文）。用 --resolve llm 可译为英文：{prompt}"
   },
   "scene": {
     "description": "将多位角色的台词合成为一个 WAV（场景）。",
@@ -115,6 +119,21 @@
     "help_tags": "库标签（逗号分隔）",
     "help_license": "许可证说明",
     "help_attribution": "署名"
+  },
+  "probe": {
+    "description": "测量生成的音频（代替耳朵的诊断器）。",
+    "help_json": "以 JSON 输出",
+    "fmt": "格式 {khz} kHz / {ch} ch / {bits} bit / {dur} 秒",
+    "level": "电平 峰值 {peak} / RMS {rms} dBFS / 波峰因数 {crest} dB / DC {dc}",
+    "silence": "静音率 {pct}% / 削波 {clip}",
+    "bands": "频段 低 {low} dB / 中 {mid} dB / 高 {high} dB",
+    "centroid": "重心 {hz} Hz / 平坦度 {flat}",
+    "ok": "未发现机械性缺陷",
+    "flag_silent": "注意 几乎无声（RMS {rms_db} dBFS）",
+    "flag_clipped": "注意 削波 {count} 个采样",
+    "flag_bass_heavy": "注意 偏向低频（低频比中频高 {diff_db} dB）",
+    "flag_no_highs": "注意 2kHz 以上几乎没有（{level_db} dB）",
+    "flag_head_step": "注意 起始采样不为 0（{value}）"
   },
   "library": {
     "description": "操作可复用资材库。",

@@ -1,0 +1,30 @@
+name: sfx-door-close
+metadata:
+  asset_type: sfx
+  kind: sfx
+  distance: near
+  event: heavy wooden door closing
+  material: wood
+  prompt: heavy wooden door closing, wood, near perspective, single sound effect.
+    About 2 seconds.
+  provider: stub
+  sample_rate: 44100
+  channels: 1
+  duration: 2.0
+  created_at: '2026-10-30T20:11:21.893689+00:00'
+parameters:
+  version: 3
+  asset_type: sfx
+  provider: stub
+  spec:
+    duration: 2
+    distance: near
+    event: heavy wooden door closing
+    material: wood
+    kind: sfx
+    prompt: heavy wooden door closing, wood, near perspective, single sound effect.
+      About 2 seconds.
+  seed: 11
+  duration: 2.0
+  sample_rate: 44100
+  sha1: 50a89de79c3e

@@ -84,8 +84,12 @@
     "result_summary": "Distilled: {n_chars} character(s) / {n_perfs} performance(s)",
     "exists": "{path} already exists (use --overwrite to replace)"
   },
+  "route": {
+    "duration_capped": "[route] the requested {requested} s exceeds {provider}'s limit of {max} s; generating {max} s."
+  },
   "resolve": {
-    "fallback": "[resolve] LLM failed, falling back to Rule: {exc}"
+    "fallback": "[resolve] LLM failed, falling back to Rule: {exc}",
+    "non_english_prompt": "[resolve] the model prompt contains non-English text (the generators are English-only). Use --resolve llm to translate: {prompt}"
   },
   "scene": {
     "description": "Synthesize multiple characters' lines into one WAV (scene).",
@@ -115,6 +119,21 @@
     "help_tags": "Library tags (comma-separated)",
     "help_license": "License note",
     "help_attribution": "Attribution"
+  },
+  "probe": {
+    "description": "Measure generated audio (a stand-in for listening).",
+    "help_json": "Print JSON",
+    "fmt": "format {khz} kHz / {ch} ch / {bits} bit / {dur} s",
+    "level": "level peak {peak} / RMS {rms} dBFS / crest {crest} dB / DC {dc}",
+    "silence": "silent {pct}% / clipped {clip}",
+    "bands": "bands low {low} dB / mid {mid} dB / high {high} dB",
+    "centroid": "centroid {hz} Hz / flatness {flat}",
+    "ok": "no mechanically evident defect",
+    "flag_silent": "WARNING nearly silent (RMS {rms_db} dBFS)",
+    "flag_clipped": "WARNING clipped {count} samples",
+    "flag_bass_heavy": "WARNING biased to low end (low exceeds mid by {diff_db} dB)",
+    "flag_no_highs": "WARNING almost nothing above 2 kHz ({level_db} dB)",
+    "flag_head_step": "WARNING starts at a non-zero sample ({value})"
   },
   "library": {
     "description": "Work with the reusable asset library.",

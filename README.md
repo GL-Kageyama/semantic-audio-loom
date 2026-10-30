@@ -29,6 +29,7 @@ ambience・sfx・foley = Sound Spec）。声では台詞の「裏の意味（sub
 | 音響ライブラリ（再利用する音） | `bin/library.py` | `library/<type>/<name>.asset.yaml` |
 | 作品の音響スタイル | `bin/sound-bible.py` | `projects/<project>/sound-bible.yaml` |
 | 場面（複数人物を間で合成） | `bin/scene.py` | `scene.yaml` → `projects/<project>/assets/<scene>/` |
+| 生成物を測る（耳の代わり） | `bin/probe.py` | —（形式・帯域・無音率・先頭の段差） |
 
 キャラと演技は独立に再利用でき、名前で組み合わせられる。生成音声はキャラ/演技資材と
 混ぜず、プロジェクトごとに分離する。何度も使う音はライブラリへ移す。
@@ -60,6 +61,7 @@ bin/generate.py --character mashiro --performance anxious-night-call \
 bin/asset.py --type bgm --project demo --name lonely-room \
     --sound role=underscore --sound mood=lonely --duration 20   # 音の生成
 bin/library.py list                                              # 再利用ライブラリ
+bin/probe.py projects/demo/assets/sound/lonely-room.wav           # できた音を測る
 ```
 
 セットアップの詳細（Tsukasa・音生成モデル・LLM の設定）は [docs/setup.md](docs/setup.md)、

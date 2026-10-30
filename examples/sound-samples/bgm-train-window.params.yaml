@@ -1,0 +1,39 @@
+name: bgm-train-window
+metadata:
+  asset_type: bgm
+  role: underscore
+  genre: &id001
+  - folk
+  mood: &id002
+  - wistful
+  - gentle
+  instrumentation: &id004
+  - nylon guitar
+  tempo: &id003
+    bpm: 86
+  prompt: An understated nylon guitar piece, wistful and gentle, moderate tempo. About
+    10 seconds.
+  subtext: 朝の各駅停車。窓の外を田んぼが流れる。
+  provider: musicgen
+  sample_rate: 44100
+  channels: 1
+  duration: 9.94
+  created_at: '2026-10-30T20:33:47.598257+00:00'
+parameters:
+  version: 3
+  asset_type: bgm
+  provider: musicgen
+  spec:
+    role: underscore
+    genre: *id001
+    mood: *id002
+    tempo: *id003
+    instrumentation: *id004
+    duration: 10
+    prompt: An understated nylon guitar piece, wistful and gentle, moderate tempo.
+      About 10 seconds.
+    subtext: 朝の各駅停車。窓の外を田んぼが流れる。
+  seed: 7
+  duration: 10.0
+  sample_rate: 44100
+  sha1: 79d34b40d6a7

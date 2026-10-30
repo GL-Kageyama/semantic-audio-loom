@@ -13,6 +13,7 @@ from semantic_audio_loom.types import ASSET_TYPES, Audio, GenerationRequest
 
 class StubProvider:
     name = "stub"
+    MAX_SECONDS = 8.0  # 合成音を長く作っても確かめることは増えない
 
     def capabilities(self) -> dict:
         return {
@@ -20,12 +21,13 @@ class StubProvider:
             "controls": ["prompt", "duration", "seed"],
             "languages": ["*"],
             "reproducibility": "seed",
+            "max_seconds": self.MAX_SECONDS,
         }
 
     def generate(self, request: GenerationRequest) -> Audio:
         spec = request.spec or {}
         duration = request.duration or spec.get("duration") or 1.0
-        duration = float(min(max(float(duration), 0.1), 8.0))
+        duration = float(min(max(float(duration), 0.1), self.MAX_SECONDS))
         sample_rate = 32000 if request.asset_type == "bgm" else 44100
         n = int(round(duration * sample_rate))
         t = np.arange(n, dtype=np.float64) / sample_rate

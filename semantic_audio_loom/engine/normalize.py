@@ -30,6 +30,11 @@ from semantic_audio_loom.types import Audio
 TAIL_FADE_MS = 30.0
 # 短い効果音の末尾は 30ms では長すぎる。10ms でクリックだけ消す。
 SFX_TAIL_FADE_MS = 10.0
+# 先頭のデクリック。生成モデルは曲の途中から鳴り始めることがあり、t=0 が
+# 0 でない波形だと再生時にプツッと鳴る（実測：musicgen の出力が −0.24 から始まった）。
+# 立ち上がりを鈍らせないよう、掛けるのは 2ms だけにし、先頭が十分小さいときは触らない。
+FADE_IN_MS = 2.0
+HEAD_FADE_THRESHOLD = 0.01
 
 
 def _as_float(wav) -> np.ndarray:
@@ -101,12 +106,34 @@ def _tail_fade(wav: np.ndarray, sample_rate: int, ms: float = TAIL_FADE_MS) -> n
     return wav
 
 
+def _head_fade(wav: np.ndarray, sample_rate: int, ms: float = FADE_IN_MS) -> np.ndarray:
+    """先頭が 0 から始まっていないときだけ、短いランプを掛けてプツッを消す。
+
+    先頭が既に静かな波形（自然な減衰の途中や無音始まり）には触らない。
+    ループ資材には掛けない（継ぎ目ごとに無音ができる）。
+    """
+    if wav.shape[0] == 0 or float(np.max(np.abs(wav[0]))) <= HEAD_FADE_THRESHOLD:
+        return wav
+    n = int(sample_rate * ms / 1000.0)
+    if n <= 0 or wav.shape[0] <= n:
+        return wav
+    wav = wav.copy()
+    t = np.linspace(0.0, 1.0, n, endpoint=True)
+    ramp = 0.5 * (1.0 - np.cos(np.pi * t))  # 0 → 1
+    if wav.ndim == 1:
+        wav[:n] *= ramp
+    else:
+        wav[:n] *= ramp[:, None]
+    return wav
+
+
 def normalize(
     audio: Audio,
     ceiling: float = 0.95,
     tail_fade_ms: float | None = TAIL_FADE_MS,
     sample_rate: int | None = None,
     channels: int | None = None,
+    head_fade_ms: float | None = FADE_IN_MS,
 ) -> Audio:
     wav = _as_float(audio.wav)
     sr = audio.sample_rate
@@ -117,6 +144,8 @@ def normalize(
     peak = float(np.max(np.abs(wav))) if wav.size else 0.0
     if peak > 0.0:
         wav = (wav * (ceiling / peak)).astype(np.float32)
+    if head_fade_ms:
+        wav = _head_fade(wav, sr, head_fade_ms)
     if tail_fade_ms:
         wav = _tail_fade(wav, sr, tail_fade_ms)
     return Audio(wav=wav, sample_rate=sr)

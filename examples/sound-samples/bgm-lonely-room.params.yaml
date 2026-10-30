@@ -1,0 +1,34 @@
+name: bgm-lonely-room
+metadata:
+  asset_type: bgm
+  role: underscore
+  mood: &id001
+  - lonely
+  - still
+  instrumentation: &id003
+  - felt piano
+  tempo: &id002
+    bpm: 60
+  prompt: An understated felt piano piece, lonely and still, slow. About 10 seconds.
+  subtext: 深夜の一人暮らしの部屋。窓の外は雨。
+  provider: musicgen
+  sample_rate: 44100
+  channels: 1
+  duration: 9.94
+  created_at: '2026-10-30T20:32:34.894915+00:00'
+parameters:
+  version: 3
+  asset_type: bgm
+  provider: musicgen
+  spec:
+    role: underscore
+    mood: *id001
+    tempo: *id002
+    instrumentation: *id003
+    duration: 10
+    prompt: An understated felt piano piece, lonely and still, slow. About 10 seconds.
+    subtext: 深夜の一人暮らしの部屋。窓の外は雨。
+  seed: 42
+  duration: 10.0
+  sample_rate: 44100
+  sha1: 5a54946a4d10

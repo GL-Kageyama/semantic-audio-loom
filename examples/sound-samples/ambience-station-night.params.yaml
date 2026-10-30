@@ -1,0 +1,30 @@
+name: ambience-station-night
+metadata:
+  asset_type: ambience
+  kind: ambience
+  environment: empty train station at night
+  space: indoor
+  density: sparse
+  prompt: empty train station at night, indoor space, sparse density, continuous ambience.
+    About 6 seconds.
+  provider: stub
+  sample_rate: 44100
+  channels: 2
+  duration: 6.0
+  created_at: '2026-10-30T20:11:15.552048+00:00'
+parameters:
+  version: 3
+  asset_type: ambience
+  provider: stub
+  spec:
+    duration: 6
+    environment: empty train station at night
+    space: indoor
+    density: sparse
+    kind: ambience
+    prompt: empty train station at night, indoor space, sparse density, continuous
+      ambience. About 6 seconds.
+  seed: 3
+  duration: 6.0
+  sample_rate: 44100
+  sha1: 6ceca4d86bc5

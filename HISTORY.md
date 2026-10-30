@@ -38,7 +38,7 @@
 
 ### 検証
 
-- `pytest tests/` … 85 passed（既存 55 ＋ 新規 30）。重いモデルは使わず stub で全 type の
+- `pytest tests/` … 95 passed（既存 55 ＋ 新規 40）。重いモデルは使わず stub で全 type の
   7 段フロー・保存形式（チャンネル／サンプルレート）・ライブラリの追加と検索・Sound Bible の
   継承規則・Route の非対応拒否を通した。i18n は `resolve_music` / `resolve_sound` の
   プロンプトが `--lang` で切り替わること（かな漏れ無し）をモック LLM で確認した。
@@ -53,6 +53,53 @@
   通すのが次の実測。ambience / sfx / foley の保存形式は stub でのみ確認している。
 - 空の検査を「健全」と言わないよう直した：ライブラリ 0 件の `library.py validate` と、
   全節が空の Sound Bible の `validate` は、OK でなく「空」と報せる。
+- サンプルを採る途中でプロンプトの欠陥が 2 つ出た（どちらも本物のモデルで音を出すまで
+  見えなかった）。**Rule 解決が日本語の `situation` をそのままモデル向けプロンプトへ
+  足していた**——MusicGen / Stable Audio は英語で学習した T5 を使うので、日本語は
+  無意味なトークン列になる。日本語の状況は `subtext` にだけ残し、英語のときだけ
+  プロンプトへ足すようにした。また、`About 10 seconds.` の後ろに `.` を重ねて
+  `..` になっていた（区切りを 1 つにした）。Direction に日本語を直接書いた場合は
+  非英語がプロンプトに残る旨を警告する（黙って渡さない）。
+
+### 出力を測る（耳の代わりのループ）
+
+生成した音を聴く代わりに測る道具を足した（`semantic_audio_loom/skills/probe.py`・
+`bin/probe.py`）。形式・レベル・帯域・無音率・重心・先頭サンプルを出し、機械的に
+明らかな欠陥（無音・クリップ・2kHz 以上の完全な欠落・先頭の段差）だけを注意する。
+良し悪しは判定しない（曲が暗いのは趣味のことがある）。
+
+- **先頭の段差**：生成モデルは曲の途中から鳴り始めることがあり、`bgm-train-window` は
+  先頭サンプルが −0.2416 で始まっていた（無音からの段差＝プツッ）。Normalize に
+  2 ms の頭のランプを足した（声とループ資材には掛けない）。
+- **尺の切り捨て**：Provider は上限で切るが（MusicGen 30 秒・stub 8 秒）、黙って
+  短い資材を返していた。Route が `max_seconds` を超えたら stderr に出すようにした。
+  stub も上限を名乗っていなかったので足した。
+- **bgm のプロンプト形**：同じモデル・同じ seed で、属性の羅列と音の説明文を比べた
+  （musicgen-small・5 秒・guidance 3.0。`mid-low` は 250–1000 Hz と 0–250 Hz の
+  平均の差で、大きいほど楽器の帯域に寄る）：
+
+  | プロンプト | s7 | s99 | s123 |
+  | --- | --- | --- | --- |
+  | `lonely, featuring felt piano, 60 BPM, understated background score, instrumental, no vocals. About 5 seconds.` | −14.1 | −10.2 | −2.2 |
+  | 上と同じ（`About 5 seconds.` なし） | −10.1 | +0.8 | — |
+  | `A felt piano piece, lonely and still, at 60 BPM, understated background score, instrumental.` | −10.8 | +15.3 | — |
+  | `A piece of music, felt piano, 60 BPM, understated background score, instrumental, no vocals.` | −6.6 | −0.2 | — |
+  | `A soft solo felt piano piece.` | +22.0 | +11.3 | — |
+  | `A felt piano piece, warm close-miked recording, gentle sustain, sparse melody.` | −6.6 | +19.2 | — |
+  | `A soft solo felt piano piece, slow and spacious, warm close-miked recording, gentle sustain, sparse melody.` | +34.7 | +29.2 | +28.4 |
+
+  羅列は seed で振れて低域に寄る。説明文は 3 seed とも +28〜35 dB。短い説明文
+  （`A soft solo felt piano piece.`）でも +22.0 / +11.3 と正に出る。属性を後ろに
+  足しただけの形は振れる（−10.8〜+19.2）。Rule 解決のプロンプトを、楽器を主語に
+  した一文へ組み替えた。`no vocals` は書かない（モデルは否定を演算せず、`vocals` を
+  名指しするだけになる）。LLM 解決（`prompts/*.json` の `resolve_music`）の指示も
+  同じ形へ揃えた（3 言語とも）。
+
+  同じ seed 42・同じ Direction の保存サンプルで確認：旧プロンプトは低域が中域より
+  3.5 dB 大きく（正規化前の生波形で測った。ピーク正規化は両帯域に同じ利得なので差は
+  変わらない）、新プロンプトは低域が中域より 18.7 dB 小さい（9.94 秒）。条件あたりの seed 数は上表のとおりで、5 秒の
+  生成 1 回ずつ。同じプロンプト・同じ seed で再生成すると sha1 が一致する
+  （musicgen の 2 本のサンプル）ので、この差は seed の揺れではない。
 
 ## 2026-08-29 — 実装一式（M0〜M3・資材分離・参照音声拡充）
 

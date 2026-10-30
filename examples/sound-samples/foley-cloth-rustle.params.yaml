@@ -1,0 +1,30 @@
+name: foley-cloth-rustle
+metadata:
+  asset_type: foley
+  kind: foley
+  action: a person shifting under a blanket
+  surface: futon
+  contact: soft
+  prompt: a person shifting under a blanket, on futon, soft, close-miked foley. About
+    2 seconds.
+  provider: stub
+  sample_rate: 44100
+  channels: 1
+  duration: 2.0
+  created_at: '2026-10-30T20:11:22.026988+00:00'
+parameters:
+  version: 3
+  asset_type: foley
+  provider: stub
+  spec:
+    duration: 2
+    action: a person shifting under a blanket
+    surface: futon
+    contact: soft
+    kind: foley
+    prompt: a person shifting under a blanket, on futon, soft, close-miked foley.
+      About 2 seconds.
+  seed: 5
+  duration: 2.0
+  sample_rate: 44100
+  sha1: c9f34a44fa48
