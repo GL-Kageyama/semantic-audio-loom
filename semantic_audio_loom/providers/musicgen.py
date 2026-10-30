@@ -23,11 +23,13 @@ class MusicGenProvider:
     SAMPLE_RATE = 32000
     MAX_SECONDS = 30.0
     TOKENS_PER_SECOND = 50  # MusicGen の生成レート
+    GUIDANCE = 3.0
 
     def __init__(self):
         self._model = None
         self._processor = None
         self._torch = None
+        self.last_settings = None
 
     def capabilities(self) -> dict:
         return {
@@ -64,6 +66,9 @@ class MusicGenProvider:
         duration = float(request.duration or spec.get("duration") or 8.0)
         duration = min(max(duration, 1.0), self.MAX_SECONDS)
         tokens = max(64, int(round(duration * self.TOKENS_PER_SECOND)))
+        # 生成の尺は秒でなくトークン数で決まる。丸めを params に残さないと
+        # 「同じ Spec から同じ長さ」が再現できない。
+        self.last_settings = {"tokens": tokens, "guidance_scale": self.GUIDANCE}
 
         inputs = processor(text=[prompt], padding=True, return_tensors="pt").to(model.device)
         torch.manual_seed(int(request.seed))
@@ -71,8 +76,11 @@ class MusicGenProvider:
             generated = model.generate(
                 **inputs,
                 do_sample=True,
-                guidance_scale=3.0,
+                guidance_scale=self.GUIDANCE,
                 max_new_tokens=tokens,
             )
         wav = generated[0, 0].detach().cpu().to(torch.float32).numpy()
         return Audio(wav=np.asarray(wav, dtype=np.float32), sample_rate=self.SAMPLE_RATE)
+
+    def runtime_settings(self) -> dict:
+        return dict(self.last_settings or {})

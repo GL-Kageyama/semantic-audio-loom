@@ -1,0 +1,16 @@
+# 統合の例：bed（bgm）・voice（台詞）・hit（sfx）を 1 本にする。
+# 参照先は隣のサンプル（examples/sound-samples/）。同じ生成物を二重に置かない。
+sample_rate: 44100
+output: scene-drop
+stems:
+- {file: b-ambient.wav, role: bed, start: 0.0, gain_db: -18}
+- {file: ../sound-samples/sfx-door-slam.wav, role: hit, start: 0.05, gain_db: -6}
+- {file: ../sound-samples/sfx-switch-click.wav, role: hit, start: 1.2, gain_db: -8}
+- {file: v-calm.wav, role: voice, start: 1.4, gain_db: 0}
+- {file: ../sound-samples/sfx-gravel-steps.wav, role: hit, start: 2.4, gain_db: -14}
+- {file: v-anxious.wav, role: voice, start: 4.0, gain_db: 0}
+- {file: ../sound-samples/sfx-glass-break.wav, role: hit, start: 5.6, gain_db: -10}
+- {file: v-tired.wav, role: voice, start: 6.4, gain_db: 0}
+- {file: ../sound-samples/sfx-thunder-far.wav, role: hit, start: 8.0, gain_db: -12}
+duck: {threshold_db: -30, depth_db: 10, attack_s: 0.02, release_s: 0.35}
+master_peak: 0.95

@@ -27,12 +27,15 @@ ambience/sfx/foley は Sound Spec を Resolve が作り、7 段フローを通�
 | 1 — Character Voice | voice / WAV / Metadata | 実装済み |
 | 2 — Ambience / SFX | ambience・sfx Skill → Local Audio Models | 実装済み（Stable Audio Open） |
 | 3 — BGM | bgm Skill → Local Music Model | 実装済み（MusicGen small） |
-| 4 — Audio Mixing | 音量・タイミング・フェード・パン・ducking・マスター | 一部実装済み（voice 連結のみ） |
+| 4 — Audio Mixing | 音量・タイミング・フェード・パン・ducking・マスター | 一部実装済み（voice 連結・3 層の重ね合わせ＋ducking） |
 | 5 — Video Integration | 映像と音響を Scene Definition から分岐 | 将来 |
 
 Phase 4 のうち **voice 合成（Scene / Timeline）** は実装済み：複数 voice キューを無音
-（間）で連結して 1 WAV にする（`bin/scene.py`・[scene.md](scene.md)）。ducking・パン・
-クロスフェード・LUFS マスター正規化、および ambience/bgm の重ね合わせは将来スコープ。
+（間）で連結して 1 WAV にする（`bin/scene.py`・[scene.md](scene.md)）。**3 層の重ね合わせ**も
+実装済み：bed（bgm・ambience）/ voice / hit（sfx・foley）を時刻と利得で束ね、voice が
+鳴っている間だけ bed を沈める（`bin/mix.py`・[usage.md](usage.md)）。出力の
+チャンネル数はステムの最大（mono の声は真ん中、ステレオの sfx は左右を保つ）。
+パンの指定・クロスフェード・LUFS マスター正規化は将来スコープ。
 
 音の生成とライブラリは [asset-generation.md](asset-generation.md)・[library.md](library.md)。
 Sound Bible は [sound-bible.md](sound-bible.md)。
@@ -48,5 +51,5 @@ Sound Bible は [sound-bible.md](sound-bible.md)。
   プロンプト／パラメータ」へ）→ `resolve_music_*` / `resolve_sound_*`
 - **Sound Bible**（作品全体の音響スタイル）→ `projects/<project>/sound-bible.yaml`
 
-いま残っているのはミキサー（M6・複数トラックの重ね合わせ・ducking・LUFS）と、
+いま残っているのはパン（定位の指定）・クロスフェード・LUFS マスター（M6 の残り）と、
 脚本から音の設計図を起こす段（M7）。

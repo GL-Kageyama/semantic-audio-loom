@@ -56,6 +56,11 @@ bin/asset.py --type ambience --project demo --name station-night \
   依存が無い環境では `--provider stub` で配線だけ確認できる（本物の音は出ない）。
 - 何度も使う音は `--save-library <name>` で `library/` へ。`bin/library.py search <語>` で探せる。
 - 作品の既定は `bin/sound-bible.py init <project>` → `projects/<project>/sound-bible.yaml`。
+- 声・bgm・sfx を 1 本にするときは `bin/mix.py --file mix.yaml`（層は bed / voice / hit、
+  voice の間だけ bed が沈む）。生成済みの WAV を時刻と利得で束ねるだけで、生成はしない。
+  出力はステムの最大チャンネル数（mono の声は真ん中、ステレオの sfx は左右を保つ）。
+- できた音は `bin/probe.py <wav>` で測る。`起伏`（10ms 包絡の最大−中央値）が高ければ
+  点で鳴る音、数 dB なら持続音——sfx に頼んだ音が点で鳴ったかはここで見る。
 
 ## 実行環境
 

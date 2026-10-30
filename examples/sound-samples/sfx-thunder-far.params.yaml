@@ -1,0 +1,32 @@
+name: s-thunder
+metadata:
+  asset_type: sfx
+  kind: sfx
+  distance: far
+  event: distant thunder rolling across a valley
+  intensity: 0.6
+  prompt: distant thunder rolling across a valley, far perspective, intensity 0.60,
+    single sound effect. About 6 seconds.
+  provider: stable_audio
+  sample_rate: 44100
+  channels: 2
+  duration: 6.0
+  created_at: '2026-10-30T23:09:45.998667+00:00'
+parameters:
+  version: 3
+  asset_type: sfx
+  provider: stable_audio
+  spec:
+    intensity: 0.6
+    duration: 6.0
+    distance: far
+    event: distant thunder rolling across a valley
+    kind: sfx
+    prompt: distant thunder rolling across a valley, far perspective, intensity 0.60,
+      single sound effect. About 6 seconds.
+  seed: 324
+  duration: 6.0
+  sample_rate: 44100
+  sha1: 68e360963ab4
+  provider_settings:
+    steps: 50

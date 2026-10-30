@@ -133,7 +133,9 @@
     "flag_clipped": "WARNING clipped {count} samples",
     "flag_bass_heavy": "WARNING biased to low end (low exceeds mid by {diff_db} dB)",
     "flag_no_highs": "WARNING almost nothing above 2 kHz ({level_db} dB)",
-    "flag_head_step": "WARNING starts at a non-zero sample ({value})"
+    "flag_head_step": "WARNING starts at a non-zero sample ({value})",
+    "flag_too_short": "WARNING too short to measure bands ({samples} samples)",
+    "burst": "Burst {burst} dB (max minus median of the 10ms envelope; higher for one-shot hits)"
   },
   "library": {
     "description": "Work with the reusable asset library.",

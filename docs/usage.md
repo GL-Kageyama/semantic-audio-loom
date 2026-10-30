@@ -108,6 +108,28 @@ bin/probe.py projects/demo/assets/sound/bgm.wav
 bin/probe.py examples/sound-samples/*.wav --json
 ```
 
+帯域と重心は**ファイル全体**を覆う窓（8192 サンプル・半分ずつ重ねる）の平均で測る。
+先頭だけを測ると、曲ではなく鳴り始めの一瞬を測ることになり、同じプロンプトでも
+seed ごとに `bass_heavy` と `no_highs` が入れ替わる。窓より短い音は窓を縮めて測り、
+256 サンプル未満（32kHz で 8 ミリ秒）では帯域を出さず `too_short` を注意する
+（0 dB と書くと「全体と同じ」に見えるため）。
+
+判定線は実在曲で裏を取ってある。`音源調査/_openlofi` の 166 曲を同じ窓で測ると、
+低−中の差は中央 4.3 dB・最大 11.4 dB、高域は最小 −41.2 dB。注意の線は
+低−中 12 dB・高域 −45 dB で、実曲の外側にある。ただし較正は lofi 1 ジャンルなので、
+意図して低域を張る曲（サブベースもの）は `bass_heavy` で正しく外れる——注意は
+「欠陥」ではなく「実曲の範囲から外れた」の意味で読む。
+
+**量は全チャンネルで測る。** `peak`・`rms_db`・`crest_db`・`clipped` は波形の
+全サンプルが対象。モノラルへ落としてから測ると、左右の相関が低い音ほど小さく出る
+（相関 0.25 の sfx で peak 0.95 → 0.69・RMS −2 dB）。帯域・重心・無音率・起伏は
+モノラルで測る（どれも「何が鳴っているか」の話で、量ではない）。
+
+**起伏（`burst_db`）**は 10ms 包絡の最大−中央値。帯域と重心は「何が鳴っているか」しか
+言わないので、sfx が**点で鳴ったか**はここで見る。クリック・打撃は 15 dB 以上、連続音
+（ヒス・パッド・環境音）は数 dB になる。`sfx` に頼んだ音が 3 dB なら、それは
+「クリックの音色の持続音」であってクリックではない。
+
 ## シーン合成（bin/scene.py）
 
 複数人物の台詞を「間（無音）」で連結し、1 つの WAV にする。`scene.yaml` がキュー
@@ -124,6 +146,34 @@ bin/scene.py --params examples/gozen-niji-ch01/gozen-niji-ch01.params.yaml --out
 - `--scene-file`（render）と `--params`（regen）は排他。片方必須。
 - 間（余白）＝無音。`default_pause`（秒）が各キューの既定、`pause_before`（秒）で個別上書き。
 - 環境音・BGM・ducking・パンは将来スコープ。詳細は [scene.md](scene.md)。
+
+## 統合（bin/mix.py）
+
+生成済みの音を、時刻と利得と役割だけで 1 本に重ねる。生成はしない。
+役割は **bed**（bgm・ambience＝下に流す）、**voice**（台詞）、**hit**（sfx・foley＝点で鳴る）。
+bed は voice が鳴っている間だけ沈む（ducking）。天井は最後に一度だけ掛ける。
+
+```yaml
+sample_rate: 44100
+output: scene-mix
+stems:
+  - {file: bgm.wav,       role: bed,   start: 0.0, gain_db: -20}
+  - {file: line-01.wav,   role: voice, start: 0.5, gain_db: 0}
+  - {file: door-slam.wav, role: hit,   start: 1.2, gain_db: -6}
+duck: {threshold_db: -30, depth_db: 10, attack_s: 0.02, release_s: 0.35}
+master_peak: 0.95
+```
+
+```bash
+bin/mix.py --file mix.yaml --out-dir projects/demo/assets/combined --json
+```
+
+- チャンネル数はステムの最大（`channels` で明示も可）。mono の声は両耳の真ん中へ
+  複製、ステレオの sfx は左右を保つ。ステムを mono へ落としてから混ぜると、左右の
+  相関が低い音ほど小さくなる（相関 0.25 で −2 dB）。パンを動かす指定はまだ無い。
+- `duck` は声の 5ms 包絡が閾値を超えた分だけ bed を下げ、`depth_db` で頭打ち。
+  戻り（`release_s`）を速くすると、声の合間に bed が息継ぎして聞こえる。
+- `ducked` が `false` のときは bed が無いか声が無い。生成側の欠落として読む。
 
 ## 再生成（bin/regenerate.py）
 

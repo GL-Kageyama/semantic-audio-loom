@@ -96,7 +96,7 @@ def params(request: GenerationRequest, provider, audio: Audio | None = None) -> 
         return _params_voice(request, provider)
     spec = request.spec or {}
     sample_rate = audio.sample_rate if audio else config.OUTPUT_FORMATS[request.asset_type][0]
-    return {
+    out = {
         "version": 3,
         "asset_type": request.asset_type,
         "provider": provider.name,
@@ -108,6 +108,12 @@ def params(request: GenerationRequest, provider, audio: Audio | None = None) -> 
             json.dumps(spec, ensure_ascii=False, sort_keys=True).encode("utf-8")
         ).hexdigest()[:12],
     }
+    # Spec にも seed にも入らないが音を変える設定（サンプリング回数など）。
+    # 保存しないと params から同じ音を作れない。
+    settings = getattr(provider, "runtime_settings", None)
+    if callable(settings):
+        out["provider_settings"] = settings()
+    return out
 
 
 def _params_voice(request: GenerationRequest, provider) -> dict:

@@ -133,7 +133,9 @@
     "flag_clipped": "注意 削波 {count} 个采样",
     "flag_bass_heavy": "注意 偏向低频（低频比中频高 {diff_db} dB）",
     "flag_no_highs": "注意 2kHz 以上几乎没有（{level_db} dB）",
-    "flag_head_step": "注意 起始采样不为 0（{value}）"
+    "flag_head_step": "注意 起始采样不为 0（{value}）",
+    "flag_too_short": "注意 过短，无法测量频段（{samples} 个采样）",
+    "burst": "起伏 {burst} dB（10ms 包络的最大减中位数；单发击打更大）"
   },
   "library": {
     "description": "操作可复用资材库。",

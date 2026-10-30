@@ -31,12 +31,20 @@ def _line(t, e: dict) -> list[str]:
                  peak=e["peak"], rms=e["rms_db"], crest=e["crest_db"], dc=e["dc"]),
         "  " + t("probe", "silence", "無音率 {pct}% / クリップ {clip}",
                  pct=round(e["silent_fraction"] * 100, 1), clip=e["clipped"]),
-        "  " + t("probe", "bands",
-                 "帯域 低 {low} dB / 中 {mid} dB / 高 {high} dB",
-                 low=bands["low"], mid=bands["mid"], high=bands["high"]),
-        "  " + t("probe", "centroid", "重心 {hz} Hz / 平坦度 {flat}",
-                 hz=e["centroid_hz"], flat=e["flatness"]),
     ]
+    if e["burst_db"] is not None:
+        out.append("  " + t(
+            "probe", "burst",
+            "起伏 {burst} dB（10ms 包絡の最大−中央値。一点で鳴る音は大きい）",
+            burst=e["burst_db"]))
+    if bands["low"] is not None:  # 短すぎる音では測れない（0 dB と書かない）
+        out += [
+            "  " + t("probe", "bands",
+                     "帯域 低 {low} dB / 中 {mid} dB / 高 {high} dB",
+                     low=bands["low"], mid=bands["mid"], high=bands["high"]),
+            "  " + t("probe", "centroid", "重心 {hz} Hz / 平坦度 {flat}",
+                     hz=e["centroid_hz"], flat=e["flatness"]),
+        ]
     if e["flags"]:
         for name, values in e["flags"]:
             default = {
@@ -45,6 +53,7 @@ def _line(t, e: dict) -> list[str]:
                 "bass_heavy": "低域に寄っている（低が中より {diff_db} dB 大きい）",
                 "no_highs": "2kHz 以上がほぼ無い（{level_db} dB）",
                 "head_step": "先頭が 0 から始まっていない（{value}）",
+                "too_short": "短すぎて帯域を測れない（{samples} サンプル）",
             }[name]
             out.append("  " + t("probe", f"flag_{name}", default, **values))
     else:

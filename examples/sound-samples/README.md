@@ -6,12 +6,18 @@
 | --- | --- | --- | --- | --- |
 | `bgm-lonely-room.wav` | bgm | musicgen（本物のモデル） | 9.94 秒 | 44.1kHz mono |
 | `bgm-train-window.wav` | bgm | musicgen（本物のモデル） | 9.94 秒 | 44.1kHz mono |
+| `sfx-door-slam.wav` | sfx | stable_audio（本物のモデル） | 2 秒 | 44.1kHz stereo |
+| `sfx-glass-break.wav` | sfx | stable_audio | 2 秒 | 44.1kHz stereo |
+| `sfx-gravel-steps.wav` | sfx | stable_audio | 4 秒 | 44.1kHz stereo |
+| `sfx-thunder-far.wav` | sfx | stable_audio | 6 秒 | 44.1kHz stereo |
+| `sfx-switch-click.wav` | sfx | stable_audio | 1 秒 | 44.1kHz stereo |
+| `sfx-paper-tear.wav` | sfx | stable_audio | 2 秒 | 44.1kHz stereo |
 | `ambience-station-night.wav` | ambience | stub | 6 秒 | 44.1kHz stereo |
 | `sfx-door-close.wav` | sfx | stub | 2 秒 | 44.1kHz mono |
 | `foley-cloth-rustle.wav` | foley | stub | 2 秒 | 44.1kHz mono |
 
-`.params.yaml` は同じ名前で並べてある。Spec・seed・sha1 が入っていて、`bin/regenerate.py`
-がこれを読んで同じ音を出し直す。
+`.params.yaml` は同じ名前で並べてある。Spec・seed・sha1・`provider_settings`
+（サンプリング回数）が入っていて、`bin/regenerate.py` がこれを読んで同じ音を出し直す。
 
 > **stub の 3 本は音楽でも効果音でもない。** 依存なしで 7 段フロー・保存形式・ライブラリを
 > 通すための合成音（決定的なサイン波＋ノイズ）。本物の ambience / sfx / foley は
@@ -104,6 +110,40 @@ bin/asset.py --type foley --project demo --scene samples --name foley-cloth-rust
 a person shifting under a blanket, on futon, soft, close-miked foley. About 2 seconds.
 ```
 
+## 本物の sfx 6 本（stable_audio・50 ステップ）
+
+同じ Rule 経路を `--provider stable_audio` で通したもの。プロンプトは Spec の
+意味フィールドから組み立てられ、英語の一文になる。
+
+```bash
+bin/asset.py --type sfx --project demo --scene samples --name sfx-switch-click \
+    --resolve rule --provider stable_audio --seed 325 --duration 1 \
+    --sound event="a light switch clicking on" --sound distance=near \
+    --sound intensity=0.3
+```
+
+```
+a light switch clicking on, near perspective, intensity 0.30, single sound effect. About 1 second.
+```
+
+実測（`bin/probe.py`）:
+
+| ファイル | 起伏 `burst_db` | 無音率 | 帯域 低/中/高 dB | 重心 | 立ち上がり/減衰 | 読み |
+| --- | --- | --- | --- | --- | --- | --- |
+| sfx-switch-click | 64.8 dB | 97.3% | −41.6 / −7.2 / −1.0 | 4712 Hz | 12ms / 23ms | 1 打のクリック |
+| sfx-glass-break | 61.7 dB | 71.4% | −33.5 / −18.5 / −0.1 | 4736 Hz | 12ms / 209ms | 破片の散る高域 |
+| sfx-door-slam | 45.7 dB | 60.4% | −2.1 / −6.6 / −10.7 | 681 Hz | 58ms / 337ms | 木の重い当たり |
+| sfx-gravel-steps | 19.6 dB | 19.9% | −12.9 / −4.6 / −10.7 | 1215 Hz | 639ms / 244ms | 20 打の足音 |
+| sfx-thunder-far | 35.7 dB | 36.5% | −0.2 / −14.0 / −67.9 | 107 Hz | 1.18s / 116ms | 低域の雷（`bass_heavy` `no_highs` は素材どおり） |
+| sfx-paper-tear | 56.6 dB | 76.8% | −18.9 / −9.9 / −0.6 | 5774 Hz | 302ms / 81ms | 乾いた裂け |
+
+**起伏（`burst_db`）が「点で鳴ったか」の計器。** 10ms 包絡の最大−中央値で、
+クリックや打撃は 15 dB 以上、持続音は数 dB。sfx がヒスに化けていないかはここで見る。
+
+## 統合の例
+
+声・bgm・sfx を 1 本にした例は [../mixed-scene/](../mixed-scene/) にある。
+
 ## 再現
 
 `params.yaml` を読めば、LLM もモデル選択も要らない。seed が固定なので同じ音が出る。
@@ -113,8 +153,10 @@ bin/regenerate.py examples/sound-samples/sfx-door-close.params.yaml --out-dir /t
 # → /tmp/out/sfx-door-close.wav が元の wav と byte-identical
 ```
 
-5 本すべて、この再生成で sha1 が一致することを確かめた（musicgen の 2 本も重み同梱で
-同じ音が出る）。
+stub 3 本・musicgen 2 本・stable_audio 1 本（`sfx-switch-click`・50 ステップ）は、
+この再生成で sha1 が一致することを確かめた。stable_audio は同じ seed でもサンプリング
+回数が変われば別の音になるので、回数は `provider_settings.steps` に書いてあり、
+`regenerate.py` が読み戻す。musicgen は `tokens`（尺の丸め）と `guidance_scale` を残す。
 
 ## ライセンス
 

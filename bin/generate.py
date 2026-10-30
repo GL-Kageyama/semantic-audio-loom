@@ -26,6 +26,7 @@ import yaml
 
 from semantic_audio_loom import config, i18n
 from semantic_audio_loom.engine import AudioAssetEngine
+from semantic_audio_loom.engine.distill import PERF_ENUMS
 from semantic_audio_loom.skills.character_voice import (
     build_intent,
     character_path,
@@ -45,13 +46,13 @@ def main() -> None:
     p.add_argument("--character-file", default=None, help=t("generate", "help_character_file", ".voice.yaml のパス（名前でなく直接指定）"))
     p.add_argument("--line", required=True, help=t("generate", "help_line", "台詞（Tsukasa は日本語 TTS のため日本語）"))
     p.add_argument("--performance", default=None, help=t("generate", "help_performance", "演技名（performances/<name>.direction.yaml）"))
-    p.add_argument("--emotion", default=None)
-    p.add_argument("--intensity", default=None)
-    p.add_argument("--volume")
-    p.add_argument("--speed")
-    p.add_argument("--pitch")
-    p.add_argument("--breathiness")
-    p.add_argument("--delivery")
+    p.add_argument("--emotion", choices=sorted(PERF_ENUMS["emotion"]))
+    p.add_argument("--intensity", choices=sorted(PERF_ENUMS["intensity"]))
+    p.add_argument("--volume", choices=sorted(PERF_ENUMS["volume"]))
+    p.add_argument("--speed", choices=sorted(PERF_ENUMS["speed"]))
+    p.add_argument("--pitch", choices=sorted(PERF_ENUMS["pitch"]))
+    p.add_argument("--breathiness", choices=sorted(PERF_ENUMS["breathiness"]))
+    p.add_argument("--delivery", choices=sorted(PERF_ENUMS["delivery"]))
     p.add_argument("--situation", default=None, help=t("generate", "help_situation", "状況（subtext 推論の入力）"))
     p.add_argument("--state-file", default=None, help=t("generate", "help_state_file", "キャラクター状態の YAML（character_state）"))
     p.add_argument("--subtext", default=None, help=t("generate", "help_subtext", "台詞の裏の意味（人間上書き・任意）"))

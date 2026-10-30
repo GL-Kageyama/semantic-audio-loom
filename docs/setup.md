@@ -37,6 +37,13 @@ huggingface-cli login                # stable-audio-open-1.0 は gated（要同�
 - モデルは `SAL_MUSICGEN_MODEL` / `SAL_STABLE_AUDIO_MODEL` で差し替えられる。
 - 依存を入れる前に配線を確かめたいときは `--provider stub`（決定的な合成・本物の音ではない）。
 - `--provider` を明示すれば、その Provider が対応しない型は Route で即座に失敗する。
+- stable_audio のサンプリング回数は `SAL_STABLE_AUDIO_STEPS`（既定 100）。CPU では
+  1 ステップ約 3.2 秒かかるので、試し切りは 10〜20 で。
+- `diffusers` が torchsde を要求する（スケジューラが import する）。無い場合は
+  `pip install torchsde`。ただし**その木は使わない**——`CosineDPMSolverMultistepScheduler`
+  が建てる BrownianTree は、この組み合わせ（diffusers 0.31 + torchsde 0.2.6 + Python 3.12）で
+  `RecursionError` になる。Provider が増分の源を独立な正規へ差し替える（前へ進む掃引では
+  重ならない区間の増分はそれで足りる）。生成物はこの差し替えの上で作られる。
 
 ## 3. Resolve の LLM（--resolve llm 時・既定）
 
@@ -64,5 +71,6 @@ export ANTHROPIC_BASE_URL=...        # ゲートウェイ。モデルは SAL_RES
 | `SAL_PROJECTS_DIR` | 生成物の置き場（既定は repo 直下 `projects/`） |
 | `SAL_MUSICGEN_MODEL` | bgm のモデル（既定 facebook/musicgen-small） |
 | `SAL_STABLE_AUDIO_MODEL` | 音のモデル（既定 stabilityai/stable-audio-open-1.0） |
+| `SAL_STABLE_AUDIO_STEPS` | stable_audio のサンプリング回数（既定 100） |
 | `SAL_DEVICE` | 生成モデルのデバイス（既定 cpu） |
 | `SAL_RESOLVE_MODEL` | Resolve のモデル（既定 claude-sonnet-4-5） |

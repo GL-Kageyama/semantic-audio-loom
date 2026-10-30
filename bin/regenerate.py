@@ -36,6 +36,11 @@ def main() -> None:
     asset_type = params.get("asset_type", "voice")
     # voice params は performance_spec、非 voice は spec に Spec を持つ。
     spec = params.get("spec") or params["performance_spec"]
+    # Spec にも seed にも入らない設定は params に写してある。書き戻さないと
+    # 「同じ params から同じ音」が崩れる（stable_audio のサンプリング回数）。
+    settings = params.get("provider_settings") or {}
+    if settings.get("steps"):
+        os.environ["SAL_STABLE_AUDIO_STEPS"] = str(settings["steps"])
     request = GenerationRequest(
         asset_type=asset_type,
         voice_profile=params.get("voice_profile", {}),

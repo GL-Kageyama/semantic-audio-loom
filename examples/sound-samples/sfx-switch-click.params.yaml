@@ -1,0 +1,32 @@
+name: s-click
+metadata:
+  asset_type: sfx
+  kind: sfx
+  distance: near
+  event: a light switch clicking on
+  intensity: 0.3
+  prompt: a light switch clicking on, near perspective, intensity 0.30, single sound
+    effect. About 1 second.
+  provider: stable_audio
+  sample_rate: 44100
+  channels: 2
+  duration: 1.0
+  created_at: '2026-10-30T23:13:44.400299+00:00'
+parameters:
+  version: 3
+  asset_type: sfx
+  provider: stable_audio
+  spec:
+    intensity: 0.3
+    duration: 1.0
+    distance: near
+    event: a light switch clicking on
+    kind: sfx
+    prompt: a light switch clicking on, near perspective, intensity 0.30, single sound
+      effect. About 1 second.
+  seed: 325
+  duration: 1.0
+  sample_rate: 44100
+  sha1: e05896f9971e
+  provider_settings:
+    steps: 50

@@ -1,0 +1,34 @@
+name: s-glass
+metadata:
+  asset_type: sfx
+  kind: sfx
+  distance: near
+  event: a wine glass shattering on a stone floor
+  material: glass
+  intensity: 0.8
+  prompt: a wine glass shattering on a stone floor, glass, near perspective, intensity
+    0.80, single sound effect. About 2 seconds.
+  provider: stable_audio
+  sample_rate: 44100
+  channels: 2
+  duration: 2.0
+  created_at: '2026-10-30T23:02:22.738293+00:00'
+parameters:
+  version: 3
+  asset_type: sfx
+  provider: stable_audio
+  spec:
+    intensity: 0.8
+    duration: 2.0
+    distance: near
+    event: a wine glass shattering on a stone floor
+    material: glass
+    kind: sfx
+    prompt: a wine glass shattering on a stone floor, glass, near perspective, intensity
+      0.80, single sound effect. About 2 seconds.
+  seed: 322
+  duration: 2.0
+  sample_rate: 44100
+  sha1: 68f5237ca830
+  provider_settings:
+    steps: 50

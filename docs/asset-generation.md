@@ -86,6 +86,12 @@ bin/asset.py --type foley --project demo --name cloth-rustle \
 `A piece of music` になる。`loop` など音の説明でないフィールドは Spec に残るが、
 プロンプトには入らない。
 
+**楽器の名は具体に書く。** `strings` だけだと低弦の唸りになり、2kHz 以上が
+−46 dB まで落ちる（歌う弦＝バイオリンが鳴らない）。`violins and cello` と名指すと
+同じ seed・同じ尺で高域 −6 dB・重心 1018 Hz まで戻る（実測は
+[HISTORY.md](../HISTORY.md)）。`pad` は名指ししても暗いままで、musicgen-small は
+明るいパッドを出さない（`no_highs` が目印）。
+
 ## Provider（ローカル優先）
 
 | Provider | 対象 | モデル | 長さ | ライセンス |

@@ -265,6 +265,74 @@ def test_route_defaults_are_registered():
         assert name in __import__("semantic_audio_loom.providers", fromlist=["available"]).available()
 
 
+def test_stable_audio_calls_the_pipeline_with_supported_arguments():
+    """実モデルの口に合わせる。stub だけ通した経路は「動いている」ように見える。
+
+    StableAudioPipeline は width/height を取らない（それは AudioLDM の口）。
+    実モデルで初めて TypeError になったので、呼び口をここで固定する。
+    """
+    torch = pytest.importorskip("torch")
+    from types import SimpleNamespace
+
+    from semantic_audio_loom.providers.stable_audio import StableAudioProvider
+
+    accepted = {
+        "prompt", "audio_end_in_s", "audio_start_in_s", "num_inference_steps",
+        "guidance_scale", "negative_prompt", "num_waveforms_per_prompt", "eta",
+        "generator", "latents", "initial_audio_waveforms", "initial_audio_sampling_rate",
+        "prompt_embeds", "negative_prompt_embeds", "attention_mask",
+        "negative_attention_mask", "return_dict", "callback", "callback_steps", "output_type",
+    }
+
+    class FakePipe:
+        def __init__(self):
+            self.scheduler = SimpleNamespace(noise_sampler=None)
+
+        def __call__(self, **kwargs):
+            self.kwargs = kwargs
+            return SimpleNamespace(audios=[torch.zeros(2, 4410)])
+
+    provider = StableAudioProvider()
+    pipe = FakePipe()
+    provider._pipe = pipe
+    provider._torch = torch
+    audio = provider.generate(
+        __import__("semantic_audio_loom.types", fromlist=["GenerationRequest"]).GenerationRequest(
+            asset_type="sfx", spec={"prompt": "a light switch clicking"}, duration=1.0, seed=3
+        )
+    )
+    unknown = set(pipe.kwargs) - accepted
+    assert not unknown, f"pipeline does not accept: {sorted(unknown)}"
+    assert pipe.kwargs["audio_end_in_s"] == 1.0
+    assert audio.wav.shape == (4410, 2)  # (samples, channels) に直している
+
+
+def test_gaussian_noise_sampler_returns_unit_variance():
+    """torchsde の木が落ちる環境で、増分の契約（単位分散）だけは守る。
+
+    `BrownianTreeNoiseSampler` は木の増分を √(t1−t0) で割って返し、縮尺
+    `sigma_t * sqrt(1 - exp(-2h))` はスケジューラが掛ける。ここで区間の幅を
+    掛けると、σ の大きい帯で桁違いのノイズが乗り、出力がヒスになる（実測）。
+    区間が変わっても分散が変わらないことを固定する。
+    """
+    torch = pytest.importorskip("torch")
+    from semantic_audio_loom.providers.stable_audio import _GaussianNoiseSampler
+
+    sampler = _GaussianNoiseSampler(torch.zeros(2, 4096), seed=7)
+    wide = sampler(torch.tensor(100.0), torch.tensor(50.0)).std()
+    narrow = sampler(torch.tensor(0.3), torch.tensor(0.2)).std()
+    assert abs(float(wide) - 1.0) < 0.1, float(wide)
+    assert abs(float(narrow) - 1.0) < 0.1, float(narrow)
+    # 同じ seed で同じ列（呼び出し回数が違えば列も違う——同じ回数で比べる）
+    a = _GaussianNoiseSampler(torch.zeros(2, 4096), seed=7)
+    b = _GaussianNoiseSampler(torch.zeros(2, 4096), seed=7)
+    assert torch.equal(a(torch.tensor(1.0), torch.tensor(0.5)),
+                       b(torch.tensor(1.0), torch.tensor(0.5)))
+    c = _GaussianNoiseSampler(torch.zeros(2, 4096), seed=7)
+    assert not torch.equal(a(torch.tensor(1.0), torch.tensor(0.5)),
+                           c(torch.tensor(1.0), torch.tensor(0.5)))
+
+
 # ---------------------------------------------------------------- Sound Bible
 
 
@@ -487,3 +555,25 @@ def test_sound_bible_validate_filled_is_healthy(tmp_path):
     assert r.returncode == 0, r.stderr
     assert "健全" in r.stdout
     assert "filled: 1" in r.stdout
+
+
+def test_provider_settings_are_saved_so_the_same_params_rebuild_the_same_audio():
+    """サンプリング回数は Spec にも seed にも入らないが音を変える。
+
+    保存しないと「同じ params から同じ音」が崩れる（seed 決定論の前提）。
+    """
+    from types import SimpleNamespace
+
+    from semantic_audio_loom.engine import metadata
+    from semantic_audio_loom.providers.stable_audio import StableAudioProvider
+
+    provider = StableAudioProvider()
+    provider.last_steps = 20
+    request = __import__("semantic_audio_loom.types", fromlist=["GenerationRequest"]).GenerationRequest(
+        asset_type="sfx", spec={"kind": "sfx", "event": "a click"}, duration=1.0, seed=5
+    )
+    saved = metadata.params(request, provider, None)
+    assert saved["provider_settings"] == {"steps": 20}
+    # 設定を持たない Provider には欄が増えない（既存 params を壊さない）
+    plain = metadata.params(request, SimpleNamespace(name="stub"), None)
+    assert "provider_settings" not in plain

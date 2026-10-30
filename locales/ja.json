@@ -133,7 +133,9 @@
     "flag_clipped": "注意 クリップ {count} サンプル",
     "flag_bass_heavy": "注意 低域に寄っている（低が中より {diff_db} dB 大きい）",
     "flag_no_highs": "注意 2kHz 以上がほぼ無い（{level_db} dB）",
-    "flag_head_step": "注意 先頭が 0 から始まっていない（{value}）"
+    "flag_head_step": "注意 先頭が 0 から始まっていない（{value}）",
+    "flag_too_short": "注意 短すぎて帯域を測れない（{samples} サンプル）",
+    "burst": "起伏 {burst} dB（10ms 包絡の最大−中央値。一点で鳴る音は大きい）"
   },
   "library": {
     "description": "再利用ライブラリを操作する。",
