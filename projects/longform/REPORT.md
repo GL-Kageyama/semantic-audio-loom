@@ -443,7 +443,7 @@ whisper より小さい。叫ぶと高く長くなるが、大きくはならな
 | 欄 | 語の数（測った数） | 声に届く段 | 測ったところ |
 | --- | --- | --- | --- |
 | `speed` | 5（5） | **5**（単調・1.74〜1.80 倍） | very_slow 4.39 → very_fast 2.44 秒・3 感情とも 5 seed すべてで順序が崩れない。f0 は両端で +14.8 Hz |
-| `pitch` | 6（3） | **2**（high だけ離れる） | neutral で high 282.8 / natural 264.0 / slightly_high 265.2 Hz。**joy・moderate では逆に下が離れる**（low 310.8 / natural 318.6 / high 321.5 Hz）→ 段の向きは感情に依る |
+| `pitch` | 6（6） | **2〜3**（下だけ） | joy・controlled の 6 語 × seed 10（`acting-pitch-ladder/`）：very_low 299.0 / low 302.0（同じ段・p = 0.19）/ slightly_low 309.7 / natural 315.5 / slightly_high 312.9 / high 315.4 Hz。**上がる語は無い**（high は −0.1・slightly_high は −2.6）。neutral の声では high が +18.8 Hz 動いており、**上側は状態に依る** |
 | `emotion` | 11（3＋枠外） | 効く（ただし seed より小さい） | seed の幅 84.6 Hz の前では二次的（`emotion-seed/`） |
 | `intonation` | 5（5） | **ほぼ 0**（5 語の幅 7.7 Hz 対 seed の幅 74〜87 Hz） | 語尾の傾きの中央値は wavering 3.18 > neutral 2.71 > flat 2.11 > rising −0.35 > falling −1.64（`acting-inton-070/`） |
 | `intensity` | 5（4） | **2** | subtle ≈ moderate、moderate → strong で跳ねる、上端は伸びない |

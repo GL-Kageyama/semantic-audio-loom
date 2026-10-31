@@ -1,0 +1,70 @@
+# pitch の 6 語を、seed 10 本で全部振る
+#
+# これまでは low / natural / high の 3 語だけ測っていた（`acting-knob-stack-pitch/` は 3 語・
+# seed 5、`acting-knob-stack-speed-pitch/` は 3 語・seed 10）。
+# 残り 3 語（very_low / slightly_low / slightly_high）を足して、6 語 × seed 10 を 1 つの条件で並べる。
+# 同じ行・joy・moderate・speed natural・delivery controlled・breathiness none・beta 0.7。
+
+name: acting-pitch-ladder
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: very_low, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: pl-very_low-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: very_low, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: pl-very_low-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: very_low, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: pl-very_low-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: very_low, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: pl-very_low-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: very_low, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: pl-very_low-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: very_low, delivery: controlled, breathiness: none, seed: 6, beta: 0.7, name: pl-very_low-s6}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: very_low, delivery: controlled, breathiness: none, seed: 7, beta: 0.7, name: pl-very_low-s7}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: very_low, delivery: controlled, breathiness: none, seed: 8, beta: 0.7, name: pl-very_low-s8}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: very_low, delivery: controlled, breathiness: none, seed: 9, beta: 0.7, name: pl-very_low-s9}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: very_low, delivery: controlled, breathiness: none, seed: 10, beta: 0.7, name: pl-very_low-s10}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: pl-low-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: pl-low-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: pl-low-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: pl-low-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: pl-low-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 6, beta: 0.7, name: pl-low-s6}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 7, beta: 0.7, name: pl-low-s7}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 8, beta: 0.7, name: pl-low-s8}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 9, beta: 0.7, name: pl-low-s9}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 10, beta: 0.7, name: pl-low-s10}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_low, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: pl-slightly_low-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_low, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: pl-slightly_low-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_low, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: pl-slightly_low-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_low, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: pl-slightly_low-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_low, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: pl-slightly_low-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_low, delivery: controlled, breathiness: none, seed: 6, beta: 0.7, name: pl-slightly_low-s6}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_low, delivery: controlled, breathiness: none, seed: 7, beta: 0.7, name: pl-slightly_low-s7}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_low, delivery: controlled, breathiness: none, seed: 8, beta: 0.7, name: pl-slightly_low-s8}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_low, delivery: controlled, breathiness: none, seed: 9, beta: 0.7, name: pl-slightly_low-s9}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_low, delivery: controlled, breathiness: none, seed: 10, beta: 0.7, name: pl-slightly_low-s10}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: pl-natural-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: pl-natural-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: pl-natural-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: pl-natural-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: pl-natural-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 6, beta: 0.7, name: pl-natural-s6}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 7, beta: 0.7, name: pl-natural-s7}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 8, beta: 0.7, name: pl-natural-s8}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 9, beta: 0.7, name: pl-natural-s9}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 10, beta: 0.7, name: pl-natural-s10}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_high, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: pl-slightly_high-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_high, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: pl-slightly_high-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_high, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: pl-slightly_high-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_high, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: pl-slightly_high-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_high, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: pl-slightly_high-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_high, delivery: controlled, breathiness: none, seed: 6, beta: 0.7, name: pl-slightly_high-s6}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_high, delivery: controlled, breathiness: none, seed: 7, beta: 0.7, name: pl-slightly_high-s7}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_high, delivery: controlled, breathiness: none, seed: 8, beta: 0.7, name: pl-slightly_high-s8}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_high, delivery: controlled, breathiness: none, seed: 9, beta: 0.7, name: pl-slightly_high-s9}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_high, delivery: controlled, breathiness: none, seed: 10, beta: 0.7, name: pl-slightly_high-s10}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: pl-high-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: pl-high-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: pl-high-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: pl-high-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: pl-high-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 6, beta: 0.7, name: pl-high-s6}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 7, beta: 0.7, name: pl-high-s7}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 8, beta: 0.7, name: pl-high-s8}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 9, beta: 0.7, name: pl-high-s9}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 10, beta: 0.7, name: pl-high-s10}

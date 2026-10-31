@@ -52,7 +52,7 @@ Direction の欄は語の数が欄ごとに違うが、**声に届く段の数�
 | --- | --- | --- | --- |
 | `speed` | 5 | **5**（単調・1.74〜1.80 倍・3 感情とも） | 長さ（両端で高さも +15 Hz） |
 | `emotion` | 11 | 効く（seed の振れより小さい） | 高さ・長さ・抑揚 |
-| `pitch` | 6 | 2〜3（離れる語は感情で変わる） | 高さ |
+| `pitch` | 6 | 2〜3（**下だけ**。very_low・low が同じ段） | 高さ（上がる語は無い・`acting-pitch-ladder/`） |
 | `intensity` | 5 | 2（`subtle`＝`moderate`、`strong` で跳ねる） | 高さ・長さ |
 | `delivery` | 12 | 3（`flat`・`cold` が下、`aggressive`・`desperate` が上、残り 8 語は同じ） | 高さ・長さ |
 | `intonation` | 5 | ほぼ 0（語の幅 7.7 Hz 対 seed の幅 74〜87 Hz） | 語尾の傾きもラベルに従わない |
