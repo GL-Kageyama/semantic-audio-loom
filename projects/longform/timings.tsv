@@ -3345,3 +3345,15 @@ date	stage	asset	model	settings	wall_s	audio_s	machine	note
 2026-10-31	P2b	seed-demo/voice/n-s5	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	2.32	M2Pro-16GB	rc=0
 2026-10-31	P2b	seed-demo/voice/x-s5	tsukasa	emotion=joy,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=5,alpha=0.35,beta=0.7	1	3.37	M2Pro-16GB	rc=0
 2026-10-31	P2b	seed-demo/voice/n-close	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	5.20	M2Pro-16GB	rc=0
+2026-10-31	P2b	subtext-demo/voice/n-intro	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	11	4.80	M2Pro-16GB	rc=0
+2026-10-31	P2b	subtext-demo/voice/n-none	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	2.67	M2Pro-16GB	rc=0
+2026-10-31	P2b	subtext-demo/voice/x-none	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	subtext-demo/voice/n-return	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	2.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	subtext-demo/voice/x-return	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	subtext-demo/voice/n-never	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	2.90	M2Pro-16GB	rc=0
+2026-10-31	P2b	subtext-demo/voice/x-never	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	subtext-demo/voice/n-angry	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	2.25	M2Pro-16GB	rc=0
+2026-10-31	P2b	subtext-demo/voice/x-angry	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	subtext-demo/voice/n-unspoken	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	3.62	M2Pro-16GB	rc=0
+2026-10-31	P2b	subtext-demo/voice/x-unspoken	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	subtext-demo/voice/n-close	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	6.15	M2Pro-16GB	rc=0

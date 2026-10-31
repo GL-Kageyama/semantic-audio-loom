@@ -1,0 +1,19 @@
+# 聞き比べ：subtext だけを替える（rule 解決では音が同じになる見本）
+#
+# `acting-subtext/` の実測（seed 1・2・4・5 で 5 通りが同じ音）を耳で確かめる。
+# 語り手が裏の意味を読み、真白が同じ台詞・同じ seed 4 で言う。
+name: subtext-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 同じ台詞を、裏の意味だけ変えて、五回いいます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: narrator, line: 裏の意味なし。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-none}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-none}
+- {character: narrator, line: 本当は、帰りたい。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.8, name: n-return}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, subtext: "本当は帰りたい", pause_before: 0.4, name: x-return}
+- {character: narrator, line: もう、来ないつもりだ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.8, name: n-never}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, subtext: "もう来ないつもりだ", pause_before: 0.4, name: x-never}
+- {character: narrator, line: 怒っている。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.8, name: n-angry}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, subtext: "怒っている", pause_before: 0.4, name: x-angry}
+- {character: narrator, line: 言いたいことがあるのに、言えない。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.8, name: n-unspoken}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, subtext: "言いたいことがあるのに言えない", pause_before: 0.4, name: x-unspoken}
+- {character: narrator, line: 五つとも、同じ音になりました。裏の意味は、声に届いていません。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.2, name: n-close}

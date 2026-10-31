@@ -65,6 +65,9 @@
   seed 1〜5 に振った。f0 が **258.7〜351.4 Hz（92.7 Hz）**・長さが 2.75〜3.37 秒で動く。
   **欄を 1 つ振った差（`pitch` 15.6・感情 25.5・`delivery` 45 Hz）より大きい**
   （`seed-demo/`・`acting-emotion-ladder/`）。
+- `examples/longform-subtext/subtext-demo.mp3`（0:42）——**裏の意味だけ**を振った 5 本。
+  **5 本とも同じ音**（`md5 f17a1f6` が 5 つ）。rule の解決では subtext が散文に載らない
+  （`acting-subtext/`）。
 - `examples/longform-knobs/knob-demo.mp3`（1:09）——同じ一行で、**速さ 5 語**と
   **演技の型 3 語**だけを振った。**速さは 0:10.3 → 0:32.5 で 4.35 秒 → 2.30 秒**、
   型は **0:43.4（やさしく）と 0:48.3（平ら）だけが違う**（`acting-speed/`・

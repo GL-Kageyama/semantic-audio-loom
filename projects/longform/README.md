@@ -24,7 +24,8 @@
 [examples/longform-delivery-speed/](../../examples/longform-delivery-speed/)（54 秒）と
 [examples/longform-emotions/](../../examples/longform-emotions/)（75 秒）と
 [examples/longform-pitch/](../../examples/longform-pitch/)（47 秒）と
-[examples/longform-seed/](../../examples/longform-seed/)（42 秒・seed だけを振る）。
+[examples/longform-seed/](../../examples/longform-seed/)（42 秒・seed だけを振る）と
+[examples/longform-subtext/](../../examples/longform-subtext/)（42 秒・裏の意味だけを振る）。
 
 ## 置き場
 
@@ -84,6 +85,7 @@ projects/longform/
   emotion-demo/      感情 11 語を 1 本ずつ並べた 75 秒の見本（語り手の札つき）
   pitch-demo/        音の高さ 6 語を低い順に並べた 47 秒の見本
   seed-demo/         同じ指示のまま seed 1〜5 を並べた 42 秒の見本
+  subtext-demo/      subtext だけを替えて 5 本並べた 42 秒の見本（同じ音になる）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   drama-seed-split/  演劇のニジだけ seed 2 にした版（人物を seed で分けられるか）
   acting-breath-s70/ 芝居 s70 の 1 行で breathiness だけを none / slight に振る（6 本）

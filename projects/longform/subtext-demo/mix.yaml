@@ -1,0 +1,58 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: subtext-demo
+stems:
+- file: ../assets/subtext-demo/voice_trim/n-intro.wav
+  role: voice
+  start: 1.4
+  gain_db: 0.0
+- file: ../assets/subtext-demo/voice_trim/n-none.wav
+  role: voice
+  start: 6.664
+  gain_db: 0.0
+- file: ../assets/subtext-demo/voice_trim/x-none.wav
+  role: voice
+  start: 8.978
+  gain_db: 0.0
+- file: ../assets/subtext-demo/voice_trim/n-return.wav
+  role: voice
+  start: 12.286
+  gain_db: 0.0
+- file: ../assets/subtext-demo/voice_trim/x-return.wav
+  role: voice
+  start: 14.863
+  gain_db: 0.0
+- file: ../assets/subtext-demo/voice_trim/n-never.wav
+  role: voice
+  start: 18.171
+  gain_db: 0.0
+- file: ../assets/subtext-demo/voice_trim/x-never.wav
+  role: voice
+  start: 20.81
+  gain_db: 0.0
+- file: ../assets/subtext-demo/voice_trim/n-angry.wav
+  role: voice
+  start: 24.117
+  gain_db: 0.0
+- file: ../assets/subtext-demo/voice_trim/x-angry.wav
+  role: voice
+  start: 26.056
+  gain_db: 0.0
+- file: ../assets/subtext-demo/voice_trim/n-unspoken.wav
+  role: voice
+  start: 29.363
+  gain_db: 0.0
+- file: ../assets/subtext-demo/voice_trim/x-unspoken.wav
+  role: voice
+  start: 32.906
+  gain_db: 0.0
+- file: ../assets/subtext-demo/voice_trim/n-close.wav
+  role: voice
+  start: 36.614
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95
