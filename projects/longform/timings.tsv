@@ -3650,3 +3650,6 @@ date	stage	asset	model	settings	wall_s	audio_s	machine	note
 2026-10-31	P2b	acting-floor-mark-lines/voice/fl-l3-n-b07-exclaim-s1	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0	2.12	M2Pro-16GB	rc=0
 2026-10-31	P2b	acting-floor-mark-lines/voice/fl-l3-n-b07-exclaim-s2	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	1	2.52	M2Pro-16GB	rc=0
 2026-10-31	P2b	acting-floor-mark-lines/voice/fl-l3-n-b07-exclaim-s3	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	0	2.17	M2Pro-16GB	rc=0
+2026-10-31	P2b	vt-test/voice/vt-a	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	10.8	2.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	vt-test/voice/vt-b	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.6	2.72	M2Pro-16GB	rc=0
+2026-10-31	P2b	vt-test/voice (まとめ)	tsukasa	cues=2	11.4	5.57	M2Pro-16GB	rc=0 合計

@@ -57,12 +57,17 @@ def _timing(cue, wall: float, audio_s: float, rc: int, alpha: float, beta: float
     settings = (f"emotion={cue.emotion},intensity={cue.intensity},{perf},seed={cue.seed},"
                 f"alpha={alpha},beta={beta}")
     work = os.path.basename(os.path.dirname(OUT))
-    stage = {"explainer": "P3", "drama": "P4"}.get(work, "P2b")
+    stage = _stage()
     return "\t".join([
         datetime.date.today().isoformat(), stage,
         f"{os.path.basename(os.path.dirname(OUT))}/voice/{cue.name}", "tsukasa", settings,
-        f"{wall:.0f}", f"{audio_s:.2f}", "M2Pro-16GB", f"rc={rc}",
+        f"{wall:.1f}", f"{audio_s:.2f}", "M2Pro-16GB", f"rc={rc}",
     ])
+
+
+def _stage() -> str:
+    work = os.path.basename(os.path.dirname(OUT))
+    return {"explainer": "P3", "drama": "P4"}.get(work, "P2b")
 
 
 def main() -> None:
@@ -88,6 +93,8 @@ def main() -> None:
     engine = AudioAssetEngine(provider_name="tsukasa", resolve_mode="rule", lang="ja")
 
     rows = []
+    wall_total = 0.0
+    audio_total = 0.0
     for cue in scene.cues:
         name = cue.name or f"cue_{len(rows):02d}"
         path = os.path.join(OUT, name + ".wav")
@@ -114,14 +121,23 @@ def main() -> None:
         params["pause_before"] = cue.pause_before if cue.pause_before is not None else scene.default_pause
         store_save(asset.audio, _metadata(cue, asset.audio), params, OUT, name)
         rows.append(_timing(cue, wall, audio_s, 0, alpha, beta))
+        wall_total += wall
+        audio_total += audio_s
         print(f"{name} {audio_s:5.2f}s wall={wall:4.1f}s")
 
     if rows:
         header = not os.path.exists(TIMINGS) or os.path.getsize(TIMINGS) == 0
+        total = "\t".join([
+            datetime.date.today().isoformat(), _stage(),
+            f"{os.path.basename(os.path.dirname(OUT))}/voice (まとめ)", "tsukasa",
+            f"cues={len(rows)}", f"{wall_total:.1f}", f"{audio_total:.2f}",
+            "M2Pro-16GB", "rc=0 合計",
+        ])
         with open(TIMINGS, "a", encoding="utf-8") as f:
             if header:
                 f.write("date\tstage\tasset\tmodel\tsettings\twall_s\taudio_s\tmachine\tnote\n")
             f.write("\n".join(rows) + "\n")
+            f.write(total + "\n")
     print("done", len(rows))
 
 
