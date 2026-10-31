@@ -1,0 +1,11 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/acting-punctuation-niji/voice/pnj-exclaim-s1.wav	2.123	387.6	11.6	0.43	6.2	0.091	-16.9	31.2	130.0	0.1925	0.5383	-18.5	0
+projects/longform/assets/acting-punctuation-niji/voice/pnj-exclaim-s2.wav	2.323	442.7	12.3	-0.04	5.6	0.106	-17.4	32.0	140.0	0.2918	0.561	-18.4	0
+projects/longform/assets/acting-punctuation-niji/voice/pnj-exclaim-s3.wav	2.148	349.4	10.0	10.0	6.9	0.103	-17.8	32.2	220.0	0.2977	0.5129	-19.2	0
+projects/longform/assets/acting-punctuation-niji/voice/pnj-exclaim-s4.wav	2.548	389.9	16.0	18.95	5.5	0.058	-18.3	25.1	110.0	0.2667	0.5226	-20.1	0
+projects/longform/assets/acting-punctuation-niji/voice/pnj-exclaim-s5.wav	2.723	335.5	11.6	13.7	6.2	0.346	-16.2	28.6	150.0	0.3297	0.5103	-18.3	0
+projects/longform/assets/acting-punctuation-niji/voice/pnj-period-s1.wav	2.298	333.6	6.8	-7.3	6.2	0.333	-17.7	31.0	100.0	0.2478	0.4486	-19.5	0
+projects/longform/assets/acting-punctuation-niji/voice/pnj-period-s2.wav	2.448	290.4	5.7	-0.23	5.2	0.369	-19.0	32.8	90.0	0.3061	0.458	-19.8	0
+projects/longform/assets/acting-punctuation-niji/voice/pnj-period-s3.wav	2.298	302.4	5.9	-4.6	6.2	0.357	-19.2	27.9	70.0	0.2826	0.4249	-20.3	0
+projects/longform/assets/acting-punctuation-niji/voice/pnj-period-s4.wav	2.698	313.0	10.9	4.05	6.4	0.314	-18.7	24.7	100.0	0.3556	0.4422	-20.8	0
+projects/longform/assets/acting-punctuation-niji/voice/pnj-period-s5.wav	2.848	271.7	6.0	8.26	5.4	0.413	-16.7	31.1	120.0	0.3368	0.5316	-19.0	0
