@@ -6,7 +6,9 @@
     PYTHONPATH=. $PY projects/longform/acting-punctuation-stack/run.py
     PYTHONPATH=. $PY bin/act_probe.py --tsv …/voice/*.wav > probe.tsv
 
-## f0 中央値（seed 5 の平均）
+## f0（seed 5 の平均・1 本ごとの f0 中央値を平均したもの）
+
+`。` / `！` の差は、seed ごとの対の差の平均。
 
 | | `。` | `！` | `！` − `。` |
 | --- | --- | --- | --- |
