@@ -387,8 +387,9 @@ projects/longform/
    ✅ **「抑える」は抑える動作にならない**（`acting-sadness-heldback/`・`acting-sadness-open/`・
    sadness moderate × seed 5・文言 3 種）。文言なし 294.4 に対し、held back +2.2・
    steady and open +5.4・moderately strong +9.4 Hz（どれも 5/5）。**語を足せば上がる。
-   強さを主張する語ほど大きい。** 強度は「量」のノブで、抑制のノブは無い。
-   ⚠️ 抑える演技は sadness でしか試していない。**原本の表は変えていない。**
+   強さを主張する語ほど大きい。** anger でも同じ文言で +3.6 Hz（5/5・`acting-anger-heldback/`）。
+   強度は「量」のノブで、抑制のノブは無い。
+   ⚠️ 抑える演技は sadness・anger の 2 感情。**原本の表は変えていない。**
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の
 低下は長さの交絡。

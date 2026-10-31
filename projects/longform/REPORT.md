@@ -368,7 +368,8 @@ overwhelming は `acting-overwhelming-070/` の 15 本。基準線の f0 平均 
 | the feeling is moderately strong | 303.9 | **+9.4 Hz** | 5/5 |
 
 **どの文言も高さを上げる。** 順は「どれだけ感情を主張しているか」の順で、
-**抑制（held back）は下げない**。energy は 4 条件で ±0.5 dB（n.s.）。
+**抑制（held back）は下げない**。anger でも同じ文言で +3.6 Hz（5/5）。energy は
+4 条件で ±0.5 dB（n.s.）。
 **強度は「量」のノブで、「抑える」という動作のノブは無い**——演じ分けたいなら
 `beta` を下げるか、`pitch`・`speed`・`delivery` を別に振るしかない。
 

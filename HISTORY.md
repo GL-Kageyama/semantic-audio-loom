@@ -427,10 +427,11 @@ beta 0.7 で 4 段 × seed 5 を並べた（新規 36 本。`acting-overwhelming
   違うから。**
 - **「抑える」は抑える動作にならない。** sadness の同じ帯に文言を 3 つ置いた
   （文言なし 294.4 Hz に対し、held back +2.2・steady and open +5.4・
-  moderately strong +9.4 Hz。どれも 5/5）。**語を足せば上がる。強さを主張する語ほど
-  大きく上がる。** energy は 4 条件で ±0.5 dB。**強度は「量」のノブで、抑制のノブは無い。**
-  文言は 3 つだけ、感情は sadness だけ。原本の表は変えていない（プロセス内で差し替える
-  `acting/mod_phrase_build.py`）。
+  moderately strong +9.4 Hz。どれも 5/5）。anger でも held back は +3.6 Hz（5/5）。
+  **語を足せば上がる。強さを主張する語ほど大きく上がる。** energy は ±0.5 dB。
+  **強度は「量」のノブで、抑制のノブは無い。**
+  文言は 3 つだけ、感情は sadness・anger だけ。原本の表は変えていない（プロセス内で
+  差し替える `acting/mod_phrase_build.py`）。
 - **耳で確かめる見本を 1 本作った**（`examples/longform-intensity/`・63 秒・
   `projects/longform/intensity-demo/`）。語り手の札つきで、怒りの 4 段と悲しみの 3 段を
   同じ seed 2 で並べる。門は尺 62.6 秒（見本の門 50 秒）・ピーク −0.4 dBFS・クリップ 0・

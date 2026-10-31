@@ -1909,3 +1909,8 @@ date	stage	asset	model	settings	wall_s	audio_s	machine	note
 2026-10-31	P2b	intensity-demo/voice/i-max-sadness	tsukasa	emotion=sadness,intensity=overwhelming,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	1	3.15	M2Pro-16GB	rc=0
 2026-10-31	P2b	intensity-demo/voice/n-close-1	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	1	4.67	M2Pro-16GB	rc=0
 2026-10-31	P2b	intensity-demo/voice/n-close-2	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	1	6.05	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-anger-heldback/voice/hb-anger-s1	tsukasa	emotion=anger,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	11	2.97	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-anger-heldback/voice/hb-anger-s2	tsukasa	emotion=anger,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	1	3.15	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-anger-heldback/voice/hb-anger-s3	tsukasa	emotion=anger,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	1	2.95	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-anger-heldback/voice/hb-anger-s4	tsukasa	emotion=anger,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	3.50	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-anger-heldback/voice/hb-anger-s5	tsukasa	emotion=anger,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=5,alpha=0.35,beta=0.7	1	3.52	M2Pro-16GB	rc=0
