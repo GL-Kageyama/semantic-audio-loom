@@ -14,6 +14,7 @@ f0 中央値を seed 5 本で平均した値の、対の差（beta 0.7 の既定
 | 速さ（`speed`） | 早口 5/5・間 5/5 | **頼れる**（beta に依らない） |
 | 読点を 1 個足す | **−17.0 Hz**（4/5）・長さは動かない | 向きは揃うが幅は未測 |
 | 感情・強度の欄 | neutral 比 +4〜+26 Hz（10 語）・強度 +20〜+45 Hz（beta 0.3 のみ） | **seed の揺れ（84.6 Hz）より小さい** |
+| 声の高さ（`pitch`） | neutral で high +9.0 Hz（5/5）・very_low −13.5（1/5）。**joy では high +0.2 Hz（1/5）** | 感情が空のときだけ（感情が埋めると消える） |
 | delivery | 幅 45 Hz（beta 0.3）・0.7 では揺れの中 | beta を下げるときだけ |
 | 声量（`volume`） | 0（ミックスの利得で作る） | 使えない |
 | 表記（かな・カナ・漢字） | 0（md5 まで同じ） | 使えない |
@@ -23,7 +24,8 @@ f0 中央値を seed 5 本で平均した値の、対の差（beta 0.7 の既定
 
 1. **強く出したい行は、欄を振るより「！」を書く。** 途中に句点を置かない
    （9 文字でも `。` を 1 つ入れると +39.3 → +14.6 Hz）。つなぎは読点で。
-   記号を重ねても増えない（`？！` は `！` と同じ）。**言いよどみは `…` で書いても
+   記号を重ねても増えない（`？！` は `！` と同じ）。**記号の効きは `pitch` を 3 段
+   振っても消えない**（+38.8〜+47.4 Hz・15/15）。**言いよどみは `…` で書いても
    間にならない**——文末なら消え、途中なら読点に化けて行が 0.85 秒**縮む**。
    間は `pause_before` で作る。
    いまの 2 作品は 137 行中 136 行が「。」で終わっていて、いちばん強いノブを使っていない。
@@ -42,7 +44,8 @@ f0 中央値を seed 5 本で平均した値の、対の差（beta 0.7 の既定
 - 文末の記号：`acting-punctuation/`（`？` `！` なし）・`acting-punctuation-stack/`（感情との和）・
   `acting-punctuation-long/`（24 文字の行・`？！`・途中の句点の対照）・
   `acting-punctuation-mid/`（14 文字の行）・`acting-punctuation-period/`（9 文字で途中に句点）・
-  `acting-punctuation-ellipsis/`（文末の `…`）・`acting-punctuation-ellipsis-mid/`（途中の `…`）
+  `acting-punctuation-ellipsis/`（文末の `…`）・`acting-punctuation-ellipsis-mid/`（途中の `…`）・
+  `acting-punctuation-pitch/`（`pitch` 3 段と掛けた 30 本＋joy の 15 本）
 - 表記・読点：`acting-notation/`
 - 間：`acting-pauses/`
 - 欄の効き：`REPORT.md`「一覧（何が、どこまで効くか）」
