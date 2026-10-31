@@ -85,6 +85,7 @@ projects/longform/
   acting-punctuation-mid/   14 文字の行で `。` / `！` × seed 5（真ん中の長さ）
   acting-punctuation-period/  9 文字のまま途中を句点にした行（途中の切れ目の効果）
   acting-punctuation-ellipsis/  文末を `…` にした 5 本（`…` は声になるか）
+  acting-punctuation-ellipsis-mid/  途中の `…` の 5 本（読点に化ける・行が 0.85 秒縮む）
   acting-notation/          かな/カナ/漢字と読点 1 個 × seed 5（表記は効くか）
   acting-breath-070/        breathiness 4 語 × seed 5（息は有声の割合に出るか）
   acting-breath-030/        breathiness 4 語 × seed 5 を beta 0.3 で（0.3 では段にならない）

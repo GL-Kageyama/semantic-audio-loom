@@ -24,7 +24,8 @@ f0 中央値を seed 5 本で平均した値の、対の差（beta 0.7 の既定
 1. **強く出したい行は、欄を振るより「！」を書く。** 途中に句点を置かない
    （9 文字でも `。` を 1 つ入れると +39.3 → +14.6 Hz）。つなぎは読点で。
    記号を重ねても増えない（`？！` は `！` と同じ）。**言いよどみは `…` で書いても
-   消される**（`なし` と同じ音）——間は `pause_before` で作る。
+   間にならない**——文末なら消え、途中なら読点に化けて行が 0.85 秒**縮む**。
+   間は `pause_before` で作る。
    いまの 2 作品は 137 行中 136 行が「。」で終わっていて、いちばん強いノブを使っていない。
 2. **間は台詞の読点で作らない。** `pause_before` と `assemble.py` で作る。
    読点は高さを下げるだけ（−17 Hz）。
@@ -41,7 +42,7 @@ f0 中央値を seed 5 本で平均した値の、対の差（beta 0.7 の既定
 - 文末の記号：`acting-punctuation/`（`？` `！` なし）・`acting-punctuation-stack/`（感情との和）・
   `acting-punctuation-long/`（24 文字の行・`？！`・途中の句点の対照）・
   `acting-punctuation-mid/`（14 文字の行）・`acting-punctuation-period/`（9 文字で途中に句点）・
-  `acting-punctuation-ellipsis/`（文末の `…`）
+  `acting-punctuation-ellipsis/`（文末の `…`）・`acting-punctuation-ellipsis-mid/`（途中の `…`）
 - 表記・読点：`acting-notation/`
 - 間：`acting-pauses/`
 - 欄の効き：`REPORT.md`「一覧（何が、どこまで効くか）」

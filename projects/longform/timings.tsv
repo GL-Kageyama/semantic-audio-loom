@@ -3429,6 +3429,9 @@ date	stage	asset	model	settings	wall_s	audio_s	machine	note
 2026-10-31	P2b	acting-punctuation-mid/run.py（10本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	6	35.8	M2Pro-16GB	2条件×seed5（モデルのロードを除く）
 2026-10-31	P2b	acting-punctuation-period/run.py（10本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	6	31.9	M2Pro-16GB	2条件×seed5（モデルのロードを除く）
 2026-10-31	P2b	acting-punctuation-ellipsis/run.py（5本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	2	14.6	M2Pro-16GB	1条件×seed5（モデルのロードを除く・書き込みの mtime から）
+2026-10-31	P2b	acting-punctuation-ellipsis-mid/run.py（5本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	2	10.4	M2Pro-16GB	1条件×seed5（モデルのロードを除く・書き込みの mtime から）
+2026-10-31	P2b	acting-punctuation-ellipsis-mid/run_literal.py（5本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	2	10.4	M2Pro-16GB	対照（字面 `明日、、また来るね`）
+2026-10-31	P2b	acting-punctuation-ellipsis-mid/run_trunc.py（4本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-2,alpha=0.35,beta=0.7	2	7.2	M2Pro-16GB	頭だけの行 `明日、` / `明日、、`
 2026-10-31	P2b	punctuation-shape-demo/voice/n-intro	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	11	5.37	M2Pro-16GB	rc=0
 2026-10-31	P2b	punctuation-shape-demo/voice/n-short-comma	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	4.00	M2Pro-16GB	rc=0
 2026-10-31	P2b	punctuation-shape-demo/voice/p-short-comma-s1	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	1	2.72	M2Pro-16GB	rc=0
