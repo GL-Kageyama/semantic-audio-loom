@@ -1,0 +1,31 @@
+# 床（beta 0.0）で感情の外の軸が効くか。conditions は acting-axes（beta 0.3）と同一。
+name: acting-floor-axes
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, alpha: 0.35, name: f-base-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, alpha: 0.35, name: f-base-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, alpha: 0.35, name: f-base-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: whisper, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, alpha: 0.35, name: f-vol-whisper-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: whisper, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, alpha: 0.35, name: f-vol-whisper-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: whisper, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, alpha: 0.35, name: f-vol-whisper-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: loud, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, alpha: 0.35, name: f-vol-loud-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: loud, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, alpha: 0.35, name: f-vol-loud-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: loud, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, alpha: 0.35, name: f-vol-loud-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_slow, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, alpha: 0.35, name: f-spd-very_slow-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_slow, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, alpha: 0.35, name: f-spd-very_slow-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_slow, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, alpha: 0.35, name: f-spd-very_slow-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, alpha: 0.35, name: f-spd-very_fast-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, alpha: 0.35, name: f-spd-very_fast-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, alpha: 0.35, name: f-spd-very_fast-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 1, beta: 0.0, alpha: 0.35, name: f-dlv-cold-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 2, beta: 0.0, alpha: 0.35, name: f-dlv-cold-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 3, beta: 0.0, alpha: 0.35, name: f-dlv-cold-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: intimate, breathiness: none, seed: 1, beta: 0.0, alpha: 0.35, name: f-dlv-intimate-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: intimate, breathiness: none, seed: 2, beta: 0.0, alpha: 0.35, name: f-dlv-intimate-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: intimate, breathiness: none, seed: 3, beta: 0.0, alpha: 0.35, name: f-dlv-intimate-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 1, beta: 0.0, alpha: 0.35, name: f-dlv-aggressive-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 2, beta: 0.0, alpha: 0.35, name: f-dlv-aggressive-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 3, beta: 0.0, alpha: 0.35, name: f-dlv-aggressive-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: desperate, breathiness: none, seed: 1, beta: 0.0, alpha: 0.35, name: f-dlv-desperate-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: desperate, breathiness: none, seed: 2, beta: 0.0, alpha: 0.35, name: f-dlv-desperate-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: desperate, breathiness: none, seed: 3, beta: 0.0, alpha: 0.35, name: f-dlv-desperate-s3}
