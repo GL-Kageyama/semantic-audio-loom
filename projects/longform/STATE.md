@@ -208,6 +208,12 @@ projects/longform/
    声量も同じ（whisper・loud とも 252.8）。**delivery だけ縮む**（cold/intimate/
    aggressive/desperate ＝ 246/246/249/271。0.3 は 257/276/284/302。幅 45 → 25 Hz）。
    **下げれば演技が全部伸びるわけではない。伸びるのは覚醒、縮むのは型。**
+18. **11 感情の群れ（66 本）**：`acting-emotions/`（11 感情 × beta 0.3 / 0.0 × seed 1〜3）。
+   0.3 の f0 は neutral 257・loneliness 276 ／ calm・sadness・guilt 284・anxiety 292 ／
+   anger 320・confidence 322・fear 328・excitement 329・joy 332。**4 つの群れ**で、
+   高い 5 つは seed の幅（308〜347）が重なって分かれない。guilt だけ間 0.40–0.43・
+   長さ 3.2–3.4 秒で別。0.0 では低い群れだけ 15〜25 Hz 下がる（高い群れは動かない）。
+   ⚠️ ペアごとの 3/3 判定は 55/55 になるが偶然でも 90% 通る——数えず、範囲の重なりで読む。
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の
 低下は長さの交絡。
