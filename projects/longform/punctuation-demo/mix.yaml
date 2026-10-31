@@ -1,0 +1,66 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: punctuation-demo
+stems:
+- file: ../assets/punctuation-demo/voice_trim/n-intro.wav
+  role: voice
+  start: 1.4
+  gain_db: 0.0
+- file: ../assets/punctuation-demo/voice_trim/n-period.wav
+  role: voice
+  start: 6.797
+  gain_db: 0.0
+- file: ../assets/punctuation-demo/voice_trim/p-period-s1.wav
+  role: voice
+  start: 9.091
+  gain_db: 0.0
+- file: ../assets/punctuation-demo/voice_trim/p-period-s3.wav
+  role: voice
+  start: 12.153
+  gain_db: 0.0
+- file: ../assets/punctuation-demo/voice_trim/n-question.wav
+  role: voice
+  start: 15.328
+  gain_db: 0.0
+- file: ../assets/punctuation-demo/voice_trim/p-question-s1.wav
+  role: voice
+  start: 18.269
+  gain_db: 0.0
+- file: ../assets/punctuation-demo/voice_trim/p-question-s3.wav
+  role: voice
+  start: 21.16
+  gain_db: 0.0
+- file: ../assets/punctuation-demo/voice_trim/n-exclaim.wav
+  role: voice
+  start: 24.166
+  gain_db: 0.0
+- file: ../assets/punctuation-demo/voice_trim/p-exclaim-s1.wav
+  role: voice
+  start: 26.714
+  gain_db: 0.0
+- file: ../assets/punctuation-demo/voice_trim/p-exclaim-s3.wav
+  role: voice
+  start: 29.653
+  gain_db: 0.0
+- file: ../assets/punctuation-demo/voice_trim/n-none.wav
+  role: voice
+  start: 32.621
+  gain_db: 0.0
+- file: ../assets/punctuation-demo/voice_trim/p-none-s1.wav
+  role: voice
+  start: 35.227
+  gain_db: 0.0
+- file: ../assets/punctuation-demo/voice_trim/p-none-s3.wav
+  role: voice
+  start: 38.222
+  gain_db: 0.0
+- file: ../assets/punctuation-demo/voice_trim/n-close.wav
+  role: voice
+  start: 41.692
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95

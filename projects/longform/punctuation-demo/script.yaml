@@ -1,0 +1,21 @@
+# 聞き比べ：文末の記号だけを替える（句点・疑問符・感嘆符・なし）
+#
+# `acting-punctuation/` の実測（f0 中央値 +16.3 / +39.3 Hz）を耳で確かめる。
+# 語り手が札を読み、真白が同じ 1 行を seed 1 と 3 で言う。Spec は 4 通りで共通。
+name: punctuation-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 文の終わりだけを替えます。声が、どう変わるか。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: narrator, line: はじめに、句点。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-period}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: p-period-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, pause_before: 0.8, name: p-period-s3}
+- {character: narrator, line: 次に、疑問符。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-question}
+- {character: mashiro, line: 明日、また来るね？, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: p-question-s1}
+- {character: mashiro, line: 明日、また来るね？, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, pause_before: 0.8, name: p-question-s3}
+- {character: narrator, line: 次に、感嘆符。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-exclaim}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: p-exclaim-s1}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, pause_before: 0.8, name: p-exclaim-s3}
+- {character: narrator, line: 最後に、句点なし。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-none}
+- {character: mashiro, line: 明日、また来るね, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: p-none-s1}
+- {character: mashiro, line: 明日、また来るね, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, pause_before: 0.8, name: p-none-s3}
+- {character: narrator, line: 句読点は、間ではなく、高さを動かしました。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.2, name: n-close}

@@ -25,7 +25,8 @@
 [examples/longform-emotions/](../../examples/longform-emotions/)（75 秒）と
 [examples/longform-pitch/](../../examples/longform-pitch/)（47 秒）と
 [examples/longform-seed/](../../examples/longform-seed/)（42 秒・seed だけを振る）と
-[examples/longform-subtext/](../../examples/longform-subtext/)（42 秒・裏の意味だけを振る）。
+[examples/longform-subtext/](../../examples/longform-subtext/)（42 秒・裏の意味だけを振る）と
+[examples/longform-punctuation/](../../examples/longform-punctuation/)（46 秒・文末の記号だけを振る）。
 
 ## 置き場
 
@@ -75,6 +76,7 @@ projects/longform/
   acting-subtext/           subtext 5 通り × seed 5・llm 解決・1 欄ずつ（subtext が届く範囲）
   acting-freetext/          散文を 1 文だけ足す × seed 5（表に無い語彙は演技になるか）
   acting-pauses/            読点を 1 / 2 / 3 個 × seed 5（読点は間になるか）
+  acting-punctuation/       文末の記号（。／？／！／なし）× seed 5（字面で動くのは何か）
   acting-breath-070/        breathiness 4 語 × seed 5（息は有声の割合に出るか）
   acting-breath-030/        breathiness 4 語 × seed 5 を beta 0.3 で（0.3 では段にならない）
   acting/measure_breath.py  高域の比を出す（息の計器）
@@ -86,6 +88,7 @@ projects/longform/
   pitch-demo/        音の高さ 6 語を低い順に並べた 47 秒の見本
   seed-demo/         同じ指示のまま seed 1〜5 を並べた 42 秒の見本
   subtext-demo/      subtext だけを替えて 5 本並べた 42 秒の見本（同じ音になる）
+  punctuation-demo/  文末の記号を替えて 8 本並べた 46 秒の見本
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   drama-seed-split/  演劇のニジだけ seed 2 にした版（人物を seed で分けられるか）
   acting-breath-s70/ 芝居 s70 の 1 行で breathiness だけを none / slight に振る（6 本）
