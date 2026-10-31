@@ -41,7 +41,9 @@ f0 中央値を seed 5 本で平均した値の、対の差（beta 0.7 の既定
    **山を移したいなら、足すだけでなく、もとの山から記号を外す**——s68 に足すだけだと
    4/5 でしか 1 位にならないが、s67 の `！` を `。` に戻すと 5/5 で入れ替わる
    （s68 と次点の差 −103.7 → +21.2 → +88.1 Hz・s67 は 391.0 → 288.0 Hz・
-   [`drama-scene-mark-relocate/`](drama-scene-mark-relocate/)）。**記号は総量でなく配置。**
+   [`drama-scene-mark-relocate/`](drama-scene-mark-relocate/)）。**狙う行を替えても同じ**
+   （s60 +47.0・s66 +38.6——どちらも 5/5・[`drama-scene-mark-relocate2/`](drama-scene-mark-relocate2/)）。
+   **記号は総量でなく配置。**
    **作品の台詞でも効く**——演劇の `intensity: strong` 9 行を文末だけ `！` にすると
    +15.5〜+120.2 Hz（27/27・欄は 1 つも変えない・[`acting-drama-mark/`](acting-drama-mark/)）。
    **短い行ほど大きく**（ひとことの「ニジ！」+120.2）、長い行ほど小さい（+15.5）。
