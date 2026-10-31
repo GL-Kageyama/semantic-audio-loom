@@ -1,0 +1,42 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: floor-two-speakers-natural
+stems:
+- file: ../assets/floor-two-speakers-natural/voice_trim/t01.wav
+  role: voice
+  start: 1.8
+  gain_db: 0.0
+- file: ../assets/floor-two-speakers-natural/voice_trim/t02.wav
+  role: voice
+  start: 5.852
+  gain_db: -5.0
+- file: ../assets/floor-two-speakers-natural/voice_trim/t03.wav
+  role: voice
+  start: 11.046
+  gain_db: -5.0
+- file: ../assets/floor-two-speakers-natural/voice_trim/t04.wav
+  role: voice
+  start: 15.09
+  gain_db: -5.0
+- file: ../assets/floor-two-speakers-natural/voice_trim/t05.wav
+  role: voice
+  start: 17.625
+  gain_db: 0.0
+- file: ../assets/floor-two-speakers-natural/voice_trim/t06.wav
+  role: voice
+  start: 21.434
+  gain_db: -5.0
+- file: ../assets/floor-two-speakers-natural/voice_trim/t07.wav
+  role: voice
+  start: 25.984
+  gain_db: 0.0
+- file: ../assets/floor-two-speakers-natural/voice_trim/t08.wav
+  role: voice
+  start: 29.567
+  gain_db: -5.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95

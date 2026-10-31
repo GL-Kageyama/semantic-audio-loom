@@ -166,10 +166,16 @@
 - **床で二人を分けるには pitch を人物に振る**（`acting-floor-pitch/`・24 本＝pitch 4 段×
   参照 2×seed 3・beta 0.0）。f0 は very_low 225.0 / low 243.3 / natural 241.5 / high
   272.6 Hz（真白）。参照を替えても同じ（最大 2.4 Hz 差）＝床では高さが散文だけで決まる。
-  very_low → high は 47.6 / 48.8 Hz で、参照どうしの差 25.0 Hz より広い。4 段は 3 段
-  （low と natural は同じ音）。pitch の語は時間も動かす（very_low 3.25 秒・間 0.42 /
-  natural 2.25 秒・間 0.09）。**この段の MFCC 距離は読まない**——very_low が 22.7 で
-  参照にいちばん近く出る（pitch をまたぐと声質の距離にならない）。
+  very_low → high は 47.6 / 48.8 Hz。4 段は 3 段（low と natural は同じ音）。
+  続けて `acting-pitch-emotion/`（36 本）で感情をまたいだ：high − very_low は neutral
+  +68.4・joy +46.3・**sadness +9.4・anxiety +13.7**。**もう高い台詞には足す余地がない。**
+  `floor-pitch-pairs/`（48 本＝8 行×2 腕×seed 3）の場面では、ニジ high・真白 very_low が
+  12/12 でニジが上（中央値 +41.5 Hz）、対照（二人とも natural）は 6/12（中央値 +0.5）。
+  **上下は作れるが、狙った高さには置けない。** 1 行ずつの効きは −36 〜 +28 Hz に散る。
+  pitch の語は時間も動かす（1 行 very_low 3.25 秒 / natural 2.25 秒、場面では逆に
+  pitch 版が短い 49.3 対 63.0 秒）。**この段の MFCC 距離は読まない**——very_low が 22.7 で
+  参照にいちばん近く出る（pitch をまたぐと声質の距離にならない）。納品は
+  `examples/longform-floor-two-speakers/`（pitch 版と対照の聴き比べ）。
 - **演劇を beta 0.3 で組み直した**（`drama-beta03/`・89 本・332.2 秒）。生の声は元と
   同じ長さ（271.1 対 271.3 秒）なのに、頭尾を切った後の声は 21.7 秒長い（239.0 対
   217.3 秒）。**beta 0.3 の声は無音の割合が低く、語りが長く続く。** MFCC 距離は

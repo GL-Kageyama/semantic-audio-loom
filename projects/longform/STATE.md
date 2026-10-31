@@ -243,10 +243,15 @@ projects/longform/
 23. **床で二人を分けるには pitch を人物に振る**（`acting-floor-pitch/`・24 本＝pitch 4 段×
    参照 2 × seed 3、beta 0.0）。f0 は very_low 225.0 / low 243.3 / natural 241.5 /
    high 272.6 Hz（真白）。**参照を替えても同じ**（最大 2.4 Hz 差）＝床では高さが散文だけで決まる。
-   very_low → high は 47.6 / 48.8 Hz（参照の差 25.0 より広い）。**4 段は 3 段**（low と
-   natural は同じ音、二人の間で順が入れ替わる）。⚠️ pitch の語は時間も動かす
-   （very_low 3.25 秒・間 0.42 / natural 2.25 秒・間 0.09）。⚠️ この段の MFCC 距離は
-   読まない（very_low 22.7 が参照にいちばん近く出る＝pitch をまたぐと声質の距離にならない）。
+   very_low → high は 47.6 / 48.8 Hz。**4 段は 3 段**（low と natural は同じ音）。
+   ⚠️ **ただし効き方は感情に食われる**（`acting-pitch-emotion/`・36 本）：high − very_low は
+   neutral +68.4・joy +46.3・**sadness +9.4・anxiety +13.7**。高い台詞には余地がない。
+   ⚠️ **場面では上下だけ作れる**（`floor-pitch-pairs/`・48 本＝8 行×2 腕×seed 3）：
+   ニジ high・真白 very_low は 12/12 でニジが上（中央値 **+41.5 Hz**）、対照（二人とも
+   natural）は 6/12（中央値 +0.5）。1 行ずつの効きは −36 〜 +28 Hz に散る。
+   ⚠️ pitch の語は時間も動かす（1 行 very_low 3.25 秒 / natural 2.25、場面では逆に
+   pitch 版が短い 49.3 対 63.0 秒）。⚠️ この段の MFCC 距離は読まない（very_low 22.7 が
+   参照にいちばん近く出る）。納品：[examples/longform-floor-two-speakers/](../../examples/longform-floor-two-speakers/)。
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の
 低下は長さの交絡。

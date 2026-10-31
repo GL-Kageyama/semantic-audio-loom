@@ -1,0 +1,9 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/floor-two-speakers-natural/voice/t01.wav	2.248	257.2	6.3	1.95	6.8	0.133	-12.5	28.8	180.0	0.4578	0.95	-11.8	0
+projects/longform/assets/floor-two-speakers-natural/voice/t02.wav	3.573	261.0	7.7	2.55	6.7	0.208	-15.6	31.6	290.0	0.4274	0.95	-15.9	0
+projects/longform/assets/floor-two-speakers-natural/voice/t03.wav	2.848	252.8	6.8	-10.44	5.5	0.072	-11.8	28.5	180.0	0.5825	0.95	-12.3	0
+projects/longform/assets/floor-two-speakers-natural/voice/t04.wav	1.323	269.4	3.2	-20.2	6.9	0.216	-18.6	33.7	290.0	0.2782	0.95	-14.0	0
+projects/longform/assets/floor-two-speakers-natural/voice/t05.wav	2.198	345.3	5.9	4.91	6.4	0.212	-17.1	32.6	280.0	0.2636	0.95	-15.5	0
+projects/longform/assets/floor-two-speakers-natural/voice/t06.wav	2.973	277.3	7.4	2.13	5.3	0.169	-14.7	32.2	130.0	0.406	0.95	-14.0	0
+projects/longform/assets/floor-two-speakers-natural/voice/t07.wav	2.773	343.4	7.5	4.91	6.4	0.207	-13.9	32.4	220.0	0.446	0.95	-15.6	0
+projects/longform/assets/floor-two-speakers-natural/voice/t08.wav	3.048	339.4	5.5	-1.69	5.7	0.197	-14.5	33.2	290.0	0.5049	0.95	-16.3	0

@@ -11,10 +11,12 @@
 | `acting-floor/` | 聞き比べの拡張。同じ一言を `beta` 0.7 / 0.3 / 0.0 で並べる | 71 秒 |
 | `drama-beta03/` | 同じ脚本の演劇を `beta` 0.3 で組み直した版（聞き比べ用） | 約 5.5 分 |
 | `drama-beta00/` | 同じ脚本を床（`beta` 0.0）で組み直した版（演技の上限を見る） | 約 5.7 分 |
+| `floor-two-speakers/` | 床で二人を分ける聞き比べ。`pitch` を人物に振る版と、二人とも natural の対照 | 27 秒 / 32 秒 |
 
 聞き比べの見本と実測は [examples/longform-acting/](../../examples/longform-acting/)、
 [examples/longform-acting-floor/](../../examples/longform-acting-floor/)、
-[examples/longform-drama-beta03/](../../examples/longform-drama-beta03/)。
+[examples/longform-drama-beta03/](../../examples/longform-drama-beta03/)、
+[examples/longform-floor-two-speakers/](../../examples/longform-floor-two-speakers/)。
 
 ## 置き場
 

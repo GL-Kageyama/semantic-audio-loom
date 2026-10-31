@@ -1,0 +1,13 @@
+# 対照：同じ台詞で pitch を二人とも natural にした版。
+
+name: floor-two-speakers-natural
+default_pause: 0.0
+cues:
+- {character: niji, line: もしもし。, emotion: calm, intensity: subtle, volume: normal, speed: natural, pitch: natural, delivery: intimate, seed: 1, beta: 0.0, alpha: 0.35, pause_before: 0.6, name: t01}
+- {character: mashiro, line: ……まだ起きてたの。, emotion: calm, intensity: subtle, volume: quiet, speed: slow, pitch: natural, delivery: intimate, seed: 1, beta: 0.0, alpha: 0.35, pause_before: 2.0, name: t02}
+- {character: niji, line: うん。眠れなくて。, emotion: loneliness, intensity: subtle, volume: quiet, speed: slow, pitch: natural, delivery: controlled, seed: 1, beta: 0.0, alpha: 0.35, pause_before: 1.8, name: t03}
+- {character: mashiro, line: そう。, emotion: neutral, intensity: subtle, volume: quiet, speed: slow, pitch: natural, delivery: controlled, seed: 1, beta: 0.0, alpha: 0.35, pause_before: 1.6, name: t04}
+- {character: niji, line: そっちは。, emotion: anxiety, intensity: subtle, volume: normal, speed: natural, pitch: natural, delivery: hesitant, seed: 1, beta: 0.0, alpha: 0.35, pause_before: 1.4, name: t05}
+- {character: mashiro, line: こっちも、同じ。, emotion: sadness, intensity: subtle, volume: quiet, speed: slow, pitch: natural, delivery: controlled, seed: 1, beta: 0.0, alpha: 0.35, pause_before: 1.8, name: t06}
+- {character: niji, line: じゃあ、ちょっとだけ。, emotion: joy, intensity: subtle, volume: normal, speed: natural, pitch: natural, delivery: intimate, seed: 1, beta: 0.0, alpha: 0.35, pause_before: 1.8, name: t07}
+- {character: mashiro, line: ちょっとだけ。, emotion: joy, intensity: subtle, volume: quiet, speed: slow, pitch: natural, delivery: intimate, seed: 1, beta: 0.0, alpha: 0.35, pause_before: 1.0, name: t08}

@@ -1,0 +1,53 @@
+# 台詞の並びの中で、pitch の割り当てが人物を分けたまま保てるか。
+# arm p = ニジ high / 真白 very_low、arm n = 二人とも natural。8 行×2 腕×seed 3。
+name: floor-pitch-pairs
+default_pause: 0.0
+cues:
+- {character: niji, line: もしもし。, emotion: calm, intensity: subtle, volume: normal, speed: natural, delivery: intimate, breathiness: none, pitch: high, seed: 1, beta: 0.0, alpha: 0.35, name: L1ps1}
+- {character: niji, line: もしもし。, emotion: calm, intensity: subtle, volume: normal, speed: natural, delivery: intimate, breathiness: none, pitch: high, seed: 2, beta: 0.0, alpha: 0.35, name: L1ps2}
+- {character: niji, line: もしもし。, emotion: calm, intensity: subtle, volume: normal, speed: natural, delivery: intimate, breathiness: none, pitch: high, seed: 3, beta: 0.0, alpha: 0.35, name: L1ps3}
+- {character: niji, line: もしもし。, emotion: calm, intensity: subtle, volume: normal, speed: natural, delivery: intimate, breathiness: none, pitch: natural, seed: 1, beta: 0.0, alpha: 0.35, name: L1ns1}
+- {character: niji, line: もしもし。, emotion: calm, intensity: subtle, volume: normal, speed: natural, delivery: intimate, breathiness: none, pitch: natural, seed: 2, beta: 0.0, alpha: 0.35, name: L1ns2}
+- {character: niji, line: もしもし。, emotion: calm, intensity: subtle, volume: normal, speed: natural, delivery: intimate, breathiness: none, pitch: natural, seed: 3, beta: 0.0, alpha: 0.35, name: L1ns3}
+- {character: mashiro, line: ……まだ起きてたの。, emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: intimate, breathiness: none, pitch: very_low, seed: 1, beta: 0.0, alpha: 0.35, name: L2ps1}
+- {character: mashiro, line: ……まだ起きてたの。, emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: intimate, breathiness: none, pitch: very_low, seed: 2, beta: 0.0, alpha: 0.35, name: L2ps2}
+- {character: mashiro, line: ……まだ起きてたの。, emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: intimate, breathiness: none, pitch: very_low, seed: 3, beta: 0.0, alpha: 0.35, name: L2ps3}
+- {character: mashiro, line: ……まだ起きてたの。, emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: intimate, breathiness: none, pitch: natural, seed: 1, beta: 0.0, alpha: 0.35, name: L2ns1}
+- {character: mashiro, line: ……まだ起きてたの。, emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: intimate, breathiness: none, pitch: natural, seed: 2, beta: 0.0, alpha: 0.35, name: L2ns2}
+- {character: mashiro, line: ……まだ起きてたの。, emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: intimate, breathiness: none, pitch: natural, seed: 3, beta: 0.0, alpha: 0.35, name: L2ns3}
+- {character: niji, line: うん。眠れなくて。, emotion: loneliness, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: high, seed: 1, beta: 0.0, alpha: 0.35, name: L3ps1}
+- {character: niji, line: うん。眠れなくて。, emotion: loneliness, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: high, seed: 2, beta: 0.0, alpha: 0.35, name: L3ps2}
+- {character: niji, line: うん。眠れなくて。, emotion: loneliness, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: high, seed: 3, beta: 0.0, alpha: 0.35, name: L3ps3}
+- {character: niji, line: うん。眠れなくて。, emotion: loneliness, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: natural, seed: 1, beta: 0.0, alpha: 0.35, name: L3ns1}
+- {character: niji, line: うん。眠れなくて。, emotion: loneliness, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: natural, seed: 2, beta: 0.0, alpha: 0.35, name: L3ns2}
+- {character: niji, line: うん。眠れなくて。, emotion: loneliness, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: natural, seed: 3, beta: 0.0, alpha: 0.35, name: L3ns3}
+- {character: mashiro, line: そう。, emotion: neutral, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: very_low, seed: 1, beta: 0.0, alpha: 0.35, name: L4ps1}
+- {character: mashiro, line: そう。, emotion: neutral, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: very_low, seed: 2, beta: 0.0, alpha: 0.35, name: L4ps2}
+- {character: mashiro, line: そう。, emotion: neutral, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: very_low, seed: 3, beta: 0.0, alpha: 0.35, name: L4ps3}
+- {character: mashiro, line: そう。, emotion: neutral, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: natural, seed: 1, beta: 0.0, alpha: 0.35, name: L4ns1}
+- {character: mashiro, line: そう。, emotion: neutral, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: natural, seed: 2, beta: 0.0, alpha: 0.35, name: L4ns2}
+- {character: mashiro, line: そう。, emotion: neutral, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: natural, seed: 3, beta: 0.0, alpha: 0.35, name: L4ns3}
+- {character: niji, line: そっちは。, emotion: anxiety, intensity: subtle, volume: normal, speed: natural, delivery: hesitant, breathiness: none, pitch: high, seed: 1, beta: 0.0, alpha: 0.35, name: L5ps1}
+- {character: niji, line: そっちは。, emotion: anxiety, intensity: subtle, volume: normal, speed: natural, delivery: hesitant, breathiness: none, pitch: high, seed: 2, beta: 0.0, alpha: 0.35, name: L5ps2}
+- {character: niji, line: そっちは。, emotion: anxiety, intensity: subtle, volume: normal, speed: natural, delivery: hesitant, breathiness: none, pitch: high, seed: 3, beta: 0.0, alpha: 0.35, name: L5ps3}
+- {character: niji, line: そっちは。, emotion: anxiety, intensity: subtle, volume: normal, speed: natural, delivery: hesitant, breathiness: none, pitch: natural, seed: 1, beta: 0.0, alpha: 0.35, name: L5ns1}
+- {character: niji, line: そっちは。, emotion: anxiety, intensity: subtle, volume: normal, speed: natural, delivery: hesitant, breathiness: none, pitch: natural, seed: 2, beta: 0.0, alpha: 0.35, name: L5ns2}
+- {character: niji, line: そっちは。, emotion: anxiety, intensity: subtle, volume: normal, speed: natural, delivery: hesitant, breathiness: none, pitch: natural, seed: 3, beta: 0.0, alpha: 0.35, name: L5ns3}
+- {character: mashiro, line: こっちも、同じ。, emotion: sadness, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: very_low, seed: 1, beta: 0.0, alpha: 0.35, name: L6ps1}
+- {character: mashiro, line: こっちも、同じ。, emotion: sadness, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: very_low, seed: 2, beta: 0.0, alpha: 0.35, name: L6ps2}
+- {character: mashiro, line: こっちも、同じ。, emotion: sadness, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: very_low, seed: 3, beta: 0.0, alpha: 0.35, name: L6ps3}
+- {character: mashiro, line: こっちも、同じ。, emotion: sadness, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: natural, seed: 1, beta: 0.0, alpha: 0.35, name: L6ns1}
+- {character: mashiro, line: こっちも、同じ。, emotion: sadness, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: natural, seed: 2, beta: 0.0, alpha: 0.35, name: L6ns2}
+- {character: mashiro, line: こっちも、同じ。, emotion: sadness, intensity: subtle, volume: quiet, speed: slow, delivery: controlled, breathiness: none, pitch: natural, seed: 3, beta: 0.0, alpha: 0.35, name: L6ns3}
+- {character: niji, line: じゃあ、ちょっとだけ。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: intimate, breathiness: none, pitch: high, seed: 1, beta: 0.0, alpha: 0.35, name: L7ps1}
+- {character: niji, line: じゃあ、ちょっとだけ。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: intimate, breathiness: none, pitch: high, seed: 2, beta: 0.0, alpha: 0.35, name: L7ps2}
+- {character: niji, line: じゃあ、ちょっとだけ。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: intimate, breathiness: none, pitch: high, seed: 3, beta: 0.0, alpha: 0.35, name: L7ps3}
+- {character: niji, line: じゃあ、ちょっとだけ。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: intimate, breathiness: none, pitch: natural, seed: 1, beta: 0.0, alpha: 0.35, name: L7ns1}
+- {character: niji, line: じゃあ、ちょっとだけ。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: intimate, breathiness: none, pitch: natural, seed: 2, beta: 0.0, alpha: 0.35, name: L7ns2}
+- {character: niji, line: じゃあ、ちょっとだけ。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: intimate, breathiness: none, pitch: natural, seed: 3, beta: 0.0, alpha: 0.35, name: L7ns3}
+- {character: mashiro, line: ちょっとだけ。, emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: intimate, breathiness: none, pitch: very_low, seed: 1, beta: 0.0, alpha: 0.35, name: L8ps1}
+- {character: mashiro, line: ちょっとだけ。, emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: intimate, breathiness: none, pitch: very_low, seed: 2, beta: 0.0, alpha: 0.35, name: L8ps2}
+- {character: mashiro, line: ちょっとだけ。, emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: intimate, breathiness: none, pitch: very_low, seed: 3, beta: 0.0, alpha: 0.35, name: L8ps3}
+- {character: mashiro, line: ちょっとだけ。, emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: intimate, breathiness: none, pitch: natural, seed: 1, beta: 0.0, alpha: 0.35, name: L8ns1}
+- {character: mashiro, line: ちょっとだけ。, emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: intimate, breathiness: none, pitch: natural, seed: 2, beta: 0.0, alpha: 0.35, name: L8ns2}
+- {character: mashiro, line: ちょっとだけ。, emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: intimate, breathiness: none, pitch: natural, seed: 3, beta: 0.0, alpha: 0.35, name: L8ns3}
