@@ -1,0 +1,45 @@
+# 記号は、どの感情の上にも同じだけ足せるか（6 感情 × 2 記号 × seed 3 = 36）
+#
+# `acting-punctuation-stack/` は neutral と joy の 2 つだけだった。感情を 6 つに広げ、
+# `！` の効きが感情に依らないか（足し算になるか）を見る。同じ行・beta 0.7・
+# ほかの欄は 6 感情で共通。
+
+name: acting-mark-emotion5
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: me-neutral-period-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: me-neutral-period-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: me-neutral-period-s3}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: me-neutral-exclaim-s1}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: me-neutral-exclaim-s2}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: me-neutral-exclaim-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: me-joy-period-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: me-joy-period-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: me-joy-period-s3}
+- {character: mashiro, line: 明日、また来るね！, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: me-joy-exclaim-s1}
+- {character: mashiro, line: 明日、また来るね！, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: me-joy-exclaim-s2}
+- {character: mashiro, line: 明日、また来るね！, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: me-joy-exclaim-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: me-sadness-period-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: me-sadness-period-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: me-sadness-period-s3}
+- {character: mashiro, line: 明日、また来るね！, emotion: sadness, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: me-sadness-exclaim-s1}
+- {character: mashiro, line: 明日、また来るね！, emotion: sadness, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: me-sadness-exclaim-s2}
+- {character: mashiro, line: 明日、また来るね！, emotion: sadness, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: me-sadness-exclaim-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: me-anger-period-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: me-anger-period-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: me-anger-period-s3}
+- {character: mashiro, line: 明日、また来るね！, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: me-anger-exclaim-s1}
+- {character: mashiro, line: 明日、また来るね！, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: me-anger-exclaim-s2}
+- {character: mashiro, line: 明日、また来るね！, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: me-anger-exclaim-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: anxiety, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: me-anxiety-period-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: anxiety, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: me-anxiety-period-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: anxiety, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: me-anxiety-period-s3}
+- {character: mashiro, line: 明日、また来るね！, emotion: anxiety, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: me-anxiety-exclaim-s1}
+- {character: mashiro, line: 明日、また来るね！, emotion: anxiety, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: me-anxiety-exclaim-s2}
+- {character: mashiro, line: 明日、また来るね！, emotion: anxiety, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: me-anxiety-exclaim-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: me-fear-period-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: me-fear-period-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: me-fear-period-s3}
+- {character: mashiro, line: 明日、また来るね！, emotion: fear, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: me-fear-exclaim-s1}
+- {character: mashiro, line: 明日、また来るね！, emotion: fear, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: me-fear-exclaim-s2}
+- {character: mashiro, line: 明日、また来るね！, emotion: fear, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: me-fear-exclaim-s3}

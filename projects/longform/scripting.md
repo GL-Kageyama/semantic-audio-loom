@@ -13,7 +13,7 @@ f0 中央値を seed 5 本で平均した値の、対の差（beta 0.7 の既定
 | 文末を `？` に | **+16.3 Hz**（5/5）。beta 0.0 でも +13.1（地の読みが作る） | 頼れる |
 | 速さ（`speed`） | 早口 5/5・間 5/5。**長さのノブ**（4.20 → 2.36 秒）で、高さは動かさない（±8 Hz まで・2 声） | **頼れる**（beta に依らない） |
 | 読点を 1 個足す | **−17.0 Hz**（4/5）・長さは動かない | 向きは揃うが幅は未測 |
-| 感情・強度の欄 | neutral 比 +4〜+26 Hz（10 語）・強度 +20〜+45 Hz（beta 0.3 のみ） | **seed の揺れ（84.6 Hz）より小さい** |
+| 感情・強度の欄 | neutral 比 +4〜+26 Hz（10 語）・強度 +20〜+45 Hz（beta 0.3 のみ）。**記号と足し算**（`！` は 6 感情のどれの上でも +35〜+41 Hz） | **seed の揺れ（84.6 Hz）より小さい** |
 | 声の高さ（`pitch`） | neutral で high +9.0 Hz（5/5）・very_low −13.5（1/5）。**joy では high +0.2 Hz（1/5）** | 感情が空のときだけ（感情が埋めると消える） |
 | delivery | 幅 45 Hz（beta 0.3）・0.7 では揺れの中 | beta を下げるときだけ |
 | 声量（`volume`） | 0（ミックスの利得で作る） | 使えない |
@@ -53,6 +53,7 @@ f0 中央値を seed 5 本で平均した値の、対の差（beta 0.7 の既定
 ## 出典
 
 - 文末の記号：`acting-punctuation/`（`？` `！` なし）・`acting-punctuation-stack/`（感情との和）・
+  `acting-mark-emotion5/`（6 感情 × 2 記号の 36 本）・
   `acting-punctuation-long/`（24 文字の行・`？！`・途中の句点の対照）・
   `acting-punctuation-mid/`（14 文字の行）・`acting-punctuation-period/`（9 文字で途中に句点）・
   `acting-punctuation-ellipsis/`（文末の `…`）・`acting-punctuation-ellipsis-mid/`（途中の `…`）・
