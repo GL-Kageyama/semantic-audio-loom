@@ -1,0 +1,81 @@
+# 床で消える `！` は、別の行・別の声でも消えるか（3 行 × 2 声 × beta 2 段 × 記号 2 × seed 3 = 72）
+#
+# `acting-punctuation-floor/` は 1 行（明日、また来るね）・1 声（真白）で、`！` は床で
+# −1.2 Hz・`？` は +13.1 Hz だった。行と声を替えても同じ向きかを確かめる。
+# 行は 3 つ：途中に読点のある 2 行と、読点の無い 1 行（そこにいて）。
+
+name: acting-floor-mark-lines
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, name: fl-l1-m-b00-period-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, name: fl-l1-m-b00-period-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, name: fl-l1-m-b00-period-s3}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, name: fl-l1-m-b00-exclaim-s1}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, name: fl-l1-m-b00-exclaim-s2}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, name: fl-l1-m-b00-exclaim-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: fl-l1-m-b07-period-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: fl-l1-m-b07-period-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: fl-l1-m-b07-period-s3}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: fl-l1-m-b07-exclaim-s1}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: fl-l1-m-b07-exclaim-s2}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: fl-l1-m-b07-exclaim-s3}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, name: fl-l1-n-b00-period-s1}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, name: fl-l1-n-b00-period-s2}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, name: fl-l1-n-b00-period-s3}
+- {character: niji, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, name: fl-l1-n-b00-exclaim-s1}
+- {character: niji, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, name: fl-l1-n-b00-exclaim-s2}
+- {character: niji, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, name: fl-l1-n-b00-exclaim-s3}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: fl-l1-n-b07-period-s1}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: fl-l1-n-b07-period-s2}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: fl-l1-n-b07-period-s3}
+- {character: niji, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: fl-l1-n-b07-exclaim-s1}
+- {character: niji, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: fl-l1-n-b07-exclaim-s2}
+- {character: niji, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: fl-l1-n-b07-exclaim-s3}
+- {character: mashiro, line: 今、行くよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, name: fl-l2-m-b00-period-s1}
+- {character: mashiro, line: 今、行くよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, name: fl-l2-m-b00-period-s2}
+- {character: mashiro, line: 今、行くよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, name: fl-l2-m-b00-period-s3}
+- {character: mashiro, line: 今、行くよ！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, name: fl-l2-m-b00-exclaim-s1}
+- {character: mashiro, line: 今、行くよ！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, name: fl-l2-m-b00-exclaim-s2}
+- {character: mashiro, line: 今、行くよ！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, name: fl-l2-m-b00-exclaim-s3}
+- {character: mashiro, line: 今、行くよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: fl-l2-m-b07-period-s1}
+- {character: mashiro, line: 今、行くよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: fl-l2-m-b07-period-s2}
+- {character: mashiro, line: 今、行くよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: fl-l2-m-b07-period-s3}
+- {character: mashiro, line: 今、行くよ！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: fl-l2-m-b07-exclaim-s1}
+- {character: mashiro, line: 今、行くよ！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: fl-l2-m-b07-exclaim-s2}
+- {character: mashiro, line: 今、行くよ！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: fl-l2-m-b07-exclaim-s3}
+- {character: niji, line: 今、行くよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, name: fl-l2-n-b00-period-s1}
+- {character: niji, line: 今、行くよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, name: fl-l2-n-b00-period-s2}
+- {character: niji, line: 今、行くよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, name: fl-l2-n-b00-period-s3}
+- {character: niji, line: 今、行くよ！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, name: fl-l2-n-b00-exclaim-s1}
+- {character: niji, line: 今、行くよ！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, name: fl-l2-n-b00-exclaim-s2}
+- {character: niji, line: 今、行くよ！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, name: fl-l2-n-b00-exclaim-s3}
+- {character: niji, line: 今、行くよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: fl-l2-n-b07-period-s1}
+- {character: niji, line: 今、行くよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: fl-l2-n-b07-period-s2}
+- {character: niji, line: 今、行くよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: fl-l2-n-b07-period-s3}
+- {character: niji, line: 今、行くよ！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: fl-l2-n-b07-exclaim-s1}
+- {character: niji, line: 今、行くよ！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: fl-l2-n-b07-exclaim-s2}
+- {character: niji, line: 今、行くよ！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: fl-l2-n-b07-exclaim-s3}
+- {character: mashiro, line: そこにいて。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, name: fl-l3-m-b00-period-s1}
+- {character: mashiro, line: そこにいて。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, name: fl-l3-m-b00-period-s2}
+- {character: mashiro, line: そこにいて。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, name: fl-l3-m-b00-period-s3}
+- {character: mashiro, line: そこにいて！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, name: fl-l3-m-b00-exclaim-s1}
+- {character: mashiro, line: そこにいて！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, name: fl-l3-m-b00-exclaim-s2}
+- {character: mashiro, line: そこにいて！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, name: fl-l3-m-b00-exclaim-s3}
+- {character: mashiro, line: そこにいて。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: fl-l3-m-b07-period-s1}
+- {character: mashiro, line: そこにいて。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: fl-l3-m-b07-period-s2}
+- {character: mashiro, line: そこにいて。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: fl-l3-m-b07-period-s3}
+- {character: mashiro, line: そこにいて！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: fl-l3-m-b07-exclaim-s1}
+- {character: mashiro, line: そこにいて！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: fl-l3-m-b07-exclaim-s2}
+- {character: mashiro, line: そこにいて！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: fl-l3-m-b07-exclaim-s3}
+- {character: niji, line: そこにいて。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, name: fl-l3-n-b00-period-s1}
+- {character: niji, line: そこにいて。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, name: fl-l3-n-b00-period-s2}
+- {character: niji, line: そこにいて。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, name: fl-l3-n-b00-period-s3}
+- {character: niji, line: そこにいて！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, name: fl-l3-n-b00-exclaim-s1}
+- {character: niji, line: そこにいて！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.0, name: fl-l3-n-b00-exclaim-s2}
+- {character: niji, line: そこにいて！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.0, name: fl-l3-n-b00-exclaim-s3}
+- {character: niji, line: そこにいて。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: fl-l3-n-b07-period-s1}
+- {character: niji, line: そこにいて。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: fl-l3-n-b07-period-s2}
+- {character: niji, line: そこにいて。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: fl-l3-n-b07-period-s3}
+- {character: niji, line: そこにいて！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: fl-l3-n-b07-exclaim-s1}
+- {character: niji, line: そこにいて！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: fl-l3-n-b07-exclaim-s2}
+- {character: niji, line: そこにいて！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: fl-l3-n-b07-exclaim-s3}
