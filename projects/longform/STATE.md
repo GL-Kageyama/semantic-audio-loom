@@ -1,6 +1,6 @@
 # 長尺ラン — STATE（再開のための唯一の現在地）
 
-最終更新：2026-10-31 14:23 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
+最終更新：2026-10-31 14:26 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
 ユーザーは約 10 時間不在。質問しない。門を 20 分超えたら「未達」で次へ。
 
 ## この Mac（時間の数字はマシンが違えば比べられない）
@@ -448,6 +448,9 @@ projects/longform/
    f0・長さが動く）・breathiness 4→2。
    ✅ **聞き比べの見本を足した**（`knob-demo/`・`examples/longform-knobs/`・69 秒・
    語り手の札つき）。速さ 5 語＋演技の型 3 語。既存の `intensity-demo/`（63 秒）と対。
+   ✅ **積み上げの見本も足した**（`stack-demo/`・`examples/longform-stack-demo/`・45.1 秒・
+   17 本）。速さ（natural / very_slow / very_fast）× 型（gentle / aggressive）の 6 通り。
+   mp3 は −16.98 LUFS・TP −1.04 dBTP（合格）。
    ✅ **長い台詞では、跳ねる先が変わる**（`acting-longline/`・芝居の 1 行 24 文字 × 4 段 ×
    3 感情 × seed 5・60 本）。moderate → strong で**抑揚の幅が +0.60/+0.78/+0.84 半音**
    （3 感情とも 5/5・p ≤ 0.01）だが、**中央値が動くのは sadness だけ**（+13.2 Hz・5/5）。
