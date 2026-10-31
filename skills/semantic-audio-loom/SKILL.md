@@ -33,6 +33,8 @@ argument-hint: '(optional) キャラ名・演技名・台詞。例: /semantic-au
    5 語もほぼ同じ声で、語尾の傾きは名前どおりにならない — 詳細は `docs/resolve.md`
    「どの欄が、声を動かすか」。`subtext` は `--resolve rule` では音に載らず（Provider の
    散文がその欄を読まない）、`--resolve llm` でも効くのは変換後の `intensity` の段だけ。
+   **台詞の文末の記号は欄より強く効く**：`？` は f0 +16.3 Hz・`！` は +39.3 Hz（5/5）、
+   感情の欄とは足し算になる。記号なしは語尾が落ちる。**「！」を欄で出そうとしない。**
 4. **声を生成する** — `bin/generate.py --character <キャラ> --performance <演技> --line <台詞>`。
 
 ## 声の生成

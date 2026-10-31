@@ -19,6 +19,8 @@ ambience・sfx・foley = Sound Spec）。声では台詞の「裏の意味（sub
 （flat / falling / wavering）は散文を変えても声を変えない（+1.0 Hz・2/5）。
 `--resolve rule` では subtext は散文に載らない。測った中身は
 [docs/resolve.md](docs/resolve.md)「どこまで声に届くか」。
+台詞の文末の記号は、欄より強く声を動かす（`？` f0 +16.3 Hz・`！` +39.3 Hz・感情と
+足し算）。詳細は `projects/longform/REPORT.md`。
 
 ## 資材の分離（再利用の設計）
 
