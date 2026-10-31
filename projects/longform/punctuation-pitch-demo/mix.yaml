@@ -1,0 +1,50 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: punctuation-pitch-demo
+stems:
+- file: ../assets/punctuation-pitch-demo/voice_trim/n-intro.wav
+  role: voice
+  start: 1.4
+  gain_db: 0.0
+- file: ../assets/punctuation-pitch-demo/voice_trim/pp-low-period.wav
+  role: voice
+  start: 6.882
+  gain_db: 0.0
+- file: ../assets/punctuation-pitch-demo/voice_trim/pp-low-exclaim.wav
+  role: voice
+  start: 10.011
+  gain_db: 0.0
+- file: ../assets/punctuation-pitch-demo/voice_trim/n-low.wav
+  role: voice
+  start: 13.254
+  gain_db: 0.0
+- file: ../assets/punctuation-pitch-demo/voice_trim/pp-high-period.wav
+  role: voice
+  start: 17.609
+  gain_db: 0.0
+- file: ../assets/punctuation-pitch-demo/voice_trim/pp-high-exclaim.wav
+  role: voice
+  start: 20.45
+  gain_db: 0.0
+- file: ../assets/punctuation-pitch-demo/voice_trim/n-high.wav
+  role: voice
+  start: 23.367
+  gain_db: 0.0
+- file: ../assets/punctuation-pitch-demo/voice_trim/pp-joy-natural.wav
+  role: voice
+  start: 27.999
+  gain_db: 0.0
+- file: ../assets/punctuation-pitch-demo/voice_trim/pp-joy-high.wav
+  role: voice
+  start: 31.061
+  gain_db: 0.0
+- file: ../assets/punctuation-pitch-demo/voice_trim/n-joy.wav
+  role: voice
+  start: 34.327
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95

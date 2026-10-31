@@ -1,0 +1,18 @@
+# 聞き比べ：文末の記号の効きは、`pitch` を振っても残る
+#
+# `acting-punctuation-pitch/`（neutral 30 本＋joy 15 本）を耳で確かめる。
+# 前半：同じ行を very_low / high の 2 段で、`。` と `！` の対にする。
+# 後半：`pitch` の欄は、joy では効かない（neutral の high +9.0 Hz・joy の high +0.2 Hz）。
+name: punctuation-pitch-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 同じ言葉を、声の高さだけ変えて、二通りずつ並べます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: very_low, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: pp-low-period}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: very_low, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.8, name: pp-low-exclaim}
+- {character: narrator, line: 低い声でも、記号の差は残ります。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-low}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 1, pause_before: 1.0, name: pp-high-period}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.8, name: pp-high-exclaim}
+- {character: narrator, line: 高い声でも、同じように開きます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-high}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 1.2, name: pp-joy-natural}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.8, name: pp-joy-high}
+- {character: narrator, line: 嬉しいときは、高さの欄を上げても、動きません。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-joy}

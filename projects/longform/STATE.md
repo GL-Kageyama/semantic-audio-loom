@@ -542,6 +542,9 @@ projects/longform/
    joy 15 本）：記号の効きは very_low +38.8・natural +42.2・high +47.4 Hz（15/15）。
    `pitch` の側は neutral で very_low −13.5（1/5）・high +9.0（5/5）だが、**joy では
    high +0.2（1/5）**——欄の効きは感情が埋めているぶんだけ減る。
+   ✅ **見本**（`punctuation-pitch-demo/`・`examples/longform-punctuation-pitch/`・
+   38.5 秒・−16.95 LUFS・TP −1.07）。1 本ずつなので very_low +22.3・high +38.4 Hz で、
+   joy の natural と high は**同じ音**（どちらも 351.4 Hz・2.85 秒）。
    ✅ **別の人物・別の行でも同じ向き**（ニジ「今、行くよ」・10 本）：`！` で +78.8 Hz
    （5/5・+47.0〜+152.3）。語り手でも +58.1 Hz（5/5）。大きさは行と声で変わる。
    **beta 0.3 では +25.4 Hz（5/5）**。

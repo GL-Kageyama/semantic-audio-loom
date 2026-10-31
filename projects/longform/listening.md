@@ -80,6 +80,11 @@
   文末の `…` と `なし` は同じ台詞・同じ seed で、**同じ高さ・同じ長さ**（320.4 Hz・
   2.50 秒）。途中の `…` は読点に化けて **1.95 秒**へ縮む。言いよどみは
   `pause_before` で作る（`ellipsis-demo/`・`acting-punctuation-ellipsis-mid/`）。
+- `examples/longform-punctuation-pitch/punctuation-pitch-demo.mp3`（0:38）——`。` と `！` を
+  **`pitch` を振って**聴く。very_low で +22.3 Hz（309.4 → 331.7）・high で +38.4 Hz
+  （331.7 → 370.1）。**うしろの 2 本（0:28.0 と 0:31.1）は joy で `pitch` を上げても
+  同じ音**（どちらも 351.4 Hz）——記号には効いて、欄には効かない
+  （`punctuation-pitch-demo/`・`acting-punctuation-pitch/`）。
 - `examples/longform-knobs/knob-demo.mp3`（1:09）——同じ一行で、**速さ 5 語**と
   **演技の型 3 語**だけを振った。**速さは 0:10.3 → 0:32.5 で 4.35 秒 → 2.30 秒**、
   型は **0:43.4（やさしく）と 0:48.3（平ら）だけが違う**（`acting-speed/`・
@@ -87,7 +92,7 @@
 
 ## 音量について
 
-examples の mp3 は 20 本。**15 本が −16 ±1.0 LUFS**（トゥルーピーク −1.00〜−1.31 dBTP）。
+examples の mp3 は 21 本。**16 本が −16 ±1.0 LUFS**（トゥルーピーク −1.00〜−1.31 dBTP）。
 未達は 5 本で、**すべてピークに当たっている**：`drama-beta00-pitch` −17.40・
 `explainer` −18.16・`floor-two-speakers-natural` −17.64・`intensity-demo` −17.38・
 `knob-demo` −17.10。**トゥルーピークが −1.13〜−1.27 dBTP なので、直線のゲインで
