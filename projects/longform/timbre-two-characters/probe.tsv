@@ -1,0 +1,19 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/timbre-two-characters/voice/l1-mashiro-s1.wav	2.848	326.0	8.0	2.71	5.4	0.239	-14.2	35.7	140.0	0.2596	0.95	-15.9	0
+projects/longform/assets/timbre-two-characters/voice/l1-mashiro-s2.wav	2.973	280.5	6.0	10.45	6.2	0.288	-14.8	36.1	140.0	0.2752	0.95	-16.1	0
+projects/longform/assets/timbre-two-characters/voice/l1-mashiro-s3.wav	2.798	290.4	8.0	-3.85	5.2	0.172	-13.9	35.8	60.0	0.2571	0.95	-14.4	0
+projects/longform/assets/timbre-two-characters/voice/l1-niji-s1.wav	2.773	335.5	8.7	-16.06	5.6	0.251	-13.7	35.6	70.0	0.2446	0.95	-15.7	0
+projects/longform/assets/timbre-two-characters/voice/l1-niji-s2.wav	2.998	295.5	6.4	12.73	6.0	0.278	-13.8	37.0	90.0	0.2667	0.95	-14.9	0
+projects/longform/assets/timbre-two-characters/voice/l1-niji-s3.wav	2.748	311.2	8.1	-2.21	5.3	0.183	-13.4	34.4	60.0	0.2727	0.95	-14.6	0
+projects/longform/assets/timbre-two-characters/voice/l2-mashiro-s1.wav	2.348	248.5	8.3		6.5	0.152	-13.0	31.7	200.0	0.1277	0.95	-14.3	0
+projects/longform/assets/timbre-two-characters/voice/l2-mashiro-s2.wav	2.723	264.8	6.0	5.0	5.4	0.361	-15.2	31.7	200.0	0.2234	0.95	-17.5	0
+projects/longform/assets/timbre-two-characters/voice/l2-mashiro-s3.wav	2.523	258.7	8.9	-14.51	5.9	0.244	-14.6	33.4	160.0	0.1542	0.95	-16.5	0
+projects/longform/assets/timbre-two-characters/voice/l2-niji-s1.wav	2.398	274.9	7.1		5.7	0.186	-13.7	37.7	190.0	0.1333	0.95	-14.9	0
+projects/longform/assets/timbre-two-characters/voice/l2-niji-s2.wav	2.798	288.7	5.8	24.19	5.2	0.337	-13.6	32.3	210.0	0.25	0.95	-16.1	0
+projects/longform/assets/timbre-two-characters/voice/l2-niji-s3.wav	2.548	285.4	8.3	-10.33	6.4	0.247	-15.0	35.3	160.0	0.2039	0.95	-16.4	0
+projects/longform/assets/timbre-two-characters/voice/l3-mashiro-s1.wav	2.998	341.4	11.2	2.64	6.2	0.106	-15.7	30.2	240.0	0.2767	0.95	-16.5	0
+projects/longform/assets/timbre-two-characters/voice/l3-mashiro-s2.wav	3.198	299.8	7.8	11.73	5.4	0.136	-14.2	31.8	270.0	0.375	0.95	-14.7	0
+projects/longform/assets/timbre-two-characters/voice/l3-mashiro-s3.wav	3.148	308.6	10.1	0.35	6.2	0.096	-12.9	31.5	290.0	0.3492	0.95	-14.0	0
+projects/longform/assets/timbre-two-characters/voice/l3-niji-s1.wav	2.998	339.4	10.8	-10.68	6.0	0.1	-12.8	33.9	240.0	0.3367	0.95	-14.0	0
+projects/longform/assets/timbre-two-characters/voice/l3-niji-s2.wav	3.248	311.2	8.1	28.31	4.8	0.143	-13.5	30.9	260.0	0.4246	0.95	-14.2	0
+projects/longform/assets/timbre-two-characters/voice/l3-niji-s3.wav	3.123	320.4	9.9	-1.29	6.1	0.095	-12.5	34.0	280.0	0.4058	0.95	-14.0	0

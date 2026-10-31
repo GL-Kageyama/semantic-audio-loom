@@ -1,0 +1,23 @@
+# 二人の声が、有声フレームの距離で分かれるか。同一人物（seed 違い）と別人（同じ台詞）を並べる。
+# 既定の混ぜ方（beta 0.7・alpha 0.35）。3 台詞 × 2 人物 × seed 3 = 18 本。
+name: timbre-two-characters
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, alpha: 0.35, name: l1-mashiro-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, alpha: 0.35, name: l1-mashiro-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, alpha: 0.35, name: l1-mashiro-s3}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, alpha: 0.35, name: l1-niji-s1}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, alpha: 0.35, name: l1-niji-s2}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, alpha: 0.35, name: l1-niji-s3}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, alpha: 0.35, name: l2-mashiro-s1}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, alpha: 0.35, name: l2-mashiro-s2}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, alpha: 0.35, name: l2-mashiro-s3}
+- {character: niji, line: ちょっと、待ってよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, alpha: 0.35, name: l2-niji-s1}
+- {character: niji, line: ちょっと、待ってよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, alpha: 0.35, name: l2-niji-s2}
+- {character: niji, line: ちょっと、待ってよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, alpha: 0.35, name: l2-niji-s3}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, alpha: 0.35, name: l3-mashiro-s1}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, alpha: 0.35, name: l3-mashiro-s2}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, alpha: 0.35, name: l3-mashiro-s3}
+- {character: niji, line: そんなこと、言わないでよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, alpha: 0.35, name: l3-niji-s1}
+- {character: niji, line: そんなこと、言わないでよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, alpha: 0.35, name: l3-niji-s2}
+- {character: niji, line: そんなこと、言わないでよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, alpha: 0.35, name: l3-niji-s3}

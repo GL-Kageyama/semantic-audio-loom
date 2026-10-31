@@ -27,9 +27,13 @@ projects/longform/
   baseline.md         examples/ 37 本の基準線
   acting/             P1・P2 の演技実験（行列と測定）
   drama-level/       演劇の三つの版（beta 0.7 / 0.3 / 0.0）のキューごとの測定
+  timbre-two-characters/  二人の声が声そのもので分かれるか（18 本）
   explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く
   assemble.py         両作品を組む道具（切る・並べる・利得・効果音・下地）
   check_render.py     門の数を測る（尺・クリップ・無音・効果音の立ち上がり）
+  measure_timbre.py   声のスペクトルの距離（有声フレームだけ。無音を混ぜない）
+  measure_envelope.py LPC 包絡の距離（pitch に引っ張られない声質の測り方）
+  check_timbre_metric.py  上の計器が無音の割合で動かないことの検査
 ```
 
 生成物は `assets/<作品>/` に階層で出る。
