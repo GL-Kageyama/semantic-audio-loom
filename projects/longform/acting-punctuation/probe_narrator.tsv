@@ -1,0 +1,11 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/acting-punctuation-narrator/voice/pnr-exclaim-s1.wav	2.423	351.4	11.6	-26.73	6.7	0.096	-20.4	28.0	120.0	0.2263	0.6172	-20.6	0
+projects/longform/assets/acting-punctuation-narrator/voice/pnr-exclaim-s2.wav	2.648	324.1	10.5	-16.27	5.7	0.168	-22.8	30.4	90.0	0.2604	0.7638	-20.9	0
+projects/longform/assets/acting-punctuation-narrator/voice/pnr-exclaim-s3.wav	2.548	333.6	10.4	-13.3	5.7	0.112	-23.4	30.3	80.0	0.2549	0.4832	-22.9	0
+projects/longform/assets/acting-punctuation-narrator/voice/pnr-exclaim-s4.wav	2.873	347.3	11.3	4.37	7.0	0.304	-25.0	29.1	90.0	0.3438	0.4282	-23.4	0
+projects/longform/assets/acting-punctuation-narrator/voice/pnr-exclaim-s5.wav	3.473	304.1	10.6	0.29	5.0	0.308	-24.2	30.1	90.0	0.3362	0.68	-21.6	0
+projects/longform/assets/acting-punctuation-narrator/voice/pnr-period-s1.wav	2.448	293.8	7.3	-2.38	6.6	0.107	-23.4	27.4	90.0	0.2857	0.5373	-22.8	0
+projects/longform/assets/acting-punctuation-narrator/voice/pnr-period-s2.wav	2.773	275.7	5.2	0.73	5.8	0.251	-24.6	28.5	90.0	0.2518	0.5245	-24.0	0
+projects/longform/assets/acting-punctuation-narrator/voice/pnr-period-s3.wav	2.598	274.1	6.4	-4.22	7.1	0.329	-25.0	26.4	80.0	0.2346	0.3589	-25.1	0
+projects/longform/assets/acting-punctuation-narrator/voice/pnr-period-s4.wav	2.923	266.3	6.4	3.16	5.7	0.303	-25.8	27.8	70.0	0.3618	0.3261	-25.2	0
+projects/longform/assets/acting-punctuation-narrator/voice/pnr-period-s5.wav	3.298	260.2	4.2	6.5	6.5	0.38	-24.5	28.5	70.0	0.2818	0.4623	-23.7	0
