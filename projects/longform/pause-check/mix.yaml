@@ -1,0 +1,34 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: pause-check
+stems:
+- file: ../assets/pause-check/voice_trim/pc-p00.wav
+  role: voice
+  start: 1.2
+  gain_db: 0.0
+- file: ../assets/pause-check/voice_trim/pc-p03.wav
+  role: voice
+  start: 3.762
+  gain_db: 0.0
+- file: ../assets/pause-check/voice_trim/pc-p06.wav
+  role: voice
+  start: 6.624
+  gain_db: 0.0
+- file: ../assets/pause-check/voice_trim/pc-p10.wav
+  role: voice
+  start: 9.885
+  gain_db: 0.0
+- file: ../assets/pause-check/voice_trim/pc-p15.wav
+  role: voice
+  start: 13.647
+  gain_db: 0.0
+- file: ../assets/pause-check/voice_trim/pc-p00b.wav
+  role: voice
+  start: 15.909
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95

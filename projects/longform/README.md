@@ -84,6 +84,7 @@ projects/longform/
   acting-subtext/           subtext 5 通り × seed 5・llm 解決・1 欄ずつ（subtext が届く範囲）
   acting-freetext/          散文を 1 文だけ足す × seed 5（表に無い語彙は演技になるか）
   acting-pauses/            読点を 1 / 2 / 3 個 × seed 5（読点は間になるか）
+  pause-check/              pause_before 5 段の焼き上がり（書いた間 + 0.08 秒で焼ける）
   acting-punctuation/       文末の記号（。／？／！／なし）× seed 5（字面で動くのは何か）
   acting-punctuation-stack/ 文末の記号 × 感情の 2 × 2 × seed 5（足し算になるか）
   acting-punctuation-pitch/ 文末の記号 × pitch 3 段 × seed 5（欄と掛けても効くか）

@@ -1,0 +1,14 @@
+# pause_before は、本当にその長さの間になるか（5 本）
+#
+# 同じ行・同じ seed を、間だけ 0.0 / 0.3 / 0.6 / 1.0 / 1.5 秒で並べる。
+# 焼いたあとに無音の長さを測り、台本に書いた値から何秒ずれるかを見る。
+
+name: pause-check
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, pause_before: 0.0, name: pc-p00}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, pause_before: 0.3, name: pc-p03}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, pause_before: 0.6, name: pc-p06}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, pause_before: 1.0, name: pc-p10}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, pause_before: 1.5, name: pc-p15}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, pause_before: 0.0, name: pc-p00b}
