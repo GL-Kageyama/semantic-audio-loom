@@ -52,6 +52,7 @@ projects/longform/
   acting-breath-070/        breathiness 4 語 × seed 5（息は有声の割合に出るか）
   acting/measure_breath.py  高域の比を出す（息の計器）
   intensity-demo/    強度の段だけを並べた 63 秒の見本（語り手の札つき）
+  knob-demo/         速さ 5 語と演技の型 3 語を並べた 69 秒の見本
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く
   assemble.py         両作品を組む道具（切る・並べる・利得・効果音・下地）

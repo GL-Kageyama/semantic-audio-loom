@@ -1,0 +1,29 @@
+# 聞き比べ：声を変えるのは、どの欄か。
+#
+# 同じ一言・同じ seed で、速さ（5 語）と演技の型（3 語）だけを振って並べる。
+# 測ったこと：speed は 5 語とも単調（1.80 倍）、delivery は gentle / flat / cold のうち
+# gentle と flat だけが離れ、cheerful・hesitant・restrained は gentle と同じ（±2 Hz）。
+# 声量は声に出ない（ミックスが作る）ので、この見本には入れない。
+name: knob-demo
+default_pause: 0.0
+cues:
+- {character: narrator, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, line: 声を変えるのは、どの欄でしょう。まず、速さから。五つの語を、並べます。, pause_before: 0.2, name: k-intro}
+- {character: narrator, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, line: とても、おそく。, pause_before: 0.8, name: k-l-vslow}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.5, name: k-vslow}
+- {character: narrator, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, line: おそく。, pause_before: 0.8, name: k-l-slow}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: slow, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.5, name: k-slow}
+- {character: narrator, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, line: ふつう。, pause_before: 0.8, name: k-l-natural}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.5, name: k-natural}
+- {character: narrator, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, line: はやく。, pause_before: 0.8, name: k-l-fast}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: fast, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.5, name: k-fast}
+- {character: narrator, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, line: とても、はやく。, pause_before: 0.8, name: k-l-vfast}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.5, name: k-vfast}
+- {character: narrator, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, line: 速さは、五つとも違いました。, pause_before: 1.4, name: k-c1}
+- {character: narrator, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, line: 次に、演技の型。やさしく。, pause_before: 0.8, name: k-l-gentle}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 2, pause_before: 0.5, name: k-gentle}
+- {character: narrator, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, line: 平らに。, pause_before: 0.8, name: k-l-flat}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: flat, breathiness: none, seed: 2, pause_before: 0.5, name: k-flat}
+- {character: narrator, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, line: 冷たく。, pause_before: 0.8, name: k-l-cold}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 2, pause_before: 0.5, name: k-cold}
+- {character: narrator, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, line: やさしい声と、平らな声と、冷たい声。違ったのは、平らと冷たいの、二つでした。, pause_before: 1.4, name: k-c2}
+- {character: narrator, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, line: 声を五段に動かせる欄は、いまのところ、速さだけです。, pause_before: 0.6, name: k-c3}

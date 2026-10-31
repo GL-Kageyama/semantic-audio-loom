@@ -419,6 +419,8 @@ projects/longform/
    ——効果が小さいので seed 3 本では見えない。
    ⛔ **欄の数と段の数は対応しない**：speed 5→5・pitch 6→2（high だけ +19 Hz）・
    delivery 12→2・intensity 5→2・intonation 5→ほぼ 0・volume 5→0・breathiness 4→2。
+   ✅ **聞き比べの見本を足した**（`knob-demo/`・`examples/longform-knobs/`・69 秒・
+   語り手の札つき）。速さ 5 語＋演技の型 3 語。既存の `intensity-demo/`（63 秒）と対。
    ⚠️ **原本の表は変えていない。**
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の

@@ -469,6 +469,9 @@ beta 0.7 で 4 段 × seed 5 を並べた（新規 36 本。`acting-overwhelming
   割合が none 0.276 → heavy 0.263（moderate と heavy が 0/5・p ≤ 0.021）、高域の比が
   0.0115 → 0.0126（+10%）。**前の測定（`acting-breath/`・beta 0.3・neutral・seed 3）は
   差を出していない**——効果が小さいので seed 3 本では検出できない。
+- **聞き比べの見本を足した**（`knob-demo/`・`examples/longform-knobs/`・69 秒）。速さ 5 語と
+  演技の型 3 語を並べる。速さは 4.35 → 2.30 秒（1.89 倍）、型は gentle と flat の差が
+  −16 Hz で、cold は −7 Hz。
 - **まとめ：欄の語の数と、声に届く段の数は対応しない。** speed 5→5・pitch 6→2・
   delivery 12→2・intensity 5→2・intonation 5→ほぼ 0・volume 5→0・breathiness 4→2（幅
   1.3 ポイント）。
