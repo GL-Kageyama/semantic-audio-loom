@@ -1,0 +1,120 @@
+# P4 演劇「午前二時の電話」— 真白とニジの二人芝居、6 分級。
+#
+# 舞台は真白の部屋、午前二時。三日つながらなかった電話が、今夜だけつながる。
+# 喜怒哀楽の外（照れ・皮肉・諦め・虚勢・泣き笑い・間）を、台詞の内容ではなく
+# 音量・間・音色に置く。生成は rule（決定的）、演技は cue の Direction で振る。
+#
+# この版は床（beta 0.0）のまま、pitch を人物に振った（mashiro = very_low /
+# niji = high）。ほかのノブは drama-beta00 と同じ。二人が声で分かれるかを
+# 89 キュー全体で測るための版。
+name: drama-beta00-pitch
+default_pause: 0.7
+cues:
+  # ── 呼び出し
+  - {beta: 0.0, character: mashiro, line: "……もしもし。", emotion: anxiety, intensity: subtle, volume: quiet, speed: slow, delivery: hesitant, pause_before: 3.5, seed: 1, name: s01, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "もしもし。", emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: intimate, pause_before: 2.0, seed: 1, name: s02, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "ニジ、なの。", emotion: fear, intensity: moderate, volume: quiet, speed: slow, delivery: hesitant, pause_before: 1.0, seed: 1, name: s03, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "うん。真白の声、ちゃんと聞こえる。", emotion: joy, intensity: subtle, volume: quiet, speed: natural, delivery: gentle, pause_before: 0.8, seed: 1, name: s04, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "どこにいるの。今、どこ。", emotion: anxiety, intensity: moderate, volume: normal, speed: fast, delivery: hesitant, pause_before: 0.5, seed: 1, name: s05, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "わかんない。地図で言えない場所。", emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: flat, pause_before: 0.6, seed: 1, name: s06, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "三日、電話した。ずっと。", emotion: sadness, intensity: moderate, volume: normal, speed: slow, delivery: restrained, pause_before: 1.2, seed: 1, name: s07, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "知ってる。鳴ってるのは、聞こえてた。", emotion: guilt, intensity: subtle, volume: quiet, speed: slow, delivery: restrained, pause_before: 0.8, seed: 1, name: s08, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "じゃあ、なんで出なかったの。", emotion: anger, intensity: moderate, volume: normal, speed: slow, delivery: cold, pause_before: 1.0, seed: 1, name: s09, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "出たら、終わっちゃう気がして。", emotion: loneliness, intensity: moderate, volume: quiet, speed: slow, delivery: flat, pause_before: 1.2, seed: 1, name: s10, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "なに、それ。", emotion: anger, intensity: subtle, volume: normal, speed: slow, delivery: cold, pause_before: 0.8, seed: 1, name: s11, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "ごめん。変なこと言った。", emotion: guilt, intensity: subtle, volume: normal, speed: natural, delivery: hesitant, pause_before: 0.6, seed: 1, name: s12, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "変じゃない。", emotion: sadness, intensity: subtle, volume: quiet, speed: slow, delivery: gentle, pause_before: 0.5, seed: 1, name: s13, pitch: very_low}
+
+  # ── 軽口（照れ）
+  - {beta: 0.0, character: niji, line: "真白は、いつもそう。怒るとき、声が小さくなる。", emotion: joy, intensity: subtle, volume: quiet, speed: natural, delivery: gentle, pause_before: 1.5, seed: 1, name: s14, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "うるさい。", emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: gentle, pause_before: 0.6, seed: 1, name: s15, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "うるさいって言われたの、久しぶり。", emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.5, seed: 1, name: s16, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "……笑ってるの。", emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: gentle, pause_before: 0.8, seed: 1, name: s17, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "うん。笑ってる。", emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.4, seed: 1, name: s18, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "こっちは、全然笑えないんだけど。", emotion: sadness, intensity: moderate, volume: quiet, speed: slow, delivery: restrained, pause_before: 0.6, seed: 1, name: s19, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "知ってる。だから笑ってる。", emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: gentle, pause_before: 0.9, seed: 1, name: s20, pitch: high}
+
+  # ── なんで今なのか
+  - {beta: 0.0, character: mashiro, line: "ねえ。なんで、今なの。", emotion: anxiety, intensity: moderate, volume: normal, speed: natural, delivery: hesitant, pause_before: 2.0, seed: 1, name: s21, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "今じゃないと、出られなかった。", emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: flat, pause_before: 0.8, seed: 1, name: s22, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "意味、わかんない。", emotion: anger, intensity: subtle, volume: normal, speed: natural, delivery: cold, pause_before: 0.6, seed: 1, name: s23, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "真白が、まだ起きてたから。", emotion: joy, intensity: subtle, volume: quiet, speed: natural, delivery: gentle, pause_before: 0.7, seed: 1, name: s24, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "……それだけ。", emotion: anxiety, intensity: moderate, volume: quiet, speed: slow, delivery: hesitant, pause_before: 1.2, seed: 1, name: s25, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "それだけ。", emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: cold, pause_before: 0.5, seed: 1, name: s26, pitch: high}
+
+  # ── どうでもいい話（笑いの底に諦めを沈める）
+  - {beta: 0.0, character: mashiro, line: "ねえ。いつもみたいに、話してよ。", emotion: anxiety, intensity: subtle, volume: normal, speed: natural, delivery: hesitant, pause_before: 1.8, seed: 1, name: y01, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "いつもみたいって、どんな。", emotion: calm, intensity: subtle, volume: normal, speed: natural, delivery: gentle, pause_before: 0.5, seed: 1, name: y02, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "今日あったこと。どうでもいいこと。", emotion: anxiety, intensity: subtle, volume: normal, speed: natural, delivery: gentle, pause_before: 0.5, seed: 1, name: y03, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "うーん。今日、猫を見た。", emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.9, seed: 1, name: y04, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "……猫。", emotion: joy, intensity: subtle, volume: normal, speed: slow, delivery: gentle, pause_before: 0.6, seed: 1, name: y05, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "黒くて、太ってて、こっちを見てた。", emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.4, seed: 1, name: y06, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "それだけ。", emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: gentle, pause_before: 0.5, seed: 1, name: y07, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "それだけ。", emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.4, seed: 1, name: y08, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "……どうでもいいね。", emotion: joy, intensity: subtle, volume: normal, speed: slow, delivery: gentle, pause_before: 0.7, seed: 1, name: y09, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "でしょ。", emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.4, seed: 1, name: y10, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "もっと、聞かせて。", emotion: loneliness, intensity: moderate, volume: quiet, speed: slow, delivery: gentle, pause_before: 1.0, seed: 1, name: y11, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "じゃあ、もう一個。", emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.6, seed: 1, name: y12, pitch: high}
+  - {beta: 0.0, character: niji, line: "今日、空が近かった。", emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: gentle, pause_before: 0.5, seed: 1, name: y13, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "空が近いって、なに。", emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.6, seed: 1, name: y14, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "わかんない。でも、近かった。", emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: gentle, pause_before: 0.4, seed: 1, name: y15, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "……それ、いいね。", emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: gentle, pause_before: 0.8, seed: 1, name: y16, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "いいでしょ。", emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: cheerful, pause_before: 0.5, seed: 1, name: y17, pitch: high}
+
+  # ── 打ち明け（諦め）
+  - {beta: 0.0, character: niji, line: "わたし、もう長くないんだ。", emotion: loneliness, intensity: strong, volume: quiet, speed: slow, delivery: flat, pause_before: 2.5, seed: 1, name: s27, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "やめて。そういうの、やめて。", emotion: fear, intensity: strong, volume: normal, speed: fast, delivery: desperate, pause_before: 1.5, seed: 1, name: s28, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "ごめん。でも、言っておきたかった。", emotion: guilt, intensity: moderate, volume: quiet, speed: slow, delivery: restrained, pause_before: 0.8, seed: 1, name: s29, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "言わなくていい。今、言わなくていいから。", emotion: anger, intensity: strong, volume: normal, speed: fast, delivery: aggressive, pause_before: 0.6, seed: 1, name: s30, pitch: very_low}
+
+  # ── 怒り
+  - {beta: 0.0, character: mashiro, line: "なんで。なんで、そういうこと、平気で言うの。", emotion: anger, intensity: strong, volume: loud, speed: fast, delivery: aggressive, pause_before: 1.5, seed: 1, name: s31, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "平気じゃないよ。", emotion: sadness, intensity: moderate, volume: quiet, speed: slow, delivery: restrained, pause_before: 1.2, seed: 1, name: s32, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "平気に見える。", emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: cold, pause_before: 0.6, seed: 1, name: s33, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "真白の前だと、平気なふり、しちゃう。", emotion: guilt, intensity: moderate, volume: quiet, speed: slow, delivery: hesitant, pause_before: 0.9, seed: 1, name: s34, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "なんで。", emotion: anxiety, intensity: moderate, volume: normal, speed: fast, delivery: hesitant, pause_before: 0.7, seed: 1, name: s35, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "泣かせたくないから。", emotion: sadness, intensity: moderate, volume: quiet, speed: slow, delivery: gentle, pause_before: 1.0, seed: 1, name: s36, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "……もう、遅いよ。", emotion: sadness, intensity: strong, volume: quiet, speed: slow, delivery: restrained, breathiness: slight, pause_before: 1.5, seed: 1, name: s37, pitch: very_low}
+
+  # ── 泣き笑い
+  - {beta: 0.0, character: niji, line: "泣いてる。", emotion: joy, intensity: subtle, volume: quiet, speed: natural, delivery: gentle, pause_before: 1.2, seed: 1, name: s38, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "泣いてない。", emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: cold, pause_before: 0.6, seed: 1, name: s39, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "鼻、つまってる。", emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.5, seed: 1, name: s40, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "アレルギー。", emotion: joy, intensity: subtle, volume: normal, speed: fast, delivery: cheerful, pause_before: 0.4, seed: 1, name: s41, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "今、夜中だよ。", emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.4, seed: 1, name: s42, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "……ばか。", emotion: sadness, intensity: subtle, volume: quiet, speed: slow, delivery: gentle, breathiness: slight, pause_before: 1.0, seed: 1, name: s43, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "ばかって、言われた。", emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: gentle, pause_before: 0.8, seed: 1, name: s44, pitch: high}
+
+  # ── 思い出
+  - {beta: 0.0, character: mashiro, line: "あのさ。まだ、覚えてる。", emotion: anxiety, intensity: subtle, volume: normal, speed: natural, delivery: hesitant, pause_before: 2.0, seed: 1, name: s45, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "なにを。", emotion: calm, intensity: subtle, volume: normal, speed: natural, delivery: gentle, pause_before: 0.5, seed: 1, name: s46, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "最初に会ったとき。画面の向こうで、虹が揺れてた。", emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: gentle, pause_before: 0.6, seed: 1, name: s47, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "覚えてる。真白、びっくりしてた。", emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.6, seed: 1, name: s48, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "びっくりしたよ。当たり前でしょ。", emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.5, seed: 1, name: s49, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "その顔、見たかったな。", emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: gentle, pause_before: 0.9, seed: 1, name: s50, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "……見てたでしょ。", emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: gentle, pause_before: 0.6, seed: 1, name: s51, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "見てた。でも、もう見えないんだ。", emotion: sadness, intensity: moderate, volume: quiet, speed: slow, delivery: flat, pause_before: 1.2, seed: 1, name: s52, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "なんで。", emotion: fear, intensity: moderate, volume: normal, speed: fast, delivery: hesitant, pause_before: 0.7, seed: 1, name: s53, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "だんだん、遠くなる。そういうものみたい。", emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: flat, pause_before: 0.8, seed: 1, name: s54, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "じゃあ、近づくから。", emotion: anxiety, intensity: strong, volume: normal, speed: fast, delivery: desperate, pause_before: 0.6, seed: 1, name: s55, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "近づけないの。ごめんね。", emotion: sadness, intensity: moderate, volume: quiet, speed: slow, delivery: gentle, pause_before: 0.9, seed: 1, name: s56, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "謝らないで。", emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: restrained, pause_before: 0.6, seed: 1, name: s57, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "うん。じゃあ、ありがとう。", emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: gentle, pause_before: 1.0, seed: 1, name: s58, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "なにが。", emotion: sadness, intensity: subtle, volume: quiet, speed: slow, delivery: hesitant, pause_before: 0.5, seed: 1, name: s59, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "電話、出たこと。", emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: gentle, pause_before: 0.5, seed: 1, name: s60, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "……ずるい。", emotion: sadness, intensity: strong, volume: quiet, speed: slow, delivery: restrained, breathiness: slight, pause_before: 1.2, seed: 1, name: s61, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "ずるいね。", emotion: joy, intensity: subtle, volume: quiet, speed: slow, delivery: gentle, pause_before: 0.5, seed: 1, name: s62, pitch: high}
+
+  # ── 切断
+  - {beta: 0.0, character: mashiro, line: "まだ、話したい。", emotion: sadness, intensity: strong, volume: normal, speed: slow, delivery: desperate, pause_before: 1.5, seed: 1, name: s63, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "うん。でも、もう声が届かない。", emotion: calm, intensity: moderate, volume: quiet, speed: slow, delivery: flat, pause_before: 0.9, seed: 1, name: s64, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "ニジ。", emotion: fear, intensity: strong, volume: normal, speed: fast, delivery: desperate, pause_before: 0.6, seed: 1, name: s65, pitch: very_low}
+  - {beta: 0.0, character: niji, line: "真白。起きててくれて、ありがとう。", emotion: joy, intensity: moderate, volume: quiet, speed: slow, delivery: gentle, pause_before: 1.0, seed: 1, name: s66, pitch: high}
+  - {beta: 0.0, character: mashiro, line: "ニジ！", emotion: fear, intensity: overwhelming, volume: loud, speed: fast, delivery: desperate, pause_before: 0.4, seed: 1, name: s67, pitch: very_low}
+
+  # ── 独白
+  - {beta: 0.0, character: mashiro, line: "……もしもし。", emotion: anxiety, intensity: subtle, volume: quiet, speed: slow, delivery: hesitant, pause_before: 6.0, seed: 1, name: s68, pitch: very_low}
+  - {beta: 0.0, character: mashiro, line: "もしもし。", emotion: loneliness, intensity: subtle, volume: whisper, speed: very_slow, delivery: flat, breathiness: slight, pause_before: 1.5, seed: 1, name: s69, pitch: very_low}
+  - {beta: 0.0, character: mashiro, line: "……ばか。", emotion: sadness, intensity: subtle, volume: quiet, speed: very_slow, delivery: restrained, breathiness: slight, pause_before: 2.5, seed: 1, name: s70, pitch: very_low}
+  - {beta: 0.0, character: mashiro, line: "……どういたしまして。", emotion: sadness, intensity: subtle, volume: whisper, speed: very_slow, delivery: gentle, breathiness: slight, pause_before: 4.0, seed: 1, name: s71, pitch: very_low}
+  - {beta: 0.0, character: mashiro, line: "おやすみ。", emotion: loneliness, intensity: subtle, volume: whisper, speed: very_slow, delivery: flat, breathiness: slight, pause_before: 2.5, seed: 1, name: s72, pitch: very_low}

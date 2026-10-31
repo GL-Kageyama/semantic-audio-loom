@@ -12,11 +12,13 @@
 | `drama-beta03/` | 同じ脚本の演劇を `beta` 0.3 で組み直した版（聞き比べ用） | 約 5.5 分 |
 | `drama-beta00/` | 同じ脚本を床（`beta` 0.0）で組み直した版（演技の上限を見る） | 約 5.7 分 |
 | `floor-two-speakers/` | 床で二人を分ける聞き比べ。`pitch` を人物に振る版と、二人とも natural の対照 | 27 秒 / 32 秒 |
+| `drama-beta00-pitch/` | 同じ脚本を床のまま `pitch` で二人に振った版（作品の段での効きを見る） | 約 4.9 分 |
 
 聞き比べの見本と実測は [examples/longform-acting/](../../examples/longform-acting/)、
 [examples/longform-acting-floor/](../../examples/longform-acting-floor/)、
 [examples/longform-drama-beta03/](../../examples/longform-drama-beta03/)、
-[examples/longform-floor-two-speakers/](../../examples/longform-floor-two-speakers/)。
+[examples/longform-floor-two-speakers/](../../examples/longform-floor-two-speakers/)、
+[examples/longform-drama-pitch/](../../examples/longform-drama-pitch/)。
 
 ## 置き場
 
@@ -28,6 +30,7 @@ projects/longform/
   acting/             P1・P2 の演技実験（行列と測定）
   drama-level/       演劇の三つの版（beta 0.7 / 0.3 / 0.0）のキューごとの測定
   timbre-two-characters/  二人の声が声そのもので分かれるか（18 本）
+  drama-beta00-pitch/ 床の芝居に pitch を振った版と、89 キューの測定
   explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く
   assemble.py         両作品を組む道具（切る・並べる・利得・効果音・下地）
   check_render.py     門の数を測る（尺・クリップ・無音・効果音の立ち上がり）
