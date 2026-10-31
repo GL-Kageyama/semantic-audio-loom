@@ -421,6 +421,12 @@ projects/longform/
    delivery 12→2・intensity 5→2・intonation 5→ほぼ 0・volume 5→0・breathiness 4→2。
    ✅ **聞き比べの見本を足した**（`knob-demo/`・`examples/longform-knobs/`・69 秒・
    語り手の札つき）。速さ 5 語＋演技の型 3 語。既存の `intensity-demo/`（63 秒）と対。
+   ✅ **長い台詞では、跳ねる先が変わる**（`acting-longline/`・芝居の 1 行 24 文字 × 4 段 ×
+   3 感情 × seed 5・60 本）。moderate → strong で**抑揚の幅が +0.60/+0.78/+0.84 半音**
+   （3 感情とも 5/5・p ≤ 0.01）だが、**中央値が動くのは sadness だけ**（+13.2 Hz・5/5）。
+   joy +0.7・anger +4.0 は n.s.。上端は同じ（sadness: 高さ −5.2・抑揚 −0.50 半音・0/5）。
+   長さ・energy・速さは動かない（短い行の「長さ +0.08〜0.14 秒」は再現しない）。
+   **強さは「高い声」ではなく「振れ幅の大きい声」。**
    ⚠️ **原本の表は変えていない。**
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の

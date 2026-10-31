@@ -44,6 +44,7 @@ projects/longform/
   acting-sadness-heldback/  acting-sadness-open/  sadness の真ん中に「抑える」「開く」を置いた各 5 本
   acting-anger-heldback/    anger でも「抑える」を試した 5 本
   acting-intensity-line2/   2 行目で強度 4 段 × 3 感情 × seed 5（形が台詞に依るか）
+  acting-longline/          芝居の長い行（24 文字）で強度 4 段 × 3 感情 × seed 5
   acting-niji-intensity/    niji の声で subtle / moderate × 3 感情 × seed 5（2 段は声に依るか）
   acting-joy-heldback/      joy でも「抑える」を試した 5 本
   acting-volume/            声量 4 語 × seed 5（声は大きさを変えるか）

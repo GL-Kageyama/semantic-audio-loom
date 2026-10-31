@@ -469,6 +469,11 @@ beta 0.7 で 4 段 × seed 5 を並べた（新規 36 本。`acting-overwhelming
   割合が none 0.276 → heavy 0.263（moderate と heavy が 0/5・p ≤ 0.021）、高域の比が
   0.0115 → 0.0126（+10%）。**前の測定（`acting-breath/`・beta 0.3・neutral・seed 3）は
   差を出していない**——効果が小さいので seed 3 本では検出できない。
+- **長い台詞では、跳ねる先が変わる**（`acting-longline/`・60 本）。芝居の 1 行（24 文字）で
+  4 段 × 3 感情 × seed 5。moderate → strong は**抑揚の幅**が +0.60/+0.78/+0.84 半音
+  （3 感情とも 5/5・p ≤ 0.01）で、**中央値は sadness だけ**（+13.2 Hz）。joy +0.7・
+  anger +4.0 は n.s.。上端は同じ（sadness: 高さ −5.2 Hz・抑揚 −0.50 半音・0/5）。
+  長さ・energy・速さは動かない。**短い行では高さにしか出ようがなかった。**
 - **聞き比べの見本を足した**（`knob-demo/`・`examples/longform-knobs/`・69 秒）。速さ 5 語と
   演技の型 3 語を並べる。速さは 4.35 → 2.30 秒（1.89 倍）、型は gentle と flat の差が
   −16 Hz で、cold は −7 Hz。
