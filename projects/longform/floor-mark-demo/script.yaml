@@ -1,0 +1,16 @@
+# 聞き比べ：`！` は演技の層が作っていて、`？` は地の読みが作っている
+#
+# `acting-punctuation-floor/`（記号 4 通り × beta 3 段 × seed 5・60 本）を耳で確かめる。
+# 前半：beta 0.7 で `。` と `！`。後半：床（beta 0.0）で `。` / `！` / `？`。
+name: floor-mark-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 文末の記号を、演技の層を切って聴きます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, pause_before: 0.4, name: fm-07-period}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, pause_before: 0.8, name: fm-07-exclaim}
+- {character: narrator, line: 演技の層があると、記号で声が開きます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-07}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, pause_before: 1.0, name: fm-00-period}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, pause_before: 0.8, name: fm-00-exclaim}
+- {character: narrator, line: 演技の層を切ると、感嘆符は効きません。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-00}
+- {character: mashiro, line: 明日、また来るね？, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.0, pause_before: 1.0, name: fm-00-question}
+- {character: narrator, line: 疑問符だけは、モデル自身が上げます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-close}

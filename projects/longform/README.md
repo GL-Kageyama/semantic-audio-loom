@@ -31,7 +31,8 @@
 [examples/longform-punctuation/](../../examples/longform-punctuation/)（46 秒・文末の記号だけを振る）と
 [examples/longform-punctuation-shape/](../../examples/longform-punctuation-shape/)（60 秒・途中の句点で効きが落ちる）と
 [examples/longform-ellipsis/](../../examples/longform-ellipsis/)（34 秒・`…` は間を作らない）と
-[examples/longform-punctuation-pitch/](../../examples/longform-punctuation-pitch/)（38 秒・記号は `pitch` を振っても残る）。
+[examples/longform-punctuation-pitch/](../../examples/longform-punctuation-pitch/)（38 秒・記号は `pitch` を振っても残る）と
+[examples/longform-floor-mark/](../../examples/longform-floor-mark/)（33 秒・床では `！` が消える）。
 
 ## 置き場
 
@@ -106,6 +107,7 @@ projects/longform/
   punctuation-shape-demo/  同じ `！` で行の形だけを替えた 60 秒の見本（途中の句点）
   ellipsis-demo/      `…` が消える・読点になることを並べた 34 秒の見本
   punctuation-pitch-demo/  記号 × `pitch` を並べた 38 秒の見本（joy では欄が動かない）
+  floor-mark-demo/    記号を演技の層の有無で並べた 33 秒の見本（床では `！` が消える）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   drama-seed-split/  演劇のニジだけ seed 2 にした版（人物を seed で分けられるか）
   acting-breath-s70/ 芝居 s70 の 1 行で breathiness だけを none / slight に振る（6 本）

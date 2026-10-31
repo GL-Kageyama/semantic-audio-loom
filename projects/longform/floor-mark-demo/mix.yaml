@@ -1,0 +1,46 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: floor-mark-demo
+stems:
+- file: ../assets/floor-mark-demo/voice_trim/n-intro.wav
+  role: voice
+  start: 1.4
+  gain_db: 0.0
+- file: ../assets/floor-mark-demo/voice_trim/fm-07-period.wav
+  role: voice
+  start: 5.39
+  gain_db: 0.0
+- file: ../assets/floor-mark-demo/voice_trim/fm-07-exclaim.wav
+  role: voice
+  start: 8.452
+  gain_db: 0.0
+- file: ../assets/floor-mark-demo/voice_trim/n-07.wav
+  role: voice
+  start: 11.592
+  gain_db: 0.0
+- file: ../assets/floor-mark-demo/voice_trim/fm-00-period.wav
+  role: voice
+  start: 16.511
+  gain_db: 0.0
+- file: ../assets/floor-mark-demo/voice_trim/fm-00-exclaim.wav
+  role: voice
+  start: 19.159
+  gain_db: 0.0
+- file: ../assets/floor-mark-demo/voice_trim/n-00.wav
+  role: voice
+  start: 21.946
+  gain_db: 0.0
+- file: ../assets/floor-mark-demo/voice_trim/fm-00-question.wav
+  role: voice
+  start: 26.714
+  gain_db: 0.0
+- file: ../assets/floor-mark-demo/voice_trim/n-close.wav
+  role: voice
+  start: 29.52
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95
