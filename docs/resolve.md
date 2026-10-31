@@ -52,7 +52,7 @@ Direction の欄は語の数が欄ごとに違うが、**声に届く段の数�
 | --- | --- | --- | --- |
 | `speed` | 5 | **5**（単調・1.74〜1.80 倍・3 感情とも） | 長さ（両端で高さも +15 Hz） |
 | `emotion` | 11 | 効く（seed の振れより小さい） | 高さ・長さ・抑揚 |
-| `pitch` | 6 | 2（`high` だけ離れる） | 高さ |
+| `pitch` | 6 | 2〜3（離れる語は感情で変わる） | 高さ |
 | `intensity` | 5 | 2（`subtle`＝`moderate`、`strong` で跳ねる） | 高さ・長さ |
 | `delivery` | 12 | 3（`flat`・`cold` が下、`aggressive`・`desperate` が上、残り 8 語は同じ） | 高さ・長さ |
 | `intonation` | 5 | ほぼ 0（語の幅 7.7 Hz 対 seed の幅 74〜87 Hz） | 語尾の傾きもラベルに従わない |
@@ -63,8 +63,11 @@ Direction の欄は語の数が欄ごとに違うが、**声に届く段の数�
   3 感情 × seed 5 で、すべての seed が同じ順序になる。長い行（24 文字）でも 1.75 倍で
   5/5 単調。**高さも短い行の両端で +15 Hz 開く**（306.0 → 320.8 Hz・seed 4/5。
   長い行では動かない）。
-- **2 つの欄を同時に振ると、積み上がらない。** 強い欄を端まで振ると、弱い欄の差は
-  消える（`delivery` の +6.7 Hz が速さの端で 0 になる・`acting-knob-stack/`）。
+- **2 つの欄を同時に振ると、上へ動かす型だけが埋まる。** `speed` を端まで振ると
+  `aggressive` の +6.7 Hz が 0 になる（`acting-knob-stack/`）。**下へ動く `cold` / `flat`
+  は端でも残り**（−9〜−11 / −17〜−21 Hz・`acting-knob-stack-cold/`）、`pitch` を振ると
+  半分残る（+6.8 → +3.4 / +2.1 Hz・`acting-knob-stack-pitch/`）。
+  **aggressive は `speed: natural` で使う。**
 - **強弱を `intensity` の書き分けで作らない。** `subtle` と `moderate` は同じ音になる。
 - **`delivery` の真ん中 8 語（gentle / cheerful / hesitant / restrained / subtle /
   suppressed / intimate / controlled）は、書き分けても同じ声になる。** 動くのは `aggressive`・

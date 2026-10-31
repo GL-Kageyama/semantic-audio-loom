@@ -443,7 +443,7 @@ whisper より小さい。叫ぶと高く長くなるが、大きくはならな
 | 欄 | 語の数（測った数） | 声に届く段 | 測ったところ |
 | --- | --- | --- | --- |
 | `speed` | 5（5） | **5**（単調・1.74〜1.80 倍） | very_slow 4.39 → very_fast 2.44 秒・3 感情とも 5 seed すべてで順序が崩れない。f0 は両端で +14.8 Hz |
-| `pitch` | 6（3） | **2**（high だけ離れる） | neutral で high 282.8 / natural 264.0 / slightly_high 265.2 Hz |
+| `pitch` | 6（3） | **2**（high だけ離れる） | neutral で high 282.8 / natural 264.0 / slightly_high 265.2 Hz。**joy・moderate では逆に下が離れる**（low 310.8 / natural 318.6 / high 321.5 Hz）→ 段の向きは感情に依る |
 | `emotion` | 11（3＋枠外） | 効く（ただし seed より小さい） | seed の幅 84.6 Hz の前では二次的（`emotion-seed/`） |
 | `intonation` | 5（5） | **ほぼ 0**（5 語の幅 7.7 Hz 対 seed の幅 74〜87 Hz） | 語尾の傾きの中央値は wavering 3.18 > neutral 2.71 > flat 2.11 > rising −0.35 > falling −1.64（`acting-inton-070/`） |
 | `intensity` | 5（4） | **2** | subtle ≈ moderate、moderate → strong で跳ねる、上端は伸びない |
@@ -468,11 +468,15 @@ whisper より小さい。叫ぶと高く長くなるが、大きくはならな
   **長い行（24 文字）では動かない**（285.2 → 284.5 Hz・`acting-speed-longline/`）。
   `very_slow` は 4.2〜4.4 秒、`very_fast` は 2.4 秒——長さの差 2 秒は、
   5 本つないだ作品では間の設計に効く。
-- **段は積み上がらない。** `speed` を端まで振れば `delivery` の差は消える
-  （`acting-knob-stack/`）。速さの効きは delivery を替えても同じ（−1.95 / −1.88 秒・
-  1.79 / 1.76 倍・0/5）だが、**aggressive − gentle の差は natural の +6.7 Hz から
-  very_slow +0.7・very_fast −1.1 Hz へ縮む**（差の差 −1.84 Hz・5/5・p < 0.001）。
-  **強い欄を振り切ると、弱い欄は埋まる。**
+- **段は積み上がらない——ただし、上へ動かす型だけ。** `speed` を端まで振れば
+  **`aggressive`** の差は消える（`acting-knob-stack/`）。速さの効きは delivery を替えても
+  同じ（−1.95 / −1.88 秒・1.79 / 1.76 倍・0/5）だが、**aggressive − gentle の差は
+  natural の +6.7 Hz から very_slow +0.7・very_fast −1.1 Hz へ縮む**
+  （差の差 −1.84 Hz・5/5・p < 0.001）。
+  **下へ動く `cold` / `flat` は端でも残る**（`acting-knob-stack-cold/`：cold −10.5 / −9.4 /
+  −11.0、flat −16.5 / −18.4 / −21.4 Hz・交互作用は p ≥ 0.35）。
+  **`pitch` を振ると aggressive の差は半分になる**（natural +6.8 → low +3.4 / high +2.1 Hz・
+  中央値・`acting-knob-stack-pitch/`）。**消える型と消えない型がある。**
 - **語の数と段の数が、まったく対応しない。** 12 語の欄（delivery）が 3 段、
   5 語の欄（volume）が 0 段、5 語の欄（speed）が 5 段。
 - **breathiness は段になるが、幅が 1.3 ポイント。** 既定 0.7 で有声の割合が 5 seed とも

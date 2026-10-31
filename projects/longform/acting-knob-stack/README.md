@@ -42,16 +42,20 @@
 
 ## 何が言えるか
 
-- **演じ分けの段は積み上がらない。** 強い欄（speed）を端まで振ると、弱い欄（delivery）の
-  差は消える。**2 つの欄を同時に強く使うと、片方は効かなくなる。**
+- **上へ動かす型は、速さの端で消える。** 強い欄（speed）を端まで振ると、`aggressive` の
+  差は 0 になる。
+- ⚠️ **これは「どの型でも消える」ではない。** 下へ動く `cold` / `flat` は速さの端でも
+  残る（`acting-knob-stack-cold/`）。`pitch` を振ったときは半分残る
+  （`acting-knob-stack-pitch/`）。**消える型と消えない型がある。**
 - 速さの段は堅い（1.79 倍・両方の delivery で 0/5）。
 - **f0 も動く。**「速さは長さだけ」ではない——遅い端と速い端で 15〜17 Hz 開く。
   ただし y 軸を「演技の強さ」と読むと、**速くすると高くなる**（強い、とは別）。
 
 ## 限界
 
-- 1 行・1 人物（mashiro）・1 感情（joy）。delivery は gentle / aggressive の 2 語だけ
-  （下へ動く cold / flat では別の交互作用がありうる）。
+- 1 行・1 人物（mashiro）・1 感情（joy）。delivery は gentle / aggressive の 2 語だけ。
+  下へ動く cold / flat は `acting-knob-stack-cold/`、pitch との組み合わせは
+  `acting-knob-stack-pitch/` で測った。
 - **natural の行だけ別の実験（`acting-delivery/`）から持ってきた。** 同じ行・同じ感情・
   同じ seed だが、焼いた日が違う。
 - 「消えた」を測ったのは f0 と長さだけ。息・声質は見ていない。

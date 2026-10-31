@@ -1,6 +1,6 @@
 # 長尺ラン — STATE（再開のための唯一の現在地）
 
-最終更新：2026-10-31 14:28 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
+最終更新：2026-10-31 14:35 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
 ユーザーは約 10 時間不在。質問しない。門を 20 分超えたら「未達」で次へ。
 
 ## この Mac（時間の数字はマシンが違えば比べられない）
@@ -438,7 +438,17 @@ projects/longform/
    速さの効きは delivery を替えても同じ（**−1.95 / −1.88 秒・1.79 / 1.76 倍・0/5**）だが、
    **aggressive − gentle の f0 差は natural +6.7 Hz → very_slow +0.7 → very_fast −1.1 Hz**
    へ縮む（差の差 −1.84 Hz・**5/5・p < 0.001**）。**速さの端では型の差が 0.1 Hz まで
-   一致する seed がある**（seed 3・5）。強い欄を振り切ると、弱い欄は埋まる。
+   一致する seed がある**（seed 3・5）。**ただし埋まるのは上へ動く型だけ。**
+   ✅ **下へ動く型は端でも残る**（`acting-knob-stack-cold/`・speed 3 段 × cold/flat ×
+   seed 5・45 本）。cold −10.5/−9.4/−11.0 Hz、flat −16.5/−18.4/−21.4 Hz（very_slow/
+   natural/very_fast・すべて 0/5）。**交互作用は p ≥ 0.35 で出ない。** very_fast の flat は
+   間の割合 0.12（9 組で最小）。⚠️ very_slow/very_fast の gentle 10 本は
+   `acting-knob-stack/` と **md5 が 10/10 一致**（別プロセス・同日）。
+   ✅ **pitch を振ると aggressive は半分残る**（`acting-knob-stack-pitch/`・30 本）：
+   aggressive − gentle の中央値は natural **+6.8** → low **+3.4** / high **+2.1 Hz**
+   （low は平均 +7.0 だが seed 5 の +22.9 が作っていて 5/5・p = 0.15）。
+   ✅ **pitch の段の向きは感情で変わる**：joy・moderate では low 310.8 / natural 318.6 /
+   high 321.5 Hz（**下が離れる**）で、neutral の声（264.0 → 282.8 Hz・上が離れる）と逆。
    ✅ **breathiness も 2 段だが幅が小さい**（`acting-breath-070/`・20 本）。有声の割合
    none 0.276 → heavy 0.263（moderate/heavy 0/5・p ≤ 0.021）、高域の比 +10%。
    ✅ **beta 0.3 でも seed 5 本なら出る**（`acting-breath-030/`・20 本）：slight は有声

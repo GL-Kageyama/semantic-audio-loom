@@ -1,0 +1,54 @@
+# 速さを振り切ると、下へ動く演技の型も消えるか（2 × 3 × seed 5）
+#
+# acting-knob-stack は gentle / aggressive の 2 語だけで測った。
+# delivery の下の段（cold / flat）は natural でしか測っていない。
+# 同じ行・joy・moderate・breathiness none・seed 1〜5・beta 0.7。
+
+name: acting-knob-stack-cold
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: gentle, breathiness: none, seed: 1, beta: 0.7, name: kc-very_slow-gentle-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: gentle, breathiness: none, seed: 2, beta: 0.7, name: kc-very_slow-gentle-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: gentle, breathiness: none, seed: 3, beta: 0.7, name: kc-very_slow-gentle-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: gentle, breathiness: none, seed: 4, beta: 0.7, name: kc-very_slow-gentle-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: gentle, breathiness: none, seed: 5, beta: 0.7, name: kc-very_slow-gentle-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: cold, breathiness: none, seed: 1, beta: 0.7, name: kc-very_slow-cold-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: cold, breathiness: none, seed: 2, beta: 0.7, name: kc-very_slow-cold-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: cold, breathiness: none, seed: 3, beta: 0.7, name: kc-very_slow-cold-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: cold, breathiness: none, seed: 4, beta: 0.7, name: kc-very_slow-cold-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: cold, breathiness: none, seed: 5, beta: 0.7, name: kc-very_slow-cold-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: flat, breathiness: none, seed: 1, beta: 0.7, name: kc-very_slow-flat-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: flat, breathiness: none, seed: 2, beta: 0.7, name: kc-very_slow-flat-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: flat, breathiness: none, seed: 3, beta: 0.7, name: kc-very_slow-flat-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: flat, breathiness: none, seed: 4, beta: 0.7, name: kc-very_slow-flat-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: flat, breathiness: none, seed: 5, beta: 0.7, name: kc-very_slow-flat-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: gentle, breathiness: none, seed: 1, beta: 0.7, name: kc-very_fast-gentle-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: gentle, breathiness: none, seed: 2, beta: 0.7, name: kc-very_fast-gentle-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: gentle, breathiness: none, seed: 3, beta: 0.7, name: kc-very_fast-gentle-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: gentle, breathiness: none, seed: 4, beta: 0.7, name: kc-very_fast-gentle-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: gentle, breathiness: none, seed: 5, beta: 0.7, name: kc-very_fast-gentle-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: cold, breathiness: none, seed: 1, beta: 0.7, name: kc-very_fast-cold-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: cold, breathiness: none, seed: 2, beta: 0.7, name: kc-very_fast-cold-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: cold, breathiness: none, seed: 3, beta: 0.7, name: kc-very_fast-cold-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: cold, breathiness: none, seed: 4, beta: 0.7, name: kc-very_fast-cold-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: cold, breathiness: none, seed: 5, beta: 0.7, name: kc-very_fast-cold-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: flat, breathiness: none, seed: 1, beta: 0.7, name: kc-very_fast-flat-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: flat, breathiness: none, seed: 2, beta: 0.7, name: kc-very_fast-flat-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: flat, breathiness: none, seed: 3, beta: 0.7, name: kc-very_fast-flat-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: flat, breathiness: none, seed: 4, beta: 0.7, name: kc-very_fast-flat-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: flat, breathiness: none, seed: 5, beta: 0.7, name: kc-very_fast-flat-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 1, beta: 0.7, name: kc-natural-gentle-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 2, beta: 0.7, name: kc-natural-gentle-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 3, beta: 0.7, name: kc-natural-gentle-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 4, beta: 0.7, name: kc-natural-gentle-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 5, beta: 0.7, name: kc-natural-gentle-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 1, beta: 0.7, name: kc-natural-cold-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 2, beta: 0.7, name: kc-natural-cold-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 3, beta: 0.7, name: kc-natural-cold-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 4, beta: 0.7, name: kc-natural-cold-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 5, beta: 0.7, name: kc-natural-cold-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: flat, breathiness: none, seed: 1, beta: 0.7, name: kc-natural-flat-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: flat, breathiness: none, seed: 2, beta: 0.7, name: kc-natural-flat-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: flat, breathiness: none, seed: 3, beta: 0.7, name: kc-natural-flat-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: flat, breathiness: none, seed: 4, beta: 0.7, name: kc-natural-flat-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: flat, breathiness: none, seed: 5, beta: 0.7, name: kc-natural-flat-s5}

@@ -58,7 +58,9 @@ projects/longform/
   acting-speed/             speed 5 語 × seed 5（5 語とも段になるか）
   acting-speed-emotions/    anger / sadness × speed 5 語 × seed 5（段は感情に依るか）
   acting-speed-longline/    芝居の長い行（24 文字）で speed 5 語 × seed 5（段は台詞の長さに依るか）
-  acting-knob-stack/        speed × delivery の 2 × 2 × seed 5（段は積み上がるか）
+  acting-knob-stack/        speed × delivery の 2 × 2 × seed 5（上へ動く型は速さの端で消える）
+  acting-knob-stack-cold/   speed 3 段 × cold / flat × seed 5（下へ動く型は消えない）
+  acting-knob-stack-pitch/  pitch 3 段 × aggressive × seed 5（半分だけ残る）
   acting-breath-070/        breathiness 4 語 × seed 5（息は有声の割合に出るか）
   acting-breath-030/        breathiness 4 語 × seed 5 を beta 0.3 で（0.3 では段にならない）
   acting/measure_breath.py  高域の比を出す（息の計器）

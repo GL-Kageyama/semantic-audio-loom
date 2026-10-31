@@ -1,0 +1,38 @@
+# 高さを振り切ると、aggressive の効きも消えるか（3 × 2 × seed 5）
+#
+# knob-stack では speed の端で aggressive の差が消えた。speed の端は f0 も動かす。
+# では pitch 自体を振ったときも消えるか。同じ行・joy・moderate・breathiness none・seed 1〜5・beta 0.7。
+
+name: acting-knob-stack-pitch
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: gentle, breathiness: none, seed: 1, beta: 0.7, name: kp-low-gentle-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: gentle, breathiness: none, seed: 2, beta: 0.7, name: kp-low-gentle-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: gentle, breathiness: none, seed: 3, beta: 0.7, name: kp-low-gentle-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: gentle, breathiness: none, seed: 4, beta: 0.7, name: kp-low-gentle-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: gentle, breathiness: none, seed: 5, beta: 0.7, name: kp-low-gentle-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: aggressive, breathiness: none, seed: 1, beta: 0.7, name: kp-low-aggressive-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: aggressive, breathiness: none, seed: 2, beta: 0.7, name: kp-low-aggressive-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: aggressive, breathiness: none, seed: 3, beta: 0.7, name: kp-low-aggressive-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: aggressive, breathiness: none, seed: 4, beta: 0.7, name: kp-low-aggressive-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: aggressive, breathiness: none, seed: 5, beta: 0.7, name: kp-low-aggressive-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: gentle, breathiness: none, seed: 1, beta: 0.7, name: kp-natural-gentle-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: gentle, breathiness: none, seed: 2, beta: 0.7, name: kp-natural-gentle-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: gentle, breathiness: none, seed: 3, beta: 0.7, name: kp-natural-gentle-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: gentle, breathiness: none, seed: 4, beta: 0.7, name: kp-natural-gentle-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: gentle, breathiness: none, seed: 5, beta: 0.7, name: kp-natural-gentle-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: aggressive, breathiness: none, seed: 1, beta: 0.7, name: kp-natural-aggressive-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: aggressive, breathiness: none, seed: 2, beta: 0.7, name: kp-natural-aggressive-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: aggressive, breathiness: none, seed: 3, beta: 0.7, name: kp-natural-aggressive-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: aggressive, breathiness: none, seed: 4, beta: 0.7, name: kp-natural-aggressive-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: aggressive, breathiness: none, seed: 5, beta: 0.7, name: kp-natural-aggressive-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: gentle, breathiness: none, seed: 1, beta: 0.7, name: kp-high-gentle-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: gentle, breathiness: none, seed: 2, beta: 0.7, name: kp-high-gentle-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: gentle, breathiness: none, seed: 3, beta: 0.7, name: kp-high-gentle-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: gentle, breathiness: none, seed: 4, beta: 0.7, name: kp-high-gentle-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: gentle, breathiness: none, seed: 5, beta: 0.7, name: kp-high-gentle-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: aggressive, breathiness: none, seed: 1, beta: 0.7, name: kp-high-aggressive-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: aggressive, breathiness: none, seed: 2, beta: 0.7, name: kp-high-aggressive-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: aggressive, breathiness: none, seed: 3, beta: 0.7, name: kp-high-aggressive-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: aggressive, breathiness: none, seed: 4, beta: 0.7, name: kp-high-aggressive-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: aggressive, breathiness: none, seed: 5, beta: 0.7, name: kp-high-aggressive-s5}
