@@ -1,0 +1,16 @@
+# the feeling is present, but held back（joy）
+#
+# sadness +2.2 Hz・5/5、anger +3.6 Hz・5/5。どちらも「抑える」は下がらなかった。
+# 3 感情目として joy を測る。比べる相手は acting-matrix の em-joy-s1〜5（同じ設定・文言なし）。
+#
+# ビルド:
+#   PYTHONPATH=. <venv> projects/longform/acting/mod_phrase_build.py --dir projects/longform/acting-joy-heldback \
+#     --phrase "the feeling is present, but held back" --band 0.70
+name: acting-joy-heldback
+default_pause: 0.0
+cues:
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: hb-joy-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: hb-joy-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: hb-joy-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: hb-joy-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: hb-joy-s5}

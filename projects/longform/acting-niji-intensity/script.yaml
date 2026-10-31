@@ -1,0 +1,41 @@
+# ニジでも、subtle と moderate は同じ段か
+#
+# 作品の中の強度を数えると、ニジの 42 本のうち 41 本が subtle か moderate に座っている。
+# mashiro の 1 行では 2 段が ±3 Hz で同じだった（acting-intensity/）。
+# もうひとつの声（ニジ）と、作品が実際に使う感情（calm / joy / guilt）でも同じか。
+#
+# ビルド:
+#   PYTHONPATH=. <venv> projects/longform/explainer/build_voice.py --dir projects/longform/acting-niji-intensity
+name: acting-niji-intensity
+default_pause: 0.0
+cues:
+  - {character: niji, line: 明日、また来るね。, emotion: calm, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: nj-calm-subtle-s1}
+  - {character: niji, line: 明日、また来るね。, emotion: calm, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: nj-calm-subtle-s2}
+  - {character: niji, line: 明日、また来るね。, emotion: calm, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: nj-calm-subtle-s3}
+  - {character: niji, line: 明日、また来るね。, emotion: calm, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: nj-calm-subtle-s4}
+  - {character: niji, line: 明日、また来るね。, emotion: calm, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: nj-calm-subtle-s5}
+  - {character: niji, line: 明日、また来るね。, emotion: calm, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: nj-calm-moderate-s1}
+  - {character: niji, line: 明日、また来るね。, emotion: calm, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: nj-calm-moderate-s2}
+  - {character: niji, line: 明日、また来るね。, emotion: calm, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: nj-calm-moderate-s3}
+  - {character: niji, line: 明日、また来るね。, emotion: calm, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: nj-calm-moderate-s4}
+  - {character: niji, line: 明日、また来るね。, emotion: calm, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: nj-calm-moderate-s5}
+  - {character: niji, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: nj-joy-subtle-s1}
+  - {character: niji, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: nj-joy-subtle-s2}
+  - {character: niji, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: nj-joy-subtle-s3}
+  - {character: niji, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: nj-joy-subtle-s4}
+  - {character: niji, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: nj-joy-subtle-s5}
+  - {character: niji, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: nj-joy-moderate-s1}
+  - {character: niji, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: nj-joy-moderate-s2}
+  - {character: niji, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: nj-joy-moderate-s3}
+  - {character: niji, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: nj-joy-moderate-s4}
+  - {character: niji, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: nj-joy-moderate-s5}
+  - {character: niji, line: 明日、また来るね。, emotion: guilt, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: nj-guilt-subtle-s1}
+  - {character: niji, line: 明日、また来るね。, emotion: guilt, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: nj-guilt-subtle-s2}
+  - {character: niji, line: 明日、また来るね。, emotion: guilt, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: nj-guilt-subtle-s3}
+  - {character: niji, line: 明日、また来るね。, emotion: guilt, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: nj-guilt-subtle-s4}
+  - {character: niji, line: 明日、また来るね。, emotion: guilt, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: nj-guilt-subtle-s5}
+  - {character: niji, line: 明日、また来るね。, emotion: guilt, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: nj-guilt-moderate-s1}
+  - {character: niji, line: 明日、また来るね。, emotion: guilt, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: nj-guilt-moderate-s2}
+  - {character: niji, line: 明日、また来るね。, emotion: guilt, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: nj-guilt-moderate-s3}
+  - {character: niji, line: 明日、また来るね。, emotion: guilt, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: nj-guilt-moderate-s4}
+  - {character: niji, line: 明日、また来るね。, emotion: guilt, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: nj-guilt-moderate-s5}

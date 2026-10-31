@@ -28,7 +28,7 @@ projects/longform/
   timings.tsv         生成 1 回 1 行（日付・段・素材・モデル・設定・実時間・マシン）
   baseline.md         examples/ 37 本の基準線
   listening.md        聴きどころ（時刻つき。どの測った値から選んだかを並べてある）
-  acting/             P1・P2 の演技実験（行列と測定）
+  acting/             P1・P2 の演技実験（行列と測定。`knob_audit.py` は台本の語の数え上げ）
   drama-level/       演劇の三つの版（beta 0.7 / 0.3 / 0.0）のキューごとの測定
   explainer-level/   解説 48 本の測定（語り手と真白は包絡で分かれる）
   timbre-two-characters/  二人の声が声そのもので分かれるか（18 本）
@@ -44,6 +44,9 @@ projects/longform/
   acting-sadness-heldback/  acting-sadness-open/  sadness の真ん中に「抑える」「開く」を置いた各 5 本
   acting-anger-heldback/    anger でも「抑える」を試した 5 本
   acting-intensity-line2/   2 行目で強度 4 段 × 3 感情 × seed 5（形が台詞に依るか）
+  acting-niji-intensity/    niji の声で subtle / moderate × 3 感情 × seed 5（2 段は声に依るか）
+  acting-joy-heldback/      joy でも「抑える」を試した 5 本
+  acting-volume/            声量 4 語 × seed 5（声は大きさを変えるか）
   intensity-demo/    強度の段だけを並べた 63 秒の見本（語り手の札つき）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く

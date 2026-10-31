@@ -379,6 +379,47 @@ overwhelming は `acting-overwhelming-070/` の 15 本。基準線の f0 平均 
 「最大」は強さを超えない**（−14.2〜+0.7 Hz）。ただし跳ね幅は seed に強く依り
 （joy の 2 行目で +1.5〜+59 Hz）、5/5 でも t 検定は anger p = 0.17・joy p = 0.13。
 
+**声を替えても同じか（`acting-niji-intensity/`）。** 演劇のもう一人 niji は 42 本の
+うち 41 本が subtle か moderate。niji の声で、niji が実際に使う 3 感情を測った。
+
+| 感情 | subtle | moderate | 差 | 同符号 | p |
+| --- | --- | --- | --- | --- | --- |
+| calm | 313.9 | 312.8 | −1.2 Hz | 1/5 | 0.18 |
+| joy | 329.1 | 329.4 | +0.3 Hz | 2/5 | 0.72 |
+| guilt | 304.4 | 306.5 | +2.0 Hz | 5/5 | 0.001 |
+
+**3 感情とも ±2 Hz。** 「2 段」は mashiro だけの偶然ではなく、**声と感情を替えても
+同じ**。joy の「抑える」も試した（`acting-joy-heldback/`）——**+0.3 Hz・2/5・p = 0.69
+で動かない**（moderate で飽和しているので、文言を足しても上がりようがない）。
+
+**声量の語は、声を動かさない（`acting-volume/`）。** 同じ行・joy・moderate・seed 5 本で
+`volume` だけを 4 語振った（20 本）。
+
+| volume | energy 中央値 (dB) | rms (dB) | f0 (Hz) | 長さ (s) |
+| --- | --- | --- | --- | --- |
+| whisper | −13.54 | −15.56 | 315.2 | 3.10 |
+| quiet | −13.50 | −15.52 | 313.3 | 3.10 |
+| normal | −13.76 | −15.60 | 314.2 | 3.06 |
+| loud | −13.46 | −15.54 | 315.6 | 3.15 |
+
+**whisper と loud の差は energy 0.08 dB・rms 0.02 dB。** 同じ語の seed 5 本の幅は
+energy 1.1 dB なので、**語の効きは seed の振れの 13 分の 1**。理由は Normalize の
+ピーク 0.95 揃え（20 本とも peak 0.9500）——ただしモデル自身も大きさを変えていない
+（rms の差が 0.02 dB）。`assemble.py` の `VOLUME_GAIN`（−10 / −5 / 0 / +3 dB）が
+前提にしているとおり、**声量は演技ではなくミックスで作る**。
+
+**では、二つの作品はどの段に座っているか**（`acting/knob_audit.py`）。
+
+| 作品 | 人物 | 本数 | 同じ段（subtle+moderate） | strong 以上 |
+| --- | --- | --- | --- | --- |
+| explainer | narrator | 44 | **44（100%）** | 0 |
+| explainer | mashiro | 4 | 2（50%） | 2 |
+| drama | mashiro | 47 | 38（81%） | 9 |
+| drama | niji | 42 | **41（98%）** | 1 |
+
+**解説の語り手は 44 本すべてが同じ段。演劇は 89 本のうち 79 本（89%）が同じ段。**
+台本は subtle 51・moderate 28 と書き分けているが、**聴こえる強弱は「平ら」と
+「上げた」の 2 値で、境目は 10 本**。
 
 **直したこと：** Direction の intensity=none は 0.0 に解決されるが、散文では
 「the feeling is faint」を足していた（none が faint になる）。0 では一言も足さないよう

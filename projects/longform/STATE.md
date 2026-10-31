@@ -1,6 +1,6 @@
 # 長尺ラン — STATE（再開のための唯一の現在地）
 
-最終更新：2026-10-31 13:11 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
+最終更新：2026-10-31 13:28 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
 ユーザーは約 10 時間不在。質問しない。門を 20 分超えたら「未達」で次へ。
 
 ## この Mac（時間の数字はマシンが違えば比べられない）
@@ -393,7 +393,20 @@ projects/longform/
    seed 5・60 本）。真ん中 ±2 Hz・strong で +17〜+25 Hz（5/5）・**上端は 3 感情とも
    strong 以下**（−3.4〜−14.2 Hz）。**2 行 6 通りすべてで「最大」は強さを超えない。**
    ⚠️ 跳ね幅は seed に依る（2 行目 joy は seed 4 で +59・seed 2 で +1.5 Hz）。
-   ⚠️ 抑える演技は sadness・anger の 2 感情。**原本の表は変えていない。**
+   ✅ **声を替えても 2 段**（`acting-niji-intensity/`・niji × calm/joy/guilt × seed 5・30 本）。
+   subtle↔moderate は calm −1.2・joy +0.3・guilt +2.0 Hz。**±2 Hz で 1 段。**
+   ✅ **joy の「抑える」も動かない**（`acting-joy-heldback/`・+0.3 Hz・2/5・p = 0.69。
+   moderate で飽和しているので、文言を足しても上がりようがない）。**抑える演技は
+   3 感情で試した（下がらない）。**
+   ⛔ **声量の語は、声の大きさを変えない**（`acting-volume/`・joy moderate ×
+   whisper/quiet/normal/loud × seed 5・20 本）。**whisper と loud で energy 0.08 dB・
+   rms 0.02 dB・f0 0.3 Hz。** 同じ語の seed 幅 energy 1.1 dB の 13 分の 1。
+   peak は 20 本とも 0.9500（Normalize のピーク揃え）。**声量は `VOLUME_GAIN`
+   （−10/−5/0/+3 dB）＝ミックスで作る。**
+   ⛔ **二つの作品は、その 2 段の片側に 9 割が座っている**（`acting/knob_audit.py`）。
+   解説の語り手 44/44 が同じ段、演劇は 79/89（89%）が同じ段（mashiro 38/47・niji 41/42）。
+   **台本の subtle 51・moderate 28 の書き分けは、声では 1 段に畳まれる。**
+   ⚠️ **原本の表は変えていない。**
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の
 低下は長さの交絡。

@@ -442,6 +442,24 @@ beta 0.7 で 4 段 × seed 5 を並べた（新規 36 本。`acting-overwhelming
   超えない**（−14.2〜+0.7 Hz）。⚠️ 跳ね幅は seed に依る（joy の 2 行目で +1.5〜+59 Hz）——
   符号は 5/5 でも t 検定は anger p = 0.17・joy p = 0.13。
 
+### 声量の語は、声を動かさなかった — 強度の 2 段を 4 方向から確かめる
+
+- **声を替えても 2 段**（`acting-niji-intensity/`・30 本）。niji・calm / joy / guilt ×
+  seed 5。subtle↔moderate は calm −1.2・joy +0.3・guilt +2.0 Hz。**±2 Hz で 1 段。**
+- **joy の「抑える」も動かない**（`acting-joy-heldback/`・5 本・+0.3 Hz・2/5・p = 0.69）。
+  moderate で飽和しているので、文言を足しても上がりようがない。**抑える演技は 3 感情で
+  試して、どれも下がらなかった。**
+- **声量の語は声の大きさを変えない**（`acting-volume/`・20 本）。同じ行・joy・moderate で
+  `volume` だけを 4 語振ると、**whisper と loud の差は energy 0.08 dB・rms 0.02 dB・
+  f0 0.3 Hz**。同じ語の seed 幅（energy 1.1 dB）の 13 分の 1。peak は 20 本とも 0.9500
+  （Normalize のピーク揃え）で、モデル自身も大きさを変えていない（rms 差 0.02 dB）。
+  `assemble.py` の `VOLUME_GAIN`（−10 / −5 / 0 / +3 dB）が前提にしていたとおり、
+  **声量は演技ではなくミックスで作る**。
+- **二つの作品は、2 段の片側に 9 割が座っている**（`acting/knob_audit.py`）。解説の
+  語り手は **44/44** が同じ段。演劇は **79/89（89%）**（mashiro 38/47・niji 41/42）で、
+  strong 以上は 10 本。**台本の subtle 51・moderate 28 の書き分けは、声では 1 段に
+  畳まれる。** 原本の表は変えていない。
+
 
 ## 2026-10-31 — M5 音の生成＋ライブラリ（5 種すべて）
 
