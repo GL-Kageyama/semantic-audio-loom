@@ -17,6 +17,6 @@ s67・s68 の文末だけ。台本は [`make_script.py`](make_script.py) が作�
   5 seed の測りでは、1 位が入れ替わるのは足すだけ 4/5・外してから 5/5
   （[`drama-scene-mark-relocate/`](../drama-scene-mark-relocate/)）。
 - ほかの 11 行は 3 通りとも同値（同じ行・同じ seed）。
-- 耳で聴く見本：[`examples/longform-drama-relocate/`](../../examples/longform-drama-relocate/)
+- 耳で聴く見本：[`examples/longform-drama-relocate/`](../../../examples/longform-drama-relocate/)
   （178.0 秒・−21.04 LUFS・**未達（音量）**・`--gain -0.70`）。
 - 1 本ごとの値は [`probe.tsv`](probe.tsv)。

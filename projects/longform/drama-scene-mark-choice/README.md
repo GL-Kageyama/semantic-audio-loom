@@ -4,7 +4,7 @@
 strong` の 3 行（s61・s63・s65）だけ `！`**・**13 行すべて `！`** の 3 通りで続けて焼いた
 （seed 3・**42 本**＋区切りの語り手 3 本）。欄・間は台本のまま、変えるのは文末の 1 字だけ。
 台本は [`make_script.py`](make_script.py) が作る。耳で聴く見本は
-[`examples/longform-drama-scene-choice/`](../../examples/longform-drama-scene-choice/)。
+[`examples/longform-drama-scene-choice/`](../../../examples/longform-drama-scene-choice/)。
 
 ## 山場（s67）と次点の差
 

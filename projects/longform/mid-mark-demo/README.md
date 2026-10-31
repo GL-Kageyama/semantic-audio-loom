@@ -14,6 +14,6 @@
 
 - **途中の `！` も上がる**（+37.0）。**途中の `。` は上がらない**（0.0）。**両方なら
   +78.2**——5 seed の測りでは +23.1・−3.6・+61.1（[`acting-punctuation-mid-exclaim/`](../acting-punctuation-mid-exclaim/)）。
-- 耳で聴く見本：[`examples/longform-mid-mark/`](../../examples/longform-mid-mark/)
+- 耳で聴く見本：[`examples/longform-mid-mark/`](../../../examples/longform-mid-mark/)
   （37.3 秒・−16.20 LUFS・**合格**）。
 - 1 本ごとの値は [`probe.tsv`](probe.tsv)。
