@@ -188,3 +188,30 @@ def test_effort_alone_reaches_the_prompt_but_volume_wins():
     spec["loudness"] = {"effort": "strained", "volume": "whisper"}
     prompt = tsukasa._spec_prompt("A voice.", spec)
     assert "barely above a whisper" in prompt and "shouting" not in prompt
+
+
+def test_subtext_is_carried_but_never_reaches_the_prompt():
+    """subtext は Spec まで来るが、散文にはならない（`--resolve rule` の実測）。
+
+    台詞の裏の意味を 5 通りに振って 25 本焼いても、seed 4 通りは md5 が一致した
+    （`projects/longform/acting-subtext/`）。載っていないのを検査で固定する。
+    """
+    from semantic_audio_loom.engine.resolve import resolve_rule
+    from semantic_audio_loom.types import GenerationIntent
+
+    prompts = set()
+    for subtext in ("", "本当は帰りたい", "もう来ないつもりだ", "怒っている"):
+        intent = GenerationIntent(
+            dialogue="明日、また来るね。", subtext=subtext,
+            emotion={"primary": "neutral", "intensity": "moderate"},
+        )
+        spec = resolve_rule(intent)
+        assert spec["subtext"] == subtext          # Spec には載る
+        prompts.add(tsukasa._spec_prompt("A voice.", spec))
+    assert len(prompts) == 1                        # 散文は 1 通り
+
+
+def test_intensity_band_below_and_at_040():
+    """「the feeling is faint」は 0.40 まで（0.41 では付かない）。実測の境目を固定。"""
+    assert "faint" in tsukasa._spec_prompt("A voice.", _spec(0.40))
+    assert "faint" not in tsukasa._spec_prompt("A voice.", _spec(0.41))
