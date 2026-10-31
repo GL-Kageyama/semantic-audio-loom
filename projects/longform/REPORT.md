@@ -120,9 +120,9 @@
     54 本・27/27：+15.5〜+120.2 Hz。**ひとことの行がいちばん大きい**（「ニジ」+120.2・
     「まだ、話したい」+59.5）・**長い行はいちばん小さい**（+15.5）。ただし句点の数では
     説明できない（同じ 2 句点の s30 は +52.9）・[`acting-drama-mark/`](acting-drama-mark/)）。
-    **強度が弱い行でも効く**（`subtle` / `moderate` の 12 行・48 本・11/12：
-    `subtle` の平均 +82.7・`moderate` の平均 +55.3。強い 9 行の平均 +55.0 と比べて
-    小さいとは言えない・[`acting-drama-mark-weak/`](acting-drama-mark-weak/)）。
+    **強度が弱い行でも効く**（`subtle` / `moderate` の 12 行・120 本：12 行すべての
+    平均が正・`subtle` の平均 +96.4・`moderate` の平均 +70.1。強い 9 行の平均 +55.0 と
+    比べて小さいとは言えない・[`acting-drama-mark-weak/`](acting-drama-mark-weak/)）。
     **`…` は間を作らない**。文末の `…` は文字ごと消され、`なし` と同じ音になる
     （seed 4・5 は md5 まで一致・[`acting-punctuation-ellipsis/`](acting-punctuation-ellipsis/)）。
     途中の `…` は `、` に置き換わるので、`明日、……また来るね` は
