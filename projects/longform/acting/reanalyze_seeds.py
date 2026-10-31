@@ -3,7 +3,7 @@
 
 `summarize_seeds.py` は「同じ種の 5 seed が、基準線の**中央値**より上/下に出た数」を
 数える。だが seed は毎回ばらけるのでなく **seed ごとに決まった高さへ寄る**ので、
-この数え方は演技の差を揺れに埋める（`../../emotion-seed/` で実測）。
+この数え方は演技の差を揺れに埋める（`projects/longform/experiments/analysis/emotion-seed/` で実測）。
 
 ここでは seed をブロックとして除き、種の効きを分散分析で見る。さらに基準線との
 差を、ブロック後の誤差で検定する（Bonferroni で 10 種ぶん補正）。

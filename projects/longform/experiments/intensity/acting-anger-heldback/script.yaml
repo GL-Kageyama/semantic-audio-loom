@@ -1,0 +1,16 @@
+# the feeling is present, but held back（anger）
+#
+# sadness では抑える動作にならなかった（+2.2 Hz・5/5）。anger でも同じか。
+# 比べる相手は acting-matrix の em-anger-s1〜5（同じ設定・文言なし）。
+#
+# ビルド:
+#   PYTHONPATH=. <venv> projects/longform/acting/mod_phrase_build.py --dir projects/longform/experiments/intensity/acting-anger-heldback \
+#     --phrase "the feeling is present, but held back" --band 0.70
+name: acting-anger-heldback
+default_pause: 0.0
+cues:
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: hb-anger-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: hb-anger-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: hb-anger-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: hb-anger-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: hb-anger-s5}

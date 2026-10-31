@@ -1,0 +1,35 @@
+# speed の語は、速さを変えるか
+#
+# 強度 2 段・声量 0 段・delivery 2 段だった。speed は台本でよく書く（演劇 89 本のうち
+# slow 44・natural 31・fast 10・very_slow 4）。同じ行・同じ感情・seed 5 本で 5 語振る。
+#
+# ビルド:
+#   PYTHONPATH=. <venv> projects/longform/explainer/build_voice.py --dir projects/longform/experiments/delivery/acting-speed
+name: acting-speed
+default_pause: 0.0
+cues:
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: controlled, breathiness: none, seed: 1, name: sp-very_slow-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: controlled, breathiness: none, seed: 2, name: sp-very_slow-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: controlled, breathiness: none, seed: 3, name: sp-very_slow-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: controlled, breathiness: none, seed: 4, name: sp-very_slow-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: controlled, breathiness: none, seed: 5, name: sp-very_slow-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: slow, delivery: controlled, breathiness: none, seed: 1, name: sp-slow-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: slow, delivery: controlled, breathiness: none, seed: 2, name: sp-slow-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: slow, delivery: controlled, breathiness: none, seed: 3, name: sp-slow-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: slow, delivery: controlled, breathiness: none, seed: 4, name: sp-slow-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: slow, delivery: controlled, breathiness: none, seed: 5, name: sp-slow-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: sp-natural-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: sp-natural-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: sp-natural-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: sp-natural-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: sp-natural-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: fast, delivery: controlled, breathiness: none, seed: 1, name: sp-fast-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: fast, delivery: controlled, breathiness: none, seed: 2, name: sp-fast-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: fast, delivery: controlled, breathiness: none, seed: 3, name: sp-fast-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: fast, delivery: controlled, breathiness: none, seed: 4, name: sp-fast-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: fast, delivery: controlled, breathiness: none, seed: 5, name: sp-fast-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: controlled, breathiness: none, seed: 1, name: sp-very_fast-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: controlled, breathiness: none, seed: 2, name: sp-very_fast-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: controlled, breathiness: none, seed: 3, name: sp-very_fast-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: controlled, breathiness: none, seed: 4, name: sp-very_fast-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: controlled, breathiness: none, seed: 5, name: sp-very_fast-s5}

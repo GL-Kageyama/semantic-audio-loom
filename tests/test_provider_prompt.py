@@ -208,7 +208,7 @@ def test_subtext_is_carried_but_never_reaches_the_prompt():
     """subtext は Spec まで来るが、散文にはならない（`--resolve rule` の実測）。
 
     台詞の裏の意味を 5 通りに振って 25 本焼いても、seed 4 通りは md5 が一致した
-    （`projects/longform/acting-subtext/`）。載っていないのを検査で固定する。
+    （`projects/longform/experiments/subtext/acting-subtext/`）。載っていないのを検査で固定する。
     """
     from semantic_audio_loom.engine.resolve import resolve_rule
     from semantic_audio_loom.types import GenerationIntent

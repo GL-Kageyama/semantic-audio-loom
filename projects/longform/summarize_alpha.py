@@ -7,7 +7,7 @@
 演技の分かれ方は「その alpha の neutral の seed 中央値に対し、感情の seed が全部
 同じ側か（3/3 か 0/3）」で数える。声質は `references/mashiro.wav` との MFCC 距離。
 
-  PYTHONPATH=. <venv> .../summarize_alpha.py projects/longform/acting-alpha/alpha.tsv \
+  PYTHONPATH=. <venv> .../summarize_alpha.py projects/longform/experiments/basics/acting-alpha/alpha.tsv \
       references/mashiro.wav
 """
 from __future__ import annotations

@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 """CLI: 台詞 1 本を演技の言葉で測る。
 
-  bin/act_probe.py projects/longform/acting/voice/*.wav
-  bin/act_probe.py --json projects/longform/acting/voice/joy-moderate-s1.wav
-  bin/act_probe.py --tsv projects/longform/acting/voice/*.wav > acting/matrix.tsv
+  bin/act_probe.py projects/longform/assets/acting-matrix/voice/*.wav
+  bin/act_probe.py --json projects/longform/assets/acting-matrix/voice/em-joy-s1.wav
+  bin/act_probe.py --tsv projects/longform/assets/acting-matrix/voice/*.wav \
+    > projects/longform/experiments/basics/acting-matrix/matrix.tsv
 
 良し悪しは判定しない。感情ごとに「何が動いたか」を数で言えるようにする計器。
 指標の定義は semantic_audio_loom/skills/act_probe.py の冒頭に書いてある。

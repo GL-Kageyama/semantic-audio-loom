@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """強度（intensity）の 3 段は、声を段で動かすか。
 
-acting-matrix/matrix.tsv の既存 85 本から、同じ感情の 3 段を並べる。
+experiments/basics/acting-matrix/matrix.tsv の既存 85 本から、同じ感情の 3 段を並べる。
   subtle    = in-<emotion>-subtle
   moderate  = em-<emotion>
   strong    = in-<emotion>-strong
@@ -25,8 +25,8 @@ from scipy import stats
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 LONGFORM = os.path.dirname(HERE)
-MATRIX = os.path.join(LONGFORM, "acting-matrix", "matrix.tsv")
-OVER = os.path.join(LONGFORM, "acting-overwhelming-070", "probe.tsv")
+MATRIX = os.path.join(LONGFORM, "experiments", "basics", "acting-matrix", "matrix.tsv")
+OVER = os.path.join(LONGFORM, "experiments", "intensity", "acting-overwhelming-070", "probe.tsv")
 
 EMOTIONS = ["anger", "joy", "sadness"]
 LEVELS = [("subtle", "in-%s-subtle"), ("moderate", "em-%s"), ("strong", "in-%s-strong"),
@@ -74,7 +74,7 @@ def line2() -> None:
 
     基準線を置かず、同じ感情・同じ seed の中で段を比べる（感情の効きは別の実験）。
     """
-    path = os.path.join(LONGFORM, "acting-intensity-line2", "probe.tsv")
+    path = os.path.join(LONGFORM, "experiments", "intensity", "acting-intensity-line2", "probe.tsv")
     d = {}
     for r in csv.DictReader(open(path, encoding="utf-8"), delimiter="\t"):
         name = os.path.basename(r["path"]).rsplit(".", 1)[0]

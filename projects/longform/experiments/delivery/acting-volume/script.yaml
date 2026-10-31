@@ -1,0 +1,31 @@
+# 声量の語は、声を小さくするか
+#
+# 台本では volume を 88 回書いている（quiet 43・normal 41・whisper 3・loud 2）。
+# 作品の測定（drama-level）では quiet と normal の energy が −0.7 dB しか離れず、範囲は重なっていた。
+# 行が違うので確かめられない。同じ行・同じ感情・seed 5 本で volume だけを振る。
+#
+# ビルド:
+#   PYTHONPATH=. <venv> projects/longform/explainer/build_voice.py --dir projects/longform/experiments/delivery/acting-volume
+name: acting-volume
+default_pause: 0.0
+cues:
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: whisper, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: vol-whisper-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: whisper, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: vol-whisper-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: whisper, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: vol-whisper-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: whisper, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: vol-whisper-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: whisper, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: vol-whisper-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: quiet, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: vol-quiet-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: quiet, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: vol-quiet-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: quiet, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: vol-quiet-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: quiet, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: vol-quiet-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: quiet, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: vol-quiet-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: vol-normal-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: vol-normal-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: vol-normal-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: vol-normal-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: vol-normal-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: loud, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: vol-loud-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: loud, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: vol-loud-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: loud, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: vol-loud-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: loud, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: vol-loud-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: loud, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: vol-loud-s5}

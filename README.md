@@ -129,4 +129,5 @@ skills/       .claude-plugin/              # facade スキル / プラグイン�
 | [docs/setup.md](docs/setup.md) | セットアップ（Tsukasa・LLM・環境変数） |
 | [docs/usage.md](docs/usage.md) | 全 CLI の使い方 |
 | [projects/longform/README.md](projects/longform/README.md) | 長尺（5〜10 分）の組み方：間・音量・効果音・ducking |
+| [projects/longform/INDEX.md](projects/longform/INDEX.md) | 長尺の索引：ディレクトリの地図・走らせ方・数字の読み方 |
 | [HISTORY.md](HISTORY.md) | 開発履歴・実測値 |

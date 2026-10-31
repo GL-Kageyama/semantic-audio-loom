@@ -140,8 +140,8 @@ seed ごとに `bass_heavy` と `no_highs` が入れ替わる。窓より短い�
 数で言えるようにするためだけの計器。
 
 ```bash
-bin/act_probe.py projects/longform/assets/acting/*.wav
-bin/act_probe.py --tsv projects/longform/assets/acting/*.wav > matrix.tsv
+bin/act_probe.py projects/longform/assets/acting-matrix/voice/*.wav
+bin/act_probe.py --tsv projects/longform/assets/acting-matrix/voice/*.wav > matrix.tsv
 ```
 
 | 指標 | 定義 |

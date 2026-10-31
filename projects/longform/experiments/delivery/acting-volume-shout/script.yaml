@@ -1,0 +1,14 @@
+# shout も、声を大きくしないか
+#
+# `acting-volume/` は whisper / quiet / normal / loud の 4 語を測った（energy 0.08 dB 差）。
+# 残る shout を足して 5 語にする（5 本）。
+#
+# ビルド: PYTHONPATH=. <venv> projects/longform/explainer/build_voice.py --dir projects/longform/experiments/delivery/acting-volume-shout
+name: acting-volume-shout
+default_pause: 0.0
+cues:
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: shout, speed: natural, delivery: gentle, breathiness: none, seed: 1, name: vs-shout-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: shout, speed: natural, delivery: gentle, breathiness: none, seed: 2, name: vs-shout-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: shout, speed: natural, delivery: gentle, breathiness: none, seed: 3, name: vs-shout-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: shout, speed: natural, delivery: gentle, breathiness: none, seed: 4, name: vs-shout-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: shout, speed: natural, delivery: gentle, breathiness: none, seed: 5, name: vs-shout-s5}

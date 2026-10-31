@@ -1,0 +1,41 @@
+# delivery の語は、声を動かすか
+#
+# 強度は 2 段・声量は 0 段だった。台本は delivery もよく書く（演劇 89 本のうち gentle 30・
+# cheerful 14・hesitant 13・flat 9・restrained 9・cold 6・desperate 5・aggressive 2）。
+# 同じ行・同じ感情・seed 5 本で delivery だけを 6 語振る。
+#
+# ビルド:
+#   PYTHONPATH=. <venv> projects/longform/explainer/build_voice.py --dir projects/longform/experiments/delivery/acting-delivery
+name: acting-delivery
+default_pause: 0.0
+cues:
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 1, name: dv-gentle-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 2, name: dv-gentle-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 3, name: dv-gentle-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 4, name: dv-gentle-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 5, name: dv-gentle-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cheerful, breathiness: none, seed: 1, name: dv-cheerful-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cheerful, breathiness: none, seed: 2, name: dv-cheerful-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cheerful, breathiness: none, seed: 3, name: dv-cheerful-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cheerful, breathiness: none, seed: 4, name: dv-cheerful-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cheerful, breathiness: none, seed: 5, name: dv-cheerful-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: hesitant, breathiness: none, seed: 1, name: dv-hesitant-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: hesitant, breathiness: none, seed: 2, name: dv-hesitant-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: hesitant, breathiness: none, seed: 3, name: dv-hesitant-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: hesitant, breathiness: none, seed: 4, name: dv-hesitant-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: hesitant, breathiness: none, seed: 5, name: dv-hesitant-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: flat, breathiness: none, seed: 1, name: dv-flat-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: flat, breathiness: none, seed: 2, name: dv-flat-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: flat, breathiness: none, seed: 3, name: dv-flat-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: flat, breathiness: none, seed: 4, name: dv-flat-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: flat, breathiness: none, seed: 5, name: dv-flat-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: restrained, breathiness: none, seed: 1, name: dv-restrained-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: restrained, breathiness: none, seed: 2, name: dv-restrained-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: restrained, breathiness: none, seed: 3, name: dv-restrained-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: restrained, breathiness: none, seed: 4, name: dv-restrained-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: restrained, breathiness: none, seed: 5, name: dv-restrained-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 1, name: dv-cold-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 2, name: dv-cold-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 3, name: dv-cold-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 4, name: dv-cold-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 5, name: dv-cold-s5}

@@ -5,7 +5,7 @@
 分かれ方は「その beta の neutral の 5 seed 中央値に対し、感情の 5 seed が
 全部同じ側か（5/5 か 0/5）」で数える。4/5 は seed の揺れと区別できない。
 
-  PYTHONPATH=. <venv> .../summarize_beta.py projects/longform/acting-beta-0{30,50,70}/beta.tsv
+  PYTHONPATH=. <venv> .../summarize_beta.py projects/longform/experiments/basics/acting-beta-0{30,50,70}/beta.tsv
 """
 from __future__ import annotations
 

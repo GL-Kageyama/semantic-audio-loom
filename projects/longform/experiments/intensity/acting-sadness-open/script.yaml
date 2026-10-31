@@ -1,0 +1,16 @@
+# the feeling is steady and open
+#
+# 対照：抑えずに開く。
+# 同じ帯（moderate）に、強さでも抑制でもない文言を置く。
+#
+# ビルド（原本は触らず、表をプロセス内で差し替える）:
+#   PYTHONPATH=. <venv> projects/longform/acting/mod_phrase_build.py --dir projects/longform/experiments/intensity/acting-sadness-open \
+#     --phrase "the feeling is steady and open" --band 0.70
+name: acting-sadness-open
+default_pause: 0.0
+cues:
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: op-sadness-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: op-sadness-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: op-sadness-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: op-sadness-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: op-sadness-s5}

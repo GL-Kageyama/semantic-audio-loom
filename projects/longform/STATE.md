@@ -28,20 +28,14 @@
 
 ```
 projects/longform/
-  STATE.md            このファイル
-  baseline.md         P0 の基準線（examples/ 37 本）
-  timings.tsv         生成ごとの実時間（1 生成 1 行）
-  acting/             P1・P2 の演技素材
-    voice/            <感情>-<強度>-s<seed>.wav
-    matrix.tsv        演技行列の測定
-  explainer/          P3 解説
-    script.yaml
-    voice/  sfx/  bgm/
-    renders/          統合 WAV
-  drama/              P4 演劇
-    script.yaml
-    voice/<人物>/  sfx/  bgm/
-    renders/
+  STATE.md            このファイル（現在地）
+  README.md           つくり方・道具
+  REPORT.md           実測の答え
+  INDEX.md            別セッションが最初に読む索引（全ディレクトリの地図）
+  acting/             P1・P2 のスクリプト（knob_audit.py など）
+  explainer/  drama/  作品（script.yaml・mix.yaml・sfx.yaml・voice_fx.yaml）
+  experiments/<群>/<実験>/  測ったこと・見本（群は 10 個）
+  assets/<作品>/      生成物（追わない）
 ```
 
 素材（1 本ずつ）と統合（renders）は混ぜない。採用分だけ最後に `examples/` へ。
@@ -68,7 +62,7 @@ projects/longform/
 - pytest 134 passed / 1 skipped。
 - **圧縮は掛けない（2026-11-01 の裁定）**。通常盤で配布し、未達 10 本は未達として残す。
   耳では差が小さく、測ると掛ける前のほうが情報量が多い（谷 +2〜+7 dB・幅 −1.1/−5.1 LU・
-  [`loudness-trial/`](loudness-trial/)）。掛け方と代償は同じフォルダに残した。
+  [`experiments/analysis/loudness-trial/`](experiments/analysis/loudness-trial)）。掛け方と代償は同じフォルダに残した。
 - 残りは「著者の裁定」1 件（未追跡の一時ディレクトリ）。
   **m04「照れ隠し」は 2026-11-01 の裁定で作り直さない。** `戻ってきたときの要約.md` に記載。
 - `_INTENSITY_PHRASES` の真ん中の帯は **2026-11-01 の裁定で実装**（下の 38）。
@@ -153,14 +147,14 @@ projects/longform/
 
 ## 感情の側の再測と beta（2026-10-31 10:16 / 85 本＋60 本＋30 本）
 
-1. **感情 10 種 × seed 5（85 本・beta 0.7）**：`acting-matrix/`。8 指標のどれでも
+1. **感情 10 種 × seed 5（85 本・beta 0.7）**：`experiments/basics/acting-matrix/`。8 指標のどれでも
    基準線から 5/5 で分かれない。強度 subtle/strong も分かれない。
    → 言葉は届いている（`params.yaml` の emotion は別）のに音が動かない。
    ⚠️ **この数え方は seed をそろえていない**（感情の 5 seed を基準線の中央値と比べる）。
    同じ seed どうしなら **10 感情はどれも 5/5 で f0 が上がり**（+4〜+26 Hz）、**強度も
    5/5 で効く**（悲しみ +13.7〜+20.1 Hz）。差は**検出できるが seed の振れ（84.6 Hz）より
    小さい**。項目 35 と `acting/reanalyze_seeds.py`。
-2. **beta 掃引（60 本・0.7 / 0.5 / 0.3・4 感情 × seed 5）**：`acting-beta-0{70,50,30}/`。
+2. **beta 掃引（60 本・0.7 / 0.5 / 0.3・4 感情 × seed 5）**：`experiments/basics/acting-beta-0{70,50,30}/`。
    f0 の中央値（5 seed）:
 
    | beta | neutral | sadness | anger | joy |
@@ -171,7 +165,7 @@ projects/longform/
 
    beta を下げると seed の揺れが縮み（29 → 12 Hz）、感情の差が残る。0.3 で
    高覚醒（anger・joy）と低覚醒（neutral・sadness）は重ならない。anger と joy は重なる。
-3. **強度（30 本・beta 0.3）**：`acting-beta-int/`。strong は subtle より f0 が
+3. **強度（30 本・beta 0.3）**：`experiments/basics/acting-beta-int/`。strong は subtle より f0 が
    anger +31.2・joy +20.2・sadness +45.2 Hz（同じ seed で 5/5）。
 4. **代償は声質ではなかった**：旧い計器（クリップ全体の MFCC 平均）は 0.7 で 17〜19、
    0.3 で 40〜53 と出したが、**この計器は無音の割合を測っていた**。有声フレームに直すと
@@ -184,73 +178,73 @@ projects/longform/
    通すようにした（rule Resolve は `neutral` 固定だった）。rising が falling より上に出た
    seed は **0.7 で 3/5・0.3 で 2/5**。中央値は 0.3 で狙いどおり（+2.16 / +1.26 / −0.17
    半音/秒）だが、種の振れ幅 −19.3〜+16.8 が差を飲む。
-7. **聞き比べ（74 秒・`acting-demo/`）**：同じ台詞を beta 0.7 と 0.3 で並べた。
-   納品は [examples/longform-acting/](../../examples/longform-acting/)。
-8. **頑健さ（beta 0.3）**：台詞 3 種 × 4 感情 × seed 3（`acting-beta-lines/`）＝36 本で
+7. **聞き比べ（74 秒・`experiments/demos/acting-demo/`）**：同じ台詞を beta 0.7 と 0.3 で並べた。
+   納品は [examples/longform/acting/](../../examples/longform/acting)。
+8. **頑健さ（beta 0.3）**：台詞 3 種 × 4 感情 × seed 3（`experiments/basics/acting-beta-lines/`）＝36 本で
    anger と joy は 3/3 で neutral より上（文の長さに依らない）。sadness は 8/9。
-   参照音声も、語り手とニジ × 4 感情 × seed 3（`acting-beta-refs/`）＝24 本＋
-   真白（`acting-beta-030/` の seed 5）で**3 つとも同じ並び**
+   参照音声も、語り手とニジ × 4 感情 × seed 3（`experiments/basics/acting-beta-refs/`）＝24 本＋
+   真白（`experiments/basics/acting-beta-030/` の seed 5）で**3 つとも同じ並び**
    （neutral < sadness < anger ≈ joy）。
-9. **alpha の向き**（`acting-alpha/` 48 本・`acting-alpha-floor/` 36 本・
-   `acting-alpha-one/` 12 本）。式は **`ref = alpha × 予測 + (1 − alpha) × 参照`** なので、
+9. **alpha の向き**（`experiments/basics/acting-alpha/` 48 本・`experiments/basics/acting-alpha-floor/` 36 本・
+   `experiments/basics/acting-alpha-one/` 12 本）。式は **`ref = alpha × 予測 + (1 − alpha) × 参照`** なので、
    上げるほど参照が減る。包絡は 0.20→0.70 で 1.55→2.12 dB、床で 0.0→1.0 が
    1.61→2.64 dB。**10/12 のキューで単調に離れる**（向きは式のとおり）。
    既定の 0.35 は 65% が参照。ただし **0.0 でも 1.61 dB** で、参照どうしの差
    1.22 dB と同じ大きさ＝参照の録音と同じ包絡にはならない。演技の分かれ方は 3/3 のまま。
-10. **pitch（36 本・beta 0.3）**：`acting-pitch/`。neutral の f0 は 257 → 266 → 277 Hz。
+10. **pitch（36 本・beta 0.3）**：`experiments/pitch/acting-pitch/`。neutral の f0 は 257 → 266 → 277 Hz。
    感情の並びは残る。包絡は 1.69 → 1.86 → 1.13 dB で、こちらは向きも定まらない。
    **戻せるのは音程だけ。**
    なお beta 0.7 では pitch は f0 を動かさなかった（ノブが効くのは低い beta だけ）。
-11. **感情の外の軸（30 本・beta 0.3）**：`acting-axes/`。速さと delivery は動く
+11. **感情の外の軸（30 本・beta 0.3）**：`experiments/basics/acting-axes/`。速さと delivery は動く
    （desperate 302・aggressive 284・intimate 276・cold 257 Hz）。volume は量を
    動かさない（三層分業どおり。Mixing の利得で付ける）。**breathiness は散文に
-   載っていなかった**——`prosody.breathiness` を配線し、`acting-breath/`（12 本）で
+   載っていなかった**——`prosody.breathiness` を配線し、`experiments/delivery/acting-breath/`（12 本）で
    平坦度 0.0169 → 0.0191（+13%・seed 2/3）。
 12. **決定論の限界**：同じ設定の作り直し 12 本のうち 5 本がバイト不一致（RMS
    0.0005〜0.0007＝信号比 −65 dB・長さ同一）。**byte-identical とは書かない。**
-   ✅ **1 本を別プロセスで 6 回に絞って見た**（`determinism/`・beta 0.7）：**3＋3 の
+   ✅ **1 本を別プロセスで 6 回に絞って見た**（`experiments/analysis/determinism/`・beta 0.7）：**3＋3 の
    2 種**（`954f9db` ×3 → `2d575e2` ×3）。差は最大 0.0119・RMS **−64 dBFS**・相関
    0.999994・**長さとピークは同じ**・`act_probe.py` の **14 欄は全部同じ**。
-   ✅ **1 プロセスで 12 回**（`determinism/within_process.py`）：**1 回目だけが違い、
+   ✅ **1 プロセスで 12 回**（`experiments/analysis/determinism/within_process.py`）：**1 回目だけが違い、
    2〜12 回目は同じ**（差 3e-6）。アラインメントをずらしても 3e-6、
    **1 スレッドでも 2 種に割れる**。→ 最後の桁を変える何かはプロセスの外だけではない
-   （未特定）。⚠️ **25 本を 1 つの `build_voice.py` で焼いた `acting-subtext/` では
+   （未特定）。⚠️ **25 本を 1 つの `build_voice.py` で焼いた `experiments/subtext/acting-subtext/` では
    seed 3 だけが 2 種に割れ、`f0_end_st_s` が 0.25 半音動いた**——「14 欄が同じ」は
    プロセスをまたいだ割れ方の話で、どの割れ方でも同じとは限らない。
    ✅ **同じ台本を 2 回焼き直した**：1 回は **25/25 が元と一致**、1 回は **seed 3 の
    8 本目・18 本目だけが逆の型**（その回の none と同じファイル・差 0.0093・RMS
    −54.2 dBFS）。**割れる位置は 3 回とも同じ 2 本**で、subtext の値ではなかった。
    **測った結論には影響しない。困るのは md5 で同一性を検査するとき（どこでも）。**
-13. **演劇の beta 0.3 版**（`drama-beta03/`・89 本）：332.2 s（+21.7 s）。生の声は
+13. **演劇の beta 0.3 版**（`experiments/scene/drama-beta03/`・89 本）：332.2 s（+21.7 s）。生の声は
    同長（271.1 対 271.3 s）で、切った後の声が 239.0 対 217.3 s。包絡の距離は
    2.11 → 1.99 dB（動かない）。門は通過（ピーク −0.4・クリップ 0・効果音 +40.0 / +20.0 dB・
-   ducking −11.3 dB）。納品：[examples/longform-drama-beta03/](../../examples/longform-drama-beta03/)。
-14. **感情 × delivery（27 本・beta 0.3）**：`acting-dlv/`。f0 は neutral の
+   ducking −11.3 dB）。納品：[examples/longform/drama-beta03/](../../examples/longform/drama-beta03)。
+14. **感情 × delivery（27 本・beta 0.3）**：`experiments/delivery/acting-dlv/`。f0 は neutral の
    cold / cheerful / aggressive ＝ 257 / 294 / 284、anger ＝ 294 / 345 / 353、
    joy ＝ 309 / 341 / 351。**どちらの振り幅も 40〜60 Hz**。型は感情を消さない
    （anger+cold は 294 で、neutral の 257 より上）。足し算ではない
    （anger の上がり幅は cold +37・aggressive +69）。
-15. **beta の床（36 本）**：`acting-beta-low/`（0.0 / 0.1 / 0.2・alpha 0.35 固定）。
+15. **beta の床（36 本）**：`experiments/basics/acting-beta-low/`（0.0 / 0.1 / 0.2・alpha 0.35 固定）。
    anger − neutral は 0.3 で +63、0.2 で +66、0.1 で +85、**0.0 で +88**。
    seed の揺れは 8.8 → 3.0 Hz（0.0 の anger は 327.8/327.9/327.8）。
    **下げるほど演技は伸び、seed は効かなくなり、声は離れない**（包絡 1.98 → 1.80 dB）。
    0.3→0.2 は演技もほぼ増えない（+2.5 Hz）。0.2→0.1 で演技が一段跳ぶ（+19.3 Hz）。
-16. **抑揚の言葉を床で振る（15 本・beta 0.0）**：`acting-inton-000/`。rising / flat /
+16. **抑揚の言葉を床で振る（15 本・beta 0.0）**：`experiments/pitch/acting-inton-000/`。rising / flat /
    falling の順序が **5/5** に揃う（0.3 では 2/5）。ただし語尾はどの条件でも
    +13.8〜+14.7 半音/秒で上向き、語による差は 0.95 しかない。語は中央の音高も
    動かす（rising 238.6 対 flat 248.5 Hz）。**順序は安定するが、差は大きくならない。**
-17. **床で軸は伸び縮みする（27 本・beta 0.0）**：`acting-floor-axes/`。基準 240 Hz
+17. **床で軸は伸び縮みする（27 本・beta 0.0）**：`experiments/basics/acting-floor-axes/`。基準 240 Hz
    （0.3 では 257）。速さは同じ（very_slow 3.87 s・very_fast 1.85 s／0.3 は 3.72・1.97）、
    声量も同じ（whisper・loud とも 252.8）。**delivery だけ縮む**（cold/intimate/
    aggressive/desperate ＝ 246/246/249/271。0.3 は 257/276/284/302。幅 45 → 25 Hz）。
    **下げれば演技が全部伸びるわけではない。伸びるのは覚醒、縮むのは型。**
-18. **11 感情の群れ（66 本）**：`acting-emotions/`（11 感情 × beta 0.3 / 0.0 × seed 1〜3）。
+18. **11 感情の群れ（66 本）**：`experiments/basics/acting-emotions/`（11 感情 × beta 0.3 / 0.0 × seed 1〜3）。
    0.3 の f0 は neutral 257・loneliness 276 ／ calm・sadness・guilt 284・anxiety 292 ／
    anger 320・confidence 322・fear 328・excitement 329・joy 332。**4 つの群れ**で、
    高い 5 つは seed の幅（308〜347）が重なって分かれない。guilt だけ間 0.40–0.43・
    長さ 3.2–3.4 秒で別。0.0 では低い群れだけ 15〜25 Hz 下がる（高い群れは動かない）。
    ⚠️ ペアごとの 3/3 判定は 55/55 になるが偶然でも 90% 通る——数えず、範囲の重なりで読む。
-19. **強度の 5 語（90 本）**：`acting-intensity/`（none/subtle/moderate/strong/overwhelming ×
+19. **強度の 5 語（90 本）**：`experiments/intensity/acting-intensity/`（none/subtle/moderate/strong/overwhelming ×
    3 感情 × seed 1〜3 × beta 0.3 / 0.0）。**none と moderate は同じ音**（散文で
    どちらも一言も足さない）＝実質 4 段。段の順にならず、neutral は overwhelming
    （262.5）が strong（283.8）より低い。anger は床で strong 376.6 > overwhelming 365.9、
@@ -258,16 +252,16 @@ projects/longform/
    ✅ **intensity=none が「faint」を足していたのを直した**（0 では足さない）。
    同じ種類の脱落を捕まえる検査 `test_every_enum_value_reaches_the_prompt` を追加
    （Schema の列挙値ごとに散文が違うことを見る）。131 passed。
-20. **床の頑健さ（60 本）**：`acting-floor-lines/`（36）・`acting-floor-refs/`（24）。
+20. **床の頑健さ（60 本）**：`experiments/basics/acting-floor-lines/`（36）・`experiments/basics/acting-floor-refs/`（24）。
    anger − neutral は 3 台詞で +87.8（明日、また来るね）・+20.7（ちょっと、待ってよ）・
    +54.7（そんなこと、言わないでよ）。**符号は 6/6 で 3 seed とも揃うが、大きさは台詞に依る**
    （0.3 は +63.2 / +23.1 / +42.3）。参照音声は narrator +85.5・niji +86.0・mashiro +87.8
    で同じ。**床は「その台詞が 0.3 でどれだけ分かれているか」を増幅するか、しないか。**
-21. **演劇の床 0.0 版**（`drama-beta00/`・89 本）：339.1 s（0.7 は 310.5・0.3 は 332.2）。
+21. **演劇の床 0.0 版**（`experiments/scene/drama-beta00/`・89 本）：339.1 s（0.7 は 310.5・0.3 は 332.2）。
    生の声は 271.6 s で三つとも同じ。包絡の距離は 2.11 → 1.99 → 2.23 dB（動かない）。
    門は通過（ピーク −0.4・クリップ 0・無音率 31.5%・効果音 +40.0 / +24.8 dB・
-   ducking −11.7 dB）。納品：[examples/longform-drama-beta00/](../../examples/longform-drama-beta00/)。
-22. **作品の段の三版をキューごとに測った**（`drama-level/levels.tsv`・267 行・89 キューの
+   ducking −11.7 dB）。納品：[examples/longform/drama-beta00/](../../examples/longform/drama-beta00)。
+22. **作品の段の三版をキューごとに測った**（`experiments/scene/drama-level/levels.tsv`・267 行・89 キューの
    f0 等）。**広がるのは感情の段差**（8 感情の平均 f0 の幅 48.2 → 47.4 → 79.1 Hz）。
    **平らになるのは人物の高さ**（感情の偏りを除いた二人の差 −8.5 → −2.0 → **+0.1 Hz**。
    参照は 297.2 と 322.2 で 25 Hz 離れている）と**声の起伏**（抑揚の 8 感情平均
@@ -276,33 +270,33 @@ projects/longform/
    二人の中心どうしは 11.9 → 11.4 → 11.7、本人の中の広がりは 25〜32。ニジは 0.7 で
    本人と真白の参照がほぼ同点（41.6 対 40.8）なので同一性は言えない。
    **床は一人の演技の上限を見る段で、二人芝居の上限ではない。**
-23. **床で二人を分けるには pitch を人物に振る**（`acting-floor-pitch/`・24 本＝pitch 4 段×
+23. **床で二人を分けるには pitch を人物に振る**（`experiments/pitch/acting-floor-pitch/`・24 本＝pitch 4 段×
    参照 2 × seed 3、beta 0.0）。f0 は very_low 225.0 / low 243.3 / natural 241.5 /
    high 272.6 Hz（真白）。**参照を替えても同じ**（最大 2.4 Hz 差）＝床では高さが散文だけで決まる。
    very_low → high は 47.6 / 48.8 Hz。**4 段は 3 段**（low と natural は同じ音）。
-   ⚠️ **ただし効き方は感情に食われる**（`acting-pitch-emotion/`・36 本）：high − very_low は
+   ⚠️ **ただし効き方は感情に食われる**（`experiments/pitch/acting-pitch-emotion/`・36 本）：high − very_low は
    neutral +68.4・joy +46.3・**sadness +9.4・anxiety +13.7**。高い台詞には余地がない。
-   ⚠️ **場面では上下だけ作れる**（`floor-pitch-pairs/`・48 本＝8 行×2 腕×seed 3）：
+   ⚠️ **場面では上下だけ作れる**（`experiments/pitch/floor-pitch-pairs/`・48 本＝8 行×2 腕×seed 3）：
    ニジ high・真白 very_low は 12/12 でニジが上（中央値 **+41.5 Hz**）、対照（二人とも
    natural）は 6/12（中央値 +0.5）。1 行ずつの効きは −36 〜 +28 Hz に散る。
    ⚠️ pitch の語は時間も動かす（1 行 very_low 3.25 秒 / natural 2.25、場面では逆に
    pitch 版が短い 49.3 対 63.0 秒）。⚠️ この段の MFCC 距離は読まない（pitch をまたぐと
    倍音の間隔が動く）。包絡では very_low 3.08 / natural 1.69 / high 1.10 dB で、
-   **低くするほど包絡も離れる**。納品：[examples/longform-floor-two-speakers/](../../examples/longform-floor-two-speakers/)。
+   **低くするほど包絡も離れる**。納品：[examples/longform/floor-two-speakers/](../../examples/longform/floor-two-speakers)。
 24. **声質の計器に欠陥があった**（2026-10-31 11:36）：旧 `measure_timbre.py` はクリップ
    全体のフレーム平均で、**無音を足すだけで距離が伸びる**（`check_timbre_metric.py`：
    0.5 s で 21.8・1 s で 39.8・2 s で 68.1）。beta を下げると有声の割合が上がる
    （0.311 → 0.459）ので、この計器は演技の変化を声質の変化と報告していた。有声フレーム
    だけで測るよう直し、pitch に引っ張られない LPC 包絡（`measure_envelope.py`）を足した。
    **REPORT の「代償は声質」は撤回。** 二人の声質の分離も測り直した
-   （`timbre-two-characters/`・18 本：同一人物 16.4 対 別人 13.8＝やはり分かれない）。
+   （`experiments/voice/timbre-two-characters/`・18 本：同一人物 16.4 対 別人 13.8＝やはり分かれない）。
    ニジの電話帯域は包絡 1.95 → 9.60 dB で、**声質を分ける唯一の実測された手段**。
 25. **alpha の向きを確かめた**：`ref = alpha × 予測 + (1 − alpha) × 参照`。床で
    0.0 / 0.35 / 0.7 / 1.0 → 1.61 / 1.77 / 2.18 / 2.64 dB（真白の参照まで）。
-   **10/12 で単調に離れる**（`acting-alpha-floor/`・12 本 × 2 人物）。ニジは
+   **10/12 で単調に離れる**（`experiments/basics/acting-alpha-floor/`・12 本 × 2 人物）。ニジは
    2.33 / 2.41 / 2.55。既定 0.35 は 65% が参照。⚠️ 0.0 でも 1.61 dB あり、
    参照どうしの差 1.22 dB と同程度——**参照の録音と同程度にはならない**。
-26. **作品 89 本で pitch を人物に振った**（`drama-beta00-pitch/`・89 本＝床の全キューに
+26. **作品 89 本で pitch を人物に振った**（`experiments/scene/drama-beta00-pitch/`・89 本＝床の全キューに
    真白 `very_low` 47・ニジ `high` 42）。**上下は開くが、代償が二つ出る。**
    感情の偏りを除いた差（真白 − ニジ）は +0.06 → **−13.38 Hz**（0.7 版の −8.5 より広い）、
    隣と比べてニジが上になるキューは 21/42 → **31/42**（12/12 ではない）。
@@ -311,14 +305,14 @@ projects/longform/
    ⛔ **尺の門を割った**：339.1 → **291.0 秒**（5 分に 9 秒届かない）。無音率 31.5 → 34.1%。
    門の他は通る（ピーク −0.4・クリップ 0・呼び出し +40.1・切断 +22.2 dB・ducking −11.6）。
    **pitch は DSP のノブでなくプロバイダへの散文 1 文**なので、その一文ごと演技が組み直される。
-   納品：[examples/longform-drama-pitch/](../../examples/longform-drama-pitch/)。
-27. **作品の段の数は seed で動くか**（`seed-robustness/`・89 キュー×seed 1/2/3）。
+   納品：[examples/longform/drama-pitch/](../../examples/longform/drama-pitch)。
+27. **作品の段の数は seed で動くか**（`experiments/analysis/seed-robustness/`・89 キュー×seed 1/2/3）。
    **構造は動かない**：声の合計 271.6 秒が 3 本とも同じ（0.1 秒以内）・間 0.136〜0.137・
    抑揚 7.40〜7.46・キューごとの f0 相関 0.979 / 0.989・8 感情の順位は 3 本とも同じ。
    **二人の差も動かない**（+0.06 / +0.66 / +1.07 Hz）。**動くのは感情の幅だけ**——
    79.1 / 66.2 / 70.6 Hz（fear 351.8 / 338.9 / 343.4 が差を作る）。
    ⚠️ **「床の感情幅 79.1 Hz」は seed 1 の値。** 報告では 3 seed の 66〜79 と書く。
-28. **作品の前半・中盤・後半で、二人の高さは同じ向きに寄る**（`seed-robustness/measure_drift.py`・
+28. **作品の前半・中盤・後半で、二人の高さは同じ向きに寄る**（`experiments/analysis/seed-robustness/measure_drift.py`・
    0.0 は seed 1〜3、0.7 は seed 1・2）。感情の平均を引いた残差の 真白 − ニジ：
    0.0 で (−11.3, +1.4, +12.2) / (−8.3, +1.0, +11.4) / (−9.5, +2.1, +12.8)、
    0.7 で (−20.3, −9.7, +7.1) / (−14.1, −9.4, −1.0)。**向きは 5 本とも同じ**
@@ -328,7 +322,7 @@ projects/longform/
    からしか出ない。⚠️ 0.7 の完成版で前半はニジが上（−20.3）、後半は真白が上（+7.1）だが、
    **seed 2 は −1.0 で入れ替わりまで行かない**——「消える」までが言えること。
    ⚠️ 加算モデル（感情＋強度＋音量＋速さ＋型）では再現できない。
-29. **解説の 48 本で、語り手と真白は分かれる**（`explainer-level/`・語り手 44・真白 4）。
+29. **解説の 48 本で、語り手と真白は分かれる**（`experiments/scene/explainer-level/`・語り手 44・真白 4）。
    包絡の中心どうし **4.68 dB**（語り手の中 1.40・真白 4 本の中 0.50）・高さは
    261.4 対 351.4 Hz で重ならない。**分かれるかは参照の組で決まる**——語り手↔真白は
    4.68 dB・真白↔ニジは 1.22 dB（ライブラリで最も近い）。
@@ -350,12 +344,12 @@ projects/longform/
    ⚠️ **9 本の波高率（TP − I）は 15.46〜17.02 dB**。−16 LUFS と −1 dBTP の両立には
    **15.0 dB 以下**が要るので 1 本も届かない。−1 dBTP までの余りは 0.13〜0.17 dB で、
    **ゲインでは動かせない**（不足は 0.5〜2.0 dB のピーク側＝圧縮の仕事）。
-   ✅ **圧縮を掛けたらどうなるかは測った**（`loudness-trial/`・`loudnorm` 2 パス・
+   ✅ **圧縮を掛けたらどうなるかは測った**（`experiments/analysis/loudness-trial/`・`loudnorm` 2 パス・
    `I=-16:TP=-1.0:LRA=11`）：解説は −17.44 → **−16.28**（幅 8.30 → 7.20）・声だけの
    場面は −20.91 → **−16.38**（幅 12.50 → 7.40）——**2 本とも門に入る**。代わりに
-   波高率が 2.0・**5.3 dB** 縮む（**谷が上がる**）。掛けた mp3 は `loudness-trial/`。
+   波高率が 2.0・**5.3 dB** 縮む（**谷が上がる**）。掛けた mp3 は `experiments/analysis/loudness-trial/`。
    ⚠️ 声の質感は未測定。**掛けるかは著者の裁定**。
-32. **高さは seed が決め、声質は seed も方向も動かす**（`explainer-joy/`・同じ 1 行・
+32. **高さは seed が決め、声質は seed も方向も動かす**（`experiments/scene/explainer-joy/`・同じ 1 行・
    真白・3 seed・方向 5 通り）。f0 は seed 1 で 335.5〜355.5（幅 20.0）・seed 2 で 304〜306・
    seed 3 で 316〜319——**seed をまたぐと 51.4 Hz**。声質は seed で MFCC 15.2〜23.1、
    方向で 5.4〜22.3 と**重なる**。
@@ -367,7 +361,7 @@ projects/longform/
    ——同じ台詞・同じ設定なので**決定的生成の確認**。解説 48 本の 1,128 組は中央値 23.08・
    下位 5% 9.97 で、**m02↔m04 = 4.52 は 2 番目に近い**（1 位は設定の同じ語り手 3.81）。
    近さの多くは「台詞が同じ」で説明できる。
-34. **感情の効きは seed の癖の 5 分の 1 ほど**（`emotion-seed/`・2 行 × 5 感情 × 3 seed
+34. **感情の効きは seed の癖の 5 分の 1 ほど**（`experiments/analysis/emotion-seed/`・2 行 × 5 感情 × 3 seed
    ＝30 本・強度 strong 固定）。seed を誤差にした一元配置では f0 の F が 0.47 で
    「効かない」になるが、**seed は seed ごとに決まった高さへ寄る**（5 感情すべてで s1 が
    高い）ので、ブロックにして除くのが正しい——除くと f0 の F 感情 **56.03**（境目 3.84）。
@@ -395,43 +389,43 @@ projects/longform/
    と逆転**、0.2 で 75.2 / 20.3、0.1 で 88.4 / 13.1、**0.0 で 92.8 / 7.2（η² 0.99 / 0.01）**。
    **交差点は 0.5 と 0.3 のあいだ。** 抑揚・張りも同じ向き（η² 抑揚 0.05→0.55・張り
    0.04→0.85）。速さはどの beta でも分かれない（F 0.31 / 3.13 / 2.72）。
-37. **seed の癖は声をまたぐ**（`seed-voices/`・4 声 × seed 3 本・同じ 1 行）。4 声すべてで
+37. **seed の癖は声をまたぐ**（`experiments/voice/seed-voices/`・4 声 × seed 3 本・同じ 1 行）。4 声すべてで
    **s1 が高く s2・s3 が低い**（相関 0.74〜1.00）。大きさは声で違う（幅 31.7〜46.0 Hz）。
    ⚠️ **音色では、seed を替える動き（12.8〜17.1）が、近い 3 声どうしの距離（13.0〜13.5）
    と同じ**——**seed を固定しないと、人物の差と seed の差が同じ大きさで混ざる**。
    演劇が人物を帯域で分けているのはこの距離を作るため。
-38. **強度の語は 5 つ、声を動かす段は 2 つ**（`acting-intensity/README.md`・既定 beta 0.7 で
+38. **強度の語は 5 つ、声を動かす段は 2 つ**（`experiments/intensity/acting-intensity/README.md`・既定 beta 0.7 で
    4 段 × seed 5・新規 15 本＋新規 6 本＋新規 15 本）。**跳ねるのは moderate → strong の
    1 か所だけ**（+8.8〜+18.3 Hz・5/5）。subtle と moderate は ±3 Hz。**上端は伸びず**
    （anger +0.7・joy +0.0）、**sadness だけ下がる**（−8.8 Hz・5/5）。beta 0.3 では
    sadness の後退が −27 Hz（3/3）。高さだけではなく、長さ anger +0.08 秒・joy +0.14 秒
    （5/5・p ≤ 0.016）、抑揚 sadness +0.44 半音（5/5）。
    ✅ **真ん中に文言を置くと sadness は +9.4 Hz 動く**（5/5・p = 0.0015）が、anger +1.3・
-   joy +1.7 は動かない（`acting-mod-phrase/`・`acting/mod_phrase_build.py` が
+   joy +1.7 は動かない（`experiments/intensity/acting-mod-phrase/`・`acting/mod_phrase_build.py` が
    `_INTENSITY_PHRASES` をプロセス内だけで差し替える）。**飽和点が感情で違う。**
    ✅ **その文言は 2026-11-01 に既定へ入れた**（0.41〜0.70）。差し替えなしで同じ 15 本を
    作り直すと **md5 15/15 一致**・基準線との差も +1.3 / +1.7 / +9.4 Hz と同じ
-   （`acting-mod-phrase-ship/`）。**測った数字が出荷した道の数字。**
-   ✅ **段は anger 2・joy 2・sadness 3 になった**（`acting-intensity-steps-new/`・
+   （`experiments/intensity/acting-mod-phrase-ship/`）。**測った数字が出荷した道の数字。**
+   ✅ **段は anger 2・joy 2・sadness 3 になった**（`experiments/intensity/acting-intensity-steps-new/`・
    3 段 × 3 感情 × seed 5・45 本）。sadness は subtle→moderate **+8.6 Hz（5/5）**・
    moderate→strong **+8.9 Hz（5/5）** で **8〜9 Hz の等間隔**。anger は −1.3（1/5）で
    2 段のまま、joy は +2.1（5/5）だが 2 Hz。**変えていない subtle・strong は
    md5 30/30 一致**（散文を変えていない段は音も変わらない）。
-   ✅ **「抑える」は抑える動作にならない**（`acting-sadness-heldback/`・`acting-sadness-open/`・
+   ✅ **「抑える」は抑える動作にならない**（`experiments/intensity/acting-sadness-heldback/`・`experiments/intensity/acting-sadness-open/`・
    sadness moderate × seed 5・文言 3 種）。文言なし 294.4 に対し、held back +2.2・
    steady and open +5.4・moderately strong +9.4 Hz（どれも 5/5）。**語を足せば上がる。
-   強さを主張する語ほど大きい。** anger でも同じ文言で +3.6 Hz（5/5・`acting-anger-heldback/`）。
+   強さを主張する語ほど大きい。** anger でも同じ文言で +3.6 Hz（5/5・`experiments/intensity/acting-anger-heldback/`）。
    強度は「量」のノブで、抑制のノブは無い。
-   ✅ **台詞を替えても形は同じ**（`acting-intensity-line2/`・2 行目 × 4 段 × 3 感情 ×
+   ✅ **台詞を替えても形は同じ**（`experiments/intensity/acting-intensity-line2/`・2 行目 × 4 段 × 3 感情 ×
    seed 5・60 本）。真ん中 ±2 Hz・strong で +17〜+25 Hz（5/5）・**上端は 3 感情とも
    strong 以下**（−3.4〜−14.2 Hz）。**2 行 6 通りすべてで「最大」は強さを超えない。**
    ⚠️ 跳ね幅は seed に依る（2 行目 joy は seed 4 で +59・seed 2 で +1.5 Hz）。
-   ✅ **声を替えても 2 段**（`acting-niji-intensity/`・niji × calm/joy/guilt × seed 5・30 本）。
+   ✅ **声を替えても 2 段**（`experiments/intensity/acting-niji-intensity/`・niji × calm/joy/guilt × seed 5・30 本）。
    subtle↔moderate は calm −1.2・joy +0.3・guilt +2.0 Hz。**±2 Hz で 1 段。**
-   ✅ **joy の「抑える」も動かない**（`acting-joy-heldback/`・+0.3 Hz・2/5・p = 0.69。
+   ✅ **joy の「抑える」も動かない**（`experiments/intensity/acting-joy-heldback/`・+0.3 Hz・2/5・p = 0.69。
    moderate で飽和しているので、文言を足しても上がりようがない）。**抑える演技は
    3 感情で試した（下がらない）。**
-   ⛔ **声量の語は、声の大きさを変えない**（`acting-volume/` と `acting-volume-shout/`・
+   ⛔ **声量の語は、声の大きさを変えない**（`experiments/delivery/acting-volume/` と `experiments/delivery/acting-volume-shout/`・
    joy moderate × 5 語 × seed 5・25 本）。**whisper と loud で energy 0.08 dB・
    rms 0.02 dB・f0 0.3 Hz。** 同じ語の seed 幅 energy 1.1 dB の 13 分の 1。
    peak は 25 本とも 0.9500（Normalize のピーク揃え）。**声量は `VOLUME_GAIN`
@@ -439,7 +433,7 @@ projects/longform/
    ✅ **shout だけは normal から離れる**——**f0 +9.6 Hz（5/5・p = 0.006）・長さ +0.13 秒
    （5/5・p = 0.004）・無音 +0.026**。⛔ **だが energy は −0.6 dB（0/5）で、whisper の
    −13.54 dB より小さい（shout −14.36 dB）。叫ぶと高く長くなるが、大きくはならない。**
-   ✅ **intonation の 5 語も同じ声**（`acting-inton-070/` と `acting-intonation2/`・
+   ✅ **intonation の 5 語も同じ声**（`experiments/pitch/acting-inton-070/` と `experiments/pitch/acting-intonation2/`・
    neutral controlled × 5 語 × seed 5・25 本）。**5 語の幅 7.7 Hz 対 seed の幅 74〜87 Hz
    （11 分の 1）。** ⛔ **語尾の傾きは語の名前に従わない**——中央値は wavering 3.18 >
    neutral 2.71 > flat 2.11 > rising −0.35 > falling −1.64（st/s）。**rising は最大に
@@ -450,52 +444,52 @@ projects/longform/
    ⛔ **二つの作品は、その 2 段の片側に 9 割が座っている**（`acting/knob_audit.py`）。
    解説の語り手 44/44 が同じ段、演劇は 79/89（89%）が同じ段（mashiro 38/47・niji 41/42）。
    **台本の subtle 51・moderate 28 の書き分けは、声では 1 段に畳まれる。**
-   ✅ **delivery は 3 段**（`acting-delivery/` と `acting-delivery2/`・joy moderate ×
+   ✅ **delivery は 3 段**（`experiments/delivery/acting-delivery/` と `experiments/delivery/acting-delivery2/`・joy moderate ×
    12 語 × seed 5・60 本）。**真ん中 8 語**（gentle / cheerful / hesitant / restrained /
    subtle / suppressed / intimate / controlled）は ±4 Hz で見分けがつかない。
    **上へ 2 語**（aggressive +6.7・desperate +8.4・どちらも 5/5）、**下へ 2 語**
    （cold −9.4・flat −18.4・0〜1/5）。抑揚は 12 語とも 7.7〜8.3 半音で動かない。
-   ✅ **speed だけが 5 段のまま単調**（`acting-speed/`・joy moderate × 5 語 × seed 5・
+   ✅ **speed だけが 5 段のまま単調**（`experiments/delivery/acting-speed/`・joy moderate × 5 語 × seed 5・
    25 本）。very_slow 4.39 → natural 3.06 → very_fast 2.44 秒（**1.80 倍**）。**5 seed
    それぞれで順序が完全に単調**（25 本・逆転 0）。p は 0.0001 以下。**演じ分けの土台は
-   speed。** ✅ **感情を替えても 5 段**（`acting-speed-emotions/`・anger/sadness × 5 語 ×
+   speed。** ✅ **感情を替えても 5 段**（`experiments/delivery/acting-speed-emotions/`・anger/sadness × 5 語 ×
    seed 5・50 本）。**両感情とも 5 seed すべて単調**（各段 p ≤ 3.2e−04）・比は anger 1.79・
    sadness 1.74 倍。間の割合 0.22〜0.32・高さは非単調。**発話そのものが 1.76 倍に伸び縮み。**
-   ✅ **長い行でも 5 段**（`acting-speed-longline/`・芝居の 24 文字 × 5 語 × seed 5・25 本）。
+   ✅ **長い行でも 5 段**（`experiments/delivery/acting-speed-longline/`・芝居の 24 文字 × 5 語 × seed 5・25 本）。
    7.44 → 4.26 秒（**1.75 倍・5/5 単調**・各段 p ≤ 6.2e−04）。高さ・抑揚の幅・張りは非単調。
    **秒の差は行の長さで拡大するが、比は動かない——台本は比で読む。**
-   ✅ **速さは高さも両端で開く**（`acting-speed/`）：f0 の平均 306.0 → 312.6 → 314.2 →
+   ✅ **速さは高さも両端で開く**（`experiments/delivery/acting-speed/`）：f0 の平均 306.0 → 312.6 → 314.2 →
    319.5 → 320.8 Hz。**very_slow と very_fast で +14.8 Hz（seed 4/5）**、途中は非単調。
-   ⚠️ **長い行（24 文字）では開かない**（285.2 → 284.5 Hz・`acting-speed-longline/`）。
-   ⛔ **段は積み上がらない**（`acting-knob-stack/`・speed 2 × delivery 2 × seed 5・20 本）。
+   ⚠️ **長い行（24 文字）では開かない**（285.2 → 284.5 Hz・`experiments/delivery/acting-speed-longline/`）。
+   ⛔ **段は積み上がらない**（`experiments/basics/acting-knob-stack/`・speed 2 × delivery 2 × seed 5・20 本）。
    速さの効きは delivery を替えても同じ（**−1.95 / −1.88 秒・1.79 / 1.76 倍・0/5**）だが、
    **aggressive − gentle の f0 差は natural +6.7 Hz → very_slow +0.7 → very_fast −1.1 Hz**
    へ縮む（差の差 −1.84 Hz・**5/5・p < 0.001**）。**速さの端では型の差が 0.1 Hz まで
    一致する seed がある**（seed 3・5）。**ただし埋まるのは上へ動く型だけ。**
-   ✅ **下へ動く型は端でも残る**（`acting-knob-stack-cold/`・speed 3 段 × cold/flat ×
+   ✅ **下へ動く型は端でも残る**（`experiments/basics/acting-knob-stack-cold/`・speed 3 段 × cold/flat ×
    seed 5・45 本）。cold −10.5/−9.4/−11.0 Hz、flat −16.5/−18.4/−21.4 Hz（very_slow/
    natural/very_fast・すべて 0/5）。**交互作用は p ≥ 0.35 で出ない。** very_fast の flat は
    間の割合 0.12（9 組で最小）。⚠️ very_slow/very_fast の gentle 10 本は
-   `acting-knob-stack/` と **md5 が 10/10 一致**（別プロセス・同日）。
-   ✅ **pitch を振ると aggressive は半分残る**（`acting-knob-stack-pitch/`・30 本）：
+   `experiments/basics/acting-knob-stack/` と **md5 が 10/10 一致**（別プロセス・同日）。
+   ✅ **pitch を振ると aggressive は半分残る**（`experiments/basics/acting-knob-stack-pitch/`・30 本）：
    aggressive − gentle の中央値は natural **+6.8** → low **+3.4** / high **+2.1 Hz**
    （low は平均 +7.0 だが seed 5 の +22.9 が作っていて 5/5・p = 0.15）。
    ✅ **pitch の段の向きは感情で変わる**：joy・moderate では low 310.8 / natural 318.6 /
    high 321.5 Hz（**下が離れる**）で、neutral の声（264.0 → 282.8 Hz・上が離れる）と逆。
-   ✅ **強い欄どうし（speed × pitch）も足し算にならない**（`acting-knob-stack-speed-pitch/`・
+   ✅ **強い欄どうし（speed × pitch）も足し算にならない**（`experiments/basics/acting-knob-stack-speed-pitch/`・
    speed 2 × pitch 3 × **seed 10 本**・60 本）。速さの高さの効きは pitch high +5.9 Hz・
    natural +4.3・**low +0.5（p = 0.91）**。加算からのずれ −3.8 / +1.7 Hz（p ≥ 0.35）。
    **長さは −0.62〜−0.76 秒・10/10 で動く**（重ねても減らない）。この条件（controlled）では
    `pitch` の high が **−0.1 Hz** で効かず、low だけが段（−13.5 Hz・9/10）。
    ⚠️ **low は seed 5 本では 4/5 だった**——10 本で向きが揃う。**「効かない」は seed を増やしてから。**
-   ✅ **pitch の 6 語を全部並べた**（`acting-pitch-ladder/`・6 語 × seed 10・60 本）。
+   ✅ **pitch の 6 語を全部並べた**（`experiments/pitch/acting-pitch-ladder/`・6 語 × seed 10・60 本）。
    very_low 299.0 / low 302.0 / slightly_low 309.7 / natural 315.5 / slightly_high 312.9 /
    high 315.4 Hz。**very_low と low は同じ段**（−3.0 Hz・3/10・p = 0.19）。
    **上がる語は無い**——high −0.1（p = 0.87）・slightly_high **−2.6**（0/10・名前と逆向き）。
    幅は 16.5 Hz。長さ・抑揚は動かない（長さ 3.08〜3.26 秒）。
    ⚠️ **上側は状態に依る**：neutral の声では high が +18.8 Hz。**低くするのは当てにでき、
    高くするのは当てにできない。**
-   ✅ **感情の 11 語を全部並べた**（`acting-emotion-ladder/`・11 語 × seed 5・55 本）。
+   ✅ **感情の 11 語を全部並べた**（`experiments/basics/acting-emotion-ladder/`・11 語 × seed 5・55 本）。
    fear 315.8 / joy 314.2 / anger 310.0 / excitement 308.2 / confidence 305.3 / anxiety 305.2 /
    calm 297.4 / loneliness 296.7 / guilt 295.4 / sadness 294.4 / neutral 290.3 Hz。
    **neutral との対応のある差は +4〜+26 Hz で 9/10 が 5/5**（guilt だけ 3/5・p = 0.29）。
@@ -503,36 +497,36 @@ projects/longform/
    fear − joy +1.6（3/5・p = 0.22）・confidence − anxiety +0.1（1/5）。一元配置 ANOVA は
    F = 0.30・p = 0.98（**seed を誤差に置くと見えない**）。seed の散らばりは 64.6〜98.0 Hz。
    **1 本ずつ聞いて感情を当てるのは無理で、seed を揃えれば聞こえる。**
-   ✅ **型（delivery）を足しても、隣どうしは離れない**（`acting-emotion-delivery/`・
+   ✅ **型（delivery）を足しても、隣どうしは離れない**（`experiments/basics/acting-emotion-delivery/`・
    neutral/joy/fear × gentle/aggressive/cold × seed 5・45 本）。fear − joy は
    gentle +2.8（4/5・p = 0.063）・cold +3.1（4/5・p = 0.10）のまま、**aggressive では
    −7.0 Hz（0/5・p = 0.015）で向きが逆になる**。aggressive − gentle は neutral +0.1
    （2/5）・**joy +6.7（5/5・p = 0.0085）**・**fear −3.1（0/5・p = 0.012）**。cold は
    どの感情でも −9〜−10 Hz（並びを変えない）。neutral からの差（+20〜+27 Hz）は
-   **どの型でも 5/5 で残る**。⚠️ joy の +6.7 は `acting-knob-stack-pitch/` の +6.68 と一致。
-   ✅ **breathiness も 2 段だが幅が小さい**（`acting-breath-070/`・20 本）。有声の割合
+   **どの型でも 5/5 で残る**。⚠️ joy の +6.7 は `experiments/basics/acting-knob-stack-pitch/` の +6.68 と一致。
+   ✅ **breathiness も 2 段だが幅が小さい**（`experiments/delivery/acting-breath-070/`・20 本）。有声の割合
    none 0.276 → heavy 0.263（moderate/heavy 0/5・p ≤ 0.021）、高域の比 +10%。
-   ✅ **beta 0.3 でも seed 5 本なら出る**（`acting-breath-030/`・20 本）：slight は有声
+   ✅ **beta 0.3 でも seed 5 本なら出る**（`experiments/delivery/acting-breath-030/`・20 本）：slight は有声
    −2.8 ポイント（0/5）・高域 **+9.8%（5/5・p = 0.0001）**・長さ +0.06 秒（5/5）。
    ⛔ **だが段にならない**：none 0.403 → slight 0.375 → moderate 0.385 → heavy 0.411 で、
    **heavy は none より高い**（4/5）。heavy は f0 **+16.9 Hz**（5/5・p < 0.001。0.7 では
    +1.7 Hz）。⚠️ **「0.3 では効かない」は seed 3 本だったせい**——5 本で出た。
    効きかたは beta で違う（0.7 は単調・0.3 は非単調）。**段として使えるのは 0.7。**
-   ✅ **聞き比べの見本を足した**（`delivery-speed-demo/`・`examples/longform-delivery-speed/`・
+   ✅ **聞き比べの見本を足した**（`experiments/demos/delivery-speed-demo/`・`examples/longform/delivery-speed/`・
    53.5 秒・−16.39 LUFS）。速さ natural / very_fast × gentle / aggressive / flat を seed 4 で並べる。
    natural は aggressive +11.3 Hz・flat −25.1 Hz、very_fast は aggressive −2.0・flat −18.1。
    ⚠️ seed 4 は flat の差が端で縮む側（平均は広がる）。**見本 1 本は平均の代理でない。**
    ⚠️ seed 1 の見本（平らより冷たくが良く出る）は**音量の門に未達**（−17.36/−17.45 LUFS）で
    採らなかった。seed 4 だけが −16.39 で通った——**seed で 1 LU 動く。**
-   ✅ **感情の見本も足した**（`emotion-demo/`・`examples/longform-emotions/`・75.4 秒・
+   ✅ **感情の見本も足した**（`experiments/demos/emotion-demo/`・`examples/longform/emotions/`・75.4 秒・
    −15.64 LUFS・TP −1.01）。語り手の札＋11 語を seed 4 で並べる（fear 341.4 / joy 343.4 /
    neutral 313.0 Hz）。**並びは 5 seed の平均の順で、seed 4 では 3 組が入れ替わる**
    （sadness↔guilt・anxiety↔confidence・joy↔fear。差 2〜4 Hz）。
-   ✅ **pitch の見本も足した**（`pitch-demo/`・`examples/longform-pitch/`・47.2 秒・
+   ✅ **pitch の見本も足した**（`experiments/demos/pitch-demo/`・`examples/longform/pitch/`・47.2 秒・
    −16.43 LUFS・TP −1.01）。seed 4 の 1 本は very_low 327.8 / low 329.7 / slightly_low 335.5 /
    natural 343.4 / slightly_high 337.5 / **high 343.4 Hz**——**`high` と `natural` が同値**。
-   この 6 本は `acting-pitch-ladder/` の seed 4 の 6 本と**同じ値**（別プロセス・別の置き場）。
-   ✅ **subtext はどこまで届くかを測った**（`acting-subtext/`・4 段・95 本）。
+   この 6 本は `experiments/pitch/acting-pitch-ladder/` の seed 4 の 6 本と**同じ値**（別プロセス・別の置き場）。
+   ✅ **subtext はどこまで届くかを測った**（`experiments/subtext/acting-subtext/`・4 段・95 本）。
    ① `--resolve rule` の 25 本（5 通り × seed 5）は **seed 1・2・4・5 が 5 本とも md5 一致**
    ——rule は `subtext` を Spec へ写すが `_spec_prompt` が読まない。② `--resolve llm` は
    5 通りを 5 通りの散文へ変える（`intonation` と `intensity` が動く。`pauses`・`emphasis`・
@@ -540,135 +534,135 @@ projects/longform/
    の境**で 2 群（−9.1〜−12.3 Hz・6 組すべて 5/5）。④ 1 欄ずつ振ると **`intonation`
    +1.0 Hz・2/5（3 本は差 0.0）／`intensity` +6.9 Hz・5/5**。
    **抑揚語は散文を変えても声を変えない。**
-   ✅ **耳で確かめる見本を足した**（`subtext-demo/`・`examples/longform-subtext/`・
+   ✅ **耳で確かめる見本を足した**（`experiments/demos/subtext-demo/`・`examples/longform/subtext/`・
    42.2 秒・−15.62 LUFS・TP −1.01）。語り手が裏の意味を読み、真白が seed 4 で 5 回。
    **5 本は md5 まで同じ**（`f17a1f6` ×5）——**同じ音が五回**鳴る。
-   ✅ **表に無い自由文も効かない**（`acting-freetext/`・25 本）：同じ Spec の散文に
+   ✅ **表に無い自由文も効かない**（`experiments/basics/acting-freetext/`・25 本）：同じ Spec の散文に
    「涙をこらえている」「怒っているが隠している」「笑いながら」「返事が怖い」を
    1 文ずつ足した。f0 の差は最大 **+2.1 Hz（5/5）**、seed の散らばり 91.3 Hz の 2%。
    揃った動きは「返事が怖い」の語尾 +2.7 半音（4/5）だけ。
    **上限は表ではなくモデルの側**——語彙を足しても演技は増えない。
-   ✅ **間も作れない**（`acting-pauses/`・15 本）：台詞の読点を 2 個にしても長さは
+   ✅ **間も作れない**（`experiments/delivery/acting-pauses/`・15 本）：台詞の読点を 2 個にしても長さは
    **+0.005 秒（2/5）**、3 個では **−0.195 秒（0/5）でむしろ縮む**。
    `prosody.pauses` は散文に入らないので、**間は台本の `pause_before` と組み立て**で作る。
-   ✅ **書いた間は、そのまま焼ける**（`pause-check/`・6 本）：`pause_before` 0.0 / 0.3 /
+   ✅ **書いた間は、そのまま焼ける**（`experiments/delivery/pause-check/`・6 本）：`pause_before` 0.0 / 0.3 /
    0.6 / 1.0 / 1.5 を焼いて −50 dBFS で測ると、無音は **0.08 / 0.38 / 0.68 / 1.08 /
    1.58 秒**——**5 段とも差は +0.08 秒で一定**（`assemble.py` の切り残し 頭 0.02・
    尾 0.06）。行の中の読点のあとには 0.30 秒の間があるが、これはモデルの読みで
    `pause_before` に依らない。
-   ✅ **字面で動くのは文末の記号だけ**（`acting-punctuation/`・20 本）：同じ 1 行の最後を
+   ✅ **字面で動くのは文末の記号だけ**（`experiments/punctuation/acting-punctuation/`・20 本）：同じ 1 行の最後を
    `。` / `？` / `！` / なしに替える。f0 中央値は `？` **+16.3 Hz**・`！` **+39.3 Hz**
    （どちらも 5/5・1 本ごとの f0 中央値を 5 本で平均した値）、記号なしは語尾 +4.5 →
-   **−21.5 半音/秒**（0/5）。長さは 0.16〜0.18 秒**縮む**。見本＝`punctuation-demo/`（46.0 秒・−16.27 LUFS・TP −1.31）。
-   ✅ **感情とは足し算になる**（`acting-punctuation-stack/`・2 × 2 × seed 5）：`！` の
+   **−21.5 半音/秒**（0/5）。長さは 0.16〜0.18 秒**縮む**。見本＝`experiments/demos/punctuation-demo/`（46.0 秒・−16.27 LUFS・TP −1.31）。
+   ✅ **感情とは足し算になる**（`experiments/punctuation/acting-punctuation-stack/`・2 × 2 × seed 5）：`！` の
    効きは neutral で +39.5・joy で +40.3 Hz、感情の効きは `。` で +16.6・`！` で
    +17.4 Hz（すべて 5/5）。**強い欄どうしが足し算にならなかった速さ × pitch とは違う。**
-   ✅ **`pitch` と掛けても消えない**（`acting-punctuation-pitch/`・neutral 30 本＋
+   ✅ **`pitch` と掛けても消えない**（`experiments/punctuation/acting-punctuation-pitch/`・neutral 30 本＋
    joy 15 本）：記号の効きは very_low +38.8・natural +42.2・high +47.4 Hz（15/15）。
    `pitch` の側は neutral で very_low −13.5（1/5）・high +9.0（5/5）だが、**joy では
    high +0.2（1/5）**——欄の効きは感情が埋めているぶんだけ減る。
-   ✅ **見本**（`punctuation-pitch-demo/`・`examples/longform-punctuation-pitch/`・
+   ✅ **見本**（`experiments/demos/punctuation-pitch-demo/`・`examples/longform/punctuation-pitch/`・
    38.5 秒・−16.95 LUFS・TP −1.07）。1 本ずつなので very_low +22.3・high +38.4 Hz で、
    joy の natural と high は**同じ音**（どちらも 351.4 Hz・2.85 秒）。
-   ✅ **`！` は床で消え、`？` は残る**（`acting-punctuation-floor/`・80 本）：
+   ✅ **`！` は床で消え、`？` は残る**（`experiments/punctuation/acting-punctuation-floor/`・80 本）：
    同じ台本を `beta` 0.0 / 0.3 / 0.5 / 0.7 で焼き直すと、`！`（対 `。`）は
    **−1.2（2/5）・+20.3（5/5）・+19.9（5/5）・+42.2（5/5）**。`？` は **+13.1（5/5）**・
    +10.7・+2.6（seed 3 が −22.1）・+21.0。音素列は末尾の記号だけが違うので、
    **`！` は演技の層が作り、`？` は地の読みが作っている**。床の「なし」は +19.1 Hz
    だが行が 1.57 秒（`。` は 2.25 秒）で長さと交絡。
-   ✅ **見本**（`floor-mark-demo/`・`examples/longform-floor-mark/`・33.3 秒・
+   ✅ **見本**（`experiments/demos/floor-mark-demo/`・`examples/longform/floor-mark/`・33.3 秒・
    −16.01 LUFS・TP −1.01）。`beta` 0.7 で 326.0 → 359.6 Hz、床では `。` と `！` が
    **どちらも 249.9 Hz**、`？` だけ 264.8 Hz。
-   ✅ **場面の単位でも効く**（`scripting-demo/`・`examples/longform-scripting/`・
+   ✅ **場面の単位でも効く**（`experiments/demos/scripting-demo/`・`examples/longform/scripting/`・
    34.8 秒・−16.01 LUFS・TP −1.11）：言葉は同じで記号だけ替えると、真白の 1 行目が
    274.1 → 327.8 Hz・ニジが 269.4 → 301.5 Hz。変えていない行は同じ音（319.4 Hz）。
-   ✅ **行 3 つ・声 2 つでも同じ向き**（`acting-floor-mark-lines/`・72 本）：0.7 で
+   ✅ **行 3 つ・声 2 つでも同じ向き**（`experiments/punctuation/acting-floor-mark-lines/`・72 本）：0.7 で
    +39.0〜+95.4 Hz（6/6・3/3）、床では **+7.2 Hz 以下**（`今、行くよ` だけ +6.0 / +7.2 の
    3/3・`そこにいて` は −1.2 / −1.6・0/3）。⚠️ 1 行あたり seed 3 本。
    ✅ **記号は声の器を動かさない**（`measure_envelope.py`・0.7 の 20 本）：`。` と
    `！` の包絡の距離は **1.19 dB（中央）**で、同じ `。` の seed 差 0.93〜1.61（中央
    1.32）の中。f0 は +42.2 Hz 動くのに器は動かない。
-   ✅ **速さと掛けても消えない**（`acting-punctuation-speed/`・30 本）：very_slow +30.4・
+   ✅ **速さと掛けても消えない**（`experiments/punctuation/acting-punctuation-speed/`・30 本）：very_slow +30.4・
    natural +42.2・very_fast +57.1 Hz（15/15）。**速さは長さを 4.20 → 2.36 秒動かすが、
    f0 は −3.9〜+4.9 Hz だけ**——記号は高さ、速さは長さのノブ。
-   ✅ **声を替えても残る**（`acting-speed-voices/`・36 本＝2 声 × 3 段 × 2 記号 × seed 3）：
+   ✅ **声を替えても残る**（`experiments/delivery/acting-speed-voices/`・36 本＝2 声 × 3 段 × 2 記号 × seed 3）：
    ニジでも +34.9〜+40.7 Hz（2 声で 18/18）。速さ自身の f0 への効きは −5.4〜+8.2 Hz。
    **長さは声に依らない**（3.90/2.79/2.14 対 3.94/2.75/2.13 秒）——速さは行の読み方で、
    声の個性ではない。
-   ✅ **どの感情の上でも同じだけ足せる**（`acting-mark-emotion5/`・36 本＝6 感情 × 2 記号 ×
+   ✅ **どの感情の上でも同じだけ足せる**（`experiments/punctuation/acting-mark-emotion5/`・36 本＝6 感情 × 2 記号 ×
    seed 3）：`！`−`。` は joy +40.7・anger +40.1・fear +39.7・anxiety +40.7・
    sadness +35.1（18/18）。**sadness + `！`（337.7 Hz）は neutral + `！`（338.0）と同じ
    高さ**で、`。` のままの sadness（302.5）より 35 Hz 高い。`！` にすると長さは
    0.13〜0.18 秒縮む（感情の幅 2.84〜3.06 秒のほうが広い）。
-   ✅ **見本**（`mark-emotion-demo/`・`examples/longform-mark-emotion/`・50.2 秒・
+   ✅ **見本**（`experiments/demos/mark-emotion-demo/`・`examples/longform/mark-emotion/`・50.2 秒・
    −16.97 LUFS・TP −1.26）：neutral `！` と sadness `！` が同じ 313.0 Hz
    （`。` の sadness は 283.8・記号だけで +29.2）。joy +35.1・anger +36.4・fear +33.5。
-   ✅ **作品の台詞でも効く**（`acting-drama-mark/`・54 本＝`intensity: strong` の
+   ✅ **作品の台詞でも効く**（`experiments/punctuation/acting-drama-mark/`・54 本＝`intensity: strong` の
    9 行すべて × 記号 2 × seed 3）：欄を 1 つも変えず文末だけ `！` にすると **27/27 で正**。
    **ひとことの行がいちばん大きい**（s65「ニジ」+120.2・s63 +59.5・s61 +59.4）—
    **いちばん小さいのは長い行**（s31 +15.5）。⚠️ ただし**句点の数では説明できない**
    （同じ 2 句点の s30 は +52.9）。⚠️ seed 3 本では幅が広い（s63 は +2.5〜+88.6）。
-   ✅ **強度が弱い行でも効く**（`acting-drama-mark-weak/`・120 本＝`subtle`／`moderate` の
+   ✅ **強度が弱い行でも効く**（`experiments/punctuation/acting-drama-mark-weak/`・120 本＝`subtle`／`moderate` の
    12 行 × 記号 2 × seed 5）：**12 行すべての平均が正**・11 行は 5/5。`subtle` 6 行の
    平均 **+96.4**・`moderate` 6 行 **+70.1**——**強い 9 行の平均 +55.0 より小さいとは
    言えない**（別の行どうし）。大きさは長さの側で動く（8 文字以下 6 行 +92〜+137・
    15 文字以上 3 行 +30〜+57）。⚠️ seed 2 本では s32 が −0.6 と符号を割った——
    5 本では +54.1・4/5。**2 本で符号を読まない。**
-   ✅ **場面まるごとでも効く**（`drama-scene-mark/`・26 本＝終わりの場面 s60〜s72 を
+   ✅ **場面まるごとでも効く**（`experiments/scene/drama-scene-mark/`・26 本＝終わりの場面 s60〜s72 を
    台本のまま／文末だけ `！`）：測れた 11 行がすべて上がる（+2.5〜+130.8・平均 +48.1）。
    **もとから `！` の s67（453.1 Hz）だけは動かない**——記号は「まだ無い行」に足すもの。
-   ⚠️ **全部に置くと山場が消える**（`drama-scene-mark-seed/`・130 本＝13 行 × 記号 2 ×
+   ⚠️ **全部に置くと山場が消える**（`experiments/scene/drama-scene-mark-seed/`・130 本＝13 行 × 記号 2 ×
    seed 5）：s67 は**書いたままは 5 seed すべて 1 位**、全部 `！` のあとは **5 本中 4 本で
    ほかの行に抜かれる**（2 位・2 位・8 位・10 位）。12 行の差の平均は **+63.9**
    （11 行は 5 seed すべて正・s70 は 4/5）。
-   ✅ **置く行を選べば戻る**（`drama-scene-mark-selective/`・130 本＝`strong` の 3 行だけに
+   ✅ **置く行を選べば戻る**（`experiments/scene/drama-scene-mark-selective/`・130 本＝`strong` の 3 行だけに
    `！`）：動くのは置いた 3 行だけ（+47.5・+50.8・+89.1・ほかの 10 行は 1 seed ずつ見ても
    同値）。s67 と次点の差の平均は **0 行 68.0 → 3 行 1.0 → 12 行 −43.3 Hz**。
    **`！` は「強くする」道具でなく「差をつける」道具**。
-   ✅ **解説の語りでも効く**（`acting-explainer-mark/`・60 本＝作品の 6 行 × 記号 2 × seed 5・
+   ✅ **解説の語りでも効く**（`experiments/punctuation/acting-explainer-mark/`・60 本＝作品の 6 行 × 記号 2 × seed 5・
    15〜38 文字・すべて `calm`）：+21.5〜+49.1・平均 **+32.4**・**30/30 正**。長さとの関係は
    ここでは見えない（声も行の形も芝居と違う）。
-   ✅ **途中の `？` も効く**（`acting-punctuation-mid-question/`・20 本＝4 通り × seed 5）：
+   ✅ **途中の `？` も効く**（`experiments/punctuation/acting-punctuation-mid-question/`・20 本＝4 通り × seed 5）：
    文末 +12.1・途中 +11.9・両方 +24.9（すべて 5/5）——**`！` の 1/3**で、形は同じ。
    途中の `？` は行を 0.27 秒伸ばす（`！` は 0.11）。
-   ✅ **途中の `！` も効く**（`acting-punctuation-mid-exclaim/`・25 本＝5 通り × seed 5・
+   ✅ **途中の `！` も効く**（`experiments/punctuation/acting-punctuation-mid-exclaim/`・25 本＝5 通り × seed 5・
    y06 の 18 文字）：途中 +23.1（5/5）・文末 +36.8（5/5）・**両方 +61.1**（ほぼ足し算）。
    途中の `。` は −3.6（1/5）——**向きは記号が決め、位置は大きさを決める**。
-   ✅ **見本**（`mid-mark-demo/`・`examples/longform-mid-mark/`・37.3 秒・seed 3）：
+   ✅ **見本**（`experiments/demos/mid-mark-demo/`・`examples/longform/mid-mark/`・37.3 秒・seed 3）：
    1 行を 5 通りで並べた（台本のまま 318.5 → 文末 368.0 → 途中 355.5 → 途中 `。` 318.5 →
    両方 396.7）。**合格**（−16.20 LUFS・TP −1.05・LRA 2.70・`--gain -0.35`）。
-   ✅ **山は動かせる**（`drama-scene-mark-relocate/`・195 本＝13 行 × 3 通り × seed 5）：
+   ✅ **山は動かせる**（`experiments/scene/drama-scene-mark-relocate/`・195 本＝13 行 × 3 通り × seed 5）：
    s68 に足すだけは 1 位 4/5、s67 の `！` を `。` に戻すと 5/5 で入れ替わる（s68 と次点の差
    −103.7 → +21.2 → +88.1 Hz・s67 は 391.0 → 288.0 Hz）。**記号は総量でなく配置。**
    ⚠️ seed は 1 本（行ごとの向きは上の 2 つで確かめてある）。
-   ✅ **見本**（`drama-scene-mark-choice/`・`examples/longform-drama-scene-choice/`・
+   ✅ **見本**（`experiments/scene/drama-scene-mark-choice/`・`examples/longform/drama-scene-choice/`・
    173.2 秒・seed 3）：台本のまま／強い 3 行／全部を並べた。山の行と次点の差は
    **+127.1 → +23.0 → −10.6 Hz**（全部では s68 が s67 を追い越す）。⚠️ 音量は**未達**
    （−20.76 LUFS・TP −1.00・LRA 11.70・`--gain -0.40`）。
-   ✅ **狙う行を替えても同じ**（`drama-scene-mark-relocate2/`・390 本＝狙い 2 行 × 3 通り ×
+   ✅ **狙う行を替えても同じ**（`experiments/scene/drama-scene-mark-relocate2/`・390 本＝狙い 2 行 × 3 通り ×
    13 行 × seed 5）：`move` は s60・s66 とも **5/5** で 1 位（次点との差 +47.0・+38.6）、
    足すだけは 2/5・1/5。**山を移すのは「もとの山を下げる」ほうが効く。**
-   ✅ **見本・山を移す**（`drama-relocate-demo/`・`examples/longform-drama-relocate/`・
+   ✅ **見本・山を移す**（`experiments/demos/drama-relocate-demo/`・`examples/longform/drama-relocate/`・
    178.0 秒・seed 3）：足すだけでは s67 453.1・s68 463.7 の 2 つの山、s67 を戻すと
    **s67 252.8・s68 463.7** でひとつ。⚠️ 音量は**未達**（−21.04・TP −1.31・LRA 11.70・
    `--gain -0.70`）。
-   ✅ **見本**（`examples/longform-drama-scene-mark/`・103.7 秒・−21.47 LUFS・
+   ✅ **見本**（`examples/longform/drama-scene-mark/`・103.7 秒・−21.47 LUFS・
    LRA 12.40・**未達（音量・幅）**・声だけで長い間を含むため 4 dB 以上静か・圧縮なし）。
-   ✅ **見本**（`weak-mark-demo/`・`examples/longform-weak-mark/`・44.9 秒・seed 3）：
+   ✅ **見本**（`experiments/demos/weak-mark-demo/`・`examples/longform/weak-mark/`・44.9 秒・seed 3）：
    弱い 3 行だけで組んだ。「それだけ」305.9 → 462.3（+156.4）・「平気じゃないよ」
    311.2 → 437.6（+126.4）・20 文字の長い行 307.7 → 349.4（+41.7）。
    ⚠️ 音量は**未達**（−17.54 LUFS・TP −1.04・`--gain -0.35`）。
-   ✅ **見本**（`drama-mark-demo/`・`examples/longform-drama-mark/`・40.6 秒）：
+   ✅ **見本**（`experiments/demos/drama-mark-demo/`・`examples/longform/drama-mark/`・40.6 秒）：
    0:30.4 → 0:33.4 が 277.3 → 365.9 Hz（s63）・0:17.0 → 0:21.8 は +3.4（s31・この seed は
    3 本の最小）。⚠️ 音量は**未達**（−17.89 LUFS・TP −1.06・`--gain -0.35`）。
-   ✅ **見本**（`speed-demo/`・`examples/longform-speed/`・45.7 秒・−16.96 LUFS・TP −1.20）：
+   ✅ **見本**（`experiments/demos/speed-demo/`・`examples/longform/speed/`・45.7 秒・−16.96 LUFS・TP −1.20）：
    very_slow 4.15 → very_fast 2.27 秒で f0 は 275.7 → 283.8 Hz（8.1 Hz）。`。`→`！` は
    280.5 → 313.0（+32.5）・very_fast でも 283.8 → 324.1（+40.3）・ニジ 295.5 → 336.5（+41.0）。
    ⚠️ `--gain -0.60` では −17.06 LUFS で目安の外へ出たので、`--gain -0.50` で書いた。
    ✅ **別の人物・別の行でも同じ向き**（ニジ「今、行くよ」・10 本）：`！` で +78.8 Hz
    （5/5・+47.0〜+152.3）。語り手でも +58.1 Hz（5/5）。大きさは行と声で変わる。
    **beta 0.3 では +25.4 Hz（5/5）**。
-   ✅ **幅は行の形で縮む**（`acting-punctuation-long/`・`acting-punctuation-mid/`）：
+   ✅ **幅は行の形で縮む**（`experiments/punctuation/acting-punctuation-long/`・`experiments/punctuation/acting-punctuation-mid/`）：
    同じ声・同じ Spec で `！` の効きは 9 文字 +39.3・14 文字 +43.2・24 文字 +15.0 Hz
    （すべて 5/5・対 `。`）。24 文字のものは `？` も **+5.6 Hz**（5/5）。有声の前半も
    上がる（`？` +14.5・`！` +13.7 Hz・5/5）。**途中の句点を 1 つ入れると落ちる**——
@@ -677,37 +671,37 @@ projects/longform/
    （+14.6・+15.0）、句点のない行は長さで縮む（+39.3・+43.2・+26.4）**——
    切れ目が先で、長さは後。**記号を重ねても足し算にならない**（`？！` は平均 +15.9
    で `！` 単独 +15.0 とほぼ同じ）。この行では語尾の傾きが割れる（`？！` 3/5・`！` 4/5）。
-   ✅ **`…` は間を作らない**（`acting-punctuation-ellipsis/`・`-mid/`・19 本）：
+   ✅ **`…` は間を作らない**（`experiments/punctuation/acting-punctuation-ellipsis/`・`-mid/`・19 本）：
    文末を `…` にした 5 本は `なし` と同じ値で、seed 4・5 は **md5 まで一致**
    （seed 1〜3 の差も RMS −68〜−75 dBFS）。途中の `…` は `、` に置き換わり
    （同じ字面を省略記号なしで焼くと 3/5 が md5 一致・残り 2 本は −73〜−76 dBFS）、
    `明日、……また来るね` は **2.918 → 2.073 秒（0/5）・無音率 0.315 → 0.195** と
    **行が短くなる**。後ろの節は読まれている（1.2 秒以降にも −13〜−17 dB の声）。
    **言いよどみはこの字では作れない**——間は `pause_before`、語尾は `。` を外して作る。
-   ✅ **見本**（`ellipsis-demo/`・`examples/longform-ellipsis/`・33.6 秒・−16.00 LUFS・
+   ✅ **見本**（`experiments/demos/ellipsis-demo/`・`examples/longform/ellipsis/`・33.6 秒・−16.00 LUFS・
    TP −1.08）。文末 `…` と `なし` の 2 本は同じ台詞・同じ seed（md5 は一致せず、差は
    RMS −67.7 dBFS）、途中の `…` の 1 本だけ 1.95 vs 2.50 秒。
-   ✅ **見本を足した**（`punctuation-shape-demo/`・`examples/longform-punctuation-shape/`・
+   ✅ **見本を足した**（`experiments/demos/punctuation-shape-demo/`・`examples/longform/punctuation-shape/`・
    59.6 秒・−16.27 LUFS・TP −1.00）。同じ `！` で終わる 4 種の行を seed 1・3 で並べる。
    ⚠️ **既存の 2 作品はこのノブをほぼ使っていない**（演劇 89 行中 88 行・解説 48 行
    すべてが「。」で終わる・「！」は 1 行）。
-   ✅ **表記は音を変えない**（`acting-notation/`・20 本）：`また`/`マタ`/`又` は
+   ✅ **表記は音を変えない**（`experiments/punctuation/acting-notation/`・20 本）：`また`/`マタ`/`又` は
    seed 1〜3 で md5 まで一致。**読点 1 個は f0 −17.0 Hz（4/5）・長さ +0.03 秒**
    ——読点も間ではなく高さの印（文末の記号とは逆の向き）。
    ⚠️ 見本は script から組むので強度 0.5（実験は 0.4）。値は違うが向きは同じ。
-   ✅ **seed の見本を足した**（`seed-demo/`・`examples/longform-seed/`・42.1 秒・
+   ✅ **seed の見本を足した**（`experiments/demos/seed-demo/`・`examples/longform/seed/`・42.1 秒・
    −16.34 LUFS・TP −1.03）。同じ指示で seed 1〜5：f0 351.4 / 302.4 / 314.9 / 343.4 /
    258.7 Hz（**92.7 Hz**）・長さ 2.75〜3.37 秒。**欄を 1 つ振った差より大きい**ことを
-   耳で確かめるため。seed 4 は 343.4 Hz で `pitch-demo/` の natural seed 4 と同値。
+   耳で確かめるため。seed 4 は 343.4 Hz で `experiments/demos/pitch-demo/` の natural seed 4 と同値。
    ⛔ **欄の数と段の数は対応しない**：speed 5→5・pitch 6→2（high だけ +19 Hz）・
    delivery 12→3・intensity 5→2・intonation 5→ほぼ 0・volume 5→0（shout だけ
    f0・長さが動く）・breathiness 4→2。
-   ✅ **聞き比べの見本を足した**（`knob-demo/`・`examples/longform-knobs/`・69 秒・
-   語り手の札つき）。速さ 5 語＋演技の型 3 語。既存の `intensity-demo/`（63 秒）と対。
-   ✅ **積み上げの見本も足した**（`stack-demo/`・`examples/longform-stack-demo/`・45.1 秒・
+   ✅ **聞き比べの見本を足した**（`experiments/demos/knob-demo/`・`examples/longform/knobs/`・69 秒・
+   語り手の札つき）。速さ 5 語＋演技の型 3 語。既存の `experiments/demos/intensity-demo/`（63 秒）と対。
+   ✅ **積み上げの見本も足した**（`experiments/demos/stack-demo/`・`examples/longform/stack-demo/`・45.1 秒・
    17 本）。速さ（natural / very_slow / very_fast）× 型（gentle / aggressive）の 6 通り。
    mp3 は −16.98 LUFS・TP −1.04 dBTP（合格）。
-   ✅ **長い台詞では、跳ねる先が変わる**（`acting-longline/`・芝居の 1 行 24 文字 × 4 段 ×
+   ✅ **長い台詞では、跳ねる先が変わる**（`experiments/delivery/acting-longline/`・芝居の 1 行 24 文字 × 4 段 ×
    3 感情 × seed 5・60 本）。moderate → strong で**抑揚の幅が +0.60/+0.78/+0.84 半音**
    （3 感情とも 5/5・p ≤ 0.01）だが、**中央値が動くのは sadness だけ**（+13.2 Hz・5/5）。
    joy +0.7・anger +4.0 は n.s.。上端は同じ（sadness: 高さ −5.2・抑揚 −0.50 半音・0/5）。
@@ -730,7 +724,7 @@ projects/longform/
   `prosody.breathiness` が無い）。解説 `m03`/`m04`/`n16`・演劇 `s37`/`s43`/`s61`/`s69`/
   `s70`/`s71`/`s72` で、**このうち 9 本は作り直すと音が変わった**（`s61` は測れる変化なし）。`--force` で 137 本を作り直し、組み直し・焼き直しを
   済ませた。**尺は 311.2 → 311.4 s／310.5 → 310.6 s。門は両方そのまま通過。**
-  いちばん大きく動いたのは `s70`（**f0 329.7 → 242.1 Hz**・`acting-breath-s70/`）。
+  いちばん大きく動いたのは `s70`（**f0 329.7 → 242.1 Hz**・`experiments/delivery/acting-breath-s70/`）。
 - 語り手は参照音声 `female_mature_p294`（経路A）。真白は `mashiro`、ニジは `niji`。
 - **1 プロセスで 33 本 → モデルのロードは 1 回、1 本 1.0〜1.6 秒**（`build_voice.py`）。
   1 本ずつ CLI を起こすと毎回 ~1 分のロードが付く。長尺は必ずこの形で作る。
@@ -742,7 +736,7 @@ projects/longform/
   `×32767` が要る。一度これで無音の render を作った。
 - **声量の指示はレベルに出ない**：解説の n05（normal）RMS −17.7 dB / n06（quiet）−17.8 dB、
   実例 m02（loud）−16.4 / m03（quiet）−15.3。全部 peak 0.95。差はミックスの `gain_db` だけで作る。
-- **二人の声は分けられない**：3 台詞 × 2 人物 × seed 3（`timbre-two-characters/`・
+- **二人の声は分けられない**：3 台詞 × 2 人物 × seed 3（`experiments/voice/timbre-two-characters/`・
   beta 0.7）の有声フレーム距離 — 同一人物（seed 違い）16.4、別人（同じ台詞・同じ seed）
   13.8。seed の揺れのほうが大きい。よってニジだけ `voice_fx.yaml` で電話の帯域
   （320–3400 Hz, +3 dB）に通した。包絡の距離は 1.95 → 9.60 dB（真白の参照まで）。

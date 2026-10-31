@@ -25,7 +25,7 @@ METRICS = [("f0_median_hz", "f0 Hz"), ("f0_range_st", "抑揚 st"),
 
 
 def load(beta: str) -> dict[str, dict[str, dict]]:
-    path = os.path.join(LONGFORM, f"acting-beta-{beta}", "beta.tsv")
+    path = os.path.join(LONGFORM, f"experiments/basics/acting-beta-{beta}", "beta.tsv")
     with open(path, encoding="utf-8") as f:
         rows = list(csv.DictReader(f, delimiter="\t"))
     data: dict[str, dict[str, dict]] = defaultdict(dict)
@@ -80,7 +80,7 @@ def main() -> None:
 
     # --- 0.3 より下（beta-low・seed 3 本）----------------------------------
     import re
-    path = os.path.join(LONGFORM, "acting-beta-low", "low.tsv")
+    path = os.path.join(LONGFORM, "experiments/basics/acting-beta-low", "low.tsv")
     if not os.path.exists(path):
         return
     with open(path, encoding="utf-8") as f:

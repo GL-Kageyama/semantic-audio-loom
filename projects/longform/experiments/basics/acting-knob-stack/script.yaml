@@ -1,0 +1,30 @@
+# 速さと演技の型は、足し合わさるか（2 × 2 × seed 5）
+#
+# speed は 5 段・delivery は 3 段。だが 2 つの欄を同時に振ったとき、
+# 片方の効きがもう片方の側で変わらないかは測っていない。
+# 同じ行・joy・moderate・breathiness none・seed 1〜5 で 4 通り。
+#
+# ビルド: PYTHONPATH=. <venv> projects/longform/explainer/build_voice.py --dir projects/longform/experiments/basics/acting-knob-stack
+name: acting-knob-stack
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: gentle, breathiness: none, seed: 1, beta: 0.7, name: ks-very_slow-gentle-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: gentle, breathiness: none, seed: 2, beta: 0.7, name: ks-very_slow-gentle-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: gentle, breathiness: none, seed: 3, beta: 0.7, name: ks-very_slow-gentle-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: gentle, breathiness: none, seed: 4, beta: 0.7, name: ks-very_slow-gentle-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: gentle, breathiness: none, seed: 5, beta: 0.7, name: ks-very_slow-gentle-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: aggressive, breathiness: none, seed: 1, beta: 0.7, name: ks-very_slow-aggressive-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: aggressive, breathiness: none, seed: 2, beta: 0.7, name: ks-very_slow-aggressive-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: aggressive, breathiness: none, seed: 3, beta: 0.7, name: ks-very_slow-aggressive-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: aggressive, breathiness: none, seed: 4, beta: 0.7, name: ks-very_slow-aggressive-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: aggressive, breathiness: none, seed: 5, beta: 0.7, name: ks-very_slow-aggressive-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: gentle, breathiness: none, seed: 1, beta: 0.7, name: ks-very_fast-gentle-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: gentle, breathiness: none, seed: 2, beta: 0.7, name: ks-very_fast-gentle-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: gentle, breathiness: none, seed: 3, beta: 0.7, name: ks-very_fast-gentle-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: gentle, breathiness: none, seed: 4, beta: 0.7, name: ks-very_fast-gentle-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: gentle, breathiness: none, seed: 5, beta: 0.7, name: ks-very_fast-gentle-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: aggressive, breathiness: none, seed: 1, beta: 0.7, name: ks-very_fast-aggressive-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: aggressive, breathiness: none, seed: 2, beta: 0.7, name: ks-very_fast-aggressive-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: aggressive, breathiness: none, seed: 3, beta: 0.7, name: ks-very_fast-aggressive-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: aggressive, breathiness: none, seed: 4, beta: 0.7, name: ks-very_fast-aggressive-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: aggressive, breathiness: none, seed: 5, beta: 0.7, name: ks-very_fast-aggressive-s5}

@@ -25,12 +25,12 @@ f0 実測（同一台詞・同一 Direction・State のみ変更）：
 
 ⚠️ この 40 Hz は **intonation の語の効きではない**。同じ 2 語を State まで固定して
 振ると差は 4.4 Hz（291.4 対 287.0）で、語尾の傾きも名前どおりにならない
-（`projects/longform/acting-inton-070/`）。**動いていたのは state の側**である。
+（`projects/longform/experiments/pitch/acting-inton-070/`）。**動いていたのは state の側**である。
 
 ## どこまで声に届くか（実測）
 
 同じ 1 行で subtext だけを 5 通りに振った
-（`projects/longform/acting-subtext/`）。結論は 3 つ。
+（`projects/longform/experiments/subtext/acting-subtext/`）。結論は 3 つ。
 
 1. **`--resolve rule` では 1 Hz も動かない。** rule は `subtext` を Spec へ写すが、
    Provider の散文を作る `_spec_prompt` はその欄を読まない。同じ Spec なら音も同じ
@@ -44,7 +44,7 @@ f0 実測（同一台詞・同一 Direction・State のみ変更）：
    **+6.9 Hz（両設定とも 5/5）**。語尾の傾き（`f0_end_st_s`）にも揃った効果は出ない。
    ⚠️ この +6.9 Hz は、**真ん中の帯（0.41〜0.70）が空だったとき**の値。いまは真ん中にも
    文言があるので、同じ 2 値の差は測り直しになる（段の幅は
-   [`projects/longform/acting-intensity-steps-new/`](../projects/longform/acting-intensity-steps-new/)）。
+   [`projects/longform/experiments/intensity/acting-intensity-steps-new/`](../projects/longform/experiments/intensity/acting-intensity-steps-new)）。
 
 → **subtext → 抑揚語 の変換までは正しく、その先（抑揚語 → 声）がこのモデルでは効かない。**
 subtext が声に届くのは、LLM が強度の段を動かしたときだけである。
@@ -73,8 +73,8 @@ Direction の欄は語の数が欄ごとに違うが、**声に届く段の数�
 | 欄 | 語 | 声に届く段 | 何が動くか |
 | --- | --- | --- | --- |
 | `speed` | 5 | **5**（単調・1.74〜1.80 倍・3 感情とも） | 長さ（両端で高さも +15 Hz） |
-| `emotion` | 11 | 効く（neutral より +4〜+26 Hz。**隣どうしは同じ声**） | 高さ・長さ・抑揚（`acting-emotion-ladder/`） |
-| `pitch` | 6 | 2〜3（**下だけ**。very_low・low が同じ段） | 高さ（上がる語は無い・`acting-pitch-ladder/`） |
+| `emotion` | 11 | 効く（neutral より +4〜+26 Hz。**隣どうしは同じ声**） | 高さ・長さ・抑揚（`experiments/basics/acting-emotion-ladder/`） |
+| `pitch` | 6 | 2〜3（**下だけ**。very_low・low が同じ段） | 高さ（上がる語は無い・`experiments/pitch/acting-pitch-ladder/`） |
 | `intensity` | 5 | 2（`subtle`＝`moderate`、`strong` で跳ねる） | 高さ・長さ |
 | `delivery` | 12 | 3（`flat`・`cold` が下、`aggressive`・`desperate` が上、残り 8 語は同じ） | 高さ・長さ |
 | `intonation` | 5 | ほぼ 0（語の幅 7.7 Hz 対 seed の幅 74〜87 Hz） | 語尾の傾きもラベルに従わない |
@@ -86,19 +86,19 @@ Direction の欄は語の数が欄ごとに違うが、**声に届く段の数�
   5/5 単調。**高さも短い行の両端で +15 Hz 開く**（306.0 → 320.8 Hz・seed 4/5。
   長い行では動かない）。
 - **2 つの欄を同時に振ると、上へ動かす型だけが埋まる。** `speed` を端まで振ると
-  `aggressive` の +6.7 Hz が 0 になる（`acting-knob-stack/`）。**下へ動く `cold` / `flat`
-  は端でも残り**（−9〜−11 / −17〜−21 Hz・`acting-knob-stack-cold/`）、`pitch` を振ると
-  半分残る（+6.8 → +3.4 / +2.1 Hz・`acting-knob-stack-pitch/`）。
+  `aggressive` の +6.7 Hz が 0 になる（`experiments/basics/acting-knob-stack/`）。**下へ動く `cold` / `flat`
+  は端でも残り**（−9〜−11 / −17〜−21 Hz・`experiments/basics/acting-knob-stack-cold/`）、`pitch` を振ると
+  半分残る（+6.8 → +3.4 / +2.1 Hz・`experiments/basics/acting-knob-stack-pitch/`）。
   **aggressive は `speed: natural` で使う。**
 - **強い欄どうしも足し算にならない。** `speed` の高さの効きは `pitch: low` で 0.5 Hz に
-  なる（natural +4.3・high +5.9 Hz・`acting-knob-stack-speed-pitch/`）。**長さは動く。**
+  なる（natural +4.3・high +5.9 Hz・`experiments/basics/acting-knob-stack-speed-pitch/`）。**長さは動く。**
   この条件では `pitch` の `high` は効かず（−0.1 Hz）、`low` だけが段になる（−13.5 Hz）。
 - **感情は neutral から上へは動くが、感情どうしは書き分けられない。** 11 語 × seed 5
-  （`acting-emotion-ladder/`）：neutral との差は +4（sadness）〜+26（fear）Hz で、
+  （`experiments/basics/acting-emotion-ladder/`）：neutral との差は +4（sadness）〜+26（fear）Hz で、
   9/10 が 5/5。だが**離れるのは遠い 2 語だけ**（fear − sadness +21.3 Hz・5/5）で、
   fear − joy +1.6・confidence − anxiety +0.1 Hz は同じ声。**seed の散らばり（65〜98 Hz）が
   感情の差より大きいので、1 本ずつ聞いて感情を当てることはできない。**
-  **`delivery` を足しても救えない**（`acting-emotion-delivery/`）：fear − joy は gentle +2.8・
+  **`delivery` を足しても救えない**（`experiments/basics/acting-emotion-delivery/`）：fear − joy は gentle +2.8・
   cold +3.1 Hz のままで、**`aggressive` では −7.0 Hz に逆転する**（0/5・p = 0.015）。
   **強い型は喜びを上げ（+6.7）、恐怖を下げる（−3.1）。**
 - **強弱を `intensity` の書き分けで作らない。** `subtle` と `moderate` は同じ音になる。

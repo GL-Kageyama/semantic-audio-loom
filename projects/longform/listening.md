@@ -6,7 +6,7 @@
 まず 3 か所だけ聴くなら：**演劇 0:33.7**（怒っても声が低い）・**解説 2:41〜3:18**（同じ一行の三通り）・
 **演劇 4:40.7**（いちばん高い声・453 Hz）。
 
-## 1. 演劇「午前二時の電話」`examples/longform-drama/drama.mp3`（5:10）
+## 1. 演劇「午前二時の電話」`examples/longform/drama/drama.mp3`（5:10）
 
 | 時刻 | 何が起きる | 測った根拠 |
 | --- | --- | --- |
@@ -22,7 +22,7 @@
 | 4:47.6 | **開幕と同じ一行**がもう一度（s68） | 開幕と**同じ音**（MFCC 0.00） |
 | 5:05.8 | 「おやすみ。」で終わる（s72） | 抑揚 3.7 半音（作品で最小） |
 
-## 2. 解説「音は、なぜ感情を動かすのか」`examples/longform-explainer/explainer.mp3`（5:11）
+## 2. 解説「音は、なぜ感情を動かすのか」`examples/longform/explainer/explainer.mp3`（5:11）
 
 | 時刻 | 何が起きる | 測った根拠 |
 | --- | --- | --- |
@@ -37,14 +37,14 @@
 | 4:59.5 | 結び | — |
 
 3:14 が 2:49 と似て聞こえるのは測りまちがいではない。方向を振った 5 通りの中で、
-この 2 本がいちばん差の小さい選び方だった（`explainer-joy/`）。
+この 2 本がいちばん差の小さい選び方だった（`experiments/scene/explainer-joy/`）。
 
 ## 3. 同じ台本の 3 版（beta 0.7 / 0.3 / 0.0）
 
 `drama.mp3`（0.7・5:10）／`drama-beta03.mp3`（0.3・5:32）／`drama-beta00.mp3`（0.0・5:39）。
 頭の 30 秒を聴き比べると分かる。**beta を下げるほど演技は伸び、声は参照から離れる。**
 
-## 4. pitch 版（0.0＋pitch）`examples/longform-drama-pitch/drama-beta00-pitch.mp3`（4:51）
+## 4. pitch 版（0.0＋pitch）`examples/longform/drama-pitch/drama-beta00-pitch.mp3`（4:51）
 
 `drama-beta00.mp3` と同じ台本で、真白を `very_low`・ニジを `high` に振った版。
 **上下は開く**（二人の差 +0.1 → −13.4 Hz・21/42 → 31/42）が、**真白の声の長さが 33.6% 縮み**、
@@ -52,85 +52,85 @@
 
 ## 5. 短い見本
 
-- `examples/longform-acting/acting-demo.mp3`（1:14）——同じ一行 5 本を、beta 0.7 と 0.3 で。
-- `examples/longform-acting-floor/acting-floor.mp3`（1:11）——同じ 3 本（無表情・喜び・怒り）を
+- `examples/longform/acting/acting-demo.mp3`（1:14）——同じ一行 5 本を、beta 0.7 と 0.3 で。
+- `examples/longform/acting-floor/acting-floor.mp3`（1:11）——同じ 3 本（無表情・喜び・怒り）を
   0.7 / 0.3 / 0.0 の三つの段で。
-- `examples/longform-floor-two-speakers/floor-two-speakers.mp3`（0:27）と
+- `examples/longform/floor-two-speakers/floor-two-speakers.mp3`（0:27）と
   `…-natural.mp3`（0:32）——pitch を振った組と、振らない組。
-- `examples/longform-intensity/intensity-demo.mp3`（1:03）——同じ一行の強度だけを
+- `examples/longform/intensity/intensity-demo.mp3`（1:03）——同じ一行の強度だけを
   「うすい・ふつう・つよい・さいだい」と並べた。**0:10.8 と 0:16.6 が同じに聞こえ、
   0:16.6 → 0:22.4 で跳ね、0:48.3 が 0:42.0 より低い**のが、測った段の数
-  （`acting-intensity/`）。
-- `examples/longform-seed/seed-demo.mp3`（0:42）——**同じ指示のまま seed だけ**を
+  （`experiments/intensity/acting-intensity/`）。
+- `examples/longform/seed/seed-demo.mp3`（0:42）——**同じ指示のまま seed だけ**を
   seed 1〜5 に振った。f0 が **258.7〜351.4 Hz（92.7 Hz）**・長さが 2.75〜3.37 秒で動く。
   **欄を 1 つ振った差（`pitch` 15.6・感情 25.5・`delivery` 45 Hz）より大きい**
-  （`seed-demo/`・`acting-emotion-ladder/`）。
-- `examples/longform-subtext/subtext-demo.mp3`（0:42）——**裏の意味だけ**を振った 5 本。
+  （`experiments/demos/seed-demo/`・`experiments/basics/acting-emotion-ladder/`）。
+- `examples/longform/subtext/subtext-demo.mp3`（0:42）——**裏の意味だけ**を振った 5 本。
   **5 本とも同じ音**（`md5 f17a1f6` が 5 つ）。rule の解決では subtext が散文に載らない
-  （`acting-subtext/`）。
-- `examples/longform-punctuation/punctuation-demo.mp3`（0:46）——同じ 1 行の**文末だけ**を
+  （`experiments/subtext/acting-subtext/`）。
+- `examples/longform/punctuation/punctuation-demo.mp3`（0:46）——同じ 1 行の**文末だけ**を
   `。` / `？` / `！` / なしに振った。**`！` の 2 本がいちばん高い**（359.6 / 341.4 Hz）・
   **記号なしの seed 3 がいちばん低い**（260.2 Hz）。**記号は間ではなく高さを動かす**
-  （`punctuation-demo/`・`acting-punctuation/`）。
-- `examples/longform-punctuation-shape/punctuation-shape-demo.mp3`（1:00）——同じ `！` で
+  （`experiments/demos/punctuation-demo/`・`experiments/punctuation/acting-punctuation/`）。
+- `examples/longform/punctuation-shape/punctuation-shape-demo.mp3`（1:00）——同じ `！` で
   終わる 4 種の行を、**途中が読点か句点か**だけ替えて並べた。**同じ seed で、句点の側が
   毎回低い**（seed 1：359.6 → 333.6 Hz）。**末尾の記号より、途中で切れていないこと**
-  が効いている（`punctuation-shape-demo/`・`acting-punctuation-period/`）。
-- `examples/longform-ellipsis/ellipsis-demo.mp3`（0:34）——**`…` は間を作らない**。
+  が効いている（`experiments/demos/punctuation-shape-demo/`・`experiments/punctuation/acting-punctuation-period/`）。
+- `examples/longform/ellipsis/ellipsis-demo.mp3`（0:34）——**`…` は間を作らない**。
   文末の `…` と `なし` は同じ台詞・同じ seed で、**同じ高さ・同じ長さ**（320.4 Hz・
   2.50 秒）。途中の `…` は読点に化けて **1.95 秒**へ縮む。言いよどみは
-  `pause_before` で作る（`ellipsis-demo/`・`acting-punctuation-ellipsis-mid/`）。
-- `examples/longform-punctuation-pitch/punctuation-pitch-demo.mp3`（0:38）——`。` と `！` を
+  `pause_before` で作る（`experiments/demos/ellipsis-demo/`・`experiments/punctuation/acting-punctuation-ellipsis-mid/`）。
+- `examples/longform/punctuation-pitch/punctuation-pitch-demo.mp3`（0:38）——`。` と `！` を
   **`pitch` を振って**聴く。very_low で +22.3 Hz（309.4 → 331.7）・high で +38.4 Hz
   （331.7 → 370.1）。**うしろの 2 本（0:28.0 と 0:31.1）は joy で `pitch` を上げても
   同じ音**（どちらも 351.4 Hz）——記号には効いて、欄には効かない
-  （`punctuation-pitch-demo/`・`acting-punctuation-pitch/`）。
-- `examples/longform-scripting/scripting-demo.mp3`（0:34）——**同じ場面を、記号の
+  （`experiments/demos/punctuation-pitch-demo/`・`experiments/punctuation/acting-punctuation-pitch/`）。
+- `examples/longform/scripting/scripting-demo.mp3`（0:34）——**同じ場面を、記号の
   書き方だけ変えて**並べる（言葉は同じ・seed も同じ）。「来てくれたんだ。雨、すごいね。」
   が「来てくれたんだ！雨、すごいね！」で **274.1 → 327.8 Hz**、ニジも 269.4 → 301.5。
   変えていない行（0:12.1 と 0:27.0）は**同じ音**（319.4 Hz・2.62 秒）
-  （`scripting-demo/`・`scripting.md` の指針）。
-- `examples/longform-floor-mark/floor-mark-demo.mp3`（0:33）——**演技の層を切る**と
+  （`experiments/demos/scripting-demo/`・`scripting.md` の指針）。
+- `examples/longform/floor-mark/floor-mark-demo.mp3`（0:33）——**演技の層を切る**と
   `！` が消える。`beta` 0.7 では `。` から `！` で +33.6 Hz（326.0 → 359.6）だが、
   床では**同じ 249.9 Hz**（0:16.5 と 0:19.2）。`？` だけは床でも上がる（264.8 Hz）。
-  **`！` は演技、`？` は地の読み**（`floor-mark-demo/`・`acting-punctuation-floor/`）。
-- `examples/longform-drama-mark/drama-mark-demo.mp3`（0:41）——**作品の台詞の文末だけ**を
+  **`！` は演技、`？` は地の読み**（`experiments/demos/floor-mark-demo/`・`experiments/punctuation/acting-punctuation-floor/`）。
+- `examples/longform/drama-mark/drama-mark-demo.mp3`（0:41）——**作品の台詞の文末だけ**を
   `！` にする。欄は 1 つも変えない。s63「まだ、話したい」（0:30.4 → 0:33.4）が
   **277.3 → 365.9 Hz**、s31 の長い行（0:17.0 → 0:21.8）は **+3.4 Hz だけ**
-  （`drama-mark-demo/`・`acting-drama-mark/`）。
-- `examples/longform-mark-emotion/mark-emotion-demo.mp3`（0:50）——**感情の上に記号を足す**。
+  （`experiments/demos/drama-mark-demo/`・`experiments/punctuation/acting-drama-mark/`）。
+- `examples/longform/mark-emotion/mark-emotion-demo.mp3`（0:50）——**感情の上に記号を足す**。
   neutral `！`（0:08.7）と **sadness `！`（0:25.1）が同じ 313.0 Hz**。sadness は `。` の
   ままなら 283.8 で、記号だけで +29.2 Hz 上がる。joy +35.1・anger +36.4・fear +33.5
-  （`mark-emotion-demo/`・`acting-mark-emotion5/`）。
-- `examples/longform-speed/speed-demo.mp3`（0:46）——**速さは長さのノブ、記号は高さの
+  （`experiments/demos/mark-emotion-demo/`・`experiments/punctuation/acting-mark-emotion5/`）。
+- `examples/longform/speed/speed-demo.mp3`（0:46）——**速さは長さのノブ、記号は高さの
   ノブ**。very_slow → very_fast で **4.15 → 2.27 秒**（高さは 275.7 → 283.8 Hz の
   8.1 Hz だけ）。そのあと `。` と `！` は長さがほぼ同じで **+32.5 Hz**、速い行でも
-  **+40.3 Hz**、ニジでも **+41.0 Hz**（`speed-demo/`・`acting-speed-voices/`）。
-- `examples/longform-weak-mark/weak-mark-demo.mp3`（0:45）——**強度の欄が弱い行でも、
+  **+40.3 Hz**、ニジでも **+41.0 Hz**（`experiments/demos/speed-demo/`・`experiments/delivery/acting-speed-voices/`）。
+- `examples/longform/weak-mark/weak-mark-demo.mp3`（0:45）——**強度の欄が弱い行でも、
   `！` は効く**。`subtle` の「それだけ」が 305.9 → 462.3 Hz（0:06.2 → 0:09.3）、
   `moderate` の sadness「平気じゃないよ」が 311.2 → 437.6 Hz（0:17.5 → 0:20.8）、
   20 文字の長い行は 307.7 → 349.4 Hz（0:30.1 → 0:35.0）。欄はひとつも変えない
-  （`weak-mark-demo/`・`acting-drama-mark-weak/`）。
-- `examples/longform-drama-scene-mark/drama-scene-mark.mp3`（1:44）——**場面まるごと**、
+  （`experiments/demos/weak-mark-demo/`・`experiments/punctuation/acting-drama-mark-weak/`）。
+- `examples/longform/drama-scene-mark/drama-scene-mark.mp3`（1:44）——**場面まるごと**、
   文末だけ `！` に。前半 0:01.4〜0:54（台本のまま）・後半 0:54.2〜1:44（`！`）。
   測れた 11 行がすべて上がる（+2.5〜+130.8・平均 +48.1）。**もとから `！` の s67
-  （0:24.9・1:16.2）だけは 453.1 Hz で動かない**（`drama-scene-mark/`）。
+  （0:24.9・1:16.2）だけは 453.1 Hz で動かない**（`experiments/scene/drama-scene-mark/`）。
   ⚠️ 声だけの見本なので、ほかの見本より 4 dB 以上静か（−21.47 LUFS・幅も 12.40 LU で門の 12 を超える）。
-- `examples/longform-mid-mark/mid-mark-demo.mp3`（0:37）——**文中の `！` も効く**。
+- `examples/longform/mid-mark/mid-mark-demo.mp3`（0:37）——**文中の `！` も効く**。
   同じ 1 行の 2 つ目の読点だけを替えた 5 通り。台本のまま 318.5 Hz → 文末 `！` 368.0 →
-  **途中 `！` 355.5** → 途中 `。` 318.5（変わらない）→ 両方 **396.7**（`mid-mark-demo/`）。
-- `examples/longform-drama-relocate/drama-relocate-demo.mp3`（2:58）——**山は移せる**。
+  **途中 `！` 355.5** → 途中 `。` 318.5（変わらない）→ 両方 **396.7**（`experiments/demos/mid-mark-demo/`）。
+- `examples/longform/drama-relocate/drama-relocate-demo.mp3`（2:58）——**山は移せる**。
   同じ場面で、0:07.7〜（台本のまま）→ 1:06.3〜（s68 に足すだけ＝山が 2 つ）→
   2:05.0〜（s67 の `！` を戻す＝**s67 が 453.1 → 252.8 Hz に落ち、山は s68 ひとつ**）。
-  足すだけは 4/5・外してからは 5/5（`drama-relocate-demo/`・`drama-scene-mark-relocate/`）。
-- `examples/longform-drama-scene-choice/drama-scene-choice.mp3`（2:53）——**同じ場面を
+  足すだけは 4/5・外してからは 5/5（`experiments/demos/drama-relocate-demo/`・`experiments/scene/drama-scene-mark-relocate/`）。
+- `examples/longform/drama-scene-choice/drama-scene-choice.mp3`（2:53）——**同じ場面を
   `！` の置き方 3 通りで**。0:06.6〜（台本のまま・山の行と次点の差 +127.1 Hz）→
   1:05.2〜（強い 3 行だけ・+23.0）→ 2:02.2〜（全部・**s68 が s67 を追い越す**）。
-  **`！` は「差をつける」道具**（`drama-scene-mark-choice/`）。
-- `examples/longform-knobs/knob-demo.mp3`（1:09）——同じ一行で、**速さ 5 語**と
+  **`！` は「差をつける」道具**（`experiments/scene/drama-scene-mark-choice/`）。
+- `examples/longform/knobs/knob-demo.mp3`（1:09）——同じ一行で、**速さ 5 語**と
   **演技の型 3 語**だけを振った。**速さは 0:10.3 → 0:32.5 で 4.35 秒 → 2.30 秒**、
-  型は **0:43.4（やさしく）と 0:48.3（平ら）だけが違う**（`acting-speed/`・
-  `acting-delivery/`）。
+  型は **0:43.4（やさしく）と 0:48.3（平ら）だけが違う**（`experiments/delivery/acting-speed/`・
+  `experiments/delivery/acting-delivery/`）。
 
 ## 音量について
 
@@ -143,11 +143,11 @@ examples の mp3 は 31 本。**21 本が −16 ±1.0 LUFS**（トゥルーピ�
 長い間を含む声だけの場面なので、幅のほうも超える。**トゥルーピークが −1.01〜−1.27 dBTP
 なので、直線のゲインで上げられるのは 0.01〜0.27 dB だけで、−16 LUFS には届かない。** そろえるには圧縮が要るので、
 測る段では掛けていない（`deliver.py`・`REPORT.md` の「配布の高さ」）。
-**掛けたらどうなるかは測ってある**（[`loudness-trial/`](loudness-trial/)）：解説は
+**掛けたらどうなるかは測ってある**（[`experiments/analysis/loudness-trial/`](experiments/analysis/loudness-trial)）：解説は
 −16.28・声だけの場面は −16.38 で門に入る。代わりに波高率が 2.0・5.3 dB 縮む
-（**谷が上がる**）。掛けた mp3 は `loudness-trial/` に置いた。
+（**谷が上がる**）。掛けた mp3 は `experiments/analysis/loudness-trial/` に置いた。
 
 **裁定（2026-11-01）：圧縮は掛けず、通常盤で配布する。** 耳では差が小さく、
 測ると掛ける前のほうが情報量が多い（谷が +2〜+7 dB 持ち上がり、幅が 1.1・5.1 LU 縮む）。
 **未達は未達のまま記録する**——音を削って門に合わせない。掛け方と代償は
-[`loudness-trial/`](loudness-trial/) に残した。
+[`experiments/analysis/loudness-trial/`](experiments/analysis/loudness-trial) に残した。
