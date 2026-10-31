@@ -1,0 +1,21 @@
+# 聞き比べ：感情の上に、記号を足す
+#
+# `acting-mark-emotion5/`（6 感情 × 2 記号 × seed 3）を耳で確かめる。
+# 感情を振る→その上に `！` を足す。seed は 2（3 本の真ん中）。
+name: mark-emotion-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 同じ一行を、感情と記号で振って聴きます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.4, name: me-neutral-period}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.8, name: me-neutral-exclaim}
+- {character: narrator, line: 感情を振ると、高さが動きます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-emotion}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.4, name: me-joy-period}
+- {character: mashiro, line: 明日、また来るね！, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.8, name: me-joy-exclaim}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.8, name: me-sadness-period}
+- {character: mashiro, line: 明日、また来るね！, emotion: sadness, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.8, name: me-sadness-exclaim}
+- {character: narrator, line: 記号は、どの感情の上でも同じだけ足せます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-mark}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.4, name: me-anger-period}
+- {character: mashiro, line: 明日、また来るね！, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.8, name: me-anger-exclaim}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.8, name: me-fear-period}
+- {character: mashiro, line: 明日、また来るね！, emotion: fear, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.8, name: me-fear-exclaim}
+- {character: narrator, line: 悲しみに感嘆符を付けると、悲しいのに強い声になります。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-close}

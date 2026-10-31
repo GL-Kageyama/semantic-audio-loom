@@ -1,0 +1,66 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: mark-emotion-demo
+stems:
+- file: ../assets/mark-emotion-demo/voice_trim/n-intro.wav
+  role: voice
+  start: 1.4
+  gain_db: 0.0
+- file: ../assets/mark-emotion-demo/voice_trim/me-neutral-period.wav
+  role: voice
+  start: 5.502
+  gain_db: 0.0
+- file: ../assets/mark-emotion-demo/voice_trim/me-neutral-exclaim.wav
+  role: voice
+  start: 8.658
+  gain_db: 0.0
+- file: ../assets/mark-emotion-demo/voice_trim/n-emotion.wav
+  role: voice
+  start: 11.902
+  gain_db: 0.0
+- file: ../assets/mark-emotion-demo/voice_trim/me-joy-period.wav
+  role: voice
+  start: 15.563
+  gain_db: 0.0
+- file: ../assets/mark-emotion-demo/voice_trim/me-joy-exclaim.wav
+  role: voice
+  start: 18.747
+  gain_db: 0.0
+- file: ../assets/mark-emotion-demo/voice_trim/me-sadness-period.wav
+  role: voice
+  start: 21.772
+  gain_db: 0.0
+- file: ../assets/mark-emotion-demo/voice_trim/me-sadness-exclaim.wav
+  role: voice
+  start: 25.072
+  gain_db: 0.0
+- file: ../assets/mark-emotion-demo/voice_trim/n-mark.wav
+  role: voice
+  start: 28.447
+  gain_db: 0.0
+- file: ../assets/mark-emotion-demo/voice_trim/me-anger-period.wav
+  role: voice
+  start: 32.566
+  gain_db: 0.0
+- file: ../assets/mark-emotion-demo/voice_trim/me-anger-exclaim.wav
+  role: voice
+  start: 35.795
+  gain_db: 0.0
+- file: ../assets/mark-emotion-demo/voice_trim/me-fear-period.wav
+  role: voice
+  start: 38.871
+  gain_db: 0.0
+- file: ../assets/mark-emotion-demo/voice_trim/me-fear-exclaim.wav
+  role: voice
+  start: 42.042
+  gain_db: 0.0
+- file: ../assets/mark-emotion-demo/voice_trim/n-close.wav
+  role: voice
+  start: 45.232
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95
