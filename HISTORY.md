@@ -21,6 +21,10 @@
 - `projects/longform/check_render.py` … 尺・ピーク・クリップ・無音・効果音の立ち上がり。
 - `projects/longform/check_duck.py` … 下地が実際に何 dB 沈んだかを測る。
 - `characters/narrator.voice.yaml` … 語り手（参照音声 `female_mature_p294`）。
+- `projects/longform/timings.tsv` の書式 … `build_voice.py` が 1 本 1 行を追記し、
+  走りの最後に**まとめ行**（`cues=N` と合計の実時間・音の長さ）を書く。
+  以前は秒を整数で書いていたので、1 本 0.5 秒の生成が `0` と記録されていた
+  （いまは 0.1 秒刻み）。
 
 ### 直した機構の穴
 
