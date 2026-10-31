@@ -1,0 +1,58 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: seed-demo
+stems:
+- file: ../assets/seed-demo/voice_trim/n-intro.wav
+  role: voice
+  start: 1.4
+  gain_db: 0.0
+- file: ../assets/seed-demo/voice_trim/n-s1.wav
+  role: voice
+  start: 8.525
+  gain_db: 0.0
+- file: ../assets/seed-demo/voice_trim/x-s1.wav
+  role: voice
+  start: 10.899
+  gain_db: 0.0
+- file: ../assets/seed-demo/voice_trim/n-s2.wav
+  role: voice
+  start: 13.961
+  gain_db: 0.0
+- file: ../assets/seed-demo/voice_trim/x-s2.wav
+  role: voice
+  start: 16.485
+  gain_db: 0.0
+- file: ../assets/seed-demo/voice_trim/n-s3.wav
+  role: voice
+  start: 19.67
+  gain_db: 0.0
+- file: ../assets/seed-demo/voice_trim/x-s3.wav
+  role: voice
+  start: 22.319
+  gain_db: 0.0
+- file: ../assets/seed-demo/voice_trim/n-s4.wav
+  role: voice
+  start: 25.266
+  gain_db: 0.0
+- file: ../assets/seed-demo/voice_trim/x-s4.wav
+  role: voice
+  start: 27.89
+  gain_db: 0.0
+- file: ../assets/seed-demo/voice_trim/n-s5.wav
+  role: voice
+  start: 31.21
+  gain_db: 0.0
+- file: ../assets/seed-demo/voice_trim/x-s5.wav
+  role: voice
+  start: 33.588
+  gain_db: 0.0
+- file: ../assets/seed-demo/voice_trim/n-close.wav
+  role: voice
+  start: 37.369
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95

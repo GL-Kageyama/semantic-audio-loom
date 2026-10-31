@@ -1,0 +1,19 @@
+# 聞き比べ：同じ指示で seed だけを替える（seed の散らばりを見る見本）
+#
+# `acting-emotion-ladder/` の実測（seed 5 本の幅 64.6〜98.0 Hz）を耳で確かめる。
+# 語り手が「一回目」…と読み、真白が同じ台詞・同じ演技を seed 1〜5 で言う。
+name: seed-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 同じ言葉を、同じ演技で、五回いいます。違うのは、seed だけです。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: narrator, line: 一回目。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: x-s1}
+- {character: narrator, line: 二回目。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.8, name: n-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.4, name: x-s2}
+- {character: narrator, line: 三回目。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.8, name: n-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, pause_before: 0.4, name: x-s3}
+- {character: narrator, line: 四回目。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.8, name: n-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-s4}
+- {character: narrator, line: 五回目。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.8, name: n-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, pause_before: 0.4, name: x-s5}
+- {character: narrator, line: 指示は五つとも同じです。声は、これだけ違います。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.2, name: n-close}

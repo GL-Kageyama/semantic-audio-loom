@@ -1,6 +1,6 @@
 # 長尺ラン — STATE（再開のための唯一の現在地）
 
-最終更新：2026-10-31 15:23 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段・subtext の届く範囲）**
+最終更新：2026-10-31 15:29 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段・subtext の届く範囲）**
 ユーザーは約 10 時間不在。質問しない。門を 20 分超えたら「未達」で次へ。
 
 ## この Mac（時間の数字はマシンが違えば比べられない）
@@ -525,6 +525,10 @@ projects/longform/
    ✅ **間も作れない**（`acting-pauses/`・15 本）：台詞の読点を 2 個にしても長さは
    **+0.005 秒（2/5）**、3 個では **−0.195 秒（0/5）でむしろ縮む**。
    `prosody.pauses` は散文に入らないので、**間は台本の `pause_before` と組み立て**で作る。
+   ✅ **seed の見本を足した**（`seed-demo/`・`examples/longform-seed/`・42.1 秒・
+   −16.34 LUFS・TP −1.03）。同じ指示で seed 1〜5：f0 351.4 / 302.4 / 314.9 / 343.4 /
+   258.7 Hz（**92.7 Hz**）・長さ 2.75〜3.37 秒。**欄を 1 つ振った差より大きい**ことを
+   耳で確かめるため。seed 4 は 343.4 Hz で `pitch-demo/` の natural seed 4 と同値。
    ⛔ **欄の数と段の数は対応しない**：speed 5→5・pitch 6→2（high だけ +19 Hz）・
    delivery 12→3・intensity 5→2・intonation 5→ほぼ 0・volume 5→0（shout だけ
    f0・長さが動く）・breathiness 4→2。
