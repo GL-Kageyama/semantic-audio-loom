@@ -431,6 +431,10 @@ beta 0.7 で 4 段 × seed 5 を並べた（新規 36 本。`acting-overwhelming
   大きく上がる。** energy は 4 条件で ±0.5 dB。**強度は「量」のノブで、抑制のノブは無い。**
   文言は 3 つだけ、感情は sadness だけ。原本の表は変えていない（プロセス内で差し替える
   `acting/mod_phrase_build.py`）。
+- **耳で確かめる見本を 1 本作った**（`examples/longform-intensity/`・63 秒・
+  `projects/longform/intensity-demo/`）。語り手の札つきで、怒りの 4 段と悲しみの 3 段を
+  同じ seed 2 で並べる。門は尺 62.6 秒（見本の門 50 秒）・ピーク −0.4 dBFS・クリップ 0・
+  配布は −0.56 dB で TP −1.27 dBTP。
 
 
 ## 2026-10-31 — M5 音の生成＋ライブラリ（5 種すべて）

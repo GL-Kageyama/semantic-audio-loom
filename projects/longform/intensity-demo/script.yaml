@@ -1,0 +1,28 @@
+# 聞き比べ：強度（エモーションの強さ）は、どこから声に出るか。
+#
+# 同じ一言・同じ seed で、intensity だけを変えて並べる。
+# 測ったこと（REPORT「既定 0.7 でも、段は 2 つしかない」）：
+#   subtle と moderate は ±3 Hz ＝ 動かない
+#   moderate → strong で +9〜+18 Hz ＝ 跳ねる
+#   strong → overwhelming は anger で同じ・sadness で 8.8 Hz 下がる
+# 語り手が札を読み、真白が毎回同じ台詞を言う。
+name: intensity-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 強度は、五つの語で変えられます。声が変わるのは、どこからでしょう。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.2, name: n-intro}
+- {character: narrator, line: まず、怒り。ごくうすく。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 1.0, name: n-l-anger-subtle}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.5, name: i-subtle-anger}
+- {character: narrator, line: 怒り。ふつう。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.8, name: n-l-anger-moderate}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.5, name: i-moderate-anger}
+- {character: narrator, line: 怒り。つよく。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.8, name: n-l-anger-strong}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.5, name: i-strong-anger}
+- {character: narrator, line: 怒り。さいだい。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.8, name: n-l-anger-max}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.5, name: i-max-anger}
+- {character: narrator, line: 次に、悲しみ。ふつう。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 1.6, name: n-l-sad-moderate}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.5, name: i-moderate-sadness}
+- {character: narrator, line: 悲しみ。つよく。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.8, name: n-l-sad-strong}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.5, name: i-strong-sadness}
+- {character: narrator, line: 悲しみ。さいだい。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.8, name: n-l-sad-max}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.5, name: i-max-sadness}
+- {character: narrator, line: うすくと、ふつう。この二つは、同じに聞こえます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 1.6, name: n-close-1}
+- {character: narrator, line: つよく、で跳ねて。さいだいは、怒りでは伸びず、悲しみでは下がりました。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.6, name: n-close-2}
