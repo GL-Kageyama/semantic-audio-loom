@@ -1,0 +1,46 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: scripting-demo
+stems:
+- file: ../assets/scripting-demo/voice_trim/n-intro.wav
+  role: voice
+  start: 1.4
+  gain_db: 0.0
+- file: ../assets/scripting-demo/voice_trim/sd-a-mashiro1.wav
+  role: voice
+  start: 5.623
+  gain_db: 0.0
+- file: ../assets/scripting-demo/voice_trim/sd-a-niji1.wav
+  role: voice
+  start: 9.466
+  gain_db: 0.0
+- file: ../assets/scripting-demo/voice_trim/sd-a-mashiro2.wav
+  role: voice
+  start: 12.088
+  gain_db: 0.0
+- file: ../assets/scripting-demo/voice_trim/n-shift.wav
+  role: voice
+  start: 15.121
+  gain_db: 0.0
+- file: ../assets/scripting-demo/voice_trim/sd-b-mashiro1.wav
+  role: voice
+  start: 21.125
+  gain_db: 0.0
+- file: ../assets/scripting-demo/voice_trim/sd-b-niji1.wav
+  role: voice
+  start: 24.667
+  gain_db: 0.0
+- file: ../assets/scripting-demo/voice_trim/sd-b-mashiro2.wav
+  role: voice
+  start: 27.009
+  gain_db: 0.0
+- file: ../assets/scripting-demo/voice_trim/n-close.wav
+  role: voice
+  start: 30.041
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95

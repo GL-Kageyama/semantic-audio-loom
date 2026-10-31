@@ -3674,3 +3674,13 @@ date	stage	asset	model	settings	wall_s	audio_s	machine	note
 2026-10-31	P2b	acting-punctuation-floor/voice/pf-b05-plain-s4	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.5	0.5	2.42	M2Pro-16GB	rc=0
 2026-10-31	P2b	acting-punctuation-floor/voice/pf-b05-plain-s5	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=5,alpha=0.35,beta=0.5	0.5	2.62	M2Pro-16GB	rc=0
 2026-10-31	P2b	acting-punctuation-floor/voice (まとめ)	tsukasa	cues=20	20.6	50.73	M2Pro-16GB	rc=0 合計
+2026-10-31	P2b	scripting-demo/voice/n-intro	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	10.6	4.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	scripting-demo/voice/sd-a-mashiro1	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.7	3.97	M2Pro-16GB	rc=0
+2026-10-31	P2b	scripting-demo/voice/sd-a-niji1	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	0.6	2.75	M2Pro-16GB	rc=0
+2026-10-31	P2b	scripting-demo/voice/sd-a-mashiro2	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.6	2.62	M2Pro-16GB	rc=0
+2026-10-31	P2b	scripting-demo/voice/n-shift	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.9	6.00	M2Pro-16GB	rc=0
+2026-10-31	P2b	scripting-demo/voice/sd-b-mashiro1	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.7	3.60	M2Pro-16GB	rc=0
+2026-10-31	P2b	scripting-demo/voice/sd-b-niji1	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	0.5	2.42	M2Pro-16GB	rc=0
+2026-10-31	P2b	scripting-demo/voice/sd-b-mashiro2	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.6	2.62	M2Pro-16GB	rc=0
+2026-10-31	P2b	scripting-demo/voice/n-close	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.8	5.35	M2Pro-16GB	rc=0
+2026-10-31	P2b	scripting-demo/voice (まとめ)	tsukasa	cues=9	15.9	33.63	M2Pro-16GB	rc=0 合計

@@ -85,6 +85,11 @@
   （331.7 → 370.1）。**うしろの 2 本（0:28.0 と 0:31.1）は joy で `pitch` を上げても
   同じ音**（どちらも 351.4 Hz）——記号には効いて、欄には効かない
   （`punctuation-pitch-demo/`・`acting-punctuation-pitch/`）。
+- `examples/longform-scripting/scripting-demo.mp3`（0:34）——**同じ場面を、記号の
+  書き方だけ変えて**並べる（言葉は同じ・seed も同じ）。「来てくれたんだ。雨、すごいね。」
+  が「来てくれたんだ！雨、すごいね！」で **274.1 → 327.8 Hz**、ニジも 269.4 → 301.5。
+  変えていない行（0:12.1 と 0:27.0）は**同じ音**（319.4 Hz・2.62 秒）
+  （`scripting-demo/`・`scripting.md` の指針）。
 - `examples/longform-floor-mark/floor-mark-demo.mp3`（0:33）——**演技の層を切る**と
   `！` が消える。`beta` 0.7 では `。` から `！` で +33.6 Hz（326.0 → 359.6）だが、
   床では**同じ 249.9 Hz**（0:16.5 と 0:19.2）。`？` だけは床でも上がる（264.8 Hz）。
@@ -96,7 +101,7 @@
 
 ## 音量について
 
-examples の mp3 は 22 本。**17 本が −16 ±1.0 LUFS**（トゥルーピーク −1.00〜−1.31 dBTP）。
+examples の mp3 は 23 本。**18 本が −16 ±1.0 LUFS**（トゥルーピーク −1.00〜−1.31 dBTP）。
 未達は 5 本で、**すべてピークに当たっている**：`drama-beta00-pitch` −17.40・
 `explainer` −18.16・`floor-two-speakers-natural` −17.64・`intensity-demo` −17.38・
 `knob-demo` −17.10。**トゥルーピークが −1.13〜−1.27 dBTP なので、直線のゲインで

@@ -1,0 +1,17 @@
+# 聞き比べ：同じ場面を、記号の書き方だけ変えて 2 通りに並べる
+#
+# `scripting.md` の指針（途中に句点を置かない・強く出したい行は「！」）を、
+# 1 行ではなく場面の単位で耳で確かめる。台詞の言葉は同じで、句読点だけを替える。
+# 2 本目と 3 本目は同じ台詞・同じ seed（対照）。
+name: scripting-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 同じ場面を、二通りに書いて並べます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: mashiro, line: 来てくれたんだ。雨、すごいね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.6, name: sd-a-mashiro1}
+- {character: niji, line: うん。待ってた。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.5, name: sd-a-niji1}
+- {character: mashiro, line: でも、風邪ひいてない？, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.5, name: sd-a-mashiro2}
+- {character: narrator, line: 記号を変えます。途中の句点を外して、強く出したい行を感嘆符に。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-shift}
+- {character: mashiro, line: 来てくれたんだ！雨、すごいね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.6, name: sd-b-mashiro1}
+- {character: niji, line: うん、待ってた！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, pause_before: 0.5, name: sd-b-niji1}
+- {character: mashiro, line: でも、風邪ひいてない？, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.5, name: sd-b-mashiro2}
+- {character: narrator, line: 同じ声・同じ seed。強さだけが変わります。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-close}
