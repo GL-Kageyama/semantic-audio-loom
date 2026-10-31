@@ -4755,3 +4755,24 @@ date	stage	asset	model	settings	wall_s	audio_s	machine	note
 2026-10-31	P2b	mid-mark-demo/voice/n-both	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.6	3.20	M2Pro-16GB	rc=0
 2026-10-31	P2b	mid-mark-demo/voice/both-line	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	0.6	3.85	M2Pro-16GB	rc=0
 2026-10-31	P2b	mid-mark-demo/voice (まとめ)	tsukasa	cues=10	16.6	34.03	M2Pro-16GB	rc=0 合計
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-base-s1	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	10.6	3.95	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-base-s2	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	0.8	4.17	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-base-s3	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	0.7	3.87	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-base-s4	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.7	4.60	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-base-s5	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=5,alpha=0.35,beta=0.7	0.8	4.72	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-end-s1	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.7	3.82	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-end-s2	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	0.7	4.02	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-end-s3	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	0.6	3.87	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-end-s4	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.7	4.42	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-end-s5	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=5,alpha=0.35,beta=0.7	0.7	4.67	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-mid-s1	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.7	4.17	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-mid-s2	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	0.7	4.35	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-mid-s3	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	0.7	4.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-mid-s4	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.8	4.87	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-mid-s5	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=5,alpha=0.35,beta=0.7	0.8	4.95	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-both-s1	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.7	4.10	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-both-s2	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	0.7	4.20	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-both-s3	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	0.7	4.17	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-both-s4	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.7	4.65	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice/pq-both-s5	tsukasa	emotion=joy,intensity=moderate,delivery=cheerful,speed=natural,volume=normal,seed=5,alpha=0.35,beta=0.7	0.7	4.82	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation-mid-question/voice (まとめ)	tsukasa	cues=20	24.1	86.71	M2Pro-16GB	rc=0 合計

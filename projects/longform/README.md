@@ -137,6 +137,7 @@ projects/longform/
   drama-relocate-demo/     同じ場面で「足すだけ」と「外してから足す」を並べる見本（178 秒）
   acting-punctuation-mid-exclaim/ 文中の `！` は効くか（5 通り × seed 5・25 本）
   acting-explainer-mark/   解説の語り 6 行でも `！` は効くか（記号 2 × seed 5・60 本）
+  acting-punctuation-mid-question/ 文中の `？` も効くか（4 通り × seed 5・20 本）
   mid-mark-demo/           文中の `！` を耳で確かめる見本（37 秒）
   loudness-trial/          未達の 2 本に圧縮を掛けたら届くか（測るだけ・裁定前）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
