@@ -21,7 +21,10 @@ ambience・sfx・foley = Sound Spec）。声では台詞の「裏の意味（sub
 [docs/resolve.md](docs/resolve.md)「どこまで声に届くか」。
 台詞の文末の記号は、欄より強く声を動かす（`？` f0 +16.3 Hz・`！` +39.3 Hz・感情と
 足し算。効きは行の形で縮む——途中に句点が 1 つあると 9 文字でも +14.6 Hz）。
-詳細は `projects/longform/REPORT.md`。
+詳細は [projects/longform/REPORT.md](projects/longform/REPORT.md)。
+
+📇 **長尺（5〜10 分）の索引は [projects/longform/INDEX.md](projects/longform/INDEX.md)** ——
+作品 2 本・実験 129 本・見本 30 本の地図、走らせ方、数字の読み方。別のセッションはここから入る。
 
 ## 資材の分離（再利用の設計）
 
