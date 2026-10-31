@@ -1,0 +1,15 @@
+# sadness の上端だけを beta 0.3 で確かめる。
+#
+# 既定 beta 0.7 では sadness の overwhelming が strong より 8.8 Hz 低かった（seed 5/5）。
+# 既存 acting-intensity/（beta 0.3 と 0.0）は neutral / anger / joy だけで、
+# sadness は無い。ここで strong と overwhelming の 2 段 × seed 1〜3 を作る。
+# alpha 0.35 は acting-intensity/ と同じ（そろえないと混ぜ方が違う）。
+name: acting-intensity-sadness
+default_pause: 0.0
+cues:
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.3, alpha: 0.35, name: s03-sadness-strong-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.3, alpha: 0.35, name: s03-sadness-strong-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.3, alpha: 0.35, name: s03-sadness-strong-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.3, alpha: 0.35, name: s03-sadness-overwhelming-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.3, alpha: 0.35, name: s03-sadness-overwhelming-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.3, alpha: 0.35, name: s03-sadness-overwhelming-s3}

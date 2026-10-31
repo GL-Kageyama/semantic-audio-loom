@@ -402,6 +402,31 @@
   narrator は遠い（63.4〜68.7）。**seed を固定しないと、人物の差と seed の差が
   同じ大きさで混ざる**——演劇が人物を帯域で分けている理由がこれで数で言える。
 
+### 強度の語は 5 つ、声を動かす段は 2 つ — 真ん中に文言が無かった
+
+Direction の強度は none / subtle / moderate / strong / overwhelming の 5 語。既定の
+beta 0.7 で 4 段 × seed 5 を並べた（新規 36 本。`acting-overwhelming-070/`・
+`acting-intensity-sadness/`・`acting-mod-phrase/`）。
+
+| 感情 | subtle | moderate | strong | overwhelming |
+| --- | --- | --- | --- | --- |
+| anger | 312.6 | 310.0 | 320.0 | 320.7 |
+| joy | 313.8 | 314.2 | 323.0 | 323.0 |
+| sadness | 295.3 | 294.4 | 312.8 | **304.0** |
+
+- **跳ねるのは moderate → strong の 1 か所だけ**（+8.8〜+18.3 Hz・5/5）。subtle と
+  moderate は ±3 Hz で、seed の幅（84.6 Hz）の中。
+- **上端は伸びない。** anger +0.7・joy +0.0（n.s.）。**sadness は 5/5 で下がる**（−8.8 Hz）。
+  beta 0.3 では同じ向きで −27 Hz（3/3）。**「at its limit」は sadness では高さを下げる。**
+- 高さだけではない：moderate → strong で長さ anger +0.08 秒・joy +0.14 秒（5/5・p ≤ 0.016）、
+  抑揚 sadness +0.44 半音（5/5・p = 0.009）。energy・速さは動かない。
+- 原因は散文の表だった。`_INTENSITY_PHRASES` は **0.40〜0.70 の帯に何も置かない**
+  （moderate は「強度を言わない」）。そこへ "the feeling is moderately strong" を
+  差し込むと、**sadness だけ +9.4 Hz 動く**（5/5・p = 0.0015）。anger +1.3・joy +1.7 は
+  動かない。**段が 2 つに見えるのは、文言が無いからだけでなく、感情ごとに飽和点が
+  違うから。** 文言は 1 つしか試していない。原本の表は変えていない。
+
+
 ## 2026-10-31 — M5 音の生成＋ライブラリ（5 種すべて）
 
 ### スコープ

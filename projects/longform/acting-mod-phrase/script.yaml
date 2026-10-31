@@ -1,0 +1,27 @@
+# 強度の真ん中にも散文を 1 つ置く（moderate だけを 15 本）。
+#
+# 既定の _INTENSITY_PHRASES は 0.40〜0.70 の帯に文言を持たない。
+# つまり moderate（0.5）は「強度のことを何も言わない」＝感情だけの文になる。
+# 効き目が 2 段に見えるのは、語が 2 段しか無いからではないか、を直接試す。
+#
+# ここでは 0.5 に "the feeling is moderately strong" を差し込んで同じ 15 本を作る。
+# 比べる相手は acting-matrix の em-<emotion>-s1〜5（同じ設定・文言なし）。
+# ビルドは acting/mod_phrase_build.py（tsukasa._INTENSITY_PHRASES を差し替える）。
+name: acting-mod-phrase
+default_pause: 0.0
+cues:
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: mp-anger-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: mp-anger-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: mp-anger-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: mp-anger-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: mp-anger-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: mp-joy-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: mp-joy-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: mp-joy-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: mp-joy-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: mp-joy-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: mp-sadness-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: mp-sadness-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: mp-sadness-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: mp-sadness-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: mp-sadness-s5}

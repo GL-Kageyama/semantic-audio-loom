@@ -1,0 +1,7 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/acting-intensity-sadness/voice/s03-sadness-overwhelming-s1.wav	2.723	318.5	8.8	-10.74	4.7	0.192	-15.3	34.1	160.0	0.2857	0.95	-15.8	0
+projects/longform/assets/acting-intensity-sadness/voice/s03-sadness-overwhelming-s2.wav	2.923	295.5	7.3	1.85	5.8	0.238	-14.6	35.0	170.0	0.2935	0.95	-15.4	0
+projects/longform/assets/acting-intensity-sadness/voice/s03-sadness-overwhelming-s3.wav	2.723	305.9	8.2	-7.04	5.1	0.148	-15.5	34.9	70.0	0.3077	0.95	-15.6	0
+projects/longform/assets/acting-intensity-sadness/voice/s03-sadness-strong-s1.wav	2.973	345.3	9.3	-3.01	4.9	0.293	-16.2	35.9	90.0	0.2383	0.95	-17.3	0
+projects/longform/assets/acting-intensity-sadness/voice/s03-sadness-strong-s2.wav	2.973	324.1	8.0	-6.53	5.1	0.311	-16.4	36.1	120.0	0.2651	0.95	-16.9	0
+projects/longform/assets/acting-intensity-sadness/voice/s03-sadness-strong-s3.wav	2.948	333.6	8.9	-5.54	5.3	0.241	-16.3	34.4	80.0	0.2712	0.95	-17.4	0

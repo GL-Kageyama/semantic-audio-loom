@@ -37,6 +37,10 @@ projects/longform/
   explainer-joy/     同じ 1 行で seed と方向を振る（seed のほうが f0 を動かす）
   emotion-seed/      2 行 × 5 感情 × 3 seed。seed をブロックにして感情の効きを測る
   seed-voices/       4 つの声 × seed 3。seed の癖が声をまたぐかを見る
+  acting-intensity/  強度は何段か（低い beta の 90 本と、既定 0.7 の 60 本の読み方）
+  acting-overwhelming-070/  既定 0.7 で overwhelming だけを seed 5 で作った 15 本
+  acting-intensity-sadness/ sadness の上端を beta 0.3 で確かめる 6 本
+  acting-mod-phrase/ 強度の真ん中に文言を置いた 15 本（原本は触らず、表を差し替える）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く
   assemble.py         両作品を組む道具（切る・並べる・利得・効果音・下地）

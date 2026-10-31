@@ -1,0 +1,28 @@
+# 強度の上端：overwhelming は strong の先にあるか（既定の混ぜ方 beta 0.7）。
+#
+# acting-matrix に subtle / moderate / strong × 3 感情 × seed 5 がある（beta 0.7）。
+# ここでは overwhelming（1.0）× 3 感情 × seed 5 = 15 本だけを作る。
+# 基準線は acting-matrix の baseline-s1〜s5（neutral / moderate / beta 0.7）。
+#
+# 既存の acting-intensity/ は beta 0.3 と 0.0 で 5 語（none〜overwhelming）× 3 seed。
+# こちらは既定の 0.7 で、上端だけを 5 seed で見る。
+#
+# 測るのは acting/intensity_steps.py。
+name: acting-overwhelming-070
+default_pause: 0.0
+cues:
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: ov-anger-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: ov-anger-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: ov-anger-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: ov-anger-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: ov-anger-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: ov-joy-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: ov-joy-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: ov-joy-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: ov-joy-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: ov-joy-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: ov-sadness-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: ov-sadness-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: ov-sadness-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: ov-sadness-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: ov-sadness-s5}

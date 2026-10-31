@@ -311,6 +311,48 @@ Direction の強度は none / subtle / moderate / strong / overwhelming の 5 �
 - 床（beta 0.0）では strong / overwhelming の振り幅が大きい（anger 327.8 → 376.6、
   joy 333.6 → 376.6）。**強度の語も、下げた側で強く出る。**
 
+### 既定 0.7 でも、段は 2 つしかない（4 段 × 5 seed）
+
+同じ 1 行・同じ人物・seed 1〜5・既定 beta 0.7 で 4 段を並べた
+（`acting-intensity/`。subtle / moderate / strong は `acting-matrix/` の 30 本、
+overwhelming は `acting-overwhelming-070/` の 15 本。基準線の f0 平均 290.3 Hz）。
+
+| 感情 | subtle | moderate | strong | overwhelming |
+| --- | --- | --- | --- | --- |
+| anger | 312.6 | 310.0 | 320.0 | 320.7 |
+| joy | 313.8 | 314.2 | 323.0 | 323.0 |
+| sadness | 295.3 | 294.4 | 312.8 | **304.0** |
+
+| 段の間 | anger | joy | sadness |
+| --- | --- | --- | --- |
+| subtle → moderate | −2.7 Hz（0/5） | +0.4 Hz（1/5・n.s.） | −0.8 Hz（1/5・n.s.） |
+| moderate → strong | **+10.0 Hz（5/5）** | **+8.8 Hz（5/5）** | **+18.3 Hz（5/5）** |
+| strong → overwhelming | +0.7 Hz（3/5・n.s.） | +0.0 Hz（3/5・n.s.） | **−8.8 Hz（0/5）** |
+
+- **跳ねるのは moderate → strong の 1 か所。** subtle と moderate の差は ±3 Hz。
+- **上端は伸びない。** anger・joy は strong と同じ高さ。**sadness は 5 seed とも下がる。**
+  低い beta でも同じ向きで、しかも大きい（beta 0.3 で −27 Hz・3/3、
+  `acting-intensity-sadness/`）。**「at its limit」の一言は、sadness では高さを下げる側に働く。**
+- **高さだけではない。** moderate → strong で長さが anger +0.08 秒・joy +0.14 秒
+  （5/5・p ≤ 0.016）、sadness で抑揚 +0.44 半音（5/5・p = 0.009）。energy・速さは動かない。
+
+**真ん中が動かないのは、真ん中に文言が無いからか。** `_INTENSITY_PHRASES` は
+0.40〜0.70 の帯に何も置かない（つまり moderate は「強度を言わない」）。そこへ
+"the feeling is moderately strong" を差し込んで moderate だけを作り直した
+（`acting-mod-phrase/`・15 本。原本は触らず、プロセスの中で表を差し替える）。
+
+| 感情 | 差（文言あり − なし） | 同符号 | p |
+| --- | --- | --- | --- |
+| anger | +1.3 Hz | 4/5 | 0.028 |
+| joy | +1.7 Hz | 4/5 | 0.072 |
+| sadness | **+9.4 Hz** | 5/5 | 0.0015 |
+
+**sadness だけ動く**（strong の +18.3 Hz の半分ほど）。**anger・joy は moderate で
+ほぼ飽和していて、文言を足しても動かない。** 段が 2 つに見えるのは、文言が無いから
+だけではなく、**感情ごとに飽和点が違う**から。ここで試した文言は 1 つだけなので、
+「別の文言なら別の大きさになる」ことは残る。
+
+
 **直したこと：** Direction の intensity=none は 0.0 に解決されるが、散文では
 「the feeling is faint」を足していた（none が faint になる）。0 では一言も足さないよう
 直した。**欄が散文に載っているかを、Schema の列挙値ごとに比べる検査を足した**
