@@ -1,0 +1,23 @@
+# 聞き比べ：速さを振り切ると、消える型と消えない型がある。
+#
+# `acting-knob-stack/`（aggressive は very_fast で gentle と一致）と
+# `acting-knob-stack-cold/`（flat は very_fast でも残る）の実測を、
+# 耳で確かめるための見本。語り手が札を読み、真白が同じ台詞・同じ seed で 6 回言う。
+name: delivery-speed-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 同じ台詞、同じ声。平らな言い方と、強い言い方。速さを変えたとき、どちらが残るでしょう。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: narrator, line: まず、速さは、ふつうのまま。やさしく。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.8, name: n-l-nat-gentle}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 4, pause_before: 0.4, name: x-nat-gentle}
+- {character: narrator, line: 同じ速さで、強く。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.5, name: n-l-nat-aggressive}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 4, pause_before: 0.4, name: x-nat-aggressive}
+- {character: narrator, line: 同じ速さで、平らに。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.5, name: n-l-nat-flat}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: flat, breathiness: none, seed: 4, pause_before: 0.4, name: x-nat-flat}
+- {character: narrator, line: こんどは、速さを、いちばん速くします。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-l-fast}
+- {character: narrator, line: やさしく。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.5, name: n-l-fast-gentle}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: gentle, breathiness: none, seed: 4, pause_before: 0.4, name: x-fast-gentle}
+- {character: narrator, line: 強く。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.5, name: n-l-fast-aggressive}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: aggressive, breathiness: none, seed: 4, pause_before: 0.4, name: x-fast-aggressive}
+- {character: narrator, line: 平らに。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.5, name: n-l-fast-flat}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: flat, breathiness: none, seed: 4, pause_before: 0.4, name: x-fast-flat}
+- {character: narrator, line: 速くすると、強さは消えます。平らさは、残ります。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.2, name: n-close}

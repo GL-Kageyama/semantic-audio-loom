@@ -1,6 +1,6 @@
 # 長尺ラン — STATE（再開のための唯一の現在地）
 
-最終更新：2026-10-31 14:35 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
+最終更新：2026-10-31 14:43 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
 ユーザーは約 10 時間不在。質問しない。門を 20 分超えたら「未達」で次へ。
 
 ## この Mac（時間の数字はマシンが違えば比べられない）
@@ -457,6 +457,12 @@ projects/longform/
    **heavy は none より高い**（4/5）。heavy は f0 **+16.9 Hz**（5/5・p < 0.001。0.7 では
    +1.7 Hz）。⚠️ **「0.3 では効かない」は seed 3 本だったせい**——5 本で出た。
    効きかたは beta で違う（0.7 は単調・0.3 は非単調）。**段として使えるのは 0.7。**
+   ✅ **聞き比べの見本を足した**（`delivery-speed-demo/`・`examples/longform-delivery-speed/`・
+   53.5 秒・−16.39 LUFS）。速さ natural / very_fast × gentle / aggressive / flat を seed 4 で並べる。
+   natural は aggressive +11.3 Hz・flat −25.1 Hz、very_fast は aggressive −2.0・flat −18.1。
+   ⚠️ seed 4 は flat の差が端で縮む側（平均は広がる）。**見本 1 本は平均の代理でない。**
+   ⚠️ seed 1 の見本（平らより冷たくが良く出る）は**音量の門に未達**（−17.36/−17.45 LUFS）で
+   採らなかった。seed 4 だけが −16.39 で通った——**seed で 1 LU 動く。**
    ⛔ **欄の数と段の数は対応しない**：speed 5→5・pitch 6→2（high だけ +19 Hz）・
    delivery 12→3・intensity 5→2・intonation 5→ほぼ 0・volume 5→0（shout だけ
    f0・長さが動く）・breathiness 4→2。

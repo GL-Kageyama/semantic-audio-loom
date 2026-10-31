@@ -20,7 +20,8 @@
 [examples/longform-floor-two-speakers/](../../examples/longform-floor-two-speakers/)、
 [examples/longform-drama-pitch/](../../examples/longform-drama-pitch/)。
 欄の見本は [examples/longform-knobs/](../../examples/longform-knobs/)（69 秒）と
-[examples/longform-stack-demo/](../../examples/longform-stack-demo/)（45 秒）。
+[examples/longform-stack-demo/](../../examples/longform-stack-demo/)（45 秒）と
+[examples/longform-delivery-speed/](../../examples/longform-delivery-speed/)（54 秒）。
 
 ## 置き場
 
@@ -67,6 +68,7 @@ projects/longform/
   intensity-demo/    強度の段だけを並べた 63 秒の見本（語り手の札つき）
   knob-demo/         速さ 5 語と演技の型 3 語を並べた 69 秒の見本
   stack-demo/        速さ × 演技の型の 6 通りを並べた 45 秒の見本
+  delivery-speed-demo/  速さ × 3 語（gentle/aggressive/flat）を並べた 54 秒の見本
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   drama-seed-split/  演劇のニジだけ seed 2 にした版（人物を seed で分けられるか）
   acting-breath-s70/ 芝居 s70 の 1 行で breathiness だけを none / slight に振る（6 本）

@@ -1,0 +1,70 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: delivery-speed-demo
+stems:
+- file: ../assets/delivery-speed-demo/voice_trim/n-intro.wav
+  role: voice
+  start: 1.4
+  gain_db: 0.0
+- file: ../assets/delivery-speed-demo/voice_trim/n-l-nat-gentle.wav
+  role: voice
+  start: 10.007
+  gain_db: 0.0
+- file: ../assets/delivery-speed-demo/voice_trim/x-nat-gentle.wav
+  role: voice
+  start: 14.501
+  gain_db: 0.0
+- file: ../assets/delivery-speed-demo/voice_trim/n-l-nat-aggressive.wav
+  role: voice
+  start: 17.657
+  gain_db: 0.0
+- file: ../assets/delivery-speed-demo/voice_trim/x-nat-aggressive.wav
+  role: voice
+  start: 20.514
+  gain_db: 0.0
+- file: ../assets/delivery-speed-demo/voice_trim/n-l-nat-flat.wav
+  role: voice
+  start: 23.721
+  gain_db: 0.0
+- file: ../assets/delivery-speed-demo/voice_trim/x-nat-flat.wav
+  role: voice
+  start: 26.811
+  gain_db: 0.0
+- file: ../assets/delivery-speed-demo/voice_trim/n-l-fast.wav
+  role: voice
+  start: 29.926
+  gain_db: 0.0
+- file: ../assets/delivery-speed-demo/voice_trim/n-l-fast-gentle.wav
+  role: voice
+  start: 33.793
+  gain_db: 0.0
+- file: ../assets/delivery-speed-demo/voice_trim/x-fast-gentle.wav
+  role: voice
+  start: 36.358
+  gain_db: 0.0
+- file: ../assets/delivery-speed-demo/voice_trim/n-l-fast-aggressive.wav
+  role: voice
+  start: 39.062
+  gain_db: 0.0
+- file: ../assets/delivery-speed-demo/voice_trim/x-fast-aggressive.wav
+  role: voice
+  start: 40.958
+  gain_db: 0.0
+- file: ../assets/delivery-speed-demo/voice_trim/n-l-fast-flat.wav
+  role: voice
+  start: 43.661
+  gain_db: 0.0
+- file: ../assets/delivery-speed-demo/voice_trim/x-fast-flat.wav
+  role: voice
+  start: 45.751
+  gain_db: 0.0
+- file: ../assets/delivery-speed-demo/voice_trim/n-close.wav
+  role: voice
+  start: 48.664
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95
