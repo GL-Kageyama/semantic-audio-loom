@@ -442,11 +442,11 @@ energy 1.1 dB なので、**語の効きは seed の振れの 13 分の 1**。�
 | `emotion` | 11（3＋枠外） | 効く（ただし seed より小さい） | seed の幅 84.6 Hz の前では二次的（`emotion-seed/`） |
 | `intonation` | 5（3） | **ほぼ 0** | 語尾の傾きで rising −0.35 / flat +2.11 / falling −1.64・3/5 |
 | `intensity` | 5（4） | **2** | subtle ≈ moderate、moderate → strong で跳ねる、上端は伸びない |
-| `delivery` | 12（6） | **2** | gentle / cheerful / hesitant / restrained は ±2 Hz、cold −9.4・flat −18.4 Hz |
+| `delivery` | 12（12） | **3** | 真ん中 8 語は ±4 Hz、aggressive +6.7・desperate +8.4、cold −9.4・flat −18.4 Hz |
 | `breathiness` | 4（4） | **2**（幅 1.3 ポイント） | 有声の割合 0.276 → 0.263・高域の比 +10%（`acting-breath-070/`） |
 | `volume` | 5（4） | **0**（声としては） | whisper と loud で energy 0.08 dB。ミックスの `VOLUME_GAIN` が 5 段作る |
 
-（`delivery` は `acting-delivery/`・`speed` は `acting-speed/` と
+（`delivery` は `acting-delivery/` と `acting-delivery2/`・`speed` は `acting-speed/` と
 `acting-speed-emotions/`・`volume` は
 `acting-volume/`。`intonation` は上の「語尾の抑揚は、beta を下げても分かれない」節。）
 
@@ -460,7 +460,7 @@ energy 1.1 dB なので、**語の効きは seed の振れの 13 分の 1**。�
   0.22〜0.32 のまま動かない。高さは動かない**（f0 の 5 段が単調でない）。
   `very_slow` は 4.2〜4.4 秒、`very_fast` は 2.4 秒——長さの差 2 秒は、
   5 本つないだ作品では間の設計に効く。
-- **語の数と段の数が、まったく対応しない。** 12 語の欄（delivery）が 2 群、
+- **語の数と段の数が、まったく対応しない。** 12 語の欄（delivery）が 3 段、
   5 語の欄（volume）が 0 段、5 語の欄（speed）が 5 段。
 - **breathiness は段になるが、幅が 1.3 ポイント。** 有声の割合が 5 seed とも同じ向きに
   下がり（0/5・p = 0.021）、高域の比が +10%。ただし同じ欄が beta 0.3・neutral・seed 3 の

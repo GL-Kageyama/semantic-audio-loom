@@ -1,6 +1,6 @@
 # 長尺ラン — STATE（再開のための唯一の現在地）
 
-最終更新：2026-10-31 14:05 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
+最終更新：2026-10-31 14:55 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
 ユーザーは約 10 時間不在。質問しない。門を 20 分超えたら「未達」で次へ。
 
 ## この Mac（時間の数字はマシンが違えば比べられない）
@@ -406,9 +406,11 @@ projects/longform/
    ⛔ **二つの作品は、その 2 段の片側に 9 割が座っている**（`acting/knob_audit.py`）。
    解説の語り手 44/44 が同じ段、演劇は 79/89（89%）が同じ段（mashiro 38/47・niji 41/42）。
    **台本の subtle 51・moderate 28 の書き分けは、声では 1 段に畳まれる。**
-   ✅ **delivery も 2 群**（`acting-delivery/`・joy moderate × 6 語 × seed 5・30 本）。
-   gentle / cheerful / hesitant / restrained は ±2 Hz で見分けがつかない。**cold −9.4 Hz・
-   flat −18.4 Hz（0〜1/5）だけが下がる。** 抑揚は 6 語とも 7.8〜8.3 半音で動かない。
+   ✅ **delivery は 3 段**（`acting-delivery/` と `acting-delivery2/`・joy moderate ×
+   12 語 × seed 5・60 本）。**真ん中 8 語**（gentle / cheerful / hesitant / restrained /
+   subtle / suppressed / intimate / controlled）は ±4 Hz で見分けがつかない。
+   **上へ 2 語**（aggressive +6.7・desperate +8.4・どちらも 5/5）、**下へ 2 語**
+   （cold −9.4・flat −18.4・0〜1/5）。抑揚は 12 語とも 7.7〜8.3 半音で動かない。
    ✅ **speed だけが 5 段のまま単調**（`acting-speed/`・joy moderate × 5 語 × seed 5・
    25 本）。very_slow 4.39 → natural 3.06 → very_fast 2.44 秒（**1.80 倍**）。**5 seed
    それぞれで順序が完全に単調**（25 本・逆転 0）。p は 0.0001 以下。**演じ分けの土台は

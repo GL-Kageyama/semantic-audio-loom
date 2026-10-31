@@ -48,7 +48,8 @@ projects/longform/
   acting-niji-intensity/    niji の声で subtle / moderate × 3 感情 × seed 5（2 段は声に依るか）
   acting-joy-heldback/      joy でも「抑える」を試した 5 本
   acting-volume/            声量 4 語 × seed 5（声は大きさを変えるか）
-  acting-delivery/          delivery 6 語 × seed 5（11 語のうち声が動くのは何語か）
+  acting-delivery/          delivery 6 語 × seed 5（12 語のうち声が動くのは何語か）
+  acting-delivery2/         delivery の残り 6 語 × seed 5
   acting-speed/             speed 5 語 × seed 5（5 語とも段になるか）
   acting-speed-emotions/    anger / sadness × speed 5 語 × seed 5（段は感情に依るか）
   acting-speed-longline/    芝居の長い行（24 文字）で speed 5 語 × seed 5（段は台詞の長さに依るか）

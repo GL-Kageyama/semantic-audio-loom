@@ -1,0 +1,40 @@
+# delivery の残り 6 語は、声を動かすか
+#
+# `acting-delivery/` は 12 語のうち 6 語（gentle / cheerful / hesitant / restrained / cold /
+# flat）を測った。残りの 6 語を同じ条件で測る（同じ行・joy・moderate・natural・seed 5）。
+#
+# ビルド:
+#   PYTHONPATH=. <venv> projects/longform/explainer/build_voice.py --dir projects/longform/acting-delivery2
+name: acting-delivery2
+default_pause: 0.0
+cues:
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: subtle, breathiness: none, seed: 1, name: d2-subtle-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: subtle, breathiness: none, seed: 2, name: d2-subtle-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: subtle, breathiness: none, seed: 3, name: d2-subtle-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: subtle, breathiness: none, seed: 4, name: d2-subtle-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: subtle, breathiness: none, seed: 5, name: d2-subtle-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: suppressed, breathiness: none, seed: 1, name: d2-suppressed-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: suppressed, breathiness: none, seed: 2, name: d2-suppressed-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: suppressed, breathiness: none, seed: 3, name: d2-suppressed-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: suppressed, breathiness: none, seed: 4, name: d2-suppressed-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: suppressed, breathiness: none, seed: 5, name: d2-suppressed-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: d2-controlled-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: d2-controlled-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: d2-controlled-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: d2-controlled-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: d2-controlled-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: intimate, breathiness: none, seed: 1, name: d2-intimate-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: intimate, breathiness: none, seed: 2, name: d2-intimate-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: intimate, breathiness: none, seed: 3, name: d2-intimate-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: intimate, breathiness: none, seed: 4, name: d2-intimate-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: intimate, breathiness: none, seed: 5, name: d2-intimate-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 1, name: d2-aggressive-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 2, name: d2-aggressive-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 3, name: d2-aggressive-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 4, name: d2-aggressive-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 5, name: d2-aggressive-s5}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: desperate, breathiness: none, seed: 1, name: d2-desperate-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: desperate, breathiness: none, seed: 2, name: d2-desperate-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: desperate, breathiness: none, seed: 3, name: d2-desperate-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: desperate, breathiness: none, seed: 4, name: d2-desperate-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: desperate, breathiness: none, seed: 5, name: d2-desperate-s5}

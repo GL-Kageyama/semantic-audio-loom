@@ -50,7 +50,7 @@ Direction の欄は語の数が欄ごとに違うが、**声に届く段の数�
 | `emotion` | 11 | 効く（seed の振れより小さい） | 高さ・長さ・抑揚 |
 | `pitch` | 6 | 2（`high` だけ離れる） | 高さ |
 | `intensity` | 5 | 2（`subtle`＝`moderate`、`strong` で跳ねる） | 高さ・長さ |
-| `delivery` | 12 | 2（`flat`・`cold` だけ下がる） | 高さ・長さ |
+| `delivery` | 12 | 3（`flat`・`cold` が下、`aggressive`・`desperate` が上、残り 8 語は同じ） | 高さ・長さ |
 | `intonation` | 5 | ほぼ 0 | — |
 | `breathiness` | 4 | 2（幅が小さい） | 有声の割合・高域 |
 | `volume` | 5 | **0**（声としては） | 何も動かない（ミックスの `gain_db` が作る） |
@@ -59,6 +59,9 @@ Direction の欄は語の数が欄ごとに違うが、**声に届く段の数�
   3 感情 × seed 5 で、すべての seed が同じ順序になる。長い行（24 文字）でも 1.75 倍で
   5/5 単調。動くのは発話の長さ（間の割合と高さは動かない）。
 - **強弱を `intensity` の書き分けで作らない。** `subtle` と `moderate` は同じ音になる。
+- **`delivery` の真ん中 8 語（gentle / cheerful / hesitant / restrained / subtle /
+  suppressed / intimate / controlled）は、書き分けても同じ声になる。** 動くのは `aggressive`・
+  `desperate`（上へ +7〜+8 Hz）と `cold`・`flat`（下へ −9・−18 Hz）の 4 語だけ。
 - **声量は声ではなくミックス。** 生成された声はどれも peak 0.95 に揃い、
   レベル差は残らない（`assemble.py` の `VOLUME_GAIN`）。
 - `breathiness` と `volume` で囁きを作ることはできない。息は `voice_fx` の帯域で作る。
