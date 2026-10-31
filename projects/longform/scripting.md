@@ -11,7 +11,7 @@ f0 中央値を seed 5 本で平均した値の、対の差（beta 0.7 の既定
 | 間（`pause_before`） | 長さそのもの | **頼れる**（台本の欄で決まる） |
 | 文末を `！` に | **+39〜+79 Hz**（声によって変わる・5/5）。**beta 0.0 では 0**（演技の層が作る）。途中に句点があると +14.6〜+15.0・24 文字で +26.4 Hz | **頼れる**（向きは同じ・幅は行の形で縮む） |
 | 文末を `？` に | **+16.3 Hz**（5/5）。beta 0.0 でも +13.1（地の読みが作る） | 頼れる |
-| 速さ（`speed`） | 早口 5/5・間 5/5 | **頼れる**（beta に依らない） |
+| 速さ（`speed`） | 早口 5/5・間 5/5。**長さのノブ**（4.20 → 2.36 秒）で、高さは動かさない（−3.9〜+4.9 Hz） | **頼れる**（beta に依らない） |
 | 読点を 1 個足す | **−17.0 Hz**（4/5）・長さは動かない | 向きは揃うが幅は未測 |
 | 感情・強度の欄 | neutral 比 +4〜+26 Hz（10 語）・強度 +20〜+45 Hz（beta 0.3 のみ） | **seed の揺れ（84.6 Hz）より小さい** |
 | 声の高さ（`pitch`） | neutral で high +9.0 Hz（5/5）・very_low −13.5（1/5）。**joy では high +0.2 Hz（1/5）** | 感情が空のときだけ（感情が埋めると消える） |
@@ -56,7 +56,8 @@ f0 中央値を seed 5 本で平均した値の、対の差（beta 0.7 の既定
   `acting-punctuation-mid/`（14 文字の行）・`acting-punctuation-period/`（9 文字で途中に句点）・
   `acting-punctuation-ellipsis/`（文末の `…`）・`acting-punctuation-ellipsis-mid/`（途中の `…`）・
   `acting-punctuation-pitch/`（`pitch` 3 段と掛けた 30 本＋joy の 15 本）・
-  `acting-punctuation-floor/`（`beta` 0.0 / 0.3 / 0.7 の 60 本）
+  `acting-punctuation-floor/`（`beta` 0.0 / 0.3 / 0.5 / 0.7 の 80 本）・
+  `acting-punctuation-speed/`（速さ 3 段と掛けた 30 本）
 - 表記・読点：`acting-notation/`
 - 間：`acting-pauses/`
 - 欄の効き：`REPORT.md`「一覧（何が、どこまで効くか）」

@@ -1,0 +1,38 @@
+# 速さと文末の記号は、足し算になるか（3 段 × 2 記号 × seed 5 = 30）
+#
+# 速さは beta に依らない、いちばん頼れる欄（`acting-speed/`）。記号は欄より強い。
+# 両方を掛けたとき、効きは残るか・足し算になるか。同じ行・neutral・beta 0.7。
+
+name: acting-punctuation-speed
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_slow, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: ps-very_slow-period-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_slow, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: ps-very_slow-period-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_slow, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: ps-very_slow-period-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_slow, pitch: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: ps-very_slow-period-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_slow, pitch: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: ps-very_slow-period-s5}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: very_slow, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: ps-very_slow-exclaim-s1}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: very_slow, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: ps-very_slow-exclaim-s2}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: very_slow, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: ps-very_slow-exclaim-s3}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: very_slow, pitch: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: ps-very_slow-exclaim-s4}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: very_slow, pitch: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: ps-very_slow-exclaim-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: ps-natural-period-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: ps-natural-period-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: ps-natural-period-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: ps-natural-period-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: ps-natural-period-s5}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: ps-natural-exclaim-s1}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: ps-natural-exclaim-s2}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: ps-natural-exclaim-s3}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: ps-natural-exclaim-s4}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: ps-natural-exclaim-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: ps-very_fast-period-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: ps-very_fast-period-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: ps-very_fast-period-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: ps-very_fast-period-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: ps-very_fast-period-s5}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: ps-very_fast-exclaim-s1}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: ps-very_fast-exclaim-s2}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: ps-very_fast-exclaim-s3}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: ps-very_fast-exclaim-s4}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: ps-very_fast-exclaim-s5}
