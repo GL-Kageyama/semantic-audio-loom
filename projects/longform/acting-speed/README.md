@@ -1,6 +1,6 @@
 # speed だけが、5 語とも段になる
 
-強度は 2 段（`acting-intensity/`）、声量は 0 段（`acting-volume/`）、delivery は 2 群
+強度は 2 段（`acting-intensity/`）、声量は 0 段（`acting-volume/`）、delivery は 3 段
 （`acting-delivery/`）。**`speed` は 5 語が 5 段のまま、単調に効く。**
 
 ## 同じ行・同じ感情で、speed だけを振る
@@ -26,6 +26,12 @@ seed 1〜5。`speed` を 5 語に振った 25 本（`script.yaml`）。
 - 速さの推定値（`rate_mora_s`）は 5.08〜5.76 で、長さほどきれいに動かない
   （slow p = 0.012・fast p = 0.15）。**伸ばすと拍の数え方も変わるので、
   長さで読むほうが確か。**
+- **高さも両端で開く。** f0 の 5 段の平均は 306.0 → 312.6 → 314.2 → 319.5 → 320.8 Hz。
+  **very_slow と very_fast で +14.8 Hz**（seed ごとでは 4/5）。段の途中は単調でない。
+  **速くすると高くなる**——「長さだけの欄」ではない。⚠️ **長い行（24 文字）では
+  この開きは出ない**（`acting-speed-longline/` は 285.2 → 284.5 Hz）。**行の長さで変わる。**
+- **delivery を替えても、開きかたは同じ**（`acting-knob-stack/`）。very_slow → very_fast は
+  gentle −1.95 秒（1.79 倍）・aggressive −1.88 秒（1.76 倍）で、どちらも 0/5。
 
 ## 何が言えるか
 
