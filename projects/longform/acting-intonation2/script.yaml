@@ -1,0 +1,19 @@
+# intonation の残り 2 語（neutral / wavering）を、既存の 3 語と同じ条件で作る
+#
+# `acting-inton-070/` は rising / flat / falling を emotion neutral・delivery controlled・
+# beta 0.7 で測った。同じ条件で neutral と wavering を足して 5 語にする（2 語 × seed 5）。
+#
+# ビルド: PYTHONPATH=. <venv> projects/longform/explainer/build_voice.py --dir projects/longform/acting-intonation2
+name: acting-intonation2
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, intonation: neutral, seed: 1, name: it2-neutral-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, intonation: wavering, seed: 1, name: it2-wavering-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, intonation: neutral, seed: 2, name: it2-neutral-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, intonation: wavering, seed: 2, name: it2-wavering-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, intonation: neutral, seed: 3, name: it2-neutral-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, intonation: wavering, seed: 3, name: it2-wavering-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, intonation: neutral, seed: 4, name: it2-neutral-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, intonation: wavering, seed: 4, name: it2-wavering-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, intonation: neutral, seed: 5, name: it2-neutral-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, intonation: wavering, seed: 5, name: it2-wavering-s5}

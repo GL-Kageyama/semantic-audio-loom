@@ -1,0 +1,6 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/acting-volume-shout/voice/vs-shout-s1.wav	2.923	363.8	8.8	-4.75	6.1	0.27	-15.0	35.0	140.0	0.256	0.95	-17.1	0
+projects/longform/assets/acting-volume-shout/voice/vs-shout-s2.wav	3.123	309.4	6.4	12.91	5.6	0.314	-15.2	31.9	120.0	0.2716	0.95	-16.6	0
+projects/longform/assets/acting-volume-shout/voice/vs-shout-s3.wav	2.898	327.8	8.7	-0.39	5.7	0.213	-15.0	34.6	40.0	0.2379	0.95	-16.0	0
+projects/longform/assets/acting-volume-shout/voice/vs-shout-s4.wav	3.523	355.5	8.2	2.9	5.0	0.314	-13.1	39.4	180.0	0.2748	0.95	-15.6	0
+projects/longform/assets/acting-volume-shout/voice/vs-shout-s5.wav	3.498	262.5	6.9	11.82	5.3	0.324	-13.5	32.4	120.0	0.2629	0.95	-16.5	0

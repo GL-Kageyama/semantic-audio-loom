@@ -1,6 +1,6 @@
 # 長尺ラン — STATE（再開のための唯一の現在地）
 
-最終更新：2026-10-31 14:55 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
+最終更新：2026-10-31 14:20 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
 ユーザーは約 10 時間不在。質問しない。門を 20 分超えたら「未達」で次へ。
 
 ## この Mac（時間の数字はマシンが違えば比べられない）
@@ -398,11 +398,22 @@ projects/longform/
    ✅ **joy の「抑える」も動かない**（`acting-joy-heldback/`・+0.3 Hz・2/5・p = 0.69。
    moderate で飽和しているので、文言を足しても上がりようがない）。**抑える演技は
    3 感情で試した（下がらない）。**
-   ⛔ **声量の語は、声の大きさを変えない**（`acting-volume/`・joy moderate ×
-   whisper/quiet/normal/loud × seed 5・20 本）。**whisper と loud で energy 0.08 dB・
+   ⛔ **声量の語は、声の大きさを変えない**（`acting-volume/` と `acting-volume-shout/`・
+   joy moderate × 5 語 × seed 5・25 本）。**whisper と loud で energy 0.08 dB・
    rms 0.02 dB・f0 0.3 Hz。** 同じ語の seed 幅 energy 1.1 dB の 13 分の 1。
-   peak は 20 本とも 0.9500（Normalize のピーク揃え）。**声量は `VOLUME_GAIN`
-   （−10/−5/0/+3 dB）＝ミックスで作る。**
+   peak は 25 本とも 0.9500（Normalize のピーク揃え）。**声量は `VOLUME_GAIN`
+   （−10/−5/0/+3/+6 dB）＝ミックスで作る。**
+   ✅ **shout だけは normal から離れる**——**f0 +9.6 Hz（5/5・p = 0.006）・長さ +0.13 秒
+   （5/5・p = 0.004）・無音 +0.026**。⛔ **だが energy は −0.6 dB（0/5）で、whisper の
+   −13.54 dB より小さい（shout −14.36 dB）。叫ぶと高く長くなるが、大きくはならない。**
+   ✅ **intonation の 5 語も同じ声**（`acting-inton-070/` と `acting-intonation2/`・
+   neutral controlled × 5 語 × seed 5・25 本）。**5 語の幅 7.7 Hz 対 seed の幅 74〜87 Hz
+   （11 分の 1）。** ⛔ **語尾の傾きは語の名前に従わない**——中央値は wavering 3.18 >
+   neutral 2.71 > flat 2.11 > rising −0.35 > falling −1.64（st/s）。**rising は最大に
+   ならない。** 同じ seed で 2 語が 0.05 Hz 以内に一致する組が 50 組中 9 組
+   （seed 2 は 5 語とも 280.5 Hz＝語が捨てられている）。
+   ⚠️ **M0 の 40 Hz 差は語の差ではない**：同じ 2 語を state まで固定すると
+   wavering 291.4 対 flat 287.0（4.4 Hz）。**動いていたのは state の側。**
    ⛔ **二つの作品は、その 2 段の片側に 9 割が座っている**（`acting/knob_audit.py`）。
    解説の語り手 44/44 が同じ段、演劇は 79/89（89%）が同じ段（mashiro 38/47・niji 41/42）。
    **台本の subtle 51・moderate 28 の書き分けは、声では 1 段に畳まれる。**
@@ -425,7 +436,8 @@ projects/longform/
    ⚠️ **前の測定（`acting-breath/`・beta 0.3・neutral・seed 3）は差を出していない**
    ——効果が小さいので seed 3 本では見えない。
    ⛔ **欄の数と段の数は対応しない**：speed 5→5・pitch 6→2（high だけ +19 Hz）・
-   delivery 12→2・intensity 5→2・intonation 5→ほぼ 0・volume 5→0・breathiness 4→2。
+   delivery 12→3・intensity 5→2・intonation 5→ほぼ 0・volume 5→0（shout だけ
+   f0・長さが動く）・breathiness 4→2。
    ✅ **聞き比べの見本を足した**（`knob-demo/`・`examples/longform-knobs/`・69 秒・
    語り手の札つき）。速さ 5 語＋演技の型 3 語。既存の `intensity-demo/`（63 秒）と対。
    ✅ **長い台詞では、跳ねる先が変わる**（`acting-longline/`・芝居の 1 行 24 文字 × 4 段 ×

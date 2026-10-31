@@ -403,7 +403,7 @@ overwhelming は `acting-overwhelming-070/` の 15 本。基準線の f0 平均 
 で動かない**（moderate で飽和しているので、文言を足しても上がりようがない）。
 
 **声量の語は、声を動かさない（`acting-volume/`）。** 同じ行・joy・moderate・seed 5 本で
-`volume` だけを 4 語振った（20 本）。
+`volume` の 5 語を振った（25 本。shout は `acting-volume-shout/`）。
 
 | volume | energy 中央値 (dB) | rms (dB) | f0 (Hz) | 長さ (s) |
 | --- | --- | --- | --- | --- |
@@ -411,12 +411,17 @@ overwhelming は `acting-overwhelming-070/` の 15 本。基準線の f0 平均 
 | quiet | −13.50 | −15.52 | 313.3 | 3.10 |
 | normal | −13.76 | −15.60 | 314.2 | 3.06 |
 | loud | −13.46 | −15.54 | 315.6 | 3.15 |
+| shout | −14.36 | −16.36 | **323.8** | **3.19** |
 
 **whisper と loud の差は energy 0.08 dB・rms 0.02 dB。** 同じ語の seed 5 本の幅は
 energy 1.1 dB なので、**語の効きは seed の振れの 13 分の 1**。理由は Normalize の
-ピーク 0.95 揃え（20 本とも peak 0.9500）——ただしモデル自身も大きさを変えていない
-（rms の差が 0.02 dB）。`assemble.py` の `VOLUME_GAIN`（−10 / −5 / 0 / +3 dB）が
+ピーク 0.95 揃え（25 本とも peak 0.9500）——ただしモデル自身も大きさを変えていない
+（rms の差が 0.02 dB）。`assemble.py` の `VOLUME_GAIN`（−10 / −5 / 0 / +3 / +6 dB）が
 前提にしているとおり、**声量は演技ではなくミックスで作る**。
+
+**shout だけは normal から系統的に離れる**——f0 **+9.6 Hz（5/5・p = 0.006）**・長さ
+**+0.13 秒（5/5・p = 0.004）**・無音の割合 +0.026。**だが energy は −0.6 dB（0/5）で、
+whisper より小さい。叫ぶと高く長くなるが、大きくはならない。**
 
 **では、二つの作品はどの段に座っているか**（`acting/knob_audit.py`）。
 
@@ -440,15 +445,16 @@ energy 1.1 dB なので、**語の効きは seed の振れの 13 分の 1**。�
 | `speed` | 5（5） | **5**（単調・1.74〜1.80 倍） | very_slow 4.39 → very_fast 2.44 秒・3 感情とも 5 seed すべてで順序が崩れない |
 | `pitch` | 6（3） | **2**（high だけ離れる） | neutral で high 282.8 / natural 264.0 / slightly_high 265.2 Hz |
 | `emotion` | 11（3＋枠外） | 効く（ただし seed より小さい） | seed の幅 84.6 Hz の前では二次的（`emotion-seed/`） |
-| `intonation` | 5（3） | **ほぼ 0** | 語尾の傾きで rising −0.35 / flat +2.11 / falling −1.64・3/5 |
+| `intonation` | 5（5） | **ほぼ 0**（5 語の幅 7.7 Hz 対 seed の幅 74〜87 Hz） | 語尾の傾きの中央値は wavering 3.18 > neutral 2.71 > flat 2.11 > rising −0.35 > falling −1.64（`acting-inton-070/`） |
 | `intensity` | 5（4） | **2** | subtle ≈ moderate、moderate → strong で跳ねる、上端は伸びない |
 | `delivery` | 12（12） | **3** | 真ん中 8 語は ±4 Hz、aggressive +6.7・desperate +8.4、cold −9.4・flat −18.4 Hz |
 | `breathiness` | 4（4） | **2**（幅 1.3 ポイント） | 有声の割合 0.276 → 0.263・高域の比 +10%（`acting-breath-070/`） |
-| `volume` | 5（4） | **0**（声としては） | whisper と loud で energy 0.08 dB。ミックスの `VOLUME_GAIN` が 5 段作る |
+| `volume` | 5（5） | **0**（energy の段としては。shout だけ f0 +9.6・長さ +0.13 秒） | whisper と loud で energy 0.08 dB。ミックスの `VOLUME_GAIN` が 5 段作る |
 
 （`delivery` は `acting-delivery/` と `acting-delivery2/`・`speed` は `acting-speed/` と
 `acting-speed-emotions/`・`volume` は
-`acting-volume/`。`intonation` は上の「語尾の抑揚は、beta を下げても分かれない」節。）
+`acting-volume/` と `acting-volume-shout/`。`intonation` は `acting-inton-070/` と
+`acting-intonation2/`、および下の「語尾の抑揚は、beta を下げても分かれない」節。）
 
 - **単調な 5 段になるのは `speed` だけ。** 5 seed それぞれで 5 語の長さの順序が完全に
   一致する。台本はこれを一番使っている（演劇の speed は slow 44・natural 31・fast 10・

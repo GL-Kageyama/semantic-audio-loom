@@ -23,6 +23,10 @@ f0 実測（同一台詞・同一 Direction・State のみ変更）：
 | 返事が怖い | 返事が怖いが、繋がりを求めてしまう | wavering（語尾上昇） | ~325Hz |
 | どうでもいい | （なし） | flat（語尾下降） | ~285Hz |
 
+⚠️ この 40 Hz は **intonation の語の効きではない**。同じ 2 語を State まで固定して
+振ると差は 4.4 Hz（291.4 対 287.0）で、語尾の傾きも名前どおりにならない
+（`projects/longform/acting-inton-070/`）。**動いていたのは state の側**である。
+
 ## 実装
 
 - **LLMResolver**（既定）：`llm/client.py` が `/v1/messages` を直接叩く（SDK 不使用。anthropic 1.2.0 が temperature 引数を廃止して破綻したため stdlib urllib に移行）。
@@ -51,9 +55,9 @@ Direction の欄は語の数が欄ごとに違うが、**声に届く段の数�
 | `pitch` | 6 | 2（`high` だけ離れる） | 高さ |
 | `intensity` | 5 | 2（`subtle`＝`moderate`、`strong` で跳ねる） | 高さ・長さ |
 | `delivery` | 12 | 3（`flat`・`cold` が下、`aggressive`・`desperate` が上、残り 8 語は同じ） | 高さ・長さ |
-| `intonation` | 5 | ほぼ 0 | — |
+| `intonation` | 5 | ほぼ 0（語の幅 7.7 Hz 対 seed の幅 74〜87 Hz） | 語尾の傾きもラベルに従わない |
 | `breathiness` | 4 | 2（幅が小さい） | 有声の割合・高域 |
-| `volume` | 5 | **0**（声としては） | 何も動かない（ミックスの `gain_db` が作る） |
+| `volume` | 5 | **0**（声の大きさとしては） | energy は動かない（shout だけ f0 +9.6・長さ +0.13 秒）。ミックスの `gain_db` が作る |
 
 - **演じ分けの土台は `speed`。** 5 語が単調に並ぶ唯一の欄。joy・anger・sadness の
   3 感情 × seed 5 で、すべての seed が同じ順序になる。長い行（24 文字）でも 1.75 倍で
@@ -63,5 +67,10 @@ Direction の欄は語の数が欄ごとに違うが、**声に届く段の数�
   suppressed / intimate / controlled）は、書き分けても同じ声になる。** 動くのは `aggressive`・
   `desperate`（上へ +7〜+8 Hz）と `cold`・`flat`（下へ −9・−18 Hz）の 4 語だけ。
 - **声量は声ではなくミックス。** 生成された声はどれも peak 0.95 に揃い、
-  レベル差は残らない（`assemble.py` の `VOLUME_GAIN`）。
+  レベル差は残らない（`assemble.py` の `VOLUME_GAIN`）。`shout` は 5 語で唯一
+  f0 +9.6 Hz・長さ +0.13 秒を動かすが、**energy は 0.6 dB 下がる**。
+- **`intonation` の 5 語は、実質同じ声。** 語尾の傾きは名前のとおりにならない
+  （rising は最大にならず、wavering が最大）。床（beta 0.0）でのみ
+  ラベルどおりの順になるが、どの語も大きく上向きで差は 0.95 半音/秒。
+  **M0 で見た 40 Hz の差は、語ではなく state の側の差だったと読める。**
 - `breathiness` と `volume` で囁きを作ることはできない。息は `voice_fx` の帯域で作る。

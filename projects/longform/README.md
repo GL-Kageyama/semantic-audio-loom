@@ -47,7 +47,10 @@ projects/longform/
   acting-longline/          芝居の長い行（24 文字）で強度 4 段 × 3 感情 × seed 5
   acting-niji-intensity/    niji の声で subtle / moderate × 3 感情 × seed 5（2 段は声に依るか）
   acting-joy-heldback/      joy でも「抑える」を試した 5 本
-  acting-volume/            声量 4 語 × seed 5（声は大きさを変えるか）
+  acting-volume/            声量 4 語 × seed 5（声は大きさを変えるか。shout は下）
+  acting-volume-shout/      shout × seed 5（叫ぶと、高く長くなるが大きくはならない）
+  acting-inton-070/         intonation 5 語（語尾の傾きは語の名前に従わない）
+  acting-intonation2/       intonation の残り 2 語（neutral / wavering）
   acting-delivery/          delivery 6 語 × seed 5（12 語のうち声が動くのは何語か）
   acting-delivery2/         delivery の残り 6 語 × seed 5
   acting-speed/             speed 5 語 × seed 5（5 語とも段になるか）

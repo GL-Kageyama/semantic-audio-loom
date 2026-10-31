@@ -19,3 +19,9 @@
 **ゲインを上げても「張り」は増えない。**
 
 M0 実測：angry rms 0.086 vs sad 0.055 は音量でなく演技の差。ピーク正規化は再生音量を揃えるだけで、声帯の張り（演技）には関与しない。
+
+**5 語を振っても、声の energy は動かない。** 同じ行・同じ seed で whisper / quiet /
+normal / loud / shout を振ると、whisper と loud の差は energy 0.08 dB・rms 0.02 dB。
+`shout` だけは f0 +9.6 Hz・長さ +0.13 秒を動かすが、**energy は 0.6 dB 下がる**
+（`projects/longform/acting-volume/`）。**聴き手が聴く声量は `assemble.py` の
+`VOLUME_GAIN`（−10 / −5 / 0 / +3 / +6 dB）が決めている。**

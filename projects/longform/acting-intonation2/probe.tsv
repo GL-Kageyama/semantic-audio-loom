@@ -1,0 +1,11 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/acting-intonation2/voice/it2-neutral-s1.wav	2.848	326.0	8.0	2.71	5.4	0.239	-14.2	35.7	140.0	0.2596	0.95	-15.9	0
+projects/longform/assets/acting-intonation2/voice/it2-neutral-s2.wav	2.973	280.5	6.0	10.45	6.2	0.288	-14.8	36.1	140.0	0.2752	0.95	-16.1	0
+projects/longform/assets/acting-intonation2/voice/it2-neutral-s3.wav	2.798	290.4	8.0	-3.6	5.2	0.172	-13.9	35.8	60.0	0.2571	0.95	-14.4	0
+projects/longform/assets/acting-intonation2/voice/it2-neutral-s4.wav	3.298	313.0	8.1	-1.6	5.1	0.266	-12.1	36.6	190.0	0.303	0.95	-14.5	0
+projects/longform/assets/acting-intonation2/voice/it2-neutral-s5.wav	3.298	241.4	6.0	24.48	5.2	0.309	-14.8	33.6	130.0	0.2848	0.95	-15.8	0
+projects/longform/assets/acting-intonation2/voice/it2-wavering-s1.wav	2.848	327.8	9.2	3.18	5.4	0.239	-14.7	35.5	110.0	0.2596	0.95	-16.2	0
+projects/longform/assets/acting-intonation2/voice/it2-wavering-s2.wav	3.023	280.5	6.1	19.72	6.1	0.283	-15.4	36.2	160.0	0.2871	0.95	-16.3	0
+projects/longform/assets/acting-intonation2/voice/it2-wavering-s3.wav	2.798	290.4	8.1	-4.13	5.3	0.182	-13.0	32.7	60.0	0.275	0.95	-14.7	0
+projects/longform/assets/acting-intonation2/voice/it2-wavering-s4.wav	3.298	316.7	8.2	-0.11	5.6	0.257	-11.8	36.8	190.0	0.3091	0.95	-14.3	0
+projects/longform/assets/acting-intonation2/voice/it2-wavering-s5.wav	3.348	241.4	6.0	23.73	5.1	0.302	-14.3	34.1	160.0	0.2836	0.95	-16.0	0
