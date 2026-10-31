@@ -31,6 +31,7 @@ projects/longform/
   drama-level/       演劇の三つの版（beta 0.7 / 0.3 / 0.0）のキューごとの測定
   timbre-two-characters/  二人の声が声そのもので分かれるか（18 本）
   drama-beta00-pitch/ 床の芝居に pitch を振った版と、89 キューの測定
+  seed-robustness/   床の芝居を seed 1〜3 で作り、作品の段の数が動くかを見る
   explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く
   assemble.py         両作品を組む道具（切る・並べる・利得・効果音・下地）
   check_render.py     門の数を測る（尺・クリップ・無音・効果音の立ち上がり）
