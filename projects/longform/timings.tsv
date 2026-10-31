@@ -4053,3 +4053,36 @@ date	stage	asset	model	settings	wall_s	audio_s	machine	note
 2026-10-31	P2b	acting-drama-mark-weak/voice/dw-s53-period-s5	tsukasa	emotion=fear,intensity=moderate,delivery=hesitant,speed=fast,volume=normal,seed=5,alpha=0.35,beta=0.7	0.5	1.92	M2Pro-16GB	rc=0
 2026-10-31	P2b	acting-drama-mark-weak/voice/dw-s53-exclaim-s5	tsukasa	emotion=fear,intensity=moderate,delivery=hesitant,speed=fast,volume=normal,seed=5,alpha=0.35,beta=0.7	0.5	2.27	M2Pro-16GB	rc=0
 2026-10-31	P2b	acting-drama-mark-weak/voice (まとめ)	tsukasa	cues=72	51.8	221.63	M2Pro-16GB	rc=0 合計
+2026-10-31	P2b	weak-mark-demo/voice/n-intro	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	10.8	4.92	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm26-period	tsukasa	emotion=calm,intensity=subtle,delivery=intimate,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.5	2.40	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm26-exclaim	tsukasa	emotion=calm,intensity=subtle,delivery=intimate,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.5	2.35	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/n-fields	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.8	5.27	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm32-period	tsukasa	emotion=sadness,intensity=moderate,delivery=restrained,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.6	2.57	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm32-exclaim	tsukasa	emotion=sadness,intensity=moderate,delivery=restrained,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.5	2.42	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/n-sad	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.9	5.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm54-period	tsukasa	emotion=calm,intensity=subtle,delivery=intimate,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.7	4.72	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm54-exclaim	tsukasa	emotion=calm,intensity=subtle,delivery=intimate,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.7	4.37	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/n-close	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.9	5.57	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice (まとめ)	tsukasa	cues=10	16.9	40.45	M2Pro-16GB	rc=0 合計
+2026-10-31	P2b	weak-mark-demo/voice/n-intro	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	10.7	4.92	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm26-period	tsukasa	emotion=calm,intensity=subtle,delivery=intimate,speed=slow,volume=quiet,seed=3,alpha=0.35,beta=0.7	0.6	2.60	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm26-exclaim	tsukasa	emotion=calm,intensity=subtle,delivery=intimate,speed=slow,volume=quiet,seed=3,alpha=0.35,beta=0.7	0.5	2.45	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/n-fields	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.8	5.27	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm32-period	tsukasa	emotion=sadness,intensity=moderate,delivery=restrained,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	0.5	2.60	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm32-exclaim	tsukasa	emotion=sadness,intensity=moderate,delivery=restrained,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	0.5	2.27	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/n-sad	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.9	6.47	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm54-period	tsukasa	emotion=calm,intensity=subtle,delivery=intimate,speed=slow,volume=quiet,seed=3,alpha=0.35,beta=0.7	0.7	4.75	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm54-exclaim	tsukasa	emotion=calm,intensity=subtle,delivery=intimate,speed=slow,volume=quiet,seed=3,alpha=0.35,beta=0.7	0.7	4.60	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/n-close	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.8	5.57	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice (まとめ)	tsukasa	cues=10	16.9	41.50	M2Pro-16GB	rc=0 合計
+2026-10-31	P2b	weak-mark-demo/voice/n-intro	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	10.7	4.92	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm26-period	tsukasa	emotion=calm,intensity=subtle,delivery=cold,speed=slow,volume=quiet,seed=3,alpha=0.35,beta=0.7	0.6	2.60	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm26-exclaim	tsukasa	emotion=calm,intensity=subtle,delivery=cold,speed=slow,volume=quiet,seed=3,alpha=0.35,beta=0.7	0.5	2.45	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/n-fields	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.9	5.27	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm32-period	tsukasa	emotion=sadness,intensity=moderate,delivery=restrained,speed=slow,volume=quiet,seed=3,alpha=0.35,beta=0.7	0.6	2.87	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm32-exclaim	tsukasa	emotion=sadness,intensity=moderate,delivery=restrained,speed=slow,volume=quiet,seed=3,alpha=0.35,beta=0.7	0.5	2.52	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/n-sad	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1.0	6.47	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm54-period	tsukasa	emotion=calm,intensity=subtle,delivery=flat,speed=slow,volume=quiet,seed=3,alpha=0.35,beta=0.7	0.7	4.75	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/wm54-exclaim	tsukasa	emotion=calm,intensity=subtle,delivery=flat,speed=slow,volume=quiet,seed=3,alpha=0.35,beta=0.7	0.7	4.55	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice/n-close	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.8	5.57	M2Pro-16GB	rc=0
+2026-10-31	P2b	weak-mark-demo/voice (まとめ)	tsukasa	cues=10	17.1	41.98	M2Pro-16GB	rc=0 合計

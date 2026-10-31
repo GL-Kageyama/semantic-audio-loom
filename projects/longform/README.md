@@ -36,7 +36,8 @@
 [examples/longform-scripting/](../../examples/longform-scripting/)（35 秒・同じ場面を書き方だけで 2 通り）と
 [examples/longform-speed/](../../examples/longform-speed/)（46 秒・速さは長さ、記号は高さ）と
 [examples/longform-mark-emotion/](../../examples/longform-mark-emotion/)（50 秒・感情の上に記号を足す）と
-[examples/longform-drama-mark/](../../examples/longform-drama-mark/)（41 秒・作品の台詞の文末だけ `！`・音量は未達）。
+[examples/longform-drama-mark/](../../examples/longform-drama-mark/)（41 秒・作品の台詞の文末だけ `！`・音量は未達）と
+[examples/longform-weak-mark/](../../examples/longform-weak-mark/)（45 秒・強度の弱い行でも `！` は効く・音量は未達）。
 
 ## 置き場
 
@@ -91,7 +92,7 @@ projects/longform/
   acting-punctuation-stack/ 文末の記号 × 感情の 2 × 2 × seed 5（足し算になるか）
   acting-mark-emotion5/    6 感情 × 2 記号 × seed 3（どの感情の上でも同じだけ足せる）
   acting-drama-mark/       作品の強い 9 行 × 記号 2 × seed 3（欄を変えず文末だけ `！`）
-  acting-drama-mark-weak/  作品の強くない 12 行 × 記号 2 × seed 2（同上・120 本）
+  acting-drama-mark-weak/  作品の強くない 12 行 × 記号 2 × seed 5（同上・120 本）
   acting-punctuation-pitch/ 文末の記号 × pitch 3 段 × seed 5（欄と掛けても効くか）
   acting-punctuation-floor/  文末の記号 × beta 3 段 × seed 5（床で `！` は消え `？` は残る）
   acting-floor-mark-lines/  3 行 × 2 声 × beta 2 段 × 記号 2 × seed 3（上の再現）
@@ -123,6 +124,7 @@ projects/longform/
   speed-demo/         速さ 3 段と記号と声を並べた 46 秒の見本（速さは長さ、記号は高さ）
   mark-emotion-demo/  感情の上に記号を足す 50 秒の見本（sadness + `！` は neutral + `！` と同じ高さ）
   drama-mark-demo/    作品の台詞の文末だけ `！` にする 41 秒の見本（欄は変えない）
+  weak-mark-demo/     強度の弱い行でも `！` が効く 45 秒の見本（欄は変えない）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   drama-seed-split/  演劇のニジだけ seed 2 にした版（人物を seed で分けられるか）
   acting-breath-s70/ 芝居 s70 の 1 行で breathiness だけを none / slight に振る（6 本）

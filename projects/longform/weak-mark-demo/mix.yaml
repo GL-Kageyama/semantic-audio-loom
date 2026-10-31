@@ -1,0 +1,50 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: weak-mark-demo
+stems:
+- file: ../assets/weak-mark-demo/voice_trim/n-intro.wav
+  role: voice
+  start: 1.4
+  gain_db: 0.0
+- file: ../assets/weak-mark-demo/voice_trim/wm26-period.wav
+  role: voice
+  start: 6.18
+  gain_db: -5.0
+- file: ../assets/weak-mark-demo/voice_trim/wm26-exclaim.wav
+  role: voice
+  start: 9.273
+  gain_db: -5.0
+- file: ../assets/weak-mark-demo/voice_trim/n-fields.wav
+  role: voice
+  start: 12.05
+  gain_db: 0.0
+- file: ../assets/weak-mark-demo/voice_trim/wm32-period.wav
+  role: voice
+  start: 17.452
+  gain_db: -5.0
+- file: ../assets/weak-mark-demo/voice_trim/wm32-exclaim.wav
+  role: voice
+  start: 20.818
+  gain_db: -5.0
+- file: ../assets/weak-mark-demo/voice_trim/n-sad.wav
+  role: voice
+  start: 23.632
+  gain_db: 0.0
+- file: ../assets/weak-mark-demo/voice_trim/wm54-period.wav
+  role: voice
+  start: 30.131
+  gain_db: -5.0
+- file: ../assets/weak-mark-demo/voice_trim/wm54-exclaim.wav
+  role: voice
+  start: 34.999
+  gain_db: -5.0
+- file: ../assets/weak-mark-demo/voice_trim/n-close.wav
+  role: voice
+  start: 39.866
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95

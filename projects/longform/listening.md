@@ -106,6 +106,11 @@
   ノブ**。very_slow → very_fast で **4.15 → 2.27 秒**（高さは 275.7 → 283.8 Hz の
   8.1 Hz だけ）。そのあと `。` と `！` は長さがほぼ同じで **+32.5 Hz**、速い行でも
   **+40.3 Hz**、ニジでも **+41.0 Hz**（`speed-demo/`・`acting-speed-voices/`）。
+- `examples/longform-weak-mark/weak-mark-demo.mp3`（0:45）——**強度の欄が弱い行でも、
+  `！` は効く**。`subtle` の「それだけ」が 305.9 → 462.3 Hz（0:06.2 → 0:09.3）、
+  `moderate` の sadness「平気じゃないよ」が 311.2 → 437.6 Hz（0:17.5 → 0:20.8）、
+  20 文字の長い行は 307.7 → 349.4 Hz（0:30.1 → 0:35.0）。欄はひとつも変えない
+  （`weak-mark-demo/`・`acting-drama-mark-weak/`）。
 - `examples/longform-knobs/knob-demo.mp3`（1:09）——同じ一行で、**速さ 5 語**と
   **演技の型 3 語**だけを振った。**速さは 0:10.3 → 0:32.5 で 4.35 秒 → 2.30 秒**、
   型は **0:43.4（やさしく）と 0:48.3（平ら）だけが違う**（`acting-speed/`・
@@ -113,9 +118,9 @@
 
 ## 音量について
 
-examples の mp3 は 26 本。**20 本が −16 ±1.0 LUFS**（トゥルーピーク −1.00〜−1.31 dBTP）。
-未達は 6 本で、**すべてピークに当たっている**：`drama-beta00-pitch` −17.40・
+examples の mp3 は 27 本。**20 本が −16 ±1.0 LUFS**（トゥルーピーク −1.00〜−1.31 dBTP）。
+未達は 7 本で、**すべてピークに当たっている**：`drama-beta00-pitch` −17.40・
 `drama-mark` −17.89・`explainer` −18.16・`floor-two-speakers-natural` −17.64・
-`intensity-demo` −17.38・`knob-demo` −17.10。**トゥルーピークが −1.06〜−1.27 dBTP
+`intensity-demo` −17.38・`knob-demo` −17.10・`weak-mark` −17.50。**トゥルーピークが −1.06〜−1.27 dBTP
 なので、直線のゲインで上げられるのは 0.06〜0.27 dB だけで、−16 LUFS には届かない。** そろえるには圧縮が要るので、
 測る段では掛けていない（`deliver.py`・`REPORT.md` の「配布の高さ」）。

@@ -1,0 +1,18 @@
+# 聞き比べ：強くない行でも、文末の 1 字で声は上がる
+#
+# `acting-drama-mark-weak/`（作品の強くない 12 行 × 記号 2 × seed 5）を耳で確かめる。
+# 欄（感情・強度・声量・速さ・delivery）は台本のまま、変えるのは文末の 1 字だけ。
+# 短い行（s26）・強度は弱いまま（s32）・長い行（s54）の 3 組。seed 3・beta 0.7。
+name: weak-mark-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 強度を、弱いままにして、文末の一字だけ変えます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: niji, line: それだけ。, emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: cold, seed: 3, beta: 0.7, pause_before: 0.4, name: wm26-period}
+- {character: niji, line: それだけ！, emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: cold, seed: 3, beta: 0.7, pause_before: 0.8, name: wm26-exclaim}
+- {character: narrator, line: 欄は、ひとつも変えていません。強度も、弱いままです。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, seed: 4, pause_before: 1.0, name: n-fields}
+- {character: niji, line: 平気じゃないよ。, emotion: sadness, intensity: moderate, volume: quiet, speed: slow, delivery: restrained, seed: 3, beta: 0.7, pause_before: 0.6, name: wm32-period}
+- {character: niji, line: 平気じゃないよ！, emotion: sadness, intensity: moderate, volume: quiet, speed: slow, delivery: restrained, seed: 3, beta: 0.7, pause_before: 0.8, name: wm32-exclaim}
+- {character: narrator, line: 悲しいまま、強く言えます。効きの小さいほうの行でも、これだけ動きます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, seed: 4, pause_before: 1.0, name: n-sad}
+- {character: niji, line: だんだん、遠くなる。そういうものみたい。, emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: flat, seed: 3, beta: 0.7, pause_before: 0.6, name: wm54-period}
+- {character: niji, line: だんだん、遠くなる。そういうものみたい！, emotion: calm, intensity: subtle, volume: quiet, speed: slow, delivery: flat, seed: 3, beta: 0.7, pause_before: 0.8, name: wm54-exclaim}
+- {character: narrator, line: 長い行は、小さくなります。それでも、向きは同じです。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, seed: 4, pause_before: 1.0, name: n-close}
