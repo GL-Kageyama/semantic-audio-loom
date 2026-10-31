@@ -384,7 +384,11 @@ projects/longform/
    ✅ **真ん中に文言を置くと sadness は +9.4 Hz 動く**（5/5・p = 0.0015）が、anger +1.3・
    joy +1.7 は動かない（`acting-mod-phrase/`・`acting/mod_phrase_build.py` が
    `_INTENSITY_PHRASES` をプロセス内だけで差し替える）。**飽和点が感情で違う。**
-   ⚠️ 文言は 1 つしか試していない。**原本の表は変えていない。**
+   ✅ **「抑える」は抑える動作にならない**（`acting-sadness-heldback/`・`acting-sadness-open/`・
+   sadness moderate × seed 5・文言 3 種）。文言なし 294.4 に対し、held back +2.2・
+   steady and open +5.4・moderately strong +9.4 Hz（どれも 5/5）。**語を足せば上がる。
+   強さを主張する語ほど大きい。** 強度は「量」のノブで、抑制のノブは無い。
+   ⚠️ 抑える演技は sadness でしか試していない。**原本の表は変えていない。**
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の
 低下は長さの交絡。

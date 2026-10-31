@@ -349,8 +349,22 @@ overwhelming は `acting-overwhelming-070/` の 15 本。基準線の f0 平均 
 
 **sadness だけ動く**（strong の +18.3 Hz の半分ほど）。**anger・joy は moderate で
 ほぼ飽和していて、文言を足しても動かない。** 段が 2 つに見えるのは、文言が無いから
-だけではなく、**感情ごとに飽和点が違う**から。ここで試した文言は 1 つだけなので、
-「別の文言なら別の大きさになる」ことは残る。
+だけではなく、**感情ごとに飽和点が違う**から。
+
+**「抑える」は、抑える動作にならない。** sadness の同じ帯に 3 つの文言を置いた
+（`acting-sadness-heldback/`・`acting-sadness-open/`・seed 5 本ずつ）。
+
+| 文言 | f0 | 文言なしとの差 | 同符号 |
+| --- | --- | --- | --- |
+| （なし） | 294.4 | — | — |
+| the feeling is present, but held back | 296.6 | +2.2 Hz | 5/5 |
+| the feeling is steady and open | 299.9 | +5.4 Hz | 5/5 |
+| the feeling is moderately strong | 303.9 | **+9.4 Hz** | 5/5 |
+
+**どの文言も高さを上げる。** 順は「どれだけ感情を主張しているか」の順で、
+**抑制（held back）は下げない**。energy は 4 条件で ±0.5 dB（n.s.）。
+**強度は「量」のノブで、「抑える」という動作のノブは無い**——演じ分けたいなら
+`beta` を下げるか、`pitch`・`speed`・`delivery` を別に振るしかない。
 
 
 **直したこと：** Direction の intensity=none は 0.0 に解決されるが、散文では

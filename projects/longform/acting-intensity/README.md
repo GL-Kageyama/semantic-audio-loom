@@ -78,13 +78,34 @@ seed 5 本そろえた差の検定（1 標本 t・差が 0 か）:
   anger・joy は moderate の時点でほぼ飽和している。**
 - anger・joy の +1〜2 Hz は、seed の振れの前では「動いた」と言える大きさではない
   （anger の p は 0.028 だが、5 本の差は +2.1〜+0.0 Hz）。
+- ここで試した文言は 1 つ。**別の文言を置けば別の大きさになる**（次節で 2 つ足した）。
+
+## 「抑える」は、抑える動作にならない
+
+sadness は文言に反応する。では**「出さない」と書けば、声は抑えられるのか**。
+同じ帯（moderate）に 3 つの文言を置いて、seed 5 本ずつ作った
+（`acting-sadness-heldback/`・`acting-sadness-open/`）。
+
+| 文言 | f0 | 文言なしとの差 | 同符号 | p |
+| --- | --- | --- | --- | --- |
+| （なし） | 294.4 | — | — | — |
+| the feeling is present, but held back | 296.6 | +2.2 Hz | 5/5 | 0.005 |
+| the feeling is steady and open | 299.9 | +5.4 Hz | 5/5 | 0.007 |
+| the feeling is moderately strong | 303.9 | **+9.4 Hz** | 5/5 | 0.0015 |
+
+- **「抑える」は下がらない。** むしろ少し上がる（+2.2 Hz・5/5）。**抑制は、量を減らす
+  動作としては出ない。**
+- **どの文言も上げる。** 上がり幅は、その文言が「どれだけ感情を主張しているか」の順
+  （moderately strong > steady and open > held back > なし）。
+- energy は 4 条件で ±0.5 dB（どれも n.s.）。**動くのは高さだけ。**
 
 ## 限界
 
 - 1 行・1 人物（mashiro）・3 感情。感情を増やせば、上端の向きは変わりうる。
 - beta 0.7 の 5 語のうち、none は測っていない（moderate と同じ散文なので同じ音になる）。
-- 「真ん中の文言」は 1 つだけ試した。**別の文言なら別の大きさになる**（ここで言えるのは
-  「文言を置けば sadness は動く」まで）。
+- 「真ん中の文言」は 3 つだけ試した。**別の文言なら別の大きさになる**（ここで言えるのは
+  「語を足せば上がる。強さの語ほど大きく上がる」まで）。
+- 抑える演技は 1 感情（sadness）でしか試していない。**anger の「抑える」は別に測る必要がある。**
 - 強度の効果は、`emotion-seed/` の seed の振れ（同一人物・同じ行で 84.6 Hz）より小さい。
 - 長さ・抑揚の段差は、**この行が短い**（3 秒前後）ので、長い台詞で同じ割合になるかは
   測っていない。
@@ -98,3 +119,11 @@ PYTHONPATH=. $PY projects/longform/acting/intensity_steps.py
 
 上の表と検定は、`acting-matrix/matrix.tsv`（subtle / moderate / strong × 5 seed）と
 `acting-overwhelming-070/probe.tsv`（overwhelming × 5 seed）を読んで出す。
+
+文言を差し替えた版は、原本を触らずに作れる（表をプロセスの中だけで差し替える）。
+
+```bash
+PYTHONPATH=. $PY projects/longform/acting/mod_phrase_build.py \
+  --dir projects/longform/acting-sadness-heldback \
+  --phrase "the feeling is present, but held back" --band 0.70
+```

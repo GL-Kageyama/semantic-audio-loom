@@ -1,0 +1,6 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/acting-sadness-open/voice/op-sadness-s1.wav	2.998	337.5	8.7	-5.0	5.5	0.29	-15.1	35.3	110.0	0.23	0.95	-16.4	0
+projects/longform/assets/acting-sadness-open/voice/op-sadness-s2.wav	3.148	287.1	6.5	-1.79	6.2	0.331	-15.1	36.8	100.0	0.2476	0.95	-16.6	0
+projects/longform/assets/acting-sadness-open/voice/op-sadness-s3.wav	3.123	298.9	8.0	6.86	5.7	0.271	-14.8	35.9	30.0	0.2332	0.95	-15.5	0
+projects/longform/assets/acting-sadness-open/voice/op-sadness-s4.wav	3.598	328.8	7.9	1.29	5.2	0.361	-12.8	39.9	110.0	0.2611	0.95	-15.6	0
+projects/longform/assets/acting-sadness-open/voice/op-sadness-s5.wav	3.523	247.0	6.3	-1.65	5.3	0.345	-13.9	35.4	130.0	0.2323	0.95	-15.8	0

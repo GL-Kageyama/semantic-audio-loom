@@ -1,0 +1,17 @@
+# the feeling is present, but held back
+#
+# 抑える演技：強さを上げずに「出さない」と言えるか。
+# mp-sadness（the feeling is moderately strong）は +9.4 Hz、em-sadness（文言なし）は ±0。
+# ここでは「量」ではなく「抑える」を書く。
+#
+# ビルド（原本は触らず、表をプロセス内で差し替える）:
+#   PYTHONPATH=. <venv> projects/longform/acting/mod_phrase_build.py --dir projects/longform/acting-sadness-heldback \
+#     --phrase "the feeling is present, but held back" --band 0.70
+name: acting-sadness-heldback
+default_pause: 0.0
+cues:
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: hb-sadness-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: hb-sadness-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: hb-sadness-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: hb-sadness-s4}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: hb-sadness-s5}

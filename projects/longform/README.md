@@ -41,6 +41,7 @@ projects/longform/
   acting-overwhelming-070/  既定 0.7 で overwhelming だけを seed 5 で作った 15 本
   acting-intensity-sadness/ sadness の上端を beta 0.3 で確かめる 6 本
   acting-mod-phrase/ 強度の真ん中に文言を置いた 15 本（原本は触らず、表を差し替える）
+  acting-sadness-heldback/  acting-sadness-open/  sadness の真ん中に「抑える」「開く」を置いた各 5 本
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く
   assemble.py         両作品を組む道具（切る・並べる・利得・効果音・下地）
