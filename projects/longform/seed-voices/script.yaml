@@ -1,0 +1,34 @@
+# seed の癖は、声をまたぐか。
+#
+# ライブラリの 4 つの声（narrator / mashiro / niji / gozen-niji-katari）で、同じ 1 行を
+# seed 1〜3 ずつ作る（4 × 3 = 12 本）。設定は全部そろえる。
+# 見るのは絶対の高さではなく、**声ごとの seed のずれ**（s1 が高い、は声をまたぐか）。
+#
+# 測るのは seed-voices/measure_seed_voices.py。
+name: seed-voices
+default_pause: 0.5
+cues:
+  - {character: narrator, line: 明日、また来るね。, emotion: neutral, intensity: moderate,
+     volume: normal, speed: natural, delivery: controlled, seed: 1, pause_before: 0.0, name: narrator-s1}
+  - {character: narrator, line: 明日、また来るね。, emotion: neutral, intensity: moderate,
+     volume: normal, speed: natural, delivery: controlled, seed: 2, pause_before: 0.0, name: narrator-s2}
+  - {character: narrator, line: 明日、また来るね。, emotion: neutral, intensity: moderate,
+     volume: normal, speed: natural, delivery: controlled, seed: 3, pause_before: 0.0, name: narrator-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate,
+     volume: normal, speed: natural, delivery: controlled, seed: 1, pause_before: 0.0, name: mashiro-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate,
+     volume: normal, speed: natural, delivery: controlled, seed: 2, pause_before: 0.0, name: mashiro-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate,
+     volume: normal, speed: natural, delivery: controlled, seed: 3, pause_before: 0.0, name: mashiro-s3}
+  - {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate,
+     volume: normal, speed: natural, delivery: controlled, seed: 1, pause_before: 0.0, name: niji-s1}
+  - {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate,
+     volume: normal, speed: natural, delivery: controlled, seed: 2, pause_before: 0.0, name: niji-s2}
+  - {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate,
+     volume: normal, speed: natural, delivery: controlled, seed: 3, pause_before: 0.0, name: niji-s3}
+  - {character: gozen-niji-katari, line: 明日、また来るね。, emotion: neutral, intensity: moderate,
+     volume: normal, speed: natural, delivery: controlled, seed: 1, pause_before: 0.0, name: katari-s1}
+  - {character: gozen-niji-katari, line: 明日、また来るね。, emotion: neutral, intensity: moderate,
+     volume: normal, speed: natural, delivery: controlled, seed: 2, pause_before: 0.0, name: katari-s2}
+  - {character: gozen-niji-katari, line: 明日、また来るね。, emotion: neutral, intensity: moderate,
+     volume: normal, speed: natural, delivery: controlled, seed: 3, pause_before: 0.0, name: katari-s3}
