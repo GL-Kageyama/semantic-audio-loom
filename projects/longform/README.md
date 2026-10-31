@@ -40,6 +40,7 @@ projects/longform/
   check_render.py     門の数を測る（尺・クリップ・無音・効果音の立ち上がり）
   check_loudness.py   音量を配布の目安と比べる（LUFS・トゥルーピーク・LRA）
   deliver.py          配布用の mp3 を書く（直線のゲインだけ・チャンネル数はマスターのまま）
+  near_duplicates.py  作品の中の「ほぼ同じ声になった組」を総当たりで探す
   measure_timbre.py   声のスペクトルの距離（有声フレームだけ。無音を混ぜない）
   measure_envelope.py LPC 包絡の距離（pitch に引っ張られない声質の測り方）
   check_timbre_metric.py  上の計器が無音の割合で動かないことの検査
