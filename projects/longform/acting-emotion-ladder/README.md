@@ -1,9 +1,9 @@
 # 感情の 11 語：neutral より上へは動くが、隣どうしは区別できない
 
-`emotion` は 11 語。これまでは seed 1 の行列（`acting/`）と 5 感情 × seed 3
-（`emotion-seed/`）で見ていた。**11 語 × seed 5 を 1 つの条件に並べ**、語のあいだの差と
-seed の散らばりを同じ表で比べた（同じ行・moderate・speed natural・`delivery` controlled・
-breathiness none・beta 0.7・55 本）。
+`emotion` は 11 語。neutral との差（対応を取れば 5/5 で上）は `acting-emotions/` の 85 本で
+すでに出ている（`acting/reanalyze_seeds.py`）。ここで取り直したのは**感情どうしの対応のある
+比較**——11 語を 1 つの条件に並べて、同じ seed どうしを引く（同じ行・moderate・speed natural・
+`delivery` controlled・breathiness none・beta 0.7・55 本）。
 
 | emotion | f0 (Hz) | neutral との差 | 同符号 | p |
 | --- | --- | --- | --- | --- |

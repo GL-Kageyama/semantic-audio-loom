@@ -484,6 +484,11 @@ whisper より小さい。叫ぶと高く長くなるが、大きくはならな
   この条件では `pitch` の `high` は −0.1 Hz で、**`low`（−13.5 Hz・9/10）だけが段になる。**
 - **語の数と段の数が、まったく対応しない。** 12 語の欄（delivery）が 3 段、
   5 語の欄（volume）が 0 段、5 語の欄（speed）が 5 段。
+- **感情の 11 語は「neutral より上」と「隣どうしは同じ」に分かれる**
+  （`acting-emotion-ladder/`）。neutral との対応のある差は +4〜+26 Hz で 9/10 が 5/5 だが、
+  **感情どうしでは遠い 2 語しか離れない**（fear − sadness +21.3 Hz・fear − joy +1.6・
+  confidence − anxiety +0.1 Hz）。見本は
+  [examples/longform-emotions/](../../examples/longform-emotions/)（75 秒・11 語）。
 - **breathiness は段になるが、幅が 1.3 ポイント。** 既定 0.7 で有声の割合が 5 seed とも
   同じ向きに下がり（0/5・p = 0.021）、高域の比が +10%。**beta 0.3 でも seed 5 本なら
   出る**（slight は有声 −2.8 ポイント・0/5、高域 +9.8%・**5/5・p = 0.0001**）が、

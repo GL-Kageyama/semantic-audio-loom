@@ -1,6 +1,6 @@
 # 長尺ラン — STATE（再開のための唯一の現在地）
 
-最終更新：2026-10-31 14:58 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
+最終更新：2026-10-31 15:02 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
 ユーザーは約 10 時間不在。質問しない。門を 20 分超えたら「未達」で次へ。
 
 ## この Mac（時間の数字はマシンが違えば比べられない）
@@ -490,6 +490,10 @@ projects/longform/
    ⚠️ seed 4 は flat の差が端で縮む側（平均は広がる）。**見本 1 本は平均の代理でない。**
    ⚠️ seed 1 の見本（平らより冷たくが良く出る）は**音量の門に未達**（−17.36/−17.45 LUFS）で
    採らなかった。seed 4 だけが −16.39 で通った——**seed で 1 LU 動く。**
+   ✅ **感情の見本も足した**（`emotion-demo/`・`examples/longform-emotions/`・75.4 秒・
+   −15.64 LUFS・TP −1.01）。語り手の札＋11 語を seed 4 で並べる（fear 341.4 / joy 343.4 /
+   neutral 313.0 Hz）。**並びは 5 seed の平均の順で、seed 4 では 3 組が入れ替わる**
+   （sadness↔guilt・anxiety↔confidence・joy↔fear。差 2〜4 Hz）。
    ⛔ **欄の数と段の数は対応しない**：speed 5→5・pitch 6→2（high だけ +19 Hz）・
    delivery 12→3・intensity 5→2・intonation 5→ほぼ 0・volume 5→0（shout だけ
    f0・長さが動く）・breathiness 4→2。

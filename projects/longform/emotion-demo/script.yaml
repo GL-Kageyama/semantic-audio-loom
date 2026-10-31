@@ -1,0 +1,32 @@
+# 聞き比べ：感情を 11 語ぜんぶ並べると、どこまで違って聞こえるか。
+#
+# `acting-emotion-ladder/` の実測（neutral 290.3 → fear 315.8 Hz・隣どうしは 1〜2 Hz 差）を
+# 耳で確かめるための見本。語り手が感情の名前を読み、真白が同じ台詞・同じ seed 4 で言う。
+# 並びは実測した f0 の低い順（昇順）。
+name: emotion-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 同じ台詞を、十一の感情で言います。声の高さの、低い順に。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: narrator, line: 中立。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.8, name: n-neutral}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-neutral}
+- {character: narrator, line: 悲しみ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-sadness}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-sadness}
+- {character: narrator, line: 罪悪感。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-guilt}
+- {character: mashiro, line: 明日、また来るね。, emotion: guilt, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-guilt}
+- {character: narrator, line: 孤独。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-loneliness}
+- {character: mashiro, line: 明日、また来るね。, emotion: loneliness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-loneliness}
+- {character: narrator, line: 穏やか。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-calm}
+- {character: mashiro, line: 明日、また来るね。, emotion: calm, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-calm}
+- {character: narrator, line: 不安。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-anxiety}
+- {character: mashiro, line: 明日、また来るね。, emotion: anxiety, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-anxiety}
+- {character: narrator, line: 自信。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-confidence}
+- {character: mashiro, line: 明日、また来るね。, emotion: confidence, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-confidence}
+- {character: narrator, line: 興奮。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-excitement}
+- {character: mashiro, line: 明日、また来るね。, emotion: excitement, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-excitement}
+- {character: narrator, line: 怒り。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-anger}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-anger}
+- {character: narrator, line: 喜び。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-joy}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-joy}
+- {character: narrator, line: 恐怖。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-fear}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-fear}
+- {character: narrator, line: 隣り合う感情は、同じ声に聞こえます。離れた感情だけが、違って聞こえます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.2, name: n-close}
