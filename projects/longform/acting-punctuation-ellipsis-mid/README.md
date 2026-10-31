@@ -56,3 +56,6 @@ md5 まで一致**、seed 2・3 も差は RMS −75.9・−72.8 dBFS（0.004 未
 読点を 1 個増やすのと同じことになるので、`acting-notation/` の
 「読点 1 個で f0 −17.0 Hz」も一緒に効く（この行では f0 は動かなかったが、
 測った行が違う）。
+
+耳で確かめる見本：`projects/longform/ellipsis-demo/`（`examples/longform-ellipsis/`・
+33.6 秒）。文末 2 本（同じ音）と、途中の `…` の 1 本（1.95 秒）を並べている。

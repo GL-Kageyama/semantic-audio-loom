@@ -1,0 +1,42 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: ellipsis-demo
+stems:
+- file: ../assets/ellipsis-demo/voice_trim/n-intro.wav
+  role: voice
+  start: 1.4
+  gain_db: 0.0
+- file: ../assets/ellipsis-demo/voice_trim/p-ellipsis-end.wav
+  role: voice
+  start: 6.254
+  gain_db: 0.0
+- file: ../assets/ellipsis-demo/voice_trim/p-none-end.wav
+  role: voice
+  start: 9.249
+  gain_db: 0.0
+- file: ../assets/ellipsis-demo/voice_trim/n-same.wav
+  role: voice
+  start: 12.445
+  gain_db: 0.0
+- file: ../assets/ellipsis-demo/voice_trim/n-mid.wav
+  role: voice
+  start: 16.379
+  gain_db: 0.0
+- file: ../assets/ellipsis-demo/voice_trim/p-mid.wav
+  role: voice
+  start: 20.174
+  gain_db: 0.0
+- file: ../assets/ellipsis-demo/voice_trim/n-short.wav
+  role: voice
+  start: 22.776
+  gain_db: 0.0
+- file: ../assets/ellipsis-demo/voice_trim/n-close.wav
+  role: voice
+  start: 28.256
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95

@@ -1,0 +1,16 @@
+# 聞き比べ：省略記号「…」は、間を作らない
+#
+# `acting-punctuation-ellipsis/`（文末は消される）と
+# `acting-punctuation-ellipsis-mid/`（途中は読点に化けて行が 0.85 秒縮む）を耳で確かめる。
+# 文末の 2 本は同じ台詞・同じ seed なので、同じ音が二回鳴る。
+name: ellipsis-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 文末に省略記号を置いた行と、置かない行を、並べます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: mashiro, line: 明日、また来るね…, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: p-ellipsis-end}
+- {character: mashiro, line: 明日、また来るね, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.8, name: p-none-end}
+- {character: narrator, line: 同じ音が、二回鳴りました。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-same}
+- {character: narrator, line: 途中に置くと、読点に変わります。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-mid}
+- {character: mashiro, line: 明日、……また来るね, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: p-mid}
+- {character: narrator, line: 短くなりました。間は、増えていません。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-short}
+- {character: narrator, line: 言いよどみは、間の欄で作ります。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.2, name: n-close}

@@ -29,7 +29,8 @@
 [examples/longform-seed/](../../examples/longform-seed/)（42 秒・seed だけを振る）と
 [examples/longform-subtext/](../../examples/longform-subtext/)（42 秒・裏の意味だけを振る）と
 [examples/longform-punctuation/](../../examples/longform-punctuation/)（46 秒・文末の記号だけを振る）と
-[examples/longform-punctuation-shape/](../../examples/longform-punctuation-shape/)（60 秒・途中の句点で効きが落ちる）。
+[examples/longform-punctuation-shape/](../../examples/longform-punctuation-shape/)（60 秒・途中の句点で効きが落ちる）と
+[examples/longform-ellipsis/](../../examples/longform-ellipsis/)（34 秒・`…` は間を作らない）。
 
 ## 置き場
 
@@ -100,6 +101,7 @@ projects/longform/
   subtext-demo/      subtext だけを替えて 5 本並べた 42 秒の見本（同じ音になる）
   punctuation-demo/  文末の記号を替えて 8 本並べた 46 秒の見本
   punctuation-shape-demo/  同じ `！` で行の形だけを替えた 60 秒の見本（途中の句点）
+  ellipsis-demo/      `…` が消える・読点になることを並べた 34 秒の見本
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   drama-seed-split/  演劇のニジだけ seed 2 にした版（人物を seed で分けられるか）
   acting-breath-s70/ 芝居 s70 の 1 行で breathiness だけを none / slight に振る（6 本）
