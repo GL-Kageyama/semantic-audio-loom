@@ -1,0 +1,26 @@
+# 作品の台詞に `！` を書いたら、声は動くか（3 行 × 2 記号 = 6 本）
+#
+# `drama/script.yaml` の強い 3 行を、そのまま（文末 `。`）と文末だけ `！` にして
+# 焼く。感情・強度・声量・速さ・delivery は台本のまま・seed 1・作品と同じ beta。
+
+name: acting-drama-mark
+default_pause: 0.0
+cues:
+- {character: mashiro, line: なんで。なんで、そういうこと、平気で言うの。, emotion: anger, intensity: strong, volume: loud, speed: fast, delivery: aggressive, seed: 1, beta: 0.7, name: dm-s31-period}
+- {character: mashiro, line: なんで。なんで、そういうこと、平気で言うの！, emotion: anger, intensity: strong, volume: loud, speed: fast, delivery: aggressive, seed: 1, beta: 0.7, name: dm-s31-exclaim}
+- {character: mashiro, line: やめて。そういうの、やめて。, emotion: fear, intensity: strong, volume: normal, speed: fast, delivery: desperate, seed: 1, beta: 0.7, name: dm-s28-period}
+- {character: mashiro, line: やめて。そういうの、やめて！, emotion: fear, intensity: strong, volume: normal, speed: fast, delivery: desperate, seed: 1, beta: 0.7, name: dm-s28-exclaim}
+- {character: mashiro, line: まだ、話したい。, emotion: sadness, intensity: strong, volume: normal, speed: slow, delivery: desperate, seed: 1, beta: 0.7, name: dm-s63-period}
+- {character: mashiro, line: まだ、話したい！, emotion: sadness, intensity: strong, volume: normal, speed: slow, delivery: desperate, seed: 1, beta: 0.7, name: dm-s63-exclaim}
+- {character: mashiro, line: なんで。なんで、そういうこと、平気で言うの。, emotion: anger, intensity: strong, volume: loud, speed: fast, delivery: aggressive, seed: 2, beta: 0.7, name: dm-s31-period-s2}
+- {character: mashiro, line: なんで。なんで、そういうこと、平気で言うの！, emotion: anger, intensity: strong, volume: loud, speed: fast, delivery: aggressive, seed: 2, beta: 0.7, name: dm-s31-exclaim-s2}
+- {character: mashiro, line: やめて。そういうの、やめて。, emotion: fear, intensity: strong, volume: normal, speed: fast, delivery: desperate, seed: 2, beta: 0.7, name: dm-s28-period-s2}
+- {character: mashiro, line: やめて。そういうの、やめて！, emotion: fear, intensity: strong, volume: normal, speed: fast, delivery: desperate, seed: 2, beta: 0.7, name: dm-s28-exclaim-s2}
+- {character: mashiro, line: まだ、話したい。, emotion: sadness, intensity: strong, volume: normal, speed: slow, delivery: desperate, seed: 2, beta: 0.7, name: dm-s63-period-s2}
+- {character: mashiro, line: まだ、話したい！, emotion: sadness, intensity: strong, volume: normal, speed: slow, delivery: desperate, seed: 2, beta: 0.7, name: dm-s63-exclaim-s2}
+- {character: mashiro, line: なんで。なんで、そういうこと、平気で言うの。, emotion: anger, intensity: strong, volume: loud, speed: fast, delivery: aggressive, seed: 3, beta: 0.7, name: dm-s31-period-s3}
+- {character: mashiro, line: なんで。なんで、そういうこと、平気で言うの！, emotion: anger, intensity: strong, volume: loud, speed: fast, delivery: aggressive, seed: 3, beta: 0.7, name: dm-s31-exclaim-s3}
+- {character: mashiro, line: やめて。そういうの、やめて。, emotion: fear, intensity: strong, volume: normal, speed: fast, delivery: desperate, seed: 3, beta: 0.7, name: dm-s28-period-s3}
+- {character: mashiro, line: やめて。そういうの、やめて！, emotion: fear, intensity: strong, volume: normal, speed: fast, delivery: desperate, seed: 3, beta: 0.7, name: dm-s28-exclaim-s3}
+- {character: mashiro, line: まだ、話したい。, emotion: sadness, intensity: strong, volume: normal, speed: slow, delivery: desperate, seed: 3, beta: 0.7, name: dm-s63-period-s3}
+- {character: mashiro, line: まだ、話したい！, emotion: sadness, intensity: strong, volume: normal, speed: slow, delivery: desperate, seed: 3, beta: 0.7, name: dm-s63-exclaim-s3}

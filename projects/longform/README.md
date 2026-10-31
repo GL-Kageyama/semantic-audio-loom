@@ -89,6 +89,7 @@ projects/longform/
   acting-punctuation/       文末の記号（。／？／！／なし）× seed 5（字面で動くのは何か）
   acting-punctuation-stack/ 文末の記号 × 感情の 2 × 2 × seed 5（足し算になるか）
   acting-mark-emotion5/    6 感情 × 2 記号 × seed 3（どの感情の上でも同じだけ足せる）
+  acting-drama-mark/       作品の台詞 3 行 × 記号 2 × seed 3（欄を変えず文末だけ `！`）
   acting-punctuation-pitch/ 文末の記号 × pitch 3 段 × seed 5（欄と掛けても効くか）
   acting-punctuation-floor/  文末の記号 × beta 3 段 × seed 5（床で `！` は消え `？` は残る）
   acting-floor-mark-lines/  3 行 × 2 声 × beta 2 段 × 記号 2 × seed 3（上の再現）
