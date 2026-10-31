@@ -127,6 +127,7 @@ projects/longform/
   drama-mark-demo/    作品の台詞の文末だけ `！` にする 41 秒の見本（欄は変えない）
   weak-mark-demo/     強度の弱い行でも `！` が効く 45 秒の見本（欄は変えない）
   drama-scene-mark/   場面 13 行を台本のまま／文末だけ `！` で続けて並べる 104 秒
+  drama-scene-mark-seed/  同じ対を seed 5 本で測る 130 本（山場が残るか）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   drama-seed-split/  演劇のニジだけ seed 2 にした版（人物を seed で分けられるか）
   acting-breath-s70/ 芝居 s70 の 1 行で breathiness だけを none / slight に振る（6 本）
