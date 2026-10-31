@@ -4086,3 +4086,30 @@ date	stage	asset	model	settings	wall_s	audio_s	machine	note
 2026-10-31	P2b	weak-mark-demo/voice/wm54-exclaim	tsukasa	emotion=calm,intensity=subtle,delivery=flat,speed=slow,volume=quiet,seed=3,alpha=0.35,beta=0.7	0.7	4.55	M2Pro-16GB	rc=0
 2026-10-31	P2b	weak-mark-demo/voice/n-close	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.8	5.57	M2Pro-16GB	rc=0
 2026-10-31	P2b	weak-mark-demo/voice (まとめ)	tsukasa	cues=10	17.1	41.98	M2Pro-16GB	rc=0 合計
+2026-10-31	P2b	drama-scene-mark/voice/pm-s60	tsukasa	emotion=joy,intensity=subtle,delivery=gentle,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	10.9	2.80	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/pm-s61	tsukasa	emotion=sadness,intensity=strong,delivery=restrained,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.5	2.25	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/pm-s62	tsukasa	emotion=joy,intensity=subtle,delivery=gentle,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.5	2.57	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/pm-s63	tsukasa	emotion=sadness,intensity=strong,delivery=desperate,speed=slow,volume=normal,seed=1,alpha=0.35,beta=0.7	0.5	2.80	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/pm-s64	tsukasa	emotion=calm,intensity=moderate,delivery=flat,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.7	4.37	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/pm-s65	tsukasa	emotion=fear,intensity=strong,delivery=desperate,speed=fast,volume=normal,seed=1,alpha=0.35,beta=0.7	0.6	1.67	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/pm-s66	tsukasa	emotion=joy,intensity=moderate,delivery=gentle,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.7	4.67	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/pm-s67	tsukasa	emotion=fear,intensity=overwhelming,delivery=desperate,speed=fast,volume=loud,seed=1,alpha=0.35,beta=0.7	0.4	1.60	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/pm-s68	tsukasa	emotion=anxiety,intensity=subtle,delivery=hesitant,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.5	2.27	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/pm-s69	tsukasa	emotion=loneliness,intensity=subtle,delivery=flat,speed=very_slow,volume=whisper,seed=1,alpha=0.35,beta=0.7	0.5	2.75	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/pm-s70	tsukasa	emotion=sadness,intensity=subtle,delivery=restrained,speed=very_slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.5	2.12	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/pm-s71	tsukasa	emotion=sadness,intensity=subtle,delivery=gentle,speed=very_slow,volume=whisper,seed=1,alpha=0.35,beta=0.7	0.6	3.05	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/pm-s72	tsukasa	emotion=loneliness,intensity=subtle,delivery=flat,speed=very_slow,volume=whisper,seed=1,alpha=0.35,beta=0.7	0.5	2.95	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/em-s60	tsukasa	emotion=joy,intensity=subtle,delivery=gentle,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.5	2.70	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/em-s61	tsukasa	emotion=sadness,intensity=strong,delivery=restrained,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.5	2.12	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/em-s62	tsukasa	emotion=joy,intensity=subtle,delivery=gentle,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.5	2.40	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/em-s63	tsukasa	emotion=sadness,intensity=strong,delivery=desperate,speed=slow,volume=normal,seed=1,alpha=0.35,beta=0.7	0.5	2.75	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/em-s64	tsukasa	emotion=calm,intensity=moderate,delivery=flat,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.7	4.25	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/em-s65	tsukasa	emotion=fear,intensity=strong,delivery=desperate,speed=fast,volume=normal,seed=1,alpha=0.35,beta=0.7	0.4	1.55	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/em-s66	tsukasa	emotion=joy,intensity=moderate,delivery=gentle,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.7	4.50	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/em-s67	tsukasa	emotion=fear,intensity=overwhelming,delivery=desperate,speed=fast,volume=loud,seed=1,alpha=0.35,beta=0.7	0.4	1.60	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/em-s68	tsukasa	emotion=anxiety,intensity=subtle,delivery=hesitant,speed=slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.5	2.27	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/em-s69	tsukasa	emotion=loneliness,intensity=subtle,delivery=flat,speed=very_slow,volume=whisper,seed=1,alpha=0.35,beta=0.7	0.5	2.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/em-s70	tsukasa	emotion=sadness,intensity=subtle,delivery=restrained,speed=very_slow,volume=quiet,seed=1,alpha=0.35,beta=0.7	0.5	2.22	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/em-s71	tsukasa	emotion=sadness,intensity=subtle,delivery=gentle,speed=very_slow,volume=whisper,seed=1,alpha=0.35,beta=0.7	0.6	3.02	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice/em-s72	tsukasa	emotion=loneliness,intensity=subtle,delivery=flat,speed=very_slow,volume=whisper,seed=1,alpha=0.35,beta=0.7	0.5	3.02	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-scene-mark/voice (まとめ)	tsukasa	cues=26	24.5	71.12	M2Pro-16GB	rc=0 合計
