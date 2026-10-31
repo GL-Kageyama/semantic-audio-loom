@@ -133,6 +133,13 @@
     ——欄の効きとは逆向き。⚠️ **既存の 2 作品はこのノブをほぼ使って
     いない**（演劇 89 行中 88 行・解説 48 行すべてが「。」で終わる）。耳で確かめる見本：
     [`examples/longform-punctuation/`](../../examples/longform-punctuation/)（0:46）。
+    **置く行を選ぶ**。`！` を配るほど山は低くなる（場面 13 行のうち s67 と次点の差：
+    0 行 68.0 → 強い 3 行 1.0 → 全部 12 行 −43.3 Hz・seed 5・
+    [`drama-scene-mark-seed/`](drama-scene-mark-seed/)・
+    [`drama-scene-mark-selective/`](drama-scene-mark-selective/)）。**外すのも同じ幅**で、
+    s67 の `！` を `。` に戻すと 391.0 → 288.0 Hz（−103.0）。**移したいなら、もとの山から
+    記号を外す**——s68 に足すだけは 4/5 でしか 1 位にならないが、外すと 5/5 で入れ替わる
+    （195 本・[`drama-scene-mark-relocate/`](drama-scene-mark-relocate/)）。
     **表記は 1 ビットも変えない**：`また` / `マタ` / `又` は md5 まで同じ
     （[`projects/longform/acting-notation/`](acting-notation/)）。**読点を 1 個足すと
     f0 −17.0 Hz**（4/5）で、長さは +0.03 秒——**読点も高さの印で、間ではない。**
