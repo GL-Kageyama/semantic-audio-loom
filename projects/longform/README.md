@@ -8,8 +8,10 @@
 | `explainer/` | 解説「音は、なぜ感情を動かすのか」。語り手＋実例 4 本だけ真白 | 約 5 分 |
 | `drama/` | 二人芝居「午前二時の電話」。真白とニジ | 約 5 分 |
 | `acting-demo/` | 聞き比べ「明日、また来るね。」声の混ぜ方（`beta`）0.7 と 0.3 | 74 秒 |
+| `drama-beta03/` | 同じ脚本の演劇を `beta` 0.3 で組み直した版（聞き比べ用） | 約 5.5 分 |
 
-聞き比べの見本と実測は [examples/longform-acting/](../../examples/longform-acting/)。
+聞き比べの見本と実測は [examples/longform-acting/](../../examples/longform-acting/) と
+[examples/longform-drama-beta03/](../../examples/longform-drama-beta03/)。
 
 ## 置き場
 

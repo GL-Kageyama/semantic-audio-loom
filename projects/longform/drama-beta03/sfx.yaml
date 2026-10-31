@@ -1,0 +1,4 @@
+# 演劇の効果音（assemble.py が読む）。anchor = cue 名、offset = その頭からの秒。
+# 呼び出し音は台詞の手前、切断音は最後の長い間の頭に置く。
+- {file: ring.wav, anchor: s01, offset: -3.7, gain_db: -6}
+- {file: hangup.wav, anchor: s68, offset: -2.0, gain_db: 3}

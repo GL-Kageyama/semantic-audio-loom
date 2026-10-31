@@ -185,6 +185,10 @@ projects/longform/
    平坦度 0.0169 → 0.0191（+13%・seed 2/3）。
 12. **決定論の限界**：同じ設定の作り直し 12 本のうち 5 本がバイト不一致（RMS
    0.0005〜0.0007＝信号比 −65 dB・長さ同一）。**byte-identical とは書かない。**
+13. **演劇の beta 0.3 版**（`drama-beta03/`・89 本）：332.2 s（+21.7 s）。生の声は
+   同長（271.1 対 271.3 s）で、切った後の声が 239.0 対 217.3 s。参照との MFCC 距離は
+   34.3 → 46.5。門は通過（ピーク −0.4・クリップ 0・効果音 +40.0 / +20.0 dB・
+   ducking −11.3 dB）。納品：[examples/longform-drama-beta03/](../../examples/longform-drama-beta03/)。
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の
 低下は長さの交絡。
