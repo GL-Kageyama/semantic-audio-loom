@@ -437,7 +437,7 @@ energy 1.1 dB なので、**語の効きは seed の振れの 13 分の 1**。�
 
 | 欄 | 語の数（測った数） | 声に届く段 | 測ったところ |
 | --- | --- | --- | --- |
-| `speed` | 5（5） | **5**（単調・1.80 倍） | very_slow 4.39 → very_fast 2.44 秒・5 seed すべてで順序が崩れない |
+| `speed` | 5（5） | **5**（単調・1.74〜1.80 倍） | very_slow 4.39 → very_fast 2.44 秒・3 感情とも 5 seed すべてで順序が崩れない |
 | `pitch` | 6（3） | **2**（high だけ離れる） | neutral で high 282.8 / natural 264.0 / slightly_high 265.2 Hz |
 | `emotion` | 11（3＋枠外） | 効く（ただし seed より小さい） | seed の幅 84.6 Hz の前では二次的（`emotion-seed/`） |
 | `intonation` | 5（3） | **ほぼ 0** | 語尾の傾きで rising −0.35 / flat +2.11 / falling −1.64・3/5 |
@@ -446,12 +446,19 @@ energy 1.1 dB なので、**語の効きは seed の振れの 13 分の 1**。�
 | `breathiness` | 4（4） | **2**（幅 1.3 ポイント） | 有声の割合 0.276 → 0.263・高域の比 +10%（`acting-breath-070/`） |
 | `volume` | 5（4） | **0**（声としては） | whisper と loud で energy 0.08 dB。ミックスの `VOLUME_GAIN` が 5 段作る |
 
-（`delivery` は `acting-delivery/`・`speed` は `acting-speed/`・`volume` は
+（`delivery` は `acting-delivery/`・`speed` は `acting-speed/` と
+`acting-speed-emotions/`・`volume` は
 `acting-volume/`。`intonation` は上の「語尾の抑揚は、beta を下げても分かれない」節。）
 
 - **単調な 5 段になるのは `speed` だけ。** 5 seed それぞれで 5 語の長さの順序が完全に
   一致する。台本はこれを一番使っている（演劇の speed は slow 44・natural 31・fast 10・
   very_slow 4）。
+- **その 5 段は、感情を替えても崩れない。** joy に anger と sadness を足した 3 感情 ×
+  5 段 × seed 5 で、すべての seed が単調（各 5/5・段ごとの p ≤ 3.2e−04）。
+  比は anger 1.79・sadness 1.74・joy 1.80 倍。**伸びるのは発話そのもので、間の割合は
+  0.22〜0.32 のまま動かない。高さは動かない**（f0 の 5 段が単調でない）。
+  `very_slow` は 4.2〜4.4 秒、`very_fast` は 2.4 秒——長さの差 2 秒は、
+  5 本つないだ作品では間の設計に効く。
 - **語の数と段の数が、まったく対応しない。** 12 語の欄（delivery）が 2 群、
   5 語の欄（volume）が 0 段、5 語の欄（speed）が 5 段。
 - **breathiness は段になるが、幅が 1.3 ポイント。** 有声の割合が 5 seed とも同じ向きに

@@ -465,6 +465,13 @@ beta 0.7 で 4 段 × seed 5 を並べた（新規 36 本。`acting-overwhelming
 - **speed だけが 5 段のまま単調**（`acting-speed/`・25 本）。very_slow 4.39 → natural
   3.06 → very_fast 2.44 秒（1.80 倍）。**5 seed それぞれで 5 語の順序が完全に単調**。
   両端の差は p = 0.00002。`pause_ratio` は 0.22〜0.27 で並ばない（発話そのものが伸びる）。
+- **その 5 段は、感情を替えても崩れない**（`acting-speed-emotions/`・50 本）。同じ行で
+  anger と sadness を足し、5 語 × seed 5 を測ると、**両感情とも 5 seed すべてが単調**
+  （各段 5/5・p ≤ 3.2e−04）。比は anger 1.79・sadness 1.74 倍（joy 1.80）。
+  発話時間は 3.35 → 1.90・3.18 → 1.81 秒（1.76 倍）で、`pause_ratio` は 0.22〜0.32 の
+  まま動かない。**高さは動かない**（f0 の 5 段平均が anger 305.6/305.3/310.0/309.9/316.1、
+  sadness 300.6/295.2/294.4/306.3/295.8 で非単調）。`knob-demo` の「速いほど 17 Hz 高い」
+  は seed 1 つの値だったと読む。
 - **breathiness は段になるが、幅が 1.3 ポイント**（`acting-breath-070/`・20 本）。有声の
   割合が none 0.276 → heavy 0.263（moderate と heavy が 0/5・p ≤ 0.021）、高域の比が
   0.0115 → 0.0126（+10%）。**前の測定（`acting-breath/`・beta 0.3・neutral・seed 3）は

@@ -1,6 +1,6 @@
 # 長尺ラン — STATE（再開のための唯一の現在地）
 
-最終更新：2026-10-31 13:28 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
+最終更新：2026-10-31 14:02 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
 ユーザーは約 10 時間不在。質問しない。門を 20 分超えたら「未達」で次へ。
 
 ## この Mac（時間の数字はマシンが違えば比べられない）
@@ -412,7 +412,9 @@ projects/longform/
    ✅ **speed だけが 5 段のまま単調**（`acting-speed/`・joy moderate × 5 語 × seed 5・
    25 本）。very_slow 4.39 → natural 3.06 → very_fast 2.44 秒（**1.80 倍**）。**5 seed
    それぞれで順序が完全に単調**（25 本・逆転 0）。p は 0.0001 以下。**演じ分けの土台は
-   speed。**
+   speed。** ✅ **感情を替えても 5 段**（`acting-speed-emotions/`・anger/sadness × 5 語 ×
+   seed 5・50 本）。**両感情とも 5 seed すべて単調**（各段 p ≤ 3.2e−04）・比は anger 1.79・
+   sadness 1.74 倍。間の割合 0.22〜0.32・高さは非単調。**発話そのものが 1.76 倍に伸び縮み。**
    ✅ **breathiness も 2 段だが幅が小さい**（`acting-breath-070/`・20 本）。有声の割合
    none 0.276 → heavy 0.263（moderate/heavy 0/5・p ≤ 0.021）、高域の比 +10%。
    ⚠️ **前の測定（`acting-breath/`・beta 0.3・neutral・seed 3）は差を出していない**
