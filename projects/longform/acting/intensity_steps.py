@@ -18,6 +18,7 @@ seed は 1〜5 の 5 本。基準線は baseline-s<seed>（neutral / moderate）
 """
 import csv
 import os
+import sys
 
 import numpy as np
 from scipy import stats
@@ -68,7 +69,40 @@ def blocked(mat):
     }
 
 
+def line2() -> None:
+    """2 行目「そんなこと、ないよ。」の 4 段 × 3 感情 × 5 seed。
+
+    基準線を置かず、同じ感情・同じ seed の中で段を比べる（感情の効きは別の実験）。
+    """
+    path = os.path.join(LONGFORM, "acting-intensity-line2", "probe.tsv")
+    d = {}
+    for r in csv.DictReader(open(path, encoding="utf-8"), delimiter="\t"):
+        name = os.path.basename(r["path"]).rsplit(".", 1)[0]
+        d[name] = {k: float(v) for k, v in r.items() if k not in ("path",)}
+
+    print("2 行目「そんなこと、ないよ。」f0 中央値（seed 5 の平均）\n")
+    print(f"{'感情':10s}" + "".join(f"{label:>14s}" for label, _ in LEVELS))
+    for emo in EMOTIONS:
+        vals = [np.mean([d[f"l2-{emo}-{label}-s{s}"]["f0_median_hz"] for s in SEEDS[0:5]])
+                for label, _ in LEVELS]
+        print(f"{emo:10s}" + "".join(f"{v:14.1f}" for v in vals))
+
+    print("\n--- 隣り合う段の差（seed ごとに対にする）---")
+    for emo in EMOTIONS:
+        for (la, _), (lb, _) in zip(LEVELS, LEVELS[1:]):
+            diff = np.array([d[f"l2-{emo}-{lb}-s{s}"]["f0_median_hz"]
+                             - d[f"l2-{emo}-{la}-s{s}"]["f0_median_hz"] for s in SEEDS[0:5]])
+            t, p = stats.ttest_1samp(diff, 0.0)
+            sign = sum(1 for x in diff if x > 0)
+            print(f"{emo:9s}{la:9s}→ {lb:13s}{np.mean(diff):+7.1f} Hz  "
+                  f"t = {t:+5.2f}  p = {p:.4f}  同符号 {sign}/{len(diff)}")
+        print()
+
+
 def main():
+    if "--line2" in sys.argv:
+        line2()
+        return
     d = load()
     print("強度の 3 段（同じ感情・同じ seed の中で比べる）\n")
     print("感情     段        f0 差       energy 差   速さ比")

@@ -43,6 +43,7 @@ projects/longform/
   acting-mod-phrase/ 強度の真ん中に文言を置いた 15 本（原本は触らず、表を差し替える）
   acting-sadness-heldback/  acting-sadness-open/  sadness の真ん中に「抑える」「開く」を置いた各 5 本
   acting-anger-heldback/    anger でも「抑える」を試した 5 本
+  acting-intensity-line2/   2 行目で強度 4 段 × 3 感情 × seed 5（形が台詞に依るか）
   intensity-demo/    強度の段だけを並べた 63 秒の見本（語り手の札つき）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く

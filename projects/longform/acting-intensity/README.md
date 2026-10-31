@@ -101,9 +101,36 @@ sadness は文言に反応する。では**「出さない」と書けば、声�
   （moderately strong > steady and open > held back > なし）。
 - energy は 4 条件で ±0.5 dB（どれも n.s.）。**動くのは高さだけ。**
 
+## 台詞を替えても、同じ形（2 行目・60 本）
+
+1 行目だけでなく、2 行目「そんなこと、ないよ。」でも 4 段 × 3 感情 × seed 5 を作った
+（`acting-intensity-line2/`）。基準線を置かず、同じ感情・同じ seed の中で段を比べる。
+
+| 感情 | subtle | moderate | strong | overwhelming |
+| --- | --- | --- | --- | --- |
+| anger | 291.9 | 290.1 | 314.7 | 311.4 |
+| joy | 295.1 | 295.9 | 315.9 | 301.6 |
+| sadness | 290.9 | 291.5 | 308.6 | 298.0 |
+
+| 段の間 | anger | joy | sadness |
+| --- | --- | --- | --- |
+| subtle → moderate | −1.8 Hz（0/5） | +0.8 Hz（2/5） | +0.6 Hz（3/5） |
+| moderate → strong | **+24.6 Hz（5/5）** | **+19.9 Hz（5/5）** | **+17.1 Hz（5/5）** |
+| strong → overwhelming | −3.4 Hz（0/5） | −14.2 Hz（2/5） | −10.6 Hz（0/5） |
+
+- **真ん中が動かないこと・strong で跳ねることは、台詞を替えても同じ。**
+- **上端は、2 行目では 3 感情とも strong 以下**（1 行目は anger・joy が ±1 Hz で同じ、
+  sadness が −8.8 Hz）。**6 通りの平均はすべて strong 以下（−14.2〜+0.7 Hz）。**
+  「最大」の語は、強さの語を超えない。
+- ⚠️ **跳ね幅は seed に強く依る。** 2 行目の joy は seed 4 で +59 Hz、seed 2 で +1.5 Hz。
+  5 本の符号はそろっても（5/5）、t 検定は anger p = 0.17・joy p = 0.13 で通らない。
+  **「そろって上がる」と「大きさが読める」は別。**
+
 ## 限界
 
 - 1 行・1 人物（mashiro）・3 感情。感情を増やせば、上端の向きは変わりうる。
+  **台詞は 2 行試した**（1 行目と 2 行目で形は同じ・跳ね幅は違う）。
+- 2 行目は基準線（neutral）を置いていないので、**感情の効きは 2 行目では測っていない**。
 - beta 0.7 の 5 語のうち、none は測っていない（moderate と同じ散文なので同じ音になる）。
 - 「真ん中の文言」は 3 つだけ試した。**別の文言なら別の大きさになる**（ここで言えるのは
   「語を足せば上がる。強さの語ほど大きく上がる」まで）。
@@ -116,7 +143,8 @@ sadness は文言に反応する。では**「出さない」と書けば、声�
 
 ```bash
 PY=/Users/user/sonic-loom-spike/venv_tsukasa/bin/python
-PYTHONPATH=. $PY projects/longform/acting/intensity_steps.py
+PYTHONPATH=. $PY projects/longform/acting/intensity_steps.py           # 1 行目（4 段 + 上端）
+PYTHONPATH=. $PY projects/longform/acting/intensity_steps.py --line2   # 2 行目（4 段）
 ```
 
 上の表と検定は、`acting-matrix/matrix.tsv`（subtle / moderate / strong × 5 seed）と

@@ -389,6 +389,10 @@ projects/longform/
    steady and open +5.4・moderately strong +9.4 Hz（どれも 5/5）。**語を足せば上がる。
    強さを主張する語ほど大きい。** anger でも同じ文言で +3.6 Hz（5/5・`acting-anger-heldback/`）。
    強度は「量」のノブで、抑制のノブは無い。
+   ✅ **台詞を替えても形は同じ**（`acting-intensity-line2/`・2 行目 × 4 段 × 3 感情 ×
+   seed 5・60 本）。真ん中 ±2 Hz・strong で +17〜+25 Hz（5/5）・**上端は 3 感情とも
+   strong 以下**（−3.4〜−14.2 Hz）。**2 行 6 通りすべてで「最大」は強さを超えない。**
+   ⚠️ 跳ね幅は seed に依る（2 行目 joy は seed 4 で +59・seed 2 で +1.5 Hz）。
    ⚠️ 抑える演技は sadness・anger の 2 感情。**原本の表は変えていない。**
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の

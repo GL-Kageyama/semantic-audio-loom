@@ -373,6 +373,12 @@ overwhelming は `acting-overwhelming-070/` の 15 本。基準線の f0 平均 
 **強度は「量」のノブで、「抑える」という動作のノブは無い**——演じ分けたいなら
 `beta` を下げるか、`pitch`・`speed`・`delivery` を別に振るしかない。
 
+**台詞を替えても形は同じ**（2 行目「そんなこと、ないよ。」で 4 段 × 3 感情 × seed 5・
+`acting-intensity-line2/`）。真ん中は動かず（±2 Hz）、strong で跳ね（+17〜+25 Hz・5/5）、
+**上端は 3 感情とも strong 以下**（−3.4〜−14.2 Hz）。**2 行 × 3 感情の 6 通りすべてで、
+「最大」は強さを超えない**（−14.2〜+0.7 Hz）。ただし跳ね幅は seed に強く依り
+（joy の 2 行目で +1.5〜+59 Hz）、5/5 でも t 検定は anger p = 0.17・joy p = 0.13。
+
 
 **直したこと：** Direction の intensity=none は 0.0 に解決されるが、散文では
 「the feeling is faint」を足していた（none が faint になる）。0 では一言も足さないよう

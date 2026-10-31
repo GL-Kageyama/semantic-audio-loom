@@ -1,0 +1,70 @@
+# 強度の段は、台詞を替えても同じか。
+#
+# acting-matrix / acting-overwhelming-070 は 1 行目「明日、また来るね。」。
+# ここでは 2 行目「そんなこと、ないよ。」で 4 段 × 3 感情 × seed 1〜5（60 本）。
+# 既定 beta 0.7・ほかの設定は 1 行目と同じ。
+#
+# 測るのは acting/intensity_steps.py --line2。
+name: acting-intensity-line2
+default_pause: 0.0
+cues:
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: l2-anger-subtle-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: l2-anger-subtle-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: l2-anger-subtle-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: l2-anger-subtle-s4}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: l2-anger-subtle-s5}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: l2-anger-moderate-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: l2-anger-moderate-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: l2-anger-moderate-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: l2-anger-moderate-s4}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: l2-anger-moderate-s5}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: l2-anger-strong-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: l2-anger-strong-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: l2-anger-strong-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: l2-anger-strong-s4}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: l2-anger-strong-s5}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: l2-anger-overwhelming-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: l2-anger-overwhelming-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: l2-anger-overwhelming-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: l2-anger-overwhelming-s4}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: l2-anger-overwhelming-s5}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: l2-joy-subtle-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: l2-joy-subtle-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: l2-joy-subtle-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: l2-joy-subtle-s4}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: l2-joy-subtle-s5}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: l2-joy-moderate-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: l2-joy-moderate-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: l2-joy-moderate-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: l2-joy-moderate-s4}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: l2-joy-moderate-s5}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: l2-joy-strong-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: l2-joy-strong-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: l2-joy-strong-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: l2-joy-strong-s4}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: l2-joy-strong-s5}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: l2-joy-overwhelming-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: l2-joy-overwhelming-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: l2-joy-overwhelming-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: l2-joy-overwhelming-s4}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: l2-joy-overwhelming-s5}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: l2-sadness-subtle-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: l2-sadness-subtle-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: l2-sadness-subtle-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: l2-sadness-subtle-s4}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: l2-sadness-subtle-s5}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: l2-sadness-moderate-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: l2-sadness-moderate-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: l2-sadness-moderate-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: l2-sadness-moderate-s4}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: l2-sadness-moderate-s5}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: l2-sadness-strong-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: l2-sadness-strong-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: l2-sadness-strong-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: l2-sadness-strong-s4}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: l2-sadness-strong-s5}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: l2-sadness-overwhelming-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: l2-sadness-overwhelming-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: l2-sadness-overwhelming-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: l2-sadness-overwhelming-s4}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: overwhelming, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: l2-sadness-overwhelming-s5}
