@@ -78,6 +78,7 @@ projects/longform/
   acting-pauses/            読点を 1 / 2 / 3 個 × seed 5（読点は間になるか）
   acting-punctuation/       文末の記号（。／？／！／なし）× seed 5（字面で動くのは何か）
   acting-punctuation-stack/ 文末の記号 × 感情の 2 × 2 × seed 5（足し算になるか）
+  acting-notation/          かな/カナ/漢字と読点 1 個 × seed 5（表記は効くか）
   acting-breath-070/        breathiness 4 語 × seed 5（息は有声の割合に出るか）
   acting-breath-030/        breathiness 4 語 × seed 5 を beta 0.3 で（0.3 では段にならない）
   acting/measure_breath.py  高域の比を出す（息の計器）
