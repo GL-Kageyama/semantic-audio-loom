@@ -1,0 +1,72 @@
+# 感情の効きは、seed の揺れを超えるか。
+#
+# 同じ一行「明日、また来るね。」を、感情だけ 5 通りに振り、それぞれ seed 1〜3 で作る
+# （5 感情 × 3 seed = 15 本）。他のノブ（強度・声量・速さ・型）は全部そろえる。
+# これで「感情で動く幅」と「seed で動く幅」を同じ物差しで比べられる。
+#
+# 測るのは emotion-seed/measure_emotion_seed.py。
+name: emotion-seed
+default_pause: 0.5
+cues:
+  - {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 1, pause_before: 0.0, name: neutral-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 2, pause_before: 0.0, name: neutral-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 3, pause_before: 0.0, name: neutral-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 1, pause_before: 0.0, name: joy-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 2, pause_before: 0.0, name: joy-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 3, pause_before: 0.0, name: joy-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 1, pause_before: 0.0, name: anger-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 2, pause_before: 0.0, name: anger-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 3, pause_before: 0.0, name: anger-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 1, pause_before: 0.0, name: sadness-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 2, pause_before: 0.0, name: sadness-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 3, pause_before: 0.0, name: sadness-s3}
+  - {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 1, pause_before: 0.0, name: fear-s1}
+  - {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 2, pause_before: 0.0, name: fear-s2}
+  - {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 3, pause_before: 0.0, name: fear-s3}
+
+  # 2 行目（台詞を替えても同じか）。名前は l2- で始まる。
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: neutral, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 1, pause_before: 0.0, name: l2-neutral-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: neutral, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 2, pause_before: 0.0, name: l2-neutral-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: neutral, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 3, pause_before: 0.0, name: l2-neutral-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 1, pause_before: 0.0, name: l2-joy-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 2, pause_before: 0.0, name: l2-joy-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: joy, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 3, pause_before: 0.0, name: l2-joy-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 1, pause_before: 0.0, name: l2-anger-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 2, pause_before: 0.0, name: l2-anger-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: anger, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 3, pause_before: 0.0, name: l2-anger-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 1, pause_before: 0.0, name: l2-sadness-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 2, pause_before: 0.0, name: l2-sadness-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: sadness, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 3, pause_before: 0.0, name: l2-sadness-s3}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: fear, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 1, pause_before: 0.0, name: l2-fear-s1}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: fear, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 2, pause_before: 0.0, name: l2-fear-s2}
+  - {character: mashiro, line: そんなこと、ないよ。, emotion: fear, intensity: strong,
+     volume: normal, speed: natural, delivery: controlled, seed: 3, pause_before: 0.0, name: l2-fear-s3}
