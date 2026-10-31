@@ -189,6 +189,11 @@ projects/longform/
    同長（271.1 対 271.3 s）で、切った後の声が 239.0 対 217.3 s。参照との MFCC 距離は
    34.3 → 46.5。門は通過（ピーク −0.4・クリップ 0・効果音 +40.0 / +20.0 dB・
    ducking −11.3 dB）。納品：[examples/longform-drama-beta03/](../../examples/longform-drama-beta03/)。
+14. **感情 × delivery（27 本・beta 0.3）**：`acting-dlv/`。f0 は neutral の
+   cold / cheerful / aggressive ＝ 257 / 294 / 284、anger ＝ 294 / 345 / 353、
+   joy ＝ 309 / 341 / 351。**どちらの振り幅も 40〜60 Hz**。型は感情を消さない
+   （anger+cold は 294 で、neutral の 257 より上）。足し算ではない
+   （anger の上がり幅は cold +37・aggressive +69）。
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の
 低下は長さの交絡。

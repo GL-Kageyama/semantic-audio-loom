@@ -1,0 +1,31 @@
+# 感情と「演技の型」（delivery）が食い違うとき、どちらが音を決めるか。
+name: acting-dlv
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cold, breathiness: none, seed: 1, beta: 0.3, alpha: 0.35, name: d-neutral-cold-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cold, breathiness: none, seed: 2, beta: 0.3, alpha: 0.35, name: d-neutral-cold-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cold, breathiness: none, seed: 3, beta: 0.3, alpha: 0.35, name: d-neutral-cold-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cheerful, breathiness: none, seed: 1, beta: 0.3, alpha: 0.35, name: d-neutral-cheerful-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cheerful, breathiness: none, seed: 2, beta: 0.3, alpha: 0.35, name: d-neutral-cheerful-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cheerful, breathiness: none, seed: 3, beta: 0.3, alpha: 0.35, name: d-neutral-cheerful-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: aggressive, breathiness: none, seed: 1, beta: 0.3, alpha: 0.35, name: d-neutral-aggressive-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: aggressive, breathiness: none, seed: 2, beta: 0.3, alpha: 0.35, name: d-neutral-aggressive-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: aggressive, breathiness: none, seed: 3, beta: 0.3, alpha: 0.35, name: d-neutral-aggressive-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cold, breathiness: none, seed: 1, beta: 0.3, alpha: 0.35, name: d-anger-cold-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cold, breathiness: none, seed: 2, beta: 0.3, alpha: 0.35, name: d-anger-cold-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cold, breathiness: none, seed: 3, beta: 0.3, alpha: 0.35, name: d-anger-cold-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cheerful, breathiness: none, seed: 1, beta: 0.3, alpha: 0.35, name: d-anger-cheerful-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cheerful, breathiness: none, seed: 2, beta: 0.3, alpha: 0.35, name: d-anger-cheerful-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cheerful, breathiness: none, seed: 3, beta: 0.3, alpha: 0.35, name: d-anger-cheerful-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: aggressive, breathiness: none, seed: 1, beta: 0.3, alpha: 0.35, name: d-anger-aggressive-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: aggressive, breathiness: none, seed: 2, beta: 0.3, alpha: 0.35, name: d-anger-aggressive-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: aggressive, breathiness: none, seed: 3, beta: 0.3, alpha: 0.35, name: d-anger-aggressive-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cold, breathiness: none, seed: 1, beta: 0.3, alpha: 0.35, name: d-joy-cold-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cold, breathiness: none, seed: 2, beta: 0.3, alpha: 0.35, name: d-joy-cold-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cold, breathiness: none, seed: 3, beta: 0.3, alpha: 0.35, name: d-joy-cold-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cheerful, breathiness: none, seed: 1, beta: 0.3, alpha: 0.35, name: d-joy-cheerful-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cheerful, breathiness: none, seed: 2, beta: 0.3, alpha: 0.35, name: d-joy-cheerful-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: cheerful, breathiness: none, seed: 3, beta: 0.3, alpha: 0.35, name: d-joy-cheerful-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: aggressive, breathiness: none, seed: 1, beta: 0.3, alpha: 0.35, name: d-joy-aggressive-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: aggressive, breathiness: none, seed: 2, beta: 0.3, alpha: 0.35, name: d-joy-aggressive-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: aggressive, breathiness: none, seed: 3, beta: 0.3, alpha: 0.35, name: d-joy-aggressive-s3}
