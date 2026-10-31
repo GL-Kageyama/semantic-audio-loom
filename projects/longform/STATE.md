@@ -606,6 +606,10 @@ projects/longform/
    同値）。s67 と次点の差の平均は **0 行 68.0 → 3 行 1.0 → 12 行 −43.3 Hz**。
    **`！` は「強くする」道具でなく「差をつける」道具**。
    ⚠️ seed は 1 本（行ごとの向きは上の 2 つで確かめてある）。
+   ✅ **見本**（`drama-scene-mark-choice/`・`examples/longform-drama-scene-choice/`・
+   173.2 秒・seed 3）：台本のまま／強い 3 行／全部を並べた。山の行と次点の差は
+   **+127.1 → +23.0 → −10.6 Hz**（全部では s68 が s67 を追い越す）。⚠️ 音量は**未達**
+   （−20.76 LUFS・TP −1.00・LRA 11.70・`--gain -0.40`）。
    ✅ **見本**（`examples/longform-drama-scene-mark/`・103.7 秒・−21.47 LUFS・
    LRA 12.40・**未達（音量・幅）**・声だけで長い間を含むため 4 dB 以上静か・圧縮なし）。
    ✅ **見本**（`weak-mark-demo/`・`examples/longform-weak-mark/`・44.9 秒・seed 3）：

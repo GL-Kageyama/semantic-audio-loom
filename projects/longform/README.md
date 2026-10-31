@@ -38,7 +38,8 @@
 [examples/longform-mark-emotion/](../../examples/longform-mark-emotion/)（50 秒・感情の上に記号を足す）と
 [examples/longform-drama-mark/](../../examples/longform-drama-mark/)（41 秒・作品の台詞の文末だけ `！`・音量は未達）と
 [examples/longform-weak-mark/](../../examples/longform-weak-mark/)（45 秒・強度の弱い行でも `！` は効く・音量は未達）と
-[examples/longform-drama-scene-mark/](../../examples/longform-drama-scene-mark/)（104 秒・場面まるごと文末だけ `！`・音量は未達）。
+[examples/longform-drama-scene-mark/](../../examples/longform-drama-scene-mark/)（104 秒・場面まるごと文末だけ `！`・音量は未達）と
+[examples/longform-drama-scene-choice/](../../examples/longform-drama-scene-choice/)（173 秒・`！` の置き方 3 通り・音量は未達）。
 
 ## 置き場
 
@@ -129,6 +130,7 @@ projects/longform/
   drama-scene-mark/   場面 13 行を台本のまま／文末だけ `！` で続けて並べる 104 秒
   drama-scene-mark-seed/  同じ対を seed 5 本で測る 130 本（山場が残るか）
   drama-scene-mark-selective/  `strong` の 3 行だけに `！`（seed 5・130 本）
+  drama-scene-mark-choice/   同じ場面を `！` の置き方 3 通りで並べる見本（173 秒）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   drama-seed-split/  演劇のニジだけ seed 2 にした版（人物を seed で分けられるか）
   acting-breath-s70/ 芝居 s70 の 1 行で breathiness だけを none / slight に振る（6 本）
