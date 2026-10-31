@@ -27,6 +27,7 @@ projects/longform/
   STATE.md            現在地と実測（再開するときはここから）
   timings.tsv         生成 1 回 1 行（日付・段・素材・モデル・設定・実時間・マシン）
   baseline.md         examples/ 37 本の基準線
+  listening.md        聴きどころ（時刻つき。どの測った値から選んだかを並べてある）
   acting/             P1・P2 の演技実験（行列と測定）
   drama-level/       演劇の三つの版（beta 0.7 / 0.3 / 0.0）のキューごとの測定
   explainer-level/   解説 48 本の測定（語り手と真白は包絡で分かれる）
