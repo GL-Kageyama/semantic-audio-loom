@@ -701,6 +701,20 @@ neutral との差は `acting-emotions/` の 85 本を対応のある形で読み
   （seed の散らばり 64.6〜98.0 Hz 対 感情の幅 25.5 Hz）。対応を取ると読める。
   **1 本ずつ聞いて当てるのは無理で、seed を揃えて並べれば聞こえる。**
 
+### 感情の差を型で救おうとしたら、型が感情ごとに逆へ動いた
+
+隣り合う 2 感情（fear と joy）が 3 Hz で区別できないなら、`delivery` を足せば離れるか。
+neutral / joy / fear × gentle / aggressive / cold × seed 5（`acting-emotion-delivery/`）。
+
+- **離れない。** fear − joy は gentle +2.8（4/5・p = 0.063）・cold +3.1（4/5・p = 0.10）。
+  **`aggressive` では −7.0 Hz（0/5・p = 0.015）で、向きが逆になる。**
+- **型は感情ごとに別の向きへ働く**：aggressive − gentle は neutral **+0.1**（2/5）・
+  joy **+6.7**（5/5・p = 0.0085）・fear **−3.1**（0/5・p = 0.012）。cold は
+  どの感情でも −9〜−10 Hz で、**並びを変えない下げ**。
+- **neutral からの差はどこでも残る**（+20〜+27 Hz・全 9 セル 5/5）。
+  **「感情が高い」は読めるが、「何の感情か」は型を替えても読めない。**
+- ⚠️ joy の +6.7 は、`acting-knob-stack-pitch/`（別の置き場・別のビルド）の +6.68 と一致した。
+
 ### 同じ seed でも、プロセスを分けると音が 2 つに割れる
 
 `seed` の決定論を、`pl-natural-s3` と `el-joy-s3`（**name 以外まったく同じ Spec**）の

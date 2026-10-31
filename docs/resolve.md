@@ -76,6 +76,9 @@ Direction の欄は語の数が欄ごとに違うが、**声に届く段の数�
   9/10 が 5/5。だが**離れるのは遠い 2 語だけ**（fear − sadness +21.3 Hz・5/5）で、
   fear − joy +1.6・confidence − anxiety +0.1 Hz は同じ声。**seed の散らばり（65〜98 Hz）が
   感情の差より大きいので、1 本ずつ聞いて感情を当てることはできない。**
+  **`delivery` を足しても救えない**（`acting-emotion-delivery/`）：fear − joy は gentle +2.8・
+  cold +3.1 Hz のままで、**`aggressive` では −7.0 Hz に逆転する**（0/5・p = 0.015）。
+  **強い型は喜びを上げ（+6.7）、恐怖を下げる（−3.1）。**
 - **強弱を `intensity` の書き分けで作らない。** `subtle` と `moderate` は同じ音になる。
 - **`delivery` の真ん中 8 語（gentle / cheerful / hesitant / restrained / subtle /
   suppressed / intimate / controlled）は、書き分けても同じ声になる。** 動くのは `aggressive`・

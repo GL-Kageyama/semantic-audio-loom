@@ -66,6 +66,7 @@ projects/longform/
   acting-knob-stack-speed-pitch/  speed × pitch × seed 10（強い欄どうしは足し算にならない）
   acting-pitch-ladder/      pitch 6 語 × seed 10（下がる語は 3 つ、上がる語は無い）
   acting-emotion-ladder/    emotion 11 語 × seed 5（neutral より上へは動くが、隣どうしは同じ）
+  acting-emotion-delivery/  emotion 3 語 × delivery 3 語 × seed 5（型を足しても隣どうしは離れない）
   determinism/              同じ Spec・同じ seed を別プロセスで N 回（再現性の検査）
   acting-breath-070/        breathiness 4 語 × seed 5（息は有声の割合に出るか）
   acting-breath-030/        breathiness 4 語 × seed 5 を beta 0.3 で（0.3 では段にならない）

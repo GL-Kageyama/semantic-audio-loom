@@ -1,0 +1,55 @@
+# 感情（neutral / joy / fear）× delivery（gentle / aggressive / cold）× seed 5 = 45 本
+#
+# `acting-emotion-ladder/` では、隣り合う感情（fear − joy）が +1.6 Hz で区別できなかった。
+# では**型（delivery）を足せば離れるのか**を同じ条件で測る。delivery は f0 を −18〜+7 Hz
+# 動かす欄なので、感情の差（1.6 Hz）より大きい。**別々に動くなら書き分けに使える。**
+# 同じ行・moderate・speed natural・breathiness none・beta 0.7。
+
+name: acting-emotion-delivery
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 1, beta: 0.7, name: ed-neutral-gentle-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 2, beta: 0.7, name: ed-neutral-gentle-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 3, beta: 0.7, name: ed-neutral-gentle-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 4, beta: 0.7, name: ed-neutral-gentle-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 5, beta: 0.7, name: ed-neutral-gentle-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 1, beta: 0.7, name: ed-neutral-aggressive-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 2, beta: 0.7, name: ed-neutral-aggressive-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 3, beta: 0.7, name: ed-neutral-aggressive-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 4, beta: 0.7, name: ed-neutral-aggressive-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 5, beta: 0.7, name: ed-neutral-aggressive-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 1, beta: 0.7, name: ed-neutral-cold-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 2, beta: 0.7, name: ed-neutral-cold-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 3, beta: 0.7, name: ed-neutral-cold-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 4, beta: 0.7, name: ed-neutral-cold-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 5, beta: 0.7, name: ed-neutral-cold-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 1, beta: 0.7, name: ed-joy-gentle-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 2, beta: 0.7, name: ed-joy-gentle-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 3, beta: 0.7, name: ed-joy-gentle-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 4, beta: 0.7, name: ed-joy-gentle-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 5, beta: 0.7, name: ed-joy-gentle-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 1, beta: 0.7, name: ed-joy-aggressive-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 2, beta: 0.7, name: ed-joy-aggressive-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 3, beta: 0.7, name: ed-joy-aggressive-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 4, beta: 0.7, name: ed-joy-aggressive-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 5, beta: 0.7, name: ed-joy-aggressive-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 1, beta: 0.7, name: ed-joy-cold-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 2, beta: 0.7, name: ed-joy-cold-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 3, beta: 0.7, name: ed-joy-cold-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 4, beta: 0.7, name: ed-joy-cold-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 5, beta: 0.7, name: ed-joy-cold-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 1, beta: 0.7, name: ed-fear-gentle-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 2, beta: 0.7, name: ed-fear-gentle-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 3, beta: 0.7, name: ed-fear-gentle-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 4, beta: 0.7, name: ed-fear-gentle-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: gentle, breathiness: none, seed: 5, beta: 0.7, name: ed-fear-gentle-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 1, beta: 0.7, name: ed-fear-aggressive-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 2, beta: 0.7, name: ed-fear-aggressive-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 3, beta: 0.7, name: ed-fear-aggressive-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 4, beta: 0.7, name: ed-fear-aggressive-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: aggressive, breathiness: none, seed: 5, beta: 0.7, name: ed-fear-aggressive-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 1, beta: 0.7, name: ed-fear-cold-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 2, beta: 0.7, name: ed-fear-cold-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 3, beta: 0.7, name: ed-fear-cold-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 4, beta: 0.7, name: ed-fear-cold-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: cold, breathiness: none, seed: 5, beta: 0.7, name: ed-fear-cold-s5}

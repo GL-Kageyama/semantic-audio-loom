@@ -1,6 +1,6 @@
 # 長尺ラン — STATE（再開のための唯一の現在地）
 
-最終更新：2026-10-31 15:02 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
+最終更新：2026-10-31 15:04 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
 ユーザーは約 10 時間不在。質問しない。門を 20 分超えたら「未達」で次へ。
 
 ## この Mac（時間の数字はマシンが違えば比べられない）
@@ -476,6 +476,13 @@ projects/longform/
    fear − joy +1.6（3/5・p = 0.22）・confidence − anxiety +0.1（1/5）。一元配置 ANOVA は
    F = 0.30・p = 0.98（**seed を誤差に置くと見えない**）。seed の散らばりは 64.6〜98.0 Hz。
    **1 本ずつ聞いて感情を当てるのは無理で、seed を揃えれば聞こえる。**
+   ✅ **型（delivery）を足しても、隣どうしは離れない**（`acting-emotion-delivery/`・
+   neutral/joy/fear × gentle/aggressive/cold × seed 5・45 本）。fear − joy は
+   gentle +2.8（4/5・p = 0.063）・cold +3.1（4/5・p = 0.10）のまま、**aggressive では
+   −7.0 Hz（0/5・p = 0.015）で向きが逆になる**。aggressive − gentle は neutral +0.1
+   （2/5）・**joy +6.7（5/5・p = 0.0085）**・**fear −3.1（0/5・p = 0.012）**。cold は
+   どの感情でも −9〜−10 Hz（並びを変えない）。neutral からの差（+20〜+27 Hz）は
+   **どの型でも 5/5 で残る**。⚠️ joy の +6.7 は `acting-knob-stack-pitch/` の +6.68 と一致。
    ✅ **breathiness も 2 段だが幅が小さい**（`acting-breath-070/`・20 本）。有声の割合
    none 0.276 → heavy 0.263（moderate/heavy 0/5・p ≤ 0.021）、高域の比 +10%。
    ✅ **beta 0.3 でも seed 5 本なら出る**（`acting-breath-030/`・20 本）：slight は有声
