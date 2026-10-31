@@ -37,6 +37,7 @@ projects/longform/
   explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く
   assemble.py         両作品を組む道具（切る・並べる・利得・効果音・下地）
   check_render.py     門の数を測る（尺・クリップ・無音・効果音の立ち上がり）
+  check_loudness.py   音量を配布の目安と比べる（LUFS・トゥルーピーク・LRA）
   measure_timbre.py   声のスペクトルの距離（有声フレームだけ。無音を混ぜない）
   measure_envelope.py LPC 包絡の距離（pitch に引っ張られない声質の測り方）
   check_timbre_metric.py  上の計器が無音の割合で動かないことの検査
