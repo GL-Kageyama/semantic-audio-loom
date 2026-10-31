@@ -64,6 +64,14 @@
             "neutral"
           ]
         },
+        "breathiness": {
+          "enum": [
+            "none",
+            "slight",
+            "moderate",
+            "heavy"
+          ]
+        },
         "pauses": {
           "type": "array",
           "items": {

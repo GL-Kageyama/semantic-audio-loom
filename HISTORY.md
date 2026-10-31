@@ -87,6 +87,25 @@
 - 聞き比べの見本を `examples/longform-acting/` に足した（74 秒・同じ台詞を
   beta 0.7 と 0.3 で並べる）。
 
+### beta 0.3 の端を測った（alpha・pitch・感情の外の軸・決定論）
+
+- **alpha**（`ref = alpha × 予測 + (1 − alpha) × 参照` の係数・48 本）を 0.20〜0.70 に
+  振っても、感情の分かれ方は 3/3 のまま、参照音声との MFCC 距離は 54〜57 で動かない。
+  **alpha は演技を失わずに振れる。**
+- **pitch**（36 本）は beta 0.3 で効く：neutral 257 → 266 → 277 Hz。参照は 297 Hz。
+  ただし MFCC 距離は戻らず、`high` で 67.2（natural 56.2）。**音程は戻り、声質は戻らない。**
+  beta 0.7 では pitch の指示が f0 を動かさなかった（ノブの効く側が beta で決まる）。
+- **感情の外の軸**（30 本・neutral）：速さは 3.72 / 2.40 / 1.97 秒、delivery は
+  desperate 302・aggressive 284・intimate 276 Hz と 3/3 で動き、cold は動かない。
+  声量は量を動かさない（ピークは全部 0.95。三層分業の設計どおり）。
+- **breathiness は配線されていなかった**：Direction・schema・CLI が受けるのに Spec にも
+  散文にも載らず、heavy と none がバイト一致した。`prosody.breathiness` を schema・
+  rule 解決・provider（`BREATHINESS_PHRASES`）へ通した。配線後は平坦度が
+  0.0169 → 0.0191（+13%）へ動くが、seed 3 で 1 本逆転する（2/3）。
+- **決定論は最後のビットまでではない**：同じ設定で別プロセスから作り直した 12 本のうち
+  5 本がバイト不一致。差は RMS 0.0005〜0.0007（信号比 −65 dB 前後）で長さは同じ。
+  「同じ seed で byte-identical」ではなく「同じ長さで、差は −65 dB 程度」と書く。
+
 ## 2026-10-31 — M5 音の生成＋ライブラリ（5 種すべて）
 
 ### スコープ

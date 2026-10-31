@@ -1,0 +1,13 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/acting-breath/voice/b-heavy-s1.wav	2.473	300.6	8.6	6.91	6.9	0.084	-11.7	34.4	140.0	0.3427	0.95	-13.1	0
+projects/longform/assets/acting-breath/voice/b-heavy-s2.wav	2.573	269.4	7.4	12.04	6.7	0.077	-11.5	34.7	150.0	0.4264	0.95	-13.0	0
+projects/longform/assets/acting-breath/voice/b-heavy-s3.wav	2.448	272.5	7.9	-4.48	5.9	0.091	-12.0	30.5	150.0	0.4327	0.95	-13.6	0
+projects/longform/assets/acting-breath/voice/b-moderate-s1.wav	2.448	285.4	8.9	14.18	6.0	0.093	-12.1	33.7	120.0	0.3265	0.95	-13.6	0
+projects/longform/assets/acting-breath/voice/b-moderate-s2.wav	2.573	257.2	7.6	14.91	6.7	0.221	-12.8	34.9	140.0	0.407	0.95	-13.9	0
+projects/longform/assets/acting-breath/voice/b-moderate-s3.wav	2.473	260.2	8.0	7.66	6.0	0.092	-11.7	32.9	150.0	0.4073	0.95	-13.1	0
+projects/longform/assets/acting-breath/voice/b-none-s1.wav	2.373	280.5	8.4	-4.4	6.8	0.095	-12.5	33.1	130.0	0.3529	0.95	-14.2	0
+projects/longform/assets/acting-breath/voice/b-none-s2.wav	2.498	254.3	7.4	15.57	5.9	0.091	-11.9	33.3	130.0	0.424	0.95	-13.4	0
+projects/longform/assets/acting-breath/voice/b-none-s3.wav	2.398	257.2	7.8	9.07	6.0	0.093	-11.8	33.4	130.0	0.4208	0.95	-13.3	0
+projects/longform/assets/acting-breath/voice/b-slight-s1.wav	2.423	286.2	8.8	-21.15	6.1	0.094	-12.9	32.4	130.0	0.3045	0.95	-14.2	0
+projects/longform/assets/acting-breath/voice/b-slight-s2.wav	2.573	249.9	7.3	17.04	6.2	0.227	-13.0	34.0	110.0	0.4147	0.95	-13.6	0
+projects/longform/assets/acting-breath/voice/b-slight-s3.wav	2.473	258.7	7.9	-16.41	6.0	0.092	-11.9	32.8	120.0	0.3871	0.95	-13.2	0

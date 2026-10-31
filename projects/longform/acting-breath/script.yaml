@@ -1,0 +1,16 @@
+# 息の混じり方（breathiness）を散文へ通した後、実際に音が変わるか。
+name: acting-breath
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.3, alpha: 0.35, name: b-none-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.3, alpha: 0.35, name: b-none-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.3, alpha: 0.35, name: b-none-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: slight, seed: 1, beta: 0.3, alpha: 0.35, name: b-slight-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: slight, seed: 2, beta: 0.3, alpha: 0.35, name: b-slight-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: slight, seed: 3, beta: 0.3, alpha: 0.35, name: b-slight-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: moderate, seed: 1, beta: 0.3, alpha: 0.35, name: b-moderate-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: moderate, seed: 2, beta: 0.3, alpha: 0.35, name: b-moderate-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: moderate, seed: 3, beta: 0.3, alpha: 0.35, name: b-moderate-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: heavy, seed: 1, beta: 0.3, alpha: 0.35, name: b-heavy-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: heavy, seed: 2, beta: 0.3, alpha: 0.35, name: b-heavy-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: heavy, seed: 3, beta: 0.3, alpha: 0.35, name: b-heavy-s3}

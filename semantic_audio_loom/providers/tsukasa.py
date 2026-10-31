@@ -92,6 +92,15 @@ PITCH_PHRASES = {
     "very_high": "with a very high pitch",
 }
 
+# Direction の breathiness（Spec では prosody.breathiness）→ 散文。息の混じり方は
+# 声質そのものなので、参照音声の timbre を保ったまま演技として乗せられるかを測る。
+BREATHINESS_PHRASES = {
+    "none": "",
+    "slight": "with a slightly breathy voice",
+    "moderate": "with a breathy voice",
+    "heavy": "with a heavily breathy, whispered voice",
+}
+
 AGE_WORDS = {
     "child": "child", "adolescent": "teenage", "young_adult": "young adult",
     "adult": "adult", "middle_aged": "middle-aged", "elderly": "elderly",
@@ -225,6 +234,10 @@ def _spec_prompt(subject: str, spec: dict) -> str:
     if intonation in INTONATION_PHRASES and INTONATION_PHRASES[intonation]:
         parts.append(INTONATION_PHRASES[intonation])
 
+    breathiness = prosody.get("breathiness")
+    if BREATHINESS_PHRASES.get(breathiness):
+        parts.append(BREATHINESS_PHRASES[breathiness])
+
     return f"{subject} " + ", ".join(parts) + ". "
 
 
@@ -248,8 +261,10 @@ class TsukasaProvider:
         return {
             "asset_types": ["voice"],
             "models": ["Tsukasa_Speech"],
-            "controls": ["emotion", "intensity", "speed", "volume", "pitch", "delivery", "intonation"],
-            # emphasis / breath / pauses の構造化制御は共通欠落（M0 実測）。
+            "controls": ["emotion", "intensity", "speed", "volume", "pitch", "delivery",
+                         "intonation", "breathiness"],
+            # emphasis / breath / pauses の構造化制御は共通欠落（M0 実測）。breathiness は
+            # 散文（prosody.breathiness）で渡す。どのくらい効くかは測定で見る。
             "voice_consistency": "reference",
             "languages": ["ja"],
             "reproducibility": "seed",

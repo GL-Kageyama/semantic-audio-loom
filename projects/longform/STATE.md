@@ -1,6 +1,6 @@
 # 長尺ラン — STATE（再開のための唯一の現在地）
 
-最終更新：2026-10-31 10:23 / 段：**P0–P6 完了（感情 10 種 × seed 5・beta 掃引・強度・抑揚・聞き比べまで）**
+最終更新：2026-10-31 10:37 / 段：**P0–P6 完了（＋ beta 0.3 の端：alpha・pitch・感情の外の軸・決定論）**
 ユーザーは約 10 時間不在。質問しない。門を 20 分超えたら「未達」で次へ。
 
 ## この Mac（時間の数字はマシンが違えば比べられない）
@@ -173,6 +173,18 @@ projects/longform/
    参照音声も、語り手とニジ × 4 感情 × seed 3（`acting-beta-refs/`）＝24 本＋
    真白（`acting-beta-030/` の seed 5）で**3 つとも同じ並び**
    （neutral < sadness < anger ≈ joy）。
+9. **alpha 掃引（48 本・beta 0.3）**：`acting-alpha/`。0.20〜0.70 のどれでも感情の
+   分かれ方は 3/3。参照との MFCC 距離は 54〜57 で**動かない**。alpha は自由に振れる。
+10. **pitch（36 本・beta 0.3）**：`acting-pitch/`。neutral の f0 は 257 → 266 → 277 Hz。
+   感情の並びは残るが、距離は近づかない（high で 67.2）。**戻せるのは音程だけ。**
+   なお beta 0.7 では pitch は f0 を動かさなかった（ノブが効くのは低い beta だけ）。
+11. **感情の外の軸（30 本・beta 0.3）**：`acting-axes/`。速さと delivery は動く
+   （desperate 302・aggressive 284・intimate 276・cold 257 Hz）。volume は量を
+   動かさない（三層分業どおり。Mixing の利得で付ける）。**breathiness は散文に
+   載っていなかった**——`prosody.breathiness` を配線し、`acting-breath/`（12 本）で
+   平坦度 0.0169 → 0.0191（+13%・seed 2/3）。
+12. **決定論の限界**：同じ設定の作り直し 12 本のうち 5 本がバイト不一致（RMS
+   0.0005〜0.0007＝信号比 −65 dB・長さ同一）。**byte-identical とは書かない。**
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の
 低下は長さの交絡。

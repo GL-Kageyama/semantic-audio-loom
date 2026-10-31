@@ -95,3 +95,24 @@ def test_rule_resolve_carries_the_intonation():
     none = GenerationIntent(asset_type="voice", voice_profile={},
                             emotion={"primary": "neutral"}, performance={})
     assert resolve.resolve_rule(none)["prosody"]["intonation"] == "neutral"
+
+
+def test_rule_resolve_carries_the_breathiness():
+    """息の混じり方も Direction から Spec へ通す（散文に載らなければ音にも載らない）。"""
+    from semantic_audio_loom.engine import resolve
+    from semantic_audio_loom.types import GenerationIntent
+
+    intent = GenerationIntent(
+        asset_type="voice",
+        voice_profile={},
+        emotion={"primary": "neutral", "intensity": "moderate"},
+        performance={"breathiness": "heavy"},
+    )
+    spec = resolve.resolve_rule(intent)
+    assert spec["prosody"]["breathiness"] == "heavy"
+    assert "breathy" in tsukasa._spec_prompt("A voice.", spec)
+    # none は一言も足さない（既定を汚さない）。
+    plain = GenerationIntent(asset_type="voice", voice_profile={},
+                             emotion={"primary": "neutral"}, performance={})
+    assert resolve.resolve_rule(plain)["prosody"]["breathiness"] == "none"
+    assert "breathy" not in tsukasa._spec_prompt("A voice.", resolve.resolve_rule(plain))

@@ -81,6 +81,8 @@ def resolve_rule(intent: GenerationIntent) -> dict:
             "pace": performance.get("speed", "natural"),
             "pitch": performance.get("pitch", "natural"),
             "intonation": performance.get("intonation") or "neutral",
+            # 息の混じり方も声質のノブ（none〜heavy）。Provider が散文へ写す。
+            "breathiness": performance.get("breathiness", "none"),
             "pauses": [],
             "emphasis": [],
             "breath": [],
