@@ -1,0 +1,11 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/mid-mark-demo/voice/base-line.wav	3.873	318.5	8.0	-11.98	7.1	0.254	-16.2	35.3	120.0	0.3402	0.95	-15.3	0
+projects/longform/assets/mid-mark-demo/voice/both-line.wav	3.848	396.7	8.4	17.66	7.5	0.249	-15.8	31.1	250.0	0.3065	0.95	-16.7	0
+projects/longform/assets/mid-mark-demo/voice/end-line.wav	3.723	368.0	9.0	-8.6	8.5	0.231	-15.6	32.8	250.0	0.3405	0.95	-16.0	0
+projects/longform/assets/mid-mark-demo/voice/mid-line.wav	4.098	355.5	7.7	13.55	7.3	0.287	-15.3	35.0	250.0	0.3049	0.95	-16.3	0
+projects/longform/assets/mid-mark-demo/voice/midp-line.wav	4.223	318.5	6.7	-13.74	7.3	0.351	-15.9	35.4	120.0	0.3026	0.95	-15.8	0
+projects/longform/assets/mid-mark-demo/voice/n-base.wav	2.573	244.2	6.4	-2.69	6.7	0.094	-12.4	30.8	150.0	0.3605	0.95	-15.0	0
+projects/longform/assets/mid-mark-demo/voice/n-both.wav	3.198	231.8	5.7	-23.77	5.4	0.14	-14.3	37.9	130.0	0.4031	0.95	-16.1	0
+projects/longform/assets/mid-mark-demo/voice/n-end.wav	2.973	237.2	5.7	-15.01	5.8	0.059	-18.8	36.3	230.0	0.3456	0.95	-16.6	0
+projects/longform/assets/mid-mark-demo/voice/n-mid.wav	2.848	251.4	6.2	-13.82	6.0	0.029	-17.3	35.7	100.0	0.3404	0.95	-16.8	0
+projects/longform/assets/mid-mark-demo/voice/n-midp.wav	2.673	240.7	5.0	0.82	6.2	0.042	-14.3	37.1	90.0	0.403	0.95	-16.2	0

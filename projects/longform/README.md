@@ -40,7 +40,8 @@
 [examples/longform-weak-mark/](../../examples/longform-weak-mark/)（45 秒・強度の弱い行でも `！` は効く・音量は未達）と
 [examples/longform-drama-scene-mark/](../../examples/longform-drama-scene-mark/)（104 秒・場面まるごと文末だけ `！`・音量は未達）と
 [examples/longform-drama-scene-choice/](../../examples/longform-drama-scene-choice/)（173 秒・`！` の置き方 3 通り・音量は未達）と
-[examples/longform-drama-relocate/](../../examples/longform-drama-relocate/)（178 秒・`！` を移すと山も移る・音量は未達）。
+[examples/longform-drama-relocate/](../../examples/longform-drama-relocate/)（178 秒・`！` を移すと山も移る・音量は未達）と
+[examples/longform-mid-mark/](../../examples/longform-mid-mark/)（37 秒・文中の `！` も効く）。
 
 ## 置き場
 
@@ -136,6 +137,7 @@ projects/longform/
   drama-relocate-demo/     同じ場面で「足すだけ」と「外してから足す」を並べる見本（178 秒）
   acting-punctuation-mid-exclaim/ 文中の `！` は効くか（5 通り × seed 5・25 本）
   acting-explainer-mark/   解説の語り 6 行でも `！` は効くか（記号 2 × seed 5・60 本）
+  mid-mark-demo/           文中の `！` を耳で確かめる見本（37 秒）
   loudness-trial/          未達の 2 本に圧縮を掛けたら届くか（測るだけ・裁定前）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   drama-seed-split/  演劇のニジだけ seed 2 にした版（人物を seed で分けられるか）

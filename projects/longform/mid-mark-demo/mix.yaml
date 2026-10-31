@@ -1,0 +1,50 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: mid-mark-demo
+stems:
+- file: ../assets/mid-mark-demo/voice_trim/n-base.wav
+  role: voice
+  start: 2.6
+  gain_db: 0.0
+- file: ../assets/mid-mark-demo/voice_trim/base-line.wav
+  role: voice
+  start: 4.78
+  gain_db: 0.0
+- file: ../assets/mid-mark-demo/voice_trim/n-end.wav
+  role: voice
+  start: 9.311
+  gain_db: 0.0
+- file: ../assets/mid-mark-demo/voice_trim/end-line.wav
+  role: voice
+  start: 12.1
+  gain_db: 0.0
+- file: ../assets/mid-mark-demo/voice_trim/n-mid.wav
+  role: voice
+  start: 16.477
+  gain_db: 0.0
+- file: ../assets/mid-mark-demo/voice_trim/mid-line.wav
+  role: voice
+  start: 19.08
+  gain_db: 0.0
+- file: ../assets/mid-mark-demo/voice_trim/n-midp.wav
+  role: voice
+  start: 23.816
+  gain_db: 0.0
+- file: ../assets/mid-mark-demo/voice_trim/midp-line.wav
+  role: voice
+  start: 26.059
+  gain_db: 0.0
+- file: ../assets/mid-mark-demo/voice_trim/n-both.wav
+  role: voice
+  start: 30.938
+  gain_db: 0.0
+- file: ../assets/mid-mark-demo/voice_trim/both-line.wav
+  role: voice
+  start: 33.947
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95
