@@ -1,0 +1,19 @@
+# 聞き比べ：速さは長さのノブ、記号は高さのノブ
+#
+# `acting-punctuation-speed/`（30 本）と `acting-speed-voices/`（36 本）を耳で確かめる。
+# 前半：同じ行を very_slow / natural / very_fast で。後半：記号を掛け、声を替える。
+name: speed-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 同じ一行を、速さだけ変えて聴きます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_slow, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.4, name: sd-slow}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.8, name: sd-natural}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.8, name: sd-fast}
+- {character: narrator, line: 速さは、長さを変えても、高さはほとんど変えません。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-speed}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.8, name: sd-period}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.8, name: sd-exclaim}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.8, name: sd-fast-exclaim}
+- {character: narrator, line: 記号の効きは、速くしても、声を替えても残ります。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-mark}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.8, name: sd-niji-period}
+- {character: niji, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, pause_before: 0.8, name: sd-niji-exclaim}
+- {character: narrator, line: 速さは行の読み方で、声の個性ではありません。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-close}

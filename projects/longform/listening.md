@@ -94,6 +94,10 @@
   `！` が消える。`beta` 0.7 では `。` から `！` で +33.6 Hz（326.0 → 359.6）だが、
   床では**同じ 249.9 Hz**（0:16.5 と 0:19.2）。`？` だけは床でも上がる（264.8 Hz）。
   **`！` は演技、`？` は地の読み**（`floor-mark-demo/`・`acting-punctuation-floor/`）。
+- `examples/longform-speed/speed-demo.mp3`（0:46）——**速さは長さのノブ、記号は高さの
+  ノブ**。very_slow → very_fast で **4.15 → 2.27 秒**（高さは 275.7 → 283.8 Hz の
+  8.1 Hz だけ）。そのあと `。` と `！` は長さがほぼ同じで **+32.5 Hz**、速い行でも
+  **+40.3 Hz**、ニジでも **+41.0 Hz**（`speed-demo/`・`acting-speed-voices/`）。
 - `examples/longform-knobs/knob-demo.mp3`（1:09）——同じ一行で、**速さ 5 語**と
   **演技の型 3 語**だけを振った。**速さは 0:10.3 → 0:32.5 で 4.35 秒 → 2.30 秒**、
   型は **0:43.4（やさしく）と 0:48.3（平ら）だけが違う**（`acting-speed/`・
@@ -101,7 +105,7 @@
 
 ## 音量について
 
-examples の mp3 は 23 本。**18 本が −16 ±1.0 LUFS**（トゥルーピーク −1.00〜−1.31 dBTP）。
+examples の mp3 は 24 本。**19 本が −16 ±1.0 LUFS**（トゥルーピーク −1.00〜−1.31 dBTP）。
 未達は 5 本で、**すべてピークに当たっている**：`drama-beta00-pitch` −17.40・
 `explainer` −18.16・`floor-two-speakers-natural` −17.64・`intensity-demo` −17.38・
 `knob-demo` −17.10。**トゥルーピークが −1.13〜−1.27 dBTP なので、直線のゲインで

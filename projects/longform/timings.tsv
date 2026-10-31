@@ -3752,3 +3752,29 @@ date	stage	asset	model	settings	wall_s	audio_s	machine	note
 2026-10-31	P2b	acting-speed-voices/voice/sv-n-very_fast-exclaim-s2	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=very_fast,volume=normal,seed=2,alpha=0.35,beta=0.7	0.5	2.20	M2Pro-16GB	rc=0
 2026-10-31	P2b	acting-speed-voices/voice/sv-n-very_fast-exclaim-s3	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=very_fast,volume=normal,seed=3,alpha=0.35,beta=0.7	0.5	1.95	M2Pro-16GB	rc=0
 2026-10-31	P2b	acting-speed-voices/voice (まとめ)	tsukasa	cues=36	30.5	105.90	M2Pro-16GB	rc=0 合計
+2026-10-31	P2b	speed-demo/voice/n-intro	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	10.6	3.97	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-slow	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=very_slow,volume=normal,seed=1,alpha=0.35,beta=0.7	0.7	3.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-natural	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.6	2.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-fast	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=very_fast,volume=normal,seed=1,alpha=0.35,beta=0.7	0.5	2.15	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/n-speed	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1.0	5.20	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-period	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.7	2.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-exclaim	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.5	2.72	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-fast-exclaim	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=very_fast,volume=normal,seed=1,alpha=0.35,beta=0.7	0.5	2.07	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/n-mark	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.9	5.02	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-niji-period	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.5	2.77	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-niji-exclaim	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	0.5	2.62	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/n-close	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.8	4.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice (まとめ)	tsukasa	cues=12	17.8	40.92	M2Pro-16GB	rc=0 合計
+2026-10-31	P2b	speed-demo/voice/n-intro	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	10.5	3.97	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-slow	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=very_slow,volume=normal,seed=2,alpha=0.35,beta=0.7	0.7	4.15	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-natural	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	0.6	2.97	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-fast	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=very_fast,volume=normal,seed=2,alpha=0.35,beta=0.7	0.5	2.27	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/n-speed	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.8	5.20	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-period	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	0.6	2.97	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-exclaim	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	0.6	2.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-fast-exclaim	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=very_fast,volume=normal,seed=2,alpha=0.35,beta=0.7	0.5	2.20	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/n-mark	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.8	5.02	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-niji-period	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	0.6	3.00	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/sd-niji-exclaim	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,pitch=natural,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	0.6	2.82	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice/n-close	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.8	4.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	speed-demo/voice (まとめ)	tsukasa	cues=12	17.4	42.28	M2Pro-16GB	rc=0 合計

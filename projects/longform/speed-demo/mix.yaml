@@ -1,0 +1,58 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: speed-demo
+stems:
+- file: ../assets/speed-demo/voice_trim/n-intro.wav
+  role: voice
+  start: 1.4
+  gain_db: 0.0
+- file: ../assets/speed-demo/voice_trim/sd-slow.wav
+  role: voice
+  start: 5.085
+  gain_db: 0.0
+- file: ../assets/speed-demo/voice_trim/sd-natural.wav
+  role: voice
+  start: 9.271
+  gain_db: 0.0
+- file: ../assets/speed-demo/voice_trim/sd-fast.wav
+  role: voice
+  start: 12.428
+  gain_db: 0.0
+- file: ../assets/speed-demo/voice_trim/n-speed.wav
+  role: voice
+  start: 15.287
+  gain_db: 0.0
+- file: ../assets/speed-demo/voice_trim/sd-period.wav
+  role: voice
+  start: 20.687
+  gain_db: 0.0
+- file: ../assets/speed-demo/voice_trim/sd-exclaim.wav
+  role: voice
+  start: 23.844
+  gain_db: 0.0
+- file: ../assets/speed-demo/voice_trim/sd-fast-exclaim.wav
+  role: voice
+  start: 26.887
+  gain_db: 0.0
+- file: ../assets/speed-demo/voice_trim/n-mark.wav
+  role: voice
+  start: 29.69
+  gain_db: 0.0
+- file: ../assets/speed-demo/voice_trim/sd-niji-period.wav
+  role: voice
+  start: 35.005
+  gain_db: 0.0
+- file: ../assets/speed-demo/voice_trim/sd-niji-exclaim.wav
+  role: voice
+  start: 38.207
+  gain_db: 0.0
+- file: ../assets/speed-demo/voice_trim/n-close.wav
+  role: voice
+  start: 41.455
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95
