@@ -84,6 +84,7 @@ projects/longform/
   acting-punctuation/       文末の記号（。／？／！／なし）× seed 5（字面で動くのは何か）
   acting-punctuation-stack/ 文末の記号 × 感情の 2 × 2 × seed 5（足し算になるか）
   acting-punctuation-pitch/ 文末の記号 × pitch 3 段 × seed 5（欄と掛けても効くか）
+  acting-punctuation-floor/  文末の記号 × beta 3 段 × seed 5（床で `！` は消え `？` は残る）
   acting-punctuation-long/  24 文字の行で文末の記号 × seed 5（長い行でも効くか・途中の句点の対照）
   acting-punctuation-mid/   14 文字の行で `。` / `！` × seed 5（真ん中の長さ）
   acting-punctuation-period/  9 文字のまま途中を句点にした行（途中の切れ目の効果）
