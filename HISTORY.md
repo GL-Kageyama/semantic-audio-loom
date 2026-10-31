@@ -66,6 +66,12 @@
   動く（290 → 257 Hz）。感情の一文は「演技だけを足す」のではなく、声全体の寄せ先を変える。
 - `SAL_ALPHA` / `SAL_BETA` を `config.py` に足した（測定用。params.yaml には実値が残るので
   再生成の照合は崩れない）。beta は 1 本ごとには振れない（プロセス全体）。
+- 台詞を変えても残る（beta 0.3・3 台詞 × 4 感情 × seed 3＝36 本）：anger と joy は
+  どの台詞でも 3/3 で neutral より上、sadness は 8/9。**文の長さ・内容に依らない**
+  （台詞の長さの中央値 2.67 / 2.47 / 2.99 秒）。
+- 参照音声を変えても同じ（beta 0.3・mashiro / narrator / niji × 4 感情 × seed 3＝24 本）：
+  3 つとも neutral < sadness < anger ≈ joy。上がり幅は anger で +63 / +70 / +68 Hz。
+  **分かれ方は声の個性でなく混ぜ方の側の性質。**
 - 道具：`projects/longform/acting-matrix/summarize_matrix.py`（5/5 判定と
   基準線の幅との比較）、`projects/longform/summarize_beta.py`、`projects/longform/measure_timbre.py`。
 

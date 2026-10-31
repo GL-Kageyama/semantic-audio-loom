@@ -168,6 +168,11 @@ projects/longform/
    半音/秒）だが、種の振れ幅 −19.3〜+16.8 が差を飲む。
 7. **聞き比べ（74 秒・`acting-demo/`）**：同じ台詞を beta 0.7 と 0.3 で並べた。
    納品は [examples/longform-acting/](../../examples/longform-acting/)。
+8. **頑健さ（beta 0.3）**：台詞 3 種 × 4 感情 × seed 3（`acting-beta-lines/`）＝36 本で
+   anger と joy は 3/3 で neutral より上（文の長さに依らない）。sadness は 8/9。
+   参照音声も、語り手とニジ × 4 感情 × seed 3（`acting-beta-refs/`）＝24 本＋
+   真白（`acting-beta-030/` の seed 5）で**3 つとも同じ並び**
+   （neutral < sadness < anger ≈ joy）。
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の
 低下は長さの交絡。

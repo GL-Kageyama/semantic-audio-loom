@@ -1,0 +1,28 @@
+# 別の参照音声（語り手・ニジ）でも beta 0.3 の覚醒の分かれ方が残るか。
+name: acting-beta-refs
+default_pause: 0.0
+cues:
+- {character: narrator, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: narrator-neutral-s1}
+- {character: narrator, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: narrator-anger-s1}
+- {character: narrator, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: narrator-joy-s1}
+- {character: narrator, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: narrator-sadness-s1}
+- {character: narrator, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: narrator-neutral-s2}
+- {character: narrator, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: narrator-anger-s2}
+- {character: narrator, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: narrator-joy-s2}
+- {character: narrator, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: narrator-sadness-s2}
+- {character: narrator, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: narrator-neutral-s3}
+- {character: narrator, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: narrator-anger-s3}
+- {character: narrator, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: narrator-joy-s3}
+- {character: narrator, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: narrator-sadness-s3}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: niji-neutral-s1}
+- {character: niji, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: niji-anger-s1}
+- {character: niji, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: niji-joy-s1}
+- {character: niji, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: niji-sadness-s1}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: niji-neutral-s2}
+- {character: niji, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: niji-anger-s2}
+- {character: niji, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: niji-joy-s2}
+- {character: niji, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: niji-sadness-s2}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: niji-neutral-s3}
+- {character: niji, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: niji-anger-s3}
+- {character: niji, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: niji-joy-s3}
+- {character: niji, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: niji-sadness-s3}
