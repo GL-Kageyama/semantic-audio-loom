@@ -63,6 +63,10 @@ seed の揺れ（f0 で 84.6 Hz）よりは小さい。演技はノブで出す�
     +1.0 Hz・2/5 で、3 本は差 0.0 Hz。**「subtext を抑揚語へ変換して初めて乗る」の
     前半は正しく、後半（抑揚語 → 声）がこのモデルでは効かない
     （[`projects/longform/acting-subtext/`](acting-subtext/)、`docs/resolve.md`）。
+    **表に無い自由文を足しても同じ**：同じ Spec の散文に「涙をこらえている」「返事が
+    怖い」などを 1 文足した 25 本（[`projects/longform/acting-freetext/`](acting-freetext/)）で、
+    f0 の差は **+2.1 Hz まで**（5/5 でも、seed の散らばり 91.3 Hz の 2%）。
+    **上限は表ではなくモデルの側にある。**
 
 ## 一覧（何が、どこまで効くか）
 
