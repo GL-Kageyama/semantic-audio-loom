@@ -24,11 +24,14 @@ argument-hint: '(optional) キャラ名・演技名・台詞。例: /semantic-au
 1. **参照音声が足りていれば確認** — `bin/reference.py list`。足りない声は `synthesize <key> --character <name>`（ローカル生成）か `add <wav> <key> --license …`（著作権フリー音源）で拡充。
 2. **キャラを作る**（誰の声か）— `bin/character.py init <name>` → `characters/<name>.voice.yaml` を編集（`reference_audio` で参照音声を指定）。
 3. **演技を定義する**（どう演じるか）— `bin/performance.py init <name>` → `performances/<name>.direction.yaml` を編集（emotion / intensity / volume / speed / delivery / situation / subtext）。
-   声を動かすのは主に `speed` と `emotion`。`intensity` は 2 段。`delivery` は 12 語のうち
-   `aggressive`/`desperate`/`cold`/`flat` の 4 語だけ動き、残りは同じ声。`volume` は声の
-   大きさを変えない（`shout` だけ f0 +9.6・長さ +0.13 秒、energy は下がる。ミックスの
-   `gain_db` が作る）。`intonation` の 5 語もほぼ同じ声で、語尾の傾きは名前どおりに
-   ならない — 詳細は `docs/resolve.md`「どの欄が、声を動かすか」。
+   **狙った向きに頼れるのは `speed`**（5 語が単調・1.74〜1.80 倍）。`emotion` は neutral より
+   高い声になる（+4〜+26 Hz）が、**感情どうしは書き分けられない**（隣どうしは 3 Hz 以下・
+   `delivery` を足しても離れない）。`intensity` は 2 段。`delivery` は 12 語のうち
+   `aggressive`/`desperate`/`cold`/`flat` の 4 語だけ動き、残りは同じ声。`pitch` は
+   **下げる語だけ**（上がる語は無い）。`volume` は声の大きさを変えない（`shout` だけ
+   f0 +9.6・長さ +0.13 秒、energy は下がる。ミックスの `gain_db` が作る）。`intonation` の
+   5 語もほぼ同じ声で、語尾の傾きは名前どおりにならない — 詳細は `docs/resolve.md`
+   「どの欄が、声を動かすか」。
 4. **声を生成する** — `bin/generate.py --character <キャラ> --performance <演技> --line <台詞>`。
 
 ## 声の生成

@@ -1,0 +1,66 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: pitch-demo
+stems:
+- file: ../assets/pitch-demo/voice_trim/n-intro.wav
+  role: voice
+  start: 1.4
+  gain_db: 0.0
+- file: ../assets/pitch-demo/voice_trim/n-very_low.wav
+  role: voice
+  start: 7.378
+  gain_db: 0.0
+- file: ../assets/pitch-demo/voice_trim/x-very_low.wav
+  role: voice
+  start: 10.167
+  gain_db: 0.0
+- file: ../assets/pitch-demo/voice_trim/n-low.wav
+  role: voice
+  start: 13.434
+  gain_db: 0.0
+- file: ../assets/pitch-demo/voice_trim/x-low.wav
+  role: voice
+  start: 15.553
+  gain_db: 0.0
+- file: ../assets/pitch-demo/voice_trim/n-slightly_low.wav
+  role: voice
+  start: 18.822
+  gain_db: 0.0
+- file: ../assets/pitch-demo/voice_trim/x-slightly_low.wav
+  role: voice
+  start: 21.646
+  gain_db: 0.0
+- file: ../assets/pitch-demo/voice_trim/n-natural.wav
+  role: voice
+  start: 24.81
+  gain_db: 0.0
+- file: ../assets/pitch-demo/voice_trim/x-natural.wav
+  role: voice
+  start: 27.185
+  gain_db: 0.0
+- file: ../assets/pitch-demo/voice_trim/n-slightly_high.wav
+  role: voice
+  start: 30.305
+  gain_db: 0.0
+- file: ../assets/pitch-demo/voice_trim/x-slightly_high.wav
+  role: voice
+  start: 33.033
+  gain_db: 0.0
+- file: ../assets/pitch-demo/voice_trim/n-high.wav
+  role: voice
+  start: 36.124
+  gain_db: 0.0
+- file: ../assets/pitch-demo/voice_trim/x-high.wav
+  role: voice
+  start: 38.086
+  gain_db: 0.0
+- file: ../assets/pitch-demo/voice_trim/n-close.wav
+  role: voice
+  start: 41.833
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95

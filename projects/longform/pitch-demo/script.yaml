@@ -1,0 +1,21 @@
+# 聞き比べ：音の高さの 6 語を、低い順に並べる
+#
+# `acting-pitch-ladder/` の実測（6 語の幅 16.5 Hz・上がる語は無い）を耳で確かめる見本。
+# 語り手が札を読み、真白が同じ台詞・同じ seed 4 を 6 通りで言う。
+name: pitch-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 同じ台詞を、六つの音の高さで言います。低いほうから、順に。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: narrator, line: とても低く。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.8, name: n-very_low}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: very_low, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-very_low}
+- {character: narrator, line: 低く。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-low}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-low}
+- {character: narrator, line: 少し低く。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-slightly_low}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_low, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-slightly_low}
+- {character: narrator, line: ふつう。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-natural}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-natural}
+- {character: narrator, line: 少し高く。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-slightly_high}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: slightly_high, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-slightly_high}
+- {character: narrator, line: 高く。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.6, name: n-high}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.4, name: x-high}
+- {character: narrator, line: 六つの高さは、ほとんど同じに聞こえます。高くする語は、ありません。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.2, name: n-close}

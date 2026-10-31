@@ -1,6 +1,6 @@
 # 長尺ラン — STATE（再開のための唯一の現在地）
 
-最終更新：2026-10-31 15:04 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
+最終更新：2026-10-31 15:06 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
 ユーザーは約 10 時間不在。質問しない。門を 20 分超えたら「未達」で次へ。
 
 ## この Mac（時間の数字はマシンが違えば比べられない）
@@ -501,6 +501,10 @@ projects/longform/
    −15.64 LUFS・TP −1.01）。語り手の札＋11 語を seed 4 で並べる（fear 341.4 / joy 343.4 /
    neutral 313.0 Hz）。**並びは 5 seed の平均の順で、seed 4 では 3 組が入れ替わる**
    （sadness↔guilt・anxiety↔confidence・joy↔fear。差 2〜4 Hz）。
+   ✅ **pitch の見本も足した**（`pitch-demo/`・`examples/longform-pitch/`・47.2 秒・
+   −16.43 LUFS・TP −1.01）。seed 4 の 1 本は very_low 327.8 / low 329.7 / slightly_low 335.5 /
+   natural 343.4 / slightly_high 337.5 / **high 343.4 Hz**——**`high` と `natural` が同値**。
+   この 6 本は `acting-pitch-ladder/` の seed 4 の 6 本と**同じ値**（別プロセス・別の置き場）。
    ⛔ **欄の数と段の数は対応しない**：speed 5→5・pitch 6→2（high だけ +19 Hz）・
    delivery 12→3・intensity 5→2・intonation 5→ほぼ 0・volume 5→0（shout だけ
    f0・長さが動く）・breathiness 4→2。
