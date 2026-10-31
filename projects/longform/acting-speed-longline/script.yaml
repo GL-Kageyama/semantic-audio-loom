@@ -1,0 +1,35 @@
+# 長い台詞でも、速さは 5 段か
+#
+# `acting-speed/` と `acting-speed-emotions/` は 3 秒の一言で測っている。
+# 助言を長い台詞へ持ち出せるか、芝居の 1 行（24 文字・句点 2 つ）で同じ 5 語を振る（25 本）。
+#
+# ビルド:
+#   PYTHONPATH=. <venv> projects/longform/explainer/build_voice.py --dir projects/longform/acting-speed-longline
+name: acting-speed-longline
+default_pause: 0.0
+cues:
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: controlled, breathiness: none, seed: 1, name: sl-very_slow-s1}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: controlled, breathiness: none, seed: 2, name: sl-very_slow-s2}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: controlled, breathiness: none, seed: 3, name: sl-very_slow-s3}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: controlled, breathiness: none, seed: 4, name: sl-very_slow-s4}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: very_slow, delivery: controlled, breathiness: none, seed: 5, name: sl-very_slow-s5}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: slow, delivery: controlled, breathiness: none, seed: 1, name: sl-slow-s1}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: slow, delivery: controlled, breathiness: none, seed: 2, name: sl-slow-s2}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: slow, delivery: controlled, breathiness: none, seed: 3, name: sl-slow-s3}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: slow, delivery: controlled, breathiness: none, seed: 4, name: sl-slow-s4}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: slow, delivery: controlled, breathiness: none, seed: 5, name: sl-slow-s5}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: sl-natural-s1}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: sl-natural-s2}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: sl-natural-s3}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: sl-natural-s4}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: sl-natural-s5}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: fast, delivery: controlled, breathiness: none, seed: 1, name: sl-fast-s1}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: fast, delivery: controlled, breathiness: none, seed: 2, name: sl-fast-s2}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: fast, delivery: controlled, breathiness: none, seed: 3, name: sl-fast-s3}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: fast, delivery: controlled, breathiness: none, seed: 4, name: sl-fast-s4}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: fast, delivery: controlled, breathiness: none, seed: 5, name: sl-fast-s5}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: controlled, breathiness: none, seed: 1, name: sl-very_fast-s1}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: controlled, breathiness: none, seed: 2, name: sl-very_fast-s2}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: controlled, breathiness: none, seed: 3, name: sl-very_fast-s3}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: controlled, breathiness: none, seed: 4, name: sl-very_fast-s4}
+  - {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, delivery: controlled, breathiness: none, seed: 5, name: sl-very_fast-s5}

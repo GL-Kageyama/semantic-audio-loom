@@ -51,6 +51,7 @@ projects/longform/
   acting-delivery/          delivery 6 語 × seed 5（11 語のうち声が動くのは何語か）
   acting-speed/             speed 5 語 × seed 5（5 語とも段になるか）
   acting-speed-emotions/    anger / sadness × speed 5 語 × seed 5（段は感情に依るか）
+  acting-speed-longline/    芝居の長い行（24 文字）で speed 5 語 × seed 5（段は台詞の長さに依るか）
   acting-breath-070/        breathiness 4 語 × seed 5（息は有声の割合に出るか）
   acting/measure_breath.py  高域の比を出す（息の計器）
   intensity-demo/    強度の段だけを並べた 63 秒の見本（語り手の札つき）
