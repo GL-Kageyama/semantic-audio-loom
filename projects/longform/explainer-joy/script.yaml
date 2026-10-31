@@ -1,0 +1,38 @@
+# 解説の 3 つめ（照れ隠し）が、2 つめ（励まし）とほぼ同じ音になった。
+# その差が「方向の届かなさ」なのか「seed の内側」なのかを見るための実験。
+#
+# 同じ台詞「明日、また来るね。」を、m02 と m04 の設定そのままで seed を振り、
+# さらに方向を変えた 3 本を並べる。測るのは explainer-joy/measure_joy.py。
+name: explainer-joy
+default_pause: 0.5
+cues:
+  # 本番と同じ設定（seed 1）。本番のファイルと一致するかを確かめる。
+  - {character: mashiro, line: "明日、また来るね。", emotion: joy, intensity: strong,
+     volume: loud, speed: fast, pitch: slightly_high, delivery: cheerful,
+     pause_before: 0.0, seed: 1, name: a02-s1}
+  - {character: mashiro, line: "明日、また来るね。", emotion: joy, intensity: strong,
+     volume: loud, speed: fast, pitch: slightly_high, delivery: cheerful,
+     pause_before: 0.0, seed: 2, name: a02-s2}
+  - {character: mashiro, line: "明日、また来るね。", emotion: joy, intensity: strong,
+     volume: loud, speed: fast, pitch: slightly_high, delivery: cheerful,
+     pause_before: 0.0, seed: 3, name: a02-s3}
+  # m04（照れ隠し）の設定そのまま。
+  - {character: mashiro, line: "明日、また来るね。", emotion: joy, intensity: subtle,
+     volume: normal, speed: natural, pitch: slightly_high, delivery: gentle,
+     breathiness: slight, pause_before: 0.0, seed: 1, name: a04-s1}
+  - {character: mashiro, line: "明日、また来るね。", emotion: joy, intensity: subtle,
+     volume: normal, speed: natural, pitch: slightly_high, delivery: gentle,
+     breathiness: slight, pause_before: 0.0, seed: 2, name: a04-s2}
+  - {character: mashiro, line: "明日、また来るね。", emotion: joy, intensity: subtle,
+     volume: normal, speed: natural, pitch: slightly_high, delivery: gentle,
+     breathiness: slight, pause_before: 0.0, seed: 3, name: a04-s3}
+  # 方向を強く振る（照れ隠しを、間と息で作る）。
+  - {character: mashiro, line: "明日、また来るね。", emotion: joy, intensity: subtle,
+     volume: quiet, speed: slow, pitch: slightly_high, delivery: hesitant,
+     breathiness: moderate, pause_before: 0.0, seed: 1, name: alt-slow}
+  - {character: mashiro, line: "明日、また来るね。", emotion: joy, intensity: strong,
+     volume: normal, speed: very_slow, pitch: natural, delivery: cheerful,
+     breathiness: moderate, pause_before: 0.0, seed: 1, name: alt-vslow}
+  - {character: mashiro, line: "明日、また来るね。", emotion: neutral, intensity: subtle,
+     volume: quiet, speed: slow, pitch: slightly_high, delivery: gentle,
+     breathiness: slight, pause_before: 0.0, seed: 1, name: alt-neutral}

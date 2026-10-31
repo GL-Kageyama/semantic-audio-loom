@@ -33,6 +33,7 @@ projects/longform/
   timbre-two-characters/  二人の声が声そのもので分かれるか（18 本）
   drama-beta00-pitch/ 床の芝居に pitch を振った版と、89 キューの測定
   seed-robustness/   床の芝居を seed 1〜3 で作り、作品の段の数が動くかを見る
+  explainer-joy/     同じ 1 行で seed と方向を振る（seed のほうが f0 を動かす）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く
   assemble.py         両作品を組む道具（切る・並べる・利得・効果音・下地）
