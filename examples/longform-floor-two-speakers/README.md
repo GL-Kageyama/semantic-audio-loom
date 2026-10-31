@@ -46,7 +46,7 @@
 
 | ファイル | 中身 |
 | --- | --- |
-| `floor-two-speakers.mp3` / `floor-two-speakers-natural.mp3` | 完成音（44.1kHz stereo / 192 kbps） |
+| `floor-two-speakers.mp3` / `floor-two-speakers-natural.mp3` | 完成音（44.1kHz モノラル / 192 kbps・マスターがモノラルだから） |
 | `script-pitch.yaml` / `script-natural.yaml` | 台詞と演技。違いは `pitch` の 2 行 |
 
 ## 作り方

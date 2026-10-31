@@ -48,7 +48,7 @@ beta 0.7 では 5 本とも 326〜361 Hz に集まり、差が小さい。
 PY=/Users/user/sonic-loom-spike/venv_tsukasa/bin/python
 PYTHONPATH=. $PY projects/longform/explainer/build_voice.py --dir projects/longform/acting-demo
 PYTHONPATH=. $PY projects/longform/assemble.py --dir projects/longform/acting-demo
-ffmpeg -i projects/longform/assets/acting-demo/renders/acting-demo.wav -b:a 192k examples/longform-acting/acting-demo.mp3
+PYTHONPATH=. $PY projects/longform/deliver.py projects/longform/assets/acting-demo/renders/acting-demo.wav examples/longform-acting/acting-demo.mp3 --gain -0.45
 ```
 
 `script.yaml` の `beta:` は `build_voice.py` が読む（Scene 仕様の欄ではない）。
