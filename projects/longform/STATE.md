@@ -618,6 +618,10 @@ projects/longform/
    173.2 秒・seed 3）：台本のまま／強い 3 行／全部を並べた。山の行と次点の差は
    **+127.1 → +23.0 → −10.6 Hz**（全部では s68 が s67 を追い越す）。⚠️ 音量は**未達**
    （−20.76 LUFS・TP −1.00・LRA 11.70・`--gain -0.40`）。
+   ✅ **見本・山を移す**（`drama-relocate-demo/`・`examples/longform-drama-relocate/`・
+   178.0 秒・seed 3）：足すだけでは s67 453.1・s68 463.7 の 2 つの山、s67 を戻すと
+   **s67 252.8・s68 463.7** でひとつ。⚠️ 音量は**未達**（−21.04・TP −1.31・LRA 11.70・
+   `--gain -0.70`）。
    ✅ **見本**（`examples/longform-drama-scene-mark/`・103.7 秒・−21.47 LUFS・
    LRA 12.40・**未達（音量・幅）**・声だけで長い間を含むため 4 dB 以上静か・圧縮なし）。
    ✅ **見本**（`weak-mark-demo/`・`examples/longform-weak-mark/`・44.9 秒・seed 3）：

@@ -116,6 +116,10 @@
   測れた 11 行がすべて上がる（+2.5〜+130.8・平均 +48.1）。**もとから `！` の s67
   （0:24.9・1:16.2）だけは 453.1 Hz で動かない**（`drama-scene-mark/`）。
   ⚠️ 声だけの見本なので、ほかの見本より 4 dB 以上静か（−21.47 LUFS・幅も 12.40 LU で門の 12 を超える）。
+- `examples/longform-drama-relocate/drama-relocate-demo.mp3`（2:58）——**山は移せる**。
+  同じ場面で、0:07.7〜（台本のまま）→ 1:06.3〜（s68 に足すだけ＝山が 2 つ）→
+  2:05.0〜（s67 の `！` を戻す＝**s67 が 453.1 → 252.8 Hz に落ち、山は s68 ひとつ**）。
+  足すだけは 4/5・外してからは 5/5（`drama-relocate-demo/`・`drama-scene-mark-relocate/`）。
 - `examples/longform-drama-scene-choice/drama-scene-choice.mp3`（2:53）——**同じ場面を
   `！` の置き方 3 通りで**。0:06.6〜（台本のまま・山の行と次点の差 +127.1 Hz）→
   1:05.2〜（強い 3 行だけ・+23.0）→ 2:02.2〜（全部・**s68 が s67 を追い越す**）。
@@ -127,11 +131,11 @@
 
 ## 音量について
 
-examples の mp3 は 29 本。**20 本が −16 ±1.0 LUFS**（トゥルーピーク −1.00〜−1.31 dBTP）。
-未達は 9 本。8 本は音量だけで、**すべてピークに当たっている**：`drama-beta00-pitch` −17.40・
+examples の mp3 は 30 本。**20 本が −16 ±1.0 LUFS**（トゥルーピーク −1.00〜−1.31 dBTP）。
+未達は 10 本。9 本は音量だけで、**すべてピークに当たっている**：`drama-beta00-pitch` −17.40・
 `drama-mark` −17.89・`explainer` −18.16・`floor-two-speakers-natural` −17.64・
 `intensity-demo` −17.38・`knob-demo` −17.10・`weak-mark` −17.54・
-`drama-scene-choice` −20.76。
+`drama-scene-choice` −20.76・`drama-relocate` −21.04。
 残る `drama-scene-mark` は −21.47 で、**音量の幅も 12.40 LU（門は 12）**——
 長い間を含む声だけの場面なので、幅のほうも超える。**トゥルーピークが −1.01〜−1.27 dBTP
 なので、直線のゲインで上げられるのは 0.01〜0.27 dB だけで、−16 LUFS には届かない。** そろえるには圧縮が要るので、
