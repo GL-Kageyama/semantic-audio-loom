@@ -37,4 +37,5 @@
   [`acting-drama-mark/`](../acting-drama-mark/) の seed 1〜3 の幅 +2.5〜+88.6 の下端）。行ごとの向きは
   [`acting-drama-mark-weak/`](../acting-drama-mark-weak/)（弱い 12 行 × seed 5）と
   [`acting-drama-mark/`](../acting-drama-mark/)（強い 9 行 × seed 3）で確かめてある。
-- 見本：`examples/longform-drama-scene-mark/`（103.7 秒・−21.47 LUFS・**未達**・声だけなので静か）。
+- 見本：`examples/longform-drama-scene-mark/`（103.7 秒・−21.47 LUFS・LRA 12.40・**未達
+  （音量・幅）**・声だけなので静か）。
