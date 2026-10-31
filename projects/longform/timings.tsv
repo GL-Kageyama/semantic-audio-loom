@@ -3427,3 +3427,4 @@ date	stage	asset	model	settings	wall_s	audio_s	machine	note
 2026-10-31	P2b	acting-punctuation-long/run.py（20本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	16	103.7	M2Pro-16GB	4条件×seed5（モデルのロードを除く・pl- の書き込みから最後まで）
 2026-10-31	P2b	acting-punctuation-long/run_comma.py（10本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	7	49.5	M2Pro-16GB	2条件×seed5（モデルのロードを除く）
 2026-10-31	P2b	acting-punctuation-mid/run.py（10本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	6	35.8	M2Pro-16GB	2条件×seed5（モデルのロードを除く）
+2026-10-31	P2b	acting-punctuation-period/run.py（10本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	6	31.9	M2Pro-16GB	2条件×seed5（モデルのロードを除く）
