@@ -433,7 +433,7 @@ energy 1.1 dB なので、**語の効きは seed の振れの 13 分の 1**。�
 | `intonation` | 5（3） | **ほぼ 0** | 語尾の傾きで rising −0.35 / flat +2.11 / falling −1.64・3/5 |
 | `intensity` | 5（4） | **2** | subtle ≈ moderate、moderate → strong で跳ねる、上端は伸びない |
 | `delivery` | 12（6） | **2** | gentle / cheerful / hesitant / restrained は ±2 Hz、cold −9.4・flat −18.4 Hz |
-| `breathiness` | 4（0） | 未測 | — |
+| `breathiness` | 4（4） | **2**（幅 1.3 ポイント） | 有声の割合 0.276 → 0.263・高域の比 +10%（`acting-breath-070/`） |
 | `volume` | 5（4） | **0**（声としては） | whisper と loud で energy 0.08 dB。ミックスの `VOLUME_GAIN` が 5 段作る |
 
 （`delivery` は `acting-delivery/`・`speed` は `acting-speed/`・`volume` は
@@ -442,8 +442,13 @@ energy 1.1 dB なので、**語の効きは seed の振れの 13 分の 1**。�
 - **単調な 5 段になるのは `speed` だけ。** 5 seed それぞれで 5 語の長さの順序が完全に
   一致する。台本はこれを一番使っている（演劇の speed は slow 44・natural 31・fast 10・
   very_slow 4）。
-- **語の数と段の数が、まったく対応しない。** 11 語の欄（delivery）が 2 群、
-  4 語の欄（volume）が 0 段、5 語の欄（speed）が 5 段。
+- **語の数と段の数が、まったく対応しない。** 12 語の欄（delivery）が 2 群、
+  5 語の欄（volume）が 0 段、5 語の欄（speed）が 5 段。
+- **breathiness は段になるが、幅が 1.3 ポイント。** 有声の割合が 5 seed とも同じ向きに
+  下がり（0/5・p = 0.021）、高域の比が +10%。ただし同じ欄が beta 0.3・neutral・seed 3 の
+  前の測定（`acting-breath/`）では差を出さなかった。**効果が小さいので、seed 3 本では
+  検出できない。** 囁き・息は、いまのところ欄では作れない（`volume` 0 段・
+  `breathiness` 1.3 ポイント）。
 - **強弱を演じさせたいなら speed と pitch。音量の強弱はミックス。**
   intensity の語を書き分けても、声は同じ段に留まる。
 

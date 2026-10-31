@@ -49,6 +49,8 @@ projects/longform/
   acting-volume/            声量 4 語 × seed 5（声は大きさを変えるか）
   acting-delivery/          delivery 6 語 × seed 5（11 語のうち声が動くのは何語か）
   acting-speed/             speed 5 語 × seed 5（5 語とも段になるか）
+  acting-breath-070/        breathiness 4 語 × seed 5（息は有声の割合に出るか）
+  acting/measure_breath.py  高域の比を出す（息の計器）
   intensity-demo/    強度の段だけを並べた 63 秒の見本（語り手の札つき）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く

@@ -465,8 +465,13 @@ beta 0.7 で 4 段 × seed 5 を並べた（新規 36 本。`acting-overwhelming
 - **speed だけが 5 段のまま単調**（`acting-speed/`・25 本）。very_slow 4.39 → natural
   3.06 → very_fast 2.44 秒（1.80 倍）。**5 seed それぞれで 5 語の順序が完全に単調**。
   両端の差は p = 0.00002。`pause_ratio` は 0.22〜0.27 で並ばない（発話そのものが伸びる）。
+- **breathiness は段になるが、幅が 1.3 ポイント**（`acting-breath-070/`・20 本）。有声の
+  割合が none 0.276 → heavy 0.263（moderate と heavy が 0/5・p ≤ 0.021）、高域の比が
+  0.0115 → 0.0126（+10%）。**前の測定（`acting-breath/`・beta 0.3・neutral・seed 3）は
+  差を出していない**——効果が小さいので seed 3 本では検出できない。
 - **まとめ：欄の語の数と、声に届く段の数は対応しない。** speed 5→5・pitch 6→2・
-  delivery 12→2・intensity 5→2・intonation 5→ほぼ 0・volume 5→0（breathiness 未測）。
+  delivery 12→2・intensity 5→2・intonation 5→ほぼ 0・volume 5→0・breathiness 4→2（幅
+  1.3 ポイント）。
 
 
 ## 2026-10-31 — M5 音の生成＋ライブラリ（5 種すべて）

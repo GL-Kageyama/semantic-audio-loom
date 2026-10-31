@@ -413,8 +413,12 @@ projects/longform/
    25 本）。very_slow 4.39 → natural 3.06 → very_fast 2.44 秒（**1.80 倍**）。**5 seed
    それぞれで順序が完全に単調**（25 本・逆転 0）。p は 0.0001 以下。**演じ分けの土台は
    speed。**
+   ✅ **breathiness も 2 段だが幅が小さい**（`acting-breath-070/`・20 本）。有声の割合
+   none 0.276 → heavy 0.263（moderate/heavy 0/5・p ≤ 0.021）、高域の比 +10%。
+   ⚠️ **前の測定（`acting-breath/`・beta 0.3・neutral・seed 3）は差を出していない**
+   ——効果が小さいので seed 3 本では見えない。
    ⛔ **欄の数と段の数は対応しない**：speed 5→5・pitch 6→2（high だけ +19 Hz）・
-   delivery 12→2・intensity 5→2・intonation 5→ほぼ 0・volume 5→0。breathiness は未測。
+   delivery 12→2・intensity 5→2・intonation 5→ほぼ 0・volume 5→0・breathiness 4→2。
    ⚠️ **原本の表は変えていない。**
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の
