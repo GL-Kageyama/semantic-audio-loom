@@ -1,0 +1,514 @@
+# P3 解説動画「音は、なぜ感情を動かすのか」— 5〜10 分の一本。
+#
+# 語り手（characters/narrator.voice.yaml）が説明し、実例の三通りだけ真白が演じる。
+# 間（pause_before）は内容として置いている。章の頭ほど長い。
+# resolve は rule（決定的）。LLM を使うと台詞ごとに散文が揺れて、三通りが比べられない。
+#
+# 生成: bin/scene.py --scene-file projects/longform/explainer/script.yaml \
+#         --project longform --name explainer --resolve rule --provider tsukasa
+name: explainer
+default_pause: 0.6
+cues:
+  # ── 導入
+  - character: narrator
+    line: "映像を見て、涙が出たとします。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 1.0
+    seed: 1
+    name: n01
+  - character: narrator
+    line: "そのとき、あなたを動かしたのは、目から入った情報でしょうか。それとも、耳から入った情報でしょうか。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 0.5
+    seed: 1
+    name: n02
+  - character: narrator
+    line: "たいていは、耳のほうです。音は、意味が分かるより先に、体へ届きます。"
+    emotion: confidence
+    intensity: subtle
+    volume: normal
+    speed: natural
+    delivery: gentle
+    pause_before: 0.8
+    seed: 1
+    name: n03
+  - character: narrator
+    line: "ここから、音が感情を動かす仕組みを、三つに絞って説明します。音量、間、そして音色です。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 1.2
+    seed: 1
+    name: n04
+
+  # ── 一章 音量
+  - character: narrator
+    line: "ひとつめは、音量です。ただし、大きな音が強い感情、という単純な話ではありません。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 2.0
+    seed: 1
+    name: n05
+  - character: narrator
+    line: "同じ台詞でも、声を落とすと、聞く人は自然と耳を近づけます。"
+    emotion: calm
+    intensity: moderate
+    volume: quiet
+    speed: slow
+    delivery: gentle
+    pause_before: 0.6
+    seed: 1
+    name: n06
+  - character: narrator
+    line: "近づいた分だけ、言葉が内側に入ってきます。これは、距離の話です。"
+    emotion: calm
+    intensity: subtle
+    volume: quiet
+    speed: slow
+    delivery: intimate
+    pause_before: 0.5
+    seed: 1
+    name: n07
+  - character: narrator
+    line: "逆に、大きな声は距離を作ります。遠くから呼ばれている感じがして、感情は外側に残ります。"
+    emotion: confidence
+    intensity: moderate
+    volume: loud
+    speed: natural
+    delivery: controlled
+    pause_before: 0.8
+    seed: 1
+    name: n08
+  - character: narrator
+    line: "だから、泣かせたい場面ほど、声は小さくなることがあります。"
+    emotion: calm
+    intensity: moderate
+    volume: quiet
+    speed: slow
+    delivery: restrained
+    pause_before: 1.4
+    seed: 1
+    name: n09
+
+  # ── 二章 間
+  - character: narrator
+    line: "ふたつめは、間です。音が鳴っていない時間も、音の一部です。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 2.0
+    seed: 1
+    name: n10
+  - character: narrator
+    line: "人は、言葉が途切れた瞬間に、次に来る言葉を探します。探している時間が、そのまま緊張になります。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 0.6
+    seed: 1
+    name: n11
+  - character: narrator
+    line: "ためらいの一拍。言いかけて、飲み込む一拍。感情は、そこに置かれます。"
+    emotion: anxiety
+    intensity: subtle
+    volume: quiet
+    speed: very_slow
+    delivery: hesitant
+    pause_before: 0.9
+    seed: 1
+    name: n12
+  - character: narrator
+    line: "逆に、間を詰めると、考える時間が消えます。早口の人物は、いつも何かに追われています。"
+    emotion: excitement
+    intensity: moderate
+    volume: normal
+    speed: very_fast
+    delivery: cheerful
+    pause_before: 0.6
+    seed: 1
+    name: n13
+  - character: narrator
+    line: "沈黙は、何もない時間ではありません。置かれた時間です。"
+    emotion: calm
+    intensity: moderate
+    volume: quiet
+    speed: slow
+    delivery: restrained
+    pause_before: 1.4
+    seed: 1
+    name: n14
+
+  # ── 間の実演（語らず、待つ）
+  - character: narrator
+    line: "ここで一度、間を聞いてみます。何も言いません。少しだけ、待ってください。"
+    emotion: calm
+    intensity: moderate
+    volume: quiet
+    speed: slow
+    delivery: restrained
+    pause_before: 1.0
+    seed: 1
+    name: q01
+  - character: narrator
+    line: "この時間に、あなたは次の言葉を待っていました。その待つ気持ちが、緊張です。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 5.0
+    seed: 1
+    name: q02
+
+  # ── 三章 音色
+  - character: narrator
+    line: "みっつめは、音色です。同じ高さで、同じ大きさでも、声の質が変われば、印象は変わります。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 2.0
+    seed: 1
+    name: n15
+  - character: narrator
+    line: "息を多く含んだ声は、近さを感じさせます。張りのある声は、外へ向かいます。"
+    emotion: calm
+    intensity: subtle
+    volume: quiet
+    speed: slow
+    delivery: intimate
+    breathiness: slight
+    pause_before: 0.6
+    seed: 1
+    name: n16
+  - character: narrator
+    line: "音色は、言葉で言い切れない感情を運びます。皮肉や照れは、内容より、その質に出ます。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 0.6
+    seed: 1
+    name: n17
+  - character: narrator
+    line: "だから、台詞を書くだけでは足りません。どう鳴るかを、一緒に決める必要があります。"
+    emotion: confidence
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 0.9
+    seed: 1
+    name: n18
+
+  # ── 実例（真白）— 同じ台詞の三通り
+  - character: narrator
+    line: "では、同じ台詞を三通りで聞いてみます。台詞は、これです。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 2.0
+    seed: 1
+    name: n19
+  - character: mashiro
+    line: "明日、また来るね。"
+    emotion: neutral
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 1.0
+    seed: 1
+    name: m01
+  - character: narrator
+    line: "一つめ。明るく、少し高く、間を短く。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 1.2
+    seed: 1
+    name: n20
+  - character: mashiro
+    line: "明日、また来るね。"
+    emotion: joy
+    intensity: strong
+    volume: loud
+    speed: fast
+    pitch: slightly_high
+    delivery: cheerful
+    pause_before: 0.3
+    seed: 1
+    name: m02
+  - character: narrator
+    line: "これは、励ましに聞こえます。"
+    emotion: calm
+    intensity: subtle
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 1.0
+    seed: 1
+    name: n21
+  - character: narrator
+    line: "二つめ。声を落として、間を長く。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 1.2
+    seed: 1
+    name: n22
+  - character: mashiro
+    line: "明日、また来るね。"
+    emotion: sadness
+    intensity: strong
+    volume: quiet
+    speed: very_slow
+    pitch: slightly_low
+    delivery: restrained
+    breathiness: slight
+    pause_before: 0.3
+    seed: 1
+    name: m03
+  - character: narrator
+    line: "同じ言葉が、別れの予告になります。"
+    emotion: calm
+    intensity: subtle
+    volume: quiet
+    speed: slow
+    delivery: restrained
+    pause_before: 1.0
+    seed: 1
+    name: n23
+  - character: narrator
+    line: "三つめ。少し笑いを含ませて、語尾を上げる。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 1.2
+    seed: 1
+    name: n24
+  - character: mashiro
+    line: "明日、また来るね。"
+    emotion: joy
+    intensity: subtle
+    volume: normal
+    speed: natural
+    pitch: slightly_high
+    delivery: gentle
+    breathiness: slight
+    pause_before: 0.3
+    seed: 1
+    name: m04
+  - character: narrator
+    line: "今度は、照れ隠しになります。言葉は、一文字も変わっていません。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 1.0
+    seed: 1
+    name: n25
+  - character: narrator
+    line: "変わったのは、音量と、間と、音色だけです。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 0.6
+    seed: 1
+    name: n26
+
+  # ── 言葉にならない感情
+  - character: narrator
+    line: "喜怒哀楽という言葉に収まらない感情も、音は運びます。照れ、皮肉、諦め、虚勢。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 3.0
+    seed: 1
+    name: x01
+  - character: narrator
+    line: "これらは、内容ではなく、間の取り方と声の質に出ます。"
+    emotion: calm
+    intensity: subtle
+    volume: normal
+    speed: natural
+    delivery: gentle
+    pause_before: 0.8
+    seed: 1
+    name: x02
+  - character: narrator
+    line: "だから、台詞を書いたあとに、もう一度、声だけで読んでみてください。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: gentle
+    pause_before: 0.8
+    seed: 1
+    name: x03
+
+  # ── 実例二（扉）— 声は同じで、付ける音だけが変わる
+  - character: narrator
+    line: "もう一つ、例を出します。扉が閉まる場面です。同じ演技に、音を三通り付けます。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 2.5
+    seed: 1
+    name: d01
+  - character: narrator
+    line: "一つめ。"
+    emotion: calm
+    intensity: subtle
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 2.0
+    seed: 1
+    name: d02
+  - character: narrator
+    line: "静かに閉まる音。場面は、静かに終わります。"
+    emotion: calm
+    intensity: subtle
+    volume: normal
+    speed: slow
+    delivery: gentle
+    pause_before: 2.0
+    seed: 1
+    name: d03
+  - character: narrator
+    line: "二つめ。"
+    emotion: calm
+    intensity: subtle
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 2.0
+    seed: 1
+    name: d04
+  - character: narrator
+    line: "叩きつける音。同じ台詞が、怒りになります。"
+    emotion: confidence
+    intensity: moderate
+    volume: loud
+    speed: natural
+    delivery: aggressive
+    pause_before: 2.0
+    seed: 1
+    name: d05
+  - character: narrator
+    line: "三つめ。"
+    emotion: calm
+    intensity: subtle
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 2.0
+    seed: 1
+    name: d06
+  - character: narrator
+    line: "音を消します。今度は、何かが起きそうに見えます。"
+    emotion: calm
+    intensity: subtle
+    volume: quiet
+    speed: slow
+    delivery: restrained
+    pause_before: 3.0
+    seed: 1
+    name: d07
+  - character: narrator
+    line: "扉の音ひとつで、場面の意味が変わります。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: controlled
+    pause_before: 2.0
+    seed: 1
+    name: d08
+
+  # ── まとめ
+  - character: narrator
+    line: "音は、感情の説明ではありません。感情の置き場所です。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: slow
+    delivery: restrained
+    pause_before: 2.0
+    seed: 1
+    name: n27
+  - character: narrator
+    line: "映像に音を付けるとき、何を鳴らすかより、どこを空けるかを考えてみてください。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: gentle
+    pause_before: 0.8
+    seed: 1
+    name: n28
+  - character: narrator
+    line: "最後に一つ。音を足す前に、一度、無音でその場面を見てください。足りないものが、見えます。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: gentle
+    pause_before: 1.4
+    seed: 1
+    name: n29
+  - character: narrator
+    line: "無音で一度見ると、どの音が要らないかが分かります。"
+    emotion: calm
+    intensity: moderate
+    volume: normal
+    speed: natural
+    delivery: gentle
+    pause_before: 1.0
+    seed: 1
+    name: c01
+  - character: narrator
+    line: "この動画の音も、そうやって作っています。"
+    emotion: calm
+    intensity: subtle
+    volume: quiet
+    speed: slow
+    delivery: gentle
+    pause_before: 1.2
+    seed: 1
+    name: c02

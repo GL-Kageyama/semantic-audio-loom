@@ -159,5 +159,13 @@
     "not_found": "見つかりません: {path}",
     "valid": "Sound Bible は健全です。",
     "valid_empty": "Sound Bible は空です（全節が未設定）: {path}"
+  },
+  "act_probe": {
+    "description": "台詞 1 本を演技の言葉で測る。",
+    "help_json": "JSON で出す",
+    "help_tsv": "TSV で出す（表へ貼る）",
+    "pitch": "声の高さ {f0} Hz / 抑揚 {rng} 半音 / 語尾 {end} 半音/秒",
+    "time": "速さ {rate} 拍/秒 / 間 {pause}% / 有声 {voiced}%",
+    "energy": "張り {med} dB（幅 {rng}） / 立ち上がり {atk} ms / 長さ {dur} 秒"
   }
 }

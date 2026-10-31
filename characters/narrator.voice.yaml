@@ -1,0 +1,15 @@
+# 語り手 — 解説動画（projects/longform/explainer）のナレーション。
+# voice_profile.schema.json 準拠。reference_audio は参照音声ライブラリの話者キー
+# （経路A: timbre をこの音声から、prosody を Direction から合成）。
+# 声は「説明する人」: 落ち着いた大人・中くらいの高さ・澄んだ質・息は少なめ。
+# 感情を演じず、間で聞かせる。台詞は scenes 側の cue で演技を振る。
+character: 語り手
+name_reading: かたりて
+reference_audio: female_mature_p294
+voice:
+  age: adult           # child / adolescent / young_adult / adult / middle_aged / elderly
+  gender: female        # female / male（プロンプト主語と参照ファイル名判定に使う）
+  pitch: medium         # very_low / low / medium_low / medium / medium_high / high / very_high
+  texture: clear        # soft / warm / clear / bright / dark / husky / breathy / neutral
+  breathiness: none     # none / slight / moderate / heavy
+  resonance: chest      # intimate / chest / head / nasal / bright / neutral

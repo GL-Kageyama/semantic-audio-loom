@@ -157,6 +157,16 @@
             "projected",
             "strained"
           ]
+        },
+        "volume": {
+          "enum": [
+            "whisper",
+            "quiet",
+            "normal",
+            "loud",
+            "shout"
+          ],
+          "description": "Direction の声量。effort（張り）とは別で、囁きは relaxed に潰さずそのまま渡す。"
         }
       }
     }

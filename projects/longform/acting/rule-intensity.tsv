@@ -1,0 +1,10 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/acting-rule/anger-moderate-s1.wav	2.923	351.4	9.0	-5.6	6.0	0.25	-14.7	36.7	90.0	0.2355	0.95	-16.1	0
+projects/longform/assets/acting-rule/anger-strong-s1.wav	2.973	361.7	8.9	-1.49	5.4	0.266	-15.2	34.5	110.0	0.2416	0.95	-17.0	0
+projects/longform/assets/acting-rule/anger-subtle-s1.wav	2.923	351.4	8.9	-4.15	5.9	0.246	-15.0	36.4	110.0	0.2423	0.95	-16.8	0
+projects/longform/assets/acting-rule/joy-moderate-s1.wav	2.848	359.6	9.4	-7.61	5.6	0.261	-15.0	35.0	70.0	0.2421	0.95	-16.5	0
+projects/longform/assets/acting-rule/joy-strong-s1.wav	2.898	365.9	9.0	-2.64	5.5	0.26	-15.5	36.0	80.0	0.2276	0.95	-16.6	0
+projects/longform/assets/acting-rule/joy-subtle-s1.wav	2.923	359.6	8.8	-4.62	5.4	0.265	-14.3	36.3	70.0	0.2491	0.95	-16.3	0
+projects/longform/assets/acting-rule/sadness-moderate-s1.wav	2.998	343.4	9.0	-4.18	6.1	0.286	-15.3	37.3	90.0	0.22	0.95	-16.4	0
+projects/longform/assets/acting-rule/sadness-strong-s1.wav	2.948	359.6	9.6	-0.18	4.9	0.286	-16.1	37.5	70.0	0.2169	0.95	-17.0	0
+projects/longform/assets/acting-rule/sadness-subtle-s1.wav	2.948	355.5	9.5	-0.27	5.6	0.289	-15.4	35.8	70.0	0.2068	0.95	-16.8	0

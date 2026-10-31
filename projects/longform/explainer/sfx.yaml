@@ -1,0 +1,5 @@
+# 台詞に合わせて置く効果音（assemble.py が読む）。
+# anchor = script.yaml の cue 名、offset = その cue の頭からの秒（負なら手前）。
+# 扉の章では「一つめ」「二つめ」の直後に鳴らす。三つめは鳴らさない（それが題）。
+- {file: door-soft.wav, anchor: d03, offset: -1.5, gain_db: -10}
+- {file: door-slam.wav, anchor: d05, offset: -1.5, gain_db: 0}

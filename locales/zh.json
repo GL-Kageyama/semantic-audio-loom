@@ -159,5 +159,13 @@
     "not_found": "未找到：{path}",
     "valid": "Sound Bible 正常。",
     "valid_empty": "Sound Bible 为空（各节均未设置）：{path}"
+  },
+  "act_probe": {
+    "description": "把一句台词当作演技来测量。",
+    "help_json": "输出 JSON",
+    "help_tsv": "输出 TSV（贴到表格里）",
+    "pitch": "音高 {f0} Hz / 起伏 {rng} 半音 / 尾音 {end} 半音/秒",
+    "time": "语速 {rate} 拍/秒 / 停顿 {pause}% / 有声 {voiced}%",
+    "energy": "强度 {med} dB（幅度 {rng}） / 起音 {atk} ms / 时长 {dur} 秒"
   }
 }

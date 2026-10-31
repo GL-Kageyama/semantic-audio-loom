@@ -159,5 +159,13 @@
     "not_found": "Not found: {path}",
     "valid": "The Sound Bible is healthy.",
     "valid_empty": "The Sound Bible is empty (no section is set): {path}"
+  },
+  "act_probe": {
+    "description": "Measure one line as acting (pitch, range, rate, pauses, energy).",
+    "help_json": "print JSON",
+    "help_tsv": "print TSV (paste into a table)",
+    "pitch": "pitch {f0} Hz / range {rng} semitones / ending {end} st/s",
+    "time": "rate {rate} morae/s / pause {pause}% / voiced {voiced}%",
+    "energy": "energy {med} dB (range {rng}) / attack {atk} ms / length {dur} s"
   }
 }

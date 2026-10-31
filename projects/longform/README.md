@@ -1,0 +1,72 @@
+# longform — 5〜10 分の音を 2 本つくる
+
+このディレクトリは「長尺をつくるときの型」の実例。声だけの素材ではなく、
+**間・音量・音色を設計して 1 本に組む**ところまでを扱う。
+
+| 作品 | 中身 | 尺 |
+| --- | --- | --- |
+| `explainer/` | 解説「音は、なぜ感情を動かすのか」。語り手＋実例 4 本だけ真白 | 約 5 分 |
+| `drama/` | 二人芝居「午前二時の電話」。真白とニジ | 約 5 分 |
+
+## 置き場
+
+```
+projects/longform/
+  STATE.md            現在地と実測（再開するときはここから）
+  timings.tsv         生成 1 回 1 行（日付・段・素材・モデル・設定・実時間・マシン）
+  baseline.md         examples/ 37 本の基準線
+  acting/             P1・P2 の演技実験（行列と測定）
+  explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く
+  assemble.py         両作品を組む道具（切る・並べる・利得・効果音・下地）
+  check_render.py     門の数を測る（尺・クリップ・無音・効果音の立ち上がり）
+```
+
+生成物は `assets/<作品>/` に階層で出る。
+
+```
+assets/<作品>/
+  voice/       キュー 1 本 1 ファイル（.wav と .params.yaml）
+  voice_trim/  頭尾の無音を切ったもの（組み立てが作る）
+  voice_fx/    帯域処理をしたもの（voice_fx.yaml がある作品だけ）
+  sfx/  bgm/   効果音・下地
+  renders/     組み上げた 1 本
+```
+
+## つくる
+
+```zsh
+PY=/Users/user/sonic-loom-spike/venv_tsukasa/bin/python
+
+# 1. 声（モデルのロードは 1 回。1 本 1〜2 秒）
+PYTHONPATH=. $PY projects/longform/explainer/build_voice.py --dir projects/longform/explainer
+PYTHONPATH=. $PY projects/longform/explainer/build_voice.py --dir projects/longform/drama
+
+# 2. 音（stable_audio は 1 本 5〜8 分。バックグラウンドで）
+./projects/longform/explainer/build_sound.sh
+./projects/longform/drama/build_sound.sh
+
+# 3. 組む
+PYTHONPATH=. $PY projects/longform/assemble.py --dir projects/longform/explainer
+PYTHONPATH=. $PY projects/longform/assemble.py --dir projects/longform/drama
+
+# 4. 門を測る
+PYTHONPATH=. $PY projects/longform/check_render.py \
+  projects/longform/assets/explainer/renders/explainer.wav --mix projects/longform/explainer/mix.yaml
+```
+
+`build_voice.py` は既にある WAV を飛ばす（`--force` で作り直す）。
+`assemble.py` は `script.yaml` の `pause_before` を正とし、キュー頭尾の無音を切ってから並べる
+（切らないと間が 1 秒ずつ伸びる）。
+
+## 作品ごとの設定
+
+- `script.yaml` … 台詞と演技（emotion / intensity / volume / speed / pitch / delivery / breathiness）
+- `chapters.yaml` … 章の頭の cue 名（その 1.2 秒手前にチャイム）
+- `sfx.yaml` … `{file, anchor, offset, gain_db}`。anchor の cue の頭から offset 秒
+- `bed_mute.yaml` … `{from, to}` の cue 対。その間だけ下地を止める（無音を聴かせる場面）
+- `voice_fx.yaml` … 人物ごとの帯域処理（ニジは電話の帯域）
+
+## Git
+
+生のキュー（`assets/**/*.wav`）は追わない。同じ台詞・同じ seed で作り直せるため。
+配布するのは組み上げた 1 本の **MP3** と、`.params.yaml`・`schema`・`mix.yaml`。

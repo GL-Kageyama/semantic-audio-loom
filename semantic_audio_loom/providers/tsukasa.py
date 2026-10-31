@@ -77,6 +77,21 @@ PITCH_WORDS = {
     "very_high": "very high",
 }
 
+# Direction の pitch（Spec では prosody.pitch）→ 散文。capabilities() が pitch を
+# 名乗っているのに散文へ渡していなかった（同じ台詞の三通りが二通りに潰れる）。
+PITCH_PHRASES = {
+    "very_low": "with a very low pitch",
+    "low": "with a low pitch",
+    "medium_low": "with a fairly low pitch",
+    "slightly_low": "with a slightly lower pitch",
+    "medium": "",
+    "natural": "",
+    "slightly_high": "with a slightly higher pitch",
+    "medium_high": "with a fairly high pitch",
+    "high": "with a high pitch",
+    "very_high": "with a very high pitch",
+}
+
 AGE_WORDS = {
     "child": "child", "adolescent": "teenage", "young_adult": "young adult",
     "adult": "adult", "middle_aged": "middle-aged", "elderly": "elderly",
@@ -100,6 +115,27 @@ EFFORT_TO_VOLUME = {
     "relaxed": "quietly", "normal": "at a normal volume",
     "projected": "loudly, projecting the voice", "strained": "shouting, at full volume",
 }
+
+# emotion.intensity（0〜1）→ プロンプトの強度文言。
+# emotion の文言だけでは強度が渡らない（anger subtle と strong がバイト一致した）。
+# 感情の名前は「どの感情か」しか言わず、「どれほどか」は別に書く必要がある。
+_INTENSITY_PHRASES = (
+    (0.40, "the feeling is faint, barely showing"),
+    (0.70, ""),
+    (0.90, "the feeling is strong, close to the surface"),
+    (1.01, "the feeling is overwhelming, at its limit"),
+)
+
+
+def _intensity_phrase(value) -> str:
+    try:
+        v = float(value)
+    except (TypeError, ValueError):
+        return ""
+    for upper, phrase in _INTENSITY_PHRASES:
+        if v <= upper:
+            return phrase
+    return _INTENSITY_PHRASES[-1][1]
 
 
 def _load_model():
@@ -149,7 +185,7 @@ def _voice_description(vp: dict) -> str:
 
 def _spec_prompt(subject: str, spec: dict) -> str:
     """Performance Spec → KotoDama 散文。Spec のうち Provider が反映できる
-    controls（emotion / delivery / 声量 / 速度 / 語尾 intonation）だけを
+    controls（emotion / intensity / delivery / 声量 / 速度 / 語尾 intonation）だけを
     自然言語の演技指示へ変換する。emphasis / breath / pauses は構造化制御が
     共通欠落なので落とす（capabilities() 参照）。"""
     emotion = spec.get("emotion") or {}
@@ -159,13 +195,27 @@ def _spec_prompt(subject: str, spec: dict) -> str:
     primary = emotion.get("primary") or "neutral"
     parts = [EMOTION_PHRASES.get(primary, EMOTION_PHRASES["neutral"])]
 
+    intensity = _intensity_phrase(emotion.get("intensity"))
+    if intensity:
+        parts.append(intensity)
+
     d = spec.get("delivery")
     if d in DELIVERY_PHRASES:
         parts.append(DELIVERY_PHRASES[d])
 
-    effort = loudness.get("effort")
-    if effort in EFFORT_TO_VOLUME:
-        parts.append(EFFORT_TO_VOLUME[effort])
+    # 声量は Direction の値（whisper〜shout）を優先する。effort（張り）だけだと
+    # 囁きと quiet が同じ "quietly" になる。Spec に volume が無いときだけ effort を使う。
+    volume = loudness.get("volume")
+    if volume in VOLUME_PHRASES:
+        parts.append(VOLUME_PHRASES[volume])
+    else:
+        effort = loudness.get("effort")
+        if effort in EFFORT_TO_VOLUME:
+            parts.append(EFFORT_TO_VOLUME[effort])
+
+    pitch = prosody.get("pitch")
+    if PITCH_PHRASES.get(pitch):
+        parts.append(PITCH_PHRASES[pitch])
 
     pace = prosody.get("pace")
     if pace in SPEED_PHRASES:
@@ -198,7 +248,7 @@ class TsukasaProvider:
         return {
             "asset_types": ["voice"],
             "models": ["Tsukasa_Speech"],
-            "controls": ["emotion", "speed", "volume", "pitch", "delivery", "intonation"],
+            "controls": ["emotion", "intensity", "speed", "volume", "pitch", "delivery", "intonation"],
             # emphasis / breath / pauses の構造化制御は共通欠落（M0 実測）。
             "voice_consistency": "reference",
             "languages": ["ja"],

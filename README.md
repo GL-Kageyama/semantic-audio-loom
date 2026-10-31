@@ -120,4 +120,5 @@ skills/       .claude-plugin/              # facade スキル / プラグイン�
 | [docs/reference-voices.md](docs/reference-voices.md) | 参照音声と拡充・弱い声への方針 |
 | [docs/setup.md](docs/setup.md) | セットアップ（Tsukasa・LLM・環境変数） |
 | [docs/usage.md](docs/usage.md) | 全 CLI の使い方 |
+| [projects/longform/README.md](projects/longform/README.md) | 長尺（5〜10 分）の組み方：間・音量・効果音・ducking |
 | [HISTORY.md](HISTORY.md) | 開発履歴・実測値 |

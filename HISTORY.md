@@ -2,6 +2,49 @@
 
 日付入りの変更経緯・過去の設計との比較・実測値はここに記録する。現在の情報は README / docs / SKILL を見る。
 
+## 2026-10-31 — 長尺ラン（演技の計器・5 分の作品 2 本）
+
+### スコープ
+
+5〜10 分の音を 2 本（解説と二人芝居）作りながら、「演技がどこまで届くか」を測った。
+実測と経過は [projects/longform/REPORT.md](projects/longform/REPORT.md) と
+[projects/longform/STATE.md](projects/longform/STATE.md)、納品は
+[examples/longform-explainer/](examples/longform-explainer/) と
+[examples/longform-drama/](examples/longform-drama/)。
+
+### 足した道具
+
+- `bin/act_probe.py` ＋ `semantic_audio_loom/skills/act_probe.py` … 演技を数にする計器
+  （f0 中央値・抑揚・語尾の傾き・速さ・間の比・張り・立ち上がり）。
+- `projects/longform/assemble.py` … キューを切って並べ、声量を `gain_db` で戻し、
+  効果音を cue 名の錨で置き、下地を継ぎ足し、ducking つきで 1 本にする。
+- `projects/longform/check_render.py` … 尺・ピーク・クリップ・無音・効果音の立ち上がり。
+- `projects/longform/check_duck.py` … 下地が実際に何 dB 沈んだかを測る。
+- `characters/narrator.voice.yaml` … 語り手（参照音声 `female_mature_p294`）。
+
+### 直した機構の穴
+
+1. `intensity` が `_spec_prompt` に渡っていなかった（anger の subtle と strong が
+   **バイト一致**）。`_INTENSITY_PHRASES` を追加。
+2. `pitch` を `capabilities()` が名乗るのに散文へ渡していなかった。`PITCH_PHRASES` を追加。
+3. `volume`（whisper〜shout）が `effort` に潰れて囁きが消えていた。`loudness.volume` を
+   schema・resolve・provider に通した。
+
+### 実測（M2 Pro / 16 GB・`venv_tsukasa`）
+
+- 11 感情（moderate・seed 1）：f0 329.7〜359.6 Hz（1.5 半音）・抑揚 8.3〜9.2 半音。
+  **seed の揺れ（joy s1→s2 で 2.9 半音）のほうが感情差より大きい。**
+- 枠外 10 種：完全 4（皮肉・泣き笑い・早口・間）/ 部分 2 / 動かず 4（照れ・諦め・囁き・怒鳴り）。
+  **動くのは時間と高低。張り（エネルギー）は動かない**（怒鳴りは基準線より 1.5 dB 静か）。
+- 声量の指示は生成音のレベルに出ない（normal −17.7 / quiet −17.8 dB。全部 peak 0.95）。
+  pitch の指示も f0 を動かさない（0.3 半音）。差はミックスの `gain_db` で作る。
+- 同じモデルの二人は声で分かれない（同じ台詞の MFCC 距離：同一人物 11.7〜13.2／別人 7.2）。
+  帯域（320–3400 Hz）で分けた。組み上げ後は低域 −5.3 dB・高域 −9.3 dB。
+- 生成時間（1 本）：stable_audio 1.6〜4 秒の素材で 392〜755 秒、musicgen 30 秒で 182 秒、
+  Tsukasa の声は 1 本 1.0〜4.2 秒（モデルのロードは 1 プロセス 1 回）。
+- 完成：解説 311.2 秒（クリップ 0・効果音 10 本すべて +15 dB 以上・ducking −11.7 dB）、
+  演劇 310.5 秒（呼び出し +40.1 dB・切断 +22.1 dB・ducking −11.2 dB）。
+
 ## 2026-10-31 — M5 音の生成＋ライブラリ（5 種すべて）
 
 ### スコープ

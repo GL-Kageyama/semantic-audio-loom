@@ -69,13 +69,15 @@ def resolve_rule(intent: GenerationIntent) -> dict:
     performance = intent.performance or {}
     primary = emotion.get("primary", "neutral")
     intensity_enum = emotion.get("intensity", "none")
+    volume = performance.get("volume", "normal")
     spec = {
         "emotion": {
             "primary": primary,
             "intensity": INTENSITY_MAP.get(intensity_enum, 0.5),
         },
-        "loudness": {"effort": EFFORT_MAP.get(performance.get("volume", "normal"), "normal")},
-        "prosody": {
+        # effort（張り）だけだと whisper と quiet が同じ "relaxed" に潰れる。
+        # 囁きは演技の端で効くので、Direction の声量をそのまま渡す。
+        "loudness": {"effort": EFFORT_MAP.get(volume, "normal"), "volume": volume},        "prosody": {
             "pace": performance.get("speed", "natural"),
             "pitch": performance.get("pitch", "natural"),
             "intonation": "neutral",
