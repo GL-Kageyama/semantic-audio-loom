@@ -134,6 +134,7 @@ projects/longform/
   drama-scene-mark-choice/   同じ場面を `！` の置き方 3 通りで並べる見本（173 秒）
   drama-scene-mark-relocate/ `！` を s68 へ移すと山も移るか（seed 5・195 本）
   drama-relocate-demo/     同じ場面で「足すだけ」と「外してから足す」を並べる見本（178 秒）
+  acting-punctuation-mid-exclaim/ 文中の `！` は効くか（5 通り × seed 5・25 本）
   loudness-trial/          未達の 2 本に圧縮を掛けたら届くか（測るだけ・裁定前）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   drama-seed-split/  演劇のニジだけ seed 2 にした版（人物を seed で分けられるか）
