@@ -141,6 +141,10 @@ def _intensity_phrase(value) -> str:
         v = float(value)
     except (TypeError, ValueError):
         return ""
+    # Direction の intensity=none は 0.0 に解決される。0 に「かすかに」を足すと
+    # 「none」が「faint」になってしまう（抽象の語と散文が逆向き）。
+    if v <= 0:
+        return ""
     for upper, phrase in _INTENSITY_PHRASES:
         if v <= upper:
             return phrase

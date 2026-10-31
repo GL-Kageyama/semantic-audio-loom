@@ -214,6 +214,14 @@ projects/longform/
    高い 5 つは seed の幅（308〜347）が重なって分かれない。guilt だけ間 0.40–0.43・
    長さ 3.2–3.4 秒で別。0.0 では低い群れだけ 15〜25 Hz 下がる（高い群れは動かない）。
    ⚠️ ペアごとの 3/3 判定は 55/55 になるが偶然でも 90% 通る——数えず、範囲の重なりで読む。
+19. **強度の 5 語（90 本）**：`acting-intensity/`（none/subtle/moderate/strong/overwhelming ×
+   3 感情 × seed 1〜3 × beta 0.3 / 0.0）。**none と moderate は同じ音**（散文で
+   どちらも一言も足さない）＝実質 4 段。段の順にならず、neutral は overwhelming
+   （262.5）が strong（283.8）より低い。anger は床で strong 376.6 > overwhelming 365.9、
+   joy は逆（3/3）。床では strong / overwhelming の振り幅が大きい。
+   ✅ **intensity=none が「faint」を足していたのを直した**（0 では足さない）。
+   同じ種類の脱落を捕まえる検査 `test_every_enum_value_reaches_the_prompt` を追加
+   （Schema の列挙値ごとに散文が違うことを見る）。131 passed。
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の
 低下は長さの交絡。

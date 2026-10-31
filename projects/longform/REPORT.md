@@ -173,6 +173,35 @@ beta 0.3 の種の中の幅は 12 Hz 程度なので、これは幅の外。
 感情の名前も強度も、モデルには**声全体の寄せ先**として効いており、「悲しければ低い声」の
 ような意味の写像ではない。
 
+### 強度の語は 5 段あるが、段の順にはならない（90 本・beta 0.3 と 0.0）
+
+Direction の強度は none / subtle / moderate / strong / overwhelming の 5 語。
+3 感情 × 5 語 × seed 1〜3 × beta 0.3 / 0.0 で振った（`acting-intensity/`）。f0 中央値:
+
+| 感情 | beta | none | subtle | moderate | strong | overwhelming |
+| --- | --- | --- | --- | --- | --- | --- |
+| neutral | 0.3 | 257.2 | 275.7 | 257.2 | 283.8 | 262.5 |
+| neutral | 0.0 | 240.0 | 255.7 | 240.0 | 267.9 | 260.2 |
+| anger | 0.3 | 320.4 | 326.0 | 320.4 | 347.3 | 349.4 |
+| anger | 0.0 | 327.8 | 331.7 | 327.8 | **376.6** | 365.9 |
+| joy | 0.3 | 331.7 | 328.8 | 331.7 | 339.4 | 341.4 |
+| joy | 0.0 | 333.6 | 329.7 | 333.6 | 372.3 | **376.6** |
+
+- **none と moderate は同じ音**（どの seed でも値が一致）。散文では両方とも一言も
+  足さないため。5 語は実質 **4 段（none = moderate / subtle / strong / overwhelming）**。
+- **段の順にはならない。** neutral では overwhelming（262.5）が strong（283.8）より
+  低い（3 seed とも）。anger は floor で strong が overwhelming より高い（376.6 対
+  365.9・3/3）。joy は逆に overwhelming が上（3/3）。**「max の語」は感情によって
+  別の向きに振れる。**
+- 床（beta 0.0）では strong / overwhelming の振り幅が大きい（anger 327.8 → 376.6、
+  joy 333.6 → 376.6）。**強度の語も、下げた側で強く出る。**
+
+**直したこと：** Direction の intensity=none は 0.0 に解決されるが、散文では
+「the feeling is faint」を足していた（none が faint になる）。0 では一言も足さないよう
+直した。**欄が散文に載っているかを、Schema の列挙値ごとに比べる検査を足した**
+（`test_every_enum_value_reaches_the_prompt`。二つの値が同じ文になる＝どちらかが
+捨てられている、を検出する）。
+
 ### 語尾の抑揚は、beta を下げても分かれない
 
 `prosody.intonation`（rising / flat / falling）を Direction から指定できるようにした

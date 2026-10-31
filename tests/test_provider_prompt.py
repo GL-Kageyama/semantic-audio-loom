@@ -24,6 +24,17 @@ def test_intensity_reaches_the_prompt():
     assert "faint" in weak and "overwhelming" in strong
 
 
+def test_intensity_none_adds_no_phrase():
+    """Direction の intensity=none（0.0）に「かすかに」を足さない。
+
+    抽象の語と散文が逆向きになる（none が faint になる）と、Direction の
+    一番弱い指示が一番弱い演技ではなく「かすかな演技」になる。
+    """
+    prompt = tsukasa._spec_prompt("A voice.", _spec(0.0))
+    assert "faint" not in prompt
+    assert "faint" in tsukasa._spec_prompt("A voice.", _spec(0.25))
+
+
 def test_moderate_intensity_adds_no_phrase():
     """中庸（0.35〜0.65）は余計な一言を足さない。感情の文言だけで足りる。"""
     moderate = tsukasa._spec_prompt("A voice.", _spec(0.55))
@@ -116,3 +127,64 @@ def test_rule_resolve_carries_the_breathiness():
                              emotion={"primary": "neutral"}, performance={})
     assert resolve.resolve_rule(plain)["prosody"]["breathiness"] == "none"
     assert "breathy" not in tsukasa._spec_prompt("A voice.", resolve.resolve_rule(plain))
+
+
+SCHEMA = "schemas/performance_spec.schema.json"
+
+
+def _enum(path):
+    import json
+    from pathlib import Path
+
+    spec = json.loads(Path(SCHEMA).read_text())
+    for key in path:
+        spec = spec["properties"][key]
+    return spec["enum"]
+
+
+def _with(path, value):
+    """既定の Spec に 1 欄だけ値を入れた散文を作る。"""
+    spec = _spec(0.5, primary="neutral")
+    spec.pop("delivery", None)
+    cur = spec
+    for key in path[:-1]:
+        cur = cur.setdefault(key, {})
+    cur[path[-1]] = value
+    return tsukasa._spec_prompt("A voice.", spec)
+
+
+def test_every_enum_value_reaches_the_prompt():
+    """Schema の列挙値をすべて散文に載せる（欄の脱落を列挙で捕まえる）。
+
+    息（breathiness）は Schema・CLI・Direction が受けるのに、散文に載らず
+    heavy と none がバイト一致していた。列挙値ごとに散文を比べれば、
+    二つの値が同じ文になる（＝どちらかが捨てられている）ことを検出できる。
+    """
+    fields = [
+        (["emotion"], "primary"),
+        (["prosody"], "pace"),
+        (["prosody"], "pitch"),
+        (["prosody"], "intonation"),
+        (["prosody"], "breathiness"),
+        ([], "delivery"),
+        (["loudness"], "volume"),
+    ]
+    for keys, field in fields:
+        path = keys + [field]
+        values = _enum(path)
+        prompts = {v: _with(path, v) for v in values}
+        unique = {p for p in prompts.values()}
+        assert len(unique) == len(values), (
+            f"{'.'.join(path)}: 列挙 {len(values)} のうち散文が {len(unique)} 通り"
+            f"（潰れた値: {[v for v in values if list(prompts.values()).count(prompts[v]) > 1]}）"
+        )
+
+
+def test_effort_alone_reaches_the_prompt_but_volume_wins():
+    """張り（effort）は volume が無いときだけ散文に出る（三層分業の実装）。"""
+    spec = _spec(0.5)
+    spec["loudness"] = {"effort": "strained"}
+    assert "shouting" in tsukasa._spec_prompt("A voice.", spec)
+    spec["loudness"] = {"effort": "strained", "volume": "whisper"}
+    prompt = tsukasa._spec_prompt("A voice.", spec)
+    assert "barely above a whisper" in prompt and "shouting" not in prompt
