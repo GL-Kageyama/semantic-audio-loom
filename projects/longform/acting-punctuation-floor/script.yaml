@@ -1,4 +1,4 @@
-# 文末の記号の効きは、声の混ぜ方（beta）の深さで残るか（4 記号 × beta 3 × seed 5 = 60）
+# 文末の記号の効きは、声の混ぜ方（beta）の深さで残るか（4 記号 × beta 4 × seed 5 = 80）
 #
 # `acting-punctuation/` は beta 0.7 で +39.3、`acting-punctuation-stack/` は beta 0.3 で
 # +25.4 Hz を出した。床（beta 0.0）まで降ろすと消えるか。3 段を同じ台本で焼き直し、
@@ -67,3 +67,23 @@ cues:
 - {character: mashiro, line: 明日、また来るね, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: pf-b07-plain-s3}
 - {character: mashiro, line: 明日、また来るね, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: pf-b07-plain-s4}
 - {character: mashiro, line: 明日、また来るね, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: pf-b07-plain-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.5, name: pf-b05-period-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.5, name: pf-b05-period-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.5, name: pf-b05-period-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.5, name: pf-b05-period-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.5, name: pf-b05-period-s5}
+- {character: mashiro, line: 明日、また来るね？, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.5, name: pf-b05-question-s1}
+- {character: mashiro, line: 明日、また来るね？, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.5, name: pf-b05-question-s2}
+- {character: mashiro, line: 明日、また来るね？, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.5, name: pf-b05-question-s3}
+- {character: mashiro, line: 明日、また来るね？, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.5, name: pf-b05-question-s4}
+- {character: mashiro, line: 明日、また来るね？, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.5, name: pf-b05-question-s5}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.5, name: pf-b05-exclaim-s1}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.5, name: pf-b05-exclaim-s2}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.5, name: pf-b05-exclaim-s3}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.5, name: pf-b05-exclaim-s4}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.5, name: pf-b05-exclaim-s5}
+- {character: mashiro, line: 明日、また来るね, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.5, name: pf-b05-plain-s1}
+- {character: mashiro, line: 明日、また来るね, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.5, name: pf-b05-plain-s2}
+- {character: mashiro, line: 明日、また来るね, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.5, name: pf-b05-plain-s3}
+- {character: mashiro, line: 明日、また来るね, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.5, name: pf-b05-plain-s4}
+- {character: mashiro, line: 明日、また来るね, emotion: neutral, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.5, name: pf-b05-plain-s5}
