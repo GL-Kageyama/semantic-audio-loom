@@ -1,0 +1,28 @@
+# 聞き比べ：同じ一言を beta 0.7 と 0.3 で。台詞は『明日、また来るね。』
+name: acting-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 同じ一言を、設定を変えて並べます。台詞は、明日また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.2, name: n-intro}
+- {character: narrator, line: まず、既定の混ぜ方。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 1.0, name: n-default}
+- {character: narrator, line: 無表情。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: n-l-neutral}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.7, seed: 1, pause_before: 0.5, name: b070-neutral}
+- {character: narrator, line: 喜び。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: n-l-joy}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.7, seed: 1, pause_before: 0.5, name: b070-joy}
+- {character: narrator, line: 怒り。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: n-l-anger}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.7, seed: 1, pause_before: 0.5, name: b070-anger}
+- {character: narrator, line: 悲しみ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: n-l-sadness}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.7, seed: 1, pause_before: 0.5, name: b070-sadness}
+- {character: narrator, line: 喜びを、強く。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.8, name: n-l-joy-strong}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.7, seed: 1, pause_before: 0.5, name: b070-joy-strong}
+- {character: narrator, line: 次は、演技の混ぜ方を強めます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 1.6, name: n-switch}
+- {character: narrator, line: 無表情。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: n2-l-neutral}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.3, seed: 1, pause_before: 0.5, name: b030-neutral}
+- {character: narrator, line: 喜び。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: n2-l-joy}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.3, seed: 1, pause_before: 0.5, name: b030-joy}
+- {character: narrator, line: 怒り。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: n2-l-anger}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.3, seed: 1, pause_before: 0.5, name: b030-anger}
+- {character: narrator, line: 悲しみ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: n2-l-sadness}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.3, seed: 1, pause_before: 0.5, name: b030-sadness}
+- {character: narrator, line: 喜びを、強く。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.8, name: n2-l-joy-strong}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.3, seed: 1, pause_before: 0.5, name: b030-joy-strong}
+- {character: narrator, line: 強く混ぜると、声は変わります。喜びは上がり、怒りも上がる。悲しみも、上がる。言葉の意味のままには、動かない。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 1.6, name: n-close}

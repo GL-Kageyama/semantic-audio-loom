@@ -42,6 +42,7 @@ PERF_ENUMS = {
     "breathiness": {"none", "slight", "moderate", "heavy"},
     "delivery": {"restrained", "subtle", "suppressed", "controlled", "flat", "gentle",
                  "intimate", "aggressive", "cheerful", "cold", "desperate", "hesitant"},
+    "intonation": {"neutral", "rising", "falling", "flat", "wavering"},
 }
 
 

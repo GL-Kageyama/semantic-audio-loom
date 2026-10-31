@@ -80,7 +80,7 @@ def resolve_rule(intent: GenerationIntent) -> dict:
         "loudness": {"effort": EFFORT_MAP.get(volume, "normal"), "volume": volume},        "prosody": {
             "pace": performance.get("speed", "natural"),
             "pitch": performance.get("pitch", "natural"),
-            "intonation": "neutral",
+            "intonation": performance.get("intonation") or "neutral",
             "pauses": [],
             "emphasis": [],
             "breath": [],

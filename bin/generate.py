@@ -35,7 +35,7 @@ from semantic_audio_loom.skills.character_voice import (
 from semantic_audio_loom.skills.performance import load_direction, performance_path
 from semantic_audio_loom.skills.reference import resolve_reference
 
-_PERF_KEYS = ("volume", "speed", "pitch", "breathiness", "delivery")
+_PERF_KEYS = ("volume", "speed", "pitch", "breathiness", "delivery", "intonation")
 
 
 def main() -> None:
@@ -53,6 +53,7 @@ def main() -> None:
     p.add_argument("--pitch", choices=sorted(PERF_ENUMS["pitch"]))
     p.add_argument("--breathiness", choices=sorted(PERF_ENUMS["breathiness"]))
     p.add_argument("--delivery", choices=sorted(PERF_ENUMS["delivery"]))
+    p.add_argument("--intonation", choices=sorted(PERF_ENUMS["intonation"]))
     p.add_argument("--situation", default=None, help=t("generate", "help_situation", "状況（subtext 推論の入力）"))
     p.add_argument("--state-file", default=None, help=t("generate", "help_state_file", "キャラクター状態の YAML（character_state）"))
     p.add_argument("--subtext", default=None, help=t("generate", "help_subtext", "台詞の裏の意味（人間上書き・任意）"))

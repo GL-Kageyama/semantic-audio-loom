@@ -37,7 +37,10 @@ bin/generate.py --character mashiro --performance anxious-night-call \
 ```
 
 - キャラ + 演技を名前で再利用。未指定の演技フラグは資材値を引き継ぐ。
-- `--emotion joy` など CLI フラグで演技資材を上書きも可。
+- `--emotion joy` など CLI フラグで演技資材を上書きも可。Direction は emotion / intensity /
+  volume / speed / pitch / breathiness / delivery / intonation。
+- `SAL_ALPHA` / `SAL_BETA` で声の混ぜ方を変える（既定 0.35 / 0.7）。beta を下げると
+  プロンプトの演技が乗りやすいが、参照音声の声質から離れる。
 - `--resolve llm`（既定）で Resolve を LLM に、`--resolve rule` で決定的写像（API なし）。
 - `--situation` と `--state-file`（character_state の YAML）が subtext 推論の入力。
   `--subtext` で人間が裏の意味を直接指定もできる。

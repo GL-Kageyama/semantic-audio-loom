@@ -50,12 +50,12 @@ def _metadata(cue, audio) -> dict:
     }
 
 
-def _timing(cue, wall: float, audio_s: float, rc: int) -> str:
+def _timing(cue, wall: float, audio_s: float, rc: int, alpha: float, beta: float) -> str:
     perf = ",".join(f"{k}={v}" for k, v in sorted(cue.performance.items()))
-    # alpha / beta はプロセスのノブ（SAL_ALPHA / SAL_BETA）。同じ台詞でも値が違えば
-    # 別の音になるので、設定の列に残す。
+    # alpha / beta は声の混ぜ方のノブ（既定は SAL_ALPHA / SAL_BETA、cue ごとに上書き可）。
+    # 同じ台詞でも値が違えば別の音になるので、設定の列に残す。
     settings = (f"emotion={cue.emotion},intensity={cue.intensity},{perf},seed={cue.seed},"
-                f"alpha={config.ALPHA},beta={config.BETA}")
+                f"alpha={alpha},beta={beta}")
     work = os.path.basename(os.path.dirname(OUT))
     stage = {"explainer": "P3", "drama": "P4"}.get(work, "P2b")
     return "\t".join([
@@ -78,6 +78,12 @@ def main() -> None:
                        os.path.basename(WORK.rstrip("/")), "voice")
 
     scene = load_scene(SCRIPT)
+    # cue ごとの alpha / beta（script.yaml に直接書く。scene は Direction だけを読むので
+    # ここで読む）。省略した cue はプロセスの既定（SAL_ALPHA / SAL_BETA）。
+    with open(SCRIPT, encoding="utf-8") as f:
+        cue_doc = {c.get("name"): c for c in (yaml.safe_load(f) or {}).get("cues", []) if c}
+    # プロセスの既定（SAL_ALPHA / SAL_BETA）。cue の上書きを次の cue へ持ち越さない。
+    proc_alpha, proc_beta = config.ALPHA, config.BETA
     os.makedirs(OUT, exist_ok=True)
     engine = AudioAssetEngine(provider_name="tsukasa", resolve_mode="rule", lang="ja")
 
@@ -94,6 +100,10 @@ def main() -> None:
             vp, cue.line, cue.emotion, cue.intensity, cue.performance,
             situation=cue.situation, subtext=cue.subtext, seed=seed,
         )
+        knobs = cue_doc.get(name) or {}
+        alpha = float(knobs.get("alpha", proc_alpha))
+        beta = float(knobs.get("beta", proc_beta))
+        config.ALPHA, config.BETA = alpha, beta
         started = time.time()
         asset = engine.generate(intent)
         wall = time.time() - started
@@ -103,7 +113,7 @@ def main() -> None:
         params["character"] = cue.character
         params["pause_before"] = cue.pause_before if cue.pause_before is not None else scene.default_pause
         store_save(asset.audio, _metadata(cue, asset.audio), params, OUT, name)
-        rows.append(_timing(cue, wall, audio_s, 0))
+        rows.append(_timing(cue, wall, audio_s, 0, alpha, beta))
         print(f"{name} {audio_s:5.2f}s wall={wall:4.1f}s")
 
     if rows:

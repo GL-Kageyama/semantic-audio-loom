@@ -8,9 +8,9 @@ from __future__ import annotations
 
 from semantic_audio_loom.types import GenerationRequest, Scene, SceneCue
 
-# SceneCue が Direction（volume/speed/pitch/breathiness/delivery）を performance dict に
-# 畳む際のキー。bin/generate.py の _PERF_KEYS と同じ集合。
-DIRECTION_KEYS = ("volume", "speed", "pitch", "breathiness", "delivery")
+# SceneCue が Direction（volume/speed/pitch/breathiness/delivery/intonation）を
+# performance dict に畳む際のキー。bin/generate.py の _PERF_KEYS と同じ集合。
+DIRECTION_KEYS = ("volume", "speed", "pitch", "breathiness", "delivery", "intonation")
 
 
 def load_scene(path: str) -> Scene:

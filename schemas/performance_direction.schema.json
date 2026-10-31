@@ -83,6 +83,15 @@
         "desperate",
         "hesitant"
       ]
+    },
+    "intonation": {
+      "enum": [
+        "neutral",
+        "rising",
+        "falling",
+        "flat",
+        "wavering"
+      ]
     }
   }
 }

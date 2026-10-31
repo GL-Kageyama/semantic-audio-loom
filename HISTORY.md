@@ -69,6 +69,18 @@
 - 道具：`projects/longform/acting-matrix/summarize_matrix.py`（5/5 判定と
   基準線の幅との比較）、`projects/longform/summarize_beta.py`、`projects/longform/measure_timbre.py`。
 
+### 語尾の抑揚も計器に載せた
+
+- `prosody.intonation` は rule Resolve が `neutral` 固定で、Direction からも CLI からも
+  届かなかった。Direction の欄・`--intonation`・schema 3 本・`PERF_ENUMS` に通した。
+- rising / flat / falling × seed 5 を beta 0.7 と 0.3 で振った（60 本）。
+  rising が falling より上に出た seed は **3/5 と 2/5**。beta 0.3 の中央値は狙いどおり
+  （+2.16 / +1.26 / −0.17 半音/秒）だが、種の振れ幅 −19.3〜+16.8 が差を飲む。
+- `build_voice.py` は `script.yaml` の `beta:` / `alpha:` を cue ごとに読む
+  （プロセスの既定は持ち越さない。実値は params.yaml と timings に残る）。
+- 聞き比べの見本を `examples/longform-acting/` に足した（74 秒・同じ台詞を
+  beta 0.7 と 0.3 で並べる）。
+
 ## 2026-10-31 — M5 音の生成＋ライブラリ（5 種すべて）
 
 ### スコープ

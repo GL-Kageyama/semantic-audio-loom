@@ -7,6 +7,9 @@
 | --- | --- | --- |
 | `explainer/` | 解説「音は、なぜ感情を動かすのか」。語り手＋実例 4 本だけ真白 | 約 5 分 |
 | `drama/` | 二人芝居「午前二時の電話」。真白とニジ | 約 5 分 |
+| `acting-demo/` | 聞き比べ「明日、また来るね。」声の混ぜ方（`beta`）0.7 と 0.3 | 74 秒 |
+
+聞き比べの見本と実測は [examples/longform-acting/](../../examples/longform-acting/)。
 
 ## 置き場
 
@@ -60,7 +63,9 @@ PYTHONPATH=. $PY projects/longform/check_render.py \
 
 ## 作品ごとの設定
 
-- `script.yaml` … 台詞と演技（emotion / intensity / volume / speed / pitch / delivery / breathiness）
+- `script.yaml` … 台詞と演技（emotion / intensity / volume / speed / pitch / delivery /
+  breathiness / intonation）。`beta:` / `alpha:` を cue に書くと、その 1 本だけ声の
+  混ぜ方を変える（`build_voice.py` が読む。既定は `SAL_ALPHA` / `SAL_BETA`）
 - `chapters.yaml` … 章の頭の cue 名（その 1.2 秒手前にチャイム）
 - `sfx.yaml` … `{file, anchor, offset, gain_db}`。anchor の cue の頭から offset 秒
 - `bed_mute.yaml` … `{from, to}` の cue 対。その間だけ下地を止める（無音を聴かせる場面）

@@ -75,3 +75,23 @@ def test_intensity_missing_does_not_break_the_prompt():
     for value in (None, 0, "0.0"):
         prompt = tsukasa._spec_prompt("A voice.", _spec(value))
         assert "A voice." in prompt and prompt.endswith(". ")
+
+
+def test_rule_resolve_carries_the_intonation():
+    """語尾の抑揚は Direction から Spec へ通す（rule でも指定できる）。"""
+    from semantic_audio_loom.engine import resolve
+    from semantic_audio_loom.types import GenerationIntent
+
+    intent = GenerationIntent(
+        asset_type="voice",
+        voice_profile={},
+        emotion={"primary": "sadness", "intensity": "moderate"},
+        performance={"intonation": "falling"},
+    )
+    spec = resolve.resolve_rule(intent)
+    assert spec["prosody"]["intonation"] == "falling"
+    assert "pitch falling at the end" in tsukasa._spec_prompt("A voice.", spec)
+    # 指定が無ければ neutral（従来どおり）。
+    none = GenerationIntent(asset_type="voice", voice_profile={},
+                            emotion={"primary": "neutral"}, performance={})
+    assert resolve.resolve_rule(none)["prosody"]["intonation"] == "neutral"

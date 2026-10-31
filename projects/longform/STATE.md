@@ -1,6 +1,6 @@
 # 長尺ラン — STATE（再開のための唯一の現在地）
 
-最終更新：2026-10-31 10:16 / 段：**P0–P6 完了（感情 10 種 × seed 5・beta 掃引・強度まで）**
+最終更新：2026-10-31 10:23 / 段：**P0–P6 完了（感情 10 種 × seed 5・beta 掃引・強度・抑揚・聞き比べまで）**
 ユーザーは約 10 時間不在。質問しない。門を 20 分超えたら「未達」で次へ。
 
 ## この Mac（時間の数字はマシンが違えば比べられない）
@@ -160,9 +160,17 @@ projects/longform/
 4. **代償**：`references/mashiro.wav` との MFCC 距離は 0.7 で 17〜19、0.3 で 40〜53
    （種の中の広がり 20.6）。**演技は声を変えて出ている。**
 5. `SAL_BETA` / `SAL_ALPHA` を `config.py` に足した（測定用。params.yaml には実値が残る）。
+   **cue ごとにも書ける**（`script.yaml` の `beta:` / `alpha:`。`build_voice.py` が読む）。
+6. **語尾の抑揚（rising / flat / falling × seed 5 × beta 0.7 と 0.3＝60 本）**：
+   `acting-inton-0{70,30}/`。`prosody.intonation` を Direction と CLI（`--intonation`）から
+   通すようにした（rule Resolve は `neutral` 固定だった）。rising が falling より上に出た
+   seed は **0.7 で 3/5・0.3 で 2/5**。中央値は 0.3 で狙いどおり（+2.16 / +1.26 / −0.17
+   半音/秒）だが、種の振れ幅 −19.3〜+16.8 が差を飲む。
+7. **聞き比べ（74 秒・`acting-demo/`）**：同じ台詞を beta 0.7 と 0.3 で並べた。
+   納品は [examples/longform-acting/](../../examples/longform-acting/)。
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の
-低下は長さの交絡。⚠️ beta は 1 本ごとに振れない（プロセス全体）。
+低下は長さの交絡。
 
 ## P3 / P4 の現状（2026-10-31 09:16）
 

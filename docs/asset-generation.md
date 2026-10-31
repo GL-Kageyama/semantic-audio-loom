@@ -42,6 +42,7 @@ bin/asset.py --type foley --project demo --name cloth-rustle \
 
 | Type | フィールド |
 | --- | --- |
+| voice | `emotion`（必須） `intensity` `volume` `speed` `pitch` `breathiness` `delivery` `intonation` |
 | bgm | `role` `genre` `mood` `style` `tempo` `key` `meter` `instrumentation` `arrangement` `texture` `energy` `duration` `loop` `negative` `prompt` |
 | ambience | `environment`（必須） `location` `time` `weather` `space` `density` `movement` `loop` `duration` `mood` `style` |
 | sfx | `event` か `object`（どちらか必須） `material` `distance` `intensity` `duration` |

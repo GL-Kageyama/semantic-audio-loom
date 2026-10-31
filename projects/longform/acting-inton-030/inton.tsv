@@ -1,0 +1,16 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/acting-inton-030/voice/falling-s1.wav	2.548	266.3	8.5	-0.17	5.2	0.079	-12.6	35.0	140.0	0.3294	0.95	-13.8	0
+projects/longform/assets/acting-inton-030/voice/falling-s2.wav	2.673	240.0	7.2	16.76	5.3	0.212	-14.3	34.2	150.0	0.3545	0.95	-14.5	0
+projects/longform/assets/acting-inton-030/voice/falling-s3.wav	2.548	255.7	7.7	-19.33	6.4	0.09	-12.6	32.0	140.0	0.3961	0.95	-13.8	0
+projects/longform/assets/acting-inton-030/voice/falling-s4.wav	2.823	274.1	8.6	-14.18	5.6	0.225	-13.0	34.5	160.0	0.3604	0.95	-14.0	0
+projects/longform/assets/acting-inton-030/voice/falling-s5.wav	2.923	257.3	7.1	10.18	5.7	0.213	-13.7	33.7	130.0	0.3686	0.95	-14.0	0
+projects/longform/assets/acting-inton-030/voice/flat-s1.wav	2.473	267.8	8.0	-12.25	6.0	0.082	-12.3	34.6	140.0	0.3589	0.95	-13.5	0
+projects/longform/assets/acting-inton-030/voice/flat-s2.wav	2.648	243.5	7.0	16.47	6.5	0.218	-13.4	33.1	140.0	0.4	0.95	-14.2	0
+projects/longform/assets/acting-inton-030/voice/flat-s3.wav	2.548	252.8	7.2	1.26	6.4	0.09	-12.6	34.8	140.0	0.4275	0.95	-13.8	0
+projects/longform/assets/acting-inton-030/voice/flat-s4.wav	2.798	275.7	8.1	2.1	6.1	0.218	-12.8	35.1	150.0	0.4393	0.95	-13.5	0
+projects/longform/assets/acting-inton-030/voice/flat-s5.wav	2.848	247.0	6.8	-15.48	6.4	0.212	-13.6	33.9	150.0	0.4035	0.95	-13.7	0
+projects/longform/assets/acting-inton-030/voice/rising-s1.wav	2.523	278.1	8.7	-12.94	6.4	0.232	-12.8	33.2	120.0	0.3478	0.95	-14.2	0
+projects/longform/assets/acting-inton-030/voice/rising-s2.wav	2.648	241.4	7.4	14.69	5.5	0.231	-13.8	33.3	130.0	0.3811	0.95	-14.0	0
+projects/longform/assets/acting-inton-030/voice/rising-s3.wav	2.598	263.2	8.0	5.09	5.6	0.232	-13.0	32.4	130.0	0.4077	0.95	-14.0	0
+projects/longform/assets/acting-inton-030/voice/rising-s4.wav	2.848	288.7	8.7	2.16	6.1	0.237	-12.8	31.1	130.0	0.4246	0.95	-13.8	0
+projects/longform/assets/acting-inton-030/voice/rising-s5.wav	2.873	257.2	7.6	-2.59	5.0	0.23	-13.4	32.8	140.0	0.4306	0.95	-13.5	0
