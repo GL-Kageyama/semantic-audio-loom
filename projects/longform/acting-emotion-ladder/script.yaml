@@ -1,0 +1,65 @@
+# 感情 11 語を、seed 5 本で 1 つの条件に並べる
+#
+# これまで感情は seed 1 の行列（`acting/`）と、5 感情 × seed 3（`emotion-seed/`）で見ていた。
+# 他の欄（speed・pitch・delivery・volume・intonation・breathiness）と同じ形で、
+# 11 語 × seed 5 を並べ、**語のあいだの差**と **seed の散らばり**を同じ表で比べる。
+# 同じ行・moderate・speed natural・delivery controlled・breathiness none・beta 0.7。
+
+name: acting-emotion-ladder
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: anxiety, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: el-anxiety-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: anxiety, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: el-anxiety-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: anxiety, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: el-anxiety-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: anxiety, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: el-anxiety-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: anxiety, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: el-anxiety-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: el-sadness-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: el-sadness-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: el-sadness-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: el-sadness-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: el-sadness-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: el-anger-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: el-anger-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: el-anger-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: el-anger-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: el-anger-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: el-fear-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: el-fear-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: el-fear-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: el-fear-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: fear, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: el-fear-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: el-joy-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: el-joy-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: el-joy-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: el-joy-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: el-joy-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: confidence, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: el-confidence-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: confidence, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: el-confidence-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: confidence, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: el-confidence-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: confidence, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: el-confidence-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: confidence, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: el-confidence-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: loneliness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: el-loneliness-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: loneliness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: el-loneliness-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: loneliness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: el-loneliness-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: loneliness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: el-loneliness-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: loneliness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: el-loneliness-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: excitement, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: el-excitement-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: excitement, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: el-excitement-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: excitement, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: el-excitement-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: excitement, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: el-excitement-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: excitement, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: el-excitement-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: calm, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: el-calm-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: calm, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: el-calm-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: calm, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: el-calm-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: calm, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: el-calm-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: calm, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: el-calm-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: guilt, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: el-guilt-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: guilt, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: el-guilt-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: guilt, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: el-guilt-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: guilt, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: el-guilt-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: guilt, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: el-guilt-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: el-neutral-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: el-neutral-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: el-neutral-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: el-neutral-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: el-neutral-s5}

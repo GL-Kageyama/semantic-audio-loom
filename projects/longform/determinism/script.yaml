@@ -1,0 +1,9 @@
+# 同じ Spec・同じ seed を、プロセスを分けて何度も作る（再現性の検査）
+#
+# 1 行・joy・moderate・speed natural・delivery controlled・breathiness none・beta 0.7・seed 3。
+# `run.sh` がこの 1 本を別プロセスで N 回作り、md5 と波形の差を比べる。
+
+name: determinism
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: det-s3}

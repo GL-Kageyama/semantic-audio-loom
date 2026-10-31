@@ -444,7 +444,7 @@ whisper より小さい。叫ぶと高く長くなるが、大きくはならな
 | --- | --- | --- | --- |
 | `speed` | 5（5） | **5**（単調・1.74〜1.80 倍） | very_slow 4.39 → very_fast 2.44 秒・3 感情とも 5 seed すべてで順序が崩れない。f0 は両端で +14.8 Hz |
 | `pitch` | 6（6） | **2〜3**（下だけ） | joy・controlled の 6 語 × seed 10（`acting-pitch-ladder/`）：very_low 299.0 / low 302.0（同じ段・p = 0.19）/ slightly_low 309.7 / natural 315.5 / slightly_high 312.9 / high 315.4 Hz。**上がる語は無い**（high は −0.1・slightly_high は −2.6）。neutral の声では high が +18.8 Hz 動いており、**上側は状態に依る** |
-| `emotion` | 11（3＋枠外） | 効く（ただし seed より小さい） | seed の幅 84.6 Hz の前では二次的（`emotion-seed/`） |
+| `emotion` | 11（11） | 効く（**neutral より上へ +4〜+26 Hz**。だが**隣どうしは同じ声**） | 11 語 × seed 5（`acting-emotion-ladder/`）：fear 315.8 / joy 314.2 / anger 310.0 / excitement 308.2 / confidence 305.3 / anxiety 305.2 / calm 297.4 / loneliness 296.7 / guilt 295.4 / sadness 294.4 / neutral 290.3 Hz。neutral との対応のある差は 9/10 が 5/5（guilt だけ 3/5・p = 0.29）。**遠い語は離れる**（fear − sadness +21.3 Hz・5/5・p = 0.0001）が、**近い語は離れない**（fear − joy +1.6・3/5・p = 0.22、confidence − anxiety +0.1・1/5）。seed の散らばりは 64.6〜98.0 Hz |
 | `intonation` | 5（5） | **ほぼ 0**（5 語の幅 7.7 Hz 対 seed の幅 74〜87 Hz） | 語尾の傾きの中央値は wavering 3.18 > neutral 2.71 > flat 2.11 > rising −0.35 > falling −1.64（`acting-inton-070/`） |
 | `intensity` | 5（4） | **2** | subtle ≈ moderate、moderate → strong で跳ねる、上端は伸びない |
 | `delivery` | 12（12） | **3** | 真ん中 8 語は ±4 Hz、aggressive +6.7・desperate +8.4、cold −9.4・flat −18.4 Hz |
@@ -891,6 +891,18 @@ delivery・速さで演技を置いているため、beta を下げても二重�
 **5 本がバイト不一致**。差は RMS 0.0005〜0.0007（信号に対して約 −65 dB）で、長さは同じ。
 聞こえは変わらず、この報告の結論も動かない。ただし「同じ seed で byte-identical」と
 書くのは言い過ぎで、正しくは「同じ長さ・差は −65 dB 程度」。
+
+**1 本に絞って 6 回**確かめた（`determinism/`・beta 0.7・同じ Spec・同じ seed 3）。
+
+- **6 本が 2 種に割れた**（`954f9db` ×3 → `2d575e2` ×3）。差は最大 0.0119・
+  RMS **−64 dBFS**・相関 0.999994。**長さ 65,950 サンプルとピーク 0.94995 は同じ。**
+- **`act_probe.py` の 14 欄は全部同じ**（f0 314.9 Hz・抑揚 8.4 半音・間 0.184 …）。
+  **測った結論は、この差に影響されない。**
+- **同じプロセスの中なら一致する**（3 回続けて差 3e-6 = 1 LSB）。アラインメントをずらしても
+  3e-6。**1 スレッドでも 2 種に割れる。** → プロセスをまたぐ何かが最後の桁を変える
+  （**特定していない**）。
+- 差は発話の真ん中に寄り、頭と尻尾（無音）では 0。**聞いて区別できない。**
+- 困るのは **md5 で「同じ音か」を検査するとき**。一致を見たいなら同じプロセスで 2 回焼く。
 
 ### 枠外 10 種 × seed 5（P2 の再測）
 

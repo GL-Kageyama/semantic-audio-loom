@@ -51,7 +51,7 @@ Direction の欄は語の数が欄ごとに違うが、**声に届く段の数�
 | 欄 | 語 | 声に届く段 | 何が動くか |
 | --- | --- | --- | --- |
 | `speed` | 5 | **5**（単調・1.74〜1.80 倍・3 感情とも） | 長さ（両端で高さも +15 Hz） |
-| `emotion` | 11 | 効く（seed の振れより小さい） | 高さ・長さ・抑揚 |
+| `emotion` | 11 | 効く（neutral より +4〜+26 Hz。**隣どうしは同じ声**） | 高さ・長さ・抑揚（`acting-emotion-ladder/`） |
 | `pitch` | 6 | 2〜3（**下だけ**。very_low・low が同じ段） | 高さ（上がる語は無い・`acting-pitch-ladder/`） |
 | `intensity` | 5 | 2（`subtle`＝`moderate`、`strong` で跳ねる） | 高さ・長さ |
 | `delivery` | 12 | 3（`flat`・`cold` が下、`aggressive`・`desperate` が上、残り 8 語は同じ） | 高さ・長さ |
@@ -71,6 +71,11 @@ Direction の欄は語の数が欄ごとに違うが、**声に届く段の数�
 - **強い欄どうしも足し算にならない。** `speed` の高さの効きは `pitch: low` で 0.5 Hz に
   なる（natural +4.3・high +5.9 Hz・`acting-knob-stack-speed-pitch/`）。**長さは動く。**
   この条件では `pitch` の `high` は効かず（−0.1 Hz）、`low` だけが段になる（−13.5 Hz）。
+- **感情は neutral から上へは動くが、感情どうしは書き分けられない。** 11 語 × seed 5
+  （`acting-emotion-ladder/`）：neutral との差は +4（sadness）〜+26（fear）Hz で、
+  9/10 が 5/5。だが**離れるのは遠い 2 語だけ**（fear − sadness +21.3 Hz・5/5）で、
+  fear − joy +1.6・confidence − anxiety +0.1 Hz は同じ声。**seed の散らばり（65〜98 Hz）が
+  感情の差より大きいので、1 本ずつ聞いて感情を当てることはできない。**
 - **強弱を `intensity` の書き分けで作らない。** `subtle` と `moderate` は同じ音になる。
 - **`delivery` の真ん中 8 語（gentle / cheerful / hesitant / restrained / subtle /
   suppressed / intimate / controlled）は、書き分けても同じ声になる。** 動くのは `aggressive`・
