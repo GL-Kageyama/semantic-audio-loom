@@ -1,0 +1,170 @@
+# P2 の再測：枠外 10 種 × seed 1〜5（同じ台詞・同じ人物・resolve rule）。
+# 1 seed だけでは seed の揺れと区別できないので、5 seed の中央値で判定する。
+name: acting-seeds
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal,
+  speed: natural, delivery: controlled, breathiness: none, subtext: 基準線（演技を付けない）,
+  seed: 1, name: baseline-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: quiet,
+  speed: natural, delivery: gentle, breathiness: slight, subtext: 照れ隠しに目を逸らしながら、素っ気なく,
+  seed: 1, name: tere-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: calm, intensity: subtle, volume: normal,
+  speed: slow, delivery: cold, breathiness: none, subtext: 褒めているふりをして、見下している, seed: 1,
+  name: hiniku-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: subtle, volume: quiet,
+  speed: slow, delivery: flat, breathiness: slight, subtext: もう期待していない。諦めて、静かに, seed: 1,
+  name: akirame-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: confidence, intensity: strong, volume: loud,
+  speed: natural, delivery: aggressive, breathiness: none, subtext: 弱さを見せまいと、わざと大きく,
+  seed: 1, name: kyosei-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: subtle, volume: whisper,
+  speed: slow, delivery: intimate, breathiness: heavy, subtext: 誰にも聞こえない距離で, seed: 1,
+  name: sasayaki-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: strong, volume: shout,
+  speed: fast, delivery: aggressive, breathiness: none, subtext: 怒りを叩きつける, seed: 1,
+  name: donari-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal,
+  speed: natural, delivery: desperate, breathiness: heavy, subtext: 泣きながら、無理に笑って,
+  seed: 1, name: nakijwarai-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: loneliness, intensity: subtle, volume: quiet,
+  speed: slow, delivery: intimate, breathiness: slight, subtext: 誰もいない部屋で、自分に言う, seed: 1,
+  name: dokuhaku-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: anxiety, intensity: moderate, volume: normal,
+  speed: very_fast, delivery: hesitant, breathiness: slight, subtext: 急いで、言葉が重なる,
+  seed: 1, name: hayakuchi-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: quiet,
+  speed: very_slow, delivery: restrained, breathiness: slight, subtext: 言いかけて飲み込み、長い間を置く,
+  seed: 1, name: ma-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal,
+  speed: natural, delivery: controlled, breathiness: none, subtext: 基準線（演技を付けない）,
+  seed: 2, name: baseline-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: quiet,
+  speed: natural, delivery: gentle, breathiness: slight, subtext: 照れ隠しに目を逸らしながら、素っ気なく,
+  seed: 2, name: tere-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: calm, intensity: subtle, volume: normal,
+  speed: slow, delivery: cold, breathiness: none, subtext: 褒めているふりをして、見下している, seed: 2,
+  name: hiniku-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: subtle, volume: quiet,
+  speed: slow, delivery: flat, breathiness: slight, subtext: もう期待していない。諦めて、静かに, seed: 2,
+  name: akirame-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: confidence, intensity: strong, volume: loud,
+  speed: natural, delivery: aggressive, breathiness: none, subtext: 弱さを見せまいと、わざと大きく,
+  seed: 2, name: kyosei-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: subtle, volume: whisper,
+  speed: slow, delivery: intimate, breathiness: heavy, subtext: 誰にも聞こえない距離で, seed: 2,
+  name: sasayaki-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: strong, volume: shout,
+  speed: fast, delivery: aggressive, breathiness: none, subtext: 怒りを叩きつける, seed: 2,
+  name: donari-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal,
+  speed: natural, delivery: desperate, breathiness: heavy, subtext: 泣きながら、無理に笑って,
+  seed: 2, name: nakijwarai-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: loneliness, intensity: subtle, volume: quiet,
+  speed: slow, delivery: intimate, breathiness: slight, subtext: 誰もいない部屋で、自分に言う, seed: 2,
+  name: dokuhaku-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: anxiety, intensity: moderate, volume: normal,
+  speed: very_fast, delivery: hesitant, breathiness: slight, subtext: 急いで、言葉が重なる,
+  seed: 2, name: hayakuchi-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: quiet,
+  speed: very_slow, delivery: restrained, breathiness: slight, subtext: 言いかけて飲み込み、長い間を置く,
+  seed: 2, name: ma-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal,
+  speed: natural, delivery: controlled, breathiness: none, subtext: 基準線（演技を付けない）,
+  seed: 3, name: baseline-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: quiet,
+  speed: natural, delivery: gentle, breathiness: slight, subtext: 照れ隠しに目を逸らしながら、素っ気なく,
+  seed: 3, name: tere-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: calm, intensity: subtle, volume: normal,
+  speed: slow, delivery: cold, breathiness: none, subtext: 褒めているふりをして、見下している, seed: 3,
+  name: hiniku-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: subtle, volume: quiet,
+  speed: slow, delivery: flat, breathiness: slight, subtext: もう期待していない。諦めて、静かに, seed: 3,
+  name: akirame-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: confidence, intensity: strong, volume: loud,
+  speed: natural, delivery: aggressive, breathiness: none, subtext: 弱さを見せまいと、わざと大きく,
+  seed: 3, name: kyosei-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: subtle, volume: whisper,
+  speed: slow, delivery: intimate, breathiness: heavy, subtext: 誰にも聞こえない距離で, seed: 3,
+  name: sasayaki-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: strong, volume: shout,
+  speed: fast, delivery: aggressive, breathiness: none, subtext: 怒りを叩きつける, seed: 3,
+  name: donari-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal,
+  speed: natural, delivery: desperate, breathiness: heavy, subtext: 泣きながら、無理に笑って,
+  seed: 3, name: nakijwarai-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: loneliness, intensity: subtle, volume: quiet,
+  speed: slow, delivery: intimate, breathiness: slight, subtext: 誰もいない部屋で、自分に言う, seed: 3,
+  name: dokuhaku-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: anxiety, intensity: moderate, volume: normal,
+  speed: very_fast, delivery: hesitant, breathiness: slight, subtext: 急いで、言葉が重なる,
+  seed: 3, name: hayakuchi-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: quiet,
+  speed: very_slow, delivery: restrained, breathiness: slight, subtext: 言いかけて飲み込み、長い間を置く,
+  seed: 3, name: ma-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal,
+  speed: natural, delivery: controlled, breathiness: none, subtext: 基準線（演技を付けない）,
+  seed: 4, name: baseline-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: quiet,
+  speed: natural, delivery: gentle, breathiness: slight, subtext: 照れ隠しに目を逸らしながら、素っ気なく,
+  seed: 4, name: tere-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: calm, intensity: subtle, volume: normal,
+  speed: slow, delivery: cold, breathiness: none, subtext: 褒めているふりをして、見下している, seed: 4,
+  name: hiniku-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: subtle, volume: quiet,
+  speed: slow, delivery: flat, breathiness: slight, subtext: もう期待していない。諦めて、静かに, seed: 4,
+  name: akirame-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: confidence, intensity: strong, volume: loud,
+  speed: natural, delivery: aggressive, breathiness: none, subtext: 弱さを見せまいと、わざと大きく,
+  seed: 4, name: kyosei-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: subtle, volume: whisper,
+  speed: slow, delivery: intimate, breathiness: heavy, subtext: 誰にも聞こえない距離で, seed: 4,
+  name: sasayaki-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: strong, volume: shout,
+  speed: fast, delivery: aggressive, breathiness: none, subtext: 怒りを叩きつける, seed: 4,
+  name: donari-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal,
+  speed: natural, delivery: desperate, breathiness: heavy, subtext: 泣きながら、無理に笑って,
+  seed: 4, name: nakijwarai-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: loneliness, intensity: subtle, volume: quiet,
+  speed: slow, delivery: intimate, breathiness: slight, subtext: 誰もいない部屋で、自分に言う, seed: 4,
+  name: dokuhaku-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: anxiety, intensity: moderate, volume: normal,
+  speed: very_fast, delivery: hesitant, breathiness: slight, subtext: 急いで、言葉が重なる,
+  seed: 4, name: hayakuchi-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: quiet,
+  speed: very_slow, delivery: restrained, breathiness: slight, subtext: 言いかけて飲み込み、長い間を置く,
+  seed: 4, name: ma-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal,
+  speed: natural, delivery: controlled, breathiness: none, subtext: 基準線（演技を付けない）,
+  seed: 5, name: baseline-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: quiet,
+  speed: natural, delivery: gentle, breathiness: slight, subtext: 照れ隠しに目を逸らしながら、素っ気なく,
+  seed: 5, name: tere-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: calm, intensity: subtle, volume: normal,
+  speed: slow, delivery: cold, breathiness: none, subtext: 褒めているふりをして、見下している, seed: 5,
+  name: hiniku-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: subtle, volume: quiet,
+  speed: slow, delivery: flat, breathiness: slight, subtext: もう期待していない。諦めて、静かに, seed: 5,
+  name: akirame-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: confidence, intensity: strong, volume: loud,
+  speed: natural, delivery: aggressive, breathiness: none, subtext: 弱さを見せまいと、わざと大きく,
+  seed: 5, name: kyosei-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: subtle, volume: whisper,
+  speed: slow, delivery: intimate, breathiness: heavy, subtext: 誰にも聞こえない距離で, seed: 5,
+  name: sasayaki-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: strong, volume: shout,
+  speed: fast, delivery: aggressive, breathiness: none, subtext: 怒りを叩きつける, seed: 5,
+  name: donari-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal,
+  speed: natural, delivery: desperate, breathiness: heavy, subtext: 泣きながら、無理に笑って,
+  seed: 5, name: nakijwarai-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: loneliness, intensity: subtle, volume: quiet,
+  speed: slow, delivery: intimate, breathiness: slight, subtext: 誰もいない部屋で、自分に言う, seed: 5,
+  name: dokuhaku-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: anxiety, intensity: moderate, volume: normal,
+  speed: very_fast, delivery: hesitant, breathiness: slight, subtext: 急いで、言葉が重なる,
+  seed: 5, name: hayakuchi-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: quiet,
+  speed: very_slow, delivery: restrained, breathiness: slight, subtext: 言いかけて飲み込み、長い間を置く,
+  seed: 5, name: ma-s5}

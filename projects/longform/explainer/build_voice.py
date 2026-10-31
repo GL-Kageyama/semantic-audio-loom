@@ -53,8 +53,10 @@ def _metadata(cue, audio) -> dict:
 def _timing(cue, wall: float, audio_s: float, rc: int) -> str:
     perf = ",".join(f"{k}={v}" for k, v in sorted(cue.performance.items()))
     settings = f"emotion={cue.emotion},intensity={cue.intensity},{perf},seed={cue.seed}"
+    work = os.path.basename(os.path.dirname(OUT))
+    stage = {"explainer": "P3", "drama": "P4"}.get(work, "P2b")
     return "\t".join([
-        "2026-10-31", "P3" if "explainer" in OUT else "P4",
+        datetime.date.today().isoformat(), stage,
         f"{os.path.basename(os.path.dirname(OUT))}/voice/{cue.name}", "tsukasa", settings,
         f"{wall:.0f}", f"{audio_s:.2f}", "M2Pro-16GB", f"rc={rc}",
     ])
