@@ -11,9 +11,14 @@ Context + Intent + State + Emotion + Performance Direction → 意味的音響�
 
 設計の分かれ目は **Direction（監督＝意図）と Interpretation（俳優＝実現）の分離** と、
 その境界に置くモデル非依存の **Spec**（voice = Performance Spec / bgm = Music Spec /
-ambience・sfx・foley = Sound Spec）。声では台詞の「裏の意味（subtext）」まで反映するのが、
-テキスト読み上げとの決定的な差。音の 3 種では抽象語を「何が・どこで・どの材質で鳴るか」へ
+ambience・sfx・foley = Sound Spec）。声では台詞の「裏の意味（subtext）」を Spec へ解決して
+渡すのが、テキスト読み上げとの差。音の 3 種では抽象語を「何が・どこで・どの材質で鳴るか」へ
 具体化するのが、プロンプト直書きとの差。
+
+⚠️ subtext が声を動かすのは、いまは**解決が触った強度の段**まで。抑揚の語
+（flat / falling / wavering）は散文を変えても声を変えない（+1.0 Hz・2/5）。
+`--resolve rule` では subtext は散文に載らない。測った中身は
+[docs/resolve.md](docs/resolve.md)「どこまで声に届くか」。
 
 ## 資材の分離（再利用の設計）
 
