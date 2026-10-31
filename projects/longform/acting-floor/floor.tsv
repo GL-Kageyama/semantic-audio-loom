@@ -1,0 +1,10 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/acting-floor/voice/b000-anger.wav	2.673	327.8	8.9	-10.44	5.6	0.189	-14.5	30.7	140.0	0.3507	0.95	-14.3	0
+projects/longform/assets/acting-floor/voice/b000-joy.wav	2.523	341.4	7.8	18.91	7.0	0.192	-13.4	30.9	120.0	0.4427	0.95	-14.4	0
+projects/longform/assets/acting-floor/voice/b000-neutral.wav	2.248	249.9	7.8	-4.41	7.5	0.086	-12.6	32.2	110.0	0.3689	0.95	-13.5	0
+projects/longform/assets/acting-floor/voice/b030-anger.wav	2.673	333.6	9.5	-9.71	5.3	0.221	-16.1	33.0	160.0	0.3097	0.95	-15.9	0
+projects/longform/assets/acting-floor/voice/b030-joy.wav	2.523	339.4	9.1	-8.0	6.0	0.103	-13.3	29.3	130.0	0.3834	0.95	-14.9	0
+projects/longform/assets/acting-floor/voice/b030-neutral.wav	2.373	280.5	8.4	-4.4	6.8	0.095	-12.5	33.1	130.0	0.3529	0.95	-14.2	0
+projects/longform/assets/acting-floor/voice/b070-anger.wav	2.948	347.3	8.2	-7.27	5.3	0.252	-15.1	36.4	120.0	0.2339	0.95	-16.1	0
+projects/longform/assets/acting-floor/voice/b070-joy.wav	2.848	351.4	9.1	-8.75	5.6	0.257	-13.9	34.3	140.0	0.2526	0.95	-16.1	0
+projects/longform/assets/acting-floor/voice/b070-neutral.wav	2.848	326.0	8.0	2.71	5.4	0.239	-14.2	35.7	140.0	0.2596	0.95	-15.9	0
