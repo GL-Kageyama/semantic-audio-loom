@@ -132,6 +132,7 @@ projects/longform/
   drama-scene-mark-selective/  `strong` の 3 行だけに `！`（seed 5・130 本）
   drama-scene-mark-choice/   同じ場面を `！` の置き方 3 通りで並べる見本（173 秒）
   drama-scene-mark-relocate/ `！` を s68 へ移すと山も移るか（seed 5・195 本）
+  loudness-trial/          未達の 2 本に圧縮を掛けたら届くか（測るだけ・裁定前）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   drama-seed-split/  演劇のニジだけ seed 2 にした版（人物を seed で分けられるか）
   acting-breath-s70/ 芝居 s70 の 1 行で breathiness だけを none / slight に振る（6 本）
