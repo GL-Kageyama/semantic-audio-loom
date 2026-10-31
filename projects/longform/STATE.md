@@ -222,6 +222,11 @@ projects/longform/
    ✅ **intensity=none が「faint」を足していたのを直した**（0 では足さない）。
    同じ種類の脱落を捕まえる検査 `test_every_enum_value_reaches_the_prompt` を追加
    （Schema の列挙値ごとに散文が違うことを見る）。131 passed。
+20. **床の頑健さ（60 本）**：`acting-floor-lines/`（36）・`acting-floor-refs/`（24）。
+   anger − neutral は 3 台詞で +87.8（明日、また来るね）・+20.7（ちょっと、待ってよ）・
+   +54.7（そんなこと、言わないでよ）。**符号は 6/6 で 3 seed とも揃うが、大きさは台詞に依る**
+   （0.3 は +63.2 / +23.1 / +42.3）。参照音声は narrator +85.5・niji +86.0・mashiro +87.8
+   で同じ。**床は「その台詞が 0.3 でどれだけ分かれているか」を増幅するか、しないか。**
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の
 低下は長さの交絡。

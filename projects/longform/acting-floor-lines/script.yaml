@@ -1,0 +1,40 @@
+# 台詞を変えても beta 0.3 の覚醒の分かれ方が残るか。3 台詞 × 4 感情 × seed 1〜3。
+name: acting-floor-lines
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 1, name: l1-neutral-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 1, name: l1-anger-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 1, name: l1-joy-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 1, name: l1-sadness-s1}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 1, name: l2-neutral-s1}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 1, name: l2-anger-s1}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 1, name: l2-joy-s1}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 1, name: l2-sadness-s1}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 1, name: l3-neutral-s1}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 1, name: l3-anger-s1}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 1, name: l3-joy-s1}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 1, name: l3-sadness-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 2, name: l1-neutral-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 2, name: l1-anger-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 2, name: l1-joy-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 2, name: l1-sadness-s2}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 2, name: l2-neutral-s2}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 2, name: l2-anger-s2}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 2, name: l2-joy-s2}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 2, name: l2-sadness-s2}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 2, name: l3-neutral-s2}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 2, name: l3-anger-s2}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 2, name: l3-joy-s2}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 2, name: l3-sadness-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 3, name: l1-neutral-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 3, name: l1-anger-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 3, name: l1-joy-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 3, name: l1-sadness-s3}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 3, name: l2-neutral-s3}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 3, name: l2-anger-s3}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 3, name: l2-joy-s3}
+- {character: mashiro, line: ちょっと、待ってよ。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 3, name: l2-sadness-s3}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 3, name: l3-neutral-s3}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: anger, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 3, name: l3-anger-s3}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 3, name: l3-joy-s3}
+- {character: mashiro, line: そんなこと、言わないでよ。, emotion: sadness, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, beta: 0.0, alpha: 0.35, seed: 3, name: l3-sadness-s3}

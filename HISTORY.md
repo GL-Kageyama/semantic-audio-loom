@@ -138,6 +138,10 @@
   （散文ではどちらも一言も足さない）＝実質 4 段。段の順にはならず、neutral は
   overwhelming（262.5 Hz）が strong（283.8）より低い（3 seed とも）。floor では
   anger が strong 376.6 > overwhelming 365.9、joy は逆（どちらも 3/3）。
+- **床の頑健さ**（`acting-floor-lines/` 36 本・`acting-floor-refs/` 24 本）：anger − neutral
+  は 3 台詞で +87.8 / +20.7 / +54.7 Hz（beta 0.3 では +63.2 / +23.1 / +42.3）。符号は
+  6/6 で 3 seed とも揃うが、大きさは台詞に依る。参照音声は narrator +85.5・niji +86.0・
+  mashiro +87.8 で同じ。床は台詞ごとの分かれを増幅するか、しないか。
 - **intensity=none の散文の誤りを直した**：Direction の none は 0.0 に解決されるが、
   散文側で `v <= 0.40` の欄に落ちて「the feeling is faint」を足していた（none が faint
   になる）。0 では足さないようにした。あわせて `test_every_enum_value_reaches_the_prompt`
