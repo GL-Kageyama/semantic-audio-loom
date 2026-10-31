@@ -72,6 +72,7 @@ projects/longform/
   determinism/within_process.py  1 プロセスの中で N 回（1 回目だけが違う）
   acting-subtext/           subtext 5 通り × seed 5・llm 解決・1 欄ずつ（subtext が届く範囲）
   acting-freetext/          散文を 1 文だけ足す × seed 5（表に無い語彙は演技になるか）
+  acting-pauses/            読点を 1 / 2 / 3 個 × seed 5（読点は間になるか）
   acting-breath-070/        breathiness 4 語 × seed 5（息は有声の割合に出るか）
   acting-breath-030/        breathiness 4 語 × seed 5 を beta 0.3 で（0.3 では段にならない）
   acting/measure_breath.py  高域の比を出す（息の計器）
