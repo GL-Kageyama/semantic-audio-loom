@@ -220,143 +220,143 @@ stems:
   gain_db: -5.0
 - file: ../assets/drama/voice_fx/s38.wav
   role: voice
-  start: 189.171
+  start: 189.187
   gain_db: -2.0
 - file: ../assets/drama/voice_trim/s39.wav
   role: voice
-  start: 191.5
+  start: 191.516
   gain_db: 0.0
 - file: ../assets/drama/voice_fx/s40.wav
   role: voice
-  start: 193.396
+  start: 193.412
   gain_db: 3.0
 - file: ../assets/drama/voice_trim/s41.wav
   role: voice
-  start: 195.925
+  start: 195.941
   gain_db: 0.0
 - file: ../assets/drama/voice_fx/s42.wav
   role: voice
-  start: 198.012
+  start: 198.028
   gain_db: 3.0
 - file: ../assets/drama/voice_trim/s43.wav
   role: voice
-  start: 201.435
+  start: 201.451
   gain_db: -5.0
 - file: ../assets/drama/voice_fx/s44.wav
   role: voice
-  start: 203.318
+  start: 203.344
   gain_db: -2.0
 - file: ../assets/drama/voice_trim/s45.wav
   role: voice
-  start: 208.04
+  start: 208.066
   gain_db: 0.0
 - file: ../assets/drama/voice_fx/s46.wav
   role: voice
-  start: 211.375
+  start: 211.401
   gain_db: 3.0
 - file: ../assets/drama/voice_trim/s47.wav
   role: voice
-  start: 213.036
+  start: 213.062
   gain_db: 0.0
 - file: ../assets/drama/voice_fx/s48.wav
   role: voice
-  start: 218.153
+  start: 218.179
   gain_db: 3.0
 - file: ../assets/drama/voice_trim/s49.wav
   role: voice
-  start: 222.051
+  start: 222.077
   gain_db: 0.0
 - file: ../assets/drama/voice_fx/s50.wav
   role: voice
-  start: 225.905
+  start: 225.931
   gain_db: -2.0
 - file: ../assets/drama/voice_trim/s51.wav
   role: voice
-  start: 228.94
+  start: 228.967
   gain_db: -5.0
 - file: ../assets/drama/voice_fx/s52.wav
   role: voice
-  start: 231.665
+  start: 231.691
   gain_db: -2.0
 - file: ../assets/drama/voice_trim/s53.wav
   role: voice
-  start: 235.892
+  start: 235.918
   gain_db: 0.0
 - file: ../assets/drama/voice_fx/s54.wav
   role: voice
-  start: 237.652
+  start: 237.678
   gain_db: -2.0
 - file: ../assets/drama/voice_trim/s55.wav
   role: voice
-  start: 242.233
+  start: 242.259
   gain_db: 0.0
 - file: ../assets/drama/voice_fx/s56.wav
   role: voice
-  start: 245.457
+  start: 245.483
   gain_db: -2.0
 - file: ../assets/drama/voice_trim/s57.wav
   role: voice
-  start: 249.247
+  start: 249.273
   gain_db: 0.0
 - file: ../assets/drama/voice_fx/s58.wav
   role: voice
-  start: 251.78
+  start: 251.806
   gain_db: -2.0
 - file: ../assets/drama/voice_trim/s59.wav
   role: voice
-  start: 255.368
+  start: 255.394
   gain_db: -5.0
 - file: ../assets/drama/voice_fx/s60.wav
   role: voice
-  start: 257.171
+  start: 257.197
   gain_db: -2.0
 - file: ../assets/drama/voice_trim/s61.wav
   role: voice
-  start: 260.493
+  start: 260.52
   gain_db: -5.0
 - file: ../assets/drama/voice_fx/s62.wav
   role: voice
-  start: 262.837
+  start: 262.863
   gain_db: -2.0
 - file: ../assets/drama/voice_trim/s63.wav
   role: voice
-  start: 266.552
+  start: 266.579
   gain_db: 0.0
 - file: ../assets/drama/voice_fx/s64.wav
   role: voice
-  start: 269.518
+  start: 269.545
   gain_db: -2.0
 - file: ../assets/drama/voice_trim/s65.wav
   role: voice
-  start: 273.828
+  start: 273.854
   gain_db: 0.0
 - file: ../assets/drama/voice_fx/s66.wav
   role: voice
-  start: 276.2
+  start: 276.226
   gain_db: -2.0
 - file: ../assets/drama/voice_trim/s67.wav
   role: voice
-  start: 280.64
+  start: 280.667
   gain_db: 3.0
 - file: ../assets/drama/voice_trim/s68.wav
   role: voice
-  start: 287.59
+  start: 287.616
   gain_db: -5.0
 - file: ../assets/drama/voice_trim/s69.wav
   role: voice
-  start: 290.469
+  start: 290.496
   gain_db: -10.0
 - file: ../assets/drama/voice_trim/s70.wav
   role: voice
-  start: 294.942
+  start: 294.989
   gain_db: -5.0
 - file: ../assets/drama/voice_trim/s71.wav
   role: voice
-  start: 300.739
+  start: 300.808
   gain_db: -10.0
 - file: ../assets/drama/voice_trim/s72.wav
   role: voice
-  start: 305.673
+  start: 305.791
   gain_db: -10.0
 - file: ../assets/drama/sfx/ring.wav
   role: hit
@@ -364,7 +364,7 @@ stems:
   gain_db: -6.0
 - file: ../assets/drama/sfx/hangup.wav
   role: hit
-  start: 285.59
+  start: 285.616
   gain_db: 3.0
 - file: ../assets/drama/bgm/underlay_tiled.wav
   role: bed

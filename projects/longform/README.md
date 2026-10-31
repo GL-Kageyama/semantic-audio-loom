@@ -57,9 +57,12 @@ projects/longform/
   intensity-demo/    強度の段だけを並べた 63 秒の見本（語り手の札つき）
   knob-demo/         速さ 5 語と演技の型 3 語を並べた 69 秒の見本
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
+  drama-seed-split/  演劇のニジだけ seed 2 にした版（人物を seed で分けられるか）
+  acting-breath-s70/ 芝居 s70 の 1 行で breathiness だけを none / slight に振る（6 本）
   explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く
   assemble.py         両作品を組む道具（切る・並べる・利得・効果音・下地）
   check_render.py     門の数を測る（尺・クリップ・無音・効果音の立ち上がり）
+  check_script_sync.py 台本と焼いてある声が同じかを 1 欄ずつ突き合わせる
   check_loudness.py   音量を配布の目安と比べる（LUFS・トゥルーピーク・LRA）
   deliver.py          配布用の mp3 を書く（直線のゲインだけ・チャンネル数はマスターのまま）
   near_duplicates.py  作品の中の「ほぼ同じ声になった組」を総当たりで探す

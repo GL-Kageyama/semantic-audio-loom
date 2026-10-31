@@ -76,123 +76,123 @@ stems:
   gain_db: -5.0
 - file: ../assets/explainer/voice_trim/n17.wav
   role: voice
-  start: 139.786
+  start: 139.763
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/n18.wav
   role: voice
-  start: 147.563
+  start: 147.541
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/n19.wav
   role: voice
-  start: 155.247
+  start: 155.224
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/m01.wav
   role: voice
-  start: 161.169
+  start: 161.146
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/n20.wav
   role: voice
-  start: 164.631
+  start: 164.608
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/m02.wav
   role: voice
-  start: 169.433
+  start: 169.411
   gain_db: 3.0
 - file: ../assets/explainer/voice_trim/n21.wav
   role: voice
-  start: 172.597
+  start: 172.575
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/n22.wav
   role: voice
-  start: 176.169
+  start: 176.147
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/m03.wav
   role: voice
-  start: 180.09
+  start: 180.068
   gain_db: -5.0
 - file: ../assets/explainer/voice_trim/n23.wav
   role: voice
-  start: 184.159
+  start: 184.308
   gain_db: -5.0
 - file: ../assets/explainer/voice_trim/n24.wav
   role: voice
-  start: 189.345
+  start: 189.494
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/m04.wav
   role: voice
-  start: 194.029
+  start: 194.178
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/n25.wav
   role: voice
-  start: 197.312
+  start: 197.494
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/n26.wav
   role: voice
-  start: 203.39
+  start: 203.571
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/x01.wav
   role: voice
-  start: 209.989
+  start: 210.17
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/x02.wav
   role: voice
-  start: 217.774
+  start: 217.955
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/x03.wav
   role: voice
-  start: 223.422
+  start: 223.603
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/d01.wav
   role: voice
-  start: 231.048
+  start: 231.23
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/d02.wav
   role: voice
-  start: 239.911
+  start: 240.092
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/d03.wav
   role: voice
-  start: 243.728
+  start: 243.909
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/d04.wav
   role: voice
-  start: 250.277
+  start: 250.458
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/d05.wav
   role: voice
-  start: 254.001
+  start: 254.182
   gain_db: 3.0
 - file: ../assets/explainer/voice_trim/d06.wav
   role: voice
-  start: 260.426
+  start: 260.607
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/d07.wav
   role: voice
-  start: 265.274
+  start: 265.455
   gain_db: -5.0
 - file: ../assets/explainer/voice_trim/d08.wav
   role: voice
-  start: 272.183
+  start: 272.364
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/n27.wav
   role: voice
-  start: 277.858
+  start: 278.039
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/n28.wav
   role: voice
-  start: 283.74
+  start: 283.921
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/n29.wav
   role: voice
-  start: 290.99
+  start: 291.171
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/c01.wav
   role: voice
-  start: 299.505
+  start: 299.686
   gain_db: 0.0
 - file: ../assets/explainer/voice_trim/c02.wav
   role: voice
-  start: 304.831
+  start: 305.013
   gain_db: -5.0
 - file: ../assets/explainer/sfx/chime_short.wav
   role: hit
@@ -212,27 +212,27 @@ stems:
   gain_db: -4.0
 - file: ../assets/explainer/sfx/chime_short.wav
   role: hit
-  start: 153.647
+  start: 153.624
   gain_db: -4.0
 - file: ../assets/explainer/sfx/chime_short.wav
   role: hit
-  start: 208.389
+  start: 208.57
   gain_db: -4.0
 - file: ../assets/explainer/sfx/chime_short.wav
   role: hit
-  start: 229.448
+  start: 229.63
   gain_db: -4.0
 - file: ../assets/explainer/sfx/chime_short.wav
   role: hit
-  start: 276.258
+  start: 276.439
   gain_db: -4.0
 - file: ../assets/explainer/sfx/door-soft.wav
   role: hit
-  start: 242.228
+  start: 242.409
   gain_db: -10.0
 - file: ../assets/explainer/sfx/door-slam.wav
   role: hit
-  start: 252.501
+  start: 252.682
   gain_db: 0.0
 - file: ../assets/explainer/bgm/underlay_tiled.wav
   role: bed
