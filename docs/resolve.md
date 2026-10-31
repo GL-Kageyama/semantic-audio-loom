@@ -37,3 +37,26 @@ f0 実測（同一台詞・同一 Direction・State のみ変更）：
 ## 一貫性（M3）
 
 同一参照音声（`female_young_p308`）・同一キャラでシーンを変えても、f0 差は感情プロソディの範囲（朝 joy 307.9Hz / 夜 anxiety 261.6Hz）で、timbre は同一に保たれる。
+
+## どの欄が、声を動かすか
+
+Direction の欄は語の数が欄ごとに違うが、**声に届く段の数は語の数と対応しない**。
+同じ行・同じ seed で欄だけを振った実測（`projects/longform/acting-*/`・
+`projects/longform/REPORT.md`「Direction の欄は、どれが段になるか」）。
+
+| 欄 | 語 | 声に届く段 | 何が動くか |
+| --- | --- | --- | --- |
+| `speed` | 5 | **5**（単調・1.8 倍） | 長さ |
+| `emotion` | 11 | 効く（seed の振れより小さい） | 高さ・長さ・抑揚 |
+| `pitch` | 6 | 2（`high` だけ離れる） | 高さ |
+| `intensity` | 5 | 2（`subtle`＝`moderate`、`strong` で跳ねる） | 高さ・長さ |
+| `delivery` | 12 | 2（`flat`・`cold` だけ下がる） | 高さ・長さ |
+| `intonation` | 5 | ほぼ 0 | — |
+| `breathiness` | 4 | 2（幅が小さい） | 有声の割合・高域 |
+| `volume` | 5 | **0**（声としては） | 何も動かない（ミックスの `gain_db` が作る） |
+
+- **演じ分けの土台は `speed`。** 5 語が単調に並ぶ唯一の欄。
+- **強弱を `intensity` の書き分けで作らない。** `subtle` と `moderate` は同じ音になる。
+- **声量は声ではなくミックス。** 生成された声はどれも peak 0.95 に揃い、
+  レベル差は残らない（`assemble.py` の `VOLUME_GAIN`）。
+- `breathiness` と `volume` で囁きを作ることはできない。息は `voice_fx` の帯域で作る。

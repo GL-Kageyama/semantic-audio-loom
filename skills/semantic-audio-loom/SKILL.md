@@ -24,6 +24,8 @@ argument-hint: '(optional) キャラ名・演技名・台詞。例: /semantic-au
 1. **参照音声が足りていれば確認** — `bin/reference.py list`。足りない声は `synthesize <key> --character <name>`（ローカル生成）か `add <wav> <key> --license …`（著作権フリー音源）で拡充。
 2. **キャラを作る**（誰の声か）— `bin/character.py init <name>` → `characters/<name>.voice.yaml` を編集（`reference_audio` で参照音声を指定）。
 3. **演技を定義する**（どう演じるか）— `bin/performance.py init <name>` → `performances/<name>.direction.yaml` を編集（emotion / intensity / volume / speed / delivery / situation / subtext）。
+   声を動かすのは主に `speed` と `emotion`。`intensity` と `delivery` は 2 段、
+   `volume` は声では動かない（ミックスの `gain_db` が作る）— 詳細は `docs/resolve.md`「どの欄が、声を動かすか」。
 4. **声を生成する** — `bin/generate.py --character <キャラ> --performance <演技> --line <台詞>`。
 
 ## 声の生成
