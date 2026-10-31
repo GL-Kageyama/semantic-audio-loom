@@ -569,6 +569,14 @@ beta 0.7 で 4 段 × seed 5 を並べた（新規 36 本。`acting-overwhelming
 - 既存の 3 語の take は `breathiness` を params に持たない古い形だったので、
   `--force` で焼き直した（`check_script_sync.py` が 15/15 で鳴った）。**数値は動かず**
   （`breathiness: none` は音を変えない）。
+- **P2 の 55 本も `breathiness` を持たない**（`acting/` は 55/55 で鳴る。ほかにも
+  `acting-alpha`・`acting-axes`・`acting-beta-*`・`acting-matrix`・`acting-pitch` など
+  12 の置き場が同じ理由で鳴る）。**古い P2 の数値が古い音の上に載っている疑い**を、
+  `breathiness` を slight / heavy と書いた 7 本（seed 1）で確かめた
+  （`acting-breathness-recheck/`）。**差は f0 ±3.8 Hz・長さ ±0.10 秒で、P2 の効果
+  （+9〜+39 Hz）の 1 桁下**。古い take のままの P2 の数値はそのまま読める。
+  ただし `s70` のように **seed によっては breathiness が take ごと入れ替える**ので、
+  1 本ずつの比較には使わない（P2 は 5 seed の中央値）。
 
 ## 2026-10-31 — M5 音の生成＋ライブラリ（5 種すべて）
 

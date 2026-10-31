@@ -63,6 +63,7 @@ projects/longform/
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   drama-seed-split/  演劇のニジだけ seed 2 にした版（人物を seed で分けられるか）
   acting-breath-s70/ 芝居 s70 の 1 行で breathiness だけを none / slight に振る（6 本）
+  acting-breathness-recheck/  古い take に breathiness が無かった影響を確かめる 7 本
   explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く
   assemble.py         両作品を組む道具（切る・並べる・利得・効果音・下地）
   check_render.py     門の数を測る（尺・クリップ・無音・効果音の立ち上がり）
