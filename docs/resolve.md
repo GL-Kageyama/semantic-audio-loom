@@ -27,6 +27,25 @@ f0 実測（同一台詞・同一 Direction・State のみ変更）：
 振ると差は 4.4 Hz（291.4 対 287.0）で、語尾の傾きも名前どおりにならない
 （`projects/longform/acting-inton-070/`）。**動いていたのは state の側**である。
 
+## どこまで声に届くか（実測）
+
+同じ 1 行で subtext だけを 5 通りに振った
+（`projects/longform/acting-subtext/`）。結論は 3 つ。
+
+1. **`--resolve rule` では 1 Hz も動かない。** rule は `subtext` を Spec へ写すが、
+   Provider の散文を作る `_spec_prompt` はその欄を読まない。同じ Spec なら音も同じ
+   （5 通り × seed 5 の 25 本で、seed 1・2・4・5 は md5 が 5 本とも一致）。
+2. **`--resolve llm` は 5 通りを 5 通りの散文へ変える。** 変わるのは `intonation`
+   （neutral / falling / flat / wavering）と `emotion.intensity`（0.35〜0.5）。
+   `pauses`・`emphasis`・`breath` も書いてくるが、`_spec_prompt` は使わない。
+3. **声を動かすのは `intensity` が 0.40 の境をまたぐときだけ。** 1 欄ずつ振ると、
+   `intonation` neutral ↔ wavering は **+1.0 Hz（2/5・3 本は差 0.0）**、
+   `intensity` 0.5 → 0.4（「the feeling is faint」の句）は **+6.9 Hz（両設定とも 5/5）**。
+   語尾の傾き（`f0_end_st_s`）にも揃った効果は出ない。
+
+→ **subtext → 抑揚語 の変換までは正しく、その先（抑揚語 → 声）がこのモデルでは効かない。**
+subtext が声に届くのは、LLM が強度の段を動かしたときだけである。
+
 ## 実装
 
 - **LLMResolver**（既定）：`llm/client.py` が `/v1/messages` を直接叩く（SDK 不使用。anthropic 1.2.0 が temperature 引数を廃止して破綻したため stdlib urllib に移行）。

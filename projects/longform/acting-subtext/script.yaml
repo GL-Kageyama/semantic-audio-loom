@@ -1,0 +1,33 @@
+# subtext だけを振る（rule 解決）：5 通り × seed 5 = 25 本
+#
+# 製品の売りは「subtext（台詞の裏の意味）を音に乗せる」。ただし rule 解決は
+# 構造フィールドだけを Spec へ移す（`engine/resolve.py`）。subtext が散文へ載るかを、
+# 同じ行・同じ設定で subtext だけ変えて測る。全部同じ音なら、載っていない。
+name: acting-subtext
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: st-none-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: st-none-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: st-none-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: st-none-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: st-none-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, subtext: "本当は帰りたい", name: st-return-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, subtext: "本当は帰りたい", name: st-return-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, subtext: "本当は帰りたい", name: st-return-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, subtext: "本当は帰りたい", name: st-return-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, subtext: "本当は帰りたい", name: st-return-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, subtext: "もう来ないつもりだ", name: st-never-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, subtext: "もう来ないつもりだ", name: st-never-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, subtext: "もう来ないつもりだ", name: st-never-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, subtext: "もう来ないつもりだ", name: st-never-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, subtext: "もう来ないつもりだ", name: st-never-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, subtext: "怒っている", name: st-angry-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, subtext: "怒っている", name: st-angry-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, subtext: "怒っている", name: st-angry-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, subtext: "怒っている", name: st-angry-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, subtext: "怒っている", name: st-angry-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, subtext: "言いたいことがあるのに言えない", name: st-unspoken-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, subtext: "言いたいことがあるのに言えない", name: st-unspoken-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, subtext: "言いたいことがあるのに言えない", name: st-unspoken-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, subtext: "言いたいことがあるのに言えない", name: st-unspoken-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, subtext: "言いたいことがあるのに言えない", name: st-unspoken-s5}

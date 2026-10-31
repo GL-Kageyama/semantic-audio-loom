@@ -3223,3 +3223,73 @@ date	stage	asset	model	settings	wall_s	audio_s	machine	note
 2026-10-31	P2b	pitch-demo/voice/n-high	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	1.97	M2Pro-16GB	rc=0
 2026-10-31	P2b	pitch-demo/voice/x-high	tsukasa	emotion=joy,intensity=moderate,breathiness=none,delivery=controlled,pitch=high,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	3.35	M2Pro-16GB	rc=0
 2026-10-31	P2b	pitch-demo/voice/n-close	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	5.92	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-none-s1	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	11	2.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-none-s2	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	1	2.97	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-none-s3	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	1	2.80	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-none-s4	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-none-s5	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=5,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-return-s1	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	1	2.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-return-s2	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	1	2.97	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-return-s3	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	1	2.80	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-return-s4	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-return-s5	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=5,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-never-s1	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	1	2.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-never-s2	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	1	2.97	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-never-s3	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	1	2.80	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-never-s4	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-never-s5	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=5,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-angry-s1	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	1	2.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-angry-s2	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	1	2.97	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-angry-s3	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	1	2.80	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-angry-s4	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-angry-s5	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=5,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-unspoken-s1	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	1	2.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-unspoken-s2	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=2,alpha=0.35,beta=0.7	1	2.97	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-unspoken-s3	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	1	2.80	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-unspoken-s4	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext/voice/st-unspoken-s5	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=5,alpha=0.35,beta=0.7	1	3.30	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-none-s1	tsukasa	spec=llm-none,seed=1,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-none-s2	tsukasa	spec=llm-none,seed=2,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-none-s3	tsukasa	spec=llm-none,seed=3,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-none-s4	tsukasa	spec=llm-none,seed=4,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-none-s5	tsukasa	spec=llm-none,seed=5,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-return-s1	tsukasa	spec=llm-return,seed=1,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-return-s2	tsukasa	spec=llm-return,seed=2,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-return-s3	tsukasa	spec=llm-return,seed=3,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-return-s4	tsukasa	spec=llm-return,seed=4,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-return-s5	tsukasa	spec=llm-return,seed=5,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-never-s1	tsukasa	spec=llm-never,seed=1,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-never-s2	tsukasa	spec=llm-never,seed=2,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-never-s3	tsukasa	spec=llm-never,seed=3,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-never-s4	tsukasa	spec=llm-never,seed=4,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-never-s5	tsukasa	spec=llm-never,seed=5,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-angry-s1	tsukasa	spec=llm-angry,seed=1,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-angry-s2	tsukasa	spec=llm-angry,seed=2,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-angry-s3	tsukasa	spec=llm-angry,seed=3,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-angry-s4	tsukasa	spec=llm-angry,seed=4,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-angry-s5	tsukasa	spec=llm-angry,seed=5,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-unspoken-s1	tsukasa	spec=llm-unspoken,seed=1,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-unspoken-s2	tsukasa	spec=llm-unspoken,seed=2,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-unspoken-s3	tsukasa	spec=llm-unspoken,seed=3,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-unspoken-s4	tsukasa	spec=llm-unspoken,seed=4,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-llm/voice/stl-unspoken-s5	tsukasa	spec=llm-unspoken,seed=5,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-neutral-i50-s1	tsukasa	intonation=neutral,intensity=0.5,seed=1,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-neutral-i50-s2	tsukasa	intonation=neutral,intensity=0.5,seed=2,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-neutral-i50-s3	tsukasa	intonation=neutral,intensity=0.5,seed=3,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-neutral-i50-s4	tsukasa	intonation=neutral,intensity=0.5,seed=4,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-neutral-i50-s5	tsukasa	intonation=neutral,intensity=0.5,seed=5,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-neutral-i40-s1	tsukasa	intonation=neutral,intensity=0.4,seed=1,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-neutral-i40-s2	tsukasa	intonation=neutral,intensity=0.4,seed=2,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-neutral-i40-s3	tsukasa	intonation=neutral,intensity=0.4,seed=3,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-neutral-i40-s4	tsukasa	intonation=neutral,intensity=0.4,seed=4,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-neutral-i40-s5	tsukasa	intonation=neutral,intensity=0.4,seed=5,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-wavering-i50-s1	tsukasa	intonation=wavering,intensity=0.5,seed=1,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-wavering-i50-s2	tsukasa	intonation=wavering,intensity=0.5,seed=2,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-wavering-i50-s3	tsukasa	intonation=wavering,intensity=0.5,seed=3,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-wavering-i50-s4	tsukasa	intonation=wavering,intensity=0.5,seed=4,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-wavering-i50-s5	tsukasa	intonation=wavering,intensity=0.5,seed=5,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-wavering-i40-s1	tsukasa	intonation=wavering,intensity=0.4,seed=1,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-wavering-i40-s2	tsukasa	intonation=wavering,intensity=0.4,seed=2,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-wavering-i40-s3	tsukasa	intonation=wavering,intensity=0.4,seed=3,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-wavering-i40-s4	tsukasa	intonation=wavering,intensity=0.4,seed=4,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）
+2026-10-31	P2b	acting-subtext-knobs/voice/kb-wavering-i40-s5	tsukasa	intonation=wavering,intensity=0.4,seed=5,alpha=0.35,beta=0.7	1	-	M2Pro-16GB	rc=0; wall_s=ファイルの mtime 差（モデルのロードを除く）

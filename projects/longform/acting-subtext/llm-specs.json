@@ -1,0 +1,191 @@
+{
+ "none": {
+  "subtext": null,
+  "spec": {
+   "emotion": {
+    "primary": "neutral",
+    "intensity": 0.4
+   },
+   "loudness": {
+    "effort": "normal"
+   },
+   "prosody": {
+    "pace": "natural",
+    "pitch": "natural",
+    "intonation": "neutral",
+    "pauses": [
+     {
+      "after": "明日、",
+      "duration": 0.3
+     }
+    ],
+    "emphasis": [
+     {
+      "word": "また",
+      "strength": "weak"
+     }
+    ],
+    "breath": [
+     {
+      "at": "来るね",
+      "type": "slight"
+     }
+    ]
+   },
+   "delivery": "controlled",
+   "subtext": "感情を出さずに当たり障りなく交わす約束。相手との距離を保ったまま、軽く念を押している。"
+  }
+ },
+ "return": {
+  "subtext": "本当は帰りたい",
+  "spec": {
+   "emotion": {
+    "primary": "neutral",
+    "intensity": 0.35
+   },
+   "loudness": {
+    "effort": "normal"
+   },
+   "prosody": {
+    "pace": "natural",
+    "pitch": "natural",
+    "intonation": "falling",
+    "pauses": [
+     {
+      "after": "明日",
+      "duration": 0.35
+     }
+    ],
+    "emphasis": [
+     {
+      "word": "また",
+      "strength": "weak"
+     }
+    ],
+    "breath": [
+     {
+      "at": "また来るね",
+      "type": "slight"
+     }
+    ]
+   },
+   "delivery": "controlled",
+   "subtext": "本当はもう帰りたい。社交辞令として形だけ整え、語尾を落として会話を閉じにかかる"
+  }
+ },
+ "never": {
+  "subtext": "もう来ないつもりだ",
+  "spec": {
+   "emotion": {
+    "primary": "neutral",
+    "intensity": 0.45
+   },
+   "loudness": {
+    "effort": "normal"
+   },
+   "prosody": {
+    "pace": "natural",
+    "pitch": "natural",
+    "intonation": "falling",
+    "pauses": [
+     {
+      "after": "明日",
+      "duration": 0.4
+     },
+     {
+      "after": "また来るね",
+      "duration": 0.3
+     }
+    ],
+    "emphasis": [
+     {
+      "word": "来る",
+      "strength": "weak"
+     }
+    ],
+    "breath": [
+     {
+      "at": "また来るね",
+      "type": "slight"
+     }
+    ]
+   },
+   "delivery": "controlled",
+   "subtext": "もう来ないつもりで、最後の別れを悟られないように平静を装っている"
+  }
+ },
+ "angry": {
+  "subtext": "怒っている",
+  "spec": {
+   "emotion": {
+    "primary": "neutral",
+    "intensity": 0.5
+   },
+   "loudness": {
+    "effort": "normal"
+   },
+   "prosody": {
+    "pace": "natural",
+    "pitch": "natural",
+    "intonation": "flat",
+    "pauses": [
+     {
+      "after": "明日、",
+      "duration": 0.35
+     }
+    ],
+    "emphasis": [
+     {
+      "word": "また",
+      "strength": "medium"
+     }
+    ],
+    "breath": [
+     {
+      "at": "また来るね",
+      "type": "slight"
+     }
+    ]
+   },
+   "delivery": "controlled",
+   "subtext": "怒りを飲み込み、突き放すように平静を装って「また来る」と言っている"
+  }
+ },
+ "unspoken": {
+  "subtext": "言いたいことがあるのに言えない",
+  "spec": {
+   "emotion": {
+    "primary": "neutral",
+    "intensity": 0.4
+   },
+   "loudness": {
+    "effort": "normal"
+   },
+   "prosody": {
+    "pace": "natural",
+    "pitch": "natural",
+    "intonation": "wavering",
+    "pauses": [
+     {
+      "after": "明日、",
+      "duration": 0.35
+     }
+    ],
+    "emphasis": [
+     {
+      "word": "また",
+      "strength": "weak"
+     }
+    ],
+    "breath": [
+     {
+      "at": "来るね",
+      "type": "slight"
+     }
+    ]
+   },
+   "delivery": "controlled",
+   "subtext": "言いたいことを飲み込み、平静を装いながら、語尾だけがためらいで揺れている"
+  }
+ }
+}

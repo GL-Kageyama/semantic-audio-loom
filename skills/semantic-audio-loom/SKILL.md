@@ -31,7 +31,8 @@ argument-hint: '(optional) キャラ名・演技名・台詞。例: /semantic-au
    **下げる語だけ**（上がる語は無い）。`volume` は声の大きさを変えない（`shout` だけ
    f0 +9.6・長さ +0.13 秒、energy は下がる。ミックスの `gain_db` が作る）。`intonation` の
    5 語もほぼ同じ声で、語尾の傾きは名前どおりにならない — 詳細は `docs/resolve.md`
-   「どの欄が、声を動かすか」。
+   「どの欄が、声を動かすか」。`subtext` は `--resolve rule` では音に載らず（Provider の
+   散文がその欄を読まない）、`--resolve llm` でも効くのは変換後の `intensity` の段だけ。
 4. **声を生成する** — `bin/generate.py --character <キャラ> --performance <演技> --line <台詞>`。
 
 ## 声の生成

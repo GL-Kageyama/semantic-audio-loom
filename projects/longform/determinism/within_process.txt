@@ -1,0 +1,31 @@
+NLTK
+SCIPY
+TORCH STUFF
+START
+177
+177
+bert loaded
+bert_encoder loaded
+predictor loaded
+decoder loaded
+text_encoder loaded
+predictor_encoder loaded
+style_encoder loaded
+diffusion loaded
+text_aligner loaded
+pitch_extractor loaded
+mpd loaded
+msd loaded
+wd loaded
+1	8013f1b	0.000000
+2	8b3e2de	0.000003
+3	8b3e2de	0.000003
+4	8b3e2de	0.000003
+5	8b3e2de	0.000003
+6	8b3e2de	0.000003
+7	8b3e2de	0.000003
+8	8b3e2de	0.000003
+9	8b3e2de	0.000003
+10	8b3e2de	0.000003
+11	8b3e2de	0.000003
+12	8b3e2de	0.000003
