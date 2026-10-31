@@ -1,0 +1,28 @@
+# 床（beta 0.0）で、pitch が人物の高さを戻せるか。参照は二つ（真白・ニジ）。
+name: acting-floor-pitch
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: very_low, seed: 1, beta: 0.0, alpha: 0.35, name: p-mashiro-very_low-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: very_low, seed: 2, beta: 0.0, alpha: 0.35, name: p-mashiro-very_low-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: very_low, seed: 3, beta: 0.0, alpha: 0.35, name: p-mashiro-very_low-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: low, seed: 1, beta: 0.0, alpha: 0.35, name: p-mashiro-low-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: low, seed: 2, beta: 0.0, alpha: 0.35, name: p-mashiro-low-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: low, seed: 3, beta: 0.0, alpha: 0.35, name: p-mashiro-low-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: natural, seed: 1, beta: 0.0, alpha: 0.35, name: p-mashiro-natural-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: natural, seed: 2, beta: 0.0, alpha: 0.35, name: p-mashiro-natural-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: natural, seed: 3, beta: 0.0, alpha: 0.35, name: p-mashiro-natural-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: high, seed: 1, beta: 0.0, alpha: 0.35, name: p-mashiro-high-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: high, seed: 2, beta: 0.0, alpha: 0.35, name: p-mashiro-high-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: high, seed: 3, beta: 0.0, alpha: 0.35, name: p-mashiro-high-s3}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: very_low, seed: 1, beta: 0.0, alpha: 0.35, name: p-niji-very_low-s1}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: very_low, seed: 2, beta: 0.0, alpha: 0.35, name: p-niji-very_low-s2}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: very_low, seed: 3, beta: 0.0, alpha: 0.35, name: p-niji-very_low-s3}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: low, seed: 1, beta: 0.0, alpha: 0.35, name: p-niji-low-s1}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: low, seed: 2, beta: 0.0, alpha: 0.35, name: p-niji-low-s2}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: low, seed: 3, beta: 0.0, alpha: 0.35, name: p-niji-low-s3}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: natural, seed: 1, beta: 0.0, alpha: 0.35, name: p-niji-natural-s1}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: natural, seed: 2, beta: 0.0, alpha: 0.35, name: p-niji-natural-s2}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: natural, seed: 3, beta: 0.0, alpha: 0.35, name: p-niji-natural-s3}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: high, seed: 1, beta: 0.0, alpha: 0.35, name: p-niji-high-s1}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: high, seed: 2, beta: 0.0, alpha: 0.35, name: p-niji-high-s2}
+- {character: niji, line: 明日、また来るね。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, pitch: high, seed: 3, beta: 0.0, alpha: 0.35, name: p-niji-high-s3}
