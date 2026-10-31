@@ -3421,3 +3421,9 @@ date	stage	asset	model	settings	wall_s	audio_s	machine	note
 2026-10-31	P2b	punctuation-demo/voice/p-none-s1	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=1,alpha=0.35,beta=0.7	1	2.50	M2Pro-16GB	rc=0
 2026-10-31	P2b	punctuation-demo/voice/p-none-s3	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=3,alpha=0.35,beta=0.7	1	2.55	M2Pro-16GB	rc=0
 2026-10-31	P2b	punctuation-demo/voice/n-close	tsukasa	emotion=neutral,intensity=moderate,breathiness=none,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	1	4.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	acting-punctuation/run.py（20本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	11	59.2	M2Pro-16GB	pn-*/20本（モデルのロードを除く・1本目の書き込みから最後まで）
+2026-10-31	P2b	acting-punctuation-stack/run.py（20本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	11	60.4	M2Pro-16GB	4条件×seed5（モデルのロードを除く）
+2026-10-31	P2b	acting-notation/run.py（20本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	11	61.9	M2Pro-16GB	4条件×seed5（モデルのロードを除く）
+2026-10-31	P2b	acting-punctuation-long/run.py（20本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	16	103.7	M2Pro-16GB	4条件×seed5（モデルのロードを除く・pl- の書き込みから最後まで）
+2026-10-31	P2b	acting-punctuation-long/run_comma.py（10本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	7	49.5	M2Pro-16GB	2条件×seed5（モデルのロードを除く）
+2026-10-31	P2b	acting-punctuation-mid/run.py（10本）	tsukasa	emotion=neutral,intensity=moderate,seed=1-5,alpha=0.35,beta=0.7	6	35.8	M2Pro-16GB	2条件×seed5（モデルのロードを除く）

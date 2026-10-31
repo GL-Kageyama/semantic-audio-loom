@@ -1,0 +1,11 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/acting-punctuation-long/voice/plc-exclaim-s1.wav	4.573	307.7	11.3	10.6	7.5	0.161	-17.0	31.6	240.0	0.3646	0.72	-18.2	0
+projects/longform/assets/acting-punctuation-long/voice/plc-exclaim-s2.wav	4.573	287.9	11.1	0.52	7.5	0.208	-16.8	30.7	250.0	0.441	0.7546	-17.9	0
+projects/longform/assets/acting-punctuation-long/voice/plc-exclaim-s3.wav	4.573	309.4	11.2	27.27	7.5	0.162	-18.0	30.3	240.0	0.4039	0.596	-19.1	0
+projects/longform/assets/acting-punctuation-long/voice/plc-exclaim-s4.wav	5.123	300.6	15.4	-3.73	7.6	0.226	-17.8	27.0	280.0	0.3957	0.5862	-20.0	0
+projects/longform/assets/acting-punctuation-long/voice/plc-exclaim-s5.wav	5.373	264.8	11.4	3.65	6.7	0.245	-16.3	28.5	280.0	0.4349	0.6816	-17.8	0
+projects/longform/assets/acting-punctuation-long/voice/plc-period-s1.wav	4.773	288.7	8.6	-5.34	7.0	0.2	-17.9	30.9	240.0	0.4059	0.7	-19.1	0
+projects/longform/assets/acting-punctuation-long/voice/plc-period-s2.wav	4.898	266.3	6.6	10.6	7.0	0.231	-18.6	30.0	250.0	0.4469	0.6976	-19.4	0
+projects/longform/assets/acting-punctuation-long/voice/plc-period-s3.wav	4.673	266.3	6.7	-5.27	7.6	0.219	-18.7	31.5	210.0	0.4509	0.4832	-20.1	0
+projects/longform/assets/acting-punctuation-long/voice/plc-period-s4.wav	5.298	274.1	9.4	13.45	7.4	0.251	-18.8	28.5	210.0	0.4151	0.5311	-20.7	0
+projects/longform/assets/acting-punctuation-long/voice/plc-period-s5.wav	5.598	242.8	6.8	-1.98	6.7	0.27	-18.0	30.3	250.0	0.4286	0.674	-18.7	0
