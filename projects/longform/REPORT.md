@@ -421,6 +421,32 @@ energy 1.1 dB なので、**語の効きは seed の振れの 13 分の 1**。�
 台本は subtle 51・moderate 28 と書き分けているが、**聴こえる強弱は「平ら」と
 「上げた」の 2 値で、境目は 10 本**。
 
+### Direction の欄は、どれが段になるか
+
+同じ手法（同じ行・同じ感情・seed 5 本・欄だけを振る）で 5 つの欄を並べた。
+
+| 欄 | 語の数（測った数） | 声に届く段 | 測ったところ |
+| --- | --- | --- | --- |
+| `speed` | 5（5） | **5**（単調・1.80 倍） | very_slow 4.39 → very_fast 2.44 秒・5 seed すべてで順序が崩れない |
+| `pitch` | 6（3） | **2**（high だけ離れる） | neutral で high 282.8 / natural 264.0 / slightly_high 265.2 Hz |
+| `emotion` | 11（3＋枠外） | 効く（ただし seed より小さい） | seed の幅 84.6 Hz の前では二次的（`emotion-seed/`） |
+| `intonation` | 5（3） | **ほぼ 0** | 語尾の傾きで rising −0.35 / flat +2.11 / falling −1.64・3/5 |
+| `intensity` | 5（4） | **2** | subtle ≈ moderate、moderate → strong で跳ねる、上端は伸びない |
+| `delivery` | 12（6） | **2** | gentle / cheerful / hesitant / restrained は ±2 Hz、cold −9.4・flat −18.4 Hz |
+| `breathiness` | 4（0） | 未測 | — |
+| `volume` | 5（4） | **0**（声としては） | whisper と loud で energy 0.08 dB。ミックスの `VOLUME_GAIN` が 5 段作る |
+
+（`delivery` は `acting-delivery/`・`speed` は `acting-speed/`・`volume` は
+`acting-volume/`。`intonation` は上の「語尾の抑揚は、beta を下げても分かれない」節。）
+
+- **単調な 5 段になるのは `speed` だけ。** 5 seed それぞれで 5 語の長さの順序が完全に
+  一致する。台本はこれを一番使っている（演劇の speed は slow 44・natural 31・fast 10・
+  very_slow 4）。
+- **語の数と段の数が、まったく対応しない。** 11 語の欄（delivery）が 2 群、
+  4 語の欄（volume）が 0 段、5 語の欄（speed）が 5 段。
+- **強弱を演じさせたいなら speed と pitch。音量の強弱はミックス。**
+  intensity の語を書き分けても、声は同じ段に留まる。
+
 **直したこと：** Direction の intensity=none は 0.0 に解決されるが、散文では
 「the feeling is faint」を足していた（none が faint になる）。0 では一言も足さないよう
 直した。**欄が散文に載っているかを、Schema の列挙値ごとに比べる検査を足した**

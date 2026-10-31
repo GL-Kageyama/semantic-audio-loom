@@ -459,6 +459,14 @@ beta 0.7 で 4 段 × seed 5 を並べた（新規 36 本。`acting-overwhelming
   語り手は **44/44** が同じ段。演劇は **79/89（89%）**（mashiro 38/47・niji 41/42）で、
   strong 以上は 10 本。**台本の subtle 51・moderate 28 の書き分けは、声では 1 段に
   畳まれる。** 原本の表は変えていない。
+- **delivery も 2 群**（`acting-delivery/`・30 本）。gentle / cheerful / hesitant /
+  restrained は ±2 Hz。**cold −9.4 Hz・flat −18.4 Hz（0〜1/5・p ≤ 0.033）だけ**が下がり、
+  長さも 0.25〜0.29 秒縮む。抑揚は 6 語とも 7.8〜8.3 半音で動かない。
+- **speed だけが 5 段のまま単調**（`acting-speed/`・25 本）。very_slow 4.39 → natural
+  3.06 → very_fast 2.44 秒（1.80 倍）。**5 seed それぞれで 5 語の順序が完全に単調**。
+  両端の差は p = 0.00002。`pause_ratio` は 0.22〜0.27 で並ばない（発話そのものが伸びる）。
+- **まとめ：欄の語の数と、声に届く段の数は対応しない。** speed 5→5・pitch 6→2・
+  delivery 12→2・intensity 5→2・intonation 5→ほぼ 0・volume 5→0（breathiness 未測）。
 
 
 ## 2026-10-31 — M5 音の生成＋ライブラリ（5 種すべて）

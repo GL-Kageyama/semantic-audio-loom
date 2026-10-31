@@ -406,6 +406,15 @@ projects/longform/
    ⛔ **二つの作品は、その 2 段の片側に 9 割が座っている**（`acting/knob_audit.py`）。
    解説の語り手 44/44 が同じ段、演劇は 79/89（89%）が同じ段（mashiro 38/47・niji 41/42）。
    **台本の subtle 51・moderate 28 の書き分けは、声では 1 段に畳まれる。**
+   ✅ **delivery も 2 群**（`acting-delivery/`・joy moderate × 6 語 × seed 5・30 本）。
+   gentle / cheerful / hesitant / restrained は ±2 Hz で見分けがつかない。**cold −9.4 Hz・
+   flat −18.4 Hz（0〜1/5）だけが下がる。** 抑揚は 6 語とも 7.8〜8.3 半音で動かない。
+   ✅ **speed だけが 5 段のまま単調**（`acting-speed/`・joy moderate × 5 語 × seed 5・
+   25 本）。very_slow 4.39 → natural 3.06 → very_fast 2.44 秒（**1.80 倍**）。**5 seed
+   それぞれで順序が完全に単調**（25 本・逆転 0）。p は 0.0001 以下。**演じ分けの土台は
+   speed。**
+   ⛔ **欄の数と段の数は対応しない**：speed 5→5・pitch 6→2（high だけ +19 Hz）・
+   delivery 12→2・intensity 5→2・intonation 5→ほぼ 0・volume 5→0。breathiness は未測。
    ⚠️ **原本の表は変えていない。**
 
 ⚠️ 意味の写像ではない（sadness の strong で f0 が**上がる**）。⚠️ 張り（`energy_median`）の

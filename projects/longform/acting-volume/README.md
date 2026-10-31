@@ -1,6 +1,6 @@
 # 声量の語は、声の大きさを変えない
 
-Direction の `volume` は 4 語（whisper / quiet / normal / loud）。台本はこれを
+Direction の `volume` は 5 語（whisper / quiet / normal / loud / shout。shout は未測）。台本はこれを
 よく書く（演劇 89 本のうち quiet 29・normal 41・whisper 3・loud 2、解説 48 本のうち
 quiet 11・normal 34・loud 3）。**語を振っても、声の大きさは変わらない。**
 

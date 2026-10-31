@@ -47,6 +47,8 @@ projects/longform/
   acting-niji-intensity/    niji の声で subtle / moderate × 3 感情 × seed 5（2 段は声に依るか）
   acting-joy-heldback/      joy でも「抑える」を試した 5 本
   acting-volume/            声量 4 語 × seed 5（声は大きさを変えるか）
+  acting-delivery/          delivery 6 語 × seed 5（11 語のうち声が動くのは何語か）
+  acting-speed/             speed 5 語 × seed 5（5 語とも段になるか）
   intensity-demo/    強度の段だけを並べた 63 秒の見本（語り手の札つき）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   explainer/  drama/  作品。script.yaml が台詞と演技、mix.yaml は組み立てが書く
