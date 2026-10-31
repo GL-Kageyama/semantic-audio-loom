@@ -41,6 +41,8 @@
   5 段の欄だが、**3 語で 10.7 Hz**（`acting-delivery/` の flat 1 語ぶん、−18.4 Hz より小さい）。
 - **上へは 2.9 Hz しか動かない。** seed ごとの high − natural は +2.1 / +1.8 / 0.0 / +8.2 / +2.2 Hz。
   **上げたいときは `speed`（遅い端と速い端で +17 Hz）のほうが強い。**
+- ⚠️ **delivery が controlled だと、もっと動く**（`acting-knob-stack-speed-pitch/`・
+  seed 10 本）：low −13.5 Hz・high −0.1 Hz。**pitch の効きは delivery でも変わる。**
 - ⚠️ **この非対称は感情で入れ替わる。** neutral の声では high が +18.8 Hz 動いた
   （264.0 → 282.8 Hz・REPORT「欄ごとの段」）。joy・moderate では上より下が動く。
   **pitch の段を、感情をまたいで 1 つの数で語らない。**

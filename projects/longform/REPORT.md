@@ -477,6 +477,11 @@ whisper より小さい。叫ぶと高く長くなるが、大きくはならな
   −11.0、flat −16.5 / −18.4 / −21.4 Hz・交互作用は p ≥ 0.35）。
   **`pitch` を振ると aggressive の差は半分になる**（natural +6.8 → low +3.4 / high +2.1 Hz・
   中央値・`acting-knob-stack-pitch/`）。**消える型と消えない型がある。**
+- **強い欄どうし（speed × pitch）も、足し算にならない**（`acting-knob-stack-speed-pitch/`・
+  seed 10 本）。速さの高さの効きは pitch high で +5.9 Hz・natural で +4.3・
+  **low で +0.5（p = 0.91）**。加算からのずれは −3.8 / +1.7 Hz で有意でない（p ≥ 0.35）。
+  **長さだけは pitch が何であっても −0.62〜−0.76 秒・10/10 で動く。**
+  この条件では `pitch` の `high` は −0.1 Hz で、**`low`（−13.5 Hz・9/10）だけが段になる。**
 - **語の数と段の数が、まったく対応しない。** 12 語の欄（delivery）が 3 段、
   5 語の欄（volume）が 0 段、5 語の欄（speed）が 5 段。
 - **breathiness は段になるが、幅が 1.3 ポイント。** 既定 0.7 で有声の割合が 5 seed とも

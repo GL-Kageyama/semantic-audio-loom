@@ -1,0 +1,69 @@
+# 強い欄どうしは、足し合わさるか（speed 2 × pitch 3 × seed 5）
+#
+# speed×delivery では、弱い欄（delivery）が速さの端で埋まった。
+# speed と pitch は、どちらも f0 を動かす強い欄。2 つ同時なら足されるのか。
+# 同じ行・joy・moderate・delivery controlled・breathiness none・seed 1〜5・beta 0.7。
+
+name: acting-knob-stack-speed-pitch
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: sp-natural-low-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: sp-natural-low-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: sp-natural-low-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: sp-natural-low-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: sp-natural-low-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: sp-natural-natural-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: sp-natural-natural-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: sp-natural-natural-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: sp-natural-natural-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: sp-natural-natural-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: sp-natural-high-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: sp-natural-high-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: sp-natural-high-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: sp-natural-high-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: sp-natural-high-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: low, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: sp-very_fast-low-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: low, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: sp-very_fast-low-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: low, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: sp-very_fast-low-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: low, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: sp-very_fast-low-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: low, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: sp-very_fast-low-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: sp-very_fast-natural-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: sp-very_fast-natural-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: sp-very_fast-natural-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: sp-very_fast-natural-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: sp-very_fast-natural-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: high, delivery: controlled, breathiness: none, seed: 1, beta: 0.7, name: sp-very_fast-high-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: high, delivery: controlled, breathiness: none, seed: 2, beta: 0.7, name: sp-very_fast-high-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: high, delivery: controlled, breathiness: none, seed: 3, beta: 0.7, name: sp-very_fast-high-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: high, delivery: controlled, breathiness: none, seed: 4, beta: 0.7, name: sp-very_fast-high-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: high, delivery: controlled, breathiness: none, seed: 5, beta: 0.7, name: sp-very_fast-high-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 6, beta: 0.7, name: sp-natural-low-s6}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 7, beta: 0.7, name: sp-natural-low-s7}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 8, beta: 0.7, name: sp-natural-low-s8}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 9, beta: 0.7, name: sp-natural-low-s9}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: low, delivery: controlled, breathiness: none, seed: 10, beta: 0.7, name: sp-natural-low-s10}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 6, beta: 0.7, name: sp-natural-natural-s6}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 7, beta: 0.7, name: sp-natural-natural-s7}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 8, beta: 0.7, name: sp-natural-natural-s8}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 9, beta: 0.7, name: sp-natural-natural-s9}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: natural, delivery: controlled, breathiness: none, seed: 10, beta: 0.7, name: sp-natural-natural-s10}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 6, beta: 0.7, name: sp-natural-high-s6}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 7, beta: 0.7, name: sp-natural-high-s7}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 8, beta: 0.7, name: sp-natural-high-s8}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 9, beta: 0.7, name: sp-natural-high-s9}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: natural, pitch: high, delivery: controlled, breathiness: none, seed: 10, beta: 0.7, name: sp-natural-high-s10}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: low, delivery: controlled, breathiness: none, seed: 6, beta: 0.7, name: sp-very_fast-low-s6}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: low, delivery: controlled, breathiness: none, seed: 7, beta: 0.7, name: sp-very_fast-low-s7}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: low, delivery: controlled, breathiness: none, seed: 8, beta: 0.7, name: sp-very_fast-low-s8}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: low, delivery: controlled, breathiness: none, seed: 9, beta: 0.7, name: sp-very_fast-low-s9}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: low, delivery: controlled, breathiness: none, seed: 10, beta: 0.7, name: sp-very_fast-low-s10}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 6, beta: 0.7, name: sp-very_fast-natural-s6}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 7, beta: 0.7, name: sp-very_fast-natural-s7}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 8, beta: 0.7, name: sp-very_fast-natural-s8}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 9, beta: 0.7, name: sp-very_fast-natural-s9}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: natural, delivery: controlled, breathiness: none, seed: 10, beta: 0.7, name: sp-very_fast-natural-s10}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: high, delivery: controlled, breathiness: none, seed: 6, beta: 0.7, name: sp-very_fast-high-s6}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: high, delivery: controlled, breathiness: none, seed: 7, beta: 0.7, name: sp-very_fast-high-s7}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: high, delivery: controlled, breathiness: none, seed: 8, beta: 0.7, name: sp-very_fast-high-s8}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: high, delivery: controlled, breathiness: none, seed: 9, beta: 0.7, name: sp-very_fast-high-s9}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: moderate, volume: normal, speed: very_fast, pitch: high, delivery: controlled, breathiness: none, seed: 10, beta: 0.7, name: sp-very_fast-high-s10}

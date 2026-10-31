@@ -68,6 +68,9 @@ Direction の欄は語の数が欄ごとに違うが、**声に届く段の数�
   は端でも残り**（−9〜−11 / −17〜−21 Hz・`acting-knob-stack-cold/`）、`pitch` を振ると
   半分残る（+6.8 → +3.4 / +2.1 Hz・`acting-knob-stack-pitch/`）。
   **aggressive は `speed: natural` で使う。**
+- **強い欄どうしも足し算にならない。** `speed` の高さの効きは `pitch: low` で 0.5 Hz に
+  なる（natural +4.3・high +5.9 Hz・`acting-knob-stack-speed-pitch/`）。**長さは動く。**
+  この条件では `pitch` の `high` は効かず（−0.1 Hz）、`low` だけが段になる（−13.5 Hz）。
 - **強弱を `intensity` の書き分けで作らない。** `subtle` と `moderate` は同じ音になる。
 - **`delivery` の真ん中 8 語（gentle / cheerful / hesitant / restrained / subtle /
   suppressed / intimate / controlled）は、書き分けても同じ声になる。** 動くのは `aggressive`・

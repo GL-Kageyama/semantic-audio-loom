@@ -1,6 +1,6 @@
 # 長尺ラン — STATE（再開のための唯一の現在地）
 
-最終更新：2026-10-31 14:43 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
+最終更新：2026-10-31 14:46 / 段：**P0–P6 完了（＋ beta の端：alpha・pitch・感情の外の軸・決定論・感情×delivery・床の作品版・計器の修理・作品の段の pitch・seed の頑健さ・配布の高さ・感情×seed・P2 の読み直し・強度の段）**
 ユーザーは約 10 時間不在。質問しない。門を 20 分超えたら「未達」で次へ。
 
 ## この Mac（時間の数字はマシンが違えば比べられない）
@@ -449,6 +449,12 @@ projects/longform/
    （low は平均 +7.0 だが seed 5 の +22.9 が作っていて 5/5・p = 0.15）。
    ✅ **pitch の段の向きは感情で変わる**：joy・moderate では low 310.8 / natural 318.6 /
    high 321.5 Hz（**下が離れる**）で、neutral の声（264.0 → 282.8 Hz・上が離れる）と逆。
+   ✅ **強い欄どうし（speed × pitch）も足し算にならない**（`acting-knob-stack-speed-pitch/`・
+   speed 2 × pitch 3 × **seed 10 本**・60 本）。速さの高さの効きは pitch high +5.9 Hz・
+   natural +4.3・**low +0.5（p = 0.91）**。加算からのずれ −3.8 / +1.7 Hz（p ≥ 0.35）。
+   **長さは −0.62〜−0.76 秒・10/10 で動く**（重ねても減らない）。この条件（controlled）では
+   `pitch` の high が **−0.1 Hz** で効かず、low だけが段（−13.5 Hz・9/10）。
+   ⚠️ **low は seed 5 本では 4/5 だった**——10 本で向きが揃う。**「効かない」は seed を増やしてから。**
    ✅ **breathiness も 2 段だが幅が小さい**（`acting-breath-070/`・20 本）。有声の割合
    none 0.276 → heavy 0.263（moderate/heavy 0/5・p ≤ 0.021）、高域の比 +10%。
    ✅ **beta 0.3 でも seed 5 本なら出る**（`acting-breath-030/`・20 本）：slight は有声
