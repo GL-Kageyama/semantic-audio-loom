@@ -89,6 +89,7 @@ projects/longform/
   acting-punctuation-floor/  文末の記号 × beta 3 段 × seed 5（床で `！` は消え `？` は残る）
   acting-floor-mark-lines/  3 行 × 2 声 × beta 2 段 × 記号 2 × seed 3（上の再現）
   acting-punctuation-speed/  速さ 3 段 × 文末の記号 × seed 5（記号は高さ、速さは長さ）
+  acting-speed-voices/      2 声 × 速さ 3 段 × 記号 2 × seed 3（記号は声を替えても残り、速さは声に依らず同じ尺）
   acting-punctuation-long/  24 文字の行で文末の記号 × seed 5（長い行でも効くか・途中の句点の対照）
   acting-punctuation-mid/   14 文字の行で `。` / `！` × seed 5（真ん中の長さ）
   acting-punctuation-period/  9 文字のまま途中を句点にした行（途中の切れ目の効果）
