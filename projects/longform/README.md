@@ -35,7 +35,8 @@
 [examples/longform-floor-mark/](../../examples/longform-floor-mark/)（33 秒・床では `！` が消える）と
 [examples/longform-scripting/](../../examples/longform-scripting/)（35 秒・同じ場面を書き方だけで 2 通り）と
 [examples/longform-speed/](../../examples/longform-speed/)（46 秒・速さは長さ、記号は高さ）と
-[examples/longform-mark-emotion/](../../examples/longform-mark-emotion/)（50 秒・感情の上に記号を足す）。
+[examples/longform-mark-emotion/](../../examples/longform-mark-emotion/)（50 秒・感情の上に記号を足す）と
+[examples/longform-drama-mark/](../../examples/longform-drama-mark/)（41 秒・作品の台詞の文末だけ `！`・音量は未達）。
 
 ## 置き場
 
@@ -120,6 +121,7 @@ projects/longform/
   scripting-demo/     同じ場面を記号の書き方だけで 2 通りにした 35 秒の見本
   speed-demo/         速さ 3 段と記号と声を並べた 46 秒の見本（速さは長さ、記号は高さ）
   mark-emotion-demo/  感情の上に記号を足す 50 秒の見本（sadness + `！` は neutral + `！` と同じ高さ）
+  drama-mark-demo/    作品の台詞の文末だけ `！` にする 41 秒の見本（欄は変えない）
   drama-s2/          既定 0.7 の芝居を seed 2 で作ったもの（drift の測定用・声だけ）
   drama-seed-split/  演劇のニジだけ seed 2 にした版（人物を seed で分けられるか）
   acting-breath-s70/ 芝居 s70 の 1 行で breathiness だけを none / slight に振る（6 本）

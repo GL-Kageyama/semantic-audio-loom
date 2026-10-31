@@ -3834,3 +3834,14 @@ date	stage	asset	model	settings	wall_s	audio_s	machine	note
 2026-10-31	P2b	acting-drama-mark/voice/dm-s63-period-s3	tsukasa	emotion=sadness,intensity=strong,delivery=desperate,speed=slow,volume=normal,seed=3,alpha=0.35,beta=0.7	0.5	2.90	M2Pro-16GB	rc=0
 2026-10-31	P2b	acting-drama-mark/voice/dm-s63-exclaim-s3	tsukasa	emotion=sadness,intensity=strong,delivery=desperate,speed=slow,volume=normal,seed=3,alpha=0.35,beta=0.7	0.6	2.90	M2Pro-16GB	rc=0
 2026-10-31	P2b	acting-drama-mark/voice (まとめ)	tsukasa	cues=12	17.9	42.35	M2Pro-16GB	rc=0 合計
+2026-10-31	P2b	drama-mark-demo/voice/n-intro	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	10.8	4.62	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-mark-demo/voice/dm28-period	tsukasa	emotion=fear,intensity=strong,delivery=desperate,speed=fast,volume=normal,seed=2,alpha=0.35,beta=0.7	0.6	3.60	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-mark-demo/voice/dm28-exclaim	tsukasa	emotion=fear,intensity=strong,delivery=desperate,speed=fast,volume=normal,seed=2,alpha=0.35,beta=0.7	0.6	3.50	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-mark-demo/voice/n-fields	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.7	3.20	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-mark-demo/voice/dm31-period	tsukasa	emotion=anger,intensity=strong,delivery=aggressive,speed=fast,volume=loud,seed=2,alpha=0.35,beta=0.7	0.7	4.42	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-mark-demo/voice/dm31-exclaim	tsukasa	emotion=anger,intensity=strong,delivery=aggressive,speed=fast,volume=loud,seed=2,alpha=0.35,beta=0.7	0.7	4.05	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-mark-demo/voice/n-long	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.7	3.87	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-mark-demo/voice/dm63-period	tsukasa	emotion=sadness,intensity=strong,delivery=desperate,speed=slow,volume=normal,seed=2,alpha=0.35,beta=0.7	0.5	3.00	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-mark-demo/voice/dm63-exclaim	tsukasa	emotion=sadness,intensity=strong,delivery=desperate,speed=slow,volume=normal,seed=2,alpha=0.35,beta=0.7	0.6	3.10	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-mark-demo/voice/n-close	tsukasa	emotion=neutral,intensity=moderate,delivery=controlled,speed=natural,volume=normal,seed=4,alpha=0.35,beta=0.7	0.7	3.85	M2Pro-16GB	rc=0
+2026-10-31	P2b	drama-mark-demo/voice (まとめ)	tsukasa	cues=10	16.7	37.20	M2Pro-16GB	rc=0 合計

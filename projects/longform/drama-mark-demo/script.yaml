@@ -1,0 +1,17 @@
+# 聞き比べ：作品の台詞の文末だけを `！` にする
+#
+# `acting-drama-mark/`（演劇の強い 3 行 × 記号 2 × seed 3）を耳で確かめる。
+# 欄（感情・強度・声量・速さ・delivery）は台本のまま、変えるのは文末の 1 字だけ。
+name: drama-mark-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 作品の台詞を、文末の一字だけ変えて聴きます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: mashiro, line: やめて。そういうの、やめて。, emotion: fear, intensity: strong, volume: normal, speed: fast, delivery: desperate, seed: 2, beta: 0.7, pause_before: 0.4, name: dm28-period}
+- {character: mashiro, line: やめて。そういうの、やめて！, emotion: fear, intensity: strong, volume: normal, speed: fast, delivery: desperate, seed: 2, beta: 0.7, pause_before: 0.8, name: dm28-exclaim}
+- {character: narrator, line: 欄は、ひとつも変えていません。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, seed: 4, pause_before: 1.0, name: n-fields}
+- {character: mashiro, line: なんで。なんで、そういうこと、平気で言うの。, emotion: anger, intensity: strong, volume: loud, speed: fast, delivery: aggressive, seed: 2, beta: 0.7, pause_before: 0.6, name: dm31-period}
+- {character: mashiro, line: なんで。なんで、そういうこと、平気で言うの！, emotion: anger, intensity: strong, volume: loud, speed: fast, delivery: aggressive, seed: 2, beta: 0.7, pause_before: 0.8, name: dm31-exclaim}
+- {character: narrator, line: 長い行は、効きが小さくなります。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, seed: 4, pause_before: 1.0, name: n-long}
+- {character: mashiro, line: まだ、話したい。, emotion: sadness, intensity: strong, volume: normal, speed: slow, delivery: desperate, seed: 2, beta: 0.7, pause_before: 0.6, name: dm63-period}
+- {character: mashiro, line: まだ、話したい！, emotion: sadness, intensity: strong, volume: normal, speed: slow, delivery: desperate, seed: 2, beta: 0.7, pause_before: 0.8, name: dm63-exclaim}
+- {character: narrator, line: 短い行ほど、大きく動きます。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, seed: 4, pause_before: 1.0, name: n-close}

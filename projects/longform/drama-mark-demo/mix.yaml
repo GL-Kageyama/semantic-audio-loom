@@ -1,0 +1,50 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: drama-mark-demo
+stems:
+- file: ../assets/drama-mark-demo/voice_trim/n-intro.wav
+  role: voice
+  start: 1.4
+  gain_db: 0.0
+- file: ../assets/drama-mark-demo/voice_trim/dm28-period.wav
+  role: voice
+  start: 5.87
+  gain_db: 0.0
+- file: ../assets/drama-mark-demo/voice_trim/dm28-exclaim.wav
+  role: voice
+  start: 9.786
+  gain_db: 0.0
+- file: ../assets/drama-mark-demo/voice_trim/n-fields.wav
+  role: voice
+  start: 13.833
+  gain_db: 0.0
+- file: ../assets/drama-mark-demo/voice_trim/dm31-period.wav
+  role: voice
+  start: 17.041
+  gain_db: 3.0
+- file: ../assets/drama-mark-demo/voice_trim/dm31-exclaim.wav
+  role: voice
+  start: 21.857
+  gain_db: 3.0
+- file: ../assets/drama-mark-demo/voice_trim/n-long.wav
+  role: voice
+  start: 26.52
+  gain_db: 0.0
+- file: ../assets/drama-mark-demo/voice_trim/dm63-period.wav
+  role: voice
+  start: 30.465
+  gain_db: 0.0
+- file: ../assets/drama-mark-demo/voice_trim/dm63-exclaim.wav
+  role: voice
+  start: 33.493
+  gain_db: 0.0
+- file: ../assets/drama-mark-demo/voice_trim/n-close.wav
+  role: voice
+  start: 37.292
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95

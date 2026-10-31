@@ -94,6 +94,10 @@
   `！` が消える。`beta` 0.7 では `。` から `！` で +33.6 Hz（326.0 → 359.6）だが、
   床では**同じ 249.9 Hz**（0:16.5 と 0:19.2）。`？` だけは床でも上がる（264.8 Hz）。
   **`！` は演技、`？` は地の読み**（`floor-mark-demo/`・`acting-punctuation-floor/`）。
+- `examples/longform-drama-mark/drama-mark-demo.mp3`（0:41）——**作品の台詞の文末だけ**を
+  `！` にする。欄は 1 つも変えない。s63「まだ、話したい」（0:30.4 → 0:33.4）が
+  **277.3 → 365.9 Hz**、s31 の長い行（0:17.0 → 0:21.8）は **+3.4 Hz だけ**
+  （`drama-mark-demo/`・`acting-drama-mark/`）。
 - `examples/longform-mark-emotion/mark-emotion-demo.mp3`（0:50）——**感情の上に記号を足す**。
   neutral `！`（0:08.7）と **sadness `！`（0:25.1）が同じ 313.0 Hz**。sadness は `。` の
   ままなら 283.8 で、記号だけで +29.2 Hz 上がる。joy +35.1・anger +36.4・fear +33.5
@@ -109,9 +113,9 @@
 
 ## 音量について
 
-examples の mp3 は 25 本。**20 本が −16 ±1.0 LUFS**（トゥルーピーク −1.00〜−1.31 dBTP）。
-未達は 5 本で、**すべてピークに当たっている**：`drama-beta00-pitch` −17.40・
-`explainer` −18.16・`floor-two-speakers-natural` −17.64・`intensity-demo` −17.38・
-`knob-demo` −17.10。**トゥルーピークが −1.13〜−1.27 dBTP なので、直線のゲインで
-上げられるのは 0.13〜0.27 dB だけで、−16 LUFS には届かない。** そろえるには圧縮が要るので、
+examples の mp3 は 26 本。**20 本が −16 ±1.0 LUFS**（トゥルーピーク −1.00〜−1.31 dBTP）。
+未達は 6 本で、**すべてピークに当たっている**：`drama-beta00-pitch` −17.40・
+`drama-mark` −17.89・`explainer` −18.16・`floor-two-speakers-natural` −17.64・
+`intensity-demo` −17.38・`knob-demo` −17.10。**トゥルーピークが −1.06〜−1.27 dBTP
+なので、直線のゲインで上げられるのは 0.06〜0.27 dB だけで、−16 LUFS には届かない。** そろえるには圧縮が要るので、
 測る段では掛けていない（`deliver.py`・`REPORT.md` の「配布の高さ」）。
