@@ -32,6 +32,9 @@ f0 中央値を seed 5 本で平均した値の、対の差（beta 0.7 の既定
    **作品の台詞でも効く**——演劇の `intensity: strong` 9 行を文末だけ `！` にすると
    +15.5〜+120.2 Hz（27/27・欄は 1 つも変えない・[`acting-drama-mark/`](acting-drama-mark/)）。
    **短い行ほど大きく**（ひとことの「ニジ！」+120.2）、長い行ほど小さい（+15.5）。
+   **強度の欄が弱い行でも同じ**（`subtle` 6 行の平均 +82.7・`moderate` 6 行 +55.3・
+   11/12 で正・[`acting-drama-mark-weak/`](acting-drama-mark-weak/)）——台詞を強く
+   したいときは、まず文末に `！` を書く。
 2. **間は台詞の読点で作らない。** `pause_before` と `assemble.py` で作る。
    読点は高さを下げるだけ（−17 Hz）。**書いた間は、そのまま焼ける**（0.0〜1.5 秒の
    5 段で、焼いた無音は書いた値 +0.08 秒・一定・[`pause-check/`](pause-check/)）。
@@ -63,7 +66,8 @@ f0 中央値を seed 5 本で平均した値の、対の差（beta 0.7 の既定
   `acting-punctuation-pitch/`（`pitch` 3 段と掛けた 30 本＋joy の 15 本）・
   `acting-punctuation-floor/`（`beta` 0.0 / 0.3 / 0.5 / 0.7 の 80 本）・
   `acting-punctuation-speed/`（速さ 3 段と掛けた 30 本）・`acting-speed-voices/`（2 声 × 速さ 3 段 × 記号 2 の 36 本）・
-  `acting-drama-mark/`（作品の強い 9 行 × 記号 2 × seed 3 の 54 本）
+  `acting-drama-mark/`（作品の強い 9 行 × 記号 2 × seed 3 の 54 本）・
+  `acting-drama-mark-weak/`（強くない 12 行 × 記号 2 × seed 2 の 48 本）
 - 表記・読点：`acting-notation/`
 - 間：`acting-pauses/`・`pause-check/`（`pause_before` 5 段の焼き上がり）
 - 欄の効き：`REPORT.md`「一覧（何が、どこまで効くか）」
