@@ -129,3 +129,7 @@ PYTHONPATH=. $PY projects/longform/check_render.py \
 
 生のキュー（`assets/**/*.wav`）は追わない。同じ台詞・同じ seed で作り直せるため。
 配布するのは組み上げた 1 本の **MP3** と、`.params.yaml`・`schema`・`mix.yaml`。
+
+リポジトリに入れる音（配布する MP3・`examples/longform/` の見本 WAV）は **Git LFS** を通る
+（規則はリポジトリ根の `.gitattributes`）。実体は GitHub の LFS ストレージに在り、
+clone には `git-lfs` が要る。

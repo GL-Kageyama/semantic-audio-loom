@@ -40,3 +40,7 @@ README / SKILL には**現在の情報だけ**を書く。現在の機能・CLI�
 
 - `git push` はユーザーが明示的に依頼した時だけ。依頼なしの push は禁止。
 - コミットメッセージ末尾に `Co-Authored-By: Claude <noreply@anthropic.com>` を付ける。
+- **`git add -A` は使わない。** 触ったパスだけを add する（他の未コミット変更を巻き込まない）。
+- **音声と画像は Git LFS に入れる**：`*.wav` `*.mp3` `*.m4a` `*.flac` `*.ogg` `*.mp4` `*.png` `*.jpg` `*.jpeg`（規則は `.gitattributes`）。
+  **テキスト（コード・YAML・Markdown・TSV・JSON）は対象外。** 新しいバイナリ形式を追うときは `.gitattributes` に 1 行足す。
+  ⚠️ `git-lfs` の無い clone はポインタを降ろす。`git lfs pull` が要る。

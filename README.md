@@ -116,6 +116,18 @@ bin/          schemas/     docs/           # CLI / JSON Schema / 深掘り
 skills/       .claude-plugin/              # facade スキル / プラグイン配布
 ```
 
+## Git（LFS）
+
+**音声と画像は Git LFS で入る**（`*.wav` `*.mp3` `*.m4a` `*.flac` `*.ogg` `*.mp4` `*.png` `*.jpg` `*.jpeg`。
+規則は [`.gitattributes`](.gitattributes)）。コミットされるのは小さなテキストのポインタで、
+実体は GitHub 上の**このリポジトリの LFS ストレージ**にある（別のリポジトリではない）。
+**テキスト（コード・YAML・Markdown・TSV）は対象外**で、普通の blob として入る。
+HEAD で LFS が抱えるのは **90 本・約 103 MB**（wav 56・mp3 33・png 1）。
+
+⚠️ `git-lfs` の無い clone は実体ではなくポインタを降ろす。clone の前に `git-lfs` を入れ、
+後なら `git lfs pull` を走らせる。
+⚠️ LFS はリポジトリとは別に計量され、所有者のアカウントに計上される（無料枠は保存 10 GiB・転送 10 GiB/月）。
+
 ## ドキュメント
 
 | 文書 | 内容 |
