@@ -72,6 +72,10 @@
   `。` / `？` / `！` / なしに振った。**`！` の 2 本がいちばん高い**（359.6 / 341.4 Hz）・
   **記号なしの seed 3 がいちばん低い**（260.2 Hz）。**記号は間ではなく高さを動かす**
   （`punctuation-demo/`・`acting-punctuation/`）。
+- `examples/longform-punctuation-shape/punctuation-shape-demo.mp3`（1:00）——同じ `！` で
+  終わる 4 種の行を、**途中が読点か句点か**だけ替えて並べた。**同じ seed で、句点の側が
+  毎回低い**（seed 1：359.6 → 333.6 Hz）。**末尾の記号より、途中で切れていないこと**
+  が効いている（`punctuation-shape-demo/`・`acting-punctuation-period/`）。
 - `examples/longform-knobs/knob-demo.mp3`（1:09）——同じ一行で、**速さ 5 語**と
   **演技の型 3 語**だけを振った。**速さは 0:10.3 → 0:32.5 で 4.35 秒 → 2.30 秒**、
   型は **0:43.4（やさしく）と 0:48.3（平ら）だけが違う**（`acting-speed/`・
@@ -79,7 +83,7 @@
 
 ## 音量について
 
-examples の mp3 は 18 本。**13 本が −16 ±1.0 LUFS**（トゥルーピーク −1.01〜−1.31 dBTP）。
+examples の mp3 は 19 本。**14 本が −16 ±1.0 LUFS**（トゥルーピーク −1.00〜−1.31 dBTP）。
 未達は 5 本で、**すべてピークに当たっている**：`drama-beta00-pitch` −17.40・
 `explainer` −18.16・`floor-two-speakers-natural` −17.64・`intensity-demo` −17.38・
 `knob-demo` −17.10。**トゥルーピークが −1.13〜−1.27 dBTP なので、直線のゲインで

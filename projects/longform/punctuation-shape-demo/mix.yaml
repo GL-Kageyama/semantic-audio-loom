@@ -1,0 +1,66 @@
+# assemble.py が script.yaml と voice/ の実尺から書く（手で編集しない）
+sample_rate: 44100
+output: punctuation-shape-demo
+stems:
+- file: ../assets/punctuation-shape-demo/voice_trim/n-intro.wav
+  role: voice
+  start: 1.4
+  gain_db: 0.0
+- file: ../assets/punctuation-shape-demo/voice_trim/n-short-comma.wav
+  role: voice
+  start: 7.183
+  gain_db: 0.0
+- file: ../assets/punctuation-shape-demo/voice_trim/p-short-comma-s1.wav
+  role: voice
+  start: 11.091
+  gain_db: 0.0
+- file: ../assets/punctuation-shape-demo/voice_trim/p-short-comma-s3.wav
+  role: voice
+  start: 14.03
+  gain_db: 0.0
+- file: ../assets/punctuation-shape-demo/voice_trim/n-short-period.wav
+  role: voice
+  start: 16.998
+  gain_db: 0.0
+- file: ../assets/punctuation-shape-demo/voice_trim/p-short-period-s1.wav
+  role: voice
+  start: 20.778
+  gain_db: 0.0
+- file: ../assets/punctuation-shape-demo/voice_trim/p-short-period-s3.wav
+  role: voice
+  start: 23.867
+  gain_db: 0.0
+- file: ../assets/punctuation-shape-demo/voice_trim/n-long-comma.wav
+  role: voice
+  start: 26.994
+  gain_db: 0.0
+- file: ../assets/punctuation-shape-demo/voice_trim/p-long-comma-s1.wav
+  role: voice
+  start: 30.874
+  gain_db: 0.0
+- file: ../assets/punctuation-shape-demo/voice_trim/p-long-comma-s3.wav
+  role: voice
+  start: 35.683
+  gain_db: 0.0
+- file: ../assets/punctuation-shape-demo/voice_trim/n-long-period.wav
+  role: voice
+  start: 40.754
+  gain_db: 0.0
+- file: ../assets/punctuation-shape-demo/voice_trim/p-long-period-s1.wav
+  role: voice
+  start: 44.468
+  gain_db: 0.0
+- file: ../assets/punctuation-shape-demo/voice_trim/p-long-period-s3.wav
+  role: voice
+  start: 49.522
+  gain_db: 0.0
+- file: ../assets/punctuation-shape-demo/voice_trim/n-close.wav
+  role: voice
+  start: 54.96
+  gain_db: 0.0
+duck:
+  threshold_db: -30.0
+  depth_db: 14.0
+  attack_s: 0.03
+  release_s: 0.45
+master_peak: 0.95

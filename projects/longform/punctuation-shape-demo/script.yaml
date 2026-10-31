@@ -1,0 +1,22 @@
+# 聞き比べ：同じ「！」でも、行の途中に句点があると効きが落ちる
+#
+# `acting-punctuation-period/` と `acting-punctuation-long/` の実測
+# （9 文字 +39.3 → +15.2 Hz・24 文字 +22.0 → +13.2 Hz）を耳で確かめる。
+# 語り手が札を読み、真白が同じ行を seed 1 と 3 で言う。末尾はすべて「！」。
+name: punctuation-shape-demo
+default_pause: 0.0
+cues:
+- {character: narrator, line: 同じ感嘆符でも、行の途中で文が切れると、効きが変わります。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 0.2, name: n-intro}
+- {character: narrator, line: 短い行。途中は読点。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-short-comma}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: p-short-comma-s1}
+- {character: mashiro, line: 明日、また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, pause_before: 0.8, name: p-short-comma-s3}
+- {character: narrator, line: 短い行。途中は句点。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-short-period}
+- {character: mashiro, line: 明日。また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: p-short-period-s1}
+- {character: mashiro, line: 明日。また来るね！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, pause_before: 0.8, name: p-short-period-s3}
+- {character: narrator, line: 長い行。途中は読点。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-long-comma}
+- {character: mashiro, line: 最初に会ったとき、画面の向こうで、虹が揺れてた！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: p-long-comma-s1}
+- {character: mashiro, line: 最初に会ったとき、画面の向こうで、虹が揺れてた！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, pause_before: 0.8, name: p-long-comma-s3}
+- {character: narrator, line: 長い行。途中は句点。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.0, name: n-long-period}
+- {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, pause_before: 0.4, name: p-long-period-s1}
+- {character: mashiro, line: 最初に会ったとき。画面の向こうで、虹が揺れてた！, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, pause_before: 0.8, name: p-long-period-s3}
+- {character: narrator, line: 感嘆符そのものより、途中で切れていないことが、声を上げています。, emotion: neutral, intensity: moderate, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, pause_before: 1.2, name: n-close}
