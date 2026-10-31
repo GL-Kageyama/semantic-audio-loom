@@ -60,6 +60,7 @@ projects/longform/
   acting-speed-longline/    芝居の長い行（24 文字）で speed 5 語 × seed 5（段は台詞の長さに依るか）
   acting-knob-stack/        speed × delivery の 2 × 2 × seed 5（段は積み上がるか）
   acting-breath-070/        breathiness 4 語 × seed 5（息は有声の割合に出るか）
+  acting-breath-030/        breathiness 4 語 × seed 5 を beta 0.3 で（0.3 では段にならない）
   acting/measure_breath.py  高域の比を出す（息の計器）
   intensity-demo/    強度の段だけを並べた 63 秒の見本（語り手の札つき）
   knob-demo/         速さ 5 語と演技の型 3 語を並べた 69 秒の見本

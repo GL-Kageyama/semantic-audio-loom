@@ -448,7 +448,7 @@ whisper より小さい。叫ぶと高く長くなるが、大きくはならな
 | `intonation` | 5（5） | **ほぼ 0**（5 語の幅 7.7 Hz 対 seed の幅 74〜87 Hz） | 語尾の傾きの中央値は wavering 3.18 > neutral 2.71 > flat 2.11 > rising −0.35 > falling −1.64（`acting-inton-070/`） |
 | `intensity` | 5（4） | **2** | subtle ≈ moderate、moderate → strong で跳ねる、上端は伸びない |
 | `delivery` | 12（12） | **3** | 真ん中 8 語は ±4 Hz、aggressive +6.7・desperate +8.4、cold −9.4・flat −18.4 Hz |
-| `breathiness` | 4（4） | **2**（幅 1.3 ポイント） | 有声の割合 0.276 → 0.263・高域の比 +10%（`acting-breath-070/`） |
+| `breathiness` | 4（4） | **2**（幅 1.3 ポイント。0.3 では段にならない） | 有声の割合 0.276 → 0.263・高域の比 +10%（`acting-breath-070/`・`acting-breath-030/`） |
 | `volume` | 5（5） | **0**（energy の段としては。shout だけ f0 +9.6・長さ +0.13 秒） | whisper と loud で energy 0.08 dB。ミックスの `VOLUME_GAIN` が 5 段作る |
 
 （`delivery` は `acting-delivery/` と `acting-delivery2/`・`speed` は `acting-speed/` と
@@ -475,11 +475,12 @@ whisper より小さい。叫ぶと高く長くなるが、大きくはならな
   **強い欄を振り切ると、弱い欄は埋まる。**
 - **語の数と段の数が、まったく対応しない。** 12 語の欄（delivery）が 3 段、
   5 語の欄（volume）が 0 段、5 語の欄（speed）が 5 段。
-- **breathiness は段になるが、幅が 1.3 ポイント。** 有声の割合が 5 seed とも同じ向きに
-  下がり（0/5・p = 0.021）、高域の比が +10%。ただし同じ欄が beta 0.3・neutral・seed 3 の
-  前の測定（`acting-breath/`）では差を出さなかった。**効果が小さいので、seed 3 本では
-  検出できない。** 囁き・息は、いまのところ欄では作れない（`volume` 0 段・
-  `breathiness` 1.3 ポイント）。
+- **breathiness は段になるが、幅が 1.3 ポイント。** 既定 0.7 で有声の割合が 5 seed とも
+  同じ向きに下がり（0/5・p = 0.021）、高域の比が +10%。**beta 0.3 でも seed 5 本なら
+  出る**（slight は有声 −2.8 ポイント・0/5、高域 +9.8%・**5/5・p = 0.0001**）が、
+  **単調にならない**（none 0.403 → slight 0.375 → moderate 0.385 → heavy 0.411。
+  heavy は f0 +16.9 Hz）。**段として使えるのは 0.7 のほう。** 囁き・息は、いまのところ
+  欄では作れない（`volume` 0 段・`breathiness` 1.3 ポイント）。
 - **強弱を演じさせたいなら speed と pitch。音量の強弱はミックス。**
   intensity の語を書き分けても、声は同じ段に留まる。
 
