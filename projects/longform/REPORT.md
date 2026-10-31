@@ -452,8 +452,8 @@ overwhelming は `acting-overwhelming-070/` の 15 本。基準線の f0 平均 
 - **高さだけではない。** moderate → strong で長さが anger +0.08 秒・joy +0.14 秒
   （5/5・p ≤ 0.016）、sadness で抑揚 +0.44 半音（5/5・p = 0.009）。energy・速さは動かない。
 
-**真ん中が動かないのは、真ん中に文言が無いからか。** `_INTENSITY_PHRASES` は
-0.40〜0.70 の帯に何も置かない（つまり moderate は「強度を言わない」）。そこへ
+**真ん中が動かないのは、真ん中に文言が無いからか。** 当時の `_INTENSITY_PHRASES` は
+0.40〜0.70 の帯に何も置かなかった（つまり moderate は「強度を言わない」）。そこへ
 "the feeling is moderately strong" を差し込んで moderate だけを作り直した
 （`acting-mod-phrase/`・15 本。原本は触らず、プロセスの中で表を差し替える）。
 
@@ -466,6 +466,25 @@ overwhelming は `acting-overwhelming-070/` の 15 本。基準線の f0 平均 
 **sadness だけ動く**（strong の +18.3 Hz の半分ほど）。**anger・joy は moderate で
 ほぼ飽和していて、文言を足しても動かない。** 段が 2 つに見えるのは、文言が無いから
 だけではなく、**感情ごとに飽和点が違う**から。
+
+**この文言は、いま既定に入っている**（`_INTENSITY_PHRASES` の 0.41〜0.70）。
+差し替えなしで同じ 15 本を作り直すと md5 が **15/15 一致**し、基準線との差も
++1.3 / +1.7 / +9.4 Hz と同じ（`acting-mod-phrase-ship/`）。**測った数字が、そのまま
+出荷した道の数字**。ほかの 3 帯の文言は変えていない。⚠️ **moderate の台詞は、
+変更の前後で同じ seed でも別の音**になる（2 作品で 60 行・焼き上がりは前の音のまま）。
+
+**では段はいくつになったか。** 同じ設定・同じ seed で 3 段を作り直した
+（`acting-intensity-steps-new/`・45 本）。**変えていない subtle と strong は md5 が
+30/30 一致**し、動いたのは moderate だけ。
+
+| 段の間 | anger | joy | sadness |
+| --- | --- | --- | --- |
+| subtle → moderate（前 → 後） | −2.7 → **−1.3 Hz**（1/5） | +0.4 → **+2.1 Hz**（5/5） | −0.8 → **+8.6 Hz**（5/5） |
+| moderate → strong（前 → 後） | +10.0 → **+8.7 Hz**（5/5） | +8.8 → **+7.2 Hz**（5/5） | +18.3 → **+8.9 Hz**（5/5） |
+
+**sadness だけ 3 段になった**（8〜9 Hz の等間隔）。anger は 2 段のまま、joy の
+真ん中は 2 Hz（seed の振れ 84.6 Hz の前では段にならない）。**どの感情でも、
+一番大きい一歩は「強」への一歩。**
 
 **「抑える」は、抑える動作にならない。** sadness の同じ帯に 3 つの文言を置いた
 （`acting-sadness-heldback/`・`acting-sadness-open/`・seed 5 本ずつ）。

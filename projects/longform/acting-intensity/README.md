@@ -1,10 +1,11 @@
 # 強度の段は、いくつあるか
 
 Direction の強度は 5 語（none / subtle / moderate / strong / overwhelming）。
-語は 5 つあるが、**声を動かす段は 2 つ**。真ん中が真ん中でなく、上端は感情によって
-逆へ振れる。
+**声が跳ねるのは moderate → strong の 1 か所**で、上端は感情によって逆へ振れる。
+真ん中の帯に文言を足すと sadness だけが動くので、いまは真ん中にも文言を置いている
+（[`acting-mod-phrase-ship/`](../acting-mod-phrase-ship/)）。
 
-## 語は 5 つ、散文は 3 つ
+## 語は 5 つ、散文は 4 つ
 
 `semantic_audio_loom/providers/tsukasa.py` の `_INTENSITY_PHRASES` が、強度を
 プロンプトの一言に変える。解決後の値（`engine/resolve.py` の `INTENSITY_MAP`）と対応させる。
@@ -13,12 +14,14 @@ Direction の強度は 5 語（none / subtle / moderate / strong / overwhelming�
 | --- | --- | --- |
 | none | 0.0 | （なし） |
 | subtle | 0.25 | the feeling is faint, barely showing |
-| moderate | 0.5 | **（なし）** |
+| moderate | 0.5 | the feeling is moderately strong |
 | strong | 0.75 | the feeling is strong, close to the surface |
 | overwhelming | 1.0 | the feeling is overwhelming, at its limit |
 
-**none と moderate は、散文が同じ（どちらも何も足さない）。** 5 語はプロンプトの上で
-4 段、実質は「faint」「なし」「strong」「overwhelming」の 3 種＋なし。
+⚠️ **この下の表は、真ん中の帯が空だったときの測定。** 当時の moderate は「強度に
+何も言わない」文だった（none と同じ散文・計 3 種＋なし）。いまは真ん中にも文言が入り
+4 種＋なしになった。**下の表の moderate の列は「文言なしの moderate」**として読む
+（今の既定で作り直すと別の音になる・[`acting-mod-phrase-ship/`](../acting-mod-phrase-ship/)）。
 
 ## 既定の混ぜ方（beta 0.7）では 2 段
 
@@ -79,6 +82,22 @@ seed 5 本そろえた差の検定（1 標本 t・差が 0 か）:
 - anger・joy の +1〜2 Hz は、seed の振れの前では「動いた」と言える大きさではない
   （anger の p は 0.028 だが、5 本の差は +2.1〜+0.0 Hz）。
 - ここで試した文言は 1 つ。**別の文言を置けば別の大きさになる**（次節で 2 つ足した）。
+
+### この文言は、いま既定になっている
+
+`"the feeling is moderately strong"` を `_INTENSITY_PHRASES` の真ん中（0.41〜0.70）へ
+入れた。上の 15 本を**差し替えなしで**同じ道から作り直すと、md5 が 15/15 一致した
+（`acting-mod-phrase-ship/`）。つまり**この表の +1.3 / +1.7 / +9.4 Hz は、そのまま
+既定の効き**。ほかの 3 帯の文言は変えていない。
+
+⚠️ **moderate の台詞は、この変更の前後で同じ seed でも別の音になる。** いまの 2 作品で
+moderate なのは explainer 32 行・drama 28 行（137 行のうち 60 行）。焼き上がりは
+前の音のまま残してある。
+
+**段はいくつになったか**（`acting-intensity-steps-new/`・3 段 × 3 感情 × seed 5・45 本）:
+**sadness が 3 段**（subtle→moderate +8.6・moderate→strong +8.9 Hz・どちらも 5/5）、
+**anger は 2 段のまま**（−1.3 Hz・1/5）、**joy の中間は 2.1 Hz**（5/5 だが段の幅では
+ない）。変えていない subtle と strong は **md5 30/30 一致**。
 
 ## 「抑える」は、抑える動作にならない
 

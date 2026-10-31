@@ -35,12 +35,26 @@ def test_intensity_none_adds_no_phrase():
     assert "faint" in tsukasa._spec_prompt("A voice.", _spec(0.25))
 
 
-def test_moderate_intensity_adds_no_phrase():
-    """中庸（0.35〜0.65）は余計な一言を足さない。感情の文言だけで足りる。"""
+def test_moderate_intensity_has_its_own_phrase():
+    """中庸（0.41〜0.70）にも強度の文言を 1 つ置く（4 段すべてが別の文になる）。
+
+    空だと moderate は「強度に何も言わない」文になり、strong と同じになる。
+    """
     moderate = tsukasa._spec_prompt("A voice.", _spec(0.55))
+    assert "moderately strong" in moderate
     assert "faint" not in moderate
-    assert "strong" not in moderate
     assert "overwhelming" not in moderate
+    phrases = {tsukasa._intensity_phrase(v) for v in (0.3, 0.5, 0.8, 1.0)}
+    assert len(phrases) == 4
+
+
+def test_intensity_bands_are_ordered_and_disjoint():
+    """帯の上端の境目で、文言が 1 つずつ進む（0.40 faint / 0.41 中庸 / 0.70 中庸 / 0.71 strong）。"""
+    assert "faint" in tsukasa._intensity_phrase(0.40)
+    assert "moderately" in tsukasa._intensity_phrase(0.41)
+    assert "moderately" in tsukasa._intensity_phrase(0.70)
+    assert "close to the surface" in tsukasa._intensity_phrase(0.71)
+    assert "at its limit" in tsukasa._intensity_phrase(1.0)
 
 
 def test_whisper_reaches_the_prompt():

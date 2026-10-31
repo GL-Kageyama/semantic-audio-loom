@@ -40,8 +40,11 @@ f0 実測（同一台詞・同一 Direction・State のみ変更）：
    `pauses`・`emphasis`・`breath` も書いてくるが、`_spec_prompt` は使わない。
 3. **声を動かすのは `intensity` が 0.40 の境をまたぐときだけ。** 1 欄ずつ振ると、
    `intonation` neutral ↔ wavering は **+1.0 Hz（2/5・3 本は差 0.0）**、
-   `intensity` 0.5 → 0.4（「the feeling is faint」の句）は **+6.9 Hz（両設定とも 5/5）**。
-   語尾の傾き（`f0_end_st_s`）にも揃った効果は出ない。
+   `intensity` 0.5 → 0.4（0.40 の境をまたいで「the feeling is faint」の句が付く）は
+   **+6.9 Hz（両設定とも 5/5）**。語尾の傾き（`f0_end_st_s`）にも揃った効果は出ない。
+   ⚠️ この +6.9 Hz は、**真ん中の帯（0.41〜0.70）が空だったとき**の値。いまは真ん中にも
+   文言があるので、同じ 2 値の差は測り直しになる（段の幅は
+   [`projects/longform/acting-intensity-steps-new/`](../projects/longform/acting-intensity-steps-new/)）。
 
 → **subtext → 抑揚語 の変換までは正しく、その先（抑揚語 → 声）がこのモデルでは効かない。**
 subtext が声に届くのは、LLM が強度の段を動かしたときだけである。

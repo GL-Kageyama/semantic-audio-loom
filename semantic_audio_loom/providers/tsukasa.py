@@ -128,9 +128,12 @@ EFFORT_TO_VOLUME = {
 # emotion.intensity（0〜1）→ プロンプトの強度文言。
 # emotion の文言だけでは強度が渡らない（anger subtle と strong がバイト一致した）。
 # 感情の名前は「どの感情か」しか言わず、「どれほどか」は別に書く必要がある。
+# 真ん中の帯（0.40〜0.70）にも文言を置く。空だと moderate が「強度に何も
+# 言わない」文になり、強度の効きが 2 段に見える（acting-mod-phrase/ の実測で
+# この文言は sadness +9.4 Hz・5/5）。文言は実測に使ったものと同じ。
 _INTENSITY_PHRASES = (
     (0.40, "the feeling is faint, barely showing"),
-    (0.70, ""),
+    (0.70, "the feeling is moderately strong"),
     (0.90, "the feeling is strong, close to the surface"),
     (1.01, "the feeling is overwhelming, at its limit"),
 )

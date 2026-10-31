@@ -1,0 +1,16 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-anger-s1.wav	2.973	349.4	9.0	-6.15	5.4	0.263	-14.0	36.3	60.0	0.2349	0.95	-16.0	0
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-anger-s2.wav	3.123	298.9	6.6	-0.81	6.0	0.291	-14.5	37.0	150.0	0.2524	0.95	-15.9	0
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-anger-s3.wav	2.948	312.1	8.6	1.58	6.2	0.214	-14.7	35.0	60.0	0.2441	0.95	-15.2	0
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-anger-s4.wav	3.548	343.4	8.5	1.61	5.9	0.354	-12.6	38.6	170.0	0.262	0.95	-15.7	0
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-anger-s5.wav	3.473	252.8	6.8	1.82	5.3	0.319	-13.7	35.9	130.0	0.2529	0.95	-15.8	0
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-joy-s1.wav	2.873	355.5	9.4	0.73	4.8	0.253	-13.8	36.7	130.0	0.2431	0.95	-15.8	0
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-joy-s2.wav	3.098	303.3	6.5	17.36	5.5	0.296	-14.2	33.3	150.0	0.271	0.95	-15.8	0
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-joy-s3.wav	2.873	316.7	8.4	0.43	4.6	0.205	-14.2	34.6	70.0	0.2708	0.95	-15.3	0
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-joy-s4.wav	3.473	343.4	8.3	0.51	5.2	0.322	-12.7	39.0	170.0	0.2816	0.95	-15.4	0
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-joy-s5.wav	3.473	260.2	6.7	17.36	5.8	0.319	-13.0	35.8	110.0	0.273	0.95	-15.7	0
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-sadness-s1.wav	2.998	341.4	8.9	-4.29	6.1	0.294	-15.0	36.6	100.0	0.2233	0.95	-16.6	0
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-sadness-s2.wav	3.173	292.1	6.5	-2.62	5.7	0.335	-15.2	34.8	140.0	0.2516	0.95	-16.3	0
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-sadness-s3.wav	3.148	302.4	8.1	6.79	5.2	0.276	-15.4	34.7	60.0	0.2317	0.95	-16.1	0
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-sadness-s4.wav	3.573	333.6	8.1	2.14	5.5	0.39	-13.1	35.1	110.0	0.2626	0.95	-16.0	0
+projects/longform/assets/acting-mod-phrase-ship/voice/mp-sadness-s5.wav	3.548	249.9	6.5	-1.5	5.4	0.344	-14.4	34.9	130.0	0.2338	0.95	-16.4	0

@@ -65,9 +65,12 @@ projects/longform/
 - P3 解説：311.4 s（5.19 分）・ピーク −0.4 dBFS・クリップ 0・効果音 10 本 +15 dB 以上・ducking −11.7 dB
 - P4 演劇：310.6 s（5.18 分）・ピーク −0.4 dBFS・クリップ 0・呼び出し +40.0 dB・切断 +21.8 dB・ducking −11.2 dB
 - 配布 mp3：演劇 −16.95 LUFS（合格）／解説 −18.16 LUFS（**未達**。直線ゲインでは届かず、圧縮の可否は著者の裁定として保留）
-- pytest 133 passed / 1 skipped。git は origin/main と一致（未 push 0）。
-- 残りは「著者の裁定」3 件（圧縮・`_INTENSITY_PHRASES`・未追跡の一時ディレクトリ）。
+- pytest 134 passed / 1 skipped。
+- 残りは「著者の裁定」2 件（圧縮・未追跡の一時ディレクトリ）。
   **m04「照れ隠し」は 2026-11-01 の裁定で作り直さない。** `戻ってきたときの要約.md` に記載。
+- `_INTENSITY_PHRASES` の真ん中の帯は **2026-11-01 の裁定で実装**（下の 38）。
+  ⚠️ これで 2 作品の moderate 60 行は、`--force` で作り直すと同じ seed でも別の音になる
+  （いまの焼き上がりは前の音のまま）。
 
 ## P1 途中経過（2026-10-31 09:10）
 
@@ -403,6 +406,14 @@ projects/longform/
    ✅ **真ん中に文言を置くと sadness は +9.4 Hz 動く**（5/5・p = 0.0015）が、anger +1.3・
    joy +1.7 は動かない（`acting-mod-phrase/`・`acting/mod_phrase_build.py` が
    `_INTENSITY_PHRASES` をプロセス内だけで差し替える）。**飽和点が感情で違う。**
+   ✅ **その文言は 2026-11-01 に既定へ入れた**（0.41〜0.70）。差し替えなしで同じ 15 本を
+   作り直すと **md5 15/15 一致**・基準線との差も +1.3 / +1.7 / +9.4 Hz と同じ
+   （`acting-mod-phrase-ship/`）。**測った数字が出荷した道の数字。**
+   ✅ **段は anger 2・joy 2・sadness 3 になった**（`acting-intensity-steps-new/`・
+   3 段 × 3 感情 × seed 5・45 本）。sadness は subtle→moderate **+8.6 Hz（5/5）**・
+   moderate→strong **+8.9 Hz（5/5）** で **8〜9 Hz の等間隔**。anger は −1.3（1/5）で
+   2 段のまま、joy は +2.1（5/5）だが 2 Hz。**変えていない subtle・strong は
+   md5 30/30 一致**（散文を変えていない段は音も変わらない）。
    ✅ **「抑える」は抑える動作にならない**（`acting-sadness-heldback/`・`acting-sadness-open/`・
    sadness moderate × seed 5・文言 3 種）。文言なし 294.4 に対し、held back +2.2・
    steady and open +5.4・moderately strong +9.4 Hz（どれも 5/5）。**語を足せば上がる。

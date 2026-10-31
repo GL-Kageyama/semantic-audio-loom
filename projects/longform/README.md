@@ -64,6 +64,8 @@ projects/longform/
   acting-overwhelming-070/  既定 0.7 で overwhelming だけを seed 5 で作った 15 本
   acting-intensity-sadness/ sadness の上端を beta 0.3 で確かめる 6 本
   acting-mod-phrase/ 強度の真ん中に文言を置いた 15 本（原本は触らず、表を差し替える）
+  acting-mod-phrase-ship/  同じ 15 本を既定の表で作り直し、md5 が合うかを見る
+  acting-intensity-steps-new/  真ん中に文言を入れた後、段はいくつか（45 本）
   acting-sadness-heldback/  acting-sadness-open/  sadness の真ん中に「抑える」「開く」を置いた各 5 本
   acting-anger-heldback/    anger でも「抑える」を試した 5 本
   acting-intensity-line2/   2 行目で強度 4 段 × 3 感情 × seed 5（形が台詞に依るか）
