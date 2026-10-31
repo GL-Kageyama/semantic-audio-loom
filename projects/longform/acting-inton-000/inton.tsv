@@ -1,0 +1,16 @@
+path	duration	f0_median_hz	f0_range_st	f0_end_st_s	rate_mora_s	pause_ratio	energy_median_db	energy_range_db	attack_ms	voiced_fraction	peak	rms_db	clipped
+projects/longform/assets/acting-inton-000/voice/falling-s1.wav	2.523	242.8	7.9	14.32	6.4	0.176	-13.9	38.0	140.0	0.4032	0.95	-13.7	0
+projects/longform/assets/acting-inton-000/voice/falling-s2.wav	2.523	247.8	7.8	13.12	6.4	0.176	-13.2	37.5	140.0	0.4348	0.95	-13.4	0
+projects/longform/assets/acting-inton-000/voice/falling-s3.wav	2.523	242.1	7.8	14.29	6.4	0.176	-13.2	37.7	140.0	0.4348	0.95	-13.3	0
+projects/longform/assets/acting-inton-000/voice/falling-s4.wav	2.523	249.9	7.7	13.78	6.4	0.176	-13.6	37.5	150.0	0.4466	0.95	-13.5	0
+projects/longform/assets/acting-inton-000/voice/falling-s5.wav	2.523	251.4	7.8	13.76	5.9	0.176	-12.8	37.4	140.0	0.419	0.95	-13.1	0
+projects/longform/assets/acting-inton-000/voice/flat-s1.wav	2.498	248.5	7.4	12.3	6.6	0.188	-12.9	37.8	120.0	0.432	0.95	-13.1	0
+projects/longform/assets/acting-inton-000/voice/flat-s2.wav	2.498	248.5	7.4	14.38	6.6	0.183	-12.8	38.0	120.0	0.456	0.95	-13.0	0
+projects/longform/assets/acting-inton-000/voice/flat-s3.wav	2.498	244.9	7.3	14.35	7.1	0.188	-13.0	36.4	120.0	0.464	0.95	-13.1	0
+projects/longform/assets/acting-inton-000/voice/flat-s4.wav	2.498	250.6	7.3	14.14	6.6	0.187	-13.2	37.8	140.0	0.464	0.95	-13.2	0
+projects/longform/assets/acting-inton-000/voice/flat-s5.wav	2.498	252.8	7.5	12.39	6.5	0.182	-12.4	38.5	140.0	0.44	0.95	-12.5	0
+projects/longform/assets/acting-inton-000/voice/rising-s1.wav	2.498	238.6	8.2	14.73	6.6	0.187	-13.7	32.1	120.0	0.408	0.95	-13.6	0
+projects/longform/assets/acting-inton-000/voice/rising-s2.wav	2.498	238.6	8.1	14.23	6.6	0.187	-13.5	32.0	120.0	0.432	0.95	-13.4	0
+projects/longform/assets/acting-inton-000/voice/rising-s3.wav	2.498	234.5	8.1	14.32	6.5	0.182	-13.6	32.5	120.0	0.448	0.95	-13.4	0
+projects/longform/assets/acting-inton-000/voice/rising-s4.wav	2.498	238.6	8.2	15.08	6.5	0.182	-13.8	33.1	140.0	0.44	0.95	-13.4	0
+projects/longform/assets/acting-inton-000/voice/rising-s5.wav	2.498	238.6	8.3	14.87	6.5	0.178	-13.4	35.8	140.0	0.416	0.95	-13.2	0
