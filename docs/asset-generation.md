@@ -111,6 +111,25 @@ bin/asset.py --type foley --project demo --name cloth-rustle \
 依存は `pip install 'transformers>=4.40'`（musicgen）/ `pip install 'diffusers>=0.31'`
 （stable_audio）。どちらも重いので、コア（管理・検証・Resolve）には要らない。
 
+### 声の混ぜ方（alpha / beta）
+
+Tsukasa は参照音声の timbre ベクトルと、プロンプトから作った prosody ベクトルを
+1 本の `ref_s` に連結して合成する。割合を決めるのが 2 つのノブ（`config.ALPHA` /
+`config.BETA`、既定 0.35 / 0.7）。
+
+| ノブ | 下げると | 上げると |
+| --- | --- | --- |
+| `alpha` | 参照音声の声質を保つ | 声質もプロンプト寄りになる |
+| `beta` | **プロンプトの演技が乗る**・seed のばらつきも縮む | 参照音声に寄る・演技は seed の揺れに埋もれる |
+
+- 既定（beta 0.7）では感情の一文が音にほぼ出ない（10 感情 × seed 5 で分かれない）。
+  beta 0.3 では高覚醒（anger・joy）と低覚醒（neutral・sadness）の f0 が分かれるが、
+  参照音声からの声質の距離は広がる。**演技と声質の引き換え**。
+- 環境変数 `SAL_ALPHA` / `SAL_BETA` で振れる（測定用）。実際に使った値は
+  生成物の `params.yaml` に残るので、再生成の照合は崩れない。
+- ノブはプロセス全体に効く（1 本ごとには振れない）。人物や場面ごとに演技の強さを
+  変えるには生成を分けて走らせる。
+
 ## 保存形式
 
 `config.OUTPUT_FORMATS` が asset_type ごとの `(sample_rate, channels)` を持つ。

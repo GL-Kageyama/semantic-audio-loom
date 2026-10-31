@@ -52,7 +52,10 @@ def _metadata(cue, audio) -> dict:
 
 def _timing(cue, wall: float, audio_s: float, rc: int) -> str:
     perf = ",".join(f"{k}={v}" for k, v in sorted(cue.performance.items()))
-    settings = f"emotion={cue.emotion},intensity={cue.intensity},{perf},seed={cue.seed}"
+    # alpha / beta はプロセスのノブ（SAL_ALPHA / SAL_BETA）。同じ台詞でも値が違えば
+    # 別の音になるので、設定の列に残す。
+    settings = (f"emotion={cue.emotion},intensity={cue.intensity},{perf},seed={cue.seed},"
+                f"alpha={config.ALPHA},beta={config.BETA}")
     work = os.path.basename(os.path.dirname(OUT))
     stage = {"explainer": "P3", "drama": "P4"}.get(work, "P2b")
     return "\t".join([

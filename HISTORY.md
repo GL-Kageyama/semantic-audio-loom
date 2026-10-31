@@ -48,6 +48,27 @@
 - 完成：解説 311.2 秒（クリップ 0・効果音 10 本すべて +15 dB 以上・ducking −11.7 dB）、
   演劇 310.5 秒（呼び出し +40.1 dB・切断 +22.1 dB・ducking −11.2 dB）。
 
+### 感情は言葉の側でなくノブの側だった
+
+- 11 感情の側も seed 5 で振り直した（10 感情 × 5 seed＋基準線＋強度＝85 本）。
+  **8 指標のどれでも基準線から 5/5 で分かれない。** 散文は感情ごとに違う
+  （`params.yaml` の emotion が別）のに、音は seed の揺れの中に留まる。
+- 疑う先を言葉から `beta`（プロンプト由来の演技成分を混ぜるノブ・既定 0.7）へ移し、
+  同じ台詞・同じ seed で 0.7 / 0.5 / 0.3 を振った（4 感情 × 5 seed × 3 段＝60 本）。
+  f0 中央値は neutral 290 → 271 → 257 Hz、anger 311 → 322 → 320、joy 315 → 324 → 326、
+  sadness 292 → 292 → 284。**seed の揺れが 29 → 12 Hz に縮み、感情の差が残る。**
+  0.3 で高覚醒（anger・joy）と低覚醒（neutral・sadness）は重ならない。anger と joy は重なる。
+- 強度（subtle 0.25 / strong 0.75）も beta 0.3 で分かれる（30 本）。strong は f0 が
+  anger +31.2・joy +20.2・sadness +45.2 Hz（同じ seed で 5/5）。0.7 では分かれなかった。
+- 代償は声質。`references/mashiro.wav` との MFCC 距離は 0.7 で 17〜19、0.3 で 40〜53
+  （種の中の広がり 20.6）。**演技は声そのものを動かして出ている。**
+- 意味の写像ではない：sadness の strong で f0 が**上がる**。beta を下げると neutral 自身も
+  動く（290 → 257 Hz）。感情の一文は「演技だけを足す」のではなく、声全体の寄せ先を変える。
+- `SAL_ALPHA` / `SAL_BETA` を `config.py` に足した（測定用。params.yaml には実値が残るので
+  再生成の照合は崩れない）。beta は 1 本ごとには振れない（プロセス全体）。
+- 道具：`projects/longform/acting-matrix/summarize_matrix.py`（5/5 判定と
+  基準線の幅との比較）、`projects/longform/summarize_beta.py`、`projects/longform/measure_timbre.py`。
+
 ## 2026-10-31 — M5 音の生成＋ライブラリ（5 種すべて）
 
 ### スコープ

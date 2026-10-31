@@ -1,0 +1,34 @@
+# beta 0.3 で強度（subtle 0.25 / strong 0.75）が分かれるか。3 感情 × 5 seed。
+name: acting-beta-int
+default_pause: 0.0
+cues:
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: anger-subtle-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: anger-strong-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: joy-subtle-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: joy-strong-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: sadness-subtle-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 1, name: sadness-strong-s1}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: anger-subtle-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: anger-strong-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: joy-subtle-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: joy-strong-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: sadness-subtle-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 2, name: sadness-strong-s2}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: anger-subtle-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: anger-strong-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: joy-subtle-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: joy-strong-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: sadness-subtle-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 3, name: sadness-strong-s3}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: anger-subtle-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: anger-strong-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: joy-subtle-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: joy-strong-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: sadness-subtle-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 4, name: sadness-strong-s4}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: anger-subtle-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: anger, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: anger-strong-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: joy-subtle-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: joy, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: joy-strong-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: subtle, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: sadness-subtle-s5}
+- {character: mashiro, line: 明日、また来るね。, emotion: sadness, intensity: strong, volume: normal, speed: natural, delivery: controlled, breathiness: none, seed: 5, name: sadness-strong-s5}

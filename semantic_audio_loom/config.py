@@ -68,5 +68,7 @@ OUTPUT_FORMATS = {
 
 # Generation knobs (M0 実測で確定). alpha=低ほど参照 timbre 保持、beta=低ほど
 # プロンプト由来の口調（演技）成分が増える。beta は「ピッチ演技のノブ」。
-ALPHA = 0.35
-BETA = 0.7
+# 環境変数で振れる（同じ台詞を別のノブで作って比べる測定用）。生成した params.yaml には
+# 実際に使った値が入るので、再生成の照合は崩れない。
+ALPHA = float(os.environ.get("SAL_ALPHA", "0.35"))
+BETA = float(os.environ.get("SAL_BETA", "0.7"))
