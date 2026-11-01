@@ -2,6 +2,9 @@
 title: 脆弱性とサイバー攻撃
 subtitle: なぜ、同じ三つなのか
 channel: MIRAI × MIRABO
+# どの型で描き、誰が画面に居るか（semantic-guide-loom の templates/ と casts/ の名）。
+template: dialogue-bust
+cast: mirai-mirabo
 chapters:
   c01: {label: 序章, title: その画面の裏側, key: "名前は変わる。\n壊れる場所は変わらない。", term: 脆弱性}
   c07: {label: 第1章, title: 入力が、命令になる, key: "信じた文字列が、\n実行される。", term: 入力}

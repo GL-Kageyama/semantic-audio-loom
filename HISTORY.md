@@ -2,6 +2,24 @@
 
 日付入りの変更経緯・過去の設計との比較・実測値はここに記録する。現在の情報は README / docs / SKILL を見る。
 
+## 2026-11-01 — `--assets`（資材の根を外から指せるようにする）
+
+解説動画の絵の側が `semantic-guide-loom` へ出たので、**作品をそのリポジトリに置いたまま
+音だけこちらで作れる**ようにした。
+
+- `projects/longform/explainer/build_voice.py` … `--assets <資材の根>`
+- `projects/longform/assemble.py` … `--assets <資材の根>`
+
+資材の根とは `voice/` `voice_trim/` `voice_fx/` `renders/` の親。**既定は変えていない**
+（渡さなければ今までどおり `projects/longform/assets/<作品名>`）。
+
+ついでに `timings.tsv` の資材名を `--dir` の作品名から作るように直した。`--assets` を
+渡すと `OUT` の親から作品名を辿れず、`audio/voice/c01` と記録されていた。
+
+既定の経路が壊れていないことは実測で確かめた——`assemble.py --dir
+projects/longform/cyber-basics` が 103 stems / 287.3 秒を書き、**mix.yaml の diff は 0**。
+声量の幅も記録どおり（mirai 73 行 4.8 dB / mirabo 24 行 10.4 dB）。
+
 ## 2026-11-01 — 解説動画の声（97 キュー）と、行ごとの声量そろえ
 
 ### 作ったもの

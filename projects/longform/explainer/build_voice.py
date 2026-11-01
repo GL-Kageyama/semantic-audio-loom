@@ -56,11 +56,12 @@ def _timing(cue, wall: float, audio_s: float, rc: int, alpha: float, beta: float
     # 同じ台詞でも値が違えば別の音になるので、設定の列に残す。
     settings = (f"emotion={cue.emotion},intensity={cue.intensity},{perf},seed={cue.seed},"
                 f"alpha={alpha},beta={beta}")
-    work = os.path.basename(os.path.dirname(OUT))
+    # 作品名は --dir から取る（--assets を渡すと OUT の親からは辿れない）。
+    work = os.path.basename(WORK.rstrip("/"))
     stage = _stage()
     return "\t".join([
         datetime.date.today().isoformat(), stage,
-        f"{os.path.basename(os.path.dirname(OUT))}/voice/{cue.name}", "tsukasa", settings,
+        f"{work}/voice/{cue.name}", "tsukasa", settings,
         f"{wall:.1f}", f"{audio_s:.2f}", "M2Pro-16GB", f"rc={rc}",
     ])
 
@@ -75,12 +76,16 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true", help="既にある WAV も作り直す")
     ap.add_argument("--dir", default=WORK, help="作品の置き場（script.yaml の親）")
+    ap.add_argument("--assets", default="",
+                    help="資材の根（voice/ voice_trim/ renders/ の親）。既定は projects/longform/assets/<作品名>")
     args = ap.parse_args()
 
     WORK = os.path.abspath(args.dir)
     SCRIPT = os.path.join(WORK, "script.yaml")
-    OUT = os.path.join(config.project_dir("longform"), "assets",
-                       os.path.basename(WORK.rstrip("/")), "voice")
+    root = (os.path.abspath(args.assets) if args.assets
+            else os.path.join(config.project_dir("longform"), "assets",
+                              os.path.basename(WORK.rstrip("/"))))
+    OUT = os.path.join(root, "voice")
 
     scene = load_scene(SCRIPT)
     # cue ごとの alpha / beta（script.yaml に直接書く。scene は Direction だけを読むので
@@ -129,7 +134,7 @@ def main() -> None:
         header = not os.path.exists(TIMINGS) or os.path.getsize(TIMINGS) == 0
         total = "\t".join([
             datetime.date.today().isoformat(), _stage(),
-            f"{os.path.basename(os.path.dirname(OUT))}/voice (まとめ)", "tsukasa",
+            f"{os.path.basename(WORK.rstrip('/'))}/voice (まとめ)", "tsukasa",
             f"cues={len(rows)}", f"{wall_total:.1f}", f"{audio_total:.2f}",
             "M2Pro-16GB", "rc=0 合計",
         ])

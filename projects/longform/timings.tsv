@@ -5915,3 +5915,16 @@ date	stage	asset	model	settings	wall_s	audio_s	machine	note
 2026-11-01	P2b	cyber-basics/voice/c05	tsukasa	emotion=joy,intensity=subtle,speed=fast,seed=None,alpha=0.35,beta=0.7	0.7	2.05	M2Pro-16GB	rc=0
 2026-11-01	P2b	cyber-basics/voice/c25	tsukasa	emotion=neutral,intensity=none,speed=fast,seed=None,alpha=0.35,beta=0.7	0.8	4.15	M2Pro-16GB	rc=0
 2026-11-01	P2b	cyber-basics/voice (まとめ)	tsukasa	cues=3	13.2	9.42	M2Pro-16GB	rc=0 合計
+2026-11-01	P2b	making-a-guide/voice/c01	tsukasa	emotion=neutral,intensity=none,speed=natural,seed=None,alpha=0.35,beta=0.7	12.3	3.75	M2Pro-16GB	rc=0
+2026-11-01	P2b	making-a-guide/voice/c02	tsukasa	emotion=neutral,intensity=none,speed=natural,seed=None,alpha=0.35,beta=0.7	0.8	4.02	M2Pro-16GB	rc=0
+2026-11-01	P2b	making-a-guide/voice/c03	tsukasa	emotion=neutral,intensity=none,speed=natural,seed=None,alpha=0.35,beta=0.7	0.7	2.95	M2Pro-16GB	rc=0
+2026-11-01	P2b	making-a-guide/voice/c04	tsukasa	emotion=neutral,intensity=none,speed=natural,seed=None,alpha=0.35,beta=0.7	1.0	5.70	M2Pro-16GB	rc=0
+2026-11-01	P2b	making-a-guide/voice/c05	tsukasa	emotion=neutral,intensity=none,speed=natural,seed=None,alpha=0.35,beta=0.7	0.8	4.42	M2Pro-16GB	rc=0
+2026-11-01	P2b	making-a-guide/voice/c06	tsukasa	emotion=neutral,intensity=none,speed=natural,seed=None,alpha=0.35,beta=0.7	0.7	4.35	M2Pro-16GB	rc=0
+2026-11-01	P2b	making-a-guide/voice/c07	tsukasa	emotion=neutral,intensity=none,speed=natural,seed=None,alpha=0.35,beta=0.7	0.7	3.92	M2Pro-16GB	rc=0
+2026-11-01	P2b	making-a-guide/voice/c08	tsukasa	emotion=neutral,intensity=none,speed=natural,seed=None,alpha=0.35,beta=0.7	0.8	4.30	M2Pro-16GB	rc=0
+2026-11-01	P2b	making-a-guide/voice/c09	tsukasa	emotion=neutral,intensity=none,speed=natural,seed=None,alpha=0.35,beta=0.7	0.8	4.32	M2Pro-16GB	rc=0
+2026-11-01	P2b	making-a-guide/voice/c10	tsukasa	emotion=neutral,intensity=none,speed=natural,seed=None,alpha=0.35,beta=0.7	0.7	4.40	M2Pro-16GB	rc=0
+2026-11-01	P2b	making-a-guide/voice/c11	tsukasa	emotion=neutral,intensity=none,speed=natural,seed=None,alpha=0.35,beta=0.7	0.7	4.07	M2Pro-16GB	rc=0
+2026-11-01	P2b	making-a-guide/voice/c12	tsukasa	emotion=neutral,intensity=none,speed=natural,seed=None,alpha=0.35,beta=0.7	0.7	3.72	M2Pro-16GB	rc=0
+2026-11-01	P2b	making-a-guide/voice (まとめ)	tsukasa	cues=12	20.7	49.92	M2Pro-16GB	rc=0 合計

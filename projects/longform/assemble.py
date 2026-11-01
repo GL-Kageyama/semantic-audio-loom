@@ -212,6 +212,8 @@ def load_list(path: str) -> list:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dir", required=True, help="作品の置き場（script.yaml の親）")
+    ap.add_argument("--assets", default="",
+                    help="資材の根（voice/ voice_trim/ renders/ の親）。既定は projects/longform/assets/<作品名>")
     ap.add_argument("--no-render", action="store_true")
     ap.add_argument("--retrim", action="store_true", help="切った無音を作り直す")
     args = ap.parse_args()
@@ -219,7 +221,7 @@ def main() -> None:
     work = os.path.abspath(args.dir)
     name = os.path.basename(work.rstrip("/"))
     scene_path = os.path.join(work, "script.yaml")
-    assets = os.path.join(HERE, "assets", name)
+    assets = os.path.abspath(args.assets) if args.assets else os.path.join(HERE, "assets", name)
     voice, sfx_dir, bgm_dir = (os.path.join(assets, d) for d in ("voice", "sfx", "bgm"))
     trim_dir = os.path.join(assets, "voice_trim")
 
