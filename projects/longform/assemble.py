@@ -2,7 +2,8 @@
 """長尺の組み立て（解説も演劇も同じ道具）。voice/ のキューを間で並べ、1 本にする。
 
 - キュー頭尾の無音を切る（切らないと、置いた間が 1 秒ほど伸びる）
-- 声量を gain_db で戻す（生成ファイルは peak 0.95 に揃っていて、レベル差が残らない）
+- 声量を gain_db で戻す。生成ファイルは peak 0.95 に揃うが、**ピークが揃っても大きさは揃わない**ので、
+  有声部分の RMS を人ごとの中央値へ寄せる（同じ人の行は同じ大きさ。人どうしの差は残す）
 - 効果音は <dir>/sfx.yaml、下地は assets/<work>/bgm/underlay.wav（全体長へ継ぎ足す）
 - 章の印は <dir>/chapters.yaml（無ければ鳴らさない）
 - 下地を止める区間は <dir>/bed_mute.yaml（「間」を聴かせる場面）
@@ -36,6 +37,26 @@ _TAIL_KEEP = 0.06
 def duration(path: str) -> float:
     with wave.open(path, "rb") as w:
         return w.getnframes() / float(w.getframerate())
+
+
+def voiced_rms_db(path: str) -> float:
+    """有声部分の RMS（dBFS）。
+
+    ピークを 0.95 に揃えても、破裂音の強い行は RMS が低く、母音の続く行は高い。
+    その差がそのまま「行ごとに声が大きい／小さい」として聞こえる。
+    """
+    with wave.open(path, "rb") as w:
+        sr, ch = w.getframerate(), w.getnchannels()
+        raw = w.readframes(w.getnframes())
+    a = np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768.0
+    a = a.reshape(-1, ch).mean(axis=1)
+    if a.size == 0:
+        return -90.0
+    env = np.abs(a)
+    thr = env.max() * 0.05                      # 息の漏れ・暗騒音を外す
+    idx = np.where(env > thr)[0]
+    seg = a[idx[0]:idx[-1] + 1] if idx.size else a
+    return float(20 * np.log10(np.sqrt(np.mean(seg ** 2)) + 1e-9))
 
 
 def trim(src: str, dst_dir: str, name: str, force: bool = False) -> str:
@@ -120,7 +141,7 @@ def mute_bed(path: str, spans: list, fade_s: float = 0.6) -> str:
 
 
 def apply_fx(src: str, character: str, cfg: dict, dst_dir: str, force: bool = False) -> tuple[str, float]:
-    """声の帯域処理（作品ごとの配色）。返り値は (パス, 追加利得 dB)。
+    """声の加工（帯域・ピッチ。作品ごとの配色）。返り値は (パス, 追加利得 dB)。
 
     同じモデルから出た二人の声は、seed の揺れのほうが人物差より大きい
     （同じ台詞の MFCC 距離：同一人物 11.7〜13.2 / 別人 7.2）。
@@ -144,6 +165,15 @@ def apply_fx(src: str, character: str, cfg: dict, dst_dir: str, force: bool = Fa
         bands.append(butter(4, min(cfg["lowpass_hz"] / nyq, 0.99), btype="lowpass", output="sos"))
     for sos in bands:
         a = sosfilt(sos, a, axis=0).astype(np.float32)
+    # ピッチ（半音）。フォルマントも一緒に上がるので、声道の短い声になる。
+    # 小さな機体のスピーカーらしさは、帯域よりこちらが効く。
+    if cfg.get("pitch_semitones"):
+        import librosa
+
+        if ch != 1:
+            raise ValueError("pitch_semitones はモノラルの声だけに対応する")
+        a = librosa.effects.pitch_shift(a[:, 0], sr=sr,
+                                        n_steps=float(cfg["pitch_semitones"]))[:, None]
     # 頭は揃えない（揃えると声量の差が消える）。帯域を削った分は gain_db で戻す。
     with wave.open(dst, "wb") as w:
         w.setnchannels(ch)
@@ -231,10 +261,29 @@ def main() -> None:
             "role": "voice",
             "start": round(cursor, 3),
             "gain_db": VOLUME_GAIN.get(cue.get("volume", "normal"), 0.0) + extra_gain,
+            "_char": character,
         })
         cursor += duration(path)
         ends[cue_name] = cursor
         order.append(cue_name)
+
+    # 声量のそろえ: 有声 RMS のばらつきを、人ごとの中央値へ寄せる。
+    # 人どうしの差（ミライとミラボの地の大きさ）は残す——そろえるのは同じ人の中だけ。
+    voice = [s for s in stems if s.get("role") == "voice"]
+    for s in voice:
+        s["_db"] = voiced_rms_db(os.path.join(work, s["file"]))
+    by_char: dict[str, list[float]] = {}
+    for s in voice:
+        by_char.setdefault(s.get("_char", ""), []).append(s["_db"])
+    med = {c: float(np.median(v)) for c, v in by_char.items()}
+    for s in voice:
+        s["gain_db"] = round(s["gain_db"] + med[s.get("_char", "")] - s["_db"], 2)
+        s.pop("_db", None)
+        s.pop("_char", None)
+    for c, v in by_char.items():
+        if len(v) >= 3:
+            print(f"声量 {c or '?':<8} {len(v):>3}行 幅 {max(v) - min(v):.1f} dB → 中央値へ補正")
+
     total = cursor + TAIL
 
     # 章の頭の印（chapters.yaml がある作品だけ）

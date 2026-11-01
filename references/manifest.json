@@ -156,5 +156,45 @@
     "source_files": [
       "synthesized from profile: {'age': 'adult', 'gender': 'female', 'pitch': 'medium', 'texture': 'neutral', 'breathiness': 'slight', 'resonance': 'chest'}"
     ]
+  },
+  "gen_female_light": {
+    "age": "young_adult",
+    "gender": "F",
+    "duration_sec": 9.25,
+    "source": "video generation (WAN 3.0 — semantic-visual-loom projects/explainer-voice-samples, shot vs-01)",
+    "license": "generated — no upstream license",
+    "source_files": [
+      "projects/explainer-voice-samples/media/1_b480f331-b1d2-469b-a084-918a37ee4f9d.mp4 (10.0s, 854x480/30fps) — audio 0.75-10.00s, mono 24kHz"
+    ]
+  },
+  "gen_female_steady": {
+    "age": "adult",
+    "gender": "F",
+    "duration_sec": 9.01,
+    "source": "video generation (WAN 3.0 — semantic-visual-loom projects/explainer-voice-samples, shot vs-02)",
+    "license": "generated — no upstream license",
+    "source_files": [
+      "projects/explainer-voice-samples/media/2_6736eb14-f241-403c-882b-91f5bf0dc89d.mp4 (10.0s, 854x480/30fps) — audio 0.78-9.79s, mono 24kHz"
+    ]
+  },
+  "gen_machine_clear": {
+    "age": "n/a (synthetic)",
+    "gender": "n/a",
+    "duration_sec": 8.97,
+    "source": "video generation (WAN 3.0 — semantic-visual-loom projects/explainer-voice-samples, shot vs-03)",
+    "license": "generated — no upstream license",
+    "source_files": [
+      "projects/explainer-voice-samples/media/3_7df9e835-aa66-4851-8343-5404ccb64044.mp4 (10.0s, 854x480/30fps) — audio 1.02-9.99s, mono 24kHz"
+    ]
+  },
+  "gen_machine_bright": {
+    "age": "n/a (synthetic)",
+    "gender": "n/a",
+    "duration_sec": 9.12,
+    "source": "video generation (WAN 3.0 — semantic-visual-loom projects/explainer-voice-samples, shot vs-04)",
+    "license": "generated — no upstream license",
+    "source_files": [
+      "projects/explainer-voice-samples/media/4_8adb9e67-ee2f-4bf5-bbfe-5b9bbb833bd8.mp4 (10.0s, 854x480/30fps) — audio 0.42-9.54s, mono 24kHz"
+    ]
   }
 }

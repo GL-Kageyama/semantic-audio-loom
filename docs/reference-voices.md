@@ -18,6 +18,14 @@
 
 > 再配布する場合、VCTK 分は CC BY 4.0 の帰属表示が必須。
 
+## 声を調整するとき
+
+- **太さ・明るさを変えるのは参照の差し替え。** 経路A では `.voice.yaml` の `voice`（age / pitch / texture / breathiness / resonance）はプロンプトに入らない（`_voice_description` は経路B 専用）。効くのは `reference_audio` と、作品側の加工。
+- **Direction の `pitch` 語は f0 をほとんど動かさない。** 同じ一文・同じ seed で、`female_young_p308` は `pitch: high` の有無でどちらも 282Hz、`female_adult_p225` は 244→248Hz。声を上げたいときは参照を高めの話者にするか、下の加工で半音を足す。
+- **太さは f0 よりフォルマント。** 参照の F2（LPC 実測）は p225 1368Hz / p280 1981Hz / p308 2042Hz。f0 が近くても F2 が低い声は「太い」と聞こえる。
+- 参照の混合比は `SAL_ALPHA`（既定 0.35、低いほど参照 timbre を保持）と `SAL_BETA`（既定 0.7、低いほどプロンプト由来の演技）。作品の cue で `alpha` / `beta` を上書きできる。
+- 生成後の加工は作品の `voice_fx.yaml`（`assemble.py`）。`highpass_hz` / `lowpass_hz` / `gain_db` / `pitch_semitones`。`pitch_semitones` はフォルマントも一緒に上がるので、小さな機体・マスコットの声に向く。
+
 ## 拡充（足りない声への方針）
 
 特定の声（例：男性老人）が弱い場合、**使用者が声を拡充して参照に指定する**のが既定。開発者が全声を揃えない。

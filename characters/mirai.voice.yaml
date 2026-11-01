@@ -1,0 +1,19 @@
+# ミライ — 解説動画『脆弱性とサイバー攻撃』の解説役（人）。
+# キャラクターモデルシート（資料/03_実行準備用構想/解説動画の作成_構想/キャラ/ミライ(人)）より。
+# voice_profile.schema.json 準拠。reference_audio は参照音声ライブラリの話者キー
+# （経路A: timbre をこの音声から、prosody を Direction から合成）。
+# 声は「やさしく、はっきり説明する講師」: 若い大人・中高め・軽い・息はごく少なめ。
+# 参照は WAN 3.0 で作った `gen_female_light`（試聴 vs-01 の採用）。
+# 既製の p225/p280 では「野太い／違和」が残ったため、声そのものを生成して参照にした。
+# 子どもの声にはしないので、18歳の p308 は使わない。
+# 感情を張らず、間で聞かせる。台詞の演技は scene 側の cue で振る。
+character: ミライ
+name_reading: みらい
+reference_audio: gen_female_light
+voice:
+  age: young_adult      # 20〜25歳（child / adolescent / young_adult / adult / middle_aged / elderly）
+  gender: female        # female / male
+  pitch: medium_high    # 落ち着くが若い。語り手（medium）より少し上（very_low / low / medium_low / medium / medium_high / high / very_high）
+  texture: warm         # やさしく、親しみやすい（soft / warm / clear / bright / dark / husky / breathy / neutral）
+  breathiness: slight   # 息はごく少なめ。親しさは息ではなく間で出す（none / slight / moderate / heavy）
+  resonance: chest      # 胸に響く、説明する人の安定（intimate / chest / head / nasal / bright / neutral）

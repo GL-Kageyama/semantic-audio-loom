@@ -1,0 +1,10 @@
+character: aud_p225n
+name_reading: aud_p225n
+reference_audio: female_adult_p225
+voice:
+  age: young_adult
+  gender: female
+  pitch: medium_high
+  texture: warm
+  breathiness: slight
+  resonance: chest

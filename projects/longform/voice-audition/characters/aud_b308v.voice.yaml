@@ -1,0 +1,10 @@
+character: aud_b308v
+name_reading: aud_b308v
+reference_audio: female_young_p308
+voice:
+  age: young_adult
+  gender: female
+  pitch: medium_high
+  texture: warm
+  breathiness: slight
+  resonance: chest

@@ -1,0 +1,16 @@
+# ミラボ — 解説動画『脆弱性とサイバー攻撃』の相棒（AIパートナー）。
+# キャラクターモデルシート（資料/03_実行準備用構想/解説動画の作成_構想/キャラ/ミラボ(AIパートナー)）より。
+# voice_profile.schema.json 準拠。reference_audio は参照音声ライブラリの話者キー
+# （経路A: timbre をこの音声から、prosody を Direction から合成）。
+# 声は「小さな機械の相棒」: 高め・明るい・息なし・頭に抜ける。
+# 参照は WAN 3.0 で作った `gen_machine_bright`（試聴 vs-04 の採用）——機体の声そのもの。
+character: ミラボ
+name_reading: みらぼ
+reference_audio: gen_machine_bright
+voice:
+  age: young_adult      # 子どもにはしない。小さな大人の相棒（child / adolescent / young_adult / adult / middle_aged / elderly）
+  gender: female        # 画面の声は中性寄り。female の高い声を土台にする（female / male）
+  pitch: very_high      # ミライ（medium_high）より明確に上（very_low / low / medium_low / medium / medium_high / high / very_high）
+  texture: bright       # 明るく、軽い（soft / warm / clear / bright / dark / husky / breathy / neutral）
+  breathiness: none     # 息を乗せない。機械の小さなスピーカー（none / slight / moderate / heavy）
+  resonance: head       # 頭に抜ける軽さ（intimate / chest / head / nasal / bright / neutral）

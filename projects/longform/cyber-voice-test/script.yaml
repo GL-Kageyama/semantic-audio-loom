@@ -1,0 +1,10 @@
+# 声の試作。ミライとミラボの声質・読み・間を確かめるための 6 キュー。
+name: cyber-voice-test
+default_pause: 0.5
+cues:
+  - {character: mirai, line: "ようこそ。今日は、脆弱性とサイバー攻撃の話をしよう。", emotion: calm, intensity: moderate, volume: normal, speed: natural, delivery: gentle, pause_before: 0.5, seed: 1, name: t01}
+  - {character: mirabo, line: "ミライさん、その言葉、聞いたことはあるけど、説明できる？", emotion: joy, intensity: moderate, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.4, seed: 1, name: t02}
+  - {character: mirai, line: "いい質問。まず、脆弱性って何かから始めよう。", emotion: confidence, intensity: subtle, volume: normal, speed: natural, delivery: gentle, pause_before: 0.5, seed: 1, name: t03}
+  - {character: mirabo, line: "うん、知りたい！", emotion: excitement, intensity: moderate, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.3, seed: 1, name: t04}
+  - {character: mirai, line: "2021年のLog4Shellは、ログに書いた文字が、遠くのコードを呼び出した。", emotion: calm, intensity: moderate, volume: normal, speed: natural, delivery: controlled, pause_before: 0.6, seed: 1, name: t05}
+  - {character: mirabo, line: "えっ、ログって、記録するだけじゃないんだ。", emotion: excitement, intensity: subtle, volume: normal, speed: natural, delivery: cheerful, pause_before: 0.4, seed: 1, name: t06}
