@@ -172,10 +172,10 @@ f0 の追跡は 2 段（全体で当たりを付け、中央値の上下 1 オ�
 
 ```bash
 # 生成（scene.yaml → scene.wav + scene.params.yaml）
-bin/scene.py --scene-file examples/gozen-niji-ch01/scene.yaml --project gozen-niji
+bin/scene.py --scene-file examples/works/gozen-niji-ch01/scene.yaml --project gozen-niji
 
 # 再生成（保存済み Spec を再利用・LLM なし＝seed決定論）
-bin/scene.py --params examples/gozen-niji-ch01/gozen-niji-ch01.params.yaml --out-dir /tmp/regen
+bin/scene.py --params examples/works/gozen-niji-ch01/gozen-niji-ch01.params.yaml --out-dir /tmp/regen
 ```
 
 - `--scene-file`（render）と `--params`（regen）は排他。片方必須。
@@ -215,7 +215,7 @@ bin/mix.py --file mix.yaml --out-dir projects/demo/assets/combined --json
 保存済み Spec を再利用・LLM は呼ばない（再現性）。
 
 ```bash
-bin/regenerate.py examples/mashiro-night/mashiro_night.params.yaml \
+bin/regenerate.py examples/works/mashiro-night/mashiro_night.params.yaml \
     --out-dir /tmp/regen
 ```
 

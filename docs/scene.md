@@ -56,10 +56,10 @@ delivery）は `bin/generate.py` のフラグと同じ語彙。`line` はふり�
 
 ```bash
 # 生成（scene.yaml → scene.wav + scene.params.yaml）
-bin/scene.py --scene-file examples/gozen-niji-ch01/scene.yaml --project gozen-niji
+bin/scene.py --scene-file examples/works/gozen-niji-ch01/scene.yaml --project gozen-niji
 
 # 再生成（保存済み Spec を再利用・LLM は呼ばない＝seed決定論）
-bin/scene.py --params examples/gozen-niji-ch01/gozen-niji-ch01.params.yaml --out-dir /tmp/regen
+bin/scene.py --params examples/works/gozen-niji-ch01/gozen-niji-ch01.params.yaml --out-dir /tmp/regen
 ```
 
 - `--scene-file`（render）と `--params`（regen）は排他。片方必須。

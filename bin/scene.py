@@ -6,8 +6,8 @@ scene.yaml がキュー（キャラ＋台詞＋Direction＋pause_before）を宣
 voice の生成ループは一切変えない（合成レイヤとして外側に置く）。
 
 例:
-  bin/scene.py --scene-file examples/gozen-niji-ch01/scene.yaml --project gozen-niji
-  bin/scene.py --params examples/gozen-niji-ch01/gozen-niji-ch01.params.yaml --out-dir /tmp/regen
+  bin/scene.py --scene-file examples/works/gozen-niji-ch01/scene.yaml --project gozen-niji
+  bin/scene.py --params examples/works/gozen-niji-ch01/gozen-niji-ch01.params.yaml --out-dir /tmp/regen
 
 再生成（--params）は保存済み Spec を再利用し、LLM を再呼び出ししない（seed決定論）。
 """
